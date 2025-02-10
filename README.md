@@ -1,4 +1,11 @@
 # Grupo 01 PI
 
-## adiantei o processo do github
+Tema: Undefined
 
+## Integrantes : 
+
+* Gabriel de Pádua - *BD* 
+* Gustavo Leite - *P.O*
+* João Vitor Luz - *FRONT-END*
+* Rafael Pavani - *SCRUM MASTER *
+* Viviane dos Santos - *BACK-END*
