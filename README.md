@@ -7,5 +7,5 @@ Tema: Undefined
 * Gabriel de Pádua - *BD* 
 * Gustavo Leite - *P.O*
 * João Vitor Luz - *FRONT-END*
-* Rafael Pavani - *SCRUM MASTER *
+* Rafael Pavani - *SCRUM MASTER*
 * Viviane dos Santos - *BACK-END*
