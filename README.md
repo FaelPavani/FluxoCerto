@@ -4,7 +4,8 @@ Tema: Undefined
 
 ## Integrantes : 
 
-* Gabriel de Pádua - *BD* 
+* Gabriel de Pádua - *BD*
+* Guilherme Rebouçãs - *BD*
 * Gustavo Leite - *P.O*
 * João Vitor Luz - *FRONT-END*
 * Rafael Pavani - *SCRUM MASTER*
