@@ -261,7 +261,7 @@ body{
     margin-top: 2.3vw;   box-shadow: 
     20px -10px 0px #e6a739, /* Sombra à esquerda */
     10px -10px 0px #e6a739, /* Sombra no topo */
-    20px 10px 0px #e6a739; /* Sombra no topo */
+    20px 10px 0px #e6a739; /* Sombra em baixo */
 }
 .box_saiba p{
     cursor: pointer;
@@ -271,6 +271,7 @@ body{
     width: 15vw;
     height: 5vh;
     background-color: #4335DE;
+    color: white;
     display: flex;
     justify-content: space-between;
     padding: 1vw;
@@ -294,4 +295,63 @@ body{
 .box_saiba span{
     font-weight: 800;
     cursor: pointer;
+}
+.section_home_suporte{
+    width: 100%;
+    height: 75vh;
+    background-color: #4335DE;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    padding-top: 6vw;
+}
+.conteudo_home_suporte{
+    width: 40vw;
+    height: 50vh;
+}
+.conteudo_home_suporte h4{
+    font-size: 3vw;
+    margin-bottom: 1.5vw;
+}
+.conteudo_home_suporte p{
+    font-size: 2vw;
+    margin-bottom: 3vw;
+}
+.conteudo_home_suporte span{
+    font-size: 1.3vw;
+    justify-self: flex-end;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-left: 23vw;
+    color: #02033B;
+    border: 2px solid #e6a739;
+    margin-bottom: 2vw;
+    background-color: white;
+    padding: 1vw;
+    height: 10vh;
+    border-radius: 2vw;
+}
+.conteudo_home_suporte span:hover{
+    background-color: #e6a739;
+    border: none;
+    color: white;
+    font-weight: 800;
+}
+.home_suporte_imagem{
+    width: 20vw;
+    box-shadow: 20px -20px 0px #e6a739;
+
+
+    overflow: hidden;
+
+    height: 20vw;
+    border-radius: 2vw;
+    transform: rotate(45deg);
+}
+.homem_suporte{
+    width: 50vw;
+    margin-top: -9vw;
+    margin-left: -15vw;
+    transform: rotate(-45deg); /* Corrige a rotação da imagem */
+    
 }
