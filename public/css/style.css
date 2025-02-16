@@ -1,6 +1,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* Para navegadores baseados em WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 8px; /* Define a largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra */
+    border-radius: 10px; /* Cantos arredondados da trilha */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFC247; /* Cor do botão de rolagem */
+    border-radius: 10px; /* Cantos arredondados */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e6a739; /* Cor ao passar o mouse */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +28,7 @@
     font-family: "Inter", serif;
     transition: all 0.4s ease;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     color: inherit;
     cursor:default;
 }
@@ -19,23 +38,27 @@ header{
     height: 10vh;
     display: flex;
     position: fixed;
+    background: linear-gradient(to bottom, #F3F8FF, #E7EFFA);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
     justify-content: space-around;
 }
 
 .img_trem{
-    width: 7.5vw;
+    width: 7vw;
     height: 18vh;
     margin-right: 0.5vw;
     display: flex;
     cursor: pointer;
 }
 .logo_texto{
-    width: 9vw;
+    width: 8.8vw;
     height: 18vh;
     margin-right: 0.5vw;
     display: flex;
     cursor: pointer;
+}
+.navbar.hidden {
+    transform: translateY(-100%);
 }
 header nav{
     display: flex;
@@ -55,8 +78,9 @@ nav p{
 }
 nav p:hover{
     font-weight: 800;
-    border-bottom: 3px solid #02033B;
+    border-bottom: 3px solid #4335DE;
     transition: all 0.1s ease;
+    color: #4335DE;
    
 }
 
@@ -134,7 +158,6 @@ nav p:hover{
     font-weight: 800;
 }
 .div_celular{
-    background-color: purple;
     width: 40vw;
     box-shadow: -25px -25px 0px #4335DE;
     height: 80vh;
@@ -181,4 +204,94 @@ nav p:hover{
 }
 body{
     background-color: #F3F8FF;
+}
+.section_conheca{
+    width: 100%;
+    height: 90vh;
+    background-color: #F7C95F;
+    background-color: linear;
+    background: linear-gradient(to bottom, #F7C95F, #FDB235);
+    display: flex;
+    justify-content: center;
+    color: #02033B;
+    flex-direction: column;
+    align-items: center;
+}
+.box_conteudo_conheca{
+    display: flex;
+}
+.box_title_conheca{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8vw;
+    font-size: 1.7vw;
+    height: 7vh;
+    margin-top: -1vw;
+    align-self: flex-start;
+    margin-left: 5vw;
+    background-color:#E7EFFA;
+}
+.box_conheca{
+    width: 35vw;
+    height: 70vh;
+    padding-top: 2vw;
+}
+.box_conheca h3{
+    font-size: 2.6vw;
+    width: 30vw;
+    font-weight: 800;
+    margin-bottom: 3vw;
+}
+.box_conheca p{
+    font-size: 1.5vw;
+    width: 30vw;
+    margin-left: 2vw;
+}
+.box_saiba{
+    width: 38vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 1vw;
+}
+.box_saiba img{
+    width: 26vw;
+    margin-left: 2vw;
+    margin-top: 2.3vw;   box-shadow: 
+    20px -10px 0px #e6a739, /* Sombra à esquerda */
+    10px -10px 0px #e6a739, /* Sombra no topo */
+    20px 10px 0px #e6a739; /* Sombra no topo */
+}
+.box_saiba p{
+    cursor: pointer;
+
+}
+.box_saiba div{
+    width: 15vw;
+    height: 5vh;
+    background-color: #4335DE;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+    align-items: center;
+  justify-self: flex-end;
+  margin-top: 1.3vw;
+  border-radius: 5vw;
+    cursor: pointer;
+  margin-right: 5vw;
+}
+.button_conheca:hover{
+    font-weight: 800;
+    transform: scale(1.02);
+}
+.button_conheca p:hover{
+    font-weight: 800;
+}
+.button_conheca span:hover{
+    font-weight: 800;
+}
+.box_saiba span{
+    font-weight: 800;
+    cursor: pointer;
 }

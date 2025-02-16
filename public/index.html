@@ -10,7 +10,7 @@
 </head>
 
 <body>
-   <header>
+   <header class="navbar">
     <div class="div_logo">
         <img class="img_trem" src="./assets/trem.png" alt="">
         <img class="logo_texto" src="./assets/logo_extensa.png" alt="">
@@ -38,6 +38,23 @@
     <div class="div_celular">
         <img src="./assets/celular.png" alt="">
     </div>
+</section>
+<section class="section_conheca">
+    <div class="box_title_conheca">
+    <h5 class="title_conheca">Conheça mais sobre a fluxo:</h5>
+</div>
+<div class="box_conteudo_conheca">   
+     <div class="box_conheca">
+        <h3>Focados no melhor direcionamento do transporte metrôviário:</h3>
+        <p>Conheça um pouco da nossa história e em como estamos focados em fazer a diferença em seu dia-a-dia, facilitando a sua vida:</p>
+    </div>
+    <div class="box_saiba">
+        <img src="./assets/mulher_celular.png" alt="">
+        
+        <div class="button_conheca"><p>Saber mais </p> <span>&#8594;</span></div>
+    </div>
+</div>
+
 </section>
     </main>
 </body>
@@ -79,4 +96,21 @@ function logout() {
 
     window.location = "index.html";
 }
+
+let lastScrollTop = 0;
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY;
+
+    if (scrollTop > lastScrollTop) {
+        // Rolando para baixo, esconde a navbar
+        navbar.classList.add("hidden");
+    } else {
+        // Rolando para cima, exibe a navbar
+        navbar.classList.remove("hidden");
+    }
+
+    lastScrollTop = scrollTop;
+});
 </script>
