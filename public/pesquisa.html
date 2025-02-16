@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="script.js" type="text/javascript" defer></script>
+  <link rel="icon" href="./assets/favicon-32x32.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>PE! - Sobre</title>
+</head>
+
+<body onload="carregarDash()">
+    <!-- CABEÇALHO -->
+    <header id="header">
+        <div class="box_logo">
+            <a href="index.html">
+                <h1 class="logo">PE!</h1>
+        </div>
+        <div class="box_nav">
+            <div class="nav_menu">
+                <a href="./sobre.html">
+                    <nav>Sobre</nav>
+                </a>
+                <a href="formacao.html">
+                    <nav>Formação</nav>
+                </a>
+                <a href="pesquisa.html">
+                    <nav style="
+    border-bottom: 5px solid #022E13; font-weight: 700;">Pesquisa</nav>
+                </a>
+                <a href="contato.html">
+                    <nav>Contato</nav>
+                </a>
+            </div>
+            <div class="nav_cadastro" id="divNaoLogado">
+                <a href="login.html">
+                    <nav class="fazerlogin">Login &rarr;</nav>
+                </a>
+                <a href="cadastro.html">
+                    <nav class="registrar">Registre-se agora &rarr;</nav>
+                </a>
+            </div>
+
+            <div id="guestCircle" class="guest-circle" id="divLogado">
+                <img src="./assets/guest_icon.png" alt="Guest" class="guest-img">
+
+
+                <div class="modal">
+                    <h5>Olá, <span id="nomeUsuario"></span>!</h5>
+                    <p>Perfil</p>
+                    <p onclick="logout()">Sair</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main" style="flex-direction: column;">
+        <section class="section_imagem_pesquisa">
+            <div class="container_imagem_pesquisa">
+                <h1>Pesquisa</h1>
+            </div>
+        </section>
+
+        <section class="section_pesquisas">
+
+
+
+            <div class="container_pesquisas">
+                <img src="./assets/belico.jpeg">
+                <div>
+                    <h4>Quiz PE!</h4>
+                    <p>Se desafie respondendo esse quiz que engloba militarismo, a PE e o exército brasileiro!</p>
+                </div>
+                <button onclick="quizBelico()" class="button_pesquisa">Fazer essa pesquisa!</button>
+            </div>
+
+            <div class="icons_pesquisa">
+                <div><img src="./assets/barra_icon.png"></div>
+                <div><img src="./assets/leader_icon.png"></div>
+            </div>
+
+            <div class="leaderboard" style="display: none;">
+
+            </div>
+
+            <div class="container_dashboard" id="sec_dash">
+                <div class="nao_fez_o_quiz" style="display: none;" id="nao_fez_pesquisa">
+                    <h4>Ops... :(</h4>
+                    <h6>Verificamos que você ainda não fez a nossa pesquisa!
+                        Faça agora para ter acesso à sua dashboard e seus resultados!
+                    </h6>
+                    <button onclick="quizBelico()">Fazer a pesquisa!</button>
+                </div>
+                <div class="nao_fez_o_quiz" style="display: none;" id="nao_fez_login">
+                    <h4>Ops... :(</h4>
+                    <h6>Verificamos que você não está em nenhuma conta!
+                        Faça login, ou registre-se para conseguir fazer nossa pesquisa, ter acesso à sua dashboard e
+                        seus resultados!
+                    </h6>
+                    <a href="login.html"><button>Fazer login!</button></a>
+                </div>
+                <div class="conteudo_dash" style="display: none;" id="conteudoDash">
+                    <div class="box_dashboard1">
+                        <div class="box_tempo">
+                            <h3>Tempo Gasto:</h3>
+                            <p> <span id="tempo_gasto"> </span> segundos</p>
+                        </div>
+                        <div class="placar_lider">
+                            <h4>Placar de Líderes:</h4>
+                            <div id="div_placar">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_dashboard2">
+                        <canvas class="grafico" id="graficoPontuacao"></canvas>
+                        <h3>Porcentagem acertos:</h3>
+                        <span id="percentual_acertos">0%</span>
+                        <div class="box_nivel">
+                            <div class="niveis" id="nivel1"></div>
+                            <div class="niveis" id="nivel2"></div>
+                            <div class="niveis" id="nivel3"></div>
+                            <div class="niveis" id="nivel4"></div>
+                            <div class="niveis" id="nivel5"></div>
+                        </div>
+                        <div class="box_saber_nivel">
+                            <h6>Saber nível! <img src="./assets/lupa_icon.png" alt=""></h6>
+                            <div class="container_saber_nivel" id="container_do_nivel">
+                                <h4>NÍVEL:</h4>
+                                <span id="nome_do_nivel">BISONHO</span>
+
+                                <p id="mensagem_nivel">Falta TUDO! Estudo um pouco mais em nosso site, refaça os quizes
+                                    para tentar uma melhor nota!</p>
+                                <button onclick="quizBelico()">Refazer quiz</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <div class="container_pesquisas">
+                <img src="./assets/pesquisa_forcas.jpg">
+                <div>
+                <h4>Quiz PE!</h4>
+                <p>Você acha que conhece o suficiente sobre a PE? Tente responder esse questionário agora!</p>
+            </div>
+            <button class="button_pesquisa">Fazer essa pesquisa!</button>
+            </div>
+            <div class="container_pesquisas">
+                <img src="./assets/postos.jpeg">
+                <div>
+                <h4>Quiz Postos, Graduações e Armas</h4>
+                <p>Se acha que conhece com clareza os postos, graduações e as armas (Qualificações) do EB, tente responder essa pesquisa!</p>
+            </div>
+            <button class="button_pesquisa">Fazer essa pesquisa!</button>
+            </div>
+            <div class="container_pesquisas">
+                <img src="./assets/militarismo.jpg">
+                <div>
+                <h4>Quiz Militarismo</h4>
+                <p>Tente resolver esse quiz que aborda alguns conceitos básicos do militarismo!</p>
+            </div>
+            <button class="button_pesquisa">Fazer essa pesquisa!</button>
+            </div>
+            <div class="container_pesquisas">
+                <img src="./assets/dialeto.jpg">
+                <div>
+                <h4>Quiz dialeto militar</h4>
+                <p>Você acha que conhece os jargões (gírias) militares com clareza? Tente responder esse quiz agora!</p>
+            </div>
+            <button class="button_pesquisa">Fazer essa pesquisa!</button>
+            </div> -->
+
+        </section>
+
+
+
+        <footer>
+            <div class="container_footer">
+                <div class="box_header_footer">
+                    <div class="box_logo_footer">
+                        <h1 class="logo_footer">PE!</h1>
+                    </div>
+                    <div class="box_redes"><img src="./assets/face_icon.png"><img src="./assets/insta_icon.png"><img
+                            src="./assets/twitter_icon.png"></div>
+                </div>
+                <div class="linha_footer"></div>
+                <div class="box_contato_footer">
+                    <div class="box_contatos_footer">
+                        <p>policiadoexercito@contato.com</p>
+                        <p> (11) 95883-6788</p>
+
+                        <p class="box_contatos_footer2"> Rua Haddock Lobo, 595 - Cerqueira César</p>
+                        <p>São Paulo - SP</p>
+                        <p>14144000</p>
+                    </div>
+                    <div class="box_footer_links">
+
+                        <p>Política de Privacidade</p>
+
+                        <p> Termos de Uso</p>
+
+                        <p> RDE</p>
+
+                        <p> Fale Conosco</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <section id="quiz_belico" class="section_quiz" style="display: none;">
+        <!-- Pergunta 1 -->
+        <div id="pergunta_um_belico" class="container_forcas">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>1. Atualmente, qual é o principal fuzil de assalto em uso pelas Forças Armadas Brasileiras?</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(A)</button> AK-47</span>
+                    <span onclick="verificarResposta(this, false)"><button>(B)</button> M16A4</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, true)"><button>(C)</button> IMBEL IA2</span>
+                    <span onclick="verificarResposta(this, false)"><button>(D)</button> FN SCAR</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div id="pergunta_dois_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>2. Quem é responsável por iniciar a continência em um encontro entre militares de diferentes
+                    patentes?</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, true)"><button>(A)</button> O militar de menor patente</span>
+                    <span onclick="verificarResposta(this, false)"><button>(B)</button> O militar de maior
+                        patente</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(C)</button> Ambos ao mesmo tempo</span>
+                    <span onclick="verificarResposta(this, false)"><button>(D)</button> Apenas o superior
+                        hierárquico</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div id="pergunta_tres_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>3. Qual calibre é utilizado pelo fuzil de assalto Parafal em serviço no Brasil?</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(A)</button> 9 mm</span>
+                    <span onclick="verificarResposta(this, false)"><button>(B)</button> 5,56 mm</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(C)</button> 12,7 mm</span>
+                    <span onclick="verificarResposta(this, true)"><button>(D)</button> 7,62 mm</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div id="pergunta_quatro_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>4. Qual é o símbolo da Polícia do Exército?</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(A)</button> Águia</span>
+                    <span onclick="verificarResposta(this, true)"><button>(B)</button> Braçal Policial</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(C)</button> Brasão da Constituição</span>
+                    <span onclick="verificarResposta(this, false)"><button>(D)</button> Simbolos Nacionais</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div id="pergunta_cinco_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>5. Qual é o lema da Polícia do Exército?</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(A)</button> Sempre Pronto!</span>
+                    <span onclick="verificarResposta(this, false)"><button>(B)</button> Selva!</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(C)</button> Comandos!</span>
+                    <span onclick="verificarResposta(this, true)"><button>(D)</button> Uma vez PE, Sempre PE!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div id="pergunta_seis_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>6. Qual é a patente mais alta do Exército Brasileiro?</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(A)</button> Coronel</span>
+                    <span onclick="verificarResposta(this, false)"><button>(B)</button> General de Brigada</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, true)"><button>(C)</button> Marechal</span>
+                    <span onclick="verificarResposta(this, false)"><button>(D)</button> General de Exército</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 7 -->
+        <div id="pergunta_sete_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>7. Qual é a pistola padrão usada pelo Exército Brasileiro? (Cabo e Soldado)</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, true)"><button>(A)</button> Imbel M973</span>
+                    <span onclick="verificarResposta(this, false)"><button>(B)</button> Glock 19</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(C)</button> Beretta M9</span>
+                    <span onclick="verificarResposta(this, false)"><button>(D)</button> Colt 1911</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 8 -->
+        <div id="pergunta_oito_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>8. O esporte na vida e carreira militar é importante, pois...</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(A)</button> Ajuda no entretenimento dos
+                        militares</span>
+                    <span onclick="verificarResposta(this, true)"><button>(B)</button> O esporte imita o combate</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(C)</button> Promove saúde e bem-estar</span>
+                    <span onclick="verificarResposta(this, false)"><button>(D)</button> Desenvolve o espírito
+                        competitivo</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 9 -->
+        <div id="pergunta_nove_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>9. Em qual situação abaixo a continência é dispensada?</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span onclick="verificarResposta(this, true)"><button>(A)</button> Durante a execução de uma tarefa
+                        operacional </span>
+                    <span onclick="verificarResposta(this, false)"><button>(B)</button> Ao encontrar civis em locais
+                        públicos</span>
+                </div>
+                <div>
+                    <span onclick="verificarResposta(this, false)"><button>(C)</button> Ao entrar em um recinto
+                        fechado</span>
+                    <span onclick="verificarResposta(this, false)"><button>(D)</button> Ao participar de uma cerimônia
+                        oficial</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pergunta 10 -->
+        <div id="pergunta_dez_belico" class="container_forcas" style="display: none;">
+            <p class="button_fechar_pesquisa" onclick="sairQuiz()">&#10005;</p>
+            <div class="title_forcas">
+                <h3>10. Segundo a Oração do Policial do exército, a missão do policial do exército é...</h3>
+            </div>
+            <div class="questions_forcas">
+                <div>
+                    <span style="font-size: 1.5vw;" onclick="verificarResposta(this, false)"><button>(A)</button>
+                        Executar operações ofensivas, defensivas e de segurança interna</span>
+                    <span style="font-size: 1.5vw;" onclick="verificarResposta(this, false)"><button>(B)</button> Zelar
+                        pela hierarquia militar, salvaguardar instalações e aplicar a lei marcial</span>
+                </div>
+                <div>
+                    <span style="font-size: 1.5vw;" onclick="verificarResposta(this, false)"><button>(C)</button>
+                        Aplicar as normas do Regulamento Disciplinar do Exército de forma exemplar e irretocável</span>
+                    <span style="font-size: 1.5vw;" onclick="verificarResposta(this, true)"><button>(D)</button>
+                        Orientar o responsável, corrigir o irresponsável, prender o incorrigível</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resultados -->
+        <div id="resultados" class="container_resultado" style="display: none;">
+            <h4>Você respondeu todas as perguntas!</h4>
+            <div class="conteudo_resultado">
+                <h5>Acertos: <span id="totalAcertos"></span></h5>
+                <h5>Erros: <span id="totalErros"></span></h5>
+                <h5>Tempo gasto: <span id="tempoGasto"></span></h5>
+            </div>
+            <div class="botoes_resultados">
+                <button onclick="reiniciarQuiz()">Tentar novamente</button>
+                <button onclick="sairQuiz()">Sair</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+
+
+</html>
+<script>
+    const perguntas = [
+        "pergunta_um_belico",
+        "pergunta_dois_belico",
+        "pergunta_tres_belico",
+        "pergunta_quatro_belico",
+        "pergunta_cinco_belico",
+        "pergunta_seis_belico",
+        "pergunta_sete_belico",
+        "pergunta_oito_belico",
+        "pergunta_nove_belico",
+        "pergunta_dez_belico"
+    ];
+    let perguntaAtual = 0;
+    let acertos = 0;
+    let erros = 0
+    let tempoInicio; // Variável para armazenar o início do quiz
+    const tempoGasto = ''
+
+    function quizBelico() {
+        const emailUsuario = sessionStorage.EMAIL_USUARIO;
+        const nomeUsuario = sessionStorage.NOME_USUARIO;
+        const pontos = sessionStorage.PONTOS;
+        const tempo = sessionStorage.TEMPO;
+
+
+        const header = document.getElementById('header');
+        const main = document.getElementById('main');
+        const quiz_belico = document.getElementById('quiz_belico');
+
+        if (emailUsuario && nomeUsuario) {
+            header.style.display = 'none';
+            main.style.display = 'none';
+            quiz_belico.style.display = 'flex';
+            tempoInicio = new Date();
+        } else {
+            // Usuário não está logado
+            window.location.href = 'login.html';
+        }
+    }
+
+    function verificarResposta(botao, correta) {
+        if (correta) acertos++;
+        document.getElementById(perguntas[perguntaAtual]).style.display = "none";
+        perguntaAtual++;
+        if (perguntaAtual < perguntas.length) {
+            document.getElementById(perguntas[perguntaAtual]).style.display = "flex";
+        } else {
+            mostrarResultados();
+        }
+    }
+
+    function mostrarResultados() {
+        const totalPerguntas = perguntas.length;
+        const erros = totalPerguntas - acertos;
+
+        // Calcula o tempo gasto antes de usá-lo
+        const tempoFim = new Date();
+        const tempoGasto = Math.floor((tempoFim - tempoInicio) / 1000);
+
+        // Atualiza a interface com os resultados
+        document.getElementById("resultados").style.display = "flex";
+        document.getElementById("totalAcertos").innerText = acertos;
+        document.getElementById("totalErros").innerText = erros;
+        tempoGasto % 60
+        document.getElementById("tempoGasto").innerText =
+            `${Math.floor(tempoGasto / 60)} minutos e ${tempoGasto} segundos`;
+
+        // Salva os resultados no backend
+        const porcentagemAcertos = Math.round((acertos / totalPerguntas) * 100);
+
+        salvarResultados(acertos, tempoGasto, porcentagemAcertos);
+    }
+
+    function salvarResultados(acertos, tempoGasto, porcentagemAcertos) {
+        const idUsuario = sessionStorage.ID_USUARIO; // Certifique-se de que este dado está no sessionStorage
+        const tempo = `${Math.floor(tempoGasto / 60)} minutos e ${tempoGasto % 60} segundos`;
+        sessionStorage.PONTOS = acertos;
+        sessionStorage.TEMPO = tempoGasto;
+        sessionStorage.PORCENTAGEM = porcentagemAcertos;
+
+        console.log(sessionStorage.ID_USUARIO)
+        fetch(`/usuarios/inserirPontuacao`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuario: sessionStorage.ID_USUARIO,
+                qtdPontos: acertos,
+                tempoGasto: tempoGasto,
+                porcentagemAcertos: porcentagemAcertos
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                window.alert("Score atualizado com sucesso pelo usuario de id: " + sessionStorage.getItem("ID_USUARIO") + "!");
+                window.location = "pesquisa.html"
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar salvar o score! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    function reiniciarQuiz() {
+        perguntaAtual = 0;
+        acertos = 0;
+        document.getElementById("resultados").style.display = "none";
+        document.getElementById(perguntas[perguntaAtual]).style.display = "flex";
+        tempoInicio = new Date(); // Reinicia o início do quiz
+    }
+
+    function sairQuiz() {
+        document.getElementById('quiz_belico').style.display = 'none';
+        document.getElementById('header').style.display = 'flex';
+        document.getElementById('main').style.display = 'flex';
+        perguntaAtual = 0;
+        acertos = 0;
+
+
+        window.location = "pesquisa.html";
+    }
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        verificarLogin();
+    });
+
+    function verificarLogin() {
+        const emailUsuario = sessionStorage.EMAIL_USUARIO;
+        const divNaoLogado = document.getElementById("divNaoLogado");
+        const divLogado = document.getElementById("divLogado");
+        const guestCircle = document.getElementById("guestCircle");
+        const secDash = document.getElementById("sec_dash");
+
+
+
+        console.log(sessionStorage.NOME_USUARIO)
+        nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO;
+        if (emailUsuario && nomeUsuario) {
+
+            if (sessionStorage.TEMPO == undefined) {
+                document.getElementById('nao_fez_pesquisa').style.display = 'flex'
+            } else {
+                document.getElementById('conteudoDash').style.display = 'flex'
+            }
+
+
+
+
+            // Usuário está logado
+            divNaoLogado.style.display = "none";
+            guestCircle.style.display = "flex"; // Mostra o ícone do guest
+            divLogado.style.display = "flex";
+            nao_fez_pesquisa.style.display = 'flex'
+
+
+
+
+            // Exibe o nome do usuário
+
+        } else {
+            document.getElementById('nao_fez_login').style.display = 'flex'
+            // Usuário não está logado
+
+
+            guestCircle.style.display = "none"; // Esconde o ícone do guest
+            divLogado.style.display = "none";
+            secDash.style.display = "none";
+
+            nao_fez_login.style.display = 'flex'
+
+            conteudoDash.style.display = 'none'
+        }
+    }
+
+    function logout() {
+        // Limpa os dados do sessionStorage
+        sessionStorage.clear();
+
+        window.location = "index.html";
+    }
+
+    function carregarDash() {
+        listar10Melhores();
+        var tempo = sessionStorage.tempoGasto
+        var acertos = Number(sessionStorage.PONTOS)
+        var erros = 10 - Number(sessionStorage.PONTOS)
+
+
+        console.log(sessionStorage.TEMPO)
+        tempo_gasto.innerHTML = sessionStorage.TEMPO
+        percentual_acertos.innerHTML = `${sessionStorage.PORCENTAGEM} %`
+
+        var percentual = sessionStorage.PORCENTAGEM
+
+        if (percentual <= 20) {
+            nivel1.style.backgroundColor = 'rgb(180, 3, 3)'
+            percentual_acertos.style.color = 'rgb(180, 3, 3)'
+
+            container_do_nivel.style.backgroundColor = `rgba(180, 3, 3, 0.849)`
+            container_do_nivel.style.border = '6px solid rgba(180, 3, 3, 0.849)'
+            nome_do_nivel.innerHTML = `RARO`
+            nome_do_nivel.style.fontSize = `4.5vw`
+            nome_do_nivel.style.fontWeight = `700`
+            mensagem_nivel.innerHTML = `Falta TUDO! <br>Pelo visto, seu conhecimento é pouco estude um pouco mais em nosso site e refaça a pesquisa para tentar uma melhor nota!`
+        } else if (percentual <= 40) {
+            nivel1.style.backgroundColor = 'rgb(180, 3, 3)'
+            nivel2.style.backgroundColor = 'rgb(180, 3, 3)'
+            percentual_acertos.style.color = 'rgb(180, 3, 3)'
+            nome_do_nivel.style.fontSize = `4.5vw`
+            nome_do_nivel.style.fontWeight = `700`
+            container_do_nivel.style.backgroundColor = `rgba(180, 3, 3, 0.849)`
+            container_do_nivel.style.border = '6px solid rgba(180, 3, 3, 0.849)'
+            nome_do_nivel.innerHTML = `BISONHO`
+            mensagem_nivel.innerHTML = `Falta pouco pra ficar RUIM! <br>Você não conhece muito sobre militarismo, estude um pouco mais em nosso site e refaça a pesquisa para tentar uma melhor nota!`
+        } else if (percentual <= 60) {
+            nivel1.style.backgroundColor = 'rgb(180, 180, 1)'
+            nivel2.style.backgroundColor = 'rgb(180, 180, 1)'
+            nivel3.style.backgroundColor = 'rgb(180, 180, 1)'
+            percentual_acertos.style.color = 'rgb(180, 180, 1)'
+            nome_do_nivel.style.fontSize = `4.5vw`
+            nome_do_nivel.style.fontWeight = `700`
+            container_do_nivel.style.border = '6px solid rgb(180, 180, 1)'
+            container_do_nivel.style.backgroundColor = `rgba(180, 180, 1, 0.774)`
+            nome_do_nivel.innerHTML = `SAFO`
+            mensagem_nivel.innerHTML = `Começando a ficar RUIM! <br> Você está na média, estude um pouco mais em nosso site e refaça a pesquisa para tentar uma melhor nota!`
+        } else if (percentual <= 80) {
+            nivel1.style.backgroundColor = '#022E13'
+            nivel2.style.backgroundColor = '#022E13'
+            nivel3.style.backgroundColor = '#022E13'
+            nivel4.style.backgroundColor = '#022E13'
+            percentual_acertos.style.color = '#022E13'
+            nome_do_nivel.style.fontSize = `4.5vw`
+            nome_do_nivel.style.fontWeight = `700`
+            container_do_nivel.style.backgroundColor = `#011107d5`
+            container_do_nivel.style.border = '6px solid #022E13'
+            nome_do_nivel.innerHTML = `SAGAZ`
+            mensagem_nivel.innerHTML = `BOOOOM! <br>Você até conhece bem, porém, NUNCA SERÁ!<br> refaça a pesquisa para tentar uma melhor nota!`
+        } else {
+            nivel1.style.backgroundColor = '#196335'
+            nivel2.style.backgroundColor = '#196335'
+            nivel3.style.backgroundColor = '#196335'
+            nivel4.style.backgroundColor = '#196335'
+            nivel5.style.backgroundColor = '#196335'
+            percentual_acertos.style.color = '#196335'
+            nome_do_nivel.style.fontSize = `4.5vw`
+            nome_do_nivel.style.fontWeight = `700`
+            container_do_nivel.style.backgroundColor = `#011107d5`
+            container_do_nivel.style.border = '6px solid #022E13'
+            nome_do_nivel.innerHTML = `ANTIGÃO`
+            mensagem_nivel.innerHTML = `EXCELENTE! <br> Parabéns, você provou que conhece bem sobre a Policia do Exército e militarismo, que satisfação aspira!`
+        }
+
+
+        const ctx = document.getElementById('graficoPontuacao').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Acertos', 'Erros'],
+                datasets: [{
+                    label: 'Quantidade',
+                    data: [acertos, erros],
+                    backgroundColor: [
+                        '#19633594', // Cor para Acertos
+                        'rgba(180, 3, 3, 0.596)'  // Cor para Erros
+                    ],
+                    borderColor: [
+                        '#196335',
+                        'rgb(180, 3, 3)'
+                    ],
+                    borderWidth: 5,
+                    borderRadius: 10 // Arredondando as bordas superiores das barras
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Sua Pontuação:',
+                        font: {
+                            size: 30, // Aumentando o tamanho do título
+                            weight: 'bold'
+                        },
+                        color: '#022E13' // Cor verde para o título
+                    },
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#022E13', // Cor verde para rótulos
+                            font: {
+                                weight: 'bold',
+                                size: 30
+                            }
+                        }, grid: {
+                            display: false // Remove as linhas da grade no eixo y
+                        },
+
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1,
+                            color: 'black',
+                            font: {
+                                size: 20, // Aumentando o tamanho dos números do eixo Y
+                                weight: 'bold' // Deixando os números do eixo Y em negrito
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    }
+
+    function listar10Melhores() {
+        fetch("/usuarios/listar10Melhores", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(json => {
+                        console.log(json);
+                        var tamanho_lista = json.length;
+                        var estrutura = '';
+                        for (var i = 0; i < tamanho_lista; i++) {
+                            var nome_atual = json[i].nome;
+                            var ponto_atual = json[i].pontos;
+                            estrutura += `
+                            <p><b>${i+1}.</b> <span>${nome_atual}</span> <b>-</b> <b>${ponto_atual}</b> <span>Pontos</b></span>
+                            `
+                        }
+
+                        div_placar.innerHTML = estrutura;
+                    })
+                    console.log("Deu certo a LeaderBoard")
+                } else {
+                    throw console.log('Não deu certo a LeaderBoard!');
+                }
+            })
+            .catch(function (erro) {
+                console.error("Erro:", erro);
+            });
+    }
+</script>

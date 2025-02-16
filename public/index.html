@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="script.js" type="text/javascript" defer></script>
+    <title>Fluxo Certo</title>
+</head>
+
+<body>
+   <header>
+    <div class="div_logo">
+        <img class="img_trem" src="./assets/trem.png" alt="">
+        <img class="logo_texto" src="./assets/logo_extensa.png" alt="">
+    </div>
+    <nav>
+        <p>Sobre nós</p>
+        <p>Serviços</p>
+        <p>Suporte</p>
+    </nav>
+    <div class="div_entradas">
+        <p class="login">Entrar</p>
+        <p class="registrar">Registre-se</p>
+    </div>
+   </header>
+    <!-- COMEÇO DE TODO CONTEÚDO -->
+
+    <main>
+<section class="section_inicio">
+    <div class="div_controle">
+        <h1>Tenha o fluxo em seu controle.</h1>
+        <p>Tenha em <span>suas mãos </span>o controle do seu fluxo, <span>análise de
+            dados</span> para melhor direcionamento de suas rotas. <span>faça certo, use Fluxo!</span></p>
+            <div class="box_controle"><a href="" class="quero_ser_cliente">Quero ser um cliente &#8594;</a><a class="ja_sou_cliente" href="">Já sou cliente</a></div>
+    </div>
+    <div class="div_celular">
+        <img src="./assets/celular.png" alt="">
+    </div>
+</section>
+    </main>
+</body>
+
+</html>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    verificarLogin();
+});
+
+function verificarLogin() {
+    const emailUsuario = sessionStorage.EMAIL_USUARIO;
+    nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO;
+    const divNaoLogado = document.getElementById("divNaoLogado");
+    const divLogado = document.getElementById("divLogado");
+    const guestCircle = document.getElementById("guestCircle");
+    const spanNomeUsuario = document.getElementById("nomeUsuario");
+
+    if (emailUsuario && nomeUsuario) {
+        // Usuário está logado
+        divNaoLogado.style.display = "none";
+        guestCircle.style.display = "flex"; // Mostra o ícone do guest
+        divLogado.style.display = "flex";
+        spanNomeUsuario.innerText = nomeUsuario; // Exibe o nome do usuário        
+        nome_do_usuario.innerHTML = sessionStorage.NOME_USUARIO
+        
+
+    } else {
+        // Usuário não está logado
+        divNaoLogado.style.display = "flex";
+        guestCircle.style.display = "none"; // Esconde o ícone do guest
+        divLogado.style.display = "none";
+    }
+}
+
+function logout() {
+    // Limpa os dados do sessionStorage
+    sessionStorage.clear();
+
+    window.location = "index.html";
+}
+</script>

@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-optical-sizing: auto;
+    font-family: "Inter", serif;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    font-weight: 600;
+    color: inherit;
+    cursor:default;
+}
+header{
+    background-color: #F3F8FF;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    position: fixed;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    justify-content: space-around;
+}
+
+.img_trem{
+    width: 7.5vw;
+    height: 18vh;
+    margin-right: 0.5vw;
+    display: flex;
+    cursor: pointer;
+}
+.logo_texto{
+    width: 9vw;
+    height: 18vh;
+    margin-right: 0.5vw;
+    display: flex;
+    cursor: pointer;
+}
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30vw;
+    color: #02033B;
+    font-size: 1.2vw;
+}
+nav p{
+    cursor: pointer;
+    height: 4vw;
+    align-items: center;
+    display: flex;
+    width: 7vw;
+    justify-content: center;
+}
+nav p:hover{
+    font-weight: 800;
+    border-bottom: 3px solid #02033B;
+    transition: all 0.1s ease;
+   
+}
+
+.div_entradas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 17.5vw;
+}
+.div_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    width: 7vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    background-color: #4335DE;
+}
+.login:hover{
+    font-weight: 800;
+}
+.registrar{
+    width: 10vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid #4335DE;
+    align-items: center;
+    border-radius: 3vw;
+    cursor: pointer;
+    color: #4335DE;
+}
+.registrar:hover{
+    background-color: #4335DE;
+    color: white;
+    font-weight: 800;
+    transition: all 0.6s ease;
+}
+.section_inicio{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100vh;
+    background-image: url(../assets/circulo_background.png);
+    background-repeat: no-repeat;
+    background-position: -5vw;
+}
+.div_controle{
+    display: flex;
+    flex-direction: column;
+    color: #02033B;
+    width: 40vw;
+    height: 70vh;
+    margin-right: 3vw;
+}
+.div_controle h1{
+    font-size: 5vw;
+    margin-bottom: 3vw;
+}
+.div_controle p{
+    font-size:1.6vw;
+    margin-bottom: 2vw;
+}
+.div_controle span{
+    font-weight: 800;
+}
+.div_celular{
+    background-color: purple;
+    width: 40vw;
+    box-shadow: -25px -25px 0px #4335DE;
+    height: 80vh;
+    background-image: url(../assets/menino_celular.png);
+}
+.div_celular img{
+    width: 40vw;
+    margin-left: -7vw;
+}
+.box_controle{
+    display: flex;
+    width: 27vw;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.box_controle a{
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    font-weight:600;
+    cursor: pointer;
+
+}
+.quero_ser_cliente{
+    width: 15vw;
+    background-color: #FFC247;
+}
+.quero_ser_cliente:hover{
+    font-weight: 800;
+}
+.ja_sou_cliente{
+    width: 10vw;
+    border: 2.2px solid #02033B;
+}
+.ja_sou_cliente:hover{
+    border: none;
+    background-color: #FFC247;
+    font-weight: 900;
+}
+body{
+    background-color: #F3F8FF;
+}

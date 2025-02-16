@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilo.css"">
+  <link rel="icon" href="./assets/favicon-32x32.png" />
+    <script src="script.js" type="text/javascript" defer></script>
+    <title>PE!  - Contato</title>
+</head>
+
+<body>
+    <main style="overflow-x: auto;">
+        
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="box_logo">
+          <a href="index.html">  <h1 class="logo">PE!</h1>
+        </div>
+        <div class="box_nav">
+            <div class="nav_menu">
+                <a href="./sobre.html"><nav >Sobre</nav></a>
+                <a href="formacao.html"><nav >Formação</nav></a>
+                <a href="pesquisa.html"><nav >Pesquisa</nav></a>
+             <a href="contato.html">  <nav style="
+    border-bottom: 5px solid #022E13; font-weight: 700;">Contato</nav></a> 
+            </div>
+            <div class="nav_cadastro" id="divNaoLogado">
+               <a href="login.html"><nav class="fazerlogin">Login &rarr;</nav></a> 
+              <a href="cadastro.html"> <nav class="registrar">Registre-se agora &rarr;</nav></a> 
+            </div>
+            
+            <div id="guestCircle" class="guest-circle"  id="divLogado">
+                <img src="./assets/guest_icon.png" alt="Guest" class="guest-img">
+           
+           
+                <div class="modal">
+                    <h5>Olá, <span id="nomeUsuario"></span>!</h5>
+                  <p>Perfil</p>
+                  <p onclick="logout()">Sair</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    </main>
+            
+
+    <section class="section_contato">
+        <div class="container_contato">
+        <div class="box_fale">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                  <span id="mensagem_erro"></span>
+                </div>
+              </div>
+            <h1>Fale conosco</h1>
+            <h3>Precisa de ajuda em algo, alguma dúvida ou sugestão para nosso site?</h3> 
+            <p>Preencha nosso formulário e nosso time irá te fornecer o melhor suporte!</p>
+        </div>
+    <div class="box_form">
+        <p>Nome:</p>
+        <input type="text" name="" id="nome_input">
+        <p>Email:</p>
+        <input type="text" name="" id="email_input">
+        <p>Mensagem:</p>
+        <textarea id="mensagem_input" name="mensagem" rows="4" cols="50"></textarea>
+        <button onclick="cadastrarChamado()">Enviar mensagem</button>
+    
+        </div>
+    </div>
+    </section>
+    <footer>
+        <div class="container_footer">
+        <div class="box_header_footer"> 
+            <div class="box_logo_footer"><h1 class="logo_footer">PE!</h1></div>
+            <div class="box_redes"><img src="./assets/face_icon.png"><img src="./assets/insta_icon.png"><img src="./assets/twitter_icon.png"></div>
+        </div>
+        <div class="linha_footer"></div>
+        <div class="box_contato_footer">
+            <div class="box_contatos_footer"> <p>policiadoexercito@contato.com</p>
+                    <p> (11) 95883-6788</p>
+                
+               <p class="box_contatos_footer2"> Rua Haddock Lobo, 595 - Cerqueira César</p>
+                <p>São Paulo - SP</p>
+                <p>14144000</p>
+                </div>
+            <div class="box_footer_links">
+
+               <p>Política de Privacidade</p> 
+                
+            <p> Termos de Uso</p> 
+                
+        <p>   RDE</p> 
+                
+    <p>  Fale Conosco</p> </div>
+        </div>
+    </div>
+    </footer>
+
+    </body>
+    </html>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            verificarLogin();
+        });
+        
+        function verificarLogin() {
+            const emailUsuario = sessionStorage.EMAIL_USUARIO;
+            nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO;
+        
+            const divNaoLogado = document.getElementById("divNaoLogado");
+            const divLogado = document.getElementById("divLogado");
+            const guestCircle = document.getElementById("guestCircle");
+            const spanNomeUsuario = document.getElementById("nomeUsuario");
+        
+            if (emailUsuario && nomeUsuario) {
+                // Usuário está logado
+                divNaoLogado.style.display = "none";
+                guestCircle.style.display = "flex"; // Mostra o ícone do guest
+                divLogado.style.display = "flex";
+                spanNomeUsuario.innerText = nomeUsuario; // Exibe o nome do usuário
+            } else {
+                // Usuário não está logado
+                divNaoLogado.style.display = "flex";
+                guestCircle.style.display = "none"; // Esconde o ícone do guest
+                divLogado.style.display = "none";
+            }
+        }
+        
+        function logout() {
+            // Limpa os dados do sessionStorage
+            sessionStorage.clear();
+        
+            window.location = "index.html";
+        }
+
+
+        function cadastrarChamado() {
+    
+    const mensagemVar = mensagem_input.value
+    const nomeVar = nome_input.value
+    const emailVar = email_input.value
+
+    console.log(sessionStorage.ID_USUARIO)
+    const idUsuarioVar = sessionStorage.ID_USUARIO
+    // Limpar mensagens de erro anteriores
+    mensagem_erro.innerHTML = "";
+    cardErro.style.display = "none";
+
+    // Verificar campos obrigatórios
+    if (!nomeVar ||  !emailVar || !mensagemVar) {
+      mensagem_erro.innerHTML = "Todos os campos são obrigatórios!";
+      cardErro.style.display = "block";
+      return;
+    }
+
+    // Enviar os dados para o servidor
+    fetch("/usuarios/cadastrarChamado", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        mensagemServer: mensagemVar,
+        idUsuarioServer: idUsuarioVar
+      }),
+    })
+      .then(function (resposta) {
+        if (resposta.ok) {
+          mensagem_erro.innerHTML = "Chamado realizado com sucesso! Redirecionando...";
+          cardErro.style.display = "block";
+          setTimeout(() => {
+            window.location = "contato.html";
+          }, 2000);
+        } else {
+          throw "Erro ao realizar o chamado!";
+        }
+      })
+      .catch(function (erro) {
+        console.error("Erro:", erro);
+        mensagem_erro.innerHTML = "Erro no chamado. Tente novamente.";
+        cardErro.style.display = "block";
+      });
+  }
+        </script>
