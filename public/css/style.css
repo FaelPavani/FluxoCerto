@@ -37,6 +37,7 @@ header{
     width: 100%;
     height: 10vh;
     display: flex;
+    z-index: 1;
     position: fixed;
     background: linear-gradient(to bottom, #F3F8FF, #E7EFFA);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
@@ -298,7 +299,7 @@ body{
 }
 .section_home_suporte{
     width: 100%;
-    height: 75vh;
+    height: 88vh;
     background-color: #4335DE;
     display: flex;
     justify-content: space-evenly;
@@ -354,4 +355,140 @@ body{
     margin-left: -15vw;
     transform: rotate(-45deg); /* Corrige a rotação da imagem */
     
+}
+
+footer{
+    width: 100%;
+    height: 80vh;
+    background-color: #E7EFFA;
+    display: flex;
+    justify-content: center;
+}
+.section_footer{
+    width: 90vw;
+    height: 75vh;
+    border-radius: 2vw;
+    background-color: #02033B;
+    display: flex;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+}
+.container_caixas_footer{
+    width: 80vw;
+    margin-top: -8vw;
+display: flex;
+justify-content: space-around;
+align-items: center;
+    height: 40vh;
+}
+.box_footer{
+    height: 35vh;
+    width: 25.5vw;
+    border-radius: 2vw;
+    color: #02033B;
+    background-color: white;
+}
+.container_formulario{
+    display: flex;
+    align-items: center;
+    width: 80vw;
+    height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+}
+.box_entrarcontato{
+width: 30vw;
+height: 39vh;
+}
+.box_entrarcontato h3{
+    font-size: 2vw;
+    margin-bottom: 2vw;
+}
+ 
+.caixa_redes{
+    height: 10vh;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+.rede_social{
+    width: 2.2vw;
+    cursor: pointer;
+    margin-bottom: 10vw;
+    
+}
+.box_formulario_footer{
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    padding: 2vw;
+    flex-direction: column;
+}
+.box_formulario_footer p{
+    font-size: 1.5vw;
+}
+.box_formulario_footer input{
+    width: 17vw;
+    cursor: text;
+    border: none;
+    height: 5vh;
+    border-bottom: 2px solid #4335DE;
+    border-radius: 0.8vw;
+    padding: 1vw;
+    background-color: none;
+}
+.box_formulario_footer input::placeholder{
+
+}
+.box_nome_email{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 1vw;
+}
+.box_formulario_footer textarea{
+    width: 100%;
+    height: 10vh;
+    border: none;
+    border-bottom: 2px solid red;
+    padding-left: 1vw;
+    padding-top: 1vw;
+    cursor: text;
+    resize: none;
+    margin-bottom: 1vw;
+    
+    border-bottom: 2px solid #4335DE;
+    border-radius: 0.8vw;
+}
+.box_formulario_footer button{
+    border: none;
+    height: 10vh;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    background-color: #4335DE;
+    font-size: 1.5vw;
+}
+.box_footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1vw;
+}
+.box_footer img{
+    width: 5vw;
+    margin-bottom: 1vw;
+}
+.box_footer h4{
+    font-size: 1.5vw;
+    margin-bottom: 0.2vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 900;
+}
+.box_footer p{
+    font-size: 1.4vw;
+    padding: 1vw;
 }
