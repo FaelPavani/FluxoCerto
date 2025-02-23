@@ -34,6 +34,7 @@
 }
 header{
     background-color: #F3F8FF;
+    overflow: hidden;
     width: 100%;
     height: 10vh;
     display: flex;
