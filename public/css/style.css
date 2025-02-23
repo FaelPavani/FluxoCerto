@@ -39,7 +39,7 @@ header{
     display: flex;
     z-index: 1;
     position: fixed;
-    background: linear-gradient(to bottom, #F3F8FF, #E7EFFA);
+    background: linear-gradient(to bottom, white, #E7EFFA);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
     justify-content: space-around;
 }
@@ -134,7 +134,7 @@ nav p:hover{
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    height: 100vh;
+    height: 92vh;
     background-image: url(../assets/circulo_background.png);
     background-repeat: no-repeat;
     background-position: -5vw;
@@ -161,7 +161,7 @@ nav p:hover{
 .div_celular{
     width: 40vw;
     box-shadow: -25px -25px 0px #4335DE;
-    height: 80vh;
+    height: 73vh;
     background-image: url(../assets/menino_celular.png);
 }
 .div_celular img{
@@ -420,7 +420,7 @@ height: 39vh;
 }
 .box_formulario_footer{
     width: 40vw;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     padding: 2vw;
     flex-direction: column;
@@ -431,6 +431,8 @@ height: 39vh;
 .box_formulario_footer input{
     width: 17vw;
     cursor: text;
+    color: #02033B;
+
     border: none;
     height: 5vh;
     border-bottom: 2px solid #4335DE;
@@ -453,8 +455,10 @@ height: 39vh;
     height: 10vh;
     border: none;
     border-bottom: 2px solid red;
+    color: #02033B;
     padding-left: 1vw;
     padding-top: 1vw;
+    margin-top: 0.2vw;
     cursor: text;
     resize: none;
     margin-bottom: 1vw;
@@ -492,3 +496,50 @@ height: 39vh;
     font-size: 1.4vw;
     padding: 1vw;
 }
+.section_header_sobre{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10vw;
+    background-image: url(../assets/circulo_background.png);
+    background-repeat: no-repeat;
+    background-position: -5vw;
+    overflow: hidden;
+    height: 90vh;
+    color: #02033B;
+}
+.conteudo_sec_header{
+    margin-left: 10vw;
+    width: 40vw;
+    height: 50vh;
+    margin-top: 5vw;
+}
+.conteudo_sec_header h4{
+    font-size: 4vw;
+    margin-bottom: 2vw;
+    font-weight: 700;
+}
+.conteudo_sec_header span{
+    font-weight: 700;
+}
+.conteudo_sec_header p{
+    font-size: 1.8vw;
+}
+.img_sec_header{
+    background-color: pink;
+    border-radius: 50%;
+    width: 50vw;
+    transform: translate(5vw, 1vw) scale(1);
+    background-image:url(../assets/equipe.png);
+    background-repeat: no-repeat;
+    height: 105vh;
+    background-size: cover;
+    box-shadow: -10px -20px 0px #4335DE;
+}
+.section_sobre_empresa{
+    width: 100%;
+    height: 100vh;
+    background-color: #e6a739;
+}
+  
