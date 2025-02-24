@@ -540,7 +540,141 @@ height: 39vh;
 }
 .section_sobre_empresa{
     width: 100%;
-    height: 100vh;
+    height: 140vh;
     background-color: #e6a739;
+    display: flex;
+    align-items: center;
+    padding-top: 2vw;
+    color: #02033B;
+    flex-direction: column;
 }
-  
+.container_quem_somos{
+    width: 80vw;
+    height: 55.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.box_quem_somos{
+    width: 40vw;
+    height: 30vh;
+    font-size: 1.5vw;
+}
+.box_imagem_quem_somos{
+    background-color: white;
+    width: 30vw;
+    height: 59vh;
+    display: flex;
+    border-radius: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+.box_imagem_quem_somos img{
+    width: 25vw;
+    box-shadow: 15px 15px 0px #4335DE;
+}
+
+
+.container_quem_somos2{
+    width: 80vw;
+    height: 55.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.box_quem_somos2{
+    width: 40vw;
+    height: 30vh;
+    text-align: right;
+    font-size: 1.5vw;
+}
+.box_imagem_quem_somos2{
+    background-color: white;
+    width: 30vw;
+    height: 59vh;
+    display: flex;
+    border-radius: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+.box_imagem_quem_somos2 img{
+    width: 25vw;
+    background-color: purple;
+    box-shadow: -15px 15px 0px #4335DE;
+}
+.title_sobre{
+    align-self: flex-start;
+    margin-left: 6vw;
+    font-size: 3vw;
+    margin-top: 2vw;
+    font-weight: 700;
+}
+.section_valores{
+    width: 100%;
+    height: 100vh;
+    padding-top: 3vw;
+    display: flex;
+    background: linear-gradient(to left, #ffffff, #d1d0d0);
+    color: #02033B;
+}
+.container_valores{
+    margin-left: 10vw;
+    width: 44vw;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    z-index: 2;
+    flex-wrap: wrap;
+    height: 80vh;
+}
+.box_valores{
+    width: 21.5vw;
+    height: 38vh;
+    background-color: white;
+    display: flex;
+    padding-top: 1vw;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+.box_valores:hover{
+    background-color: #4335DE;
+    color: white;
+    transition: none;
+}
+.box_valores h4{
+    font-size: 4vw;
+    font-weight: 700;
+    margin-bottom: 1.5vw;
+}
+.box_valores p{
+    font-size: 1.3vw;
+   
+}
+.imagem_valores{
+    position: absolute;
+    width: 60vw;
+    margin-left: 28vw;
+    background-color: #4335DE;
+    z-index: 1;
+    margin-top: 7vw;
+}
+.blob_valores{
+    position: absolute;
+    width: 61vw;
+    margin-top: -10vw;
+    right: 0vw;
+}
+.title_valores{
+    font-size: 4vw;
+    position: absolute;
+    right: 10vw;
+    font-weight: 700;
+    color: #02033B;
+}
+.section_equipe{
+    width: 100%;
+    height: 100vh;
+}
