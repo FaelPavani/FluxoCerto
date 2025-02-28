@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d9d9d9;
+}
+
+/* Fundo do formulário */
+.background {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Caixa do formulário */
+.container {
+    background: #fbbc04;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+/* Estilização do logo */
+.logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+/* Texto do título */
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Inputs do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Botão de cadastro */
+button {
+    background: #001f5b;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #003080;
+}
