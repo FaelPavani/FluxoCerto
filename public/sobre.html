@@ -63,19 +63,19 @@
         <section class="section_valores">
             <div class="container_valores">
                 <div class="box_valores">
-                    <h4>01</h4>
+                    <h4>Inovação</h4>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
                 </div>
                 <div class="box_valores">
-                    <h4>02</h4>
+                    <h4>Transparência</h4>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
                 </div>
                 <div class="box_valores">
-                    <h4>03</h4>
+                    <h4>Eficiência</h4>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
                 </div>
                 <div class="box_valores">
-                    <h4>04</h4>
+                    <h4>Compromisso</h4>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
                 </div>
             </div>
@@ -87,7 +87,43 @@
         </section>
 
 <section class="section_equipe">
+    <h4 class="title_equipe">Equipe</h4>
+<div class="caixa_equipe">
+    <div class="imagem_equipe"></div>
+    <div class="container_equipe">
+        <div class="box_equipe joao">
+           <div class="box_nome ">João Luz</div>
+           <div class="box_cargo ">CARGO</div>
+           <div class="box_linkedin "><a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-luz-6b2109340/" target="_blank"><img src="./assets/linkedin_logo.png" alt=""></a></div>
+        </div>
+        <div class="box_equipe vivi">
+            <div class="box_nome ">Viviane dos Santos</div>
+           <div class="box_cargo ">CARGO</div>
+           <div class="box_linkedin "><a href="https://www.linkedin.com/in/viviane-santos-9293a32b7/" target="_blank"><img src="./assets/linkedin_logo.png" alt=""></a></div>
+        </div>
+        <div class="box_equipe pavani">
+            <div class="box_nome ">Rafael Pavani</div>
+           <div class="box_cargo ">CARGO</div>
+           <div class="box_linkedin "><a href="" target="_blank"><img src="./assets/linkedin_logo.png" alt=""></a></div>
+        </div>
+        <div class="box_equipe gustavo">
+            <div class="box_nome ">Gustavo Leite</div>
+           <div class="box_cargo ">CARGO</div>
+           <div class="box_linkedin "><a href="https://www.linkedin.com/in/gustavo-dos-santos-leite/" target="_blank"><img src="./assets/linkedin_logo.png" alt=""></a></div>
+        </div>
+        <div class="box_equipe padua">
+            <div class="box_nome ">Gabriel de Pádua</div>
+           <div class="box_cargo ">CARGO</div>
+           <div class="box_linkedin "><a href="" target="_blank"><img src="./assets/linkedin_logo.png" alt=""></a></div>
+        </div>
+        <div class="box_equipe reboucas">
+            <div class="box_nome ">Guilherme Rebouças</div>
+           <div class="box_cargo ">CARGO</div>
+           <div class="box_linkedin "><a href="https://www.linkedin.com/in/guilherme-rebou%C3%A7as-3ba519265/" target="_blank"><img src="./assets/linkedin_logo.png" alt=""></a></div>
+        </div>
+    </div>
 
+</div>
 </section>
 
 
@@ -212,4 +248,33 @@ window.addEventListener("scroll", () => {
 
     lastScrollTop = scrollTop;
 });
+
+
+const joaoElement = document.querySelector(".joao");
+const pavaniElement = document.querySelector(".pavani");
+const gustavoElement = document.querySelector(".gustavo");
+const paduaElement = document.querySelector(".padua");
+const reboucasElement = document.querySelector(".reboucas");
+const viviElement = document.querySelector(".vivi");
+
+    const imagemEquipe = document.querySelector(".imagem_equipe");
+
+    viviElement.addEventListener("mouseenter", () => {
+        imagemEquipe.style.backgroundImage = "url('./assets/vivi.jpeg')";
+    });
+    joaoElement.addEventListener("mouseenter", () => {
+        imagemEquipe.style.backgroundImage = "url('./assets/joao.jpeg')";
+    });
+    gustavoElement.addEventListener("mouseenter", () => {
+        imagemEquipe.style.backgroundImage = "url('./assets/gustavo.jpeg')";
+    });
+    paduaElement.addEventListener("mouseenter", () => {
+        imagemEquipe.style.backgroundImage = "url('./assets/padua.jpeg')";
+    });
+    reboucasElement.addEventListener("mouseenter", () => {
+        imagemEquipe.style.backgroundImage = "url('./assets/reboucas.jpeg')";
+    });
+    pavaniElement.addEventListener("mouseenter", () => {
+        imagemEquipe.style.backgroundImage = "url('./assets/pavani.jpeg')";
+    });
 </script>

@@ -38,7 +38,7 @@ header{
     width: 100%;
     height: 10vh;
     display: flex;
-    z-index: 1;
+    z-index: 5;
     position: fixed;
     background: linear-gradient(to bottom, white, #E7EFFA);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
@@ -541,7 +541,7 @@ height: 39vh;
 .section_sobre_empresa{
     width: 100%;
     height: 140vh;
-    background-color: #e6a739;
+    background: linear-gradient(to left, #d69b35, #ffd36b);
     display: flex;
     align-items: center;
     padding-top: 2vw;
@@ -637,15 +637,15 @@ height: 39vh;
     padding-top: 1vw;
     text-align: center;
     flex-direction: column;
+    border-radius: 0.6vw;
     align-items: center;
 }
 .box_valores:hover{
-    background-color: #4335DE;
-    color: white;
-    transition: none;
+    transform: scale(1.03);
+    color: #4335DE;
 }
 .box_valores h4{
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: 700;
     margin-bottom: 1.5vw;
 }
@@ -655,8 +655,8 @@ height: 39vh;
 }
 .imagem_valores{
     position: absolute;
-    width: 60vw;
-    margin-left: 28vw;
+    width: 40vw;
+    right: 16vw;
     background-color: #4335DE;
     z-index: 1;
     margin-top: 7vw;
@@ -668,13 +668,108 @@ height: 39vh;
     right: 0vw;
 }
 .title_valores{
-    font-size: 4vw;
+    font-size: 3.8vw;
     position: absolute;
-    right: 10vw;
+    right: 11vw;
+    margin-top: 2vw;
     font-weight: 700;
-    color: #02033B;
+    color: white;
 }
 .section_equipe{
     width: 100%;
-    height: 100vh;
+    height: 135vh;
+    background-color: white;
+    background: linear-gradient(to bottom, white, #f3f4f5);
+    display: flex;
+    padding-top: 2vw;
+    align-items: center;
+    flex-direction: column;
+}
+.title_equipe{
+    font-size: 5vw;
+    font-weight: 600;
+    align-self: flex-start;
+    margin-bottom: 0.2vw;
+    margin-left: 5.5vw;
+    color: #02033B;
+}
+.caixa_equipe{
+    display: flex;
+}
+.imagem_equipe{
+    margin-right: 3vw;
+    width: 35vw;
+    height: 90vh;
+    background-image: url(../assets/joao.jpeg);
+    background-size: cover;
+    border-radius: 1.2vw;
+    box-shadow: -17px 17px 0px #FDB235;
+    border: 3px solid #02033B;
+}
+.container_equipe{
+    width: 50vw;
+    height: 90vh;
+    border-top:2px solid #02033B ;
+    color: #02033B;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: space-around;    
+}
+.box_equipe{
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    width: 100%;  
+    height: 14.3vh; 
+    align-items: center;
+    border-bottom: 2px solid #02033B;
+}
+.box_equipe img{
+    width: 4vw;
+    justify-self: end;
+}
+.box_equipe:hover{
+    color: #FDB235;
+    transition: all 0.1s ease;
+
+    border-bottom: 2px solid #FDB235;
+}
+.box_equipe:hover .box_nome{
+    font-weight: 700;
+}
+.box_equipe:hover .box_linkedin img{
+    background-color: #FDB235;
+    border: none;
+}
+.box_nome{
+    width: 16.66666666666667vw;
+    height: 14vh;
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+}
+.box_cargo{
+    width: 16.66666666666667vw;
+    height: 14vh;
+    font-weight: 600;
+    display: flex;
+    font-size: 1.5vw;
+    justify-content: center;
+    align-items: center;
+}
+.box_linkedin{
+    width: 16.66666666666667vw;
+    height: 14vh;
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+    justify-content: end;
+}
+.box_linkedin img{
+    padding: 1.15vw;
+    border-radius: 0.5vw;
+    border: 1px solid #d1d0d0;
+    cursor: pointer;
+
 }
