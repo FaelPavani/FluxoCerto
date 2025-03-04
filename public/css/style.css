@@ -298,6 +298,82 @@ body{
     font-weight: 800;
     cursor: pointer;
 }
+
+
+
+.section_missao{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    transition: all 4s ease-in;
+    background-image: url(../assets/wave.svg);
+    background-position: bottom;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+.box_missao{
+    width: 30vw;
+    height: 40vh;
+    border-radius: 4vw;
+    border: 5px solid #E7EFFA;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+.box_missao h4{
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    
+    font-size: 2.4vw;
+    font-weight: 700;
+    color: #02033B;
+}
+.box_missao p{
+    margin-top: 0.5vw;
+    width: 26vw;
+}
+
+.icones{
+    width: 8vw;
+    height: 10vh;
+    margin-top: 1vw;
+}
+.visao{
+    background-image: url(../assets/icon_eye_blue.png);
+    background-size: cover;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.missao{
+    background-image: url(../assets/mission_icon_blue.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.box_missao:hover .missao{
+    background-image: url(../assets/mission_icon_orange.png);
+}
+.box_missao:hover .visao{
+    background-image: url(../assets/icon_eye_orange.png);
+}
+.box_missao:hover{
+    color: #FFC247;
+    transition: 0s;
+}
+.box_missao:hover h4{
+    color: #FFC247;
+    transition: 0s;
+}
+.box_missao:hover p{
+    color: #FFC247;
+    transition: 0s;
+}
 .section_home_suporte{
     width: 100%;
     height: 88vh;
@@ -389,6 +465,10 @@ align-items: center;
     border-radius: 2vw;
     color: #02033B;
     background-color: white;
+}
+.box_footer:hover{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
 }
 .container_formulario{
     display: flex;
@@ -541,7 +621,7 @@ height: 39vh;
 .section_sobre_empresa{
     width: 100%;
     height: 140vh;
-    background: linear-gradient(to left, #d69b35, #ffd36b);
+    background: linear-gradient(to bottom, #e6a739,#ffd36b,#ffd36b,#ffd36b, #F3F8FF);
     display: flex;
     align-items: center;
     padding-top: 2vw;
@@ -607,7 +687,7 @@ height: 39vh;
 .title_sobre{
     align-self: flex-start;
     margin-left: 6vw;
-    font-size: 3vw;
+    font-size: 3.5vw;
     margin-top: 2vw;
     font-weight: 700;
 }
@@ -616,7 +696,7 @@ height: 39vh;
     height: 100vh;
     padding-top: 3vw;
     display: flex;
-    background: linear-gradient(to left, #ffffff, #d1d0d0);
+    background: linear-gradient(to top, #ffffff, #E7EFFA);
     color: #02033B;
 }
 .container_valores{
@@ -634,28 +714,31 @@ height: 39vh;
     height: 38vh;
     background-color: white;
     display: flex;
-    padding-top: 1vw;
+    padding-top: 2vw;
     text-align: center;
     flex-direction: column;
     border-radius: 0.6vw;
     align-items: center;
 }
 .box_valores:hover{
-    transform: scale(1.03);
-    color: #4335DE;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+        color: #4335DE;
 }
 .box_valores h4{
     font-size: 3vw;
     font-weight: 700;
-    margin-bottom: 1.5vw;
+    margin-bottom: 1.6vw;
 }
 .box_valores p{
-    font-size: 1.3vw;
-   
+    font-size: 1.6vw;
+    width: 16vw;
+    font-weight: 500;
 }
 .imagem_valores{
     position: absolute;
     width: 40vw;
+    border-radius: 0.8vw;
     right: 16vw;
     background-color: #4335DE;
     z-index: 1;
@@ -679,7 +762,7 @@ height: 39vh;
     width: 100%;
     height: 135vh;
     background-color: white;
-    background: linear-gradient(to bottom, white, #f3f4f5);
+    background: linear-gradient(to bottom, white, white, #E7EFFA);
     display: flex;
     padding-top: 2vw;
     align-items: center;
