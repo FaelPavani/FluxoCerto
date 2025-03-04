@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+/* Centraliza e dá fundo branco para a tela de login */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #d9d9d9;
+}
+
+/* Caixa do login */
+.login-box {
+    background: white;
+    padding: 260px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Fundo amarelo dentro da caixa */
+.login-box {
+    background: #FFC247;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+/* Estilização do logo */
+.logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+/* Títulos e subtítulos */
+h2 {
+    color: #02033B;
+}
+
+p {
+    color: #02033B;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Inputs do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #02033B;
+    width: 100%;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Botão de login */
+button {
+    background: #02033B;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #02033B;
+}
+
+/* Texto de cadastro */
+.register-text {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #02033B;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
