@@ -7,6 +7,7 @@
     <title>Cadastro</title>
 
     <link rel="stylesheet" href="css/cadastro.css">
+    <script src="js/validacao.js"></script>
 </head>
 
 <body>
@@ -18,21 +19,38 @@
             </div>
             <h2>Seja bem-vindo!</h2>
 
-            <form action="#">
-                <label for="empresa">Empresa</label>
-                <input type="text" id="empresa" name="empresa" required>
+            <label for="inpNomeFantasia">Nome fantasia</label>
+            <input type="text" id="inpNomeFantasia" name="inpNomeFantasia" required>
 
-                <label for="razao-social">Razão Social</label>
-                <input type="text" id="razao-social" name="razao-social" required>
+            <label for="inpRazaoSocial">Razão Social</label>
+            <input type="text" id="inpRazaoSocial" name="inpRazaoSocial" required>
 
-                <label for="cnpj">CNPJ</label>
-                <input type="text" id="cnpj" name="cnpj" required>
+            <label for="inpEmail">Email</label>
+            <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required>
 
-                <label for="endereco">Endereço</label>
-                <input type="text" id="endereco" name="endereco" required>
+            <label for="inpCnpj">CNPJ</label>
+            <input type="text" id="inpCnpj" name="inpCnpj" oninput="validarCnpj()" required>
 
-                <button type="submit">Cadastrar</button>
-            </form>
+            <label for="inpSenha">Senha</label>
+            <input type="text" id="inpSenha" name="inpSenha" oninput="validarSenha()" required>
+
+            <label for="inpConfirma">Confirme a senha</label>
+            <input type="text" id="inpConfirma" name="inpConfirma" oninput="validarConfirm()" required>
+
+            <span style="display: none;" id="erroSenha">
+                <ul>
+                    <p id="senhasIdenticas">As senhas devem ser idênticas</p>
+                    <li class="col1" id="qtdCaractere">Pelo menos 8 caracteres</li>
+                    <li class="col1" id="minuscula">Uma letra minuscula</li>
+                    <li class="col1" id="maiuscula">Uma letra maiuscula</li>
+        
+                    <li class="col2" id="caractereEspecial">Um caractere especial</li>
+                    <li class="col2" id="numero">Um número</li>
+                </ul>
+            </span>
+            <p><span id="spanErro"></span></p>
+
+            <button type="submit">Cadastrar</button>
         </div>
     </div>
 
