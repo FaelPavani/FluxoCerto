@@ -28,6 +28,9 @@
    </header>
 
    <main>
+
+
+    
     <section class="section_header_sobre">
         <div class="conteudo_sec_header">
             <h4>Suporte</h4>
@@ -35,6 +38,36 @@
         </div>
         <div class="imagem_suporte">
         </div>
+    </section>
+    <section class="section_faq">
+        <div class="container_faq">
+            <div class="esquerdo_faq">
+                <h4>FAQs.</h4>
+                <div class="box_faq">
+                    <div class="caixa_faq" data-index="0">O que é o FluxoCerto?</div>
+                    <div class="caixa_faq" data-index="1">Como funciona o monitoramento de fluxo?</div>
+                    <div class="caixa_faq" data-index="2">Quais são os principais benefícios?</div>
+                    <div class="caixa_faq" data-index="3">O serviço pode ser integrado com outros sistemas?</div>
+                    <div class="caixa_faq" data-index="4">Quais tipos de empresas podem usar?</div>
+                    <div class="caixa_faq" data-index="5">O suporte técnico está disponível 24/7?</div>
+                </div>
+            </div>
+            <div class="direito_faq">
+                <h4>Respostas.</h4>
+                <div class="box_resposta">
+                    <div style="display: flex;" class="resposta" data-index="0">O FluxoCerto é uma solução para a gestão do tráfego de pessoas no sistema metrôviário.</div>
+                    <div style="display: none;" class="resposta" data-index="1">O nosso sistema faz a análise de uma base de dados retornando os melhores resultados pra você.</div>
+                    <div style="display: none;" class="resposta" data-index="2">Melhora a eficiência operacional, reduz custos e melhora a experiência do usuário.</div>
+                    <div style="display: none;" class="resposta" data-index="3">Sim! Possuímos APIs para integração com diversos sistemas.</div>
+                    <div style="display: none;" class="resposta" data-index="4">Empresas do âmbito metrôviário.</div>
+                    <div style="display: none;" class="resposta" data-index="5">Sim, oferecemos suporte 24h por dia, 7 dias por semana.</div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="title_sup">Não encontrou sua dúvida? </h4><h4 class="title_sup2">Entre em contato conosco!</h4>
+        
+       
     </section>
 
     <section class="section_suporte">
@@ -60,32 +93,6 @@
 
     </section>
 
-    <section class="section_faq">
-        <div class="container_faq">
-            <div class="esquerdo_faq">
-                <h4>FAQs.</h4>
-                <div class="box_faq">
-                    <div class="caixa_faq" data-index="0">O que é o FluxoCerto?</div>
-                    <div class="caixa_faq" data-index="1">Como funciona o monitoramento de fluxo?</div>
-                    <div class="caixa_faq" data-index="2">Quais são os principais benefícios?</div>
-                    <div class="caixa_faq" data-index="3">O serviço pode ser integrado com outros sistemas?</div>
-                    <div class="caixa_faq" data-index="4">Quais tipos de empresas podem usar?</div>
-                    <div class="caixa_faq" data-index="5">O suporte técnico está disponível 24/7?</div>
-                </div>
-            </div>
-            <div class="direito_faq">
-                <h4>Respostas.</h4>
-                <div class="box_resposta">
-                    <div class="resposta" data-index="0">O FluxoCerto é uma solução para monitoramento inteligente de fluxo de pessoas e veículos.</div>
-                    <div class="resposta" data-index="1">Nosso sistema utiliza sensores e IA para capturar e analisar dados de fluxo.</div>
-                    <div class="resposta" data-index="2">Melhora a eficiência operacional, reduz custos e melhora a experiência do usuário.</div>
-                    <div class="resposta" data-index="3">Sim! Possuímos APIs para integração com diversos sistemas.</div>
-                    <div class="resposta" data-index="4">Shoppings, hospitais, transportes públicos, eventos e muito mais.</div>
-                    <div class="resposta" data-index="5">Sim, oferecemos suporte 24h por dia, 7 dias por semana.</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
    </main>
 
@@ -217,16 +224,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const faqs = document.querySelectorAll(".caixa_faq");
     const respostas = document.querySelectorAll(".resposta");
 
-    faqs.forEach((faq) => {
+    function selecionarFAQ(index) {
+        faqs.forEach(item => {
+            item.style.backgroundColor = ""; 
+            item.style.color = ""; 
+            item.style.fontWeight = "400";
+        });
+
+        respostas.forEach(resp => resp.style.display = "none"); 
+
+        const selectedFAQ = document.querySelector(`.caixa_faq[data-index='${index}']`);
+        const selectedAnswer = document.querySelector(`.resposta[data-index='${index}']`);
+
+        if (selectedFAQ && selectedAnswer) {
+            selectedFAQ.style.backgroundColor = "#02033B";
+            selectedFAQ.style.color = "#FFFFFF";
+            selectedFAQ.style.fontWeight = "700";
+
+            selectedAnswer.style.display = "flex";
+        }
+    }
+
+    selecionarFAQ(0);
+
+    faqs.forEach(faq => {
         faq.addEventListener("click", function () {
             const index = this.getAttribute("data-index");
-
-            // Esconde todas as respostas
-            respostas.forEach(res => res.style.display = "none");
-
-            // Exibe apenas a resposta correspondente
-            document.querySelector(`.resposta[data-index="${index}"]`).style.display = "block";
+            selecionarFAQ(index);
         });
     });
 });
+
 </script>

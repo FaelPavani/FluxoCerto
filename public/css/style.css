@@ -938,7 +938,7 @@ height: 39vh;
 
 .section_suporte{
     width: 100%;
-    height: 110vh;
+    height: 120vh;
     background: linear-gradient(to bottom, #F7C95F, #FDB235);
     display: flex;
     justify-content: center;
@@ -953,7 +953,7 @@ height: 39vh;
     justify-content: content;
     flex-direction: column;
     align-items: center;
-    padding-top: 3vw;
+    padding-top: 1vw;
 }
 .box_suporte{
     display: flex;
@@ -1049,17 +1049,20 @@ height: 39vh;
 
 .section_faq{
     width: 100%;
-    height: 90vh;
-    background-color: red;
-    align-items: center;
+    height: 110vh;
+    background: linear-gradient(to top, #F7C95F, #FDB235);
     display: flex;
-    justify-content: center;
+    padding-top: 5vw;
+    flex-direction: column;
+    align-items: center;
 }
+
 .container_faq{
     width: 80vw;
     height: 80vh;
-    background-color: green;
+    background-color: white;
     display: flex;
+    border-radius: 2vw;
     align-items: center;
     justify-content: space-around;
 }
@@ -1069,7 +1072,6 @@ height: 39vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: aqua;
 }
 .direito_faq{
     width: 38vw;
@@ -1077,52 +1079,79 @@ height: 39vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: purple;
 }
 .box_faq{
     width: 38vw; 
-    overflow: scroll;
+    overflow-y: scroll;
     height: 55vh;
     padding: 1vw;
-    padding-right: 10vw;
-    background-color: pink;
 }
 .box_faq::-webkit-scrollbar {
-    width: 2vw; /* Largura da barra */
+    width: 2vw; /* Define a largura total da barra de rolagem */
 }
 
-/* Fundo da barra de rolagem */
+/* Estiliza o fundo (trilha) da barra de rolagem */
 .box_faq::-webkit-scrollbar-track {
-    background: white; /* Cinza claro */
-    border-radius: 10px;
-    
+    background: #f0f0f0; /* Cor do fundo da trilha */
+    border-radius: 2vw; /* Cantos arredondados */
+    margin: 10px; /* Margem para deixar menor que o container */
 }
 
-/* O "thumb" (a parte que se move) */
+/* Estiliza o próprio scroll (alça que se move) */
 .box_faq::-webkit-scrollbar-thumb {
-    background: #dcdcdc; /* Cinza intermediário */
-    border-radius: 10px;
+    background: #ccc; /* Cor do scroll */
+    border-radius: 2vw; /* Cantos arredondados */
+    height: 20px; /* Tamanho menor do que a trilha */
+    border: 2px solid #f0f0f0; /* Deixa um espaço entre o scroll e a trilha */
 }
 
-/* Efeito ao passar o mouse */
+/* Ao passar o mouse na barra de rolagem */
 .box_faq::-webkit-scrollbar-thumb:hover {
-    background: #bfbfbf; /* Tom mais escuro ao passar o mouse */
+    background: #aaa; /* Muda a cor ao passar o mouse */
 }
+
 .box_resposta{
     width: 38vw; 
     height: 55vh;
-    background-color: pink;
+    background-color:#4335DE;
+    font-size: 2vw;
+    color: white;
+    font-weight: 700;
+    border-radius: 0.8vw;
+    padding: 2vw;
 }
 .container_faq h4{
     font-size: 5vw;
     font-weight: 600;
+    margin-left: 1vw;
+    color: #02033B;
     margin-bottom: 2vw;
 }
 .caixa_faq{
     width: 34vw;
     height: 15vh;
+    display: flex;
     margin-bottom: 1vw;
+    align-items: center;
+    padding-left: 2vw;
     border-radius: 0.8vw;
+    color: #02033B;
+    background-color: #dcdcdc;
     cursor: pointer;
-    background-color: mediumorchid;
+    font-size: 1.5vw;
+}
+.box_resposta div{
+    font-weight: 700;
+
+}
+.title_sup{
+    font-size: 4vw;
+    margin-top: 9vw;
+    color: #02033B;
+    font-weight: 800;
+}
+.title_sup2{
+    font-size: 3vw;
+    color: #02033B;
+    font-weight: 600;
 }
