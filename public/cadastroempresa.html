@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="css/cadastro.css">
+    <script src="js/validacao.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/trem_roxo.png" alt="FluxoCerto">
+                <img src="assets/logo_extensa.png" alt="">
+            </div>
+            <h2>Seja bem-vindo!</h2>
+
+            <label for="inpNomeFantasia">Nome fantasia</label>
+            <input type="text" id="inpNomeFantasia" name="inpNomeFantasia" required>
+
+            <label for="inpRazaoSocial">Razão Social</label>
+            <input type="text" id="inpRazaoSocial" name="inpRazaoSocial" required>
+
+            <label for="inpEmail">Email</label>
+            <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required>
+
+            <label for="inpCnpj">CNPJ</label>
+            <input type="text" id="inpCnpj" name="inpCnpj" oninput="validarCnpj()" required>
+
+            <label for="inpSenha">Senha</label>
+            <input type="text" id="inpSenha" name="inpSenha" oninput="validarSenha()" required>
+
+            <label for="inpConfirma">Confirme a senha</label>
+            <input type="text" id="inpConfirma" name="inpConfirma" oninput="validarConfirm()" required>
+
+            <span style="display: none;" id="erroSenha">
+                <ul>
+                    <p id="senhasIdenticas">As senhas devem ser idênticas</p>
+                    <li class="col1" id="qtdCaractere">Pelo menos 8 caracteres</li>
+                    <li class="col1" id="minuscula">Uma letra minuscula</li>
+                    <li class="col1" id="maiuscula">Uma letra maiuscula</li>
+        
+                    <li class="col2" id="caractereEspecial">Um caractere especial</li>
+                    <li class="col2" id="numero">Um número</li>
+                </ul>
+            </span>
+            <p><span id="spanErro"></span></p>
+
+            <button type="submit">Cadastrar</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
