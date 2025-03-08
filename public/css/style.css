@@ -1270,12 +1270,11 @@ height: 39vh;
     background-color: none;
     border-radius: 0.8vw;
     padding: 1vw;
-    width: 457.61px;
+    width: 33.3vw;
     height:60px;
 }
 .container_formulario_login a{
     align-self: end;
-    border-bottom: 1px solid #02033B;
     cursor: pointer;
     margin-top: 0.8vw;
     font-size: 1vw;
@@ -1318,6 +1317,169 @@ height: 39vh;
     position: absolute;
     bottom: 1vw;
     left: -80vw;
-    z-index: 2;
+    z-index: 1;
     transform: translateY(152vw);
+}
+
+
+/*CADASTRO*/
+
+
+.corpo_cadastro{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../assets/fundo.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    align-items: flex-end;
+    padding-bottom: 2vw;
+}
+
+.section_cadastro {
+    z-index: 1;
+    width: 75vw;
+    border-radius: 2vw;
+    height: 85vh;
+    display: flex;
+    color: #02033B;
+    background: linear-gradient(to bottom, white, white, #f1f1f1);
+    padding-top: 1vw;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -25px 15px 0px #4335DE;
+
+}
+.box_title_cadastro{
+    align-self: flex-start;
+    margin-left: 3vw;
+}
+.box_title_cadastro h6{ 
+     font-size:1.5vw;
+    color: #bebdbd;
+    margin-bottom: 0.2vw
+}
+.box_title_cadastro h2{
+    font-size: 2.4vw;
+    font-weight: 800;
+    margin-bottom: 1vw;
+}
+.section_cadastro input {
+    cursor: text;
+    border: 1px solid #02033B;
+    background-color: none;
+    border-radius: 0.8vw;
+    padding: 1vw;
+   width: 33vw;
+    height:10.2vh;
+}
+.container_cadastro{
+    margin-left: 1.2vw;
+    width: 68vw;
+    height: 45vh;
+    display: grid; /* Ativa o Grid */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas de tamanhos iguais */
+    justify-content: space-between;
+
+}
+.box_input {
+    width: 33vw;
+    height: 12.5vh;
+    display: flex;
+    flex-direction: column;
+}
+.container_cadastro label{
+    font-size: 1.5vw;
+}
+
+.mensagem_erro{
+    width: 25vw;
+    font-size: 1.3vw;
+   padding-top: 0.5vw;
+    height: 23vh;
+    color: white;
+    padding-left: 1vw;
+    border-radius: 1.3vw;
+    background-color: #02033B;
+}
+.mensagem_erro li{
+    text-decoration: none;
+    list-style: none;
+}
+
+.box_mensagem_enviar{
+    display: flex;
+    width: 70vw;
+    justify-content: space-between;
+    height: 22vh;
+}
+.box_mensagem_enviar button{
+    border: none;
+    background-color: #4335DE;
+    font-size: 1.5vw; 
+    font-weight: 600;
+    align-self: flex-end;
+    justify-self: flex-end;
+    width: 17vw;
+    border-radius: 1.2vw;
+    height: 10vh;
+    color: white;
+    cursor: pointer;
+}
+.box_mensagem_enviar button:hover{
+    transform: scale(1.02);
+}
+.mensagem_erro_cnpj_email{
+    width: 25vw;
+    font-size: 1.3vw;
+   padding-top: 1vw;
+    height: 23vh;
+    color: white;
+    padding-left: 1vw;
+    border-radius: 1.3vw;
+    background-color: #02033B;
+}
+.logo_cadastro{
+    position: absolute;
+    top: 0.5vw;
+    cursor: pointer;
+    left: 1vw;
+    width: 8vw;
+}
+.box_ja_tem_conta{
+    display: flex;
+    position: absolute;
+    width: 25vw;
+    height: 8vh;
+    border-radius: 0.5vw;
+    box-shadow: 5px 5px 0px #4335DE;
+    top: 0.5vw;
+    right: 1vw;
+    background-color: white;
+    justify-content: center;
+
+    align-items: center;
+}
+.box_ja_tem_conta button{
+    width: 10vw;
+    margin-left: 1vw;
+    border: none;
+    border-radius: 1.2vw;
+    height: 6.5vh;
+    border: 2px solid #02033B;
+    cursor: pointer;
+    background: none;
+}
+.box_ja_tem_conta h2{
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+.box_ja_tem_conta button:hover{
+    background-color: #4335DE;
+    border: none;
+    color: white;
+    transform: scale(1.05);
+    font-weight: 800;
 }
