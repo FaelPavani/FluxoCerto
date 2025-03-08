@@ -164,6 +164,7 @@ nav p:hover{
     box-shadow: -25px -25px 0px #4335DE;
     height: 73vh;
     background-image: url(../assets/menino_celular.png);
+    background-size: cover;
 }
 .div_celular img{
     width: 40vw;
