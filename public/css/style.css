@@ -1155,3 +1155,150 @@ height: 39vh;
     color: #02033B;
     font-weight: 600;
 }
+
+
+/*LOGIN*/
+.corpo_login{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../assets/fundo.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.logo_login{
+    position: absolute;
+    top: 0.5vw;
+    cursor: pointer;
+    left: 1vw;
+    width: 10vw;
+}
+.section_login{
+    width: 92vw;
+    height: 87vh;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: flex;
+}
+.container_login{
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 4vw;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+.container_login h3{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-weight: 800;
+    font-size: 3vw;
+ }
+.container_login p{
+   width: 30vw;
+   text-align: left;
+   font-size: 2vw;
+   font-weight: 500;
+}
+.box_logo_login{
+    display: flex;
+    font-size: 3vw;
+    font-weight: 900;
+    margin-bottom: 2vw;
+    margin-top: 5vw;
+}
+.box_logo_login h1{
+    font-weight: 900;
+    color: #02033B;
+}
+.container_formulario_login{
+    width: 40vw;
+    height: 87vh;
+    border-radius: 2vw 2vw 0 0;
+    background-color: #ffff;
+    background: linear-gradient(to bottom, white, white, #f1f1f1);
+    padding-top: 2vw;
+    padding-right: 3vw;
+    padding-left: 3vw;
+    padding-bottom: 1vw;
+
+    display: flex;
+    color: #02033B;
+    flex-direction: column;
+    /* box-shadow: 7px 7px 0px #02033B; */
+
+}
+.container_formulario_login h6{
+    font-size:1.5vw;
+    color: #bebdbd;
+    margin-bottom: 0.2vw
+}
+.container_formulario_login h2{
+    font-size: 2.4vw;
+    font-weight: 800;
+    margin-bottom: 0.5vw;
+}
+.email_input{
+    background-color: white;
+    padding: 0.3vw;
+    position: absolute;
+    margin-top: 5.8vw;
+    margin-left: 1.1vw;
+}
+.senha_input{
+    background-color: white;
+    padding: 0.3vw;
+    position: absolute;
+    margin-top: 11.8vw;
+    margin-left: 1.1vw;
+}
+.container_formulario_login input{
+    margin-top: 1.5vw;
+    cursor: text;
+    border: 1px solid #02033B;
+    background-color: none;
+    border-radius: 0.8vw;
+    padding: 1vw;
+    width: 457.61px;
+    height:60px;
+}
+.container_formulario_login a{
+    align-self: end;
+    border-bottom: 1px solid #02033B;
+    cursor: pointer;
+    margin-top: 0.8vw;
+    font-size: 1vw;
+    margin-bottom: 0.8vw;
+}
+.container_formulario_login button{
+    border: none;
+    margin-top: 1.2vw;
+    cursor: pointer;
+    color: white;
+    background-color: #02033B;
+    font-size: 1.2vw;
+    font-weight: 600;
+    width: 33.5vw;
+    height: 9vh;
+    border-radius:0.8vw ;
+
+}
+.linha_login{
+    width: 14vw;
+    border-bottom: 0.1vw solid #02033b67;
+    margin-bottom: 0.6vw;
+}
+.ou_login{
+    margin-left: 1.8vw;
+    justify-self: center;
+    margin-right: 1.8vw;
+}
+.container_formulario_login h3{
+    margin-top: 1vw;
+    margin-bottom: 0.5vw;
+    font-weight: 800;
+}
