@@ -867,6 +867,7 @@ height: 39vh;
 .div_servicos{
     width: 40vw;
     box-shadow: -25px -25px 0px #4335DE;
+    background-size: cover;
     height: 73vh;
     background-image: url(../assets/servicos.png);
 }
@@ -1165,6 +1166,8 @@ height: 39vh;
     background-size: cover;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    z-index: 0;
     align-items: flex-end;
 }
 .logo_login{
@@ -1180,15 +1183,18 @@ height: 39vh;
     justify-content: flex-end;
     align-items: flex-end;
     display: flex;
+    z-index: 2;
 }
 .container_login{
     width: 40vw;
     height: 80vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: start;
     margin-right: 4vw;
-    color: white;
+    color: #4335DE;
+    color: #02033B;
     font-size: 1.5vw;
     font-weight: 500;
 }
@@ -1221,6 +1227,7 @@ height: 39vh;
     border-radius: 2vw 2vw 0 0;
     background-color: #ffff;
     background: linear-gradient(to bottom, white, white, #f1f1f1);
+    box-shadow: -15px 15px 0px #4335DE;
     padding-top: 2vw;
     padding-right: 3vw;
     padding-left: 3vw;
@@ -1279,13 +1286,17 @@ height: 39vh;
     margin-top: 1.2vw;
     cursor: pointer;
     color: white;
-    background-color: #02033B;
+    background-color: #4335DE;
     font-size: 1.2vw;
-    font-weight: 600;
+    font-weight: 700;
     width: 33.5vw;
     height: 9vh;
     border-radius:0.8vw ;
 
+}
+.container_formulario_login button:hover{
+    transform: scale(1.01);
+    font-weight: 900;
 }
 .linha_login{
     width: 14vw;
@@ -1301,4 +1312,12 @@ height: 39vh;
     margin-top: 1vw;
     margin-bottom: 0.5vw;
     font-weight: 800;
+}
+.circle_login{
+    width: 190vw;
+    position: absolute;
+    bottom: 1vw;
+    left: -80vw;
+    z-index: 2;
+    transform: translateY(152vw);
 }
