@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="./assets/trem_icone.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 
@@ -29,25 +30,25 @@
 
             <div class="box_input">
             <label for="inpNomeFantasia">Nome fantasia</label>
-            <input type="text" id="inpNomeFantasia" name="inpNomeFantasia" required>
+            <input type="text" id="inpNomeFantasia" name="inpNomeFantasia" placeholder="Digite o nome fantasia da empresa" required>
             </div>
             
             <div class="box_input">
             <label for="inpRazaoSocial">Razão Social</label>
-            <input type="text" id="inpRazaoSocial" name="inpRazaoSocial" required>
+            <input type="text" id="inpRazaoSocial" placeholder="Digite a razão social registrada" name="inpRazaoSocial" required>
         </div>
 
 
             <div class="box_input">
                 <label for="inpEmail">Email</label>
-            <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required>
+            <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required placeholder="Digite seu e-mail empresarial">
                 </div>
 
 
                 <div class="box_input">
 
             <label for="inpCnpj">CNPJ</label>
-            <input type="text" id="inpCnpj" name="inpCnpj" oninput="validarCnpj()" required>
+            <input type="text" id="inpCnpj" placeholder="Digite o CNPJ (somente números)" name="inpCnpj" oninput="validarCnpj()" required>
             </div>
 
 
