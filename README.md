@@ -18,3 +18,8 @@ Tema: Undefined
 https://bandteccom-my.sharepoint.com/:x:/g/personal/viviane_santos_sptech_school/EQ5FbnlDBcpFnK5Slh18lgMBHZb7KZhylR-mb_dmGqfBrg?e=beqnkh
 * Link Trello :
 https://trello.com/b/NAJkOgH3/fluxo-certo-pi
+* Link Lean UX Canvas :
+https://miro.com/app/board/uXjVITyT50I=/
+* Link proto-personas :
+https://www.canva.com/design/DAGhVdTB714/eDCDTF2gcb3GOZauwSyLSg/edit
+
