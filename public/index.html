@@ -32,11 +32,26 @@
       <a href="./cadastroempresa.html"> <p class="registrar">Registre-se</p></a>
     </div>
 
-    <div id="circle_guest" class="icone_guest">
+    <div onclick="aparecerModal()" id="circle_guest" class="icone_guest">
         <img id="img_guest" src="./assets/guest_azul.png" alt="">
-        <div>
-   </header>
+    </div>
+
    
+            
+   </header>
+
+   <div id="modal" style="display: none;" class="container_modal">
+    <h5 id="title_modal">Ainda não tem uma conta?</h5>
+   <a href="./cadastroempresa.html"> <p id="cadastro_modal" class="button_cadastrarse">Cadastrar-se</p></a>
+    <div>
+        <hr>
+    <p class="ou">ou</p>
+    <hr>
+</div>
+   <a href="./login.html"> <p id="login_modal" class="button_fazerlogin">Fazer Login</p></a>
+   </div>
+
+
    <div class="menu-lateral" id="menuLateral">
    
     <div>
@@ -51,7 +66,7 @@
     <!-- COMEÇO DE TODO CONTEÚDO -->
 
     <main>
-        <div id="fundo_escuro" style="display: none;" class="fundo_escuro"></div>
+        <div onclick="fecharMenu()" id="fundo_escuro" style="display: none;" class="fundo_escuro"></div>
 <section class="section_inicio">
     <div class="div_controle">
         <h1>Tenha o <span>fluxo</span> em seu <span>controle.</span></h1>
@@ -164,6 +179,101 @@ document.addEventListener("DOMContentLoaded", function () {
     header.classList.add("header-inativo"); // Muda a cor da header
 });
 
+
+
+function abrirMenu() {
+    document.getElementById("menuLateral").classList.add("aberto");
+    document.getElementById("menuHamburguer").classList.add("oculto");
+    document.getElementById("fechar-menu").style.display = 'flex';
+
+    const logo = document.getElementById('logo_header')
+    const header = document.getElementById("cabecalho");
+    header.classList.add("header-ativo"); // Muda a cor da header
+    logo.src = "./assets/logo_branco.png";
+
+    const body = document.body
+    body.style.overflow = "hidden";
+
+    const circle = document.getElementById("circle_guest") 
+    const imagemGuest = document.getElementById("img_guest") 
+
+    circle.style.borderColor = 'white'
+    imagemGuest.src = "./assets/guest_branco.png"
+
+    const fundoEscuro = document.getElementById('fundo_escuro')
+    fundoEscuro.style.display = 'flex'
+
+
+
+
+
+    modal.style.background = '#02033B'
+    
+        title_modal.style.color = '#FFC247'
+        modal.style.color = '#FFC247'
+    login_modal.style.color = '#FFC247'
+    login_modal.style.borderColor = '#FFC247'
+
+       cadastro_modal.style.color = '#FFC247'
+    cadastro_modal.style.borderColor = '#FFC247'
+
+}
+
+function fecharMenu() {
+    document.getElementById("menuLateral").classList.remove("aberto");
+    document.getElementById("fechar-menu").style.display = 'none';
+    document.getElementById("menuHamburguer").classList.remove("oculto");
+
+    const header = document.getElementById("cabecalho");
+    header.classList.remove("header-ativo"); // Muda a cor da header
+    header.classList.remove("header-inativo"); // Muda a cor da header
+    const logo = document.getElementById('logo_header')
+    logo.src = "./assets/logo_extensa.png";
+    const body = document.body
+    body.style.overflow = "auto";
+
+    const circle = document.getElementById("circle_guest") 
+    const imagemGuest = document.getElementById("img_guest") 
+
+    circle.style.borderColor = '#02033B'
+    imagemGuest.src = "./assets/guest_azul.png"
+        const fundoEscuro = document.getElementById('fundo_escuro')
+    fundoEscuro.style.display = 'none'
+
+
+    modal.style.background = 'linear-gradient(to bottom, white, #E7EFFA)'
+    
+    title_modal.style.color = '#02033B'
+    modal.style.color = '#02033B'
+login_modal.style.color = '#02033B'
+login_modal.style.borderColor = '#02033B'
+
+   cadastro_modal.style.color = '#02033B'
+cadastro_modal.style.borderColor = '#02033B'
+}
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (event) {
+        event.preventDefault(); // Impede a navegação imediata
+
+        let box = this.querySelector(".box_navegation_menu"); // Seleciona a div interna
+        let seta = this.querySelector(".seta_amarela"); // Seleciona a seta
+
+        if (box) {
+            box.classList.add("ativo"); // Adiciona a classe para efeito
+        }
+
+        if (seta) {
+            seta.style.backgroundImage = "url('./assets/seta_branca.png')"; // Troca a imagem da seta
+        }
+
+        setTimeout(() => {
+            window.location.href = this.href; // Redireciona após o tempo
+        }, 500); // Tempo de atraso (500ms)
+    });
+});
+
+
 function verificarLogin() {
     const emailUsuario = sessionStorage.EMAIL_USUARIO;
     nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO;
@@ -215,70 +325,41 @@ window.addEventListener("scroll", () => {
 
 
 
-function abrirMenu() {
-    document.getElementById("menuLateral").classList.add("aberto");
-    document.getElementById("menuHamburguer").classList.add("oculto");
-    document.getElementById("fechar-menu").style.display = 'flex';
+function aparecerModal() {
+    let modal = document.querySelector(".container_modal");
 
-    const logo = document.getElementById('logo_header')
-    const header = document.getElementById("cabecalho");
-    header.classList.add("header-ativo"); // Muda a cor da header
-    logo.src = "./assets/logo_branco.png";
-
-    const body = document.body
-    body.style.overflow = "hidden";
-
-    const circle = document.getElementById("circle_guest") 
-    const imagemGuest = document.getElementById("img_guest") 
-
-    circle.style.borderColor = 'white'
-    imagemGuest.src = "./assets/guest_branco.png"
-
-    const fundoEscuro = document.getElementById('fundo_escuro')
-    fundoEscuro.style.display = 'flex'
+    if (modal.classList.contains("ativo")) {
+        modal.classList.remove("ativo"); // Fecha o modal se já estiver aberto
+        setTimeout(() => modal.style.display = "none", 500); // Espera a animação antes de esconder
+    } else {
+        modal.style.display = "block"; // Torna visível antes da animação
+        setTimeout(() => modal.classList.add("ativo"), 10); // Pequeno delay para ativar animação
+    }
 }
+function fecharModal() {
+    let modal = document.querySelector(".container_modal");
 
-function fecharMenu() {
-    document.getElementById("menuLateral").classList.remove("aberto");
-    document.getElementById("fechar-menu").style.display = 'none';
-    document.getElementById("menuHamburguer").classList.remove("oculto");
-
-    const header = document.getElementById("cabecalho");
-    header.classList.remove("header-ativo"); // Muda a cor da header
-    header.classList.remove("header-inativo"); // Muda a cor da header
-    const logo = document.getElementById('logo_header')
-    logo.src = "./assets/logo_extensa.png";
-    const body = document.body
-    body.style.overflow = "auto";
-
-    const circle = document.getElementById("circle_guest") 
-    const imagemGuest = document.getElementById("img_guest") 
-
-    circle.style.borderColor = '#02033B'
-    imagemGuest.src = "./assets/guest_azul.png"
-        const fundoEscuro = document.getElementById('fundo_escuro')
-    fundoEscuro.style.display = 'none'
-}
-
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function (event) {
-        event.preventDefault(); // Impede a navegação imediata
-
-        let box = this.querySelector(".box_navegation_menu"); // Seleciona a div interna
-        let seta = this.querySelector(".seta_amarela"); // Seleciona a seta
-
-        if (box) {
-            box.classList.add("ativo"); // Adiciona a classe para efeito
-        }
-
-        if (seta) {
-            seta.style.backgroundImage = "url('./assets/seta_branca.png')"; // Troca a imagem da seta
-        }
+    if (modal.classList.contains("ativo")) {
+        modal.classList.add("fechar"); // Adiciona a classe que move o modal para cima
+        modal.classList.remove("ativo");
 
         setTimeout(() => {
-            window.location.href = this.href; // Redireciona após o tempo
-        }, 500); // Tempo de atraso (500ms)
-    });
+            modal.style.display = "none";
+            modal.classList.remove("fechar"); // Remove a classe de transição para reuso
+        }, 500); // Tempo da animação
+    }
+}
+
+// Fechar ao clicar fora do modal
+document.addEventListener("click", function (event) {
+    let modal = document.querySelector(".container_modal");
+    let botao = document.getElementById("circle_guest"); // Botão que abre o modal
+
+    if (modal.classList.contains("ativo") && !modal.contains(event.target) && event.target !== botao) {
+        fecharModal();
+    }
 });
 
+// Fechar ao rolar a tela
+window.addEventListener("scroll", fecharModal);
 </script>

@@ -39,12 +39,11 @@
 }
 
 header {
-    overflow: hidden;
     background: linear-gradient(to bottom, white, #E7EFFA);
     width: 100%;
     height: 10vh;
     display: flex;
-    z-index: 5;
+    z-index: 11;
     position: fixed;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
     justify-content: space-around;
@@ -1974,7 +1973,6 @@ footer {
 }
 
 .menu-hamburguer {
-    font-size: 30px;
     cursor: pointer;
     position: fixed;
     top: 3vh;
@@ -1984,7 +1982,7 @@ footer {
     display: none;   
     color: #02033B;
     font-weight: 800;
-    font-size: 4.5vw;
+    font-size: 6vw;
 }
 
 /* Esconder o menu hambúrguer quando o menu estiver aberto */
@@ -2000,7 +1998,7 @@ footer {
     width: 50vw; /* Ocupa toda a tela */
     height: 100vh;        
     background-color: #02033B;
-    z-index: 1;
+    z-index: 9;
     overflow: none;
     color: white;
     display: flex;
@@ -2013,15 +2011,19 @@ footer {
 }
 .fundo_escuro{
     width: 100vw;
-    height: 100%;
+    height: 1000vh;
     background: rgba(0, 0, 0, 0.747); /* Preto semi-transparente */
     backdrop-filter: blur(10px); /* Aplica desfoque ao fundo */
     -webkit-backdrop-filter: blur(10px); /* Compatibilidade com Safari */
     position: absolute;
+    z-index: 8;
 }
 
 .menu_lateral div{
     display: flex;
+}
+.menu_lateral{
+    z-index: 8;
 }
 .box_navegation_menu{
     display: flex;
@@ -2057,7 +2059,7 @@ footer {
     position: fixed;
     top: 3vh;
     left: 2.5vw;
-    font-size: 30px;
+    font-size: 6vw;
     cursor: pointer;
 }
 
@@ -2083,7 +2085,7 @@ footer {
         display: none;
     }
     .div_logo{
-        margin-left: 8vw;
+        margin-left: 9vw;
     }
     .img_trem{
         width: 15vw;
@@ -2108,12 +2110,7 @@ footer {
         display: block;
      
     }
-    header{
-        z-index: 2;
-    }
-    .menu_lateral{
-        z-index: 1;
-    }
+
     .fechar-menu{
         display: none;
         color: white;
@@ -2132,4 +2129,82 @@ footer {
         background: linear-gradient(to bottom, #02033B,#040555,#060766, #080a92);
     transition: background-color 0.20s ease-in-out;
     transition: top 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.container_modal{
+    width: 40vw;
+    height: 50vh;
+    background: linear-gradient(to bottom, white, #E7EFFA);
+    position: fixed;
+    top: -100px;
+    z-index: 9;
+    border-radius: 0 0 0 5vw;
+    right: 0;
+    padding-top: 2vw;
+    padding-left: 2vw ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_modal.ativo {
+    display: flex;
+    top: 14vw;
+    opacity: 1;
+}
+.container_modal h5{
+    font-size: 5vw;
+    font-weight: 800;
+    color: #02033B;
+    margin-bottom: 2vw;
+}
+.button_cadastrarse{
+width: 30vw;
+height: 8vh;
+border-radius: 2vw;
+display: flex;
+justify-content: center;
+font-size: 3vw;
+font-weight: 800;
+align-items: center;
+color: #02033B;
+margin-bottom: 3vw;
+margin-left: 4vw;
+border: 2px solid #02033B;
+}
+.button_fazerlogin{
+    width: 30vw;
+height: 8vh;
+border-radius: 2vw;
+display: flex;
+justify-content: center;
+font-size: 3vw;
+font-weight: 800;
+align-items: center;
+justify-content: center;
+color: #02033B;
+margin-left: 4vw;
+border: 2px solid #02033B;
+
+margin-top: 3vw;
+}
+.ou{
+    font-size: 3vw;
+}
+.container_modal div{
+    display: flex;
+    justify-content: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    align-items: center;
+}
+.container_modal hr{
+    width: 13vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    border-bottom: 0.1vw solid #02033b67;
 }
