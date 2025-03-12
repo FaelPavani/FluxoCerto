@@ -481,10 +481,7 @@ body {
 .home_suporte_imagem {
     width: 20vw;
     box-shadow: 20px -20px 0px #e6a739;
-
-
     overflow: hidden;
-
     height: 20vw;
     border-radius: 2vw;
     transform: rotate(45deg);
@@ -1679,7 +1676,7 @@ footer {
     font-weight: 800;
 }
 
-    /* Estilos para tablets e telas intermediárias como laptops*/
+/* Estilos para tablets e telas intermediárias como laptops*/
 @media (max-width: 1024px) {
 
     .img_trem {
@@ -1867,107 +1864,136 @@ footer {
     .box_quem_somos h4 {
         font-size: 2vw;
     }
-    .box_missao{
+
+    .box_missao {
         height: 50vh;
         width: 35vw;
     }
-    .box_missao h4{
+
+    .box_missao h4 {
         font-size: 4vw;
         margin-bottom: 1vw;
     }
-    .box_missao p{
+
+    .box_missao p {
         font-size: 1.8vw;
     }
-    .blob_valores{
+
+    .blob_valores {
         width: 80vw;
         margin-top: -15vw;
     }
-    .imagem_valores{
+
+    .imagem_valores {
         width: 50vw;
         right: 12vw;
     }
-    .title_valores{
+
+    .title_valores {
         font-size: 4.4vw;
         right: 14vw;
     }
-    .box_valores{
+
+    .box_valores {
         width: 21.5vw;
         height: 28vh;
     }
-    .box_valores p{
+
+    .box_valores p {
         font-size: 2vw;
     }
-    .container_valores{
-        height:60vh;
+
+    .container_valores {
+        height: 60vh;
     }
-    .section_valores{
+
+    .section_valores {
         height: 80vh;
     }
-    .container_equipe{
+
+    .container_equipe {
         width: 40vw;
     }
-    .imagem_equipe{
+
+    .imagem_equipe {
         width: 40vw;
     }
-    .box_nome{
+
+    .box_nome {
         font-size: 1.8vw;
     }
-    .box_linkedin img{
+
+    .box_linkedin img {
         width: 5vw;
     }
-    .section_equipe{
+
+    .section_equipe {
         height: 120vh;
     }
-    .box_valores:hover{
+
+    .box_valores:hover {
         transform: scale(1);
     }
-    .title_servicos{
+
+    .title_servicos {
         margin-top: 4vw;
         margin-bottom: 1vw;
     }
-    .container_servicos{
+
+    .container_servicos {
         height: 80vh;
     }
-    .section_servicos{
+
+    .section_servicos {
         height: 110vh;
     }
-    .imagem_suporte{
+
+    .imagem_suporte {
         width: 100vw;
     }
-    .caixa_faq{
+
+    .caixa_faq {
         font-size: 2vw;
     }
-    .box_resposta{
+
+    .box_resposta {
         font-size: 3vw;
     }
-    .container_suporte h3{
+
+    .container_suporte h3 {
         font-size: 4vw;
         margin-bottom: 1vw;
     }
-    .container_suporte input{
+
+    .container_suporte input {
         height: 12vh;
         background-size: 2vw;
         padding-left: 6vw;
         font-size: 2vw;
     }
-    .container_suporte select{
+
+    .container_suporte select {
         margin-top: 3vw;
         height: 12vh;
         font-size: 2vw;
     }
-    .container_suporte textarea{
+
+    .container_suporte textarea {
 
         font-size: 2vw;
     }
-    .container_suporte button{
+
+    .container_suporte button {
         height: 12vh;
         width: 30vw;
         font-size: 2vw;
     }
-    .circle_login{
-    transform: translateY(132vw);
+
+    .circle_login {
+        transform: translateY(132vw);
     }
-    .box_logo_login{
+
+    .box_logo_login {
         margin-top: -5vw;
     }
 }
@@ -1979,7 +2005,7 @@ footer {
     left: 2.5vw;
     z-index: 1000;
     transition: 0s;
-    display: none;   
+    display: none;
     color: #02033B;
     font-weight: 800;
     font-size: 6vw;
@@ -1988,70 +2014,84 @@ footer {
 /* Esconder o menu hambúrguer quando o menu estiver aberto */
 .menu-hamburguer.oculto {
     opacity: 0;
-    pointer-events: none; /* Impede clique no botão escondido */
+    pointer-events: none;
+    /* Impede clique no botão escondido */
 }
 
 .menu-lateral {
     position: fixed;
     top: 0;
-    left: -100%; /* Escondido à direita */
-    width: 50vw; /* Ocupa toda a tela */
-    height: 100vh;        
+    left: -100%;
+    /* Escondido à direita */
+    width: 50vw;
+    /* Ocupa toda a tela */
+    height: 100vh;
     background-color: #02033B;
     z-index: 9;
     overflow: none;
     color: white;
     display: flex;
     flex-direction: column;
-    padding-top:20vw;
+    padding-top: 20vw;
     padding-left: 5vw;
     border-radius: 0 0 8vw 0;
     color: #F7C95F;
     font-size: 5vw;
 }
-.fundo_escuro{
+
+.fundo_escuro {
     width: 100vw;
     height: 1000vh;
-    background: rgba(0, 0, 0, 0.747); /* Preto semi-transparente */
-    backdrop-filter: blur(10px); /* Aplica desfoque ao fundo */
-    -webkit-backdrop-filter: blur(10px); /* Compatibilidade com Safari */
+    background: rgba(0, 0, 0, 0.747);
+    /* Preto semi-transparente */
+    backdrop-filter: blur(10px);
+    /* Aplica desfoque ao fundo */
+    -webkit-backdrop-filter: blur(10px);
+    /* Compatibilidade com Safari */
     position: absolute;
     z-index: 8;
 }
 
-.menu_lateral div{
+.menu_lateral div {
     display: flex;
 }
-.menu_lateral{
+
+.menu_lateral {
     z-index: 8;
 }
-.box_navegation_menu{
+
+.box_navegation_menu {
     display: flex;
     margin-bottom: 1.5vw;
-   
+
 }
-.seta_amarela{
+
+.seta_amarela {
     width: 6vw;
     margin-right: 2vw;
     background-image: url(../assets/seta_amarela.png);
     background-size: cover;
     background-position: center;
 }
-.box_navegation_menu:hover .seta_amarela{
+
+.box_navegation_menu:hover .seta_amarela {
     width: 17vw;
 }
-.title_mobile{
+
+.title_mobile {
     font-size: 6vw;
     margin-bottom: 4vw;
     font-weight: 700;
 }
+
 .box_navegation_menu:hover {
     color: white;
 }
 
 /* Quando o menu está aberto */
 .menu-lateral.aberto {
-    left: 0; /* Move o menu para a tela */
+    left: 0;
+    /* Move o menu para a tela */
 }
 
 /* Botão de fechar */
@@ -2063,7 +2103,7 @@ footer {
     cursor: pointer;
 }
 
-.icone_guest{
+.icone_guest {
     height: 8vh;
     width: 8vw;
     position: fixed;
@@ -2075,63 +2115,323 @@ footer {
     border-radius: 50%;
     border: 2px solid #02033B;
 }
-.icone_guest img{
+
+.icone_guest img {
     height: 8vh;
 }
 
 /*Responsividade para celulares*/
 @media (max-width: 768px) {
-    .div_entradas{
+    .div_entradas {
         display: none;
     }
-    .div_logo{
+
+    .div_logo {
         margin-left: 9vw;
     }
-    .img_trem{
+
+    .img_trem {
         width: 15vw;
         height: auto;
     }
-    .logo_texto{
+
+    .logo_texto {
         width: 18vw;
         height: auto;
     }
-    header{
+
+    header {
         height: 15vh;
         justify-content: space-between;
     }
-    nav{
+
+    nav {
         display: none;
-    }
-    header p{
-        display: none;
-    }
-    
-    .menu-hamburguer{
-        display: block;
-     
     }
 
-    .fechar-menu{
+    header p {
+        display: none;
+    }
+
+    .menu-hamburguer {
+        display: block;
+
+    }
+
+    .fechar-menu {
         display: none;
         color: white;
     }
-    .icone_guest{
+
+    .icone_guest {
         display: flex;
     }
-    
+
+
+    /*Deixando o login responsivo*/
+    .container_login {
+        display: none;
+    }
+
+    .section_login {
+        justify-content: center;
+    }
+
+    .container_formulario_login {
+        width: 80vw;
+        height: 88vh;
+    }
+
+    .container_formulario_login h6 {
+        font-size: 3vw;
+    }
+
+    .container_formulario_login h2 {
+        font-size: 5vw;
+    }
+
+    .container_formulario_login input {
+        width: 73vw;
+        height: 10vh;
+        font-size: 3vw;
+        border-radius: 1.8vw;
+        margin-bottom: 2vw;
+    }
+
+    .container_formulario_login button {
+        width: 73vw;
+        height: 10vh;
+        font-size: 3vw;
+
+    }
+
+    .container_formulario_login a {
+        font-size: 3vw;
+        border-bottom: 0.3vw solid #02033B;
+        margin-bottom: 2vw;
+
+    }
+
+    .corpo_login {
+        overflow: hidden;
+    }
+
+    .logo_login {
+        width: 15vw;
+    }
+
+    .linha_login {
+        width: 33vw;
+        margin-bottom: 1.5vw
+    }
+
+    .ou_login {
+        font-size: 3vw;
+    }
+
+    .container_formulario_login div {
+        width: 73vw;
+    }
+
+    .container_formulario_login h3 {
+        font-size: 4vw;
+    }
+
+    .container_formulario_login p {
+        font-size: 2.1vw;
+    }
+
+    .email_input {
+        margin-top: 9.5vw;
+        margin-left: 2vw;
+        font-size: 3.5vw;
+    }
+
+    .senha_input {
+        margin-top: 22.5vw;
+        margin-left: 2vw;
+        font-size: 3.5vw;
+    }
+    .div_controle{
+        margin-top: 20vw;
+        margin-left: 5vw;
+    } 
+    .div_controle h1{
+        font-size: 8vw;
+        width: 65vw;
+    }
+    .div_controle p{
+        font-size: 3.5vw;
+        width: 55vw;
+      
+    }
+    .box_controle{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+       width: 40vw;
+       height: 50vh;
+    }
+    .quero_ser_cliente{
+        width: 40vw;
+        height: 40vh;
+        border-radius: 5vw;
+        margin-bottom: 2vw;
+    }
+    .box_controle a{
+        height: 10vh;
+        border-radius: 5vw;
+        font-size: 3.2vw;
+        font-weight: 700;
+    }
+    .ja_sou_cliente{
+        width: 35vw;
+    }
+    .section_inicio{
+        justify-content: flex-start;
+        align-items: start;
+        height: 120vh;
+        background-position: -20vw;
+    }
+    .div_celular{
+        align-self: flex-end;
+        position: absolute;
+        height: 50vh;
+        right: 0;
+       width: 50vw;
+    }
+    .ja_sou_cliente:hover{
+        background-color: #02033B;
+        color: white;
+    }
+    .quero_ser_cliente:hover{
+        background-color: #02033B;
+        color: white;
+    }
+    .div_celular img{
+        width: 50vw;
+        margin-left: -11vw;
+    }
+    .box_title_conheca{
+        display: none;
+    }
+    .box_saiba{
+        width: 52vw;
+    }
+    .box_saiba div{
+        width: 30vw;
+        height: 7vh;
+    }
+    .button_conheca p{
+        font-size: 3.5vw;
+    }
+    .button_conheca span{
+        font-size: 4vw;
+    }
+    .box_conheca{
+        width: 45vw;
+    }
+    .box_conheca h3{
+        font-size: 4.8vw;
+        width: 45vw;
+    }
+    .box_conheca p{
+        font-size: 3vw;
+        width: 42vw;
+    }
+    .box_saiba img{
+        width: 45vw;
+    }
+    .home_suporte_imagem{
+        width: 35vw;
+        height: 40vh;
+        padding-bottom: 10vw;
+        padding-top:1vw;
+    }
+    .homem_suporte{
+        width: 80vw;
+        margin-top: -8vw;
+        margin-left: -25vw;
+    }
+    .conteudo_home_suporte{
+        width: 40vw;
+        margin-left: -3vw;
+    }
+    .conteudo_home_suporte h4{
+        font-size: 5vw;
+        font-weight: 800;
+        margin-bottom: 5vw;
+    }  
+    .conteudo_home_suporte p{
+        font-size: 2.5vw;
+        margin-bottom: 5vw;
+    }
+    .conteudo_home_suporte span{
+        width: 60vw;
+        height: 10vh;
+        margin-left: 1vw;
+        font-size: 3vw;
+        border-radius: 4vw;
+    }
+    .box_footer h4{
+        font-size: 2.2vw;
+    }
+    .box_footer img{
+        width: 7vw;
+    }
+    .box_footer p{
+        font-size: 2vw;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .box_formulario_footer textarea{
+        height: 8vh;
+    }
+    .box_nome_email{
+        display: flex;
+        flex-direction: column;
+    }
+    .box_nome_email input{
+        width: 100%;
+        margin-bottom: 1vw;
+    }
+    .box_entrarcontato h3{
+        font-size: 3.2vw;
+        font-weight: 800;
+    }
+    .box_entrarcontato p{
+        font-size: 2vw;
+    }
+    .box_entrarcontato span{
+        font-size: 2vw;
+    }
+    .rede_social{
+        width: 5vw;
+    }
+    .box_formulario_footer p{
+        font-size: 2.5vw;
+    }
+    .container_formulario{
+        margin-top: -5vw;
+    }
 }
-.header-inativo{
+
+.header-inativo {
     background: linear-gradient(to bottom, white, #E7EFFA);
     transition: background-color 0.3s ease-in-out;
     transition: top 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
-.header-ativo{
-        background: linear-gradient(to bottom, #02033B,#040555,#060766, #080a92);
+
+.header-ativo {
+    background: linear-gradient(to bottom, #02033B, #040555, #060766, #080a92);
     transition: background-color 0.20s ease-in-out;
     transition: top 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
-.container_modal{
+.container_modal {
     width: 40vw;
     height: 50vh;
     background: linear-gradient(to bottom, white, #E7EFFA);
@@ -2141,7 +2441,7 @@ footer {
     border-radius: 0 0 0 5vw;
     right: 0;
     padding-top: 2vw;
-    padding-left: 2vw ;
+    padding-left: 2vw;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -2156,53 +2456,59 @@ footer {
     top: 14vw;
     opacity: 1;
 }
-.container_modal h5{
+
+.container_modal h5 {
     font-size: 5vw;
     font-weight: 800;
     color: #02033B;
     margin-bottom: 2vw;
 }
-.button_cadastrarse{
-width: 30vw;
-height: 8vh;
-border-radius: 2vw;
-display: flex;
-justify-content: center;
-font-size: 3vw;
-font-weight: 800;
-align-items: center;
-color: #02033B;
-margin-bottom: 3vw;
-margin-left: 4vw;
-border: 2px solid #02033B;
-}
-.button_fazerlogin{
-    width: 30vw;
-height: 8vh;
-border-radius: 2vw;
-display: flex;
-justify-content: center;
-font-size: 3vw;
-font-weight: 800;
-align-items: center;
-justify-content: center;
-color: #02033B;
-margin-left: 4vw;
-border: 2px solid #02033B;
 
-margin-top: 3vw;
+.button_cadastrarse {
+    width: 30vw;
+    height: 8vh;
+    border-radius: 2vw;
+    display: flex;
+    justify-content: center;
+    font-size: 3vw;
+    font-weight: 800;
+    align-items: center;
+    color: #02033B;
+    margin-bottom: 3vw;
+    margin-left: 4vw;
+    border: 2px solid #02033B;
 }
-.ou{
+
+.button_fazerlogin {
+    width: 30vw;
+    height: 8vh;
+    border-radius: 2vw;
+    display: flex;
+    justify-content: center;
+    font-size: 3vw;
+    font-weight: 800;
+    align-items: center;
+    justify-content: center;
+    color: #02033B;
+    margin-left: 4vw;
+    border: 2px solid #02033B;
+
+    margin-top: 3vw;
+}
+
+.ou {
     font-size: 3vw;
 }
-.container_modal div{
+
+.container_modal div {
     display: flex;
     justify-content: center;
     padding-left: 1vw;
     padding-right: 1vw;
     align-items: center;
 }
-.container_modal hr{
+
+.container_modal hr {
     width: 13vw;
     margin-right: 1vw;
     margin-left: 1vw;
