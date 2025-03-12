@@ -1039,7 +1039,12 @@ footer {
     padding-top: 1vw;
     align-items: center;
 }
-
+.caixa_direita{
+    border-radius: 1vw 9vw 1vw 1vw;
+}
+.caixa_esquerda{
+    border-radius: 1vw 1vw 1vw 9vw;
+}
 .box_servicos:hover {
     transform: translateY(-8px);
 }
@@ -2659,7 +2664,154 @@ footer {
     .section_equipe_mobile{
         display: flex !important;
     }
+    .div_servicos{
+        margin-top: 19vw;
+        width: 45vw;
+        height:50vh;
+        position: absolute;
+        right: 0;
+    }
+    .box_servicos{
+        width: 43vw;
+        height: 50vh;
+       margin-bottom: 2vw;
+       border-radius: 5vw 13vw 5vw 13vw;
+    }
+    .container_servicos{
+        height: auto;   
+        width: 95vw;
+        border-radius: 5vw 14vw 5vw 14vw;  
+        padding: 3vw; 
+    }
+    .section_servicos{
+        height: auto;
+        padding-bottom: 10vw;
+    }
+    .title_servicos{
+        font-size: 8vw;
+    }
+    .img_servicos{
+        width: 30vw;
+        height: 15vh;
+    }
+    .box_servicos h4{
+        font-size: 4.8vw;
+    }
+    .box_servicos p{
+        width: 33vw;
+        font-size: 2.8vw;
+        font-weight: 600;
+        margin-top: 1vw;
+    }
+    .conteudo_sec_header{
+        z-index: 4;
+    }
+    .imagem_suporte{
+        width: 56vw;
+        margin-top: 19vw;
+        height: 65vh;
+        position: absolute;
+        right: 0;
+    }
+    .section_header_sobre{
+        position: relative;
+    }
+    .container_faq{
+        width: 95vw;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: start;
+        padding-left: 5vw;
+        height: auto;
+        padding-top: 1vw;
+        border-radius: 4vw;
+    }
+    .box_faq{
+        width: 85vw;
+        height: 25vh;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+        white-space: nowrap;
+        flex-direction: row;
+    }
+    .section_suporte{
+        height: auto;
+        
+    }
+    .container_suporte{
+        margin-top: 20vw;
+        width: 95vw;
+        margin-bottom: 10vw;
+        padding-top: 2vw;
+    }
+    .container_suporte h3{
+        font-size: 6vw;
+    }
+    .box_suporte{
+        width: 90vw;
+        height: 13vh;
+    }
+    .box_suporte input{
+        width: 29.5vw;
+        height: 12vh;
+        border-radius: 2vw;
+        font-size: 2.4vw;
+        background-size: 3vw;
+    }
+    .container_suporte select{
+        width: 90vw;
+        margin-top: 0;
+        font-size: 3vw;
+    }
+    .container_suporte textarea{
+        width: 90vw;
+        margin-top: 2vw;
+        font-size: 3vw;
+    }
+    .container_suporte button{
+        width: 30vw;
+        margin-right: 3vw;
+        border-radius: 3vw;
+        font-size: 3vw;
+        align-self: flex-end;
+    }
+    .caixa_faq{
+        width: 70vw;
+        height: 20vh;
+        margin-left: 1vw;
+        padding: 2vw;
+        font-size: 2.9vw;
+        border-radius: 3vw;
+    }
+    .esquerdo_faq h4{
+        display: none;
+    }
+    .esquerdo_faq{
+        height: 30vw;
+        justify-self: start;
+    }
+    .direito_faq{
+        height: 60vh;
+        width: 85vw;
+    }
+    .box_resposta{
+        width: 85vw;
+        font-size: 6vw;
+        border-radius: 4vw;
+    }
+    .direito_faq h4{
+        font-size: 7vw;
+    }
+    .title_sup{
+        font-size: 6vw;
+    }
+    .title_sup2{
+        font-size: 4.5vw;
+    }
 }
+
 
 .section_equipe_mobile {
     width: 90vw;
