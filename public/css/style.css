@@ -1766,6 +1766,7 @@ footer {
 
     .box_footer {
         height: 27vh;
+        margin-bottom: 7vw;
     }
 
     .rede_social {
@@ -2252,134 +2253,164 @@ footer {
         margin-left: 2vw;
         font-size: 3.5vw;
     }
-    .div_controle{
+
+    .div_controle {
         margin-top: 20vw;
         margin-left: 5vw;
-    } 
-    .div_controle h1{
+    }
+
+    .div_controle h1 {
         font-size: 8vw;
         width: 65vw;
     }
-    .div_controle p{
+
+    .div_controle p {
         font-size: 3.5vw;
         width: 55vw;
-      
+
     }
-    .box_controle{
+
+    .box_controle {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-       width: 40vw;
-       height: 50vh;
+        width: 40vw;
+        height: 50vh;
     }
-    .quero_ser_cliente{
+
+    .quero_ser_cliente {
         width: 40vw;
         height: 40vh;
         border-radius: 5vw;
         margin-bottom: 2vw;
     }
-    .box_controle a{
+
+    .box_controle a {
         height: 10vh;
         border-radius: 5vw;
         font-size: 3.2vw;
         font-weight: 700;
     }
-    .ja_sou_cliente{
+
+    .ja_sou_cliente {
         width: 35vw;
     }
-    .section_inicio{
+
+    .section_inicio {
         justify-content: flex-start;
         align-items: start;
         height: 120vh;
         background-position: -20vw;
     }
-    .div_celular{
+
+    .div_celular {
         align-self: flex-end;
         position: absolute;
         height: 50vh;
         right: 0;
-       width: 50vw;
+        width: 50vw;
     }
-    .ja_sou_cliente:hover{
+
+    .ja_sou_cliente:hover {
         background-color: #02033B;
         color: white;
     }
-    .quero_ser_cliente:hover{
+
+    .quero_ser_cliente:hover {
         background-color: #02033B;
         color: white;
     }
-    .div_celular img{
+
+    .div_celular img {
         width: 50vw;
         margin-left: -11vw;
     }
-    .box_title_conheca{
+
+    .box_title_conheca {
         display: none;
     }
-    .box_saiba{
+
+    .box_saiba {
         width: 52vw;
     }
-    .box_saiba div{
+
+    .box_saiba div {
         width: 30vw;
         height: 7vh;
     }
-    .button_conheca p{
+
+    .button_conheca p {
         font-size: 3.5vw;
     }
-    .button_conheca span{
+
+    .button_conheca span {
         font-size: 4vw;
     }
-    .box_conheca{
+
+    .box_conheca {
         width: 45vw;
     }
-    .box_conheca h3{
+
+    .box_conheca h3 {
         font-size: 4.8vw;
         width: 45vw;
     }
-    .box_conheca p{
+
+    .box_conheca p {
         font-size: 3vw;
         width: 42vw;
     }
-    .box_saiba img{
+
+    .box_saiba img {
         width: 45vw;
     }
-    .home_suporte_imagem{
+
+    .home_suporte_imagem {
         width: 35vw;
         height: 40vh;
         padding-bottom: 10vw;
-        padding-top:1vw;
+        padding-top: 1vw;
     }
-    .homem_suporte{
+
+    .homem_suporte {
         width: 80vw;
         margin-top: -8vw;
         margin-left: -25vw;
     }
-    .conteudo_home_suporte{
+
+    .conteudo_home_suporte {
         width: 40vw;
         margin-left: -3vw;
     }
-    .conteudo_home_suporte h4{
+
+    .conteudo_home_suporte h4 {
         font-size: 5vw;
         font-weight: 800;
         margin-bottom: 5vw;
-    }  
-    .conteudo_home_suporte p{
+    }
+
+    .conteudo_home_suporte p {
         font-size: 2.5vw;
         margin-bottom: 5vw;
     }
-    .conteudo_home_suporte span{
+
+    .conteudo_home_suporte span {
         width: 60vw;
         height: 10vh;
         margin-left: 1vw;
         font-size: 3vw;
         border-radius: 4vw;
     }
-    .box_footer h4{
+
+    .box_footer h4 {
         font-size: 2.2vw;
     }
-    .box_footer img{
+
+    .box_footer img {
         width: 7vw;
     }
-    .box_footer p{
+
+    .box_footer p {
         font-size: 2vw;
         height: 20vh;
         display: flex;
@@ -2387,36 +2418,300 @@ footer {
         align-items: center;
         text-align: center;
     }
-    .box_formulario_footer textarea{
+
+    .box_formulario_footer textarea {
         height: 8vh;
     }
-    .box_nome_email{
+
+    .box_nome_email {
         display: flex;
         flex-direction: column;
     }
-    .box_nome_email input{
+
+    .box_nome_email input {
         width: 100%;
         margin-bottom: 1vw;
     }
-    .box_entrarcontato h3{
+
+    .box_entrarcontato h3 {
         font-size: 3.2vw;
         font-weight: 800;
     }
-    .box_entrarcontato p{
+
+    .box_entrarcontato p {
         font-size: 2vw;
     }
-    .box_entrarcontato span{
+
+    .box_entrarcontato span {
         font-size: 2vw;
     }
-    .rede_social{
+
+    .rede_social {
         width: 5vw;
     }
-    .box_formulario_footer p{
+
+    .box_formulario_footer p {
         font-size: 2.5vw;
     }
-    .container_formulario{
+
+    .container_formulario {
         margin-top: -5vw;
     }
+
+    .img_sec_header {
+        height: 90vh;
+        width: 80vw;
+        transform: translate(40vw, 20vw) scale(1);
+
+    }
+
+    .section_header_sobre {
+        background-position: -40vw;
+    }
+
+    .conteudo_sec_header h4 {
+        font-size: 9vw;
+        margin-top: 2vw;
+        width: 50vw;
+    }
+
+    .conteudo_sec_header p {
+        font-size: 3.3vw;
+
+    }
+
+    .conteudo_sec_header {
+        position: absolute;
+
+    }
+
+    .title_sobre {
+        font-size: 5vw;
+    }
+
+    .container_quem_somos {
+        width: 90vw;
+    }
+
+    .box_quem_somos h4 {
+        font-size: 2.5vw;
+
+    }
+
+    .box_imagem_quem_somos {
+        width: 45vw;
+        height: 50vh;
+    }
+
+    .box_imagem_quem_somos img {
+        width: 40vw;
+    }
+
+    .box_imagem_quem_somos2 {
+        width: 45vw;
+        height: 50vh;
+    }
+
+    .box_imagem_quem_somos2 img {
+        width: 40vw;
+    }
+
+    .container_quem_somos2 {
+        width: 90vw;
+    }
+
+    .box_quem_somos2 h4 {
+        font-size: 2.5vw;
+    }
+
+    .box_missao {
+        width: 50vw;
+        font-size: 5vw;
+    }
+
+    .box_missao h4 {
+        font-size: 6vw;
+    }
+
+    .icones {
+        width: 15vw;
+    }
+
+    .box_missao p {
+        font-size: 2.2vw;
+    }
+
+    .blob_valores {
+        left: -30vw;
+        margin-top: -20vw;
+        width: 100vw;
+    }
+
+    .container_valores {
+        position: absolute;
+        right: 5vw;
+        width: 80vw;
+        height: 75vh;
+        margin-top: 7vw;
+        margin-bottom: 5vw;
+    }
+
+    .title_valores {
+        margin-top: -2vw;
+        left: 7.6vw;
+        font-size: 6vw;
+    }
+
+    .box_valores {
+        width: 39vw;
+        border: 2px solid #02033B;
+        height: 33vh;
+    }
+
+    .imagem_valores {
+        width: 70vw;
+        right: 0;
+    }
+
+    .box_valores h4 {
+        font-size: 4.5vw;
+    }
+
+    .box_valores p {
+        font-size: 3.4vw;
+        width: 30vw;
+    }
+
+    .caixa_equipe {
+        display: none;
+    }
+
+    .section_equipe_mobile {
+        display: flex;
+    }
+
+    .margem_caixa_equipe {
+        font-size: 3vw;
+    }
+
+    .cargo {
+        display: flex;
+        align-items: center;
+        font-size: 3.5vw;
+        padding-left: 2vw;
+    }
+
+    .luz {
+        background-image: url(../assets/joao.jpeg);
+    }
+
+    .viviane {
+        background-image: url(../assets/vivi.jpeg);
+    }
+
+    .rafael {
+        background-image: url(../assets/pavani.jpeg);
+    }
+
+    .leite {
+        background-image: url(../assets/gustavo.jpeg);
+    }
+
+    .gabriel {
+        background-image: url(../assets/padua.jpeg);
+    }
+
+    .guilherme {
+        background-image: url(../assets/reboucas.jpeg);
+    }
+
+    .linkedin_mobile {
+        width: 8vw;
+        padding: 2vw;
+        border: 2px solid #aaa;
+        border-radius: 2vw;
+        margin-right: 1vw;
+
+    }
+
+    .caixa_cargo_linkedin {
+        width: 26vh;
+        margin-top: 1vw;
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+
+
+    }
+
+    .nome_cargo {
+        justify-content: flex-start;
+    }
+
+    .linkedin_link {
+        justify-content: flex-end;
+    }
+
+    .section_equipe {
+        padding-top: 14vw;
+    }
+
+    .section_equipe_mobile{
+        display: flex !important;
+    }
+}
+
+.section_equipe_mobile {
+    width: 90vw;
+    overflow-x: auto;
+    /* Permite rolagem horizontal */
+    height: 82vh;
+    display: flex;
+    /* Alinha os elementos lado a lado */
+    flex-wrap: nowrap;
+    /* Evita que os elementos quebrem */
+    display: none;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /* Garante que os elementos fiquem em linha */
+}
+
+.box_equipe_mobile {
+    width: 50vw;
+    min-width: 30vw;
+    /* Garante que cada item seja maior que a área visível */
+    height: 70vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 3vw;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    /* Espaçamento entre os itens */
+    border: 3px solid #02033B;
+    border-radius: 3vw;
+    background-size: contain;
+    background-position: 0 -10vw;
+}
+
+.container_equipe_mobile {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.margem_caixa_equipe {
+    width: 100%;
+    height: 15vh;
+    background-color: #02033B;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 3vw;
+    color: white;
+    font-size: 5vw;
+    font-weight: 700;
+    border-radius: 2vw;
+    align-items: center;
 }
 
 .header-inativo {
