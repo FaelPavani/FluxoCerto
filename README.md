@@ -16,3 +16,10 @@ Tema: Undefined
 * Link Planner (Miro) : https://miro.com/welcomeonboard/MlpsMTQ3OEN1Y1I3Q0M2MTJQWFMrSDFPbXp4MmJmQ0NxTFh1b25NVmNvZHpuZzF1ZXJ0V0haenhsbXdlQUZvbldrV2RoR1VNY1I1RHUyWVNEMTFZODNUZjllOWJMZmxUc056N2NDTHFJZERmU0ZjYzB4WFRweVZ6YWdiRTUvSzNBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=468363562438
 * Link Backlog :
 https://bandteccom-my.sharepoint.com/:x:/g/personal/viviane_santos_sptech_school/EQ5FbnlDBcpFnK5Slh18lgMBHZb7KZhylR-mb_dmGqfBrg?e=beqnkh
+* Link Trello :
+https://trello.com/b/NAJkOgH3/fluxo-certo-pi
+* Link Lean UX Canvas :
+https://miro.com/app/board/uXjVITyT50I=/
+* Link proto-personas :
+https://www.canva.com/design/DAGhVdTB714/eDCDTF2gcb3GOZauwSyLSg/edit
+
