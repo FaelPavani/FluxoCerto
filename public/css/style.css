@@ -2638,6 +2638,9 @@ footer {
         margin-right: 1vw;
 
     }
+    .linkedin_mobile:hover{
+        background-color:#FFC247;
+    }
 
     .caixa_cargo_linkedin {
         width: 26vh;
@@ -2809,6 +2812,74 @@ footer {
     }
     .title_sup2{
         font-size: 4.5vw;
+    }
+    .box_ja_tem_conta{
+        width: 40vw;
+        height: 10vh;
+    }
+    .box_ja_tem_conta h2{
+        font-size: 2.4vw;
+        font-weight: 700;
+    }
+    .box_ja_tem_conta button{
+        width: 15vw;
+        height: 8vh;
+        font-size: 2.2vw;
+    }
+    .section_cadastro{
+        width: 90vw;
+        padding-left: 1vw;
+        align-items: start;
+    }
+    .box_title_cadastro h6{
+        font-size: 3.5vw;
+    }
+    .box_title_cadastro h2{
+        font-size: 5vw;
+    }
+    .section_cadastro input{
+        width: 40vw;
+        height: 15vh;
+        border-radius: 2vw;
+    }
+    .box_input{
+        width: 40vw;
+        height: 15vh;
+        margin-bottom: 1vw;
+        margin-left: 2vw;
+    }
+    .box_input label{
+        font-size: 3vw;
+    }
+    .box_mensagem_enviar button{
+        width: 25vw;
+        font-size: 3vw;
+        border-radius: 2.5vw;
+
+    }
+    .box_mensagem_enviar{
+        width: 85vw;
+        margin-top: 4vw;
+        height: 20vh;
+    }
+    .mensagem_erro_cnpj_email{
+        height: 20vh;
+        width: 28.3vw;
+        font-size: 2vw;
+    }
+    .mensagem_erro{
+        width: 28.3vw;
+        height: 20vh;
+        font-size: 2vw;
+
+    }
+    .logo_cadastro{
+        width: 20vw;
+        top: -3vw;
+    }
+    .logo_login{
+        width: 20vw;
+        top: -3vw; 
     }
 }
 
