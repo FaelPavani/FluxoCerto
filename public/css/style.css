@@ -3053,8 +3053,8 @@ footer {
     }
 
    .section_home_suporte{
-    position: relative;
     overflow: hidden;
+    height: auto;
    }
    .menu-hamburguer{
     font-size: 8vw;
@@ -3079,5 +3079,108 @@ footer {
     border-radius:  0 0 0 20vw ;
     border-left: 2px solid #02033B;
     border-bottom: 2px solid #02033B;
+   }
+   .div_controle{
+    margin-top: 25vw;
+   }
+   .div_controle h1{
+    font-size: 10vw;
+    width: 70vw;
+   }
+   .div_controle p{
+width: 80vw;
+font-size: 4.5vw;
+   }
+   .div_celular{
+  /* margin-bottom: -22vw; */
+  /* margin-right: -10vw; */
+  width:48vw;
+  height: 34vh;
+  box-shadow: -15px -15px 0px #4335DE;
+  
+   }
+   .quero_ser_cliente{
+    width: 58vw;
+   }
+   .box_controle a{
+    font-size: 4vw;
+   }
+   a.ja_sou_cliente{
+width: 42vw;
+   }
+   .box_saiba{
+    height: 50vh;
+   }
+   .section_conheca{
+    height: 70vh;
+   }
+   .box_conheca{
+    height: 50vh;
+   }
+   .box_conheca p{
+  font-size: 3.4vw;
+   }
+   .home_suporte_imagem{
+    width: 35vw;
+    height: 30vh;
+   }
+   .conteudo_home_suporte h4{
+    font-size: 7vw;
+   }
+   .conteudo_home_suporte p{
+    font-size: 3vw;
+   }
+   .conteudo_home_suporte span{
+    width: 30vw;
+    font-size: 3.5vw;
+   }
+   .container_caixas_footer{
+    width: 88vw;
+   }
+   .box_footer{
+    width: 28.5vw;
+   }
+   .box_footer img{
+    width: 8vw;
+   }
+   .box_footer h4{
+    font-size: 3vw;
+   }
+   .box_footer p{
+    font-size: 2.5vw;
+   }
+   .section_footer{
+    width: 95vw;
+   }
+   .box_entrarcontato{
+   width: 40vw;
+   margin-top: -14vw;
+   }
+   .box_formulario_footer{
+    width: 50vw;
+   }
+   .box_entrarcontato h3{
+    font-size: 5vw;
+   }
+   .box_entrarcontato p {
+    font-size: 2.5vw;
+   }
+   .box_entrarcontato span {
+    font-size: 2.5vw;
+   }
+   .rede_social{
+    width: 10vw;
+   }
+   .box_formulario_footer p{
+    font-size: 3.5vw;
+   }
+   .box_nome_email input{
+    font-size: 2.5vw;
+   }
+   .box_formulario_footer textarea{
+    font-size: 2.5vw;
+   }
+   .box_formulario_footer button{
+    font-size: 3vw;
    }
 }
