@@ -3032,3 +3032,52 @@ footer {
     margin-left: 1vw;
     border-bottom: 0.1vw solid #02033b67;
 }
+
+/*Começo da estilização para celulares!*/
+@media (max-width: 425px) {
+    .section_inicio{
+        position: relative;
+        overflow: hidden;
+    }
+    .icone_guest{
+        width: 10vw;
+    }
+    .img_trem{
+        width: 20vw;
+    }
+    .logo_texto{
+        width: 25vw;
+    }
+    .div_logo{
+        margin-left: 11vw;
+    }
+
+   .section_home_suporte{
+    position: relative;
+    overflow: hidden;
+   }
+   .menu-hamburguer{
+    font-size: 8vw;
+   }
+   .fechar-menu{
+    font-size: 8vw;
+   }
+   .menu-lateral{
+    padding-top: 25vw;
+    font-size: 6.5vw;
+    border-radius:  0 0 20vw 0;
+    
+   }
+   .title_mobile{
+    font-size: 7.5vw;
+   }
+   .seta_amarela{
+    width: 8vw;
+   }
+   .container_modal{
+    padding-top: 10vw;
+    border-radius:  0 0 0 20vw ;
+    border-left: 2px solid #02033B;
+    border-bottom: 2px solid #02033B;
+   }
+}
