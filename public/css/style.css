@@ -2705,14 +2705,14 @@ footer {
         
     }
     .box_servicos{
-        width: 43vw;
-        height: 50vh;
+        width: 17rem;
+        height: 19rem;
        margin-bottom: 2vw;
        border-radius: 5vw 13vw 5vw 13vw;
     }
     .container_servicos{
         height: auto;   
-        width: 95vw;
+        width: 80vw;
         border-radius: 5vw 14vw 5vw 14vw;  
         padding: 3vw; 
     }
@@ -2724,15 +2724,14 @@ footer {
         font-size: 8vw;
     }
     .img_servicos{
-        width: 30vw;
-        height: 15vh;
+        width: 22rem;
     }
     .box_servicos h4{
-        font-size: 4.8vw;
+        font-size: 1.8rem;
     }
     .box_servicos p{
         width: 33vw;
-        font-size: 3.3vh;
+        font-size: 1rem;
         font-weight: 600;
         margin-top: 1vw;
     }
