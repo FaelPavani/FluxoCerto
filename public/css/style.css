@@ -238,7 +238,7 @@ body {
 
 .section_conheca {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background-color: #F7C95F;
     background-color: linear;
     background: linear-gradient(to bottom, #F7C95F, #FDB235);
@@ -919,6 +919,7 @@ footer {
     width: 100%;
     height: 14.3vh;
     align-items: center;
+    
     border-bottom: 2px solid #02033B;
 }
 
@@ -2110,18 +2111,25 @@ footer {
 }
 
 .icone_guest {
-    height: 8vh;
-    width: 8vw;
+    height: 7vh;
+    width: 7vw;
     position: fixed;
     right: 2vw;
     top: 4vh;
     overflow: hidden;
     display: none;
     justify-content: center;
+    align-items: flex-start;
     border-radius: 50%;
+    background-image: url(../assets/guest_azul.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     border: 2px solid #02033B;
 }
-
+.icone_guest_branco{
+    background-image: url(../assets/guest_branco.png);
+}
 .icone_guest img {
     height: 8vh;
 }
@@ -2171,8 +2179,16 @@ footer {
 
     .icone_guest {
         display: flex;
+        height: 10vh;
+        border: none;
     }
 
+    .icone_guest img{
+        width: 8vw;
+        height: auto;
+        align-self: flex-end;
+
+    }
 
     /*Deixando o login responsivo*/
     .container_login {
@@ -2254,7 +2270,7 @@ footer {
     }
 
     .senha_input {
-        margin-top: 22.5vw;
+        margin-top: 21vw;
         margin-left: 2vw;
         font-size: 3.5vw;
     }
@@ -2304,16 +2320,16 @@ footer {
     .section_inicio {
         justify-content: flex-start;
         align-items: start;
-        height: 120vh;
+        height: 55rem;
         background-position: -20vw;
     }
 
     .div_celular {
         align-self: flex-end;
-        position: absolute;
-        height: 50vh;
-        right: 0;
-        width: 50vw;
+        justify-self: flex-end;
+        height: 45vh;
+        margin-left: 3.2rem;
+        width: 45vw;
     }
 
     .ja_sou_cliente:hover {
@@ -2327,8 +2343,8 @@ footer {
     }
 
     .div_celular img {
-        width: 50vw;
-        margin-left: -11vw;
+        width: 42vw;
+        margin-left: -8vw;
     }
 
     .box_title_conheca {
@@ -2371,8 +2387,8 @@ footer {
     }
 
     .home_suporte_imagem {
-        width: 35vw;
-        height: 40vh;
+        width: 18rem;
+        height: 18rem;
         padding-bottom: 10vw;
         padding-top: 1vw;
     }
@@ -2406,22 +2422,32 @@ footer {
         font-size: 3vw;
         border-radius: 4vw;
     }
-
+    .section_footer{
+        height: auto;
+        margin-top: 2vw;
+    }
+    .caixa_redes{
+       width: 20vw;
+    }
     .box_footer h4 {
-        font-size: 2.2vw;
+        font-size: 1.8vw;
     }
 
     .box_footer img {
-        width: 7vw;
+        width: 5vw;
     }
 
     .box_footer p {
-        font-size: 2vw;
+        font-size: 1.8vw;
         height: 20vh;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+
+    .box_formulario_footer{
+        height: auto;
     }
 
     .box_formulario_footer textarea {
@@ -2435,16 +2461,18 @@ footer {
 
     .box_nome_email input {
         width: 100%;
+        height: 7vh;
         margin-bottom: 1vw;
     }
+    
 
     .box_entrarcontato h3 {
-        font-size: 3.2vw;
+        font-size: 3vw;
         font-weight: 800;
     }
 
     .box_entrarcontato p {
-        font-size: 2vw;
+        font-size: 1.8vw;
     }
 
     .box_entrarcontato span {
@@ -2571,6 +2599,7 @@ footer {
         width: 39vw;
         border: 2px solid #02033B;
         height: 33vh;
+        border-radius: 2vw;
     }
 
     .imagem_valores {
@@ -2583,7 +2612,7 @@ footer {
     }
 
     .box_valores p {
-        font-size: 3.4vw;
+        font-size: 2.8vw;
         width: 30vw;
     }
 
@@ -2631,8 +2660,8 @@ footer {
     }
 
     .linkedin_mobile {
-        width: 8vw;
-        padding: 2vw;
+        width: 5rem;
+        padding: 1.5vw;
         border: 2px solid #aaa;
         border-radius: 2vw;
         margin-right: 1vw;
@@ -2643,7 +2672,8 @@ footer {
     }
 
     .caixa_cargo_linkedin {
-        width: 26vh;
+        width:  88%;
+
         margin-top: 1vw;
         height: 8vh;
         display: flex;
@@ -2668,11 +2698,11 @@ footer {
         display: flex !important;
     }
     .div_servicos{
-        margin-top: 19vw;
         width: 45vw;
         height:50vh;
-        position: absolute;
-        right: 0;
+        align-self: flex-end;
+        transform: translate(55vw, 0) scale(1);
+        
     }
     .box_servicos{
         width: 43vw;
@@ -2702,7 +2732,7 @@ footer {
     }
     .box_servicos p{
         width: 33vw;
-        font-size: 2.8vw;
+        font-size: 3.3vh;
         font-weight: 600;
         margin-top: 1vw;
     }
@@ -2711,14 +2741,18 @@ footer {
     }
     .imagem_suporte{
         width: 56vw;
-        margin-top: 19vw;
         height: 65vh;
-        position: absolute;
-        right: 0;
+        align-self: flex-end;
+        transform: translate(50vw, 18vw) scale(1);
     }
     .section_header_sobre{
         position: relative;
+        height: 40rem;
     }
+    .imagem_suporte{
+        height: 30rem;
+    }
+   
     .container_faq{
         width: 95vw;
         flex-direction: column-reverse;
@@ -2744,10 +2778,11 @@ footer {
         
     }
     .container_suporte{
-        margin-top: 20vw;
+        margin-top: 8rem;
         width: 95vw;
         margin-bottom: 10vw;
         padding-top: 2vw;
+        padding-bottom: 2vw;
     }
     .container_suporte h3{
         font-size: 6vw;
@@ -2773,11 +2808,13 @@ footer {
         margin-top: 2vw;
         font-size: 3vw;
     }
+    .section_home_suporte{
+    }
     .container_suporte button{
         width: 30vw;
         margin-right: 3vw;
         border-radius: 3vw;
-        font-size: 3vw;
+        font-size: 2.5vw;
         align-self: flex-end;
     }
     .caixa_faq{
@@ -2801,7 +2838,7 @@ footer {
     }
     .box_resposta{
         width: 85vw;
-        font-size: 6vw;
+        font-size: 4vw;
         border-radius: 4vw;
     }
     .direito_faq h4{
@@ -2913,8 +2950,7 @@ footer {
     /* Espaçamento entre os itens */
     border: 3px solid #02033B;
     border-radius: 3vw;
-    background-size: contain;
-    background-position: 0 -10vw;
+    background-size: cover;
 }
 
 .container_equipe_mobile {
@@ -2931,7 +2967,8 @@ footer {
     justify-content: flex-start;
     padding-left: 3vw;
     color: white;
-    font-size: 5vw;
+
+    font-size: 4vw;
     font-weight: 700;
     border-radius: 2vw;
     align-items: center;
@@ -2951,14 +2988,15 @@ footer {
 
 .container_modal {
     width: 40vw;
-    height: 50vh;
+    height: auto;
     background: linear-gradient(to bottom, white, #E7EFFA);
     position: fixed;
     top: -100px;
     z-index: 9;
     border-radius: 0 0 0 5vw;
     right: 0;
-    padding-top: 2vw;
+    padding-top: 3vw;
+    padding-bottom: 2vw;
     padding-left: 2vw;
     display: flex;
     align-items: center;
@@ -2971,7 +3009,7 @@ footer {
 
 .container_modal.ativo {
     display: flex;
-    top: 14vw;
+    top: 11vw;
     opacity: 1;
 }
 
@@ -3038,6 +3076,7 @@ footer {
     .section_inicio{
         position: relative;
         overflow: hidden;
+        height: 41rem;
     }
     .icone_guest{
         width: 10vw;
@@ -3065,7 +3104,7 @@ footer {
    .menu-lateral{
     padding-top: 25vw;
     font-size: 6.5vw;
-    border-radius:  0 0 20vw 0;
+    border-radius:  5vw;
     
    }
    .title_mobile{
@@ -3075,13 +3114,16 @@ footer {
     width: 8vw;
    }
    .container_modal{
-    padding-top: 10vw;
-    border-radius:  0 0 0 20vw ;
+    padding-top: 4rem;
+    border-radius:  5vw;
     border-left: 2px solid #02033B;
     border-bottom: 2px solid #02033B;
+    border-right: 2px solid #02033B;
+
    }
    .div_controle{
     margin-top: 25vw;
+    z-index: 5;
    }
    .div_controle h1{
     font-size: 10vw;
@@ -3095,13 +3137,15 @@ font-size: 4.5vw;
   /* margin-bottom: -22vw; */
   /* margin-right: -10vw; */
   width:48vw;
-  height: 34vh;
+  height: 28vh;
+  z-index: 1;
   box-shadow: -15px -15px 0px #4335DE;
   
    }
    .quero_ser_cliente{
     width: 58vw;
    }
+   
    .box_controle a{
     font-size: 4vw;
    }
@@ -3122,7 +3166,8 @@ width: 42vw;
    }
    .home_suporte_imagem{
     width: 35vw;
-    height: 30vh;
+    height: 25vh;
+    padding-top: 3vw;
    }
    .conteudo_home_suporte h4{
     font-size: 7vw;
@@ -3139,6 +3184,7 @@ width: 42vw;
    }
    .box_footer{
     width: 28.5vw;
+
    }
    .box_footer img{
     width: 8vw;
@@ -3151,6 +3197,7 @@ width: 42vw;
    }
    .section_footer{
     width: 95vw;
+    margin-bottom: 10vw;
    }
    .box_entrarcontato{
    width: 40vw;
@@ -3183,4 +3230,78 @@ width: 42vw;
    .box_formulario_footer button{
     font-size: 3vw;
    }
+   .conteudo_sec_header{
+    top: 25vw;
+   }
+   .section_header_sobre{
+    height: 30rem;
+    background-size: contain;
+    background-size: 40rem;
+    background-position: -20rem;
+   }
+   .div_servicos{
+    width: 10rem;
+    height: 14rem;
+    background-position: center;
+   }
+   .box_quem_somos h4{
+    font-size: 3vw;
+   }
+   .title_sobre{
+    font-size: 6vw;
+   }
+   .box_imagem_quem_somos{
+    width: 50vw;
+    height: 30vh;
+   }
+   .box_quem_somos2 h4{
+    font-size: 3vw;
+   }
+   .box_imagem_quem_somos2{
+    width: 50vw;
+    height: 30vh;
+   }
+   .section_sobre_empresa{
+    height: 90vh;
+   }
+   .box_missao{
+    border: #02033B 3px solid;
+    height: 40vh;
+   }
+   .box_missao:hover{
+    background-color: #02033B;
+   }
+   .box_missao p {
+    font-size: 3vw;
+    width: 100%;
+   }
+   .box_valores p {
+    font-size: 4vw;
+   }
+   .box_valores{
+    height: 30vh;
+   }
+   .container_valores{
+    height: 63vh;
+   }
+   .box_equipe_mobile{
+    width: 60vw;
+   }
+   .title_equipe{
+    font-size: 8vw;
+   }
+   .linkedin_mobile{
+    width: 15vw;
+    padding: 2.5vw;
+   }
+   .img_servicos{
+    width: 4.5rem;
+   }
+   .box_servicos{
+    height: 15rem;
+   }
+   .box_servicos p{
+    font-size: 0.8rem;
+   }
+ 
 }

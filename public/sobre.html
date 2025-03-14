@@ -36,7 +36,6 @@
 </div>
 
 <div  onclick="aparecerModal()" id="circle_guest" class="icone_guest">
-    <img id="img_guest" src="./assets/guest_azul.png" alt="">
     <div>
 </header>
 
@@ -349,13 +348,14 @@ function abrirMenu() {
     const circle = document.getElementById("circle_guest") 
     const imagemGuest = document.getElementById("img_guest") 
 
-    circle.style.borderColor = 'white'
-    imagemGuest.src = "./assets/guest_branco.png"
+    circle.classList.add('icone_guest_branco')
 
     const fundoEscuro = document.getElementById('fundo_escuro')
     fundoEscuro.style.display = 'flex'
 
-    
+
+
+
 
     modal.style.background = '#02033B'
     
@@ -366,6 +366,7 @@ function abrirMenu() {
 
        cadastro_modal.style.color = '#FFC247'
     cadastro_modal.style.borderColor = '#FFC247'
+
 }
 
 function fecharMenu() {
@@ -384,12 +385,11 @@ function fecharMenu() {
     const circle = document.getElementById("circle_guest") 
     const imagemGuest = document.getElementById("img_guest") 
 
-    circle.style.borderColor = '#02033B'
-    imagemGuest.src = "./assets/guest_azul.png"
-        const fundoEscuro = document.getElementById('fundo_escuro')
+    circle.classList.remove('icone_guest_branco')
+    const fundoEscuro = document.getElementById('fundo_escuro')
     fundoEscuro.style.display = 'none'
 
-    
+
     modal.style.background = 'linear-gradient(to bottom, white, #E7EFFA)'
     
     title_modal.style.color = '#02033B'

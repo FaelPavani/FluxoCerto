@@ -33,7 +33,7 @@
     </div>
 
     <div onclick="aparecerModal()" id="circle_guest" class="icone_guest">
-        <img id="img_guest" src="./assets/guest_azul.png" alt="">
+       
     </div>
 
    
@@ -197,8 +197,7 @@ function abrirMenu() {
     const circle = document.getElementById("circle_guest") 
     const imagemGuest = document.getElementById("img_guest") 
 
-    circle.style.borderColor = 'white'
-    imagemGuest.src = "./assets/guest_branco.png"
+    circle.classList.add('icone_guest_branco')
 
     const fundoEscuro = document.getElementById('fundo_escuro')
     fundoEscuro.style.display = 'flex'
@@ -235,9 +234,8 @@ function fecharMenu() {
     const circle = document.getElementById("circle_guest") 
     const imagemGuest = document.getElementById("img_guest") 
 
-    circle.style.borderColor = '#02033B'
-    imagemGuest.src = "./assets/guest_azul.png"
-        const fundoEscuro = document.getElementById('fundo_escuro')
+    circle.classList.remove('icone_guest_branco')
+    const fundoEscuro = document.getElementById('fundo_escuro')
     fundoEscuro.style.display = 'none'
 
 
