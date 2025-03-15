@@ -1557,24 +1557,35 @@ footer {
     border-radius: 0.8vw;
     padding: 1vw;
     width: 33vw;
-    height: 10.2vh;
+    height: 13vh;
 }
 
 .container_cadastro {
     margin-left: 1.2vw;
     width: 68vw;
-    height: 45vh;
-    display: grid;
+    height: 48vh;
     /* Ativa o Grid */
-    grid-template-columns: repeat(2, 1fr);
+    
     /* 2 colunas de tamanhos iguais */
-    justify-content: space-between;
-
+}
+.box_caixa_cadastro{
+    display: grid;
+     grid-template-columns: repeat(2, 1fr);
+}
+.mensagem_erro_cadastro{
+    width: 100%;
+    font-size: 1.3vw;
+    padding: 0.5vw;
+    border-radius:0.9rem;
+    color: white;
+    display: none;
+    margin-bottom: 0.5vw;
+    background-color: rgba(228, 23, 23, 0.815);
 }
 
 .box_input {
     width: 33vw;
-    height: 12.5vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
 }
@@ -1585,13 +1596,25 @@ footer {
 
 .mensagem_erro {
     width: 25vw;
-    font-size: 1.3vw;
+    font-size: 0.9rem;
     padding-top: 0.5vw;
-    height: 23vh;
+    padding-bottom: 0.5vw;
+    height: 20vh;
+    color: white;
+    background-color: #02033B;
+    padding-left: 1vw;
+    border-radius: 1.3vw;
+}
+.mensagem_erro_cnpj_email {
+    width: 25vw;
+    font-size: 1.3vw;
+    padding-top: 1vw;
+    height: 5.5rem;
     color: white;
     padding-left: 1vw;
     border-radius: 1.3vw;
-    background-color: #02033B;
+    background-color: rgba(228, 23, 23, 0.815);
+    
 }
 
 .mensagem_erro li {
@@ -1613,28 +1636,40 @@ footer {
     font-weight: 600;
     align-self: flex-end;
     justify-self: flex-end;
+    margin-bottom: 4vw;
     width: 17vw;
     border-radius: 1.2vw;
     height: 10vh;
     color: white;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box_mensagem_enviar button:hover {
     transform: scale(1.02);
 }
 
-.mensagem_erro_cnpj_email {
-    width: 25vw;
-    font-size: 1.3vw;
-    padding-top: 1vw;
-    height: 23vh;
+.concluido_cadastro{
+    width: 30vw;
+    height: 25vh;
+    background-color: green;
+    border-radius: 2vw;
+    font-size: 2.2vw;
+    opacity: 90%;
+    opacity: 0;
     color: white;
-    padding-left: 1vw;
-    border-radius: 1.3vw;
-    background-color: #02033B;
-}
+    position: absolute;
+    font-weight: 800;
+    border: 2px solid rgb(2, 71, 2);
+    display: flex;
+    padding: 1vw;
+    justify-self: center;
+    top: 1vw;
+    z-index: 10;
 
+}
 .logo_cadastro {
     position: absolute;
     top: 0.5vw;

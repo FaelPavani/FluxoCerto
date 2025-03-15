@@ -1,47 +1,100 @@
 var emailValido = false;
-var senhaValido = 0;
-var cnpjValido = 0;
+var senhaValido = false; // Supondo que você implementará a validação da senha
+var cnpjValido = false;
+var fantasiaValido = false;
+var razaoValido = false;
+
+function mostrarErro(elementoInput, mensagem) {
+    elementoInput.style.border = 'solid red 2px';
+    spanErro.style.display = 'flex';
+    spanErro.innerHTML = mensagem;
+}
+
+function limparErro(elementoInput) {
+    elementoInput.style.border = 'solid #30B945 2px';
+    spanErro.style.display = 'none';
+    spanErro.innerHTML = '';
+}
 
 function validarEmail() {
-        var email = inpEmail.value;
+    var email = inpEmail.value;
+    var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex básico para email
 
-        if (email == '') {
-                inpEmail.style.border = 'solid red 2px';
-                spanErro.style.display = 'none'
-        } else if (email.includes('@') && (email.endsWith('.com') || email.endsWith('.br'))) {
-                emailValido = true;
-                spanErro.style.display = 'none'
-                inpEmail.style.border = 'solid #30B945 2px';
-        } else {
-                spanErro.style.display = 'flex'
-                spanErro.innerHTML =
-                        "Email deve conter @ e terminar com .com ou .br.";
-                inpEmail.style.border = 'solid red 2px';
-        }
+    if (email === '') {
+        mostrarErro(inpEmail, "Email não pode estar vazio.");
+        mensagem_erro_email.style.display = 'flex'
+    } else if (regexEmail.test(email)) {
+        emailValido = true;
+        limparErro(inpEmail);
+    } else {
+        mostrarErro(inpEmail, "Email deve conter @ e um domínio válido.");
+    }
 }
 
-function validarCnpj(){
-        var cnpj = inpCnpj.value;
+function validarCnpj() {
+    var cnpj = inpCnpj.value;
+    var cnpjLetras = cnpj.match(/[A-Z]/g);
 
-        // Verificar se possui alguma letra
-        var cnpjLetras = cnpj.match(/[A-Z]/g);
-
-        if (cnpj == ''){
-                spanErro.style.display = 'none'
-                spanErro.innerHTML = '';
-                inpCnpj.style.border = 'solid red 2px';
-        } else if (cnpj.length == 14 && cnpjLetras == null){
-                cnpjValido = true;
-                spanErro.innerHTML = '';
-                spanErro.style.display = 'none'
-                inpCnpj.style.border = 'solid #30B945 2px'; 
-        } else {
-                spanErro.style.display = 'flex'
-                spanErro.innerHTML = 
-                        "CNPJ deve conter 14 carácteres e conter apenas números.";
-                inpCnpj.style.border = 'solid red 2px';
-        }
+    if (cnpj == '') {
+        inpCnpj.style.border = '2px solid red'
+        mensagem_erro_cnpj.style.display = 'flex'
+    } else if (cnpj.length == 14 && cnpjLetras == null) {
+        cnpjValido = true;
+        limparErro(inpCnpj);
+        mensagem_erro_cnpj.style.display = 'none'
+    } else {
+        mostrarErro(inpCnpj, "CNPJ deve conter 14 caracteres e conter apenas números.");
+    }
 }
+
+function validarFantasia() {
+    var nome_fantasia = inpNomeFantasia.value;
+
+    if (nome_fantasia == '') {
+        mostrarErro(inpNomeFantasia, "Nome fantasia não pode estar vazio.");
+        mensagem_erro_fantasia.style.display = 'flex'
+        fantasiaValido = false;
+    } else {
+        mensagem_erro_fantasia.style.display = 'none'
+        fantasiaValido = true;
+        limparErro(inpNomeFantasia);
+    }
+}
+
+function validarSocial() {
+    var razao_social = inpRazaoSocial.value;
+
+    if (razao_social === '') {
+        mostrarErro(inpRazaoSocial, "Razão social não pode estar vazia.");
+        mensagem_erro_social.style.display = 'flex'
+        razaoValido = false;
+    } else {
+        mensagem_erro_social.style.display = 'none'
+        razaoValido = true;
+        limparErro(inpRazaoSocial);
+    }
+}
+
+var step1 = false;
+function form_step1() {
+        validarFantasia();
+    validarSocial();
+    validarEmail();
+    validarCnpj();
+
+    if (fantasiaValido && razaoValido && emailValido && cnpjValido) {
+        document.getElementById('stepOne').style.display = 'none';
+        stepTwo.style.display = 'grid'
+        button_concluir.style.display = 'flex'
+        button_proximo.style.display = 'none'
+        step1 = true;
+    } else {
+        alert('Preencha todos os campos corretamente!');
+    }
+}
+
+
+
 
 function validarSenha() {
         var senha = inpSenha.value;
@@ -160,5 +213,53 @@ function validarConfirm(){
                 if (senhaValido){
                         senhaValido = true;
                 }
+        }
+}
+
+
+
+var nomeValido = false;
+var sobrenomeValido = false;
+
+
+function validarNome(){
+        var nome = inpNome.value
+    
+        if (nome === '') {
+            mensagem_erro_nome.style.display = 'flex'
+            nomeValido = false;
+        } else {
+            mensagem_erro_nome.style.display = 'none'
+            nomeValido = true;
+        }
+    }
+    function validarSobrenome(){
+var sobrenome = inpSobrenome.value
+
+    
+        if (sobrenome === '') {
+            mensagem_erro_sobrenome.style.display = 'flex'
+            sobrenomeValido = false;
+        } else {
+            mensagem_erro_sobrenome.style.display = 'none'
+            sobrenomeValido = true;
+        }
+    }
+
+
+function form_step2(){
+        validarNome();
+        validarSobrenome();
+        validarSenha();
+        validarConfirm();
+
+
+        if (step1 && (nomeValido && sobrenomeValido && senhaValido)) {
+                concluido.style.opacity = '1'
+                setTimeout(() => {
+                        window.location.href = "login.html";
+                    }, 1500);
+        } else {
+            alert('Preencha todos os campos corretamente!');
         }
 }

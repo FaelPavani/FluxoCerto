@@ -1,88 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="./assets/trem_icone.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="./assets/trem_icone.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/validacao.js"></script>
-</head>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/validacao.js"></script>
+    </head>
 
-<body class="corpo_cadastro">
-    <a href="./index.html">  <img class="logo_cadastro" src="./assets/logo_roxa.png" alt=""></a>
+    <body class="corpo_cadastro">
+        <a href="./index.html">  <img class="logo_cadastro" src="./assets/logo_roxa.png" alt=""></a>
 
-    <img class="circle_login" src="./assets/bg-circle.svg" alt="">
+        <img class="circle_login" src="./assets/bg-circle.svg" alt="">
 
-    <div class="box_ja_tem_conta">
-        <h2>Já tem uma conta?</h2>
-      <a href="./login.html">  <button class="botao_fazer_login">Fazer Login</button></a>
-    </div>
-        <section class="section_cadastro">
-
-            <div class="box_title_cadastro">
-            <h6>Bem-vindo, vamos começar!</h6>
-            <h2>Criar uma conta</h2>
+        <div class="box_ja_tem_conta">
+            <h2>Já tem uma conta?</h2>
+        <a href="./login.html">  <button class="botao_fazer_login">Fazer Login</button></a>
         </div>
-            <div class="container_cadastro">
+            <section class="section_cadastro">
 
-            <div class="box_input">
-            <label for="inpNomeFantasia">Nome fantasia</label>
-            <input type="text" id="inpNomeFantasia" name="inpNomeFantasia" placeholder="Digite o nome fantasia da empresa" required>
+                <div class="box_title_cadastro">
+                <h6>Bem-vindo, vamos começar!</h6>
+                <h2>Criar uma conta</h2>
             </div>
-            
-            <div class="box_input">
-            <label for="inpRazaoSocial">Razão Social</label>
-            <input type="text" id="inpRazaoSocial" placeholder="Digite a razão social registrada" name="inpRazaoSocial" required>
-        </div>
-
-
-            <div class="box_input">
-                <label for="inpEmail">Email</label>
-            <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required placeholder="Digite seu e-mail empresarial">
+                <div class="container_cadastro">
+    <!--    começo da etapa 1  -->
+                    <div id="stepOne" class="box_caixa_cadastro">
+                <div class="box_input">
+                <label for="inpNomeFantasia">Nome fantasia</label>
+                <span id="mensagem_erro_fantasia" class="mensagem_erro_cadastro">&#10006; Insira um nome fantasia válido!</span>
+                <input type="text" id="inpNomeFantasia" name="inpNomeFantasia" placeholder="Digite o nome fantasia da empresa" required>
                 </div>
+                
+                <div class="box_input">
+                <label for="inpRazaoSocial">Razão Social</label>
+                <span id="mensagem_erro_social" class="mensagem_erro_cadastro">&#10006; Insira uma razão social válida!</span>
+                <input type="text" id="inpRazaoSocial" placeholder="Digite a razão social registrada" name="inpRazaoSocial" required>
+            </div>
 
 
                 <div class="box_input">
+                    <label for="inpEmail">Email</label>
+                <span id="mensagem_erro_email" class="mensagem_erro_cadastro">&#10006; Insira um email válido!</span>
+                <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required placeholder="Digite seu e-mail empresarial">
+                    </div>
 
-            <label for="inpCnpj">CNPJ</label>
-            <input type="text" id="inpCnpj" placeholder="Digite o CNPJ (somente números)" name="inpCnpj" oninput="validarCnpj()" required>
+
+                    <div class="box_input">
+
+                <label for="inpCnpj">CNPJ</label>
+                <span id="mensagem_erro_cnpj" class="mensagem_erro_cadastro">&#10006; Insira um CNPJ válido!</span>
+                <input type="text" id="inpCnpj" placeholder="Digite o CNPJ (somente números)" name="inpCnpj" oninput="validarCnpj()" required>
+                </div>
+            </div>
+    <!-- FIM DA ETAPA 1 -->
+
+    <div style="display: none;" id="stepTwo" class="box_caixa_cadastro">
+        <div class="box_input">
+        <label for="inpNomeFantasia">Nome</label>
+        <span id="mensagem_erro_nome" class="mensagem_erro_cadastro">&#10006; Insira um nome válido!</span>
+        <input type="text" id="inpNome" name="inpNome" placeholder="Digite o seu nome" required>
+        </div>
+        
+        <div class="box_input">
+        <label for="inpRazaoSocial">Sobrenome</label>
+        <span id="mensagem_erro_sobrenome" class="mensagem_erro_cadastro">&#10006; Insira um sobrenome válido!</span>
+        <input type="text" id="inpSobrenome" placeholder="Digite o seu sobrenome" name="inpSobrenome" required>
+    </div>
+
+
+        <div class="box_input">
+            <label for="inpEmail">Senha</label>
+        <span id="mensagem_erro_senha" class="mensagem_erro_cadastro">&#10006; Insira uma senha válida!</span>
+        <input type="text" id="inpSenha" oninput="validarSenha()" name="inpSenha" required placeholder="Digite sua senha">
             </div>
 
 
             <div class="box_input">
-            <label for="inpSenha">Senha</label>
-            <input type="text" id="inpSenha" name="inpSenha" oninput="validarSenha()" required>
-                </div>
 
-            <div class="box_input">
-
-            <label for="inpConfirma">Confirme a senha</label>
-            <input type="text" id="inpConfirma" name="inpConfirma" oninput="validarConfirm()" required>
+        <label for="inpCnpj">Confirme sua senha</label>
+        <span id="mensagem_erro_confirma" class="mensagem_erro_cadastro">&#10006; Insira uma senha válida!</span>
+        <input type="text" id="inpConfirma" oninput="validarConfirm()"  name="inpConfirma" required>
         </div>
     </div>
 
-    <div class="box_mensagem_enviar">
-            <span class="mensagem_erro" style="display: none;" id="erroSenha">
-                <ul>
-                    <p style="color: red" id="senhasIdenticas">&#10006; As senhas devem ser idênticas</p>
-                    <li class="col1" id="qtdCaractere">&#10006; Pelo menos 8 caracteres</li>
-                    <li class="col1" id="minuscula">&#10006; Uma letra minúscula</li>
-                    <li class="col1" id="maiuscula">&#10006; Uma letra maiúscula</li>
-                    <li class="col2" id="caractereEspecial">&#10006; Um caractere especial</li>
-                    <li class="col2" id="numero">&#10006; Um número</li>
-                </ul>
-            </span>
-            <p><span style="display: none;" class="mensagem_erro_cnpj_email" id="spanErro"></span></p>
+            </div>
+                <!-- <div class="box_input">
+                <label for="inpSenha">Senha</label>
+                <input type="text" id="inpSenha" name="inpSenha" oninput="validarSenha()" required>
+                    </div>
 
-            <button type="submit">Cadastrar</button>
+                <div class="box_input">
+
+                <label for="inpConfirma">Confirme a senha</label>
+                <input type="text" id="inpConfirma" name="inpConfirma" oninput="validarConfirm()" required>
+            </div> -->
         </div>
-        </section>
-    
+
+        <div class="box_mensagem_enviar">
+                <span class="mensagem_erro" style="display: none;" id="erroSenha">
+                    <ul>
+                        <p style="color: red" id="senhasIdenticas">&#10006; As senhas devem ser idênticas</p>
+                        <li class="col1" id="qtdCaractere">&#10006; Pelo menos 8 caracteres</li>
+                        <li class="col1" id="minuscula">&#10006; Uma letra minúscula</li>
+                        <li class="col1" id="maiuscula">&#10006; Uma letra maiúscula</li>
+                        <li class="col2" id="caractereEspecial">&#10006; Um caractere especial</li>
+                        <li class="col2" id="numero">&#10006; Um número</li>
+                    </ul>
+                </span>
+                <p><span style="display: none;" class="mensagem_erro_cnpj_email" id="spanErro"></span></p>
+
+                <button  id="button_proximo" onclick="form_step1()" type="submit">Próximo</button>
+                <button style="display: none;" id="button_concluir" onclick="form_step2()" type="submit">Concluir</button>
+            </div>
+            </section>
+            <div id="concluido" class="concluido_cadastro">
+                Cadastro concluído com sucesso! Redirecionando...
+            </div>
 
 
-</body>
+    </body>
 
-</html>
+    </html>
