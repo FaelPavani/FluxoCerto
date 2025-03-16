@@ -14,7 +14,7 @@ router.post("/cadastrarChamado", function (req, res) {
 
 
 
-var pesquisaController = require('../controllers/pesquisaController')
+
 
 router.post("/inserirPontuacao", function (req, res) {
     pesquisaController.inserirPontuacao(req, res);
