@@ -38,8 +38,6 @@ function cadastrarUsuario(nomeu, sobrenome, email, senha,)  // atualizar os valo
     var instrucaoSql = `
          INSERT INTO empresa (nomeFantasia, razaoSocial,cnpj) Values ('${nomef}','${razaoSocial}','${cnpj}');
     `;
-     
-
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 
