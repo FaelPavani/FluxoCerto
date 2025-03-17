@@ -114,7 +114,7 @@
                 <p><span style="display: none;" class="mensagem_erro_cnpj_email" id="spanErro"></span></p>
 
                 <button  id="button_proximo" onclick="form_step1()" type="submit">Próximo</button>
-                <button style="display: none;" id="button_concluir" onclick="form_step2()" type="submit">Concluir</button>
+                <button style="display: none;" id="button_concluir" onclick="cadastrar()" type="submit">Concluir</button>
             </div>
             </section>
             <div id="concluido" class="concluido_cadastro">
@@ -132,47 +132,35 @@
 
   function cadastrar() {
     // aguardar();
-
+alert("slaoq")
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomef_var = inpNomeFantasia.value;
-    var emailVar = inpEmail.value;
-    var senhaVar = inpSenha.value;
-    var nomeu_var = inpNome.value
-    var sobrenome_var = inpSobrenome.value    
-
-
-
-
-    var idEmpresaVincular
+    var nomef_Var = inpNomeFantasia.value;
+    var email_Var = inpEmail.value;
+    var senha_Var = inpSenha.value;
+    var nomeu_Var = inpNome.value;
+    var sobrenome_Var = inpSobrenome.value;
+    var cnpj_Var =  inpCnpj.value;
+    var razaoSocial_Var = inpRazaoSocial.value;
 
     // Verificando se há algum campo em branco
     if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      codigoVar == ""
+      nomef_Var == "" ||
+      email_Var == "" ||
+      senha_Var == "" ||
+      nomeu_Var == "" ||
+      sobrenome_Var == ""||
+      cnpj_Var == ""||
+      razaoSocial_Var == ""
     ) {
 
 
-      finalizarAguardar();
+   
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
-    }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -188,34 +176,37 @@
 
 
         // setar os nnomes no json que vai para o post e vai salvar setar variavies
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        nomeuServer: nomeu_Var,
+        emailServer: email_Var,
+        senhaServer: senha_Var,
+        nomefServer: nomef_Var, 
+        sobrenomeServer: sobrenome_Var, 
+        cnpjServer: cnpj_Var, 
+        razaoSocialServer: razaoSocial_Var 
+
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
+         
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          concluido.style.display = "flex";
 
           setTimeout(() => {
             window.location = "login.html";
           }, "2000");
 
           limparFormulario();
-          finalizarAguardar();
+     
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+       
       });
 
     return false;
@@ -242,6 +233,6 @@
   }
 
   function sumirMensagem() {
-    cardErro.style.display = "none";
+ 
   }
 </script>

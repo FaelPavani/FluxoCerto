@@ -247,19 +247,19 @@ var sobrenome = inpSobrenome.value
     }
 
 
-function form_step2(){
-        validarNome();
-        validarSobrenome();
-        validarSenha();
-        validarConfirm();
+// function form_step2(){
+//         validarNome();
+//         validarSobrenome();
+//         validarSenha();
+//         validarConfirm();
 
 
-        if (step1 && (nomeValido && sobrenomeValido && senhaValido)) {
-                concluido.style.opacity = '1'
-                setTimeout(() => {
-                        window.location.href = "login.html";
-                    }, 1500);
-        } else {
-            alert('Preencha todos os campos corretamente!');
-        }
-}
+//         if (step1 && (nomeValido && sobrenomeValido && senhaValido)) {
+//                 concluido.style.opacity = '1'
+//                 setTimeout(() => {
+//                         window.location.href = "login.html";
+//                     }, 1500);
+//         } else {
+//             alert('Preencha todos os campos corretamente!');
+//         }
+// }

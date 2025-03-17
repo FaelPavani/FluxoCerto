@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/trem_icone.png" />
-    <script src="script.js" type="text/javascript" defer></script>
     <title>Fluxo Certo</title>
 </head>
 
@@ -31,11 +30,11 @@
         <h2>Entre em sua conta</h2>
 
         <label class="email_input">Email</label>
-        <input type="text" id="email" placeholder="exemplo@email.com" required>
+        <input type="text" id="inpemail" placeholder="exemplo@email.com" required>
         <label class="senha_input">Senha</label>
-        <input type="text" id="senha" placeholder="**************" required>
+        <input type="text" id="inpsenha" placeholder="**************" required>
         
-        <button>ENTRAR</button>
+        <button onclick="entrar()">ENTRAR</button>
         <a href="">Esqueceu a senha?</a>
         <div style="display: flex;">
             <span class="linha_login"></span><p class="ou_login">OU</p><span class="linha_login"></span>
@@ -51,15 +50,16 @@
 
 
     function entrar() {
-        aguardar();
+       
+        alert("sla")
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var emailVar = inpemail.value;
+        var senhaVar = inpsenha.value;
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+          
             return false;
         }
         else {
@@ -93,10 +93,10 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                 
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "suporte.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

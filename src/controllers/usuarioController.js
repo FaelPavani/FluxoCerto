@@ -41,28 +41,71 @@ function autenticar(req, res) {
 }
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
+    var nomef = req.body.nomefServer;
     var sobrenome = req.body.sobrenomeServer;
-    // atualizar valores de cadastro 
     var email = req.body.emailServer;
-    var telefone = req.body.telefoneServer;
     var senha = req.body.senhaServer;
-    
+    var cnpj = req.body.cnpjServer;
+    var nomeu = req.body.nomeuServer
+    var razaoSocial = req.body.razaoSocialServer
+
+
+
+
+
+
     // Faça as validações dos valores
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
+
+
+
+
+    if (nomef == undefined) {
+        res.status(400).send("Seu nome de usuario está undefined!");
     } else if (sobrenome == undefined) {
         res.status(400).send("Seu sobrenome está undefined!");
     }else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
-    } else if (telefone == undefined) {
-        res.status(400).send("Seu telefone está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else {
+    }
+        else if(nomeu == undefined){
+            res.status(400).send("Seu nome fantasia está undefined!");
+        }
+        else if(cnpj == undefined){
 
+            res.status(400).send("sua senha está undefined!");
+        }
+        else if(razaoSocial == undefined){
+            res.status(400).send("sua razão Social está undefined!");
+        } 
+ 
+     else {
+
+
+
+        usuarioModel.cadastrarEmpresa(razaoSocial,cnpj,nomef)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+
+
+
+
+        
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, sobrenome, email, telefone, senha)
+        usuarioModel.cadastrarUsuario(nomeu, sobrenome, email, senha,)
             .then(
                 function (resultado) {
                     res.json(resultado);
