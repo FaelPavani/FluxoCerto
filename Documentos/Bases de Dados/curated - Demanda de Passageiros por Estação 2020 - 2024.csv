@@ -1,0 +1,3565 @@
+Ano;Linha;Estação;Mês;Fluxo
+2024;Azul;Jabaquara;Jan;63
+2024;Azul;Conceição;Jan;23
+2024;Azul;São Judas;Jan;13
+2024;Azul;Saúde-Ultrafarma;Jan;22
+2024;Azul;Praça da Árvore;Jan;13
+2024;Azul;Santa Cruz;Jan;81
+2024;Azul;Vila Mariana;Jan;14
+2024;Azul;Ana Rosa;Jan;64
+2024;Azul;Paraíso;Jan;80
+2024;Azul;Vergueiro;Jan;21
+2024;Azul;São Joaquim;Jan;17
+2024;Azul;Japão-Liberdade;Jan;20
+2024;Azul;Sé;Jan;153
+2024;Azul;São Bento;Jan;49
+2024;Azul;Luz;Jan;116
+2024;Azul;Tiradentes;Jan;11
+2024;Azul;Armênia;Jan;16
+2024;Azul;Portuguesa-Tietê;Jan;43
+2024;Azul;Carandiru;Jan;9
+2024;Azul;Santana;Jan;41
+2024;Azul;Jardim São Paulo-Ayrton Senna;Jan;9
+2024;Azul;Parada Inglesa;Jan;11
+2024;Azul;Tucuruvi;Jan;47
+2024;Verde;Vila Prudente;Jan;62
+2024;Verde;Tamanduateí;Jan;62
+2024;Verde;Sacomã;Jan;33
+2024;Verde;Alto do Ipiranga;Jan;14
+2024;Verde;Santos-Imigrantes;Jan;13
+2024;Verde;Chácara Klabin;Jan;70
+2024;Verde;Ana Rosa;Jan;51
+2024;Verde;Paraíso;Jan;53
+2024;Verde;Brigadeiro;Jan;44
+2024;Verde;Trianon-Masp;Jan;38
+2024;Verde;Consolação;Jan;81
+2024;Verde;Clínicas;Jan;18
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Jan;8
+2024;Verde;Vila Madalena;Jan;17
+2024;Vermelha;Corinthians-Itaquera;Jan;64
+2024;Vermelha;Artur Alvim;Jan;47
+2024;Vermelha;Patriarca-Vila Ré;Jan;18
+2024;Vermelha;Guilhermina-Esperança;Jan;18
+2024;Vermelha;Vila Matilde;Jan;22
+2024;Vermelha;Penha-Lojas Besni;Jan;23
+2024;Vermelha;Carrão-Assaí Atacadista;Jan;35
+2024;Vermelha;Tatuapé;Jan;101
+2024;Vermelha;Belém;Jan;32
+2024;Vermelha;Bresser-Moóca;Jan;25
+2024;Vermelha;Brás;Jan;48
+2024;Vermelha;Pedro II;Jan;14
+2024;Vermelha;Sé2;Jan;172
+2024;Vermelha;Anhangaba;Jan;45
+2024;Vermelha;República;Jan;107
+2024;Vermelha;Santa Cecília;Jan;19
+2024;Vermelha;Marechal Deodoro;Jan;22
+2024;Vermelha;Palmeiras-Barra Funda;Jan;126
+2024;Prata;Vila Prudente;Jan;46
+2024;Prata;Oratório;Jan;5
+2024;Prata;São Lucas;Jan;4
+2024;Prata;Camilo Haddad;Jan;3
+2024;Prata;Vila Tolstói;Jan;4
+2024;Prata;Vila União;Jan;5
+2024;Prata;Jardim Planalto;Jan;4
+2024;Prata;Sapopemba;Jan;7
+2024;Prata;Fazenda da Juta;Jan;3
+2024;Prata;São Mateus;Jan;14
+2024;Prata;Jardim Colonial;Jan;7
+2023;Azul;Jabaquara;Jan;63
+2023;Azul;Conceição;Jan;20
+2023;Azul;São Judas;Jan;12
+2023;Azul;Saúde;Jan;21
+2023;Azul;Praça da Árvore;Jan;12
+2023;Azul;Santa Cruz;Jan;76
+2023;Azul;Vila Mariana;Jan;13
+2023;Azul;Ana Rosa;Jan;59
+2023;Azul;Paraíso;Jan;73
+2023;Azul;Vergueiro;Jan;21
+2023;Azul;São Joaquim;Jan;17
+2023;Azul;Japão-Liberdade;Jan;19
+2023;Azul;Sé;Jan;144
+2023;Azul;São Bento;Jan;48
+2023;Azul;Luz;Jan;108
+2023;Azul;Tiradentes;Jan;10
+2023;Azul;Armênia;Jan;17
+2023;Azul;Portuguesa-Tietê;Jan;43
+2023;Azul;Carandiru;Jan;8
+2023;Azul;Santana;Jan;41
+2023;Azul;Jardim São Paulo-Ayrton Senna;Jan;8
+2023;Azul;Parada Inglesa;Jan;9
+2023;Azul;Tucuruvi;Jan;47
+2023;Vermelha;Corinthians-Itaquera;Jan;64
+2023;Vermelha;Artur Alvim;Jan;46
+2023;Vermelha;Patriarca;Jan;17
+2023;Vermelha;Guilhermina-Esperança;Jan;17
+2023;Vermelha;Vila Matilde;Jan;21
+2023;Vermelha;Penha;Jan;22
+2023;Vermelha;Carrão;Jan;34
+2023;Vermelha;Tatuapé;Jan;64
+2023;Vermelha;Belém;Jan;31
+2023;Vermelha;Bresser-Mooca;Jan;24
+2023;Vermelha;Brás;Jan;66
+2023;Vermelha;Pedro II;Jan;14
+2023;Vermelha;Sé;Jan;164
+2023;Vermelha;Anhangabaú;Jan;42
+2023;Vermelha;República;Jan;101
+2023;Vermelha;Santa Cecília;Jan;19
+2023;Vermelha;Marechal Deodoro;Jan;22
+2023;Vermelha;Palmeiras-Barra Funda;Jan;119
+2023;Prata;Vila Prudente;Jan;46
+2023;Prata;Oratório;Jan;5
+2023;Prata;São Lucas;Jan;4
+2023;Prata;Camilo Haddad;Jan;3
+2023;Prata;Vila Tolstói;Jan;4
+2023;Prata;Vila União;Jan;4
+2023;Prata;Jardim Planalto;Jan;4
+2023;Prata;Sapopemba;Jan;7
+2023;Prata;Fazenda da Juta;Jan;3
+2023;Prata;São Mateus;Jan;14
+2023;Prata;Jardim Colonial;Jan;5
+2022;Azul;Jabaquara;Jan;53
+2022;Azul;Conceição;Jan;16
+2022;Azul;São Judas;Jan;10
+2022;Azul;Saúde;Jan;18
+2022;Azul;Praça da Árvore;Jan;10
+2022;Azul;Santa Cruz;Jan;66
+2022;Azul;Vila Mariana;Jan;11
+2022;Azul;Ana Rosa;Jan;46
+2022;Azul;Paraíso;Jan;57
+2022;Azul;Vergueiro;Jan;16
+2022;Azul;São Joaquim;Jan;14
+2022;Azul;Japão-Liberdade;Jan;14
+2022;Azul;Sé;Jan;125
+2022;Azul;São Bento;Jan;38
+2022;Azul;Luz;Jan;86
+2022;Azul;Tiradentes;Jan;8
+2022;Azul;Armênia;Jan;15
+2022;Azul;Portuguesa-Tietê;Jan;35
+2022;Azul;Carandiru;Jan;7
+2022;Azul;Santana;Jan;35
+2022;Azul;Jardim São Paulo-Ayrton Senna;Jan;7
+2022;Azul;Parada Inglesa;Jan;7
+2022;Azul;Tucuruvi;Jan;39
+2022;Verde;Vila Prudente;Jan;48
+2022;Verde;Tamanduateí;Jan;47
+2022;Verde;Sacomã;Jan;26
+2022;Verde;Alto do Ipiranga;Jan;11
+2022;Verde;Santos-Imigrantes;Jan;9
+2022;Verde;Chácara Klabin;Jan;48
+2022;Verde;Ana Rosa;Jan;41
+2022;Verde;Paraíso;Jan;42
+2022;Verde;Brigadeiro;Jan;28
+2022;Verde;Trianon-Masp;Jan;24
+2022;Verde;Consolação;Jan;55
+2022;Verde;Clínicas;Jan;13
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Jan;5
+2022;Verde;Vila Madalena;Jan;11
+2022;Vermelha;Corinthians-Itaquera;Jan;56
+2022;Vermelha;Artur Alvim;Jan;39
+2022;Vermelha;Patriarca;Jan;14
+2022;Vermelha;Guilhermina-Esperança;Jan;14
+2022;Vermelha;Vila Matilde;Jan;17
+2022;Vermelha;Penha;Jan;19
+2022;Vermelha;Carrão;Jan;29
+2022;Vermelha;Tatuapé;Jan;53
+2022;Vermelha;Belém;Jan;26
+2022;Vermelha;Bresser-Mooca;Jan;21
+2022;Vermelha;Brás;Jan;67
+2022;Vermelha;Pedro II;Jan;13
+2022;Vermelha;Sé;Jan;136
+2022;Vermelha;Anhangabaú;Jan;34
+2022;Vermelha;República;Jan;79
+2022;Vermelha;Santa Cecília;Jan;17
+2022;Vermelha;Marechal Deodoro;Jan;19
+2022;Vermelha;Palmeiras-Barra Funda;Jan;105
+2022;Prata;Vila Prudente;Jan;38
+2022;Prata;Oratório;Jan;4
+2022;Prata;São Lucas;Jan;3
+2022;Prata;Camilo Haddad;Jan;2
+2022;Prata;Vila Tolstói;Jan;3
+2022;Prata;Jardim Colonial;Jan;
+2021;Azul;Jabaquara;Jan;46
+2021;Azul;Conceição;Jan;15
+2021;Azul;São Judas;Jan;9
+2021;Azul;Saúde;Jan;16
+2021;Azul;Praça da Árvore;Jan;9
+2021;Azul;Santa Cruz;Jan;60
+2021;Azul;Vila Mariana;Jan;10
+2021;Azul;Ana Rosa;Jan;40
+2021;Azul;Paraíso;Jan;49
+2021;Azul;Vergueiro;Jan;15
+2021;Azul;São Joaquim;Jan;12
+2021;Azul;Japão-Liberdade;Jan;12
+2021;Azul;Sé;Jan;119
+2021;Azul;São Bento;Jan;36
+2021;Azul;Luz;Jan;70
+2021;Azul;Tiradentes;Jan;7
+2021;Azul;Armênia;Jan;14
+2021;Azul;Portuguesa-Tietê;Jan;31
+2021;Azul;Carandiru;Jan;6
+2021;Azul;Santana;Jan;33
+2021;Azul;Jardim São Paulo-Ayrton Senna;Jan;6
+2021;Azul;Parada Inglesa;Jan;7
+2021;Azul;Tucuruvi;Jan;36
+2021;Verde;Vila Prudente;Jan;40
+2021;Verde;Tamanduateí;Jan;36
+2021;Verde;Sacomã;Jan;23
+2021;Verde;Alto do Ipiranga;Jan;9
+2021;Verde;Santos-Imigrantes;Jan;8
+2021;Verde;Chácara Klabin;Jan;40
+2021;Verde;Ana Rosa;Jan;36
+2021;Verde;Paraíso;Jan;38
+2021;Verde;Brigadeiro;Jan;25
+2021;Verde;Trianon-Masp;Jan;21
+2021;Verde;Consolação;Jan;49
+2021;Verde;Clínicas;Jan;13
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Jan;5
+2021;Verde;Vila Madalena;Jan;10
+2021;Vermelha;Corinthians-Itaquera;Jan;54
+2021;Vermelha;Artur Alvim;Jan;37
+2021;Vermelha;Patriarca;Jan;13
+2021;Vermelha;Guilhermina-Esperança;Jan;13
+2021;Vermelha;Vila Matilde;Jan;16
+2021;Vermelha;Penha;Jan;18
+2021;Vermelha;Carrão;Jan;26
+2021;Vermelha;Tatuapé;Jan;50
+2021;Prata;Vila Prudente;Jan;31
+2021;Prata;Oratório;Jan;3
+2021;Prata;São Lucas;Jan;3
+2021;Prata;Camilo Haddad;Jan;2
+2021;Prata;Vila Tolstói;Jan;3
+2021;Prata;Vila União;Jan;3
+2021;Prata;Sapopemba;Jan;5
+2021;Prata;São Mateus;Jan;11
+2020;Azul;Jabaquara;Jan;80
+2020;Azul;Conceição;Jan;35
+2020;Azul;São Judas;Jan;18
+2020;Azul;Saúde;Jan;31
+2020;Azul;Praça da Árvore;Jan;19
+2020;Azul;Santa Cruz;Jan;102
+2020;Azul;Vila Mariana;Jan;19
+2020;Azul;Ana Rosa;Jan;79
+2020;Azul;Paraíso;Jan;100
+2020;Azul;Vergueiro;Jan;27
+2020;Azul;São Joaquim;Jan;23
+2020;Azul;Japão-Liberdade;Jan;22
+2020;Azul;Sé;Jan;202
+2020;Azul;São Bento;Jan;68
+2020;Azul;Luz;Jan;134
+2020;Azul;Tiradentes;Jan;13
+2020;Azul;Armênia;Jan;25
+2020;Azul;Portuguesa-Tietê;Jan;59
+2020;Azul;Carandiru;Jan;13
+2020;Azul;Santana;Jan;57
+2020;Azul;Jardim São Paulo-Ayrton Senna;Jan;13
+2020;Azul;Parada Inglesa;Jan;14
+2020;Azul;Tucuruvi;Jan;63
+2020;Verde;Vila Prudente;Jan;68
+2020;Verde;Tamanduateí;Jan;72
+2020;Verde;Sacomã;Jan;41
+2020;Verde;Alto do Ipiranga;Jan;18
+2020;Verde;Santos-Imigrantes;Jan;15
+2020;Verde;Chácara Klabin;Jan;72
+2020;Verde;Ana Rosa;Jan;67
+2020;Verde;Paraíso;Jan;70
+2020;Verde;Brigadeiro;Jan;58
+2020;Verde;Trianon-Masp;Jan;52
+2020;Verde;Consolação;Jan;111
+2020;Verde;Clínicas;Jan;22
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Jan;12
+2020;Verde;Vila Madalena;Jan;24
+2020;Vermelha;Corinthians-Itaquera;Jan;81
+2020;Vermelha;Artur Alvim;Jan;57
+2020;Vermelha;Patriarca;Jan;22
+2020;Vermelha;Guilhermina-Esperança;Jan;22
+2020;Vermelha;Vila Matilde;Jan;26
+2020;Vermelha;Penha;Jan;30
+2020;Vermelha;Carrão;Jan;42
+2020;Vermelha;Tatuapé;Jan;79
+2020;Vermelha;Belém;Jan;39
+2020;Vermelha;Bresser-Mooca;Jan;31
+2020;Vermelha;Brás;Jan;91
+2020;Vermelha;Pedro II;Jan;21
+2020;Vermelha;Sé;Jan;231
+2020;Vermelha;Anhangabaú;Jan;60
+2020;Vermelha;República;Jan;146
+2020;Vermelha;Santa Cecília;Jan;28
+2020;Vermelha;Marechal Deodoro;Jan;31
+2020;Vermelha;Palmeiras-Barra Funda;Jan;176
+2020;Prata;Vila Prudente;Jan;51
+2020;Prata;Oratório;Jan;6
+2020;Prata;São Lucas;Jan;5
+2020;Prata;Camilo Haddad;Jan;3
+2020;Prata;Vila Tolstói;Jan;4
+2020;Prata;Vila União;Jan;5
+2020;Prata;Jardim Planalto;Jan;4
+2020;Prata;Sapopemba;Jan;6
+2020;Prata;Fazenda da Juta;Jan;3
+2020;Prata;São Mateus;Jan;12
+2024;Azul;Jabaquara;Fev;67
+2024;Azul;Conceição;Fev;29
+2024;Azul;São Judas;Fev;15
+2024;Azul;Saúde-Ultrafarma;Fev;26
+2024;Azul;Praça da Árvore;Fev;15
+2024;Azul;Santa Cruz;Fev;92
+2024;Azul;Vila Mariana;Fev;20
+2024;Azul;Ana Rosa;Fev;76
+2024;Azul;Paraíso;Fev;95
+2024;Azul;Vergueiro;Fev;26
+2024;Azul;São Joaquim;Fev;28
+2024;Azul;Japão-Liberdade;Fev;21
+2024;Azul;Sé;Fev;169
+2024;Azul;São Bento;Fev;52
+2024;Azul;Luz;Fev;131
+2024;Azul;Tiradentes;Fev;15
+2024;Azul;Armênia;Fev;19
+2024;Azul;Portuguesa-Tietê;Fev;42
+2024;Azul;Carandiru;Fev;11
+2024;Azul;Santana;Fev;48
+2024;Azul;Jardim São Paulo-Ayrton Senna;Fev;11
+2024;Azul;Parada Inglesa;Fev;13
+2024;Azul;Tucuruvi;Fev;54
+2024;Verde;Vila Prudente;Fev;73
+2024;Verde;Tamanduateí;Fev;73
+2024;Verde;Sacomã;Fev;39
+2024;Verde;Alto do Ipiranga;Fev;18
+2024;Verde;Santos-Imigrantes;Fev;15
+2024;Verde;Chácara Klabin;Fev;82
+2024;Verde;Ana Rosa;Fev;59
+2024;Verde;Paraíso;Fev;62
+2024;Verde;Brigadeiro;Fev;49
+2024;Verde;Trianon-Masp;Fev;47
+2024;Verde;Consolação;Fev;98
+2024;Verde;Clínicas;Fev;21
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Fev;10
+2024;Verde;Vila Madalena;Fev;21
+2024;Vermelha;Corinthians-Itaquera;Fev;70
+2024;Vermelha;Artur Alvim;Fev;53
+2024;Vermelha;Patriarca-Vila Ré;Fev;21
+2024;Vermelha;Guilhermina-Esperança;Fev;20
+2024;Vermelha;Vila Matilde;Fev;26
+2024;Vermelha;Penha-Lojas Besni;Fev;27
+2024;Vermelha;Carrão-Assaí Atacadista;Fev;47
+2024;Vermelha;Tatuapé;Fev;88
+2024;Vermelha;Belém;Fev;36
+2024;Vermelha;Bresser-Moóca;Fev;29
+2024;Vermelha;Brás;Fev;65
+2024;Vermelha;Pedro II;Fev;15
+2024;Vermelha;Sé2;Fev;198
+2024;Vermelha;Anhangaba;Fev;48
+2024;Vermelha;República;Fev;118
+2024;Vermelha;Santa Cecília;Fev;22
+2024;Vermelha;Marechal Deodoro;Fev;25
+2024;Vermelha;Palmeiras-Barra Funda;Fev;141
+2024;Prata;Vila Prudente;Fev;56
+2024;Prata;Oratório;Fev;6
+2024;Prata;São Lucas;Fev;5
+2024;Prata;Camilo Haddad;Fev;3
+2024;Prata;Vila Tolstói;Fev;5
+2024;Prata;Vila União;Fev;6
+2024;Prata;Jardim Planalto;Fev;4
+2024;Prata;Sapopemba;Fev;9
+2024;Prata;Fazenda da Juta;Fev;4
+2024;Prata;São Mateus;Fev;16
+2024;Prata;Jardim Colonial;Fev;9
+2023;Azul;Jabaquara;Fev;66
+2023;Azul;Conceição;Fev;24
+2023;Azul;São Judas;Fev;14
+2023;Azul;Saúde;Fev;26
+2023;Azul;Praça da Árvore;Fev;15
+2023;Azul;Santa Cruz;Fev;88
+2023;Azul;Vila Mariana;Fev;19
+2023;Azul;Ana Rosa;Fev;70
+2023;Azul;Paraíso;Fev;87
+2023;Azul;Vergueiro;Fev;25
+2023;Azul;São Joaquim;Fev;24
+2023;Azul;Japão-Liberdade;Fev;20
+2023;Azul;Sé;Fev;164
+2023;Azul;São Bento;Fev;51
+2023;Azul;Luz;Fev;122
+2023;Azul;Tiradentes;Fev;15
+2023;Azul;Armênia;Fev;20
+2023;Azul;Portuguesa-Tietê;Fev;43
+2023;Azul;Carandiru;Fev;10
+2023;Azul;Santana;Fev;47
+2023;Azul;Jardim São Paulo-Ayrton Senna;Fev;11
+2023;Azul;Parada Inglesa;Fev;11
+2023;Azul;Tucuruvi;Fev;54
+2023;Vermelha;Corinthians-Itaquera;Fev;72
+2023;Vermelha;Artur Alvim;Fev;53
+2023;Vermelha;Patriarca;Fev;20
+2023;Vermelha;Guilhermina-Esperança;Fev;20
+2023;Vermelha;Vila Matilde;Fev;25
+2023;Vermelha;Penha;Fev;26
+2023;Vermelha;Carrão;Fev;44
+2023;Vermelha;Tatuapé;Fev;71
+2023;Vermelha;Belém;Fev;36
+2023;Vermelha;Bresser-Mooca;Fev;29
+2023;Vermelha;Brás;Fev;72
+2023;Vermelha;Pedro II;Fev;15
+2023;Vermelha;Sé;Fev;189
+2023;Vermelha;Anhangabaú;Fev;48
+2023;Vermelha;República;Fev;111
+2023;Vermelha;Santa Cecília;Fev;22
+2023;Vermelha;Marechal Deodoro;Fev;25
+2023;Vermelha;Palmeiras-Barra Funda;Fev;134
+2023;Prata;Vila Prudente;Fev;55
+2023;Prata;Oratório;Fev;6
+2023;Prata;São Lucas;Fev;5
+2023;Prata;Camilo Haddad;Fev;3
+2023;Prata;Vila Tolstói;Fev;5
+2023;Prata;Vila União;Fev;5
+2023;Prata;Jardim Planalto;Fev;4
+2023;Prata;Sapopemba;Fev;8
+2023;Prata;Fazenda da Juta;Fev;4
+2023;Prata;São Mateus;Fev;16
+2023;Prata;Jardim Colonial;Fev;5
+2022;Azul;Jabaquara;Fev;58
+2022;Azul;Conceição;Fev;20
+2022;Azul;São Judas;Fev;11
+2022;Azul;Saúde;Fev;22
+2022;Azul;Praça da Árvore;Fev;12
+2022;Azul;Santa Cruz;Fev;77
+2022;Azul;Vila Mariana;Fev;15
+2022;Azul;Ana Rosa;Fev;57
+2022;Azul;Paraíso;Fev;69
+2022;Azul;Vergueiro;Fev;21
+2022;Azul;São Joaquim;Fev;18
+2022;Azul;Japão-Liberdade;Fev;16
+2022;Azul;Sé;Fev;145
+2022;Azul;São Bento;Fev;42
+2022;Azul;Luz;Fev;100
+2022;Azul;Tiradentes;Fev;13
+2022;Azul;Armênia;Fev;17
+2022;Azul;Portuguesa-Tietê;Fev;36
+2022;Azul;Carandiru;Fev;9
+2022;Azul;Santana;Fev;38
+2022;Azul;Jardim São Paulo-Ayrton Senna;Fev;8
+2022;Azul;Parada Inglesa;Fev;9
+2022;Azul;Tucuruvi;Fev;46
+2022;Verde;Vila Prudente;Fev;57
+2022;Verde;Tamanduateí;Fev;54
+2022;Verde;Sacomã;Fev;31
+2022;Verde;Alto do Ipiranga;Fev;14
+2022;Verde;Santos-Imigrantes;Fev;10
+2022;Verde;Chácara Klabin;Fev;57
+2022;Verde;Ana Rosa;Fev;48
+2022;Verde;Paraíso;Fev;49
+2022;Verde;Brigadeiro;Fev;34
+2022;Verde;Trianon-Masp;Fev;30
+2022;Verde;Consolação;Fev;67
+2022;Verde;Clínicas;Fev;16
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Fev;7
+2022;Verde;Vila Madalena;Fev;15
+2022;Vermelha;Corinthians-Itaquera;Fev;66
+2022;Vermelha;Artur Alvim;Fev;47
+2022;Vermelha;Patriarca;Fev;17
+2022;Vermelha;Guilhermina-Esperança;Fev;17
+2022;Vermelha;Vila Matilde;Fev;21
+2022;Vermelha;Penha;Fev;23
+2022;Vermelha;Carrão;Fev;36
+2022;Vermelha;Tatuapé;Fev;62
+2022;Vermelha;Belém;Fev;30
+2022;Vermelha;Bresser-Mooca;Fev;24
+2022;Vermelha;Brás;Fev;73
+2022;Vermelha;Pedro II;Fev;15
+2022;Vermelha;Sé;Fev;159
+2022;Vermelha;Anhangabaú;Fev;40
+2022;Vermelha;República;Fev;91
+2022;Vermelha;Santa Cecília;Fev;20
+2022;Vermelha;Marechal Deodoro;Fev;23
+2022;Vermelha;Palmeiras-Barra Funda;Fev;120
+2022;Prata;Vila Prudente;Fev;45
+2022;Prata;Oratório;Fev;5
+2022;Prata;São Lucas;Fev;4
+2022;Prata;Camilo Haddad;Fev;3
+2022;Prata;Vila Tolstói;Fev;4
+2022;Prata;Jardim Colonial;Fev;1
+2021;Azul;Jabaquara;Fev;48
+2021;Azul;Conceição;Fev;16
+2021;Azul;São Judas;Fev;9
+2021;Azul;Saúde;Fev;17
+2021;Azul;Praça da Árvore;Fev;10
+2021;Azul;Santa Cruz;Fev;65
+2021;Azul;Vila Mariana;Fev;10
+2021;Azul;Ana Rosa;Fev;43
+2021;Azul;Paraíso;Fev;53
+2021;Azul;Vergueiro;Fev;17
+2021;Azul;São Joaquim;Fev;14
+2021;Azul;Japão-Liberdade;Fev;12
+2021;Azul;Sé;Fev;125
+2021;Azul;São Bento;Fev;36
+2021;Azul;Luz;Fev;74
+2021;Azul;Tiradentes;Fev;9
+2021;Azul;Armênia;Fev;15
+2021;Azul;Portuguesa-Tietê;Fev;29
+2021;Azul;Carandiru;Fev;6
+2021;Azul;Santana;Fev;35
+2021;Azul;Jardim São Paulo-Ayrton Senna;Fev;6
+2021;Azul;Parada Inglesa;Fev;7
+2021;Azul;Tucuruvi;Fev;37
+2021;Verde;Vila Prudente;Fev;43
+2021;Verde;Tamanduateí;Fev;36
+2021;Verde;Sacomã;Fev;25
+2021;Verde;Alto do Ipiranga;Fev;10
+2021;Verde;Santos-Imigrantes;Fev;8
+2021;Verde;Chácara Klabin;Fev;43
+2021;Verde;Ana Rosa;Fev;39
+2021;Verde;Paraíso;Fev;40
+2021;Verde;Brigadeiro;Fev;26
+2021;Verde;Trianon-Masp;Fev;22
+2021;Verde;Consolação;Fev;53
+2021;Verde;Clínicas;Fev;14
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Fev;5
+2021;Verde;Vila Madalena;Fev;11
+2021;Vermelha;Corinthians-Itaquera;Fev;56
+2021;Vermelha;Artur Alvim;Fev;39
+2021;Vermelha;Patriarca;Fev;14
+2021;Vermelha;Guilhermina-Esperança;Fev;13
+2021;Vermelha;Vila Matilde;Fev;17
+2021;Vermelha;Penha;Fev;19
+2021;Vermelha;Carrão;Fev;28
+2021;Vermelha;Tatuapé;Fev;52
+2021;Prata;Vila Prudente;Fev;31
+2021;Prata;Oratório;Fev;3
+2021;Prata;São Lucas;Fev;3
+2021;Prata;Camilo Haddad;Fev;2
+2021;Prata;Vila Tolstói;Fev;3
+2021;Prata;Vila União;Fev;4
+2021;Prata;Sapopemba;Fev;5
+2021;Prata;São Mateus;Fev;12
+2020;Azul;Jabaquara;Fev;87
+2020;Azul;Conceição;Fev;40
+2020;Azul;São Judas;Fev;21
+2020;Azul;Saúde;Fev;36
+2020;Azul;Praça da Árvore;Fev;22
+2020;Azul;Santa Cruz;Fev;119
+2020;Azul;Vila Mariana;Fev;26
+2020;Azul;Ana Rosa;Fev;96
+2020;Azul;Paraíso;Fev;120
+2020;Azul;Vergueiro;Fev;33
+2020;Azul;São Joaquim;Fev;39
+2020;Azul;Japão-Liberdade;Fev;27
+2020;Azul;Sé;Fev;228
+2020;Azul;São Bento;Fev;72
+2020;Azul;Luz;Fev;152
+2020;Azul;Tiradentes;Fev;18
+2020;Azul;Armênia;Fev;28
+2020;Azul;Portuguesa-Tietê;Fev;60
+2020;Azul;Carandiru;Fev;16
+2020;Azul;Santana;Fev;65
+2020;Azul;Jardim São Paulo-Ayrton Senna;Fev;16
+2020;Azul;Parada Inglesa;Fev;17
+2020;Azul;Tucuruvi;Fev;72
+2020;Verde;Vila Prudente;Fev;81
+2020;Verde;Tamanduateí;Fev;83
+2020;Verde;Sacomã;Fev;47
+2020;Verde;Alto do Ipiranga;Fev;22
+2020;Verde;Santos-Imigrantes;Fev;17
+2020;Verde;Chácara Klabin;Fev;85
+2020;Verde;Ana Rosa;Fev;79
+2020;Verde;Paraíso;Fev;82
+2020;Verde;Brigadeiro;Fev;65
+2020;Verde;Trianon-Masp;Fev;61
+2020;Verde;Consolação;Fev;134
+2020;Verde;Clínicas;Fev;26
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Fev;15
+2020;Verde;Vila Madalena;Fev;29
+2020;Vermelha;Corinthians-Itaquera;Fev;89
+2020;Vermelha;Artur Alvim;Fev;65
+2020;Vermelha;Patriarca;Fev;25
+2020;Vermelha;Guilhermina-Esperança;Fev;25
+2020;Vermelha;Vila Matilde;Fev;31
+2020;Vermelha;Penha;Fev;34
+2020;Vermelha;Carrão;Fev;57
+2020;Vermelha;Tatuapé;Fev;86
+2020;Vermelha;Belém;Fev;45
+2020;Vermelha;Bresser-Mooca;Fev;40
+2020;Vermelha;Brás;Fev;99
+2020;Vermelha;Pedro II;Fev;23
+2020;Vermelha;Sé;Fev;268
+2020;Vermelha;Anhangabaú;Fev;67
+2020;Vermelha;República;Fev;163
+2020;Vermelha;Santa Cecília;Fev;32
+2020;Vermelha;Marechal Deodoro;Fev;36
+2020;Vermelha;Palmeiras-Barra Funda;Fev;196
+2020;Prata;Vila Prudente;Fev;57
+2020;Prata;Oratório;Fev;7
+2020;Prata;São Lucas;Fev;5
+2020;Prata;Camilo Haddad;Fev;4
+2020;Prata;Vila Tolstói;Fev;5
+2020;Prata;Vila União;Fev;6
+2020;Prata;Jardim Planalto;Fev;4
+2020;Prata;Sapopemba;Fev;7
+2020;Prata;Fazenda da Juta;Fev;4
+2020;Prata;São Mateus;Fev;16
+2024;Azul;Jabaquara;Mar;71
+2024;Azul;Conceição;Mar;30
+2024;Azul;São Judas;Mar;16
+2024;Azul;Saúde-Ultrafarma;Mar;27
+2024;Azul;Praça da Árvore;Mar;16
+2024;Azul;Santa Cruz;Mar;96
+2024;Azul;Vila Mariana;Mar;22
+2024;Azul;Ana Rosa;Mar;80
+2024;Azul;Paraíso;Mar;100
+2024;Azul;Vergueiro;Mar;27
+2024;Azul;São Joaquim;Mar;35
+2024;Azul;Japão-Liberdade;Mar;22
+2024;Azul;Sé;Mar;175
+2024;Azul;São Bento;Mar;51
+2024;Azul;Luz;Mar;135
+2024;Azul;Tiradentes;Mar;16
+2024;Azul;Armênia;Mar;20
+2024;Azul;Portuguesa-Tietê;Mar;44
+2024;Azul;Carandiru;Mar;12
+2024;Azul;Santana;Mar;50
+2024;Azul;Jardim São Paulo-Ayrton Senna;Mar;12
+2024;Azul;Parada Inglesa;Mar;14
+2024;Azul;Tucuruvi;Mar;55
+2024;Verde;Vila Prudente;Mar;76
+2024;Verde;Tamanduateí;Mar;76
+2024;Verde;Sacomã;Mar;41
+2024;Verde;Alto do Ipiranga;Mar;19
+2024;Verde;Santos-Imigrantes;Mar;15
+2024;Verde;Chácara Klabin;Mar;85
+2024;Verde;Ana Rosa;Mar;62
+2024;Verde;Paraíso;Mar;65
+2024;Verde;Brigadeiro;Mar;51
+2024;Verde;Trianon-Masp;Mar;50
+2024;Verde;Consolação;Mar;102
+2024;Verde;Clínicas;Mar;22
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Mar;11
+2024;Verde;Vila Madalena;Mar;22
+2024;Vermelha;Corinthians-Itaquera;Mar;73
+2024;Vermelha;Artur Alvim;Mar;55
+2024;Vermelha;Patriarca-Vila Ré;Mar;22
+2024;Vermelha;Guilhermina-Esperança;Mar;21
+2024;Vermelha;Vila Matilde;Mar;27
+2024;Vermelha;Penha-Lojas Besni;Mar;28
+2024;Vermelha;Carrão-Assaí Atacadista;Mar;51
+2024;Vermelha;Tatuapé;Mar;75
+2024;Vermelha;Belém;Mar;37
+2024;Vermelha;Bresser-Moóca;Mar;32
+2024;Vermelha;Brás;Mar;76
+2024;Vermelha;Pedro II;Mar;15
+2024;Vermelha;Sé2;Mar;207
+2024;Vermelha;Anhangaba;Mar;51
+2024;Vermelha;República;Mar;120
+2024;Vermelha;Santa Cecília;Mar;23
+2024;Vermelha;Marechal Deodoro;Mar;26
+2024;Vermelha;Palmeiras-Barra Funda;Mar;144
+2024;Prata;Vila Prudente;Mar;62
+2024;Prata;Oratório;Mar;7
+2024;Prata;São Lucas;Mar;5
+2024;Prata;Camilo Haddad;Mar;4
+2024;Prata;Vila Tolstói;Mar;5
+2024;Prata;Vila União;Mar;6
+2024;Prata;Jardim Planalto;Mar;5
+2024;Prata;Sapopemba;Mar;9
+2024;Prata;Fazenda da Juta;Mar;5
+2024;Prata;São Mateus;Mar;16
+2024;Prata;Jardim Colonial;Mar;9
+2023;Azul;Jabaquara;Mar;70
+2023;Azul;Conceição;Mar;26
+2023;Azul;São Judas;Mar;15
+2023;Azul;Saúde;Mar;27
+2023;Azul;Praça da Árvore;Mar;15
+2023;Azul;Santa Cruz;Mar;91
+2023;Azul;Vila Mariana;Mar;21
+2023;Azul;Ana Rosa;Mar;75
+2023;Azul;Paraíso;Mar;94
+2023;Azul;Vergueiro;Mar;26
+2023;Azul;São Joaquim;Mar;33
+2023;Azul;Japão-Liberdade;Mar;22
+2023;Azul;Sé;Mar;172
+2023;Azul;São Bento;Mar;51
+2023;Azul;Luz;Mar;127
+2023;Azul;Tiradentes;Mar;16
+2023;Azul;Armênia;Mar;21
+2023;Azul;Portuguesa-Tietê;Mar;44
+2023;Azul;Carandiru;Mar;11
+2023;Azul;Santana;Mar;50
+2023;Azul;Jardim São Paulo-Ayrton Senna;Mar;11
+2023;Azul;Parada Inglesa;Mar;12
+2023;Azul;Tucuruvi;Mar;56
+2023;Vermelha;Corinthians-Itaquera;Mar;73
+2023;Vermelha;Artur Alvim;Mar;55
+2023;Vermelha;Patriarca;Mar;21
+2023;Vermelha;Guilhermina-Esperança;Mar;21
+2023;Vermelha;Vila Matilde;Mar;26
+2023;Vermelha;Penha;Mar;28
+2023;Vermelha;Carrão;Mar;51
+2023;Vermelha;Tatuapé;Mar;75
+2023;Vermelha;Belém;Mar;38
+2023;Vermelha;Bresser-Mooca;Mar;33
+2023;Vermelha;Brás;Mar;74
+2023;Vermelha;Pedro II;Mar;16
+2023;Vermelha;Sé;Mar;199
+2023;Vermelha;Anhangabaú;Mar;50
+2023;Vermelha;República;Mar;118
+2023;Vermelha;Santa Cecília;Mar;23
+2023;Vermelha;Marechal Deodoro;Mar;27
+2023;Vermelha;Palmeiras-Barra Funda;Mar;138
+2023;Prata;Vila Prudente;Mar;57
+2023;Prata;Oratório;Mar;6
+2023;Prata;São Lucas;Mar;5
+2023;Prata;Camilo Haddad;Mar;4
+2023;Prata;Vila Tolstói;Mar;5
+2023;Prata;Vila União;Mar;5
+2023;Prata;Jardim Planalto;Mar;4
+2023;Prata;Sapopemba;Mar;8
+2023;Prata;Fazenda da Juta;Mar;4
+2023;Prata;São Mateus;Mar;16
+2023;Prata;Jardim Colonial;Mar;6
+2022;Azul;Jabaquara;Mar;63
+2022;Azul;Conceição;Mar;22
+2022;Azul;São Judas;Mar;13
+2022;Azul;Saúde;Mar;24
+2022;Azul;Praça da Árvore;Mar;14
+2022;Azul;Santa Cruz;Mar;84
+2022;Azul;Vila Mariana;Mar;18
+2022;Azul;Ana Rosa;Mar;65
+2022;Azul;Paraíso;Mar;80
+2022;Azul;Vergueiro;Mar;23
+2022;Azul;São Joaquim;Mar;23
+2022;Azul;Japão-Liberdade;Mar;18
+2022;Azul;Sé;Mar;164
+2022;Azul;São Bento;Mar;44
+2022;Azul;Luz;Mar;108
+2022;Azul;Tiradentes;Mar;15
+2022;Azul;Armênia;Mar;19
+2022;Azul;Portuguesa-Tietê;Mar;40
+2022;Azul;Carandiru;Mar;10
+2022;Azul;Santana;Mar;45
+2022;Azul;Jardim São Paulo-Ayrton Senna;Mar;10
+2022;Azul;Parada Inglesa;Mar;10
+2022;Azul;Tucuruvi;Mar;50
+2022;Verde;Vila Prudente;Mar;62
+2022;Verde;Tamanduateí;Mar;60
+2022;Verde;Sacomã;Mar;35
+2022;Verde;Alto do Ipiranga;Mar;16
+2022;Verde;Santos-Imigrantes;Mar;11
+2022;Verde;Chácara Klabin;Mar;64
+2022;Verde;Ana Rosa;Mar;54
+2022;Verde;Paraíso;Mar;56
+2022;Verde;Brigadeiro;Mar;39
+2022;Verde;Trianon-Masp;Mar;37
+2022;Verde;Consolação;Mar;83
+2022;Verde;Clínicas;Mar;18
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Mar;8
+2022;Verde;Vila Madalena;Mar;17
+2022;Vermelha;Corinthians-Itaquera;Mar;80
+2022;Vermelha;Artur Alvim;Mar;51
+2022;Vermelha;Patriarca;Mar;19
+2022;Vermelha;Guilhermina-Esperança;Mar;18
+2022;Vermelha;Vila Matilde;Mar;23
+2022;Vermelha;Penha;Mar;25
+2022;Vermelha;Carrão;Mar;46
+2022;Vermelha;Tatuapé;Mar;71
+2022;Vermelha;Belém;Mar;33
+2022;Vermelha;Bresser-Mooca;Mar;30
+2022;Vermelha;Brás;Mar;78
+2022;Vermelha;Pedro II;Mar;16
+2022;Vermelha;Sé;Mar;178
+2022;Vermelha;Anhangabaú;Mar;43
+2022;Vermelha;República;Mar;104
+2022;Vermelha;Santa Cecília;Mar;22
+2022;Vermelha;Marechal Deodoro;Mar;25
+2022;Vermelha;Palmeiras-Barra Funda;Mar;134
+2022;Prata;Vila Prudente;Mar;49
+2022;Prata;Oratório;Mar;5
+2022;Prata;São Lucas;Mar;4
+2022;Prata;Camilo Haddad;Mar;3
+2022;Prata;Vila Tolstói;Mar;4
+2022;Prata;Jardim Colonial;Mar;3
+2021;Azul;Jabaquara;Mar;40
+2021;Azul;Conceição;Mar;12
+2021;Azul;São Judas;Mar;7
+2021;Azul;Saúde;Mar;13
+2021;Azul;Praça da Árvore;Mar;8
+2021;Azul;Santa Cruz;Mar;52
+2021;Azul;Vila Mariana;Mar;8
+2021;Azul;Ana Rosa;Mar;35
+2021;Azul;Paraíso;Mar;43
+2021;Azul;Vergueiro;Mar;14
+2021;Azul;São Joaquim;Mar;12
+2021;Azul;Japão-Liberdade;Mar;9
+2021;Azul;Sé;Mar;100
+2021;Azul;São Bento;Mar;23
+2021;Azul;Luz;Mar;57
+2021;Azul;Tiradentes;Mar;7
+2021;Azul;Armênia;Mar;12
+2021;Azul;Portuguesa-Tietê;Mar;23
+2021;Azul;Carandiru;Mar;5
+2021;Azul;Santana;Mar;28
+2021;Azul;Jardim São Paulo-Ayrton Senna;Mar;5
+2021;Azul;Parada Inglesa;Mar;6
+2021;Azul;Tucuruvi;Mar;30
+2021;Verde;Vila Prudente;Mar;36
+2021;Verde;Tamanduateí;Mar;35
+2021;Verde;Sacomã;Mar;21
+2021;Verde;Alto do Ipiranga;Mar;8
+2021;Verde;Santos-Imigrantes;Mar;7
+2021;Verde;Chácara Klabin;Mar;37
+2021;Verde;Ana Rosa;Mar;30
+2021;Verde;Paraíso;Mar;32
+2021;Verde;Brigadeiro;Mar;20
+2021;Verde;Trianon-Masp;Mar;17
+2021;Verde;Consolação;Mar;40
+2021;Verde;Clínicas;Mar;12
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Mar;4
+2021;Verde;Vila Madalena;Mar;9
+2021;Vermelha;Corinthians-Itaquera;Mar;46
+2021;Vermelha;Artur Alvim;Mar;32
+2021;Vermelha;Patriarca;Mar;11
+2021;Vermelha;Guilhermina-Esperança;Mar;11
+2021;Vermelha;Vila Matilde;Mar;14
+2021;Vermelha;Penha;Mar;15
+2021;Vermelha;Carrão;Mar;23
+2021;Vermelha;Tatuapé;Mar;41
+2021;Prata;Vila Prudente;Mar;27
+2021;Prata;Oratório;Mar;3
+2021;Prata;São Lucas;Mar;2
+2021;Prata;Camilo Haddad;Mar;2
+2021;Prata;Vila Tolstói;Mar;2
+2021;Prata;Vila União;Mar;3
+2021;Prata;Sapopemba;Mar;4
+2021;Prata;São Mateus;Mar;11
+2020;Azul;Jabaquara;Mar;59
+2020;Azul;Conceição;Mar;25
+2020;Azul;São Judas;Mar;13
+2020;Azul;Saúde;Mar;24
+2020;Azul;Praça da Árvore;Mar;14
+2020;Azul;Santa Cruz;Mar;77
+2020;Azul;Vila Mariana;Mar;17
+2020;Azul;Ana Rosa;Mar;60
+2020;Azul;Paraíso;Mar;75
+2020;Azul;Vergueiro;Mar;23
+2020;Azul;São Joaquim;Mar;31
+2020;Azul;Japão-Liberdade;Mar;18
+2020;Azul;Sé;Mar;156
+2020;Azul;São Bento;Mar;42
+2020;Azul;Luz;Mar;94
+2020;Azul;Tiradentes;Mar;12
+2020;Azul;Armênia;Mar;19
+2020;Azul;Portuguesa-Tietê;Mar;38
+2020;Azul;Carandiru;Mar;10
+2020;Azul;Santana;Mar;43
+2020;Azul;Jardim São Paulo-Ayrton Senna;Mar;10
+2020;Azul;Parada Inglesa;Mar;10
+2020;Azul;Tucuruvi;Mar;47
+2020;Verde;Vila Prudente;Mar;41
+2020;Verde;Tamanduateí;Mar;53
+2020;Verde;Sacomã;Mar;31
+2020;Verde;Alto do Ipiranga;Mar;14
+2020;Verde;Santos-Imigrantes;Mar;11
+2020;Verde;Chácara Klabin;Mar;55
+2020;Verde;Ana Rosa;Mar;52
+2020;Verde;Paraíso;Mar;53
+2020;Verde;Brigadeiro;Mar;40
+2020;Verde;Trianon-Masp;Mar;38
+2020;Verde;Consolação;Mar;83
+2020;Verde;Clínicas;Mar;18
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Mar;9
+2020;Verde;Vila Madalena;Mar;17
+2020;Vermelha;Corinthians-Itaquera;Mar;64
+2020;Vermelha;Artur Alvim;Mar;45
+2020;Vermelha;Patriarca;Mar;17
+2020;Vermelha;Guilhermina-Esperança;Mar;17
+2020;Vermelha;Vila Matilde;Mar;20
+2020;Vermelha;Penha;Mar;24
+2020;Vermelha;Carrão;Mar;40
+2020;Vermelha;Tatuapé;Mar;59
+2020;Vermelha;Belém;Mar;32
+2020;Vermelha;Bresser-Mooca;Mar;29
+2020;Vermelha;Brás;Mar;71
+2020;Vermelha;Pedro II;Mar;16
+2020;Vermelha;Sé;Mar;173
+2020;Vermelha;Anhangabaú;Mar;45
+2020;Vermelha;República;Mar;106
+2020;Vermelha;Santa Cecília;Mar;22
+2020;Vermelha;Marechal Deodoro;Mar;24
+2020;Vermelha;Palmeiras-Barra Funda;Mar;136
+2020;Prata;Vila Prudente;Mar;
+2020;Prata;Oratório;Mar;
+2020;Prata;São Lucas;Mar;
+2020;Prata;Camilo Haddad;Mar;
+2020;Prata;Vila Tolstói;Mar;
+2020;Prata;Vila União;Mar;
+2020;Prata;Jardim Planalto;Mar;
+2020;Prata;Sapopemba;Mar;
+2020;Prata;Fazenda da Juta;Mar;
+2020;Prata;São Mateus;Mar;
+2024;Azul;Jabaquara;Abr;71
+2024;Azul;Conceição;Abr;30
+2024;Azul;São Judas;Abr;16
+2024;Azul;Saúde-Ultrafarma;Abr;27
+2024;Azul;Praça da Árvore;Abr;16
+2024;Azul;Santa Cruz;Abr;95
+2024;Azul;Vila Mariana;Abr;22
+2024;Azul;Ana Rosa;Abr;80
+2024;Azul;Paraíso;Abr;100
+2024;Azul;Vergueiro;Abr;27
+2024;Azul;São Joaquim;Abr;35
+2024;Azul;Japão-Liberdade;Abr;22
+2024;Azul;Sé;Abr;174
+2024;Azul;São Bento;Abr;50
+2024;Azul;Luz;Abr;137
+2024;Azul;Tiradentes;Abr;17
+2024;Azul;Armênia;Abr;19
+2024;Azul;Portuguesa-Tietê;Abr;44
+2024;Azul;Carandiru;Abr;12
+2024;Azul;Santana;Abr;50
+2024;Azul;Jardim São Paulo-Ayrton Senna;Abr;12
+2024;Azul;Parada Inglesa;Abr;13
+2024;Azul;Tucuruvi;Abr;56
+2024;Verde;Vila Prudente;Abr;77
+2024;Verde;Tamanduateí;Abr;77
+2024;Verde;Sacomã;Abr;41
+2024;Verde;Alto do Ipiranga;Abr;19
+2024;Verde;Santos-Imigrantes;Abr;15
+2024;Verde;Chácara Klabin;Abr;85
+2024;Verde;Ana Rosa;Abr;62
+2024;Verde;Paraíso;Abr;65
+2024;Verde;Brigadeiro;Abr;51
+2024;Verde;Trianon-Masp;Abr;49
+2024;Verde;Consolação;Abr;102
+2024;Verde;Clínicas;Abr;22
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Abr;11
+2024;Verde;Vila Madalena;Abr;22
+2024;Vermelha;Corinthians-Itaquera;Abr;72
+2024;Vermelha;Artur Alvim;Abr;55
+2024;Vermelha;Patriarca-Vila Ré;Abr;22
+2024;Vermelha;Guilhermina-Esperança;Abr;21
+2024;Vermelha;Vila Matilde;Abr;27
+2024;Vermelha;Penha-Lojas Besni;Abr;28
+2024;Vermelha;Carrão-Assaí Atacadista;Abr;51
+2024;Vermelha;Tatuapé;Abr;74
+2024;Vermelha;Belém;Abr;37
+2024;Vermelha;Bresser-Moóca;Abr;32
+2024;Vermelha;Brás;Abr;75
+2024;Vermelha;Pedro II;Abr;15
+2024;Vermelha;Sé2;Abr;207
+2024;Vermelha;Anhangaba;Abr;51
+2024;Vermelha;República;Abr;122
+2024;Vermelha;Santa Cecília;Abr;23
+2024;Vermelha;Marechal Deodoro;Abr;26
+2024;Vermelha;Palmeiras-Barra Funda;Abr;143
+2024;Prata;Vila Prudente;Abr;61
+2024;Prata;Oratório;Abr;7
+2024;Prata;São Lucas;Abr;5
+2024;Prata;Camilo Haddad;Abr;4
+2024;Prata;Vila Tolstói;Abr;5
+2024;Prata;Vila União;Abr;6
+2024;Prata;Jardim Planalto;Abr;5
+2024;Prata;Sapopemba;Abr;9
+2024;Prata;Fazenda da Juta;Abr;5
+2024;Prata;São Mateus;Abr;17
+2024;Prata;Jardim Colonial;Abr;10
+2023;Azul;Jabaquara;Abr;72
+2023;Azul;Conceição;Abr;26
+2023;Azul;São Judas;Abr;15
+2023;Azul;Saúde;Abr;27
+2023;Azul;Praça da Árvore;Abr;15
+2023;Azul;Santa Cruz;Abr;91
+2023;Azul;Vila Mariana;Abr;21
+2023;Azul;Ana Rosa;Abr;75
+2023;Azul;Paraíso;Abr;94
+2023;Azul;Vergueiro;Abr;26
+2023;Azul;São Joaquim;Abr;34
+2023;Azul;Japão-Liberdade;Abr;22
+2023;Azul;Sé;Abr;171
+2023;Azul;São Bento;Abr;51
+2023;Azul;Luz;Abr;130
+2023;Azul;Tiradentes;Abr;16
+2023;Azul;Armênia;Abr;21
+2023;Azul;Portuguesa-Tietê;Abr;45
+2023;Azul;Carandiru;Abr;11
+2023;Azul;Santana;Abr;50
+2023;Azul;Jardim São Paulo-Ayrton Senna;Abr;11
+2023;Azul;Parada Inglesa;Abr;12
+2023;Azul;Tucuruvi;Abr;56
+2023;Vermelha;Corinthians-Itaquera;Abr;74
+2023;Vermelha;Artur Alvim;Abr;55
+2023;Vermelha;Patriarca;Abr;21
+2023;Vermelha;Guilhermina-Esperança;Abr;21
+2023;Vermelha;Vila Matilde;Abr;26
+2023;Vermelha;Penha;Abr;28
+2023;Vermelha;Carrão;Abr;50
+2023;Vermelha;Tatuapé;Abr;76
+2023;Vermelha;Belém;Abr;37
+2023;Vermelha;Bresser-Mooca;Abr;32
+2023;Vermelha;Brás;Abr;76
+2023;Vermelha;Pedro II;Abr;15
+2023;Vermelha;Sé;Abr;200
+2023;Vermelha;Anhangabaú;Abr;51
+2023;Vermelha;República;Abr;119
+2023;Vermelha;Santa Cecília;Abr;23
+2023;Vermelha;Marechal Deodoro;Abr;26
+2023;Vermelha;Palmeiras-Barra Funda;Abr;134
+2023;Prata;Vila Prudente;Abr;60
+2023;Prata;Oratório;Abr;6
+2023;Prata;São Lucas;Abr;5
+2023;Prata;Camilo Haddad;Abr;4
+2023;Prata;Vila Tolstói;Abr;5
+2023;Prata;Vila União;Abr;6
+2023;Prata;Jardim Planalto;Abr;4
+2023;Prata;Sapopemba;Abr;8
+2023;Prata;Fazenda da Juta;Abr;4
+2023;Prata;São Mateus;Abr;17
+2023;Prata;Jardim Colonial;Abr;6
+2022;Azul;Jabaquara;Abr;66
+2022;Azul;Conceição;Abr;24
+2022;Azul;São Judas;Abr;14
+2022;Azul;Saúde;Abr;25
+2022;Azul;Praça da Árvore;Abr;14
+2022;Azul;Santa Cruz;Abr;89
+2022;Azul;Vila Mariana;Abr;19
+2022;Azul;Ana Rosa;Abr;68
+2022;Azul;Paraíso;Abr;84
+2022;Azul;Vergueiro;Abr;24
+2022;Azul;São Joaquim;Abr;24
+2022;Azul;Japão-Liberdade;Abr;20
+2022;Azul;Sé;Abr;168
+2022;Azul;São Bento;Abr;47
+2022;Azul;Luz;Abr;114
+2022;Azul;Tiradentes;Abr;15
+2022;Azul;Armênia;Abr;21
+2022;Azul;Portuguesa-Tietê;Abr;43
+2022;Azul;Carandiru;Abr;10
+2022;Azul;Santana;Abr;47
+2022;Azul;Jardim São Paulo-Ayrton Senna;Abr;10
+2022;Azul;Parada Inglesa;Abr;11
+2022;Azul;Tucuruvi;Abr;53
+2022;Verde;Vila Prudente;Abr;67
+2022;Verde;Tamanduateí;Abr;64
+2022;Verde;Sacomã;Abr;36
+2022;Verde;Alto do Ipiranga;Abr;17
+2022;Verde;Santos-Imigrantes;Abr;12
+2022;Verde;Chácara Klabin;Abr;66
+2022;Verde;Ana Rosa;Abr;56
+2022;Verde;Paraíso;Abr;58
+2022;Verde;Brigadeiro;Abr;42
+2022;Verde;Trianon-Masp;Abr;39
+2022;Verde;Consolação;Abr;86
+2022;Verde;Clínicas;Abr;19
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Abr;8
+2022;Verde;Vila Madalena;Abr;18
+2022;Vermelha;Corinthians-Itaquera;Abr;75
+2022;Vermelha;Artur Alvim;Abr;52
+2022;Vermelha;Patriarca;Abr;20
+2022;Vermelha;Guilhermina-Esperança;Abr;19
+2022;Vermelha;Vila Matilde;Abr;24
+2022;Vermelha;Penha;Abr;26
+2022;Vermelha;Carrão;Abr;47
+2022;Vermelha;Tatuapé;Abr;71
+2022;Vermelha;Belém;Abr;34
+2022;Vermelha;Bresser-Mooca;Abr;31
+2022;Vermelha;Brás;Abr;81
+2022;Vermelha;Pedro II;Abr;16
+2022;Vermelha;Sé;Abr;186
+2022;Vermelha;Anhangabaú;Abr;46
+2022;Vermelha;República;Abr;108
+2022;Vermelha;Santa Cecília;Abr;23
+2022;Vermelha;Marechal Deodoro;Abr;26
+2022;Vermelha;Palmeiras-Barra Funda;Abr;139
+2022;Prata;Vila Prudente;Abr;51
+2022;Prata;Oratório;Abr;5
+2022;Prata;São Lucas;Abr;5
+2022;Prata;Camilo Haddad;Abr;3
+2022;Prata;Vila Tolstói;Abr;4
+2022;Prata;Jardim Colonial;Abr;4
+2021;Azul;Jabaquara;Abr;39
+2021;Azul;Conceição;Abr;12
+2021;Azul;São Judas;Abr;7
+2021;Azul;Saúde;Abr;13
+2021;Azul;Praça da Árvore;Abr;8
+2021;Azul;Santa Cruz;Abr;50
+2021;Azul;Vila Mariana;Abr;8
+2021;Azul;Ana Rosa;Abr;33
+2021;Azul;Paraíso;Abr;42
+2021;Azul;Vergueiro;Abr;13
+2021;Azul;São Joaquim;Abr;11
+2021;Azul;Japão-Liberdade;Abr;9
+2021;Azul;Sé;Abr;96
+2021;Azul;São Bento;Abr;23
+2021;Azul;Luz;Abr;58
+2021;Azul;Tiradentes;Abr;7
+2021;Azul;Armênia;Abr;12
+2021;Azul;Portuguesa-Tietê;Abr;22
+2021;Azul;Carandiru;Abr;5
+2021;Azul;Santana;Abr;27
+2021;Azul;Jardim São Paulo-Ayrton Senna;Abr;4
+2021;Azul;Parada Inglesa;Abr;5
+2021;Azul;Tucuruvi;Abr;29
+2021;Verde;Vila Prudente;Abr;35
+2021;Verde;Tamanduateí;Abr;36
+2021;Verde;Sacomã;Abr;20
+2021;Verde;Alto do Ipiranga;Abr;8
+2021;Verde;Santos-Imigrantes;Abr;7
+2021;Verde;Chácara Klabin;Abr;35
+2021;Verde;Ana Rosa;Abr;29
+2021;Verde;Paraíso;Abr;31
+2021;Verde;Brigadeiro;Abr;19
+2021;Verde;Trianon-Masp;Abr;16
+2021;Verde;Consolação;Abr;38
+2021;Verde;Clínicas;Abr;12
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Abr;4
+2021;Verde;Vila Madalena;Abr;8
+2021;Vermelha;Corinthians-Itaquera;Abr;45
+2021;Vermelha;Artur Alvim;Abr;32
+2021;Vermelha;Patriarca;Abr;11
+2021;Vermelha;Guilhermina-Esperança;Abr;11
+2021;Vermelha;Vila Matilde;Abr;13
+2021;Vermelha;Penha;Abr;15
+2021;Vermelha;Carrão;Abr;22
+2021;Vermelha;Tatuapé;Abr;40
+2021;Prata;Vila Prudente;Abr;26
+2021;Prata;Oratório;Abr;3
+2021;Prata;São Lucas;Abr;2
+2021;Prata;Camilo Haddad;Abr;2
+2021;Prata;Vila Tolstói;Abr;2
+2021;Prata;Vila União;Abr;3
+2021;Prata;Sapopemba;Abr;4
+2021;Prata;São Mateus;Abr;10
+2020;Azul;Jabaquara;Abr;22
+2020;Azul;Conceição;Abr;7
+2020;Azul;São Judas;Abr;3
+2020;Azul;Saúde;Abr;7
+2020;Azul;Praça da Árvore;Abr;4
+2020;Azul;Santa Cruz;Abr;25
+2020;Azul;Vila Mariana;Abr;4
+2020;Azul;Ana Rosa;Abr;18
+2020;Azul;Paraíso;Abr;22
+2020;Azul;Vergueiro;Abr;8
+2020;Azul;São Joaquim;Abr;6
+2020;Azul;Japão-Liberdade;Abr;5
+2020;Azul;Sé;Abr;54
+2020;Azul;São Bento;Abr;9
+2020;Azul;Luz;Abr;23
+2020;Azul;Tiradentes;Abr;3
+2020;Azul;Armênia;Abr;6
+2020;Azul;Portuguesa-Tietê;Abr;13
+2020;Azul;Carandiru;Abr;3
+2020;Azul;Santana;Abr;15
+2020;Azul;Jardim São Paulo-Ayrton Senna;Abr;2
+2020;Azul;Parada Inglesa;Abr;3
+2020;Azul;Tucuruvi;Abr;15
+2020;Verde;Vila Prudente;Abr;14
+2020;Verde;Tamanduateí;Abr;19
+2020;Verde;Sacomã;Abr;11
+2020;Verde;Alto do Ipiranga;Abr;4
+2020;Verde;Santos-Imigrantes;Abr;4
+2020;Verde;Chácara Klabin;Abr;18
+2020;Verde;Ana Rosa;Abr;15
+2020;Verde;Paraíso;Abr;16
+2020;Verde;Brigadeiro;Abr;10
+2020;Verde;Trianon-Masp;Abr;8
+2020;Verde;Consolação;Abr;21
+2020;Verde;Clínicas;Abr;8
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Abr;2
+2020;Verde;Vila Madalena;Abr;4
+2020;Vermelha;Corinthians-Itaquera;Abr;27
+2020;Vermelha;Artur Alvim;Abr;18
+2020;Vermelha;Patriarca;Abr;6
+2020;Vermelha;Guilhermina-Esperança;Abr;6
+2020;Vermelha;Vila Matilde;Abr;7
+2020;Vermelha;Penha;Abr;8
+2020;Vermelha;Carrão;Abr;12
+2020;Vermelha;Tatuapé;Abr;19
+2020;Vermelha;Belém;Abr;13
+2020;Vermelha;Bresser-Mooca;Abr;9
+2020;Vermelha;Brás;Abr;32
+2020;Vermelha;Pedro II;Abr;7
+2020;Vermelha;Sé;Abr;51
+2020;Vermelha;Anhangabaú;Abr;14
+2020;Vermelha;República;Abr;32
+2020;Vermelha;Santa Cecília;Abr;9
+2020;Vermelha;Marechal Deodoro;Abr;8
+2020;Vermelha;Palmeiras-Barra Funda;Abr;45
+2020;Prata;Vila Prudente;Abr;
+2020;Prata;Oratório;Abr;
+2020;Prata;São Lucas;Abr;
+2020;Prata;Camilo Haddad;Abr;
+2020;Prata;Vila Tolstói;Abr;
+2020;Prata;Vila União;Abr;
+2020;Prata;Jardim Planalto;Abr;
+2020;Prata;Sapopemba;Abr;
+2020;Prata;Fazenda da Juta;Abr;
+2020;Prata;São Mateus;Abr;
+2024;Azul;Jabaquara;Mai;70
+2024;Azul;Conceição;Mai;30
+2024;Azul;São Judas;Mai;15
+2024;Azul;Saúde-Ultrafarma;Mai;27
+2024;Azul;Praça da Árvore;Mai;16
+2024;Azul;Santa Cruz;Mai;96
+2024;Azul;Vila Mariana;Mai;21
+2024;Azul;Ana Rosa;Mai;80
+2024;Azul;Paraíso;Mai;100
+2024;Azul;Vergueiro;Mai;27
+2024;Azul;São Joaquim;Mai;33
+2024;Azul;Japão-Liberdade;Mai;21
+2024;Azul;Sé;Mai;172
+2024;Azul;São Bento;Mai;51
+2024;Azul;Luz;Mai;133
+2024;Azul;Tiradentes;Mai;16
+2024;Azul;Armênia;Mai;19
+2024;Azul;Portuguesa-Tietê;Mai;44
+2024;Azul;Carandiru;Mai;12
+2024;Azul;Santana;Mai;50
+2024;Azul;Jardim São Paulo-Ayrton Senna;Mai;12
+2024;Azul;Parada Inglesa;Mai;13
+2024;Azul;Tucuruvi;Mai;56
+2024;Verde;Vila Prudente;Mai;77
+2024;Verde;Tamanduateí;Mai;76
+2024;Verde;Sacomã;Mai;41
+2024;Verde;Alto do Ipiranga;Mai;19
+2024;Verde;Santos-Imigrantes;Mai;16
+2024;Verde;Chácara Klabin;Mai;85
+2024;Verde;Ana Rosa;Mai;61
+2024;Verde;Paraíso;Mai;64
+2024;Verde;Brigadeiro;Mai;50
+2024;Verde;Trianon-Masp;Mai;49
+2024;Verde;Consolação;Mai;100
+2024;Verde;Clínicas;Mai;22
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Mai;11
+2024;Verde;Vila Madalena;Mai;22
+2024;Vermelha;Corinthians-Itaquera;Mai;73
+2024;Vermelha;Artur Alvim;Mai;55
+2024;Vermelha;Patriarca-Vila Ré;Mai;22
+2024;Vermelha;Guilhermina-Esperança;Mai;21
+2024;Vermelha;Vila Matilde;Mai;27
+2024;Vermelha;Penha-Lojas Besni;Mai;28
+2024;Vermelha;Carrão-Assaí Atacadista;Mai;50
+2024;Vermelha;Tatuapé;Mai;74
+2024;Vermelha;Belém;Mai;37
+2024;Vermelha;Bresser-Moóca;Mai;31
+2024;Vermelha;Brás;Mai;74
+2024;Vermelha;Pedro II;Mai;15
+2024;Vermelha;Sé2;Mai;205
+2024;Vermelha;Anhangaba;Mai;51
+2024;Vermelha;República;Mai;121
+2024;Vermelha;Santa Cecília;Mai;23
+2024;Vermelha;Marechal Deodoro;Mai;26
+2024;Vermelha;Palmeiras-Barra Funda;Mai;136
+2024;Prata;Vila Prudente;Mai;60
+2024;Prata;Oratório;Mai;6
+2024;Prata;São Lucas;Mai;5
+2024;Prata;Camilo Haddad;Mai;4
+2024;Prata;Vila Tolstói;Mai;5
+2024;Prata;Vila União;Mai;6
+2024;Prata;Jardim Planalto;Mai;5
+2024;Prata;Sapopemba;Mai;9
+2024;Prata;Fazenda da Juta;Mai;5
+2024;Prata;São Mateus;Mai;17
+2024;Prata;Jardim Colonial;Mai;10
+2023;Azul;Jabaquara;Mai;70
+2023;Azul;Conceição;Mai;26
+2023;Azul;São Judas;Mai;15
+2023;Azul;Saúde;Mai;27
+2023;Azul;Praça da Árvore;Mai;16
+2023;Azul;Santa Cruz;Mai;91
+2023;Azul;Vila Mariana;Mai;20
+2023;Azul;Ana Rosa;Mai;75
+2023;Azul;Paraíso;Mai;94
+2023;Azul;Vergueiro;Mai;26
+2023;Azul;São Joaquim;Mai;32
+2023;Azul;Japão-Liberdade;Mai;21
+2023;Azul;Sé;Mai;170
+2023;Azul;São Bento;Mai;51
+2023;Azul;Luz;Mai;132
+2023;Azul;Tiradentes;Mai;16
+2023;Azul;Armênia;Mai;21
+2023;Azul;Portuguesa-Tietê;Mai;44
+2023;Azul;Carandiru;Mai;11
+2023;Azul;Santana;Mai;49
+2023;Azul;Jardim São Paulo-Ayrton Senna;Mai;11
+2023;Azul;Parada Inglesa;Mai;12
+2023;Azul;Tucuruvi;Mai;56
+2023;Vermelha;Corinthians-Itaquera;Mai;73
+2023;Vermelha;Artur Alvim;Mai;55
+2023;Vermelha;Patriarca;Mai;21
+2023;Vermelha;Guilhermina-Esperança;Mai;21
+2023;Vermelha;Vila Matilde;Mai;26
+2023;Vermelha;Penha;Mai;28
+2023;Vermelha;Carrão;Mai;50
+2023;Vermelha;Tatuapé;Mai;76
+2023;Vermelha;Belém;Mai;37
+2023;Vermelha;Bresser-Mooca;Mai;32
+2023;Vermelha;Brás;Mai;75
+2023;Vermelha;Pedro II;Mai;16
+2023;Vermelha;Sé;Mai;199
+2023;Vermelha;Anhangabaú;Mai;51
+2023;Vermelha;República;Mai;118
+2023;Vermelha;Santa Cecília;Mai;23
+2023;Vermelha;Marechal Deodoro;Mai;27
+2023;Vermelha;Palmeiras-Barra Funda;Mai;129
+2023;Prata;Vila Prudente;Mai;60
+2023;Prata;Oratório;Mai;6
+2023;Prata;São Lucas;Mai;5
+2023;Prata;Camilo Haddad;Mai;4
+2023;Prata;Vila Tolstói;Mai;5
+2023;Prata;Vila União;Mai;6
+2023;Prata;Jardim Planalto;Mai;4
+2023;Prata;Sapopemba;Mai;8
+2023;Prata;Fazenda da Juta;Mai;4
+2023;Prata;São Mateus;Mai;17
+2023;Prata;Jardim Colonial;Mai;6
+2022;Azul;Jabaquara;Mai;66
+2022;Azul;Conceição;Mai;23
+2022;Azul;São Judas;Mai;13
+2022;Azul;Saúde;Mai;25
+2022;Azul;Praça da Árvore;Mai;14
+2022;Azul;Santa Cruz;Mai;88
+2022;Azul;Vila Mariana;Mai;19
+2022;Azul;Ana Rosa;Mai;68
+2022;Azul;Paraíso;Mai;84
+2022;Azul;Vergueiro;Mai;24
+2022;Azul;São Joaquim;Mai;24
+2022;Azul;Japão-Liberdade;Mai;19
+2022;Azul;Sé;Mai;165
+2022;Azul;São Bento;Mai;46
+2022;Azul;Luz;Mai;115
+2022;Azul;Tiradentes;Mai;15
+2022;Azul;Armênia;Mai;21
+2022;Azul;Portuguesa-Tietê;Mai;42
+2022;Azul;Carandiru;Mai;10
+2022;Azul;Santana;Mai;47
+2022;Azul;Jardim São Paulo-Ayrton Senna;Mai;10
+2022;Azul;Parada Inglesa;Mai;11
+2022;Azul;Tucuruvi;Mai;52
+2022;Verde;Vila Prudente;Mai;66
+2022;Verde;Tamanduateí;Mai;64
+2022;Verde;Sacomã;Mai;36
+2022;Verde;Alto do Ipiranga;Mai;17
+2022;Verde;Santos-Imigrantes;Mai;12
+2022;Verde;Chácara Klabin;Mai;67
+2022;Verde;Ana Rosa;Mai;56
+2022;Verde;Paraíso;Mai;84
+2022;Verde;Brigadeiro;Mai;42
+2022;Verde;Trianon-Masp;Mai;40
+2022;Verde;Consolação;Mai;87
+2022;Verde;Clínicas;Mai;19
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Mai;9
+2022;Verde;Vila Madalena;Mai;18
+2022;Vermelha;Corinthians-Itaquera;Mai;73
+2022;Vermelha;Artur Alvim;Mai;53
+2022;Vermelha;Patriarca;Mai;19
+2022;Vermelha;Guilhermina-Esperança;Mai;19
+2022;Vermelha;Vila Matilde;Mai;24
+2022;Vermelha;Penha;Mai;26
+2022;Vermelha;Carrão;Mai;47
+2022;Vermelha;Tatuapé;Mai;71
+2022;Vermelha;Belém;Mai;34
+2022;Vermelha;Bresser-Mooca;Mai;30
+2022;Vermelha;Brás;Mai;79
+2022;Vermelha;Pedro II;Mai;16
+2022;Vermelha;Sé;Mai;186
+2022;Vermelha;Anhangabaú;Mai;46
+2022;Vermelha;República;Mai;109
+2022;Vermelha;Santa Cecília;Mai;22
+2022;Vermelha;Marechal Deodoro;Mai;25
+2022;Vermelha;Palmeiras-Barra Funda;Mai;131
+2022;Prata;Vila Prudente;Mai;51
+2022;Prata;Oratório;Mai;5
+2022;Prata;São Lucas;Mai;5
+2022;Prata;Camilo Haddad;Mai;3
+2022;Prata;Vila Tolstói;Mai;5
+2022;Prata;Jardim Colonial;Mai;4
+2021;Azul;Jabaquara;Mai;45
+2021;Azul;Conceição;Mai;14
+2021;Azul;São Judas;Mai;8
+2021;Azul;Saúde;Mai;15
+2021;Azul;Praça da Árvore;Mai;9
+2021;Azul;Santa Cruz;Mai;58
+2021;Azul;Vila Mariana;Mai;9
+2021;Azul;Ana Rosa;Mai;39
+2021;Azul;Paraíso;Mai;48
+2021;Azul;Vergueiro;Mai;15
+2021;Azul;São Joaquim;Mai;13
+2021;Azul;Japão-Liberdade;Mai;11
+2021;Azul;Sé;Mai;111
+2021;Azul;São Bento;Mai;31
+2021;Azul;Luz;Mai;68
+2021;Azul;Tiradentes;Mai;8
+2021;Azul;Armênia;Mai;14
+2021;Azul;Portuguesa-Tietê;Mai;26
+2021;Azul;Carandiru;Mai;6
+2021;Azul;Santana;Mai;32
+2021;Azul;Jardim São Paulo-Ayrton Senna;Mai;5
+2021;Azul;Parada Inglesa;Mai;6
+2021;Azul;Tucuruvi;Mai;34
+2021;Verde;Vila Prudente;Mai;40
+2021;Verde;Tamanduateí;Mai;40
+2021;Verde;Sacomã;Mai;23
+2021;Verde;Alto do Ipiranga;Mai;9
+2021;Verde;Santos-Imigrantes;Mai;8
+2021;Verde;Chácara Klabin;Mai;40
+2021;Verde;Ana Rosa;Mai;35
+2021;Verde;Paraíso;Mai;36
+2021;Verde;Brigadeiro;Mai;23
+2021;Verde;Trianon-Masp;Mai;19
+2021;Verde;Consolação;Mai;44
+2021;Verde;Clínicas;Mai;13
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Mai;4
+2021;Verde;Vila Madalena;Mai;9
+2021;Vermelha;Corinthians-Itaquera;Mai;52
+2021;Vermelha;Artur Alvim;Mai;36
+2021;Vermelha;Patriarca;Mai;13
+2021;Vermelha;Guilhermina-Esperança;Mai;12
+2021;Vermelha;Vila Matilde;Mai;15
+2021;Vermelha;Penha;Mai;17
+2021;Vermelha;Carrão;Mai;25
+2021;Vermelha;Tatuapé;Mai;47
+2021;Prata;Vila Prudente;Mai;29
+2021;Prata;Oratório;Mai;3
+2021;Prata;São Lucas;Mai;3
+2021;Prata;Camilo Haddad;Mai;2
+2021;Prata;Vila Tolstói;Mai;3
+2021;Prata;Vila União;Mai;3
+2021;Prata;Sapopemba;Mai;5
+2021;Prata;São Mateus;Mai;12
+2020;Azul;Jabaquara;Mai;25
+2020;Azul;Conceição;Mai;8
+2020;Azul;São Judas;Mai;4
+2020;Azul;Saúde;Mai;8
+2020;Azul;Praça da Árvore;Mai;4
+2020;Azul;Santa Cruz;Mai;28
+2020;Azul;Vila Mariana;Mai;5
+2020;Azul;Ana Rosa;Mai;20
+2020;Azul;Paraíso;Mai;24
+2020;Azul;Vergueiro;Mai;9
+2020;Azul;São Joaquim;Mai;7
+2020;Azul;Japão-Liberdade;Mai;6
+2020;Azul;Sé;Mai;62
+2020;Azul;São Bento;Mai;11
+2020;Azul;Luz;Mai;29
+2020;Azul;Tiradentes;Mai;4
+2020;Azul;Armênia;Mai;7
+2020;Azul;Portuguesa-Tietê;Mai;14
+2020;Azul;Carandiru;Mai;3
+2020;Azul;Santana;Mai;17
+2020;Azul;Jardim São Paulo-Ayrton Senna;Mai;2
+2020;Azul;Parada Inglesa;Mai;3
+2020;Azul;Tucuruvi;Mai;18
+2020;Verde;Vila Prudente;Mai;15
+2020;Verde;Tamanduateí;Mai;21
+2020;Verde;Sacomã;Mai;12
+2020;Verde;Alto do Ipiranga;Mai;5
+2020;Verde;Santos-Imigrantes;Mai;4
+2020;Verde;Chácara Klabin;Mai;20
+2020;Verde;Ana Rosa;Mai;18
+2020;Verde;Paraíso;Mai;18
+2020;Verde;Brigadeiro;Mai;11
+2020;Verde;Trianon-Masp;Mai;9
+2020;Verde;Consolação;Mai;22
+2020;Verde;Clínicas;Mai;9
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Mai;2
+2020;Verde;Vila Madalena;Mai;5
+2020;Vermelha;Corinthians-Itaquera;Mai;30
+2020;Vermelha;Artur Alvim;Mai;21
+2020;Vermelha;Patriarca;Mai;7
+2020;Vermelha;Guilhermina-Esperança;Mai;7
+2020;Vermelha;Vila Matilde;Mai;8
+2020;Vermelha;Penha;Mai;9
+2020;Vermelha;Carrão;Mai;14
+2020;Vermelha;Tatuapé;Mai;22
+2020;Vermelha;Belém;Mai;14
+2020;Vermelha;Bresser-Mooca;Mai;11
+2020;Vermelha;Brás;Mai;38
+2020;Vermelha;Pedro II;Mai;8
+2020;Vermelha;Sé;Mai;58
+2020;Vermelha;Anhangabaú;Mai;16
+2020;Vermelha;República;Mai;36
+2020;Vermelha;Santa Cecília;Mai;9
+2020;Vermelha;Marechal Deodoro;Mai;9
+2020;Vermelha;Palmeiras-Barra Funda;Mai;52
+2020;Prata;Vila Prudente;Mai;
+2020;Prata;Oratório;Mai;
+2020;Prata;São Lucas;Mai;
+2020;Prata;Camilo Haddad;Mai;
+2020;Prata;Vila Tolstói;Mai;
+2020;Prata;Vila União;Mai;
+2020;Prata;Jardim Planalto;Mai;
+2020;Prata;Sapopemba;Mai;
+2020;Prata;Fazenda da Juta;Mai;
+2020;Prata;São Mateus;Mai;
+2024;Azul;Jabaquara;Jun;69
+2024;Azul;Conceição;Jun;29
+2024;Azul;São Judas;Jun;15
+2024;Azul;Saúde-Ultrafarma;Jun;27
+2024;Azul;Praça da Árvore;Jun;16
+2024;Azul;Santa Cruz;Jun;95
+2024;Azul;Vila Mariana;Jun;20
+2024;Azul;Ana Rosa;Jun;78
+2024;Azul;Paraíso;Jun;97
+2024;Azul;Vergueiro;Jun;26
+2024;Azul;São Joaquim;Jun;28
+2024;Azul;Japão-Liberdade;Jun;21
+2024;Azul;Sé;Jun;171
+2024;Azul;São Bento;Jun;53
+2024;Azul;Luz;Jun;130
+2024;Azul;Tiradentes;Jun;16
+2024;Azul;Armênia;Jun;19
+2024;Azul;Portuguesa-Tietê;Jun;45
+2024;Azul;Carandiru;Jun;12
+2024;Azul;Santana;Jun;49
+2024;Azul;Jardim São Paulo-Ayrton Senna;Jun;11
+2024;Azul;Parada Inglesa;Jun;13
+2024;Azul;Tucuruvi;Jun;56
+2024;Verde;Vila Prudente;Jun;78
+2024;Verde;Tamanduateí;Jun;76
+2024;Verde;Sacomã;Jun;40
+2024;Verde;Alto do Ipiranga;Jun;18
+2024;Verde;Santos-Imigrantes;Jun;15
+2024;Verde;Chácara Klabin;Jun;83
+2024;Verde;Ana Rosa;Jun;61
+2024;Verde;Paraíso;Jun;63
+2024;Verde;Brigadeiro;Jun;51
+2024;Verde;Trianon-Masp;Jun;44
+2024;Verde;Consolação;Jun;97
+2024;Verde;Clínicas;Jun;21
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Jun;10
+2024;Verde;Vila Madalena;Jun;21
+2024;Vermelha;Corinthians-Itaquera;Jun;73
+2024;Vermelha;Artur Alvim;Jun;56
+2024;Vermelha;Patriarca-Vila Ré;Jun;22
+2024;Vermelha;Guilhermina-Esperança;Jun;21
+2024;Vermelha;Vila Matilde;Jun;27
+2024;Vermelha;Penha-Lojas Besni;Jun;28
+2024;Vermelha;Carrão-Assaí Atacadista;Jun;46
+2024;Vermelha;Tatuapé;Jun;75
+2024;Vermelha;Belém;Jun;37
+2024;Vermelha;Bresser-Moóca;Jun;30
+2024;Vermelha;Brás;Jun;76
+2024;Vermelha;Pedro II;Jun;15
+2024;Vermelha;Sé2;Jun;202
+2024;Vermelha;Anhangaba;Jun;51
+2024;Vermelha;República;Jun;120
+2024;Vermelha;Santa Cecília;Jun;23
+2024;Vermelha;Marechal Deodoro;Jun;26
+2024;Vermelha;Palmeiras-Barra Funda;Jun;132
+2024;Prata;Vila Prudente;Jun;60
+2024;Prata;Oratório;Jun;7
+2024;Prata;São Lucas;Jun;5
+2024;Prata;Camilo Haddad;Jun;4
+2024;Prata;Vila Tolstói;Jun;5
+2024;Prata;Vila União;Jun;6
+2024;Prata;Jardim Planalto;Jun;5
+2024;Prata;Sapopemba;Jun;9
+2024;Prata;Fazenda da Juta;Jun;4
+2024;Prata;São Mateus;Jun;17
+2024;Prata;Jardim Colonial;Jun;10
+2023;Azul;Jabaquara;Jun;68
+2023;Azul;Conceição;Jun;25
+2023;Azul;São Judas;Jun;15
+2023;Azul;Saúde;Jun;27
+2023;Azul;Praça da Árvore;Jun;15
+2023;Azul;Santa Cruz;Jun;90
+2023;Azul;Vila Mariana;Jun;19
+2023;Azul;Ana Rosa;Jun;73
+2023;Azul;Paraíso;Jun;90
+2023;Azul;Vergueiro;Jun;25
+2023;Azul;São Joaquim;Jun;27
+2023;Azul;Japão-Liberdade;Jun;21
+2023;Azul;Sé;Jun;167
+2023;Azul;São Bento;Jun;52
+2023;Azul;Luz;Jun;128
+2023;Azul;Tiradentes;Jun;15
+2023;Azul;Armênia;Jun;20
+2023;Azul;Portuguesa-Tietê;Jun;45
+2023;Azul;Carandiru;Jun;11
+2023;Azul;Santana;Jun;49
+2023;Azul;Jardim São Paulo-Ayrton Senna;Jun;11
+2023;Azul;Parada Inglesa;Jun;12
+2023;Azul;Tucuruvi;Jun;54
+2023;Vermelha;Corinthians-Itaquera;Jun;72
+2023;Vermelha;Artur Alvim;Jun;54
+2023;Vermelha;Patriarca;Jun;21
+2023;Vermelha;Guilhermina-Esperança;Jun;20
+2023;Vermelha;Vila Matilde;Jun;26
+2023;Vermelha;Penha;Jun;27
+2023;Vermelha;Carrão;Jun;44
+2023;Vermelha;Tatuapé;Jun;75
+2023;Vermelha;Belém;Jun;37
+2023;Vermelha;Bresser-Mooca;Jun;30
+2023;Vermelha;Brás;Jun;75
+2023;Vermelha;Pedro II;Jun;15
+2023;Vermelha;Sé;Jun;195
+2023;Vermelha;Anhangabaú;Jun;51
+2023;Vermelha;República;Jun;118
+2023;Vermelha;Santa Cecília;Jun;23
+2023;Vermelha;Marechal Deodoro;Jun;26
+2023;Vermelha;Palmeiras-Barra Funda;Jun;124
+2023;Prata;Vila Prudente;Jun;57
+2023;Prata;Oratório;Jun;6
+2023;Prata;São Lucas;Jun;5
+2023;Prata;Camilo Haddad;Jun;4
+2023;Prata;Vila Tolstói;Jun;5
+2023;Prata;Vila União;Jun;6
+2023;Prata;Jardim Planalto;Jun;4
+2023;Prata;Sapopemba;Jun;8
+2023;Prata;Fazenda da Juta;Jun;4
+2023;Prata;São Mateus;Jun;17
+2023;Prata;Jardim Colonial;Jun;6
+2022;Azul;Jabaquara;Jun;64
+2022;Azul;Conceição;Jun;22
+2022;Azul;São Judas;Jun;13
+2022;Azul;Saúde;Jun;24
+2022;Azul;Praça da Árvore;Jun;14
+2022;Azul;Santa Cruz;Jun;86
+2022;Azul;Vila Mariana;Jun;17
+2022;Azul;Ana Rosa;Jun;66
+2022;Azul;Paraíso;Jun;81
+2022;Azul;Vergueiro;Jun;22
+2022;Azul;São Joaquim;Jun;22
+2022;Azul;Japão-Liberdade;Jun;18
+2022;Azul;Sé;Jun;161
+2022;Azul;São Bento;Jun;46
+2022;Azul;Luz;Jun;111
+2022;Azul;Tiradentes;Jun;14
+2022;Azul;Armênia;Jun;20
+2022;Azul;Portuguesa-Tietê;Jun;41
+2022;Azul;Carandiru;Jun;10
+2022;Azul;Santana;Jun;43
+2022;Azul;Jardim São Paulo-Ayrton Senna;Jun;10
+2022;Azul;Parada Inglesa;Jun;11
+2022;Azul;Tucuruvi;Jun;51
+2022;Verde;Vila Prudente;Jun;65
+2022;Verde;Tamanduateí;Jun;63
+2022;Verde;Sacomã;Jun;35
+2022;Verde;Alto do Ipiranga;Jun;16
+2022;Verde;Santos-Imigrantes;Jun;12
+2022;Verde;Chácara Klabin;Jun;66
+2022;Verde;Ana Rosa;Jun;54
+2022;Verde;Paraíso;Jun;56
+2022;Verde;Brigadeiro;Jun;41
+2022;Verde;Trianon-Masp;Jun;38
+2022;Verde;Consolação;Jun;82
+2022;Verde;Clínicas;Jun;18
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Jun;8
+2022;Verde;Vila Madalena;Jun;17
+2022;Vermelha;Corinthians-Itaquera;Jun;72
+2022;Vermelha;Artur Alvim;Jun;51
+2022;Vermelha;Patriarca;Jun;19
+2022;Vermelha;Guilhermina-Esperança;Jun;19
+2022;Vermelha;Vila Matilde;Jun;23
+2022;Vermelha;Penha;Jun;26
+2022;Vermelha;Carrão;Jun;42
+2022;Vermelha;Tatuapé;Jun;70
+2022;Vermelha;Belém;Jun;34
+2022;Vermelha;Bresser-Mooca;Jun;29
+2022;Vermelha;Brás;Jun;77
+2022;Vermelha;Pedro II;Jun;15
+2022;Vermelha;Sé;Jun;179
+2022;Vermelha;Anhangabaú;Jun;44
+2022;Vermelha;República;Jun;107
+2022;Vermelha;Santa Cecília;Jun;21
+2022;Vermelha;Marechal Deodoro;Jun;25
+2022;Vermelha;Palmeiras-Barra Funda;Jun;130
+2022;Prata;Vila Prudente;Jun;50
+2022;Prata;Oratório;Jun;5
+2022;Prata;São Lucas;Jun;5
+2022;Prata;Camilo Haddad;Jun;3
+2022;Prata;Vila Tolstói;Jun;5
+2022;Prata;Jardim Colonial;Jun;4
+2021;Azul;Jabaquara;Jun;46
+2021;Azul;Conceição;Jun;15
+2021;Azul;São Judas;Jun;9
+2021;Azul;Saúde;Jun;16
+2021;Azul;Praça da Árvore;Jun;9
+2021;Azul;Santa Cruz;Jun;61
+2021;Azul;Vila Mariana;Jun;10
+2021;Azul;Ana Rosa;Jun;41
+2021;Azul;Paraíso;Jun;50
+2021;Azul;Vergueiro;Jun;16
+2021;Azul;São Joaquim;Jun;14
+2021;Azul;Japão-Liberdade;Jun;12
+2021;Azul;Sé;Jun;116
+2021;Azul;São Bento;Jun;33
+2021;Azul;Luz;Jun;69
+2021;Azul;Tiradentes;Jun;8
+2021;Azul;Armênia;Jun;14
+2021;Azul;Portuguesa-Tietê;Jun;27
+2021;Azul;Carandiru;Jun;6
+2021;Azul;Santana;Jun;32
+2021;Azul;Jardim São Paulo-Ayrton Senna;Jun;6
+2021;Azul;Parada Inglesa;Jun;7
+2021;Azul;Tucuruvi;Jun;35
+2021;Verde;Vila Prudente;Jun;40
+2021;Verde;Tamanduateí;Jun;43
+2021;Verde;Sacomã;Jun;24
+2021;Verde;Alto do Ipiranga;Jun;9
+2021;Verde;Santos-Imigrantes;Jun;8
+2021;Verde;Chácara Klabin;Jun;43
+2021;Verde;Ana Rosa;Jun;36
+2021;Verde;Paraíso;Jun;37
+2021;Verde;Brigadeiro;Jun;24
+2021;Verde;Trianon-Masp;Jun;20
+2021;Verde;Consolação;Jun;47
+2021;Verde;Clínicas;Jun;13
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Jun;5
+2021;Verde;Vila Madalena;Jun;10
+2021;Vermelha;Corinthians-Itaquera;Jun;53
+2021;Vermelha;Artur Alvim;Jun;37
+2021;Vermelha;Patriarca;Jun;13
+2021;Vermelha;Guilhermina-Esperança;Jun;13
+2021;Vermelha;Vila Matilde;Jun;16
+2021;Vermelha;Penha;Jun;18
+2021;Vermelha;Carrão;Jun;26
+2021;Vermelha;Tatuapé;Jun;49
+2021;Prata;Vila Prudente;Jun;28
+2021;Prata;Oratório;Jun;3
+2021;Prata;São Lucas;Jun;3
+2021;Prata;Camilo Haddad;Jun;2
+2021;Prata;Vila Tolstói;Jun;3
+2021;Prata;Vila União;Jun;3
+2021;Prata;Sapopemba;Jun;5
+2021;Prata;São Mateus;Jun;12
+2020;Azul;Jabaquara;Jun;29
+2020;Azul;Conceição;Jun;10
+2020;Azul;São Judas;Jun;5
+2020;Azul;Saúde;Jun;10
+2020;Azul;Praça da Árvore;Jun;5
+2020;Azul;Santa Cruz;Jun;34
+2020;Azul;Vila Mariana;Jun;6
+2020;Azul;Ana Rosa;Jun;23
+2020;Azul;Paraíso;Jun;29
+2020;Azul;Vergueiro;Jun;10
+2020;Azul;São Joaquim;Jun;8
+2020;Azul;Japão-Liberdade;Jun;7
+2020;Azul;Sé;Jun;76
+2020;Azul;São Bento;Jun;18
+2020;Azul;Luz;Jun;39
+2020;Azul;Tiradentes;Jun;5
+2020;Azul;Armênia;Jun;8
+2020;Azul;Portuguesa-Tietê;Jun;17
+2020;Azul;Carandiru;Jun;4
+2020;Azul;Santana;Jun;21
+2020;Azul;Jardim São Paulo-Ayrton Senna;Jun;3
+2020;Azul;Parada Inglesa;Jun;4
+2020;Azul;Tucuruvi;Jun;22
+2020;Verde;Vila Prudente;Jun;19
+2020;Verde;Tamanduateí;Jun;25
+2020;Verde;Sacomã;Jun;15
+2020;Verde;Alto do Ipiranga;Jun;6
+2020;Verde;Santos-Imigrantes;Jun;5
+2020;Verde;Chácara Klabin;Jun;24
+2020;Verde;Ana Rosa;Jun;22
+2020;Verde;Paraíso;Jun;22
+2020;Verde;Brigadeiro;Jun;14
+2020;Verde;Trianon-Masp;Jun;11
+2020;Verde;Consolação;Jun;27
+2020;Verde;Clínicas;Jun;9
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Jun;3
+2020;Verde;Vila Madalena;Jun;5
+2020;Vermelha;Corinthians-Itaquera;Jun;35
+2020;Vermelha;Artur Alvim;Jun;25
+2020;Vermelha;Patriarca;Jun;8
+2020;Vermelha;Guilhermina-Esperança;Jun;8
+2020;Vermelha;Vila Matilde;Jun;10
+2020;Vermelha;Penha;Jun;12
+2020;Vermelha;Carrão;Jun;16
+2020;Vermelha;Tatuapé;Jun;27
+2020;Vermelha;Belém;Jun;16
+2020;Vermelha;Bresser-Mooca;Jun;13
+2020;Vermelha;Brás;Jun;48
+2020;Vermelha;Pedro II;Jun;9
+2020;Vermelha;Sé;Jun;73
+2020;Vermelha;Anhangabaú;Jun;19
+2020;Vermelha;República;Jun;44
+2020;Vermelha;Santa Cecília;Jun;11
+2020;Vermelha;Marechal Deodoro;Jun;11
+2020;Vermelha;Palmeiras-Barra Funda;Jun;62
+2020;Prata;Vila Prudente;Jun;13
+2020;Prata;Oratório;Jun;2
+2020;Prata;São Lucas;Jun;1
+2020;Prata;Camilo Haddad;Jun;1
+2020;Prata;Vila Tolstói;Jun;1
+2020;Prata;Vila União;Jun;2
+2020;Prata;Jardim Planalto;Jun;4
+2020;Prata;Sapopemba;Jun;2
+2020;Prata;Fazenda da Juta;Jun;1
+2020;Prata;São Mateus;Jun;5
+2024;Azul;Jabaquara;Jul;65
+2024;Azul;Conceição;Jul;27
+2024;Azul;São Judas;Jul;15
+2024;Azul;Saúde-Ultrafarma;Jul;25
+2024;Azul;Praça da Árvore;Jul;14
+2024;Azul;Santa Cruz;Jul;88
+2024;Azul;Vila Mariana;Jul;16
+2024;Azul;Ana Rosa;Jul;72
+2024;Azul;Paraíso;Jul;89
+2024;Azul;Vergueiro;Jul;24
+2024;Azul;São Joaquim;Jul;20
+2024;Azul;Japão-Liberdade;Jul;22
+2024;Azul;Sé;Jul;160
+2024;Azul;São Bento;Jul;53
+2024;Azul;Luz;Jul;119
+2024;Azul;Tiradentes;Jul;13
+2024;Azul;Armênia;Jul;18
+2024;Azul;Portuguesa-Tietê;Jul;44
+2024;Azul;Carandiru;Jul;11
+2024;Azul;Santana;Jul;46
+2024;Azul;Jardim São Paulo-Ayrton Senna;Jul;10
+2024;Azul;Parada Inglesa;Jul;12
+2024;Azul;Tucuruvi;Jul;53
+2024;Verde;Vila Prudente;Jul;72
+2024;Verde;Tamanduateí;Jul;72
+2024;Verde;Sacomã;Jul;38
+2024;Verde;Alto do Ipiranga;Jul;16
+2024;Verde;Santos-Imigrantes;Jul;14
+2024;Verde;Chácara Klabin;Jul;78
+2024;Verde;Ana Rosa;Jul;56
+2024;Verde;Paraíso;Jul;58
+2024;Verde;Brigadeiro;Jul;48
+2024;Verde;Trianon-Masp;Jul;43
+2024;Verde;Consolação;Jul;89
+2024;Verde;Clínicas;Jul;20
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Jul;9
+2024;Verde;Vila Madalena;Jul;20
+2024;Vermelha;Corinthians-Itaquera;Jul;70
+2024;Vermelha;Artur Alvim;Jul;52
+2024;Vermelha;Patriarca-Vila Ré;Jul;21
+2024;Vermelha;Guilhermina-Esperança;Jul;20
+2024;Vermelha;Vila Matilde;Jul;25
+2024;Vermelha;Penha-Lojas Besni;Jul;25
+2024;Vermelha;Carrão-Assaí Atacadista;Jul;39
+2024;Vermelha;Tatuapé;Jul;66
+2024;Vermelha;Belém;Jul;35
+2024;Vermelha;Bresser-Moóca;Jul;27
+2024;Vermelha;Brás;Jul;74
+2024;Vermelha;Pedro II;Jul;15
+2024;Vermelha;Sé2;Jul;188
+2024;Vermelha;Anhangaba;Jul;49
+2024;Vermelha;República;Jul;115
+2024;Vermelha;Santa Cecília;Jul;21
+2024;Vermelha;Marechal Deodoro;Jul;24
+2024;Vermelha;Palmeiras-Barra Funda;Jul;123
+2024;Prata;Vila Prudente;Jul;55
+2024;Prata;Oratório;Jul;7
+2024;Prata;São Lucas;Jul;5
+2024;Prata;Camilo Haddad;Jul;3
+2024;Prata;Vila Tolstói;Jul;5
+2024;Prata;Vila União;Jul;5
+2024;Prata;Jardim Planalto;Jul;4
+2024;Prata;Sapopemba;Jul;8
+2024;Prata;Fazenda da Juta;Jul;4
+2024;Prata;São Mateus;Jul;16
+2024;Prata;Jardim Colonial;Jul;10
+2023;Azul;Jabaquara;Jul;66
+2023;Azul;Conceição;Jul;23
+2023;Azul;São Judas;Jul;14
+2023;Azul;Saúde;Jul;24
+2023;Azul;Praça da Árvore;Jul;14
+2023;Azul;Santa Cruz;Jul;86
+2023;Azul;Vila Mariana;Jul;15
+2023;Azul;Ana Rosa;Jul;68
+2023;Azul;Paraíso;Jul;85
+2023;Azul;Vergueiro;Jul;23
+2023;Azul;São Joaquim;Jul;19
+2023;Azul;Japão-Liberdade;Jul;22
+2023;Azul;Sé;Jul;159
+2023;Azul;São Bento;Jul;53
+2023;Azul;Luz;Jul;122
+2023;Azul;Tiradentes;Jul;12
+2023;Azul;Armênia;Jul;18
+2023;Azul;Portuguesa-Tietê;Jul;44
+2023;Azul;Carandiru;Jul;10
+2023;Azul;Santana;Jul;45
+2023;Azul;Jardim São Paulo-Ayrton Senna;Jul;10
+2023;Azul;Parada Inglesa;Jul;11
+2023;Azul;Tucuruvi;Jul;52
+2023;Vermelha;Corinthians-Itaquera;Jul;69
+2023;Vermelha;Artur Alvim;Jul;51
+2023;Vermelha;Patriarca;Jul;20
+2023;Vermelha;Guilhermina-Esperança;Jul;19
+2023;Vermelha;Vila Matilde;Jul;24
+2023;Vermelha;Penha;Jul;25
+2023;Vermelha;Carrão;Jul;39
+2023;Vermelha;Tatuapé;Jul;72
+2023;Vermelha;Belém;Jul;35
+2023;Vermelha;Bresser-Mooca;Jul;27
+2023;Vermelha;Brás;Jul;73
+2023;Vermelha;Pedro II;Jul;15
+2023;Vermelha;Sé;Jul;184
+2023;Vermelha;Anhangabaú;Jul;49
+2023;Vermelha;República;Jul;113
+2023;Vermelha;Santa Cecília;Jul;21
+2023;Vermelha;Marechal Deodoro;Jul;24
+2023;Vermelha;Palmeiras-Barra Funda;Jul;121
+2023;Prata;Vila Prudente;Jul;55
+2023;Prata;Oratório;Jul;6
+2023;Prata;São Lucas;Jul;5
+2023;Prata;Camilo Haddad;Jul;3
+2023;Prata;Vila Tolstói;Jul;5
+2023;Prata;Vila União;Jul;5
+2023;Prata;Jardim Planalto;Jul;4
+2023;Prata;Sapopemba;Jul;8
+2023;Prata;Fazenda da Juta;Jul;4
+2023;Prata;São Mateus;Jul;16
+2023;Prata;Jardim Colonial;Jul;5
+2022;Azul;Jabaquara;Jul;64
+2022;Azul;Conceição;Jul;21
+2022;Azul;São Judas;Jul;13
+2022;Azul;Saúde;Jul;23
+2022;Azul;Praça da Árvore;Jul;13
+2022;Azul;Santa Cruz;Jul;84
+2022;Azul;Vila Mariana;Jul;14
+2022;Azul;Ana Rosa;Jul;62
+2022;Azul;Paraíso;Jul;77
+2022;Azul;Vergueiro;Jul;21
+2022;Azul;São Joaquim;Jul;18
+2022;Azul;Japão-Liberdade;Jul;20
+2022;Azul;Sé;Jul;155
+2022;Azul;São Bento;Jul;46
+2022;Azul;Luz;Jul;111
+2022;Azul;Tiradentes;Jul;12
+2022;Azul;Armênia;Jul;19
+2022;Azul;Portuguesa-Tietê;Jul;44
+2022;Azul;Carandiru;Jul;9
+2022;Azul;Santana;Jul;44
+2022;Azul;Jardim São Paulo-Ayrton Senna;Jul;9
+2022;Azul;Parada Inglesa;Jul;10
+2022;Azul;Tucuruvi;Jul;49
+2022;Verde;Vila Prudente;Jul;64
+2022;Verde;Tamanduateí;Jul;59
+2022;Verde;Sacomã;Jul;34
+2022;Verde;Alto do Ipiranga;Jul;15
+2022;Verde;Santos-Imigrantes;Jul;11
+2022;Verde;Chácara Klabin;Jul;64
+2022;Verde;Ana Rosa;Jul;52
+2022;Verde;Paraíso;Jul;53
+2022;Verde;Brigadeiro;Jul;41
+2022;Verde;Trianon-Masp;Jul;36
+2022;Verde;Consolação;Jul;79
+2022;Verde;Clínicas;Jul;17
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Jul;8
+2022;Verde;Vila Madalena;Jul;16
+2022;Vermelha;Corinthians-Itaquera;Jul;69
+2022;Vermelha;Artur Alvim;Jul;49
+2022;Vermelha;Patriarca;Jul;18
+2022;Vermelha;Guilhermina-Esperança;Jul;18
+2022;Vermelha;Vila Matilde;Jul;22
+2022;Vermelha;Penha;Jul;24
+2022;Vermelha;Carrão;Jul;36
+2022;Vermelha;Tatuapé;Jul;69
+2022;Vermelha;Belém;Jul;32
+2022;Vermelha;Bresser-Mooca;Jul;26
+2022;Vermelha;Brás;Jul;74
+2022;Vermelha;Pedro II;Jul;15
+2022;Vermelha;Sé;Jul;174
+2022;Vermelha;Anhangabaú;Jul;44
+2022;Vermelha;República;Jul;105
+2022;Vermelha;Santa Cecília;Jul;20
+2022;Vermelha;Marechal Deodoro;Jul;23
+2022;Vermelha;Palmeiras-Barra Funda;Jul;129
+2022;Prata;Vila Prudente;Jul;49
+2022;Prata;Oratório;Jul;5
+2022;Prata;São Lucas;Jul;4
+2022;Prata;Camilo Haddad;Jul;3
+2022;Prata;Vila Tolstói;Jul;4
+2022;Prata;Jardim Colonial;Jul;4
+2021;Azul;Jabaquara;Jul;48
+2021;Azul;Conceição;Jul;15
+2021;Azul;São Judas;Jul;9
+2021;Azul;Saúde;Jul;16
+2021;Azul;Praça da Árvore;Jul;10
+2021;Azul;Santa Cruz;Jul;63
+2021;Azul;Vila Mariana;Jul;10
+2021;Azul;Ana Rosa;Jul;42
+2021;Azul;Paraíso;Jul;52
+2021;Azul;Vergueiro;Jul;15
+2021;Azul;São Joaquim;Jul;13
+2021;Azul;Japão-Liberdade;Jul;12
+2021;Azul;Sé;Jul;119
+2021;Azul;São Bento;Jul;36
+2021;Azul;Luz;Jul;69
+2021;Azul;Tiradentes;Jul;8
+2021;Azul;Armênia;Jul;15
+2021;Azul;Portuguesa-Tietê;Jul;29
+2021;Azul;Carandiru;Jul;6
+2021;Azul;Santana;Jul;33
+2021;Azul;Jardim São Paulo-Ayrton Senna;Jul;6
+2021;Azul;Parada Inglesa;Jul;7
+2021;Azul;Tucuruvi;Jul;36
+2021;Verde;Vila Prudente;Jul;44
+2021;Verde;Tamanduateí;Jul;43
+2021;Verde;Sacomã;Jul;25
+2021;Verde;Alto do Ipiranga;Jul;10
+2021;Verde;Santos-Imigrantes;Jul;8
+2021;Verde;Chácara Klabin;Jul;43
+2021;Verde;Ana Rosa;Jul;37
+2021;Verde;Paraíso;Jul;38
+2021;Verde;Brigadeiro;Jul;25
+2021;Verde;Trianon-Masp;Jul;21
+2021;Verde;Consolação;Jul;50
+2021;Verde;Clínicas;Jul;13
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Jul;5
+2021;Verde;Vila Madalena;Jul;10
+2021;Vermelha;Corinthians-Itaquera;Jul;53
+2021;Vermelha;Artur Alvim;Jul;38
+2021;Vermelha;Patriarca;Jul;14
+2021;Vermelha;Guilhermina-Esperança;Jul;13
+2021;Vermelha;Vila Matilde;Jul;16
+2021;Vermelha;Penha;Jul;18
+2021;Vermelha;Carrão;Jul;27
+2021;Vermelha;Tatuapé;Jul;51
+2021;Prata;Vila Prudente;Jul;35
+2021;Prata;Oratório;Jul;4
+2021;Prata;São Lucas;Jul;3
+2021;Prata;Camilo Haddad;Jul;2
+2021;Prata;Vila Tolstói;Jul;3
+2021;Prata;Vila União;Jul;4
+2021;Prata;Sapopemba;Jul;5
+2021;Prata;São Mateus;Jul;13
+2020;Azul;Jabaquara;Jul;35
+2020;Azul;Conceição;Jul;12
+2020;Azul;São Judas;Jul;6
+2020;Azul;Saúde;Jul;12
+2020;Azul;Praça da Árvore;Jul;7
+2020;Azul;Santa Cruz;Jul;43
+2020;Azul;Vila Mariana;Jul;7
+2020;Azul;Ana Rosa;Jul;29
+2020;Azul;Paraíso;Jul;35
+2020;Azul;Vergueiro;Jul;12
+2020;Azul;São Joaquim;Jul;9
+2020;Azul;Japão-Liberdade;Jul;9
+2020;Azul;Sé;Jul;92
+2020;Azul;São Bento;Jul;25
+2020;Azul;Luz;Jul;49
+2020;Azul;Tiradentes;Jul;6
+2020;Azul;Armênia;Jul;11
+2020;Azul;Portuguesa-Tietê;Jul;20
+2020;Azul;Carandiru;Jul;5
+2020;Azul;Santana;Jul;25
+2020;Azul;Jardim São Paulo-Ayrton Senna;Jul;4
+2020;Azul;Parada Inglesa;Jul;5
+2020;Azul;Tucuruvi;Jul;27
+2020;Verde;Vila Prudente;Jul;25
+2020;Verde;Tamanduateí;Jul;30
+2020;Verde;Sacomã;Jul;18
+2020;Verde;Alto do Ipiranga;Jul;7
+2020;Verde;Santos-Imigrantes;Jul;6
+2020;Verde;Chácara Klabin;Jul;28
+2020;Verde;Ana Rosa;Jul;27
+2020;Verde;Paraíso;Jul;28
+2020;Verde;Brigadeiro;Jul;18
+2020;Verde;Trianon-Masp;Jul;14
+2020;Verde;Consolação;Jul;34
+2020;Verde;Clínicas;Jul;10
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Jul;3
+2020;Verde;Vila Madalena;Jul;7
+2020;Vermelha;Corinthians-Itaquera;Jul;44
+2020;Vermelha;Artur Alvim;Jul;29
+2020;Vermelha;Patriarca;Jul;10
+2020;Vermelha;Guilhermina-Esperança;Jul;10
+2020;Vermelha;Vila Matilde;Jul;12
+2020;Vermelha;Penha;Jul;14
+2020;Vermelha;Carrão;Jul;19
+2020;Vermelha;Tatuapé;Jul;35
+2020;Vermelha;Belém;Jul;19
+2020;Vermelha;Bresser-Mooca;Jul;16
+2020;Vermelha;Brás;Jul;57
+2020;Vermelha;Pedro II;Jul;11
+2020;Vermelha;Sé;Jul;90
+2020;Vermelha;Anhangabaú;Jul;23
+2020;Vermelha;República;Jul;54
+2020;Vermelha;Santa Cecília;Jul;13
+2020;Vermelha;Marechal Deodoro;Jul;13
+2020;Vermelha;Palmeiras-Barra Funda;Jul;75
+2020;Prata;Vila Prudente;Jul;21
+2020;Prata;Oratório;Jul;2
+2020;Prata;São Lucas;Jul;2
+2020;Prata;Camilo Haddad;Jul;1
+2020;Prata;Vila Tolstói;Jul;2
+2020;Prata;Vila União;Jul;2
+2020;Prata;Jardim Planalto;Jul;2
+2020;Prata;Sapopemba;Jul;3
+2020;Prata;Fazenda da Juta;Jul;1
+2020;Prata;São Mateus;Jul;7
+2024;Azul;Jabaquara;Ago;70
+2024;Azul;Conceição;Ago;30
+2024;Azul;São Judas;Ago;16
+2024;Azul;Saúde-Ultrafarma;Ago;27
+2024;Azul;Praça da Árvore;Ago;16
+2024;Azul;Santa Cruz;Ago;95
+2024;Azul;Vila Mariana;Ago;20
+2024;Azul;Ana Rosa;Ago;79
+2024;Azul;Paraíso;Ago;100
+2024;Azul;Vergueiro;Ago;27
+2024;Azul;São Joaquim;Ago;33
+2024;Azul;Japão-Liberdade;Ago;22
+2024;Azul;Sé;Ago;171
+2024;Azul;São Bento;Ago;51
+2024;Azul;Luz;Ago;125
+2024;Azul;Tiradentes;Ago;16
+2024;Azul;Armênia;Ago;19
+2024;Azul;Portuguesa-Tietê;Ago;44
+2024;Azul;Carandiru;Ago;12
+2024;Azul;Santana;Ago;50
+2024;Azul;Jardim São Paulo-Ayrton Senna;Ago;12
+2024;Azul;Parada Inglesa;Ago;13
+2024;Azul;Tucuruvi;Ago;57
+2024;Verde;Vila Prudente;Ago;82
+2024;Verde;Tamanduateí;Ago;77
+2024;Verde;Sacomã;Ago;41
+2024;Verde;Alto do Ipiranga;Ago;19
+2024;Verde;Santos-Imigrantes;Ago;16
+2024;Verde;Chácara Klabin;Ago;85
+2024;Verde;Ana Rosa;Ago;61
+2024;Verde;Paraíso;Ago;64
+2024;Verde;Brigadeiro;Ago;49
+2024;Verde;Trianon-Masp;Ago;48
+2024;Verde;Consolação;Ago;99
+2024;Verde;Clínicas;Ago;21
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Ago;10
+2024;Verde;Vila Madalena;Ago;22
+2024;Vermelha;Corinthians-Itaquera;Ago;75
+2024;Vermelha;Artur Alvim;Ago;55
+2024;Vermelha;Patriarca-Vila Ré;Ago;22
+2024;Vermelha;Guilhermina-Esperança;Ago;22
+2024;Vermelha;Vila Matilde;Ago;27
+2024;Vermelha;Penha-Lojas Besni;Ago;28
+2024;Vermelha;Carrão-Assaí Atacadista;Ago;49
+2024;Vermelha;Tatuapé;Ago;75
+2024;Vermelha;Belém;Ago;37
+2024;Vermelha;Bresser-Moóca;Ago;31
+2024;Vermelha;Brás;Ago;75
+2024;Vermelha;Pedro II;Ago;15
+2024;Vermelha;Sé2;Ago;204
+2024;Vermelha;Anhangaba;Ago;51
+2024;Vermelha;República;Ago;120
+2024;Vermelha;Santa Cecília;Ago;23
+2024;Vermelha;Marechal Deodoro;Ago;26
+2024;Vermelha;Palmeiras-Barra Funda;Ago;129
+2024;Prata;Vila Prudente;Ago;62
+2024;Prata;Oratório;Ago;7
+2024;Prata;São Lucas;Ago;5
+2024;Prata;Camilo Haddad;Ago;4
+2024;Prata;Vila Tolstói;Ago;5
+2024;Prata;Vila União;Ago;6
+2024;Prata;Jardim Planalto;Ago;5
+2024;Prata;Sapopemba;Ago;9
+2024;Prata;Fazenda da Juta;Ago;5
+2024;Prata;São Mateus;Ago;17
+2024;Prata;Jardim Colonial;Ago;11
+2023;Azul;Jabaquara;Ago;69
+2023;Azul;Conceição;Ago;26
+2023;Azul;São Judas;Ago;16
+2023;Azul;Saúde;Ago;27
+2023;Azul;Praça da Árvore;Ago;16
+2023;Azul;Santa Cruz;Ago;93
+2023;Azul;Vila Mariana;Ago;21
+2023;Azul;Ana Rosa;Ago;77
+2023;Azul;Paraíso;Ago;96
+2023;Azul;Vergueiro;Ago;26
+2023;Azul;São Joaquim;Ago;30
+2023;Azul;Japão-Liberdade;Ago;21
+2023;Azul;Sé;Ago;171
+2023;Azul;São Bento;Ago;51
+2023;Azul;Luz;Ago;127
+2023;Azul;Tiradentes;Ago;16
+2023;Azul;Armênia;Ago;21
+2023;Azul;Portuguesa-Tietê;Ago;44
+2023;Azul;Carandiru;Ago;11
+2023;Azul;Santana;Ago;49
+2023;Azul;Jardim São Paulo-Ayrton Senna;Ago;11
+2023;Azul;Parada Inglesa;Ago;12
+2023;Azul;Tucuruvi;Ago;57
+2023;Vermelha;Corinthians-Itaquera;Ago;73
+2023;Vermelha;Artur Alvim;Ago;55
+2023;Vermelha;Patriarca;Ago;22
+2023;Vermelha;Guilhermina-Esperança;Ago;21
+2023;Vermelha;Vila Matilde;Ago;27
+2023;Vermelha;Penha;Ago;28
+2023;Vermelha;Carrão;Ago;49
+2023;Vermelha;Tatuapé;Ago;76
+2023;Vermelha;Belém;Ago;38
+2023;Vermelha;Bresser-Mooca;Ago;30
+2023;Vermelha;Brás;Ago;75
+2023;Vermelha;Pedro II;Ago;16
+2023;Vermelha;Sé;Ago;200
+2023;Vermelha;Anhangabaú;Ago;52
+2023;Vermelha;República;Ago;121
+2023;Vermelha;Santa Cecília;Ago;23
+2023;Vermelha;Marechal Deodoro;Ago;27
+2023;Vermelha;Palmeiras-Barra Funda;Ago;131
+2023;Prata;Vila Prudente;Ago;57
+2023;Prata;Oratório;Ago;6
+2023;Prata;São Lucas;Ago;5
+2023;Prata;Camilo Haddad;Ago;4
+2023;Prata;Vila Tolstói;Ago;5
+2023;Prata;Vila União;Ago;6
+2023;Prata;Jardim Planalto;Ago;4
+2023;Prata;Sapopemba;Ago;8
+2023;Prata;Fazenda da Juta;Ago;5
+2023;Prata;São Mateus;Ago;17
+2023;Prata;Jardim Colonial;Ago;6
+2022;Azul;Jabaquara;Ago;66
+2022;Azul;Conceição;Ago;23
+2022;Azul;São Judas;Ago;13
+2022;Azul;Saúde;Ago;25
+2022;Azul;Praça da Árvore;Ago;15
+2022;Azul;Santa Cruz;Ago;89
+2022;Azul;Vila Mariana;Ago;19
+2022;Azul;Ana Rosa;Ago;70
+2022;Azul;Paraíso;Ago;87
+2022;Azul;Vergueiro;Ago;25
+2022;Azul;São Joaquim;Ago;25
+2022;Azul;Japão-Liberdade;Ago;20
+2022;Azul;Sé;Ago;165
+2022;Azul;São Bento;Ago;46
+2022;Azul;Luz;Ago;117
+2022;Azul;Tiradentes;Ago;15
+2022;Azul;Armênia;Ago;20
+2022;Azul;Portuguesa-Tietê;Ago;42
+2022;Azul;Carandiru;Ago;10
+2022;Azul;Santana;Ago;47
+2022;Azul;Jardim São Paulo-Ayrton Senna;Ago;10
+2022;Azul;Parada Inglesa;Ago;11
+2022;Azul;Tucuruvi;Ago;53
+2022;Verde;Vila Prudente;Ago;68
+2022;Verde;Tamanduateí;Ago;65
+2022;Verde;Sacomã;Ago;37
+2022;Verde;Alto do Ipiranga;Ago;17
+2022;Verde;Santos-Imigrantes;Ago;12
+2022;Verde;Chácara Klabin;Ago;70
+2022;Verde;Ana Rosa;Ago;57
+2022;Verde;Paraíso;Ago;59
+2022;Verde;Brigadeiro;Ago;44
+2022;Verde;Trianon-Masp;Ago;41
+2022;Verde;Consolação;Ago;89
+2022;Verde;Clínicas;Ago;19
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Ago;9
+2022;Verde;Vila Madalena;Ago;18
+2022;Vermelha;Corinthians-Itaquera;Ago;73
+2022;Vermelha;Artur Alvim;Ago;53
+2022;Vermelha;Patriarca;Ago;20
+2022;Vermelha;Guilhermina-Esperança;Ago;19
+2022;Vermelha;Vila Matilde;Ago;25
+2022;Vermelha;Penha;Ago;26
+2022;Vermelha;Carrão;Ago;46
+2022;Vermelha;Tatuapé;Ago;71
+2022;Vermelha;Belém;Ago;35
+2022;Vermelha;Bresser-Mooca;Ago;31
+2022;Vermelha;Brás;Ago;74
+2022;Vermelha;Pedro II;Ago;16
+2022;Vermelha;Sé;Ago;187
+2022;Vermelha;Anhangabaú;Ago;46
+2022;Vermelha;República;Ago;111
+2022;Vermelha;Santa Cecília;Ago;22
+2022;Vermelha;Marechal Deodoro;Ago;26
+2022;Vermelha;Palmeiras-Barra Funda;Ago;135
+2022;Prata;Vila Prudente;Ago;51
+2022;Prata;Oratório;Ago;6
+2022;Prata;São Lucas;Ago;5
+2022;Prata;Camilo Haddad;Ago;3
+2022;Prata;Vila Tolstói;Ago;5
+2022;Prata;Jardim Colonial;Ago;5
+2021;Azul;Jabaquara;Ago;51
+2021;Azul;Conceição;Ago;16
+2021;Azul;São Judas;Ago;10
+2021;Azul;Saúde;Ago;18
+2021;Azul;Praça da Árvore;Ago;11
+2021;Azul;Santa Cruz;Ago;68
+2021;Azul;Vila Mariana;Ago;11
+2021;Azul;Ana Rosa;Ago;47
+2021;Azul;Paraíso;Ago;58
+2021;Azul;Vergueiro;Ago;17
+2021;Azul;São Joaquim;Ago;15
+2021;Azul;Japão-Liberdade;Ago;13
+2021;Azul;Sé;Ago;127
+2021;Azul;São Bento;Ago;36
+2021;Azul;Luz;Ago;74
+2021;Azul;Tiradentes;Ago;9
+2021;Azul;Armênia;Ago;15
+2021;Azul;Portuguesa-Tietê;Ago;31
+2021;Azul;Carandiru;Ago;7
+2021;Azul;Santana;Ago;36
+2021;Azul;Jardim São Paulo-Ayrton Senna;Ago;7
+2021;Azul;Parada Inglesa;Ago;8
+2021;Azul;Tucuruvi;Ago;40
+2021;Verde;Vila Prudente;Ago;49
+2021;Verde;Tamanduateí;Ago;47
+2021;Verde;Sacomã;Ago;27
+2021;Verde;Alto do Ipiranga;Ago;11
+2021;Verde;Santos-Imigrantes;Ago;9
+2021;Verde;Chácara Klabin;Ago;48
+2021;Verde;Ana Rosa;Ago;40
+2021;Verde;Paraíso;Ago;41
+2021;Verde;Brigadeiro;Ago;28
+2021;Verde;Trianon-Masp;Ago;24
+2021;Verde;Consolação;Ago;55
+2021;Verde;Clínicas;Ago;14
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Ago;5
+2021;Verde;Vila Madalena;Ago;12
+2021;Vermelha;Corinthians-Itaquera;Ago;58
+2021;Vermelha;Artur Alvim;Ago;41
+2021;Vermelha;Patriarca;Ago;15
+2021;Vermelha;Guilhermina-Esperança;Ago;14
+2021;Vermelha;Vila Matilde;Ago;18
+2021;Vermelha;Penha;Ago;20
+2021;Vermelha;Carrão;Ago;30
+2021;Vermelha;Tatuapé;Ago;53
+2021;Prata;Vila Prudente;Ago;38
+2021;Prata;Oratório;Ago;4
+2021;Prata;São Lucas;Ago;3
+2021;Prata;Camilo Haddad;Ago;2
+2021;Prata;Vila Tolstói;Ago;3
+2021;Prata;Vila União;Ago;4
+2021;Prata;Sapopemba;Ago;6
+2021;Prata;São Mateus;Ago;14
+2020;Azul;Jabaquara;Ago;39
+2020;Azul;Conceição;Ago;13
+2020;Azul;São Judas;Ago;7
+2020;Azul;Saúde;Ago;13
+2020;Azul;Praça da Árvore;Ago;8
+2020;Azul;Santa Cruz;Ago;49
+2020;Azul;Vila Mariana;Ago;8
+2020;Azul;Ana Rosa;Ago;34
+2020;Azul;Paraíso;Ago;41
+2020;Azul;Vergueiro;Ago;13
+2020;Azul;São Joaquim;Ago;11
+2020;Azul;Japão-Liberdade;Ago;10
+2020;Azul;Sé;Ago;103
+2020;Azul;São Bento;Ago;30
+2020;Azul;Luz;Ago;57
+2020;Azul;Tiradentes;Ago;7
+2020;Azul;Armênia;Ago;12
+2020;Azul;Portuguesa-Tietê;Ago;23
+2020;Azul;Carandiru;Ago;5
+2020;Azul;Santana;Ago;29
+2020;Azul;Jardim São Paulo-Ayrton Senna;Ago;5
+2020;Azul;Parada Inglesa;Ago;5
+2020;Azul;Tucuruvi;Ago;31
+2020;Verde;Vila Prudente;Ago;33
+2020;Verde;Tamanduateí;Ago;34
+2020;Verde;Sacomã;Ago;20
+2020;Verde;Alto do Ipiranga;Ago;8
+2020;Verde;Santos-Imigrantes;Ago;6
+2020;Verde;Chácara Klabin;Ago;32
+2020;Verde;Ana Rosa;Ago;31
+2020;Verde;Paraíso;Ago;32
+2020;Verde;Brigadeiro;Ago;20
+2020;Verde;Trianon-Masp;Ago;16
+2020;Verde;Consolação;Ago;40
+2020;Verde;Clínicas;Ago;12
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Ago;4
+2020;Verde;Vila Madalena;Ago;8
+2020;Vermelha;Corinthians-Itaquera;Ago;47
+2020;Vermelha;Artur Alvim;Ago;33
+2020;Vermelha;Patriarca;Ago;11
+2020;Vermelha;Guilhermina-Esperança;Ago;11
+2020;Vermelha;Vila Matilde;Ago;13
+2020;Vermelha;Penha;Ago;16
+2020;Vermelha;Carrão;Ago;22
+2020;Vermelha;Tatuapé;Ago;41
+2020;Vermelha;Belém;Ago;22
+2020;Vermelha;Bresser-Mooca;Ago;17
+2020;Vermelha;Brás;Ago;61
+2020;Vermelha;Pedro II;Ago;12
+2020;Vermelha;Sé;Ago;104
+2020;Vermelha;Anhangabaú;Ago;26
+2020;Vermelha;República;Ago;62
+2020;Vermelha;Santa Cecília;Ago;14
+2020;Vermelha;Marechal Deodoro;Ago;15
+2020;Vermelha;Palmeiras-Barra Funda;Ago;82
+2020;Prata;Vila Prudente;Ago;25
+2020;Prata;Oratório;Ago;3
+2020;Prata;São Lucas;Ago;2
+2020;Prata;Camilo Haddad;Ago;1
+2020;Prata;Vila Tolstói;Ago;2
+2020;Prata;Vila União;Ago;3
+2020;Prata;Jardim Planalto;Ago;2
+2020;Prata;Sapopemba;Ago;4
+2020;Prata;Fazenda da Juta;Ago;2
+2020;Prata;São Mateus;Ago;8
+2024;Azul;Jabaquara;Set;70
+2024;Azul;Conceição;Set;30
+2024;Azul;São Judas;Set;16
+2024;Azul;Saúde-Ultrafarma;Set;27
+2024;Azul;Praça da Árvore;Set;16
+2024;Azul;Santa Cruz;Set;96
+2024;Azul;Vila Mariana;Set;21
+2024;Azul;Ana Rosa;Set;81
+2024;Azul;Paraíso;Set;100
+2024;Azul;Vergueiro;Set;27
+2024;Azul;São Joaquim;Set;35
+2024;Azul;Japão-Liberdade;Set;22
+2024;Azul;Sé;Set;175
+2024;Azul;São Bento;Set;52
+2024;Azul;Luz;Set;133
+2024;Azul;Tiradentes;Set;17
+2024;Azul;Armênia;Set;20
+2024;Azul;Portuguesa-Tietê;Set;48
+2024;Azul;Carandiru;Set;12
+2024;Azul;Santana;Set;51
+2024;Azul;Jardim São Paulo-Ayrton Senna;Set;12
+2024;Azul;Parada Inglesa;Set;13
+2024;Azul;Tucuruvi;Set;58
+2024;Verde;Vila Prudente;Set;83
+2024;Verde;Tamanduateí;Set;77
+2024;Verde;Sacomã;Set;42
+2024;Verde;Alto do Ipiranga;Set;19
+2024;Verde;Santos-Imigrantes;Set;15
+2024;Verde;Chácara Klabin;Set;86
+2024;Verde;Ana Rosa;Set;62
+2024;Verde;Paraíso;Set;65
+2024;Verde;Brigadeiro;Set;50
+2024;Verde;Trianon-Masp;Set;50
+2024;Verde;Consolação;Set;101
+2024;Verde;Clínicas;Set;21
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Set;11
+2024;Verde;Vila Madalena;Set;22
+2024;Vermelha;Corinthians-Itaquera;Set;76
+2024;Vermelha;Artur Alvim;Set;56
+2024;Vermelha;Patriarca-Vila Ré;Set;22
+2024;Vermelha;Guilhermina-Esperança;Set;22
+2024;Vermelha;Vila Matilde;Set;27
+2024;Vermelha;Penha-Lojas Besni;Set;29
+2024;Vermelha;Carrão-Assaí Atacadista;Set;51
+2024;Vermelha;Tatuapé;Set;76
+2024;Vermelha;Belém;Set;38
+2024;Vermelha;Bresser-Moóca;Set;32
+2024;Vermelha;Brás;Set;75
+2024;Vermelha;Pedro II;Set;15
+2024;Vermelha;Sé2;Set;208
+2024;Vermelha;Anhangaba;Set;52
+2024;Vermelha;República;Set;121
+2024;Vermelha;Santa Cecília;Set;23
+2024;Vermelha;Marechal Deodoro;Set;26
+2024;Vermelha;Palmeiras-Barra Funda;Set;135
+2024;Prata;Vila Prudente;Set;63
+2024;Prata;Oratório;Set;7
+2024;Prata;São Lucas;Set;5
+2024;Prata;Camilo Haddad;Set;4
+2024;Prata;Vila Tolstói;Set;6
+2024;Prata;Vila União;Set;6
+2024;Prata;Jardim Planalto;Set;5
+2024;Prata;Sapopemba;Set;9
+2024;Prata;Fazenda da Juta;Set;5
+2024;Prata;São Mateus;Set;17
+2024;Prata;Jardim Colonial;Set;11
+2023;Azul;Jabaquara;Set;72
+2023;Azul;Conceição;Set;28
+2023;Azul;São Judas;Set;16
+2023;Azul;Saúde;Set;27
+2023;Azul;Praça da Árvore;Set;16
+2023;Azul;Santa Cruz;Set;97
+2023;Azul;Vila Mariana;Set;21
+2023;Azul;Ana Rosa;Set;78
+2023;Azul;Paraíso;Set;98
+2023;Azul;Vergueiro;Set;26
+2023;Azul;São Joaquim;Set;34
+2023;Azul;Japão-Liberdade;Set;22
+2023;Azul;Sé;Set;176
+2023;Azul;São Bento;Set;52
+2023;Azul;Luz;Set;135
+2023;Azul;Tiradentes;Set;16
+2023;Azul;Armênia;Set;21
+2023;Azul;Portuguesa-Tietê;Set;46
+2023;Azul;Carandiru;Set;12
+2023;Azul;Santana;Set;51
+2023;Azul;Jardim São Paulo-Ayrton Senna;Set;12
+2023;Azul;Parada Inglesa;Set;12
+2023;Azul;Tucuruvi;Set;57
+2023;Vermelha;Corinthians-Itaquera;Set;76
+2023;Vermelha;Artur Alvim;Set;56
+2023;Vermelha;Patriarca;Set;22
+2023;Vermelha;Guilhermina-Esperança;Set;21
+2023;Vermelha;Vila Matilde;Set;27
+2023;Vermelha;Penha;Set;28
+2023;Vermelha;Carrão;Set;52
+2023;Vermelha;Tatuapé;Set;77
+2023;Vermelha;Belém;Set;38
+2023;Vermelha;Bresser-Mooca;Set;32
+2023;Vermelha;Brás;Set;77
+2023;Vermelha;Pedro II;Set;16
+2023;Vermelha;Sé;Set;206
+2023;Vermelha;Anhangabaú;Set;51
+2023;Vermelha;República;Set;123
+2023;Vermelha;Santa Cecília;Set;23
+2023;Vermelha;Marechal Deodoro;Set;27
+2023;Vermelha;Palmeiras-Barra Funda;Set;143
+2023;Prata;Vila Prudente;Set;60
+2023;Prata;Oratório;Set;6
+2023;Prata;São Lucas;Set;5
+2023;Prata;Camilo Haddad;Set;4
+2023;Prata;Vila Tolstói;Set;5
+2023;Prata;Vila União;Set;6
+2023;Prata;Jardim Planalto;Set;5
+2023;Prata;Sapopemba;Set;9
+2023;Prata;Fazenda da Juta;Set;5
+2023;Prata;São Mateus;Set;18
+2023;Prata;Jardim Colonial;Set;6
+2022;Azul;Jabaquara;Set;67
+2022;Azul;Conceição;Set;24
+2022;Azul;São Judas;Set;14
+2022;Azul;Saúde;Set;26
+2022;Azul;Praça da Árvore;Set;14
+2022;Azul;Santa Cruz;Set;90
+2022;Azul;Vila Mariana;Set;19
+2022;Azul;Ana Rosa;Set;71
+2022;Azul;Paraíso;Set;89
+2022;Azul;Vergueiro;Set;25
+2022;Azul;São Joaquim;Set;28
+2022;Azul;Japão-Liberdade;Set;20
+2022;Azul;Sé;Set;168
+2022;Azul;São Bento;Set;47
+2022;Azul;Luz;Set;119
+2022;Azul;Tiradentes;Set;16
+2022;Azul;Armênia;Set;21
+2022;Azul;Portuguesa-Tietê;Set;44
+2022;Azul;Carandiru;Set;11
+2022;Azul;Santana;Set;48
+2022;Azul;Jardim São Paulo-Ayrton Senna;Set;11
+2022;Azul;Parada Inglesa;Set;11
+2022;Azul;Tucuruvi;Set;54
+2022;Verde;Vila Prudente;Set;71
+2022;Verde;Tamanduateí;Set;66
+2022;Verde;Sacomã;Set;38
+2022;Verde;Alto do Ipiranga;Set;17
+2022;Verde;Santos-Imigrantes;Set;12
+2022;Verde;Chácara Klabin;Set;72
+2022;Verde;Ana Rosa;Set;57
+2022;Verde;Paraíso;Set;60
+2022;Verde;Brigadeiro;Set;44
+2022;Verde;Trianon-Masp;Set;42
+2022;Verde;Consolação;Set;92
+2022;Verde;Clínicas;Set;19
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Set;9
+2022;Verde;Vila Madalena;Set;18
+2022;Vermelha;Corinthians-Itaquera;Set;73
+2022;Vermelha;Artur Alvim;Set;54
+2022;Vermelha;Patriarca;Set;20
+2022;Vermelha;Guilhermina-Esperança;Set;20
+2022;Vermelha;Vila Matilde;Set;25
+2022;Vermelha;Penha;Set;27
+2022;Vermelha;Carrão;Set;47
+2022;Vermelha;Tatuapé;Set;72
+2022;Vermelha;Belém;Set;35
+2022;Vermelha;Bresser-Mooca;Set;32
+2022;Vermelha;Brás;Set;75
+2022;Vermelha;Pedro II;Set;16
+2022;Vermelha;Sé;Set;190
+2022;Vermelha;Anhangabaú;Set;47
+2022;Vermelha;República;Set;114
+2022;Vermelha;Santa Cecília;Set;23
+2022;Vermelha;Marechal Deodoro;Set;26
+2022;Vermelha;Palmeiras-Barra Funda;Set;140
+2022;Prata;Vila Prudente;Set;53
+2022;Prata;Oratório;Set;6
+2022;Prata;São Lucas;Set;5
+2022;Prata;Camilo Haddad;Set;3
+2022;Prata;Vila Tolstói;Set;5
+2022;Prata;Jardim Colonial;Set;5
+2021;Azul;Jabaquara;Set;55
+2021;Azul;Conceição;Set;18
+2021;Azul;São Judas;Set;10
+2021;Azul;Saúde;Set;19
+2021;Azul;Praça da Árvore;Set;11
+2021;Azul;Santa Cruz;Set;72
+2021;Azul;Vila Mariana;Set;13
+2021;Azul;Ana Rosa;Set;51
+2021;Azul;Paraíso;Set;62
+2021;Azul;Vergueiro;Set;18
+2021;Azul;São Joaquim;Set;17
+2021;Azul;Japão-Liberdade;Set;14
+2021;Azul;Sé;Set;136
+2021;Azul;São Bento;Set;39
+2021;Azul;Luz;Set;89
+2021;Azul;Tiradentes;Set;10
+2021;Azul;Armênia;Set;16
+2021;Azul;Portuguesa-Tietê;Set;34
+2021;Azul;Carandiru;Set;7
+2021;Azul;Santana;Set;39
+2021;Azul;Jardim São Paulo-Ayrton Senna;Set;7
+2021;Azul;Parada Inglesa;Set;8
+2021;Azul;Tucuruvi;Set;42
+2021;Verde;Vila Prudente;Set;53
+2021;Verde;Tamanduateí;Set;50
+2021;Verde;Sacomã;Set;29
+2021;Verde;Alto do Ipiranga;Set;12
+2021;Verde;Santos-Imigrantes;Set;10
+2021;Verde;Chácara Klabin;Set;51
+2021;Verde;Ana Rosa;Set;44
+2021;Verde;Paraíso;Set;45
+2021;Verde;Brigadeiro;Set;30
+2021;Verde;Trianon-Masp;Set;26
+2021;Verde;Consolação;Set;60
+2021;Verde;Clínicas;Set;15
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Set;6
+2021;Verde;Vila Madalena;Set;13
+2021;Vermelha;Corinthians-Itaquera;Set;60
+2021;Vermelha;Artur Alvim;Set;43
+2021;Vermelha;Patriarca;Set;16
+2021;Vermelha;Guilhermina-Esperança;Set;15
+2021;Vermelha;Vila Matilde;Set;19
+2021;Vermelha;Penha;Set;22
+2021;Vermelha;Carrão;Set;32
+2021;Vermelha;Tatuapé;Set;57
+2021;Prata;Vila Prudente;Set;41
+2021;Prata;Oratório;Set;4
+2021;Prata;São Lucas;Set;4
+2021;Prata;Camilo Haddad;Set;3
+2021;Prata;Vila Tolstói;Set;3
+2021;Prata;Vila União;Set;4
+2021;Prata;Sapopemba;Set;6
+2021;Prata;São Mateus;Set;14
+2020;Azul;Jabaquara;Set;43
+2020;Azul;Conceição;Set;14
+2020;Azul;São Judas;Set;8
+2020;Azul;Saúde;Set;15
+2020;Azul;Praça da Árvore;Set;9
+2020;Azul;Santa Cruz;Set;55
+2020;Azul;Vila Mariana;Set;9
+2020;Azul;Ana Rosa;Set;38
+2020;Azul;Paraíso;Set;46
+2020;Azul;Vergueiro;Set;14
+2020;Azul;São Joaquim;Set;12
+2020;Azul;Japão-Liberdade;Set;11
+2020;Azul;Sé;Set;114
+2020;Azul;São Bento;Set;35
+2020;Azul;Luz;Set;64
+2020;Azul;Tiradentes;Set;7
+2020;Azul;Armênia;Set;13
+2020;Azul;Portuguesa-Tietê;Set;26
+2020;Azul;Carandiru;Set;6
+2020;Azul;Santana;Set;32
+2020;Azul;Jardim São Paulo-Ayrton Senna;Set;5
+2020;Azul;Parada Inglesa;Set;6
+2020;Azul;Tucuruvi;Set;34
+2020;Verde;Vila Prudente;Set;37
+2020;Verde;Tamanduateí;Set;37
+2020;Verde;Sacomã;Set;22
+2020;Verde;Alto do Ipiranga;Set;9
+2020;Verde;Santos-Imigrantes;Set;7
+2020;Verde;Chácara Klabin;Set;36
+2020;Verde;Ana Rosa;Set;34
+2020;Verde;Paraíso;Set;35
+2020;Verde;Brigadeiro;Set;23
+2020;Verde;Trianon-Masp;Set;19
+2020;Verde;Consolação;Set;45
+2020;Verde;Clínicas;Set;13
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Set;4
+2020;Verde;Vila Madalena;Set;9
+2020;Vermelha;Corinthians-Itaquera;Set;50
+2020;Vermelha;Artur Alvim;Set;36
+2020;Vermelha;Patriarca;Set;13
+2020;Vermelha;Guilhermina-Esperança;Set;12
+2020;Vermelha;Vila Matilde;Set;15
+2020;Vermelha;Penha;Set;17
+2020;Vermelha;Carrão;Set;24
+2020;Vermelha;Tatuapé;Set;47
+2020;Vermelha;Belém;Set;24
+2020;Vermelha;Bresser-Mooca;Set;19
+2020;Vermelha;Brás;Set;67
+2020;Vermelha;Pedro II;Set;13
+2020;Vermelha;Sé;Set;116
+2020;Vermelha;Anhangabaú;Set;29
+2020;Vermelha;República;Set;68
+2020;Vermelha;Santa Cecília;Set;16
+2020;Vermelha;Marechal Deodoro;Set;17
+2020;Vermelha;Palmeiras-Barra Funda;Set;90
+2020;Prata;Vila Prudente;Set;29
+2020;Prata;Oratório;Set;3
+2020;Prata;São Lucas;Set;2
+2020;Prata;Camilo Haddad;Set;2
+2020;Prata;Vila Tolstói;Set;3
+2020;Prata;Vila União;Set;3
+2020;Prata;Jardim Planalto;Set;2
+2020;Prata;Sapopemba;Set;4
+2020;Prata;Fazenda da Juta;Set;2
+2020;Prata;São Mateus;Set;9
+2024;Azul;Jabaquara;Out;70
+2024;Azul;Conceição;Out;30
+2024;Azul;São Judas;Out;16
+2024;Azul;Saúde-Ultrafarma;Out;27
+2024;Azul;Praça da Árvore;Out;16
+2024;Azul;Santa Cruz;Out;95
+2024;Azul;Vila Mariana;Out;21
+2024;Azul;Ana Rosa;Out;81
+2024;Azul;Paraíso;Out;102
+2024;Azul;Vergueiro;Out;27
+2024;Azul;São Joaquim;Out;35
+2024;Azul;Japão-Liberdade;Out;22
+2024;Azul;Sé;Out;174
+2024;Azul;São Bento;Out;55
+2024;Azul;Luz;Out;135
+2024;Azul;Tiradentes;Out;16
+2024;Azul;Armênia;Out;19
+2024;Azul;Portuguesa-Tietê;Out;44
+2024;Azul;Carandiru;Out;12
+2024;Azul;Santana;Out;51
+2024;Azul;Jardim São Paulo-Ayrton Senna;Out;12
+2024;Azul;Parada Inglesa;Out;13
+2024;Azul;Tucuruvi;Out;58
+2024;Verde;Vila Prudente;Out;86
+2024;Verde;Tamanduateí;Out;79
+2024;Verde;Sacomã;Out;41
+2024;Verde;Alto do Ipiranga;Out;19
+2024;Verde;Santos-Imigrantes;Out;16
+2024;Verde;Chácara Klabin;Out;86
+2024;Verde;Ana Rosa;Out;62
+2024;Verde;Paraíso;Out;65
+2024;Verde;Brigadeiro;Out;51
+2024;Verde;Trianon-Masp;Out;50
+2024;Verde;Consolação;Out;101
+2024;Verde;Clínicas;Out;21
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Out;11
+2024;Verde;Vila Madalena;Out;22
+2024;Vermelha;Corinthians-Itaquera;Out;73
+2024;Vermelha;Artur Alvim;Out;56
+2024;Vermelha;Patriarca-Vila Ré;Out;22
+2024;Vermelha;Guilhermina-Esperança;Out;21
+2024;Vermelha;Vila Matilde;Out;27
+2024;Vermelha;Penha-Lojas Besni;Out;28
+2024;Vermelha;Carrão-Assaí Atacadista;Out;45
+2024;Vermelha;Tatuapé;Out;76
+2024;Vermelha;Belém;Out;43
+2024;Vermelha;Bresser-Moóca;Out;31
+2024;Vermelha;Brás;Out;76
+2024;Vermelha;Pedro II;Out;15
+2024;Vermelha;Sé2;Out;209
+2024;Vermelha;Anhangaba;Out;51
+2024;Vermelha;República;Out;121
+2024;Vermelha;Santa Cecília;Out;23
+2024;Vermelha;Marechal Deodoro;Out;26
+2024;Vermelha;Palmeiras-Barra Funda;Out;137
+2024;Prata;Vila Prudente;Out;65
+2024;Prata;Oratório;Out;7
+2024;Prata;São Lucas;Out;5
+2024;Prata;Camilo Haddad;Out;4
+2024;Prata;Vila Tolstói;Out;5
+2024;Prata;Vila União;Out;6
+2024;Prata;Jardim Planalto;Out;5
+2024;Prata;Sapopemba;Out;9
+2024;Prata;Fazenda da Juta;Out;5
+2024;Prata;São Mateus;Out;17
+2024;Prata;Jardim Colonial;Out;11
+2023;Azul;Jabaquara;Out;70
+2023;Azul;Conceição;Out;28
+2023;Azul;São Judas;Out;16
+2023;Azul;Saúde;Out;27
+2023;Azul;Praça da Árvore;Out;16
+2023;Azul;Santa Cruz;Out;97
+2023;Azul;Vila Mariana;Out;21
+2023;Azul;Ana Rosa;Out;78
+2023;Azul;Paraíso;Out;98
+2023;Azul;Vergueiro;Out;26
+2023;Azul;São Joaquim;Out;32
+2023;Azul;Japão-Liberdade;Out;22
+2023;Azul;Sé;Out;174
+2023;Azul;São Bento;Out;55
+2023;Azul;Luz;Out;135
+2023;Azul;Tiradentes;Out;16
+2023;Azul;Armênia;Out;20
+2023;Azul;Portuguesa-Tietê;Out;46
+2023;Azul;Carandiru;Out;11
+2023;Azul;Santana;Out;50
+2023;Azul;Jardim São Paulo-Ayrton Senna;Out;12
+2023;Azul;Parada Inglesa;Out;13
+2023;Azul;Tucuruvi;Out;56
+2023;Vermelha;Corinthians-Itaquera;Out;73
+2023;Vermelha;Artur Alvim;Out;56
+2023;Vermelha;Patriarca;Out;22
+2023;Vermelha;Guilhermina-Esperança;Out;21
+2023;Vermelha;Vila Matilde;Out;27
+2023;Vermelha;Penha;Out;28
+2023;Vermelha;Carrão;Out;51
+2023;Vermelha;Tatuapé;Out;76
+2023;Vermelha;Belém;Out;38
+2023;Vermelha;Bresser-Mooca;Out;31
+2023;Vermelha;Brás;Out;76
+2023;Vermelha;Pedro II;Out;16
+2023;Vermelha;Sé;Out;205
+2023;Vermelha;Anhangabaú;Out;51
+2023;Vermelha;República;Out;123
+2023;Vermelha;Santa Cecília;Out;23
+2023;Vermelha;Marechal Deodoro;Out;26
+2023;Vermelha;Palmeiras-Barra Funda;Out;140
+2023;Prata;Vila Prudente;Out;60
+2023;Prata;Oratório;Out;6
+2023;Prata;São Lucas;Out;5
+2023;Prata;Camilo Haddad;Out;4
+2023;Prata;Vila Tolstói;Out;5
+2023;Prata;Vila União;Out;6
+2023;Prata;Jardim Planalto;Out;4
+2023;Prata;Sapopemba;Out;9
+2023;Prata;Fazenda da Juta;Out;5
+2023;Prata;São Mateus;Out;17
+2023;Prata;Jardim Colonial;Out;6
+2022;Azul;Jabaquara;Out;69
+2022;Azul;Conceição;Out;24
+2022;Azul;São Judas;Out;15
+2022;Azul;Saúde;Out;26
+2022;Azul;Praça da Árvore;Out;15
+2022;Azul;Santa Cruz;Out;91
+2022;Azul;Vila Mariana;Out;19
+2022;Azul;Ana Rosa;Out;71
+2022;Azul;Paraíso;Out;89
+2022;Azul;Vergueiro;Out;25
+2022;Azul;São Joaquim;Out;29
+2022;Azul;Japão-Liberdade;Out;21
+2022;Azul;Sé;Out;170
+2022;Azul;São Bento;Out;52
+2022;Azul;Luz;Out;127
+2022;Azul;Tiradentes;Out;15
+2022;Azul;Armênia;Out;20
+2022;Azul;Portuguesa-Tietê;Out;44
+2022;Azul;Carandiru;Out;10
+2022;Azul;Santana;Out;48
+2022;Azul;Jardim São Paulo-Ayrton Senna;Out;11
+2022;Azul;Parada Inglesa;Out;12
+2022;Azul;Tucuruvi;Out;55
+2022;Verde;Vila Prudente;Out;69
+2022;Verde;Tamanduateí;Out;68
+2022;Verde;Sacomã;Out;38
+2022;Verde;Alto do Ipiranga;Out;17
+2022;Verde;Santos-Imigrantes;Out;13
+2022;Verde;Chácara Klabin;Out;72
+2022;Verde;Ana Rosa;Out;59
+2022;Verde;Paraíso;Out;61
+2022;Verde;Brigadeiro;Out;45
+2022;Verde;Trianon-Masp;Out;43
+2022;Verde;Consolação;Out;93
+2022;Verde;Clínicas;Out;19
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Out;9
+2022;Verde;Vila Madalena;Out;19
+2022;Vermelha;Corinthians-Itaquera;Out;74
+2022;Vermelha;Artur Alvim;Out;54
+2022;Vermelha;Patriarca;Out;20
+2022;Vermelha;Guilhermina-Esperança;Out;20
+2022;Vermelha;Vila Matilde;Out;25
+2022;Vermelha;Penha;Out;27
+2022;Vermelha;Carrão;Out;48
+2022;Vermelha;Tatuapé;Out;72
+2022;Vermelha;Belém;Out;36
+2022;Vermelha;Bresser-Mooca;Out;32
+2022;Vermelha;Brás;Out;78
+2022;Vermelha;Pedro II;Out;16
+2022;Vermelha;Sé;Out;195
+2022;Vermelha;Anhangabaú;Out;50
+2022;Vermelha;República;Out;115
+2022;Vermelha;Santa Cecília;Out;23
+2022;Vermelha;Marechal Deodoro;Out;26
+2022;Vermelha;Palmeiras-Barra Funda;Out;141
+2022;Prata;Vila Prudente;Out;52
+2022;Prata;Oratório;Out;5
+2022;Prata;São Lucas;Out;5
+2022;Prata;Camilo Haddad;Out;3
+2022;Prata;Vila Tolstói;Out;5
+2022;Prata;Jardim Colonial;Out;5
+2021;Azul;Jabaquara;Out;57
+2021;Azul;Conceição;Out;19
+2021;Azul;São Judas;Out;11
+2021;Azul;Saúde;Out;20
+2021;Azul;Praça da Árvore;Out;12
+2021;Azul;Santa Cruz;Out;76
+2021;Azul;Vila Mariana;Out;13
+2021;Azul;Ana Rosa;Out;53
+2021;Azul;Paraíso;Out;65
+2021;Azul;Vergueiro;Out;19
+2021;Azul;São Joaquim;Out;18
+2021;Azul;Japão-Liberdade;Out;15
+2021;Azul;Sé;Out;142
+2021;Azul;São Bento;Out;43
+2021;Azul;Luz;Out;96
+2021;Azul;Tiradentes;Out;10
+2021;Azul;Armênia;Out;17
+2021;Azul;Portuguesa-Tietê;Out;36
+2021;Azul;Carandiru;Out;8
+2021;Azul;Santana;Out;40
+2021;Azul;Jardim São Paulo-Ayrton Senna;Out;8
+2021;Azul;Parada Inglesa;Out;9
+2021;Azul;Tucuruvi;Out;44
+2021;Verde;Vila Prudente;Out;54
+2021;Verde;Tamanduateí;Out;53
+2021;Verde;Sacomã;Out;30
+2021;Verde;Alto do Ipiranga;Out;13
+2021;Verde;Santos-Imigrantes;Out;10
+2021;Verde;Chácara Klabin;Out;54
+2021;Verde;Ana Rosa;Out;46
+2021;Verde;Paraíso;Out;47
+2021;Verde;Brigadeiro;Out;32
+2021;Verde;Trianon-Masp;Out;28
+2021;Verde;Consolação;Out;64
+2021;Verde;Clínicas;Out;15
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Out;6
+2021;Verde;Vila Madalena;Out;13
+2021;Vermelha;Corinthians-Itaquera;Out;62
+2021;Vermelha;Artur Alvim;Out;45
+2021;Vermelha;Patriarca;Out;16
+2021;Vermelha;Guilhermina-Esperança;Out;16
+2021;Vermelha;Vila Matilde;Out;20
+2021;Vermelha;Penha;Out;22
+2021;Vermelha;Carrão;Out;33
+2021;Vermelha;Tatuapé;Out;61
+2021;Prata;Vila Prudente;Out;42
+2021;Prata;Oratório;Out;4
+2021;Prata;São Lucas;Out;4
+2021;Prata;Camilo Haddad;Out;3
+2021;Prata;Vila Tolstói;Out;4
+2021;Prata;Vila União;Out;4
+2021;Prata;Sapopemba;Out;6
+2021;Prata;São Mateus;Out;15
+2020;Azul;Jabaquara;Out;48
+2020;Azul;Conceição;Out;15
+2020;Azul;São Judas;Out;9
+2020;Azul;Saúde;Out;16
+2020;Azul;Praça da Árvore;Out;10
+2020;Azul;Santa Cruz;Out;60
+2020;Azul;Vila Mariana;Out;10
+2020;Azul;Ana Rosa;Out;41
+2020;Azul;Paraíso;Out;49
+2020;Azul;Vergueiro;Out;15
+2020;Azul;São Joaquim;Out;13
+2020;Azul;Japão-Liberdade;Out;12
+2020;Azul;Sé;Out;122
+2020;Azul;São Bento;Out;39
+2020;Azul;Luz;Out;70
+2020;Azul;Tiradentes;Out;8
+2020;Azul;Armênia;Out;14
+2020;Azul;Portuguesa-Tietê;Out;30
+2020;Azul;Carandiru;Out;6
+2020;Azul;Santana;Out;33
+2020;Azul;Jardim São Paulo-Ayrton Senna;Out;6
+2020;Azul;Parada Inglesa;Out;7
+2020;Azul;Tucuruvi;Out;37
+2020;Verde;Vila Prudente;Out;40
+2020;Verde;Tamanduateí;Out;38
+2020;Verde;Sacomã;Out;24
+2020;Verde;Alto do Ipiranga;Out;9
+2020;Verde;Santos-Imigrantes;Out;8
+2020;Verde;Chácara Klabin;Out;39
+2020;Verde;Ana Rosa;Out;37
+2020;Verde;Paraíso;Out;38
+2020;Verde;Brigadeiro;Out;25
+2020;Verde;Trianon-Masp;Out;21
+2020;Verde;Consolação;Out;50
+2020;Verde;Clínicas;Out;13
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Out;5
+2020;Verde;Vila Madalena;Out;10
+2020;Vermelha;Corinthians-Itaquera;Out;54
+2020;Vermelha;Artur Alvim;Out;38
+2020;Vermelha;Patriarca;Out;13
+2020;Vermelha;Guilhermina-Esperança;Out;13
+2020;Vermelha;Vila Matilde;Out;16
+2020;Vermelha;Penha;Out;18
+2020;Vermelha;Carrão;Out;25
+2020;Vermelha;Tatuapé;Out;51
+2020;Vermelha;Belém;Out;25
+2020;Vermelha;Bresser-Mooca;Out;21
+2020;Vermelha;Brás;Out;72
+2020;Vermelha;Pedro II;Out;14
+2020;Vermelha;Sé;Out;126
+2020;Vermelha;Anhangabaú;Out;31
+2020;Vermelha;República;Out;74
+2020;Vermelha;Santa Cecília;Out;16
+2020;Vermelha;Marechal Deodoro;Out;18
+2020;Vermelha;Palmeiras-Barra Funda;Out;96
+2020;Prata;Vila Prudente;Out;30
+2020;Prata;Oratório;Out;3
+2020;Prata;São Lucas;Out;3
+2020;Prata;Camilo Haddad;Out;2
+2020;Prata;Vila Tolstói;Out;3
+2020;Prata;Vila União;Out;3
+2020;Prata;Jardim Planalto;Out;2
+2020;Prata;Sapopemba;Out;5
+2020;Prata;Fazenda da Juta;Out;2
+2020;Prata;São Mateus;Out;11
+2024;Azul;Jabaquara;Nov;72
+2024;Azul;Conceição;Nov;31
+2024;Azul;São Judas;Nov;16
+2024;Azul;Saúde-Ultrafarma;Nov;28
+2024;Azul;Praça da Árvore;Nov;16
+2024;Azul;Santa Cruz;Nov;97
+2024;Azul;Vila Mariana;Nov;20
+2024;Azul;Ana Rosa;Nov;82
+2024;Azul;Paraíso;Nov;103
+2024;Azul;Vergueiro;Nov;28
+2024;Azul;São Joaquim;Nov;34
+2024;Azul;Japão-Liberdade;Nov;22
+2024;Azul;Sé;Nov;176
+2024;Azul;São Bento;Nov;56
+2024;Azul;Luz;Nov;139
+2024;Azul;Tiradentes;Nov;17
+2024;Azul;Armênia;Nov;20
+2024;Azul;Portuguesa-Tietê;Nov;45
+2024;Azul;Carandiru;Nov;12
+2024;Azul;Santana;Nov;52
+2024;Azul;Jardim São Paulo-Ayrton Senna;Nov;12
+2024;Azul;Parada Inglesa;Nov;13
+2024;Azul;Tucuruvi;Nov;60
+2024;Verde;Vila Prudente;Nov;88
+2024;Verde;Tamanduateí;Nov;81
+2024;Verde;Sacomã;Nov;42
+2024;Verde;Alto do Ipiranga;Nov;19
+2024;Verde;Santos-Imigrantes;Nov;16
+2024;Verde;Chácara Klabin;Nov;87
+2024;Verde;Ana Rosa;Nov;63
+2024;Verde;Paraíso;Nov;66
+2024;Verde;Brigadeiro;Nov;52
+2024;Verde;Trianon-Masp;Nov;50
+2024;Verde;Consolação;Nov;102
+2024;Verde;Clínicas;Nov;22
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Nov;11
+2024;Verde;Vila Madalena;Nov;22
+2024;Vermelha;Corinthians-Itaquera;Nov;72
+2024;Vermelha;Artur Alvim;Nov;57
+2024;Vermelha;Patriarca-Vila Ré;Nov;23
+2024;Vermelha;Guilhermina-Esperança;Nov;21
+2024;Vermelha;Vila Matilde;Nov;28
+2024;Vermelha;Penha-Lojas Besni;Nov;29
+2024;Vermelha;Carrão-Assaí Atacadista;Nov;50
+2024;Vermelha;Tatuapé;Nov;78
+2024;Vermelha;Belém;Nov;39
+2024;Vermelha;Bresser-Moóca;Nov;32
+2024;Vermelha;Brás;Nov;76
+2024;Vermelha;Pedro II;Nov;15
+2024;Vermelha;Sé2;Nov;213
+2024;Vermelha;Anhangaba;Nov;54
+2024;Vermelha;República;Nov;124
+2024;Vermelha;Santa Cecília;Nov;23
+2024;Vermelha;Marechal Deodoro;Nov;26
+2024;Vermelha;Palmeiras-Barra Funda;Nov;138
+2024;Prata;Vila Prudente;Nov;67
+2024;Prata;Oratório;Nov;7
+2024;Prata;São Lucas;Nov;5
+2024;Prata;Camilo Haddad;Nov;4
+2024;Prata;Vila Tolstói;Nov;6
+2024;Prata;Vila União;Nov;6
+2024;Prata;Jardim Planalto;Nov;5
+2024;Prata;Sapopemba;Nov;10
+2024;Prata;Fazenda da Juta;Nov;5
+2024;Prata;São Mateus;Nov;18
+2024;Prata;Jardim Colonial;Nov;12
+2023;Azul;Jabaquara;Nov;73
+2023;Azul;Conceição;Nov;28
+2023;Azul;São Judas;Nov;16
+2023;Azul;Saúde;Nov;28
+2023;Azul;Praça da Árvore;Nov;16
+2023;Azul;Santa Cruz;Nov;99
+2023;Azul;Vila Mariana;Nov;20
+2023;Azul;Ana Rosa;Nov;80
+2023;Azul;Paraíso;Nov;100
+2023;Azul;Vergueiro;Nov;26
+2023;Azul;São Joaquim;Nov;32
+2023;Azul;Japão-Liberdade;Nov;22
+2023;Azul;Sé;Nov;179
+2023;Azul;São Bento;Nov;56
+2023;Azul;Luz;Nov;140
+2023;Azul;Tiradentes;Nov;16
+2023;Azul;Armênia;Nov;20
+2023;Azul;Portuguesa-Tietê;Nov;47
+2023;Azul;Carandiru;Nov;12
+2023;Azul;Santana;Nov;51
+2023;Azul;Jardim São Paulo-Ayrton Senna;Nov;12
+2023;Azul;Parada Inglesa;Nov;14
+2023;Azul;Tucuruvi;Nov;57
+2023;Vermelha;Corinthians-Itaquera;Nov;75
+2023;Vermelha;Artur Alvim;Nov;57
+2023;Vermelha;Patriarca;Nov;22
+2023;Vermelha;Guilhermina-Esperança;Nov;21
+2023;Vermelha;Vila Matilde;Nov;27
+2023;Vermelha;Penha;Nov;28
+2023;Vermelha;Carrão;Nov;51
+2023;Vermelha;Tatuapé;Nov;79
+2023;Vermelha;Belém;Nov;39
+2023;Vermelha;Bresser-Mooca;Nov;32
+2023;Vermelha;Brás;Nov;80
+2023;Vermelha;Pedro II;Nov;16
+2023;Vermelha;Sé;Nov;211
+2023;Vermelha;Anhangabaú;Nov;54
+2023;Vermelha;República;Nov;128
+2023;Vermelha;Santa Cecília;Nov;24
+2023;Vermelha;Marechal Deodoro;Nov;27
+2023;Vermelha;Palmeiras-Barra Funda;Nov;142
+2023;Prata;Vila Prudente;Nov;61
+2023;Prata;Oratório;Nov;6
+2023;Prata;São Lucas;Nov;5
+2023;Prata;Camilo Haddad;Nov;4
+2023;Prata;Vila Tolstói;Nov;5
+2023;Prata;Vila União;Nov;6
+2023;Prata;Jardim Planalto;Nov;5
+2023;Prata;Sapopemba;Nov;9
+2023;Prata;Fazenda da Juta;Nov;5
+2023;Prata;São Mateus;Nov;18
+2023;Prata;Jardim Colonial;Nov;6
+2022;Azul;Jabaquara;Nov;69
+2022;Azul;Conceição;Nov;25
+2022;Azul;São Judas;Nov;14
+2022;Azul;Saúde;Nov;27
+2022;Azul;Praça da Árvore;Nov;15
+2022;Azul;Santa Cruz;Nov;91
+2022;Azul;Vila Mariana;Nov;19
+2022;Azul;Ana Rosa;Nov;72
+2022;Azul;Paraíso;Nov;90
+2022;Azul;Vergueiro;Nov;25
+2022;Azul;São Joaquim;Nov;28
+2022;Azul;Japão-Liberdade;Nov;20
+2022;Azul;Sé;Nov;173
+2022;Azul;São Bento;Nov;53
+2022;Azul;Luz;Nov;126
+2022;Azul;Tiradentes;Nov;15
+2022;Azul;Armênia;Nov;21
+2022;Azul;Portuguesa-Tietê;Nov;43
+2022;Azul;Carandiru;Nov;11
+2022;Azul;Santana;Nov;49
+2022;Azul;Jardim São Paulo-Ayrton Senna;Nov;11
+2022;Azul;Parada Inglesa;Nov;12
+2022;Azul;Tucuruvi;Nov;55
+2022;Verde;Vila Prudente;Nov;70
+2022;Verde;Tamanduateí;Nov;69
+2022;Verde;Sacomã;Nov;38
+2022;Verde;Alto do Ipiranga;Nov;18
+2022;Verde;Santos-Imigrantes;Nov;13
+2022;Verde;Chácara Klabin;Nov;71
+2022;Verde;Ana Rosa;Nov;59
+2022;Verde;Paraíso;Nov;61
+2022;Verde;Brigadeiro;Nov;46
+2022;Verde;Trianon-Masp;Nov;42
+2022;Verde;Consolação;Nov;95
+2022;Verde;Clínicas;Nov;19
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Nov;9
+2022;Verde;Vila Madalena;Nov;19
+2022;Vermelha;Corinthians-Itaquera;Nov;75
+2022;Vermelha;Artur Alvim;Nov;55
+2022;Vermelha;Patriarca;Nov;20
+2022;Vermelha;Guilhermina-Esperança;Nov;20
+2022;Vermelha;Vila Matilde;Nov;25
+2022;Vermelha;Penha;Nov;27
+2022;Vermelha;Carrão;Nov;47
+2022;Vermelha;Tatuapé;Nov;74
+2022;Vermelha;Belém;Nov;36
+2022;Vermelha;Bresser-Mooca;Nov;32
+2022;Vermelha;Brás;Nov;78
+2022;Vermelha;Pedro II;Nov;16
+2022;Vermelha;Sé;Nov;195
+2022;Vermelha;Anhangabaú;Nov;50
+2022;Vermelha;República;Nov;117
+2022;Vermelha;Santa Cecília;Nov;23
+2022;Vermelha;Marechal Deodoro;Nov;26
+2022;Vermelha;Palmeiras-Barra Funda;Nov;144
+2022;Prata;Vila Prudente;Nov;54
+2022;Prata;Oratório;Nov;6
+2022;Prata;São Lucas;Nov;5
+2022;Prata;Camilo Haddad;Nov;4
+2022;Prata;Vila Tolstói;Nov;5
+2022;Prata;Jardim Colonial;Nov;5
+2021;Azul;Jabaquara;Nov;61
+2021;Azul;Conceição;Nov;20
+2021;Azul;São Judas;Nov;12
+2021;Azul;Saúde;Nov;21
+2021;Azul;Praça da Árvore;Nov;13
+2021;Azul;Santa Cruz;Nov;81
+2021;Azul;Vila Mariana;Nov;14
+2021;Azul;Ana Rosa;Nov;57
+2021;Azul;Paraíso;Nov;69
+2021;Azul;Vergueiro;Nov;20
+2021;Azul;São Joaquim;Nov;18
+2021;Azul;Japão-Liberdade;Nov;16
+2021;Azul;Sé;Nov;151
+2021;Azul;São Bento;Nov;46
+2021;Azul;Luz;Nov;106
+2021;Azul;Tiradentes;Nov;11
+2021;Azul;Armênia;Nov;18
+2021;Azul;Portuguesa-Tietê;Nov;41
+2021;Azul;Carandiru;Nov;9
+2021;Azul;Santana;Nov;43
+2021;Azul;Jardim São Paulo-Ayrton Senna;Nov;9
+2021;Azul;Parada Inglesa;Nov;9
+2021;Azul;Tucuruvi;Nov;47
+2021;Verde;Vila Prudente;Nov;58
+2021;Verde;Tamanduateí;Nov;50
+2021;Verde;Sacomã;Nov;32
+2021;Verde;Alto do Ipiranga;Nov;14
+2021;Verde;Santos-Imigrantes;Nov;11
+2021;Verde;Chácara Klabin;Nov;58
+2021;Verde;Ana Rosa;Nov;50
+2021;Verde;Paraíso;Nov;51
+2021;Verde;Brigadeiro;Nov;35
+2021;Verde;Trianon-Masp;Nov;30
+2021;Verde;Consolação;Nov;70
+2021;Verde;Clínicas;Nov;16
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Nov;7
+2021;Verde;Vila Madalena;Nov;15
+2021;Vermelha;Corinthians-Itaquera;Nov;66
+2021;Vermelha;Artur Alvim;Nov;48
+2021;Vermelha;Patriarca;Nov;18
+2021;Vermelha;Guilhermina-Esperança;Nov;17
+2021;Vermelha;Vila Matilde;Nov;21
+2021;Vermelha;Penha;Nov;24
+2021;Vermelha;Carrão;Nov;36
+2021;Vermelha;Tatuapé;Nov;64
+2021;Prata;Vila Prudente;Nov;45
+2021;Prata;Oratório;Nov;5
+2021;Prata;São Lucas;Nov;4
+2021;Prata;Camilo Haddad;Nov;3
+2021;Prata;Vila Tolstói;Nov;4
+2021;Prata;Vila União;Nov;5
+2021;Prata;Sapopemba;Nov;7
+2021;Prata;São Mateus;Nov;16
+2020;Azul;Jabaquara;Nov;49
+2020;Azul;Conceição;Nov;16
+2020;Azul;São Judas;Nov;9
+2020;Azul;Saúde;Nov;17
+2020;Azul;Praça da Árvore;Nov;10
+2020;Azul;Santa Cruz;Nov;64
+2020;Azul;Vila Mariana;Nov;10
+2020;Azul;Ana Rosa;Nov;43
+2020;Azul;Paraíso;Nov;52
+2020;Azul;Vergueiro;Nov;16
+2020;Azul;São Joaquim;Nov;13
+2020;Azul;Japão-Liberdade;Nov;12
+2020;Azul;Sé;Nov;127
+2020;Azul;São Bento;Nov;42
+2020;Azul;Luz;Nov;74
+2020;Azul;Tiradentes;Nov;8
+2020;Azul;Armênia;Nov;15
+2020;Azul;Portuguesa-Tietê;Nov;32
+2020;Azul;Carandiru;Nov;7
+2020;Azul;Santana;Nov;36
+2020;Azul;Jardim São Paulo-Ayrton Senna;Nov;6
+2020;Azul;Parada Inglesa;Nov;7
+2020;Azul;Tucuruvi;Nov;39
+2020;Verde;Vila Prudente;Nov;41
+2020;Verde;Tamanduateí;Nov;39
+2020;Verde;Sacomã;Nov;25
+2020;Verde;Alto do Ipiranga;Nov;10
+2020;Verde;Santos-Imigrantes;Nov;8
+2020;Verde;Chácara Klabin;Nov;41
+2020;Verde;Ana Rosa;Nov;39
+2020;Verde;Paraíso;Nov;40
+2020;Verde;Brigadeiro;Nov;26
+2020;Verde;Trianon-Masp;Nov;22
+2020;Verde;Consolação;Nov;52
+2020;Verde;Clínicas;Nov;14
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Nov;5
+2020;Verde;Vila Madalena;Nov;10
+2020;Vermelha;Corinthians-Itaquera;Nov;57
+2020;Vermelha;Artur Alvim;Nov;40
+2020;Vermelha;Patriarca;Nov;14
+2020;Vermelha;Guilhermina-Esperança;Nov;13
+2020;Vermelha;Vila Matilde;Nov;17
+2020;Vermelha;Penha;Nov;19
+2020;Vermelha;Carrão;Nov;27
+2020;Vermelha;Tatuapé;Nov;54
+2020;Vermelha;Belém;Nov;26
+2020;Vermelha;Bresser-Mooca;Nov;22
+2020;Vermelha;Brás;Nov;75
+2020;Vermelha;Pedro II;Nov;14
+2020;Vermelha;Sé;Nov;133
+2020;Vermelha;Anhangabaú;Nov;32
+2020;Vermelha;República;Nov;78
+2020;Vermelha;Santa Cecília;Nov;17
+2020;Vermelha;Marechal Deodoro;Nov;19
+2020;Vermelha;Palmeiras-Barra Funda;Nov;97
+2020;Prata;Vila Prudente;Nov;31
+2020;Prata;Oratório;Nov;4
+2020;Prata;São Lucas;Nov;3
+2020;Prata;Camilo Haddad;Nov;2
+2020;Prata;Vila Tolstói;Nov;3
+2020;Prata;Vila União;Nov;3
+2020;Prata;Jardim Planalto;Nov;3
+2020;Prata;Sapopemba;Nov;5
+2020;Prata;Fazenda da Juta;Nov;2
+2020;Prata;São Mateus;Nov;11
+2024;Azul;Jabaquara;Dez;68
+2024;Azul;Conceição;Dez;27
+2024;Azul;São Judas;Dez;14
+2024;Azul;Saúde-Ultrafarma;Dez;25
+2024;Azul;Praça da Árvore;Dez;15
+2024;Azul;Santa Cruz;Dez;91
+2024;Azul;Vila Mariana;Dez;16
+2024;Azul;Ana Rosa;Dez;72
+2024;Azul;Paraíso;Dez;90
+2024;Azul;Vergueiro;Dez;24
+2024;Azul;São Joaquim;Dez;24
+2024;Azul;Japão-Liberdade;Dez;20
+2024;Azul;Sé;Dez;162
+2024;Azul;São Bento;Dez;56
+2024;Azul;Luz;Dez;125
+2024;Azul;Tiradentes;Dez;13
+2024;Azul;Armênia;Dez;18
+2024;Azul;Portuguesa-Tietê;Dez;45
+2024;Azul;Carandiru;Dez;10
+2024;Azul;Santana;Dez;47
+2024;Azul;Jardim São Paulo-Ayrton Senna;Dez;10
+2024;Azul;Parada Inglesa;Dez;12
+2024;Azul;Tucuruvi;Dez;55
+2024;Verde;Vila Prudente;Dez;77
+2024;Verde;Tamanduateí;Dez;72
+2024;Verde;Sacomã;Dez;37
+2024;Verde;Alto do Ipiranga;Dez;16
+2024;Verde;Santos-Imigrantes;Dez;14
+2024;Verde;Chácara Klabin;Dez;77
+2024;Verde;Ana Rosa;Dez;57
+2024;Verde;Paraíso;Dez;59
+2024;Verde;Brigadeiro;Dez;47
+2024;Verde;Trianon-Masp;Dez;43
+2024;Verde;Consolação;Dez;90
+2024;Verde;Clínicas;Dez;19
+2024;Verde;Santuário N.S. de Fátima-Sumaré;Dez;9
+2024;Verde;Vila Madalena;Dez;20
+2024;Vermelha;Corinthians-Itaquera;Dez;68
+2024;Vermelha;Artur Alvim;Dez;52
+2024;Vermelha;Patriarca-Vila Ré;Dez;21
+2024;Vermelha;Guilhermina-Esperança;Dez;19
+2024;Vermelha;Vila Matilde;Dez;25
+2024;Vermelha;Penha-Lojas Besni;Dez;25
+2024;Vermelha;Carrão-Assaí Atacadista;Dez;40
+2024;Vermelha;Tatuapé;Dez;78
+2024;Vermelha;Belém;Dez;34
+2024;Vermelha;Bresser-Moóca;Dez;28
+2024;Vermelha;Brás;Dez;77
+2024;Vermelha;Pedro II;Dez;14
+2024;Vermelha;Sé2;Dez;192
+2024;Vermelha;Anhangaba;Dez;49
+2024;Vermelha;República;Dez;113
+2024;Vermelha;Santa Cecília;Dez;21
+2024;Vermelha;Marechal Deodoro;Dez;24
+2024;Vermelha;Palmeiras-Barra Funda;Dez;126
+2024;Prata;Vila Prudente;Dez;60
+2024;Prata;Oratório;Dez;6
+2024;Prata;São Lucas;Dez;5
+2024;Prata;Camilo Haddad;Dez;3
+2024;Prata;Vila Tolstói;Dez;5
+2024;Prata;Vila União;Dez;5
+2024;Prata;Jardim Planalto;Dez;4
+2024;Prata;Sapopemba;Dez;9
+2024;Prata;Fazenda da Juta;Dez;4
+2024;Prata;São Mateus;Dez;16
+2024;Prata;Jardim Colonial;Dez;11
+2023;Azul;Jabaquara;Dez;68
+2023;Azul;Conceição;Dez;25
+2023;Azul;São Judas;Dez;14
+2023;Azul;Saúde;Dez;25
+2023;Azul;Praça da Árvore;Dez;14
+2023;Azul;Santa Cruz;Dez;92
+2023;Azul;Vila Mariana;Dez;16
+2023;Azul;Ana Rosa;Dez;70
+2023;Azul;Paraíso;Dez;87
+2023;Azul;Vergueiro;Dez;23
+2023;Azul;São Joaquim;Dez;22
+2023;Azul;Japão-Liberdade;Dez;22
+2023;Azul;Sé;Dez;164
+2023;Azul;São Bento;Dez;56
+2023;Azul;Luz;Dez;132
+2023;Azul;Tiradentes;Dez;13
+2023;Azul;Armênia;Dez;17
+2023;Azul;Portuguesa-Tietê;Dez;46
+2023;Azul;Carandiru;Dez;10
+2023;Azul;Santana;Dez;45
+2023;Azul;Jardim São Paulo-Ayrton Senna;Dez;10
+2023;Azul;Parada Inglesa;Dez;12
+2023;Azul;Tucuruvi;Dez;52
+2023;Vermelha;Corinthians-Itaquera;Dez;69
+2023;Vermelha;Artur Alvim;Dez;52
+2023;Vermelha;Patriarca;Dez;20
+2023;Vermelha;Guilhermina-Esperança;Dez;19
+2023;Vermelha;Vila Matilde;Dez;24
+2023;Vermelha;Penha;Dez;25
+2023;Vermelha;Carrão;Dez;40
+2023;Vermelha;Tatuapé;Dez;80
+2023;Vermelha;Belém;Dez;34
+2023;Vermelha;Bresser-Mooca;Dez;28
+2023;Vermelha;Brás;Dez;79
+2023;Vermelha;Pedro II;Dez;15
+2023;Vermelha;Sé;Dez;190
+2023;Vermelha;Anhangabaú;Dez;50
+2023;Vermelha;República;Dez;114
+2023;Vermelha;Santa Cecília;Dez;21
+2023;Vermelha;Marechal Deodoro;Dez;24
+2023;Vermelha;Palmeiras-Barra Funda;Dez;131
+2023;Prata;Vila Prudente;Dez;53
+2023;Prata;Oratório;Dez;6
+2023;Prata;São Lucas;Dez;5
+2023;Prata;Camilo Haddad;Dez;3
+2023;Prata;Vila Tolstói;Dez;5
+2023;Prata;Vila União;Dez;5
+2023;Prata;Jardim Planalto;Dez;4
+2023;Prata;Sapopemba;Dez;8
+2023;Prata;Fazenda da Juta;Dez;4
+2023;Prata;São Mateus;Dez;17
+2023;Prata;Jardim Colonial;Dez;6
+2022;Azul;Jabaquara;Dez;64
+2022;Azul;Conceição;Dez;21
+2022;Azul;São Judas;Dez;13
+2022;Azul;Saúde;Dez;23
+2022;Azul;Praça da Árvore;Dez;13
+2022;Azul;Santa Cruz;Dez;82
+2022;Azul;Vila Mariana;Dez;14
+2022;Azul;Ana Rosa;Dez;60
+2022;Azul;Paraíso;Dez;75
+2022;Azul;Vergueiro;Dez;21
+2022;Azul;São Joaquim;Dez;19
+2022;Azul;Japão-Liberdade;Dez;20
+2022;Azul;Sé;Dez;154
+2022;Azul;São Bento;Dez;52
+2022;Azul;Luz;Dez;113
+2022;Azul;Tiradentes;Dez;11
+2022;Azul;Armênia;Dez;17
+2022;Azul;Portuguesa-Tietê;Dez;44
+2022;Azul;Carandiru;Dez;9
+2022;Azul;Santana;Dez;43
+2022;Azul;Jardim São Paulo-Ayrton Senna;Dez;9
+2022;Azul;Parada Inglesa;Dez;10
+2022;Azul;Tucuruvi;Dez;49
+2022;Verde;Vila Prudente;Dez;61
+2022;Verde;Tamanduateí;Dez;60
+2022;Verde;Sacomã;Dez;33
+2022;Verde;Alto do Ipiranga;Dez;14
+2022;Verde;Santos-Imigrantes;Dez;11
+2022;Verde;Chácara Klabin;Dez;52
+2022;Verde;Ana Rosa;Dez;52
+2022;Verde;Paraíso;Dez;53
+2022;Verde;Brigadeiro;Dez;40
+2022;Verde;Trianon-Masp;Dez;35
+2022;Verde;Consolação;Dez;78
+2022;Verde;Clínicas;Dez;16
+2022;Verde;Santuário N.S. de Fátima-Sumaré;Dez;8
+2022;Verde;Vila Madalena;Dez;16
+2022;Vermelha;Corinthians-Itaquera;Dez;68
+2022;Vermelha;Artur Alvim;Dez;49
+2022;Vermelha;Patriarca;Dez;18
+2022;Vermelha;Guilhermina-Esperança;Dez;18
+2022;Vermelha;Vila Matilde;Dez;22
+2022;Vermelha;Penha;Dez;23
+2022;Vermelha;Carrão;Dez;35
+2022;Vermelha;Tatuapé;Dez;68
+2022;Vermelha;Belém;Dez;31
+2022;Vermelha;Bresser-Mooca;Dez;26
+2022;Vermelha;Brás;Dez;79
+2022;Vermelha;Pedro II;Dez;14
+2022;Vermelha;Sé;Dez;171
+2022;Vermelha;Anhangabaú;Dez;43
+2022;Vermelha;República;Dez;105
+2022;Vermelha;Santa Cecília;Dez;20
+2022;Vermelha;Marechal Deodoro;Dez;22
+2022;Vermelha;Palmeiras-Barra Funda;Dez;130
+2022;Prata;Vila Prudente;Dez;43
+2022;Prata;Oratório;Dez;5
+2022;Prata;São Lucas;Dez;4
+2022;Prata;Camilo Haddad;Dez;3
+2022;Prata;Vila Tolstói;Dez;4
+2022;Prata;Jardim Colonial;Dez;5
+2021;Azul;Jabaquara;Dez;59
+2021;Azul;Conceição;Dez;19
+2021;Azul;São Judas;Dez;11
+2021;Azul;Saúde;Dez;20
+2021;Azul;Praça da Árvore;Dez;12
+2021;Azul;Santa Cruz;Dez;77
+2021;Azul;Vila Mariana;Dez;12
+2021;Azul;Ana Rosa;Dez;53
+2021;Azul;Paraíso;Dez;65
+2021;Azul;Vergueiro;Dez;18
+2021;Azul;São Joaquim;Dez;15
+2021;Azul;Japão-Liberdade;Dez;16
+2021;Azul;Sé;Dez;144
+2021;Azul;São Bento;Dez;48
+2021;Azul;Luz;Dez;99
+2021;Azul;Tiradentes;Dez;10
+2021;Azul;Armênia;Dez;16
+2021;Azul;Portuguesa-Tietê;Dez;41
+2021;Azul;Carandiru;Dez;8
+2021;Azul;Santana;Dez;40
+2021;Azul;Jardim São Paulo-Ayrton Senna;Dez;8
+2021;Azul;Parada Inglesa;Dez;9
+2021;Azul;Tucuruvi;Dez;45
+2021;Verde;Vila Prudente;Dez;54
+2021;Verde;Tamanduateí;Dez;53
+2021;Verde;Sacomã;Dez;30
+2021;Verde;Alto do Ipiranga;Dez;13
+2021;Verde;Santos-Imigrantes;Dez;10
+2021;Verde;Chácara Klabin;Dez;54
+2021;Verde;Ana Rosa;Dez;47
+2021;Verde;Paraíso;Dez;48
+2021;Verde;Brigadeiro;Dez;33
+2021;Verde;Trianon-Masp;Dez;29
+2021;Verde;Consolação;Dez;65
+2021;Verde;Clínicas;Dez;15
+2021;Verde;Santuário N.S. de Fátima-Sumaré;Dez;6
+2021;Verde;Vila Madalena;Dez;13
+2021;Vermelha;Corinthians-Itaquera;Dez;66
+2021;Vermelha;Artur Alvim;Dez;45
+2021;Vermelha;Patriarca;Dez;17
+2021;Vermelha;Guilhermina-Esperança;Dez;16
+2021;Vermelha;Vila Matilde;Dez;20
+2021;Vermelha;Penha;Dez;22
+2021;Vermelha;Carrão;Dez;32
+2021;Vermelha;Tatuapé;Dez;65
+2021;Prata;Vila Prudente;Dez;41
+2021;Prata;Oratório;Dez;4
+2021;Prata;São Lucas;Dez;4
+2021;Prata;Camilo Haddad;Dez;3
+2021;Prata;Vila Tolstói;Dez;4
+2021;Prata;Vila União;Dez;4
+2021;Prata;Sapopemba;Dez;6
+2021;Prata;São Mateus;Dez;15
+2020;Azul;Jabaquara;Dez;48
+2020;Azul;Conceição;Dez;16
+2020;Azul;São Judas;Dez;9
+2020;Azul;Saúde;Dez;17
+2020;Azul;Praça da Árvore;Dez;10
+2020;Azul;Santa Cruz;Dez;63
+2020;Azul;Vila Mariana;Dez;10
+2020;Azul;Ana Rosa;Dez;41
+2020;Azul;Paraíso;Dez;50
+2020;Azul;Vergueiro;Dez;15
+2020;Azul;São Joaquim;Dez;13
+2020;Azul;Japão-Liberdade;Dez;13
+2020;Azul;Sé;Dez;128
+2020;Azul;São Bento;Dez;43
+2020;Azul;Luz;Dez;75
+2020;Azul;Tiradentes;Dez;8
+2020;Azul;Armênia;Dez;14
+2020;Azul;Portuguesa-Tietê;Dez;33
+2020;Azul;Carandiru;Dez;6
+2020;Azul;Santana;Dez;35
+2020;Azul;Jardim São Paulo-Ayrton Senna;Dez;6
+2020;Azul;Parada Inglesa;Dez;7
+2020;Azul;Tucuruvi;Dez;38
+2020;Verde;Vila Prudente;Dez;41
+2020;Verde;Tamanduateí;Dez;39
+2020;Verde;Sacomã;Dez;24
+2020;Verde;Alto do Ipiranga;Dez;9
+2020;Verde;Santos-Imigrantes;Dez;8
+2020;Verde;Chácara Klabin;Dez;40
+2020;Verde;Ana Rosa;Dez;39
+2020;Verde;Paraíso;Dez;40
+2020;Verde;Brigadeiro;Dez;25
+2020;Verde;Trianon-Masp;Dez;21
+2020;Verde;Consolação;Dez;50
+2020;Verde;Clínicas;Dez;13
+2020;Verde;Santuário N.S. de Fátima-Sumaré;Dez;4
+2020;Verde;Vila Madalena;Dez;10
+2020;Vermelha;Corinthians-Itaquera;Dez;58
+2020;Vermelha;Artur Alvim;Dez;40
+2020;Vermelha;Patriarca;Dez;13
+2020;Vermelha;Guilhermina-Esperança;Dez;13
+2020;Vermelha;Vila Matilde;Dez;16
+2020;Vermelha;Penha;Dez;19
+2020;Vermelha;Carrão;Dez;26
+2020;Vermelha;Tatuapé;Dez;55
+2020;Vermelha;Belém;Dez;26
+2020;Vermelha;Bresser-Mooca;Dez;21
+2020;Vermelha;Brás;Dez;78
+2020;Vermelha;Pedro II;Dez;14
+2020;Vermelha;Sé;Dez;131
+2020;Vermelha;Anhangabaú;Dez;32
+2020;Vermelha;República;Dez;76
+2020;Vermelha;Santa Cecília;Dez;17
+2020;Vermelha;Marechal Deodoro;Dez;18
+2020;Vermelha;Palmeiras-Barra Funda;Dez;103
+2020;Prata;Vila Prudente;Dez;32
+2020;Prata;Oratório;Dez;3
+2020;Prata;São Lucas;Dez;3
+2020;Prata;Camilo Haddad;Dez;2
+2020;Prata;Vila Tolstói;Dez;3
+2020;Prata;Vila União;Dez;3
+2020;Prata;Jardim Planalto;Dez;3
+2020;Prata;Sapopemba;Dez;5
+2020;Prata;Fazenda da Juta;Dez;2
+2020;Prata;São Mateus;Dez;11
