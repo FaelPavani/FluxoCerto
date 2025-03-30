@@ -3358,7 +3358,7 @@ width: 42vw;
 }
 
 .box_usuario_dash{
-    width: 20vw;
+    width: 15rem;
     height: 100%;
     display: flex;
     color: #02033B;
@@ -3367,18 +3367,16 @@ width: 42vw;
 
 .box_user_dashboard{
     display: flex;
-    margin-left: 1vw;
+    margin-left: 0.5rem;
     flex-direction: column;
 }
-.box_user_dashboard span{
-    
-}
+
 .box_user_dashboard h3{
-    font-size: 1.5vw;
+    font-size: 1.3rem;
     font-weight: 800;
 }
 .box_user_dashboard h6{
-    font-size: 1.1vw;
+    font-size: 0.9rem;
     color: #02033b8c;
 }
 .lateral_dashboard{
@@ -3390,6 +3388,7 @@ width: 42vw;
         flex-direction: column;
         z-index: 11;
         position: fixed;
+        left: 0;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
 }
 .imagem_dashboard{
@@ -3424,3 +3423,217 @@ width: 42vw;
     margin-top: 18rem;
 }
 
+/* Começando a parte dos gráficos */
+.main_dashboard_containers{
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+    color: #02033B;
+    display: flex;
+    padding-top: 5.5rem;
+    padding-left: 5.5rem;
+}
+.section_status_dashboard{
+    background-color: red;
+    width: 18vw;
+    height: 82vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 1.5vw;
+}
+
+.box_status_linhas{
+    width: 18vw;
+    height: 50vh;
+    background-color: green;
+    border-radius: 0.5rem;
+    border: 2px solid #02033B;
+    padding: 1rem;
+}
+.box_status_linhas h4{
+    font-size: 1.5rem;
+    margin-bottom: rem;
+}
+.box_status_linhas h6{
+    font-size: 1.2rem;
+    margin-bottom: 0.1rem;
+}
+.status_linhas{
+    width: 15vw;
+    border-radius: 0.5rem;
+    height: 7.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: peru;
+    margin-bottom: 1rem;
+}
+
+.box_pizza_dash{
+    width: 18vw;
+    height: 30vh;
+    background-color: maroon;
+    border-radius: 0.5rem;
+    border: 2px solid #02033B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    font-size: 1.3rem;
+    justify-content: center;
+}
+
+
+.section_dashboard{
+    width: 73vw;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    background-color: purple;
+}
+.section_dash1{
+    width: 100%;
+    height: 50%;
+    background-color: orange;
+    display: flex;
+}
+
+.select_linhas{
+    background-color: red;
+    width: 8rem;
+    border-radius: 0.5rem;
+    border: 2px solid #02033B;
+    height: 2.5rem;
+}
+.box_filtros{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    height: 6.3vh;
+    background-color: pink;
+    justify-content: center;
+    background-color: #f4f8fd;
+}
+.caixa_filtros{
+    display: flex;
+    justify-content: space-between;
+    width: 25.5vw;
+    background-color: blue;
+    align-items: center;
+}
+.title_demanda_linha{
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.box_demanda_linhas{
+    width: 50vw;
+    border-radius: 0.5rem;
+    height: 30vh;
+    background-color: aqua;
+    border: 2px solid #02033B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linha_kpi {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Ajusta automaticamente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 8px; /* Espaço entre texto e KPI */
+}
+.linha_kpi h4{
+    width: 7vw;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    
+    height: 3.5vh;
+    background-color: #FFC247;
+}
+.kpis_demanda_linhas{
+    width: 20vw;
+    height: 30vh;
+    padding-top: 1rem;
+    display: flex;
+    background-color: red;
+    margin-left: 1rem;
+}
+.box_titulo_grafico{
+    width: 10vw;
+    height: 30vh;
+    font-weight: 700;
+    display: flex;
+    padding-top: 2rem;
+    justify-content: center;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: #4335DE;
+}
+.title_filtros{
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+.title_filtro_kpi{
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+.ano_especifico_kpi{
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+.kpi_linha{
+    width: 1.3rem;
+    height: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 0.4rem;
+    
+}
+.grafico_linha{
+    width: 80vw;
+    height: 30vh;
+    background-color: beige;
+}
+.container_kpis_dash{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: red;
+    margin-left: 1vw;
+}
+.box_kpis_dash{
+    width: 22vw;
+    height: 13vh;
+    border: #02033B 2px solid;
+    border-radius: 0.5rem;
+    background-color: #aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5vw;
+}
+
+.section_dash2{
+    width: 100%;
+    height: 50%;
+    background-color: mediumspringgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.box_demanda_estacao{
+    width: 73vw;
+    height: 35vh;
+    border: 2px solid #02033B;
+    border-radius: 0.5rem;
+    background-color: yellow;
+}
+
+.grafico_pizza{
+   
+}

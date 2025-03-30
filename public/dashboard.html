@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/trem_icone.png" />
     <script src="script.js" type="text/javascript" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>DashBoard</title>
 </head>
 
@@ -25,11 +26,11 @@
     <section class="lateral_dashboard">
         <div class="box_lateral_home">
             <img class="imagem_dashboard" src="./assets/home_icon.png">
-        </div >
-        
+        </div>
+
         <div class="box_lateral_icones">
             <img class="imagem_dashboard" src="./assets/config_icon.png">
-            <img class="imagem_dashboard" src="./assets/adduser_icon.png">            
+            <img class="imagem_dashboard" src="./assets/adduser_icon.png">
         </div>
 
         <div class="box_lateral_exit">
@@ -37,5 +38,463 @@
         </div>
     </section>
 
+    <main class="main_dashboard_containers">
+
+        <section class="section_status_dashboard">
+
+            <div class="box_status_linhas">
+                <h4>Status das linhas</h4>
+
+                <h6>Azul</h6>
+                <div class="status_linhas"></div>
+                <h6>Vermelha</h6>
+                <div class="status_linhas"></div>
+                <h6>Verde</h6>
+                <div class="status_linhas"></div>
+
+            </div>
+
+            <div class="box_pizza_dash">
+                <h4>Ocupação das linhas</h4>
+                <canvas class="grafico_pizza" id="pizzaChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <section class="section_dashboard">
+            <section class="section_dash1">
+
+                <div>
+                    <div class="box_filtros">
+                        <div class="caixa_filtros">
+                            <label>
+                                <select class="select_linhas" id="options_linhas" name="options">
+                                    <option value="linhas">Todas as linhas</option>
+                                    <option value="azul">Linha Azul</option>
+                                    <option value="vermelha">Linha Vermelha</option>
+                                    <option value="verde">Linha Verde</option>
+                                </select>
+                            </label>
+
+                            <p>Filtrar por:</p>
+                            <label>
+                                <select class="select_linhas" id="mainSelect" name="options">
+                                    <option value="anos">Anos</option>
+                                    <option value="ano_especifico">Ano específico</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <!-- Opção: Por Anos -->
+                        <div class="caixa_filtros">
+                            <div id="porAnos"
+                                style="display: flex; justify-content: space-between; align-items: center; width: 24vw; background-color: aqua;">
+                                <p>De:</p>
+                                <label>
+                                    <select class="select_linhas" id="options_de" name="options">
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </label>
+
+                                <p>Até:</p>
+                                <label>
+                                    <select class="select_linhas" id="options_ate" name="options">
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <!-- Opção: Ano Específico -->
+                            <div id="anoEspecifico"
+                                style="display: none; justify-content: flex-end; align-items: center; width: 23.8vw; background-color: lightblue;">
+                                <p style="margin-right: 0.3rem;">Ano:</p>
+                                <label>
+                                    <select class="select_linhas" id="options_ano_especifico" name="options">
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="title_demanda_linha">Demanda por Linha</h4>
+
+                    <div class="box_demanda_linhas">
+
+
+                        <div class="box_titulo_grafico">
+                            Ocupação de Passageiros (Milhares)
+                        </div>
+                        <canvas class="grafico_linha" id="chartLinhaPorAnos" width="400" height="200"></canvas>
+                        <canvas class="grafico_linha" id="chartLinhaAnoEspecifico" width="400" height="200"></canvas>
+
+                        <div class="kpis_demanda_linhas">
+
+                            <div>
+
+                                <div>
+                                    <h4 class="title_filtros">Filtrando por:</h4>
+                                    <div id="kpi_linha_azul" class="linha_kpi">
+                                        <div style="background-color: rgb(7, 7, 196);" class="kpi_linha"></div>
+                                        <h4>Linha azul</h4>
+                                    </div>
+                                    <div id="kpi_linha_vermelha" class="linha_kpi">
+                                        <div style="background-color: rgb(233, 30, 30);" class="kpi_linha"></div>
+                                        <h4>Linha vermelha</h4>
+                                    </div>
+                                    <div id="kpi_linha_verde" class="linha_kpi">
+                                        <div style="background-color: rgb(23, 122, 23);" class="kpi_linha"></div>
+                                        <h4>Linha verde</h4>
+                                    </div>
+                                    <div id="kpi_por_ano">
+                                        <h4 class="title_filtro_kpi">No ano de:</h4>
+                                        <span id="kpi_ano_especifico" class="ano_especifico_kpi">2024</span>
+                                    </div>
+
+                                    <div style="display: none;" id="kpi_por_anos">
+                                        <div style="width: 5vw; background-color: aliceblue;">
+        
+                                            <h4 class="title_filtro_kpi">De:</h4>
+                                            <span id="kpi_de" class="ano_especifico_kpi">2024</span>
+                                        </div>
+                                        <div style="width: 5vw; background-color: aliceblue;">
+                                            <h4 class="title_filtro_kpi">Até:</h4>
+                                            <span id="kpi_ate" class="ano_especifico_kpi">2020</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container_kpis_dash">
+
+                    <div class="box_kpis_dash">
+                        <h4>Estação mais movimentada</h4>
+                    </div>
+                    <div class="box_kpis_dash">
+                        <h4>Expectativa de fluxo</h4>
+                    </div>
+                    <div class="box_kpis_dash">
+                        <h4>Estação com maior expectativa</h4>
+                    </div>
+
+
+                </div>
+
+                <div id="porAnoEspecifico" style="display: none; background-color: blueviolet;"></div>
+            </section>
+
+
+            <section class="section_dash2">
+                <h4 class="title_demanda_linha">Demanda por estação</h4>
+                <div class="box_demanda_estacao"></div>
+            </section>
+        </section>
+    </main>
 </body>
+
 </html>
+<script>
+    // Lógica dos selects
+
+    const mainSelect = document.getElementById("mainSelect");
+    const porAnos = document.getElementById("porAnos");
+    const anoEspecifico = document.getElementById("anoEspecifico");
+
+    const selectDe = document.getElementById("options_de")
+    const selectAte = document.getElementById("options_ate")
+
+    // Função para alternar exibição com base na seleção
+    function toggleFiltros() {
+        const selectedValue = mainSelect.value;
+
+        if (selectedValue === "anos") {
+            porAnos.style.display = "flex";
+            anoEspecifico.style.display = "none";
+            chartLinhaAnoEspecifico.style.display = 'none'
+            chartLinhaPorAnos.style.display = 'flex'
+
+            kpi_por_ano.style.display = 'none'
+            kpi_por_anos.style.display = 'flex'
+
+
+
+        } else if (selectedValue === "ano_especifico") {
+            anoEspecifico.style.display = "flex";
+            porAnos.style.display = "none";
+            chartLinhaAnoEspecifico.style.display = 'flex'
+            kpi_por_ano.style.display = 'block'
+            kpi_por_anos.style.display = 'none'
+            chartLinhaPorAnos.style.display = 'none'
+        }
+    }
+
+    // Evento para detectar mudança no select principal
+    mainSelect.addEventListener("change", toggleFiltros);
+
+    // Exibe o grupo inicial baseado no valor padrão do select principal
+    toggleFiltros();
+
+    // GRÁFICO DE LINHA -- POR ANOS
+
+    const ctx1 = document.getElementById('chartLinhaAnoEspecifico').getContext('2d');
+    let chart1;
+
+    const initialData1 = {
+        labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        datasets: [
+            {
+                label: 'Linha Azul',
+                borderColor: 'blue',
+                data: [80, 70, 50, 80, 70, 40, 50, 70, 80, 75, 60, 85],
+            },
+            {
+                label: 'Linha Vermelha',
+                borderColor: 'red',
+                data: [80, 90, 50, 75, 60, 85, 90, 90, 50, 70, 60, 90],
+            },
+            {
+                label: 'Linha Verde',
+                borderColor: 'green',
+                data: [80, 90, 80, 60, 85, 60, 70, 60, 70, 90, 50, 75],
+            }
+        ]
+    };
+
+    function createChart1(data) {
+        if (chart1) chart1.destroy();
+        chart1 = new Chart(ctx1, {
+            type: 'line',
+            data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false // Remove a legenda
+                    }
+                },
+                scales: {
+                    x: { beginAtZero: true },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+    // GRÁFICO DE LINHA -- ANO ESPECÍFICO
+    const ctx2 = document.getElementById('chartLinhaPorAnos').getContext('2d');
+    let chart2;
+
+    const initialData2 = {
+        labels: ["2020", "2021", "2022", "2023", "2024"],
+        datasets: [
+            {
+                label: 'Linha Azul',
+                borderColor: 'blue',
+                data: [60, 80, 70, 90, 85, 60, 50, 40, 90, 100, 75, 85],
+            },
+            {
+                label: 'Linha Vermelha',
+                borderColor: 'red',
+                data: [70, 60, 80, 90, 100, 75, 85, 90, 60, 80, 70, 60],
+            },
+            {
+                label: 'Linha Verde',
+                borderColor: 'green',
+                data: [75, 85, 90, 60, 80, 70, 60, 70, 60, 80, 90, 100],
+            }
+        ]
+    };
+
+    function updateChart() {
+        const de = parseInt(document.getElementById('options_de').value);
+        const ate = parseInt(document.getElementById('options_ate').value);
+
+        const startIndex = initialData2.labels.indexOf(de.toString());
+        const endIndex = initialData2.labels.indexOf(ate.toString());
+
+        if (startIndex === -1 || endIndex === -1 || startIndex > endIndex) {
+            console.error("Erro ao encontrar os índices dos anos selecionados.");
+            return;
+        }
+
+        const filteredLabels = initialData2.labels.slice(startIndex, endIndex + 1);
+
+        const filteredDatasets = initialData2.datasets.map(dataset => ({
+            ...dataset,
+            data: dataset.data.slice(startIndex, endIndex + 1)
+        }));
+
+        chart2.data.labels = filteredLabels;
+        chart2.data.datasets = filteredDatasets;
+        chart2.update();
+    }   
+
+    function createChart2(data) {
+        if (chart2) chart2.destroy();
+        chart2 = new Chart(ctx2, {
+            type: 'line',
+            data,
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+
+    // Criar os dois gráficos
+    createChart1(initialData1);
+    createChart2(initialData2);
+
+
+    document.getElementById('options_de').addEventListener('change', updateChart);
+    document.getElementById('options_ate').addEventListener('change', updateChart);
+    
+
+
+
+    // Funções do select
+
+    // Event listeners for filters
+    document.getElementById('options_linhas').addEventListener('change', function () {
+        const selected = this.value;
+
+        if (selected === "linhas") {
+            chart2.data.datasets.forEach(dataset => dataset.hidden = false);
+            chart1.data.datasets.forEach(dataset => dataset.hidden = false);
+
+        } else {
+            chart2.data.datasets.forEach(dataset => {
+                dataset.hidden = dataset.label.toLowerCase().includes(selected) ? false : true;
+            });
+            chart1.data.datasets.forEach(dataset => {
+                dataset.hidden = dataset.label.toLowerCase().includes(selected) ? false : true;
+            });
+        }
+
+        if (selected === "linhas") {
+            kpi_linha_azul.style.display = 'flex'
+            kpi_linha_vermelha.style.display = 'flex'
+            kpi_linha_verde.style.display = 'flex'
+        } else if (selected === "azul") {
+            kpi_linha_azul.style.display = 'flex'
+            kpi_linha_vermelha.style.display = 'none'
+            kpi_linha_verde.style.display = 'none'
+        } else if (selected === "vermelha") {
+            kpi_linha_azul.style.display = 'none'
+            kpi_linha_vermelha.style.display = 'flex'
+            kpi_linha_verde.style.display = 'none'
+        } else if (selected === "verde") {
+            kpi_linha_azul.style.display = 'none'
+            kpi_linha_vermelha.style.display = 'none'
+            kpi_linha_verde.style.display = 'flex'
+        }
+
+
+        chart2.update();
+        chart1.update();
+
+    });
+
+
+
+
+    // Lógica dos filtros De: Até:
+
+                // Função para alternar exibição com base na seleção
+    function toggleDeAte() {
+        const valorSelecionadoDe = options_de.value;
+            kpi_de.innerHTML = valorSelecionadoDe;
+
+
+        const valorSelecionadoAte = options_ate.value;
+
+            kpi_ate.innerHTML = valorSelecionadoAte;
+    }
+
+    // Evento para detectar mudança no select principal
+    options_de.addEventListener("change", toggleDeAte);
+    options_ate.addEventListener("change", toggleDeAte);
+
+
+    // Exibe o grupo inicial baseado no valor padrão do select principal
+    toggleDeAte();
+
+
+     function toggleAnoEspecifico() {
+        const valorSelecionadoAnoEspecifico = options_ano_especifico.value;
+            kpi_ano_especifico.innerHTML = valorSelecionadoAnoEspecifico;
+          
+    }
+
+    // Evento para detectar mudança no select principal
+    options_ano_especifico.addEventListener("change", toggleAnoEspecifico);
+
+
+    // Exibe o grupo inicial baseado no valor padrão do select principal
+    toggleAnoEspecifico();
+
+    // GRÁFICO DE PIZZA:
+    const pizzaGrafico = document.getElementById('pizzaChart').getContext('2d');
+
+    const data = {
+        labels: ['Azul', 'Vermelha', 'Verde'],
+        datasets: [{
+            label: 'Cores',
+            data: [30, 50, 20], // Valores para cada cor
+            backgroundColor: ['#36A2EB', '#FF6384', '#4BC0C0'],
+            hoverOffset: 4
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {
+            responsive: true, // Faz o gráfico ser responsivo
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) {
+                            const dataset = tooltipItem.dataset;
+                            const total = dataset.data.reduce((acc, val) => acc + val, 0);
+                            const currentValue = dataset.data[tooltipItem.dataIndex];
+                            const percentage = ((currentValue / total) * 100).toFixed(2);
+                            return `${dataset.labels[tooltipItem.dataIndex]}: ${currentValue} (${percentage}%)`;
+                        }
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: 'left',
+                }
+            }
+        }
+    };
+
+    const myPieChart = new Chart(pizzaGrafico, config);
+
+
+
+</script>
