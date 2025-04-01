@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -63,9 +65,10 @@
 
 
         <section class="section_dashboard">
-            <section class="section_dash1">
+            <h4 class="title_demanda_linha">Demanda por linha</h4>
+            <section class="section_dash1" style="margin-top: 2vw;">
 
-                <div>
+                <div >
                     <div class="box_filtros">
                         <div class="caixa_filtros">
                             <label>
@@ -93,22 +96,22 @@
                                 <p>De:</p>
                                 <label>
                                     <select class="select_linhas" id="options_de" name="options">
-                                        <option value="2024">2024</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
                                         <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
                                     </select>
                                 </label>
 
                                 <p>Até:</p>
                                 <label>
                                     <select class="select_linhas" id="options_ate" name="options">
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
                                         <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
                                     </select>
                                 </label>
                             </div>
@@ -130,7 +133,6 @@
                         </div>
                     </div>
 
-                    <h4 class="title_demanda_linha">Demanda por Linha</h4>
 
                     <div class="box_demanda_linhas">
 
@@ -161,7 +163,7 @@
                                     </div>
                                     <div id="kpi_por_ano">
                                         <h4 class="title_filtro_kpi">No ano de:</h4>
-                                        <span id="kpi_ano_especifico" class="ano_especifico_kpi">2024</span>
+                                        <span id="kpi_ano_especifico" class="ano_especifico_kpi">2020</span>
                                     </div>
 
                                     <div style="display: none;" id="kpi_por_anos">
@@ -170,9 +172,9 @@
                                             <h4 class="title_filtro_kpi">De:</h4>
                                             <span id="kpi_de" class="ano_especifico_kpi">2024</span>
                                         </div>
-                                        <div style="width: 5vw; background-color: aliceblue;">
+                                        <div style="width: 5vw; background-color: magenta;">
                                             <h4 class="title_filtro_kpi">Até:</h4>
-                                            <span id="kpi_ate" class="ano_especifico_kpi">2020</span>
+                                            <span id="kpi_ate" class="ano_especifico_kpi">2024</span>
                                         </div>
                                     </div>
                                 </div>
@@ -190,7 +192,7 @@
                         <h4>Estação mais movimentada</h4>
                     </div>
                     <div class="box_kpis_dash">
-                        <h4>Expectativa de fluxo</h4>
+                        <h4 >Expectativa de aumento de fluxo (linha)</h4>
                     </div>
                     <div class="box_kpis_dash">
                         <h4>Estação com maior expectativa</h4>
@@ -204,8 +206,169 @@
 
 
             <section class="section_dash2">
-                <h4 class="title_demanda_linha">Demanda por estação</h4>
-                <div class="box_demanda_estacao"></div>
+                <h4 class="title_demanda_estacao">Demanda por estação</h4>   <div class="box_filtros">
+                    <div class="caixa_filtros">
+                        <label>
+                            <select class="select_linhas" id="filtrarLinhaEstacao" name="options">
+                                <option value="azul">Linha Azul</option>
+                                <option value="vermelha">Linha Vermelha</option>
+                                <option value="verde">Linha Verde</option>
+                            </select>
+                        </label>
+
+                        <p>Filtrar por:</p>
+                        <label>
+                            <select class="select_linhas" id="filtarPorEstacoes" name="options">
+                                <option value="estacoes">Todas estações</option>
+                                <option value="estacao_especifica">Estação específica</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <!-- Opção: Por Anos -->
+                    <div  class="caixa_filtros">
+                        <div id="porTodasEstacoes"
+                            style="display: flex; justify-content: end; align-items: center; width: 24vw; background-color: aqua;">
+                            <p style="margin-right: 0.5rem;">No ano de:</p>
+                            <label>
+                                <select class="select_linhas" id="ano_todas_estacoes" name="options">
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                </select>
+                            </label>
+
+                           
+                        </div>
+
+                        <!-- Opção: Ano Específico -->
+                        <div id="divEstacaoEspecifica" style="display: flex; justify-content: flex-end; align-items: center; width: 30vw; background-color: lightblue;">
+                            
+                            <label style="display: flex; justify-content: space-around; align-items: center; width: 30rem;">
+                                <p style="margin-right: 0.3rem;">Estação:</p>
+                                <select id="estacoesAzul" class="select_linhas" id="options_estacoes_azul" name="options">
+                                    <option value="Jabaquara">Jabaquara</option>
+                                    <option value="Conceicao">Conceição</option>
+                                    <option value="São Judas">São Judas</option>
+                                    <option value="Saúde-Ultrafarma">Saúde-Ultrafarma</option>
+                                    <option value="Praça da Árvore">Praça da Árvore</option>
+                                    <option value="Santa Cruz">Santa Cruz</option>
+                                    <option value="Vila Mariana">Vila Mariana</option>
+                                    <option value="Ana Rosa">Ana Rosa</option>
+                                    <option value="Paraíso">Paraíso</option>
+                                    <option value="Vergueiro">Vergueiro</option>
+                                    <option value="São Joaquim">São Joaquim</option>
+                                    <option value="Japão-Liberdade">Japão-Liberdade</option>
+                                    <option value="Sé">Sé</option>
+                                    <option value="São Bento">São Bento</option>
+                                    <option value="Luz">Luz</option>
+                                    <option value="Tiradentes">Tiradentes</option>
+                                    <option value="Armênia">Armênia</option>
+                                    <option value="Portuguesa-Tietê">Portuguesa-Tietê</option>
+                                    <option value="Carandiru">Carandiru</option>
+                                    <option value="Santana">Santana</option>
+                                    <option value="Jardim São Paulo-Ayrton Senna">Jardim São Paulo-Ayrton Senna</option>
+                                    <option value="Parada Inglesa">Parada Inglesa</option>
+                                    <option value="Tucuruvi">Tucuruvi</option>
+                                </select>
+
+                                <select id="estacoesVermelha" style="display: none;" class="select_linhas" id="options_estacoes_vermelha" name="options">
+                                    <option value="Corinthians-Itaquera">Corinthians-Itaquera</option>
+                                    <option value="Artur Alvim">Artur Alvim</option>
+                                    <option value="Patriarca-Vila Ré">Patriarca-Vila Ré</option>
+                                    <option value="Guilhermina-Esperaça">Guilhermina-Esperança</option>
+                                    <option value="Vila Matilde">Vila Matilde</option>
+                                    <option value="Penha-Lojas Besni">Penha-Lojas Besni</option>
+                                    <option value="Carrão-Assaí Atacadista">Carrão-Assaí Atacadista</option>
+                                    <option value="Tatuapé">Tatuapé</option>
+                                    <option value="Belém">Belém</option>
+                                    <option value="Bresser-Moóca">Bresser-Moóca</option>
+                                    <option value="Brás">Brás</option>
+                                    <option value="Pedro II">Pedro II</option>
+                                    <option value="Sé">Sé</option>
+                                    <option value="Anhangabaú">Anhangabaú</option>
+                                    <option value="República">República</option>
+                                    <option value="Santa Cecília">Santa Cecília</option>
+                                    <option value="Marechal Deodoro">Marechal Deodoro</option>
+                                    <option value="Palmeiras-Barra Funda">Palmeiras-Barra Funda</option>
+                                </select>
+
+                                <select id="estacoesVerde" style="display: none;" class="select_linhas" id="options_estacoes_verde" name="options">
+                                    <option value="Tamanduateí">Tamanduateí</option>
+                                    <option value="Sacomã">Sacomã</option>
+                                    <option value="Alto Do Ipiranga">Alto do Ipiranga</option>
+                                    <option value="Santos-Imigrantes">Santos-Imigrantes</option>
+                                    <option value="Chácara Klabin">Chácara Klabin</option>
+                                    <option value="Ana Rosa">Ana Rosa</option>
+                                    <option value="Paraíso">Paraíso</option>
+                                    <option value="Brigadeiro">Brigadeiro</option>
+                                    <option value="Trianon-Masp">Trianon-Masp</option>
+                                    <option value="Consolação">Consolação</option>
+                                    <option value="Clínicas">Clínicas</option>
+                                    <option value="Santuário N.S. de Fátima-Sumare">Santuário N.S. de Fátima-Sumaré</option>
+                                    <option value="Vila Madalena">Vila Madalena</option>
+                                </select>
+
+                                <p style="margin-right: 0.3rem; font-size: 0.9rem ;">Ano de:</p>
+                                <label>
+                                    <select class="select_linhas" id="options_ano_especifico_estacoes" name="options">
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </label>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_demanda_estacao">
+                    <div class="box_titulo_grafico">
+                        Ocupação de Passageiros (Milhares)
+                    </div>
+
+                    <div id="barras_estacoes_linhas" style="width: 43vw;">
+                    <canvas id="chartBarrasLinhaAzul"></canvas>
+                    <canvas style="display: none;" id="chartBarrasLinhaVermelha"></canvas>
+                    <canvas style="display: none;" id="chartBarrasLinhaVerde"></canvas>
+                </div>
+                    <canvas style="display: none;" id="dataBarrasEstacaoAno"></canvas>
+
+                    <div style="margin-left: 2rem;">
+                        <h4 class="title_filtros">Filtrando por:</h4>
+                        <div id="kpi_linha_azul_estacao" class="linha_kpi">
+                            <div style="background-color: rgb(7, 7, 196);" class="kpi_linha"></div>
+                            <h4>Linha azul</h4>
+                        </div>
+                        <div id="kpi_linha_vermelha_estacao" class="linha_kpi">
+                            <div style="background-color: rgb(233, 30, 30);" class="kpi_linha"></div>
+                            <h4>Linha vermelha</h4>
+                        </div>
+                        <div id="kpi_linha_verde_estacao" class="linha_kpi">
+                            <div style="background-color: rgb(23, 122, 23);" class="kpi_linha"></div>
+                            <h4>Linha verde</h4>
+                        </div>
+                        <div id="kpi_por_ano_estacao">
+                            <h4 class="title_filtro_kpi">No ano de:</h4>
+                            <span id="kpi_ano_especifico_estacao" class="ano_especifico_kpi">2020</span>
+                        </div>
+
+                        <div style="display: none;" id="kpi_por_anos_estacao">
+                            <div style="width: 5vw; background-color: aliceblue;">
+
+                                <h4 class="title_filtro_kpi">De:</h4>
+                                <span id="kpi_de_estacao" class="ano_especifico_kpi">2024</span>
+                            </div>
+                            <div style="width: 5vw; background-color: magenta;">
+                                <h4 class="title_filtro_kpi">Até:</h4>
+                                <span id="kpi_ate_estacao" class="ano_especifico_kpi">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </section>
     </main>
@@ -255,6 +418,8 @@
 
     // GRÁFICO DE LINHA -- POR ANOS
 
+
+    
     const ctx1 = document.getElementById('chartLinhaAnoEspecifico').getContext('2d');
     let chart1;
 
@@ -298,6 +463,10 @@
             }
         });
     }
+
+
+
+    
     // GRÁFICO DE LINHA -- ANO ESPECÍFICO
     const ctx2 = document.getElementById('chartLinhaPorAnos').getContext('2d');
     let chart2;
@@ -323,6 +492,7 @@
         ]
     };
 
+    
     function updateChart() {
         const de = parseInt(document.getElementById('options_de').value);
         const ate = parseInt(document.getElementById('options_ate').value);
@@ -370,8 +540,91 @@
 
     document.getElementById('options_de').addEventListener('change', updateChart);
     document.getElementById('options_ate').addEventListener('change', updateChart);
-    
+// Criar uma cópia dos dados originais para referência
+const originalData2 = JSON.parse(JSON.stringify(initialData2));
 
+// Pegando os anos disponíveis no dataset
+const anosDisponiveis = originalData2.labels.map(label => parseInt(label));
+
+// Definir os limites mínimo e máximo do intervalo permitido
+const anoMin = Math.min(...anosDisponiveis);
+const anoMax = Math.max(...anosDisponiveis);
+
+function updateChart() {
+    const selectDe = document.getElementById('options_de');
+    const selectAte = document.getElementById('options_ate');
+
+    let de = parseInt(selectDe.value);
+    let ate = parseInt(selectAte.value);
+
+    // Verifica se o ano está dentro dos limites permitidos
+    if (de < anoMin || de > anoMax) {
+        alert(`Ano inicial inválido! Escolha um ano entre ${anoMin} e ${anoMax}.`);
+        selectDe.value = anoMin; // Retorna ao valor mínimo permitido
+        return;
+    }
+
+    if (ate < anoMin || ate > anoMax) {
+        alert(`Ano final inválido! Escolha um ano entre ${anoMin} e ${anoMax}.`);
+        selectAte.value = anoMax; // Retorna ao valor máximo permitido
+        return;
+    }
+
+    if (de > ate) {
+        alert("O ano inicial não pode ser maior que o ano final.");
+        selectDe.value = anoMin;
+        selectAte.value = anoMax;
+        return;
+    }
+
+    const startIndex = originalData2.labels.indexOf(de.toString());
+    const endIndex = originalData2.labels.indexOf(ate.toString());
+
+    if (startIndex === -1 || endIndex === -1) {
+        console.error("Erro ao encontrar os índices dos anos selecionados.");
+        return;
+    }
+
+    // Filtrar os labels
+    const filteredLabels = originalData2.labels.slice(startIndex, endIndex + 1);
+
+    // Criar novos datasets com os dados filtrados
+    const filteredDatasets = originalData2.datasets.map(dataset => ({
+        ...dataset,
+        data: dataset.data.slice(startIndex, endIndex + 1)
+    }));
+
+    // Atualizar o gráfico corretamente
+    chart2.data = {
+        labels: filteredLabels,
+        datasets: filteredDatasets
+    };
+
+    chart2.update();
+}
+
+function createChart2(data) {
+    if (chart2) chart2.destroy();
+    chart2 = new Chart(ctx2, {
+        type: 'line',
+        data: JSON.parse(JSON.stringify(data)), // Garante que não modificamos o original
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { beginAtZero: false },
+                y: { beginAtZero: true }
+            }
+        }
+    });
+}
+
+// Criar gráfico inicialmente com os dados completos
+createChart2(originalData2);
+
+// Eventos para atualizar o gráfico ao mudar as datas
+document.getElementById('options_de').addEventListener('change', updateChart);
+document.getElementById('options_ate').addEventListener('change', updateChart);
 
 
     // Funções do select
@@ -445,15 +698,97 @@
      function toggleAnoEspecifico() {
         const valorSelecionadoAnoEspecifico = options_ano_especifico.value;
             kpi_ano_especifico.innerHTML = valorSelecionadoAnoEspecifico;
-          
     }
 
+    
     // Evento para detectar mudança no select principal
     options_ano_especifico.addEventListener("change", toggleAnoEspecifico);
 
 
     // Exibe o grupo inicial baseado no valor padrão do select principal
     toggleAnoEspecifico();
+
+// TOGGLE DAS ESTAÇÕES 
+
+function togglefiltarPorEstacoes() {
+        const valorSelecionadofiltarPorEstacoes = filtarPorEstacoes.value;
+            // kpi_de.innerHTML = valorSelecionadoDe;
+
+            if(valorSelecionadofiltarPorEstacoes == 'estacoes'){
+                porTodasEstacoes.style.display = 'flex';
+                divEstacaoEspecifica.style.display = 'none';
+
+                barras_estacoes_linhas.style.display = 'flex;'
+                dataBarrasEstacaoAno.style.display = 'none';
+
+            }else if(valorSelecionadofiltarPorEstacoes == 'estacao_especifica'){
+                porTodasEstacoes.style.display = 'none';
+                divEstacaoEspecifica.style.display = 'flex';
+
+                dataBarrasEstacaoAno.style.display = 'flex';
+                barras_estacoes_linhas.style.display = 'none'
+            }
+
+    }
+
+    filtarPorEstacoes.addEventListener("change", togglefiltarPorEstacoes);
+
+    togglefiltarPorEstacoes();
+
+
+
+    // TOGGLE DAS LINHAS
+    
+function toggleFiltarEstacoesLinhas() {
+        const valorSelecionadoLinhaEstacao = filtrarLinhaEstacao.value;
+            // kpi_de.innerHTML = valorSelecionadoDe;
+
+            if(valorSelecionadoLinhaEstacao  == 'azul'){
+                estacoesAzul.style.display = 'flex'
+                estacoesVermelha.style.display = 'none'
+                estacoesVerde.style.display = 'none'
+
+                kpi_linha_azul_estacao.style.display = 'flex'
+                kpi_linha_vermelha_estacao.style.display = 'none'
+                kpi_linha_verde_estacao.style.display = 'none'
+
+
+                chartBarrasLinhaAzul.style.display = 'flex';
+                chartBarrasLinhaVermelha.style.display = 'none';
+                chartBarrasLinhaVerde.style.display = 'none';
+            }else if(valorSelecionadoLinhaEstacao    == 'vermelha'){
+                estacoesAzul.style.display = 'none'
+                estacoesVermelha.style.display = 'flex'
+                estacoesVerde.style.display = 'none'
+
+                kpi_linha_azul_estacao.style.display = 'none'
+                kpi_linha_vermelha_estacao.style.display = 'flex'
+                kpi_linha_verde_estacao.style.display = 'none'
+
+
+                chartBarrasLinhaAzul.style.display = 'none';
+                chartBarrasLinhaVermelha.style.display = 'flex';
+                chartBarrasLinhaVerde.style.display = 'none';
+            }else if(valorSelecionadoLinhaEstacao    == 'verde'){
+                estacoesAzul.style.display = 'none'
+                estacoesVermelha.style.display = 'none'
+                estacoesVerde.style.display = 'flex'
+
+                kpi_linha_azul_estacao.style.display = 'none'
+                kpi_linha_vermelha_estacao.style.display = 'none'
+                kpi_linha_verde_estacao.style.display = 'flex'
+
+                chartBarrasLinhaAzul.style.display = 'none';
+                chartBarrasLinhaVermelha.style.display = 'none';
+                chartBarrasLinhaVerde.style.display = 'flex';
+            }
+
+    }
+
+    filtrarLinhaEstacao.addEventListener("change", toggleFiltarEstacoesLinhas);
+
+    toggleFiltarEstacoesLinhas();
+
 
     // GRÁFICO DE PIZZA:
     const pizzaGrafico = document.getElementById('pizzaChart').getContext('2d');
@@ -496,5 +831,186 @@
     const myPieChart = new Chart(pizzaGrafico, config);
 
 
+// GRÁFICO DE BARRAS!!!
+
+const ctxBarrasAzul = document.getElementById('chartBarrasLinhaAzul').getContext('2d');
+
+// Dados das estações da Linha Azul
+const dataBarrasAzul = {
+    labels: [
+    "Jabaquara", "Conceição", "São Judas", "Saúde-Ultrafarma", "Praça da Árvore",
+    "Santa Cruz", "Vila Mariana", "Ana Rosa", "Paraíso", "Vergueiro",
+    "São Joaquim", "Japão-Liberdade", "Sé", "São Bento", "Luz", "Tiradentes",
+    "Armênia", "Portuguesa-Tietê", "Carandiru", "Santana",
+    "JD SP-Ayrton Senna", "Parada Inglesa", "Tucuruvi"
+],
+    datasets: [{
+        label: 'Movimentação em Janeiro',
+        backgroundColor: 'blue',
+        borderColor: 'darkblue',
+        borderWidth: 1,
+        data: [
+            63, 23, 13, 35, 41, 81, 50, 64, 80, 21, 
+            17, 45, 153, 49, 116, 11, 16, 30, 9, 41, 
+            22, 30, 47
+        ],
+    }]
+};
+
+// Criando o gráfico de barras
+const chartBarrasAzul = new Chart(ctxBarrasAzul, {
+    type: 'bar',
+    data: dataBarrasAzul,
+    options: {
+        aspectRatio: 3,
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+        },
+        scales: {
+            x: { 
+                beginAtZero: true,
+                ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 } // Melhora a visibilidade dos nomes
+            },
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+const ctxBarrasVermelha = document.getElementById('chartBarrasLinhaVermelha').getContext('2d');
+const ctxBarrasVerde = document.getElementById('chartBarrasLinhaVerde').getContext('2d');
+
+// Dados das estações da Linha Vermelha
+const dataBarrasVermelha = {
+    labels: [
+        "Corinthians-Itaquera", "Artur Alvim", "Patriarca-Vila Ré", "Guilhermina-Esperança", "Vila Matilde",
+        "Penha-Lojas Besni", "Carrão-Assaí Atacadista", "Tatuapé", "Belém", "Bresser-Moóca", "Brás",
+        "Pedro II", "Sé", "Anhangabaú", "República", "Santa Cecília", "Marechal Deodoro", "Palmeiras-Barra Funda"
+    ],
+    datasets: [{
+        label: 'Movimentação em Janeiro',
+        backgroundColor: 'red',
+        borderColor: 'darkred',
+        borderWidth: 1,
+        data: [
+            75, 34, 21, 42, 38, 90, 55, 80, 60, 32, 
+            180, 57, 140, 65, 130, 25, 45, 85
+        ],
+    }]
+};
+
+// Criando o gráfico de barras para a Linha Vermelha
+const chartBarrasVermelha = new Chart(ctxBarrasVermelha, {
+    type: 'bar',
+    data: dataBarrasVermelha,
+    options: {
+        aspectRatio: 3,
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+        },
+        scales: {
+            x: { 
+                beginAtZero: true,
+                ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+            },
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+// Dados das estações da Linha Verde
+const dataBarrasVerde = {
+    labels: [
+        "Tamanduateí", "Sacomã", "Alto do Ipiranga", "Santos-Imigrantes", "Chácara Klabin",
+        "Ana Rosa", "Paraíso", "Brigadeiro", "Trianon-Masp", "Consolação", "Clínicas",
+        "Santuário N.S. de Fátima-Sumaré", "Vila Madalena"
+    ],
+    datasets: [{
+        label: 'Movimentação em Janeiro',
+        backgroundColor: 'green',
+        borderColor: 'darkgreen',
+        borderWidth: 1,
+        data: [
+            50, 27, 35, 30, 45, 100, 78, 55, 40, 62, 
+            37, 29, 50
+        ],
+    }]
+};
+
+// Criando o gráfico de barras para a Linha Verde
+const chartBarrasVerde = new Chart(ctxBarrasVerde, {
+    type: 'bar',
+    data: dataBarrasVerde,
+    options: {
+        aspectRatio: 3,
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+        },
+        scales: {
+            x: { 
+                beginAtZero: true,
+                ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+            },
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+// Gráfico de Barras para uma estação especifica
+
+function gerarGraficoEstacaoAno(estacao, ano, dados) {
+    const dataBarrasEstacaoAno = {
+        labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        datasets: [{
+            label: `Movimentação em ${ano} - ${estacao}`,
+            backgroundColor: 'purple',
+            borderColor: 'darkpurple',
+            borderWidth: 1,
+            data: dados,
+        }]
+    };
+
+    new Chart(ctxBarrasEstacaoAno, {
+        type: 'bar',
+        data: dataBarrasEstacaoAno,
+        options: {
+            aspectRatio: 3,
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                x: { 
+                    beginAtZero: true,
+                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+                },
+                y: { beginAtZero: true }
+            }
+        }
+    });
+}
+
+
+
+function toggleAnoEstacao() {
+        const valorAnoSelecionadoEstacao = ano_todas_estacoes.value;
+        kpi_ano_especifico_estacao.innerHTML = valorAnoSelecionadoEstacao;
+    }
+
+    
+    // Evento para detectar mudança no select principal
+    ano_todas_estacoes.addEventListener("change", toggleAnoEstacao);
+
+
+    // Exibe o grupo inicial baseado no valor padrão do select principal
+    toggleAnoEstacao();
+
+functio
 
 </script>

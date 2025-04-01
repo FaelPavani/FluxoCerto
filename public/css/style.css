@@ -778,7 +778,6 @@ footer {
 
 .box_imagem_quem_somos2 img {
     width: 25vw;
-    background-color: purple;
     box-shadow: -15px 15px 0px #4335DE;
 }
 
@@ -3489,14 +3488,14 @@ width: 42vw;
 
 .section_dashboard{
     width: 73vw;
-    height: 82vh;
+    height: 74vh;
     display: flex;
     flex-direction: column;
-    background-color: purple;
+    background-color: mediumseagreen;
 }
 .section_dash1{
     width: 100%;
-    height: 50%;
+    height: 55%;
     background-color: orange;
     display: flex;
 }
@@ -3523,16 +3522,26 @@ width: 42vw;
     width: 25.5vw;
     background-color: blue;
     align-items: center;
+    overflow: visible;
+    margin-bottom: 1rem;
 }
 .title_demanda_linha{
     margin-top: 0.4rem;
     font-size: 1.2rem;
+    margin-bottom: -1.1vw;
+    margin-left: 1rem;
+}
+.title_demanda_estacao{
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
     margin-left: 1rem;
 }
 .box_demanda_linhas{
     width: 50vw;
     border-radius: 0.5rem;
-    height: 30vh;
+    height: 26vh;
     background-color: aqua;
     border: 2px solid #02033B;
     display: flex;
@@ -3560,7 +3569,6 @@ width: 42vw;
     height: 30vh;
     padding-top: 1rem;
     display: flex;
-    background-color: red;
     margin-left: 1rem;
 }
 .box_titulo_grafico{
@@ -3608,7 +3616,7 @@ width: 42vw;
 }
 .box_kpis_dash{
     width: 22vw;
-    height: 13vh;
+    height: 11.5vh;
     border: #02033B 2px solid;
     border-radius: 0.5rem;
     background-color: #aaa;
@@ -3620,7 +3628,7 @@ width: 42vw;
 
 .section_dash2{
     width: 100%;
-    height: 50%;
+    height: 40vh;
     background-color: mediumspringgreen;
     display: flex;
     flex-direction: column;
@@ -3628,10 +3636,12 @@ width: 42vw;
 }
 .box_demanda_estacao{
     width: 73vw;
-    height: 35vh;
+    height: 30vh;
     border: 2px solid #02033B;
     border-radius: 0.5rem;
     background-color: yellow;
+    display: flex;
+    
 }
 
 .grafico_pizza{
