@@ -3426,14 +3426,13 @@ width: 42vw;
 .main_dashboard_containers{
     width: 100%;
     height: 100vh;
-    background-color: blue;
+    background-color: rgb(255, 252, 252);
     color: #02033B;
     display: flex;
     padding-top: 5.5rem;
     padding-left: 5.5rem;
 }
 .section_status_dashboard{
-    background-color: red;
     width: 18vw;
     height: 82vh;
     
@@ -3446,7 +3445,7 @@ width: 42vw;
 .box_status_linhas{
     width: 18vw;
     height: 50vh;
-    background-color: green;
+    background-color: #F3F8FF;
     border-radius: 0.5rem;
     border: 2px solid #02033B;
     padding: 1rem;
@@ -3466,15 +3465,18 @@ width: 42vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    background-color: peru;
+    font-size: 1.1rem;
+    background-color: white;
+    border: 2px solid #02033B;
+    color: rgb(206, 9, 9);
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .box_pizza_dash{
     width: 18vw;
     height: 30vh;
-    background-color: maroon;
+    background-color: #F3F8FF;
     border-radius: 0.5rem;
     border: 2px solid #02033B;
     display: flex;
@@ -3491,17 +3493,15 @@ width: 42vw;
     height: 74vh;
     display: flex;
     flex-direction: column;
-    background-color: mediumseagreen;
 }
 .section_dash1{
     width: 100%;
     height: 55%;
-    background-color: orange;
     display: flex;
+    justify-content: space-between;
 }
 
 .select_linhas{
-    background-color: red;
     width: 8rem;
     border-radius: 0.5rem;
     border: 2px solid #02033B;
@@ -3512,15 +3512,12 @@ width: 42vw;
     display: flex;
     align-items: center;
     height: 6.3vh;
-    background-color: pink;
     justify-content: center;
-    background-color: #f4f8fd;
 }
 .caixa_filtros{
     display: flex;
     justify-content: space-between;
     width: 25.5vw;
-    background-color: blue;
     align-items: center;
     overflow: visible;
     margin-bottom: 1rem;
@@ -3539,13 +3536,13 @@ width: 42vw;
     margin-left: 1rem;
 }
 .box_demanda_linhas{
-    width: 50vw;
+    width: 55vw;
     border-radius: 0.5rem;
     height: 26vh;
-    background-color: aqua;
+    background-color: #F3F8FF;
     border: 2px solid #02033B;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -3562,7 +3559,6 @@ width: 42vw;
     font-size: 0.8rem;
     
     height: 3.5vh;
-    background-color: #FFC247;
 }
 .kpis_demanda_linhas{
     width: 20vw;
@@ -3580,7 +3576,6 @@ width: 42vw;
     justify-content: center;
     font-size: 0.8rem;
     text-align: center;
-    background-color: #4335DE;
 }
 .title_filtros{
     font-size: 1.1rem;
@@ -3605,31 +3600,38 @@ width: 42vw;
 .grafico_linha{
     width: 80vw;
     height: 30vh;
-    background-color: beige;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 2px solid #02033B;
 }
 .container_kpis_dash{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: red;
     margin-left: 1vw;
 }
 .box_kpis_dash{
-    width: 22vw;
+    width: 17vw;
     height: 11.5vh;
+    margin-bottom: 0.5vw;
     border: #02033B 2px solid;
     border-radius: 0.5rem;
-    background-color: #aaa;
+    background-color: #F3F8FF;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 0.5vw;
+    font-size: 0.8rem;
+}
+.box_kpis_dash span{
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
 }
 
 .section_dash2{
     width: 100%;
     height: 40vh;
-    background-color: mediumspringgreen;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -3639,11 +3641,20 @@ width: 42vw;
     height: 30vh;
     border: 2px solid #02033B;
     border-radius: 0.5rem;
-    background-color: yellow;
+    background-color: #F3F8FF;
     display: flex;
     
 }
 
 .grafico_pizza{
-   
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-top: 2.5rem;
+    border: 2px solid #02033B;
+}
+.graficoBarra{
+    padding: 0.3vw;
+    background-color: white;
+    border: 2px solid #02033B;
+    border-radius: 0.5vw;
 }

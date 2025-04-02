@@ -48,11 +48,11 @@
                 <h4>Status das linhas</h4>
 
                 <h6>Azul</h6>
-                <div class="status_linhas"></div>
+                <div class="status_linhas">5.1% de Aumento</div>
                 <h6>Vermelha</h6>
-                <div class="status_linhas"></div>
+                <div class="status_linhas">3.5% de Aumento</div>
                 <h6>Verde</h6>
-                <div class="status_linhas"></div>
+                <div class="status_linhas">7.8% de Aumento</div>
 
             </div>
 
@@ -92,7 +92,7 @@
                         <!-- Opção: Por Anos -->
                         <div class="caixa_filtros">
                             <div id="porAnos"
-                                style="display: flex; justify-content: space-between; align-items: center; width: 24vw; background-color: aqua;">
+                                style="display: flex; justify-content: space-between; align-items: center; width: 24vw;">
                                 <p>De:</p>
                                 <label>
                                     <select class="select_linhas" id="options_de" name="options">
@@ -118,7 +118,7 @@
 
                             <!-- Opção: Ano Específico -->
                             <div id="anoEspecifico"
-                                style="display: none; justify-content: flex-end; align-items: center; width: 23.8vw; background-color: lightblue;">
+                                style="display: none; justify-content: flex-end; align-items: center; width: 23.8vw;">
                                 <p style="margin-right: 0.3rem;">Ano:</p>
                                 <label>
                                     <select class="select_linhas" id="options_ano_especifico" name="options">
@@ -172,7 +172,7 @@
                                             <h4 class="title_filtro_kpi">De:</h4>
                                             <span id="kpi_de" class="ano_especifico_kpi">2024</span>
                                         </div>
-                                        <div style="width: 5vw; background-color: magenta;">
+                                        <div style="width: 5vw;">
                                             <h4 class="title_filtro_kpi">Até:</h4>
                                             <span id="kpi_ate" class="ano_especifico_kpi">2024</span>
                                         </div>
@@ -190,12 +190,15 @@
 
                     <div class="box_kpis_dash">
                         <h4>Estação mais movimentada</h4>
+                        <span>Sé</span>
                     </div>
                     <div class="box_kpis_dash">
-                        <h4 >Expectativa de aumento de fluxo (linha)</h4>
+                        <h4 >Projeção de aumento de fluxo (linha)</h4>
+                        <span style="color: rgb(206, 9, 9)">5.8%</span>
                     </div>
                     <div class="box_kpis_dash">
                         <h4>Estação com maior expectativa</h4>
+                        <span>Corinthians-Itaquera</span>
                     </div>
 
 
@@ -228,7 +231,7 @@
                     <!-- Opção: Por Anos -->
                     <div  class="caixa_filtros">
                         <div id="porTodasEstacoes"
-                            style="display: flex; justify-content: end; align-items: center; width: 24vw; background-color: aqua;">
+                            style="display: flex; justify-content: end; align-items: center; width: 24vw;">
                             <p style="margin-right: 0.5rem;">No ano de:</p>
                             <label>
                                 <select class="select_linhas" id="ano_todas_estacoes" name="options">
@@ -244,7 +247,7 @@
                         </div>
 
                         <!-- Opção: Ano Específico -->
-                        <div id="divEstacaoEspecifica" style="display: flex; justify-content: flex-end; align-items: center; width: 30vw; background-color: lightblue;">
+                        <div id="divEstacaoEspecifica" style="display: flex; justify-content: flex-end; align-items: center; width: 30vw;">
                             
                             <label style="display: flex; justify-content: space-around; align-items: center; width: 30rem;">
                                 <p style="margin-right: 0.3rem;">Estação:</p>
@@ -331,13 +334,13 @@
                     </div>
 
                     <div id="barras_estacoes_linhas" style="width: 43vw;">
-                    <canvas id="chartBarrasLinhaAzul"></canvas>
-                    <canvas style="display: none;" id="chartBarrasLinhaVermelha"></canvas>
-                    <canvas style="display: none;" id="chartBarrasLinhaVerde"></canvas>
+                    <canvas class="graficoBarra" id="chartBarrasLinhaAzul"></canvas>
+                    <canvas class="graficoBarra" style="display: none;" id="chartBarrasLinhaVermelha"></canvas>
+                    <canvas class="graficoBarra" style="display: none;" id="chartBarrasLinhaVerde"></canvas>
                 </div>
-                    <canvas style="display: none;" id="dataBarrasEstacaoAno"></canvas>
+                    <canvas class="graficoBarra" style="display: none;" id="dataBarrasEstacaoAno"></canvas>
 
-                    <div style="margin-left: 2rem;">
+                    <div style="margin-left: 2rem; margin-top: 0.5rem;">
                         <h4 class="title_filtros">Filtrando por:</h4>
                         <div id="kpi_linha_azul_estacao" class="linha_kpi">
                             <div style="background-color: rgb(7, 7, 196);" class="kpi_linha"></div>
@@ -351,18 +354,23 @@
                             <div style="background-color: rgb(23, 122, 23);" class="kpi_linha"></div>
                             <h4>Linha verde</h4>
                         </div>
+
+                        <div style="display: none; flex-direction: column;" id="kpi_por_estacao_especifica">
+                            <h4 class="title_filtro_kpi">Na estação:</h4>
+                            <span id="estacao_especifica" class="ano_especifico_kpi">Saúde</span>
+                        </div>
                         <div id="kpi_por_ano_estacao">
                             <h4 class="title_filtro_kpi">No ano de:</h4>
                             <span id="kpi_ano_especifico_estacao" class="ano_especifico_kpi">2020</span>
                         </div>
 
                         <div style="display: none;" id="kpi_por_anos_estacao">
-                            <div style="width: 5vw; background-color: aliceblue;">
+                            <div style="width: 5vw;">
 
                                 <h4 class="title_filtro_kpi">De:</h4>
                                 <span id="kpi_de_estacao" class="ano_especifico_kpi">2024</span>
                             </div>
-                            <div style="width: 5vw; background-color: magenta;">
+                            <div style="width: 5vw;">
                                 <h4 class="title_filtro_kpi">Até:</h4>
                                 <span id="kpi_ate_estacao" class="ano_especifico_kpi">2024</span>
                             </div>
@@ -450,6 +458,7 @@
             type: 'line',
             data,
             options: {
+                aspectRatio: 3,
                 responsive: true,
                 plugins: {
                     legend: {
@@ -523,6 +532,7 @@
             type: 'line',
             data,
             options: {
+                aspectRatio: 3,
                 responsive: true,
                 plugins: { legend: { display: false } },
                 scales: {
@@ -609,6 +619,7 @@ function createChart2(data) {
         type: 'line',
         data: JSON.parse(JSON.stringify(data)), // Garante que não modificamos o original
         options: {
+            aspectRatio: 3,
             responsive: true,
             plugins: { legend: { display: false } },
             scales: {
@@ -697,20 +708,30 @@ document.getElementById('options_ate').addEventListener('change', updateChart);
 
      function toggleAnoEspecifico() {
         const valorSelecionadoAnoEspecifico = options_ano_especifico.value;
-            kpi_ano_especifico.innerHTML = valorSelecionadoAnoEspecifico;
+        const valorSelecionadoAnoEspecificoEstacoes = options_ano_especifico_estacoes.value;
+        
+           kpi_ano_especifico.innerHTML = valorSelecionadoAnoEspecifico;
+           kpi_ano_especifico_estacao.innerHTML = valorSelecionadoAnoEspecificoEstacoes;
     }
 
     
     // Evento para detectar mudança no select principal
     options_ano_especifico.addEventListener("change", toggleAnoEspecifico);
-
+    options_ano_especifico_estacoes.addEventListener("change", toggleAnoEspecifico);
 
     // Exibe o grupo inicial baseado no valor padrão do select principal
     toggleAnoEspecifico();
 
-// TOGGLE DAS ESTAÇÕES 
 
-function togglefiltarPorEstacoes() {
+// TOGGLE DAS ESTAÇÕES 
+console.log(document.getElementById("filtarPorEstacoes"));
+function togglefiltrarPorEstacoes() {
+    let dataBarrasEstacaoAno = document.getElementById('dataBarrasEstacaoAno');
+        const ValorSelecionadoEstacaoEspecificaAzul = estacoesAzul.value;
+        const ValorSelecionadoEstacaoEspecificaVermelha = estacoesVermelha.value;
+        const ValorSelecionadoEstacaoEspecificaVerde = estacoesVerde.value;
+
+
         const valorSelecionadofiltarPorEstacoes = filtarPorEstacoes.value;
             // kpi_de.innerHTML = valorSelecionadoDe;
 
@@ -718,22 +739,36 @@ function togglefiltarPorEstacoes() {
                 porTodasEstacoes.style.display = 'flex';
                 divEstacaoEspecifica.style.display = 'none';
 
-                barras_estacoes_linhas.style.display = 'flex;'
-                dataBarrasEstacaoAno.style.display = 'none';
+                barras_estacoes_linhas.style.display = 'flex'
+                document.getElementById('dataBarrasEstacaoAno').style.display = 'none';
 
+                kpi_por_estacao_especifica.style.display = 'none'
             }else if(valorSelecionadofiltarPorEstacoes == 'estacao_especifica'){
                 porTodasEstacoes.style.display = 'none';
                 divEstacaoEspecifica.style.display = 'flex';
 
                 dataBarrasEstacaoAno.style.display = 'flex';
                 barras_estacoes_linhas.style.display = 'none'
+
+                kpi_por_estacao_especifica.style.display = 'flex'
+
+                
+                if(ValorSelecionadoEstacaoEspecificaAzul){
+                    estacao_especifica.innerHTML = ValorSelecionadoEstacaoEspecificaAzul
+                }else if(ValorSelecionadoEstacaoEspecificaVermelha){
+                    estacao_especifica.innerHTML = ValorSelecionadoEstacaoEspecificaVermelha
+                }else if(ValorSelecionadoEstacaoEspecificaVerde){
+                    estacao_especifica.innerHTML = ValorSelecionadoEstacaoEspecificaVerde
+                }
             }
 
     }
 
-    filtarPorEstacoes.addEventListener("change", togglefiltarPorEstacoes);
-
-    togglefiltarPorEstacoes();
+    filtarPorEstacoes.addEventListener("change", togglefiltrarPorEstacoes);
+    estacoesAzul.addEventListener("change", togglefiltrarPorEstacoes);
+    estacoesVermelha.addEventListener("change", togglefiltrarPorEstacoes);
+    estacoesVerde.addEventListener("change", togglefiltrarPorEstacoes);
+    togglefiltrarPorEstacoes();
 
 
 
@@ -807,6 +842,7 @@ function toggleFiltarEstacoesLinhas() {
         type: 'pie',
         data: data,
         options: {
+            aspectRatio: 3,
             responsive: true, // Faz o gráfico ser responsivo
             plugins: {
                 tooltip: {
@@ -963,19 +999,19 @@ const chartBarrasVerde = new Chart(ctxBarrasVerde, {
 
 // Gráfico de Barras para uma estação especifica
 
-function gerarGraficoEstacaoAno(estacao, ano, dados) {
-    const dataBarrasEstacaoAno = {
+function criarGraficoBarras() {
+    dataBarrasEstacaoAno = {  // Agora inicializa corretamente antes do uso
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
         datasets: [{
-            label: `Movimentação em ${ano} - ${estacao}`,
-            backgroundColor: 'purple',
-            borderColor: 'darkpurple',
+            label: `Movimentação`,
+            backgroundColor: 'blue',
+            borderColor: 'blue',
             borderWidth: 1,
-            data: dados,
+            data: [70,80,70,65,58,77,99,88,60,70,99,90],
         }]
     };
-
-    new Chart(ctxBarrasEstacaoAno, {
+    const ctxBarrasEstacaoAno = document.getElementById("dataBarrasEstacaoAno").getContext("2d");
+    const chartGraficoBarrasAnoEspecifico = new Chart(ctxBarrasEstacaoAno, {
         type: 'bar',
         data: dataBarrasEstacaoAno,
         options: {
@@ -996,7 +1032,7 @@ function gerarGraficoEstacaoAno(estacao, ano, dados) {
     });
 }
 
-
+criarGraficoBarras() 
 
 function toggleAnoEstacao() {
         const valorAnoSelecionadoEstacao = ano_todas_estacoes.value;
@@ -1011,6 +1047,5 @@ function toggleAnoEstacao() {
     // Exibe o grupo inicial baseado no valor padrão do select principal
     toggleAnoEstacao();
 
-functio
 
 </script>
