@@ -918,7 +918,7 @@ footer {
     width: 100%;
     height: 14.3vh;
     align-items: center;
-    
+
     border-bottom: 2px solid #02033B;
 }
 
@@ -1039,12 +1039,15 @@ footer {
     padding-top: 1vw;
     align-items: center;
 }
-.caixa_direita{
+
+.caixa_direita {
     border-radius: 1vw 9vw 1vw 1vw;
 }
-.caixa_esquerda{
+
+.caixa_esquerda {
     border-radius: 1vw 1vw 1vw 9vw;
 }
+
 .box_servicos:hover {
     transform: translateY(-8px);
 }
@@ -1564,18 +1567,20 @@ footer {
     width: 68vw;
     height: 48vh;
     /* Ativa o Grid */
-    
+
     /* 2 colunas de tamanhos iguais */
 }
-.box_caixa_cadastro{
+
+.box_caixa_cadastro {
     display: grid;
-     grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
-.mensagem_erro_cadastro{
+
+.mensagem_erro_cadastro {
     width: 100%;
     font-size: 1.3vw;
     padding: 0.5vw;
-    border-radius:0.9rem;
+    border-radius: 0.9rem;
     color: white;
     display: none;
     margin-bottom: 0.5vw;
@@ -1604,6 +1609,7 @@ footer {
     padding-left: 1vw;
     border-radius: 1.3vw;
 }
+
 .mensagem_erro_cnpj_email {
     width: 25vw;
     font-size: 1.3vw;
@@ -1613,7 +1619,7 @@ footer {
     padding-left: 1vw;
     border-radius: 1.3vw;
     background-color: rgba(228, 23, 23, 0.815);
-    
+
 }
 
 .mensagem_erro li {
@@ -1650,7 +1656,7 @@ footer {
     transform: scale(1.02);
 }
 
-.concluido_cadastro{
+.concluido_cadastro {
     width: 30vw;
     height: 25vh;
     background-color: green;
@@ -1669,6 +1675,7 @@ footer {
     z-index: 10;
 
 }
+
 .logo_cadastro {
     position: absolute;
     top: 0.5vw;
@@ -2161,9 +2168,11 @@ footer {
     background-position: center;
     border: 2px solid #02033B;
 }
-.icone_guest_branco{
+
+.icone_guest_branco {
     background-image: url(../assets/guest_branco.png);
 }
+
 .icone_guest img {
     height: 8vh;
 }
@@ -2217,7 +2226,7 @@ footer {
         border: none;
     }
 
-    .icone_guest img{
+    .icone_guest img {
         width: 8vw;
         height: auto;
         align-self: flex-end;
@@ -2456,13 +2465,16 @@ footer {
         font-size: 3vw;
         border-radius: 4vw;
     }
-    .section_footer{
+
+    .section_footer {
         height: auto;
         margin-top: 2vw;
     }
-    .caixa_redes{
-       width: 20vw;
+
+    .caixa_redes {
+        width: 20vw;
     }
+
     .box_footer h4 {
         font-size: 1.8vw;
     }
@@ -2480,7 +2492,7 @@ footer {
         text-align: center;
     }
 
-    .box_formulario_footer{
+    .box_formulario_footer {
         height: auto;
     }
 
@@ -2498,7 +2510,7 @@ footer {
         height: 7vh;
         margin-bottom: 1vw;
     }
-    
+
 
     .box_entrarcontato h3 {
         font-size: 3vw;
@@ -2701,12 +2713,13 @@ footer {
         margin-right: 1vw;
 
     }
-    .linkedin_mobile:hover{
-        background-color:#FFC247;
+
+    .linkedin_mobile:hover {
+        background-color: #FFC247;
     }
 
     .caixa_cargo_linkedin {
-        width:  88%;
+        width: 88%;
 
         margin-top: 1vw;
         height: 8vh;
@@ -2728,65 +2741,77 @@ footer {
         padding-top: 14vw;
     }
 
-    .section_equipe_mobile{
+    .section_equipe_mobile {
         display: flex !important;
     }
-    .div_servicos{
+
+    .div_servicos {
         width: 45vw;
-        height:50vh;
+        height: 50vh;
         align-self: flex-end;
         transform: translate(55vw, 0) scale(1);
-        
+
     }
-    .box_servicos{
+
+    .box_servicos {
         width: 17rem;
         height: 19rem;
-       margin-bottom: 2vw;
-       border-radius: 5vw 13vw 5vw 13vw;
+        margin-bottom: 2vw;
+        border-radius: 5vw 13vw 5vw 13vw;
     }
-    .container_servicos{
-        height: auto;   
+
+    .container_servicos {
+        height: auto;
         width: 80vw;
-        border-radius: 5vw 14vw 5vw 14vw;  
-        padding: 3vw; 
+        border-radius: 5vw 14vw 5vw 14vw;
+        padding: 3vw;
     }
-    .section_servicos{
+
+    .section_servicos {
         height: auto;
         padding-bottom: 10vw;
     }
-    .title_servicos{
+
+    .title_servicos {
         font-size: 8vw;
     }
-    .img_servicos{
+
+    .img_servicos {
         width: 22rem;
     }
-    .box_servicos h4{
+
+    .box_servicos h4 {
         font-size: 1.8rem;
     }
-    .box_servicos p{
+
+    .box_servicos p {
         width: 33vw;
         font-size: 1rem;
         font-weight: 600;
         margin-top: 1vw;
     }
-    .conteudo_sec_header{
+
+    .conteudo_sec_header {
         z-index: 4;
     }
-    .imagem_suporte{
+
+    .imagem_suporte {
         width: 56vw;
         height: 65vh;
         align-self: flex-end;
         transform: translate(50vw, 18vw) scale(1);
     }
-    .section_header_sobre{
+
+    .section_header_sobre {
         position: relative;
         height: 40rem;
     }
-    .imagem_suporte{
+
+    .imagem_suporte {
         height: 30rem;
     }
-   
-    .container_faq{
+
+    .container_faq {
         width: 95vw;
         flex-direction: column-reverse;
         justify-content: center;
@@ -2796,61 +2821,72 @@ footer {
         padding-top: 1vw;
         border-radius: 4vw;
     }
-    .box_faq{
+
+    .box_faq {
         width: 85vw;
         height: 25vh;
         overflow-x: auto;
         overflow-y: hidden;
         display: flex;
-        overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+        overflow-x: auto;
+        /* Adiciona rolagem horizontal se necessário */
         white-space: nowrap;
         flex-direction: row;
     }
-    .section_suporte{
+
+    .section_suporte {
         height: auto;
-        
+
     }
-    .container_suporte{
+
+    .container_suporte {
         margin-top: 8rem;
         width: 95vw;
         margin-bottom: 10vw;
         padding-top: 2vw;
         padding-bottom: 2vw;
     }
-    .container_suporte h3{
+
+    .container_suporte h3 {
         font-size: 6vw;
     }
-    .box_suporte{
+
+    .box_suporte {
         width: 90vw;
         height: 13vh;
     }
-    .box_suporte input{
+
+    .box_suporte input {
         width: 29.5vw;
         height: 12vh;
         border-radius: 2vw;
         font-size: 2.4vw;
         background-size: 3vw;
     }
-    .container_suporte select{
+
+    .container_suporte select {
         width: 90vw;
         margin-top: 0;
         font-size: 3vw;
     }
-    .container_suporte textarea{
+
+    .container_suporte textarea {
         width: 90vw;
         margin-top: 2vw;
         font-size: 3vw;
     }
-    .section_home_suporte{
-    }
-    .container_suporte button{
+
+    .section_home_suporte {}
+
+    .container_suporte button {
         width: 30vw;
         margin-right: 3vw;
         border-radius: 3vw;
         font-size: 2.5vw;
         align-self: flex-end;
     }
-    .caixa_faq{
+
+    .caixa_faq {
         width: 70vw;
         height: 20vh;
         margin-left: 1vw;
@@ -2858,98 +2894,120 @@ footer {
         font-size: 2.9vw;
         border-radius: 3vw;
     }
-    .esquerdo_faq h4{
+
+    .esquerdo_faq h4 {
         display: none;
     }
-    .esquerdo_faq{
+
+    .esquerdo_faq {
         height: 30vw;
         justify-self: start;
     }
-    .direito_faq{
+
+    .direito_faq {
         height: 60vh;
         width: 85vw;
     }
-    .box_resposta{
+
+    .box_resposta {
         width: 85vw;
         font-size: 4vw;
         border-radius: 4vw;
     }
-    .direito_faq h4{
+
+    .direito_faq h4 {
         font-size: 7vw;
     }
-    .title_sup{
+
+    .title_sup {
         font-size: 6vw;
     }
-    .title_sup2{
+
+    .title_sup2 {
         font-size: 4.5vw;
     }
-    .box_ja_tem_conta{
+
+    .box_ja_tem_conta {
         width: 40vw;
         height: 10vh;
     }
-    .box_ja_tem_conta h2{
+
+    .box_ja_tem_conta h2 {
         font-size: 2.4vw;
         font-weight: 700;
     }
-    .box_ja_tem_conta button{
+
+    .box_ja_tem_conta button {
         width: 15vw;
         height: 8vh;
         font-size: 2.2vw;
     }
-    .section_cadastro{
+
+    .section_cadastro {
         width: 90vw;
         padding-left: 1vw;
         align-items: start;
     }
-    .box_title_cadastro h6{
+
+    .box_title_cadastro h6 {
         font-size: 3.5vw;
     }
-    .box_title_cadastro h2{
+
+    .box_title_cadastro h2 {
         font-size: 5vw;
     }
-    .section_cadastro input{
+
+    .section_cadastro input {
         width: 40vw;
         height: 15vh;
         border-radius: 2vw;
     }
-    .box_input{
+
+    .box_input {
         width: 40vw;
         height: 15vh;
         margin-bottom: 1vw;
         margin-left: 2vw;
     }
-    .box_input label{
+
+    .box_input label {
         font-size: 3vw;
     }
-    .box_mensagem_enviar button{
+
+    .box_mensagem_enviar button {
         width: 25vw;
         font-size: 3vw;
         border-radius: 2.5vw;
 
     }
-    .box_mensagem_enviar{
+
+    .box_mensagem_enviar {
         width: 85vw;
         margin-top: 4vw;
         height: 20vh;
     }
-    .mensagem_erro_cnpj_email{
+
+    .mensagem_erro_cnpj_email {
         height: 20vh;
         width: 28.3vw;
         font-size: 2vw;
     }
-    .mensagem_erro{
+
+    .mensagem_erro {
         width: 28.3vw;
         height: 20vh;
         font-size: 2vw;
 
     }
-    .logo_cadastro{
+
+    .logo_cadastro {
         width: 20vw;
         top: -3vw;
     }
-    .logo_login{
+
+    .logo_login {
         width: 20vw;
-        top: -3vw; 
+        top: -3vw;
     }
 }
 
@@ -3106,237 +3164,298 @@ footer {
 
 /*Começo da estilização para celulares!*/
 @media (max-width: 425px) {
-    .section_inicio{
+    .section_inicio {
         position: relative;
         overflow: hidden;
         height: 41rem;
     }
-    .icone_guest{
+
+    .icone_guest {
         width: 10vw;
     }
-    .img_trem{
+
+    .img_trem {
         width: 20vw;
     }
-    .logo_texto{
+
+    .logo_texto {
         width: 25vw;
     }
-    .div_logo{
+
+    .div_logo {
         margin-left: 11vw;
     }
 
-   .section_home_suporte{
-    overflow: hidden;
-    height: auto;
-   }
-   .menu-hamburguer{
-    font-size: 8vw;
-   }
-   .fechar-menu{
-    font-size: 8vw;
-   }
-   .menu-lateral{
-    padding-top: 25vw;
-    font-size: 6.5vw;
-    border-radius:  5vw;
-    
-   }
-   .title_mobile{
-    font-size: 7.5vw;
-   }
-   .seta_amarela{
-    width: 8vw;
-   }
-   .container_modal{
-    padding-top: 4rem;
-    border-radius:  5vw;
-    border-left: 2px solid #02033B;
-    border-bottom: 2px solid #02033B;
-    border-right: 2px solid #02033B;
+    .section_home_suporte {
+        overflow: hidden;
+        height: auto;
+    }
 
-   }
-   .div_controle{
-    margin-top: 25vw;
-    z-index: 5;
-   }
-   .div_controle h1{
-    font-size: 10vw;
-    width: 70vw;
-   }
-   .div_controle p{
-width: 80vw;
-font-size: 4.5vw;
-   }
-   .div_celular{
-  /* margin-bottom: -22vw; */
-  /* margin-right: -10vw; */
-  width:48vw;
-  height: 28vh;
-  z-index: 1;
-  box-shadow: -15px -15px 0px #4335DE;
-  
-   }
-   .quero_ser_cliente{
-    width: 58vw;
-   }
-   
-   .box_controle a{
-    font-size: 4vw;
-   }
-   a.ja_sou_cliente{
-width: 42vw;
-   }
-   .box_saiba{
-    height: 50vh;
-   }
-   .section_conheca{
-    height: 70vh;
-   }
-   .box_conheca{
-    height: 50vh;
-   }
-   .box_conheca p{
-  font-size: 3.4vw;
-   }
-   .home_suporte_imagem{
-    width: 35vw;
-    height: 25vh;
-    padding-top: 3vw;
-   }
-   .conteudo_home_suporte h4{
-    font-size: 7vw;
-   }
-   .conteudo_home_suporte p{
-    font-size: 3vw;
-   }
-   .conteudo_home_suporte span{
-    width: 30vw;
-    font-size: 3.5vw;
-   }
-   .container_caixas_footer{
-    width: 88vw;
-   }
-   .box_footer{
-    width: 28.5vw;
+    .menu-hamburguer {
+        font-size: 8vw;
+    }
 
-   }
-   .box_footer img{
-    width: 8vw;
-   }
-   .box_footer h4{
-    font-size: 3vw;
-   }
-   .box_footer p{
-    font-size: 2.5vw;
-   }
-   .section_footer{
-    width: 95vw;
-    margin-bottom: 10vw;
-   }
-   .box_entrarcontato{
-   width: 40vw;
-   margin-top: -14vw;
-   }
-   .box_formulario_footer{
-    width: 50vw;
-   }
-   .box_entrarcontato h3{
-    font-size: 5vw;
-   }
-   .box_entrarcontato p {
-    font-size: 2.5vw;
-   }
-   .box_entrarcontato span {
-    font-size: 2.5vw;
-   }
-   .rede_social{
-    width: 10vw;
-   }
-   .box_formulario_footer p{
-    font-size: 3.5vw;
-   }
-   .box_nome_email input{
-    font-size: 2.5vw;
-   }
-   .box_formulario_footer textarea{
-    font-size: 2.5vw;
-   }
-   .box_formulario_footer button{
-    font-size: 3vw;
-   }
-   .conteudo_sec_header{
-    top: 25vw;
-   }
-   .section_header_sobre{
-    height: 30rem;
-    background-size: contain;
-    background-size: 40rem;
-    background-position: -20rem;
-   }
-   .div_servicos{
-    width: 10rem;
-    height: 14rem;
-    background-position: center;
-   }
-   .box_quem_somos h4{
-    font-size: 3vw;
-   }
-   .title_sobre{
-    font-size: 6vw;
-   }
-   .box_imagem_quem_somos{
-    width: 50vw;
-    height: 30vh;
-   }
-   .box_quem_somos2 h4{
-    font-size: 3vw;
-   }
-   .box_imagem_quem_somos2{
-    width: 50vw;
-    height: 30vh;
-   }
-   .section_sobre_empresa{
-    height: 90vh;
-   }
-   .box_missao{
-    border: #02033B 3px solid;
-    height: 40vh;
-   }
-   .box_missao:hover{
-    background-color: #02033B;
-   }
-   .box_missao p {
-    font-size: 3vw;
-    width: 100%;
-   }
-   .box_valores p {
-    font-size: 4vw;
-   }
-   .box_valores{
-    height: 30vh;
-   }
-   .container_valores{
-    height: 63vh;
-   }
-   .box_equipe_mobile{
-    width: 60vw;
-   }
-   .title_equipe{
-    font-size: 8vw;
-   }
-   .linkedin_mobile{
-    width: 15vw;
-    padding: 2.5vw;
-   }
-   .img_servicos{
-    width: 4.5rem;
-   }
-   .box_servicos{
-    height: 15rem;
-   }
-   .box_servicos p{
-    font-size: 0.8rem;
-   }
- 
+    .fechar-menu {
+        font-size: 8vw;
+    }
+
+    .menu-lateral {
+        padding-top: 25vw;
+        font-size: 6.5vw;
+        border-radius: 5vw;
+
+    }
+
+    .title_mobile {
+        font-size: 7.5vw;
+    }
+
+    .seta_amarela {
+        width: 8vw;
+    }
+
+    .container_modal {
+        padding-top: 4rem;
+        border-radius: 5vw;
+        border-left: 2px solid #02033B;
+        border-bottom: 2px solid #02033B;
+        border-right: 2px solid #02033B;
+
+    }
+
+    .div_controle {
+        margin-top: 25vw;
+        z-index: 5;
+    }
+
+    .div_controle h1 {
+        font-size: 10vw;
+        width: 70vw;
+    }
+
+    .div_controle p {
+        width: 80vw;
+        font-size: 4.5vw;
+    }
+
+    .div_celular {
+        /* margin-bottom: -22vw; */
+        /* margin-right: -10vw; */
+        width: 48vw;
+        height: 28vh;
+        z-index: 1;
+        box-shadow: -15px -15px 0px #4335DE;
+
+    }
+
+    .quero_ser_cliente {
+        width: 58vw;
+    }
+
+    .box_controle a {
+        font-size: 4vw;
+    }
+
+    a.ja_sou_cliente {
+        width: 42vw;
+    }
+
+    .box_saiba {
+        height: 50vh;
+    }
+
+    .section_conheca {
+        height: 70vh;
+    }
+
+    .box_conheca {
+        height: 50vh;
+    }
+
+    .box_conheca p {
+        font-size: 3.4vw;
+    }
+
+    .home_suporte_imagem {
+        width: 35vw;
+        height: 25vh;
+        padding-top: 3vw;
+    }
+
+    .conteudo_home_suporte h4 {
+        font-size: 7vw;
+    }
+
+    .conteudo_home_suporte p {
+        font-size: 3vw;
+    }
+
+    .conteudo_home_suporte span {
+        width: 30vw;
+        font-size: 3.5vw;
+    }
+
+    .container_caixas_footer {
+        width: 88vw;
+    }
+
+    .box_footer {
+        width: 28.5vw;
+
+    }
+
+    .box_footer img {
+        width: 8vw;
+    }
+
+    .box_footer h4 {
+        font-size: 3vw;
+    }
+
+    .box_footer p {
+        font-size: 2.5vw;
+    }
+
+    .section_footer {
+        width: 95vw;
+        margin-bottom: 10vw;
+    }
+
+    .box_entrarcontato {
+        width: 40vw;
+        margin-top: -14vw;
+    }
+
+    .box_formulario_footer {
+        width: 50vw;
+    }
+
+    .box_entrarcontato h3 {
+        font-size: 5vw;
+    }
+
+    .box_entrarcontato p {
+        font-size: 2.5vw;
+    }
+
+    .box_entrarcontato span {
+        font-size: 2.5vw;
+    }
+
+    .rede_social {
+        width: 10vw;
+    }
+
+    .box_formulario_footer p {
+        font-size: 3.5vw;
+    }
+
+    .box_nome_email input {
+        font-size: 2.5vw;
+    }
+
+    .box_formulario_footer textarea {
+        font-size: 2.5vw;
+    }
+
+    .box_formulario_footer button {
+        font-size: 3vw;
+    }
+
+    .conteudo_sec_header {
+        top: 25vw;
+    }
+
+    .section_header_sobre {
+        height: 30rem;
+        background-size: contain;
+        background-size: 40rem;
+        background-position: -20rem;
+    }
+
+    .div_servicos {
+        width: 10rem;
+        height: 14rem;
+        background-position: center;
+    }
+
+    .box_quem_somos h4 {
+        font-size: 3vw;
+    }
+
+    .title_sobre {
+        font-size: 6vw;
+    }
+
+    .box_imagem_quem_somos {
+        width: 50vw;
+        height: 30vh;
+    }
+
+    .box_quem_somos2 h4 {
+        font-size: 3vw;
+    }
+
+    .box_imagem_quem_somos2 {
+        width: 50vw;
+        height: 30vh;
+    }
+
+    .section_sobre_empresa {
+        height: 90vh;
+    }
+
+    .box_missao {
+        border: #02033B 3px solid;
+        height: 40vh;
+    }
+
+    .box_missao:hover {
+        background-color: #02033B;
+    }
+
+    .box_missao p {
+        font-size: 3vw;
+        width: 100%;
+    }
+
+    .box_valores p {
+        font-size: 4vw;
+    }
+
+    .box_valores {
+        height: 30vh;
+    }
+
+    .container_valores {
+        height: 63vh;
+    }
+
+    .box_equipe_mobile {
+        width: 60vw;
+    }
+
+    .title_equipe {
+        font-size: 8vw;
+    }
+
+    .linkedin_mobile {
+        width: 15vw;
+        padding: 2.5vw;
+    }
+
+    .img_servicos {
+        width: 4.5rem;
+    }
+
+    .box_servicos {
+        height: 15rem;
+    }
+
+    .box_servicos p {
+        font-size: 0.8rem;
+    }
+
 }
 
 
@@ -3345,18 +3464,19 @@ width: 42vw;
 .body_dash {
     background-color: rgb(251, 252, 253);
 }
-.cabecalho_dashboard{
+
+.cabecalho_dashboard {
     border-bottom: 2px solid #02033B;
-        background: linear-gradient(to bottom, white, #E7EFFA);
-        width: 100%;
-        height: 10vh;
-        z-index: 11;
-        position: fixed;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
-        padding-left: 5rem;
+    background: linear-gradient(to bottom, white, #E7EFFA);
+    width: 100%;
+    height: 10vh;
+    z-index: 11;
+    position: fixed;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    padding-left: 5rem;
 }
 
-.box_usuario_dash{
+.box_usuario_dash {
     width: 15rem;
     height: 100%;
     display: flex;
@@ -3364,40 +3484,45 @@ width: 42vw;
     align-items: center;
 }
 
-.box_user_dashboard{
+.box_user_dashboard {
     display: flex;
     margin-left: 0.5rem;
     flex-direction: column;
 }
 
-.box_user_dashboard h3{
+.box_user_dashboard h3 {
     font-size: 1.3rem;
     font-weight: 800;
 }
-.box_user_dashboard h6{
+
+.box_user_dashboard h6 {
     font-size: 0.9rem;
     color: #02033b8c;
 }
-.lateral_dashboard{
+
+.lateral_dashboard {
     border-right: 2px solid #02033B;
-        background: linear-gradient(to right, white,   #E7EFFA);
-        width: 4.2rem;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        z-index: 11;
-        position: fixed;
-        left: 0;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(to right, white, #E7EFFA);
+    width: 4.2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 11;
+    position: fixed;
+    left: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
 }
-.imagem_dashboard{
+
+.imagem_dashboard {
     width: 2.2rem;
     cursor: pointer;
 }
-.imagem_dashboard:hover{
+
+.imagem_dashboard:hover {
     transform: scale(1.1);
 }
-.box_lateral_home{
+
+.box_lateral_home {
     width: 100%;
     height: 8rem;
     display: flex;
@@ -3405,7 +3530,8 @@ width: 42vw;
     align-items: start;
     padding-top: 0.8vw;
 }
-.box_lateral_icones{
+
+.box_lateral_icones {
     width: 100%;
     height: 8rem;
     flex-direction: column;
@@ -3413,7 +3539,8 @@ width: 42vw;
     display: flex;
     align-items: center;
 }
-.box_lateral_exit{
+
+.box_lateral_exit {
     width: 100%;
     height: 5vw;
     display: flex;
@@ -3423,7 +3550,7 @@ width: 42vw;
 }
 
 /* Começando a parte dos gráficos */
-.main_dashboard_containers{
+.main_dashboard_containers {
     width: 100%;
     height: 100vh;
     background-color: rgb(255, 252, 252);
@@ -3432,17 +3559,18 @@ width: 42vw;
     padding-top: 5.5rem;
     padding-left: 5.5rem;
 }
-.section_status_dashboard{
+
+.section_status_dashboard {
     width: 18vw;
     height: 82vh;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-right: 1.5vw;
 }
 
-.box_status_linhas{
+.box_status_linhas {
     width: 18vw;
     height: 50vh;
     background-color: #F3F8FF;
@@ -3450,15 +3578,18 @@ width: 42vw;
     border: 2px solid #02033B;
     padding: 1rem;
 }
-.box_status_linhas h4{
+
+.box_status_linhas h4 {
     font-size: 1.5rem;
     margin-bottom: rem;
 }
-.box_status_linhas h6{
+
+.box_status_linhas h6 {
     font-size: 1.2rem;
     margin-bottom: 0.1rem;
 }
-.status_linhas{
+
+.status_linhas {
     width: 15vw;
     border-radius: 0.5rem;
     height: 7.5vh;
@@ -3473,7 +3604,7 @@ width: 42vw;
     font-weight: 700;
 }
 
-.box_pizza_dash{
+.box_pizza_dash {
     width: 18vw;
     height: 30vh;
     background-color: #F3F8FF;
@@ -3488,33 +3619,36 @@ width: 42vw;
 }
 
 
-.section_dashboard{
+.section_dashboard {
     width: 73vw;
     height: 74vh;
     display: flex;
     flex-direction: column;
 }
-.section_dash1{
+
+.section_dash1 {
     width: 100%;
     height: 55%;
     display: flex;
     justify-content: space-between;
 }
 
-.select_linhas{
+.select_linhas {
     width: 8rem;
     border-radius: 0.5rem;
     border: 2px solid #02033B;
     height: 2.5rem;
 }
-.box_filtros{
+
+.box_filtros {
     width: 50vw;
     display: flex;
     align-items: center;
     height: 6.3vh;
     justify-content: center;
 }
-.caixa_filtros{
+
+.caixa_filtros {
     display: flex;
     justify-content: space-between;
     width: 25.5vw;
@@ -3522,20 +3656,23 @@ width: 42vw;
     overflow: visible;
     margin-bottom: 1rem;
 }
-.title_demanda_linha{
+
+.title_demanda_linha {
     margin-top: 0.4rem;
     font-size: 1.2rem;
     margin-bottom: -1.1vw;
     margin-left: 1rem;
 }
-.title_demanda_estacao{
+
+.title_demanda_estacao {
     margin-top: 0.4rem;
     font-size: 1.2rem;
     margin-top: 1vw;
     margin-bottom: 1vw;
     margin-left: 1rem;
 }
-.box_demanda_linhas{
+
+.box_demanda_linhas {
     width: 58vw;
     border-radius: 0.5rem;
     height: 26vh;
@@ -3549,11 +3686,15 @@ width: 42vw;
 
 .linha_kpi {
     display: grid;
-    grid-template-columns: auto 1fr; /* Ajusta automaticamente */
-    align-items: center; /* Alinha verticalmente */
-    gap: 8px; /* Espaço entre texto e KPI */
+    grid-template-columns: auto 1fr;
+    /* Ajusta automaticamente */
+    align-items: center;
+    /* Alinha verticalmente */
+    gap: 8px;
+    /* Espaço entre texto e KPI */
 }
-.linha_kpi h4{
+
+.linha_kpi h4 {
     width: 7vw;
     display: flex;
     align-items: center;
@@ -3561,14 +3702,16 @@ width: 42vw;
     font-weight: 700;
     height: 3.5vh;
 }
-.kpis_demanda_linhas{
+
+.kpis_demanda_linhas {
     width: 20vw;
     height: 30vh;
     padding-top: 1rem;
     display: flex;
     margin-left: 1rem;
 }
-.box_titulo_grafico{
+
+.box_titulo_grafico {
     width: 10vw;
     height: 30vh;
     font-weight: 700;
@@ -3578,41 +3721,48 @@ width: 42vw;
     font-size: 0.8rem;
     text-align: center;
 }
-.title_filtros{
+
+.title_filtros {
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
 }
-.title_filtro_kpi{
+
+.title_filtro_kpi {
     margin-top: 0.5rem;
     font-size: 0.8rem;
     margin-bottom: 0.3rem;
 }
-.ano_especifico_kpi{
+
+.ano_especifico_kpi {
     font-size: 1.1rem;
     font-weight: 800;
 }
-.kpi_linha{
+
+.kpi_linha {
     width: 1.3rem;
     height: 1rem;
     border-radius: 1rem;
     margin-bottom: 0.4rem;
-    
+
 }
-.grafico_linha{
+
+.grafico_linha {
     width: 10vw;
     height: 30vh;
     background-color: white;
     border-radius: 0.5rem;
     border: 2px solid #02033B;
 }
-.container_kpis_dash{
+
+.container_kpis_dash {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: 1vw;
     height: 35.5vh;
 }
-.box_kpis_dash{
+
+.box_kpis_dash {
     width: 13vw;
     height: 15vh;
     margin-top: -3vw;
@@ -3627,38 +3777,311 @@ width: 42vw;
     padding-top: 0.5vw;
     font-size: 0.8rem;
 }
-.box_kpis_dash span{
+
+.box_kpis_dash span {
     font-weight: 800;
     font-size: 1.1rem;
     margin-top: 0.5rem;
 }
 
-.section_dash2{
+.section_dash2 {
     width: 100%;
     height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
-.box_demanda_estacao{
+
+.box_demanda_estacao {
     width: 73vw;
     height: 30vh;
     border: 2px solid #02033B;
     border-radius: 0.5rem;
     background-color: #F3F8FF;
     display: flex;
-    
+
 }
 
-.grafico_pizza{
+.grafico_pizza {
     background-color: white;
     border-radius: 0.5rem;
     margin-top: 2.5rem;
     border: 2px solid #02033B;
 }
-.graficoBarra{
+
+.graficoBarra {
     padding: 0.3vw;
     background-color: white;
     border: 2px solid #02033B;
     border-radius: 0.5vw;
+}
+
+.box_saindo {
+    width: 27vw;
+    height: 20vh;
+    background-color: white;
+    border: 2.5px solid #02033B;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 7vw;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    left: 35rem;
+    color: #02033B;
+    font-weight: 700;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    opacity: 0;
+}
+
+.box_saindo p {
+    font-weight: 600;
+}
+
+/* Seção de Adicionar Usuário */
+
+.section_addUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7vw;
+}
+
+.container_addUser {
+    width: 80vw;
+    min-height: 83vh;
+    border-radius: 0.5rem;
+    color: #02033B;
+    padding: 1.5rem;
+    display: flex;
+
+    border: 2px solid #02033B;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #f7ca71, #FFC247);
+
+}
+
+.container_addUser h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.container_addUser button {
+    width: 18vw;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border: none;
+    background-color: #4335DE;
+    color: white;
+    height: 7vh;
+}
+
+.linha_addUser {
+    margin-top: 1rem;
+    width: 100%;
+    border-bottom: 1px solid #02033B;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 8px 12px;
+    background-color: #fff;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.search-box .icon {
+    font-size: 18px;
+    color: #888;
+}
+
+.box_usuarios {
+    width: 100%;
+    min-height: 53vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    padding: 0.4rem;
+    border: 1px solid #02033B;
+    background-color: white;
+}
+
+.linha_usuario {
+    width: 100%;
+    height: 12vh;
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
+    background-color: #E7EFFA;
+    display: flex;
+    border: 1px solid #02033B;
+}
+
+.fotoUser {
+    width: 6vw;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotoUser img {
+    height: 2.6rem;
+    border: 2px solid #02033B;
+    border-radius: 2rem;
+    padding: 0.1rem;
+}
+
+.nomeUser {
+    width: 13vw;
+    height: 12vh;
+    display: flex;
+    padding-top: 0.3rem;
+    flex-direction: column;
+}
+
+.cpfUser {
+    width: 13vw;
+    height: 12vh;
+    display: flex;
+    padding-top: 0.3rem;
+    flex-direction: column;
+
+}
+
+.dtInicio {
+    height: 12vh;
+    width: 13vw;
+    display: flex;
+    padding-top: 0.3rem;
+    flex-direction: column;
+
+}
+
+.cargoUser {
+    height: 12vh;
+    width: 13vw;
+    display: flex;
+    padding-top: 0.3rem;
+    flex-direction: column;
+
+}
+
+.linhaUser {
+    height: 12vh;
+    width: 13vw;
+    display: flex;
+    padding-top: 0.3rem;
+    flex-direction: column;
+
+}
+
+.editarUser {
+    width: 6vw;
+    display: flex;
+    flex-direction: column;
+    height: 12vh;
+    padding-top: 0.3rem;
+}
+
+.icones_editar {
+    display: flex;
+    padding-top: 0.3rem;
+}
+
+.editarUser img {
+    height: 1.6rem;
+    cursor: pointer;
+    margin-right: 0.6rem;
+}
+
+.titulos_usuarios {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    padding-bottom: 1px;
+    border-bottom: 2px solid #02033B;
+}
+
+.informacoes_usuarios {
+    font-size: 1rem;
+}
+
+.section_adicionar_usuario {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.container_fotoUser {
+    width: 18vw;
+    border-radius: 0.5rem;
+    height: 75vh;
+    background-color: plum;
+}
+.container_fotoUser h4{
+    font-size: 1.8rem;
+}
+.container_fotoUser img{
+    width: 6rem;
+    border-radius: 5rem;
+    margin-left: 1.5rem;
+    border: 5px solid #02033B;
+}
+.container_infosUser {
+    width: 54vw;
+    height: 75vh;
+    border-radius: 1rem;
+    background-color: palegreen;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.container_infosUser h6{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.container_infosUser input{
+    width: 22vw;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    cursor: text;
+    border: 1px solid #02033B;
+    height: 7vh;
+}
+.container_infosUser select{
+    width: 22vw;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    border: 1px solid #02033B;
+    height: 7vh;
+}
+.botao_concluir_cadastro{
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+.fechar_addUser{
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1rem;
+    cursor: pointer;
+    height: 6vh;
+    width: auto;
 }

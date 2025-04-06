@@ -1,111 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Hambúrguer</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estiliza o botão hambúrguer */
-.menu-hamburguer {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    transition: opacity 0.3s ease-in-out;
-}
+  <meta charset="UTF-8">
+  <title>Caixa de Busca</title>
+  <style>
+    .search-box {
+      display: flex;
+      align-items: center;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      padding: 8px 12px;
+      background-color: #fff;
+    }
 
-/* Esconder o menu hambúrguer quando o menu estiver aberto */
-.menu-hamburguer.oculto {
-    opacity: 0;
-    pointer-events: none; /* Impede clique no botão escondido */
-}
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 16px;
+      padding-left: 10px;
+    }
 
-/* Estiliza o menu lateral */
-.menu-lateral {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Escondido à direita */
-    width: 100%; /* Ocupa toda a tela */
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: right 0.4s ease-in-out; /* Animação */
-}
+    .search-box .icon {
+      font-size: 18px;
+      color: #888;
+    }
+  </style>
 
-/* Quando o menu está aberto */
-.menu-lateral.aberto {
-    right: 0; /* Move o menu para a tela */
-}
-
-/* Botão de fechar */
-.fechar-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* Lista de navegação */
-.menu-lateral ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu-lateral ul li {
-    margin: 20px 0;
-}
-
-.menu-lateral ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    transition: color 0.3s;
-}
-
-.menu-lateral ul li a:hover {
-    color: #ffcc00;
-}
-
-    </style>
+  <!-- Ícone de lupa com Font Awesome (opcional) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Ícone do menu hambúrguer -->
-    <div class="menu-hamburguer" id="menuHamburguer" onclick="abrirMenu()">
-        ☰
-    </div>
+  <div class="search-box">
+    <i class="fas fa-search icon"></i>
+    <input type="text" placeholder="Buscar...">
+  </div>
 
-    <!-- Menu lateral -->
-    <div class="menu-lateral" id="menuLateral">
-        <span class="fechar-menu" onclick="fecharMenu()">✖</span>
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
-<script>
-    function abrirMenu() {
-    document.getElementById("menuLateral").classList.add("aberto");
-    document.getElementById("menuHamburguer").classList.add("oculto");
-}
-
-function fecharMenu() {
-    document.getElementById("menuLateral").classList.remove("aberto");
-    document.getElementById("menuHamburguer").classList.remove("oculto");
-}
-
-</script>
