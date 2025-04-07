@@ -1,0 +1,1051 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/trem_icone.png" />
+    <script src="script.js" type="text/javascript" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>DashBoard</title>
+</head>
+
+<body class="body_dash">
+
+    <section class="cabecalho_dashboard">
+        <div class="box_usuario_dash">
+            <img class="imagem_dashboard" src="./assets/guest_azul.png" alt="">
+            <div class="box_user_dashboard">
+                <h3><span>Olá,</span> Fulano de tal</h3>
+                <h6>Gestor de Operações</h6>
+            </div>
+        </div>
+    </section>
+
+    <section class="lateral_dashboard">
+        <div class="box_lateral_home">
+            <img class="imagem_dashboard" src="./assets/home_icon.png">
+        </div>
+
+        <div class="box_lateral_icones">
+            <img class="imagem_dashboard" src="./assets/config_icon.png">
+            <img class="imagem_dashboard" src="./assets/adduser_icon.png">
+        </div>
+
+        <div class="box_lateral_exit">
+            <img class="imagem_dashboard" src="./assets/sair_icon.png">
+        </div>
+    </section>
+
+    <main class="main_dashboard_containers">
+
+        <section class="section_status_dashboard">
+
+            <div class="box_status_linhas">
+                <h4>Status das linhas</h4>
+
+                <h6>Azul</h6>
+                <div class="status_linhas">5.1% de Aumento</div>
+                <h6>Vermelha</h6>
+                <div class="status_linhas">3.5% de Aumento</div>
+                <h6>Verde</h6>
+                <div class="status_linhas">7.8% de Aumento</div>
+
+            </div>
+
+            <div class="box_pizza_dash">
+                <h4>Ocupação das linhas</h4>
+                <canvas class="grafico_pizza" id="pizzaChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <section class="section_dashboard">
+            <h4 class="title_demanda_linha">Demanda por linha</h4>
+            <section class="section_dash1" style="margin-top: 2vw;">
+
+                <div >
+                    <div class="box_filtros">
+                        <div class="caixa_filtros">
+                            <label>
+                                <select class="select_linhas" id="options_linhas" name="options">
+                                    <option value="linhas">Todas as linhas</option>
+                                    <option value="azul">Linha Azul</option>
+                                    <option value="vermelha">Linha Vermelha</option>
+                                    <option value="verde">Linha Verde</option>
+                                </select>
+                            </label>
+
+                            <p>Filtrar por:</p>
+                            <label>
+                                <select class="select_linhas" id="mainSelect" name="options">
+                                    <option value="anos">Anos</option>
+                                    <option value="ano_especifico">Ano específico</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <!-- Opção: Por Anos -->
+                        <div class="caixa_filtros">
+                            <div id="porAnos"
+                                style="display: flex; justify-content: space-between; align-items: center; width: 24vw;">
+                                <p>De:</p>
+                                <label>
+                                    <select class="select_linhas" id="options_de" name="options">
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                    </select>
+                                </label>
+
+                                <p>Até:</p>
+                                <label>
+                                    <select class="select_linhas" id="options_ate" name="options">
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <!-- Opção: Ano Específico -->
+                            <div id="anoEspecifico"
+                                style="display: none; justify-content: flex-end; align-items: center; width: 23.8vw;">
+                                <p style="margin-right: 0.3rem;">Ano:</p>
+                                <label>
+                                    <select class="select_linhas" id="options_ano_especifico" name="options">
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="box_demanda_linhas">
+
+
+                        <div class="box_titulo_grafico">
+                            Ocupação de Passageiros (Milhares)
+                        </div>
+                        <canvas class="grafico_linha" id="chartLinhaPorAnos" width="400" height="200"></canvas>
+                        <canvas class="grafico_linha" id="chartLinhaAnoEspecifico" width="400" height="200"></canvas>
+
+                        <div class="kpis_demanda_linhas">
+
+                            <div>
+
+                                <div>
+                                    <h4 class="title_filtros">Filtrando por:</h4>
+                                    <div id="kpi_linha_azul" class="linha_kpi">
+                                        <div style="background-color: rgb(7, 7, 196);" class="kpi_linha"></div>
+                                        <h4>Linha azul</h4>
+                                    </div>
+                                    <div id="kpi_linha_vermelha" class="linha_kpi">
+                                        <div style="background-color: rgb(233, 30, 30);" class="kpi_linha"></div>
+                                        <h4>Linha vermelha</h4>
+                                    </div>
+                                    <div id="kpi_linha_verde" class="linha_kpi">
+                                        <div style="background-color: rgb(23, 122, 23);" class="kpi_linha"></div>
+                                        <h4>Linha verde</h4>
+                                    </div>
+                                    <div id="kpi_por_ano">
+                                        <h4 class="title_filtro_kpi">No ano de:</h4>
+                                        <span id="kpi_ano_especifico" class="ano_especifico_kpi">2020</span>
+                                    </div>
+
+                                    <div style="display: none;" id="kpi_por_anos">
+                                        <div style="width: 5vw; background-color: aliceblue;">
+        
+                                            <h4 class="title_filtro_kpi">De:</h4>
+                                            <span id="kpi_de" class="ano_especifico_kpi">2024</span>
+                                        </div>
+                                        <div style="width: 5vw;">
+                                            <h4 class="title_filtro_kpi">Até:</h4>
+                                            <span id="kpi_ate" class="ano_especifico_kpi">2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container_kpis_dash">
+
+                    <div class="box_kpis_dash">
+                        <h4>Estação mais movimentada</h4>
+                        <span>Sé</span>
+                    </div>
+                    <div class="box_kpis_dash">
+                        <h4 >Projeção de aumento de fluxo (linha)</h4>
+                        <span style="color: rgb(206, 9, 9)">5.8%</span>
+                    </div>
+                    <div class="box_kpis_dash">
+                        <h4>Estação com maior expectativa</h4>
+                        <span>Corinthians-Itaquera</span>
+                    </div>
+
+
+                </div>
+
+                <div id="porAnoEspecifico" style="display: none; background-color: blueviolet;"></div>
+            </section>
+
+
+            <section class="section_dash2">
+                <h4 class="title_demanda_estacao">Demanda por estação</h4>   <div class="box_filtros">
+                    <div class="caixa_filtros">
+                        <label>
+                            <select class="select_linhas" id="filtrarLinhaEstacao" name="options">
+                                <option value="azul">Linha Azul</option>
+                                <option value="vermelha">Linha Vermelha</option>
+                                <option value="verde">Linha Verde</option>
+                            </select>
+                        </label>
+
+                        <p>Filtrar por:</p>
+                        <label>
+                            <select class="select_linhas" id="filtarPorEstacoes" name="options">
+                                <option value="estacoes">Todas estações</option>
+                                <option value="estacao_especifica">Estação específica</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <!-- Opção: Por Anos -->
+                    <div  class="caixa_filtros">
+                        <div id="porTodasEstacoes"
+                            style="display: flex; justify-content: end; align-items: center; width: 24vw;">
+                            <p style="margin-right: 0.5rem;">No ano de:</p>
+                            <label>
+                                <select class="select_linhas" id="ano_todas_estacoes" name="options">
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                </select>
+                            </label>
+
+                           
+                        </div>
+
+                        <!-- Opção: Ano Específico -->
+                        <div id="divEstacaoEspecifica" style="display: flex; justify-content: flex-end; align-items: center; width: 30vw;">
+                            
+                            <label style="display: flex; justify-content: space-around; align-items: center; width: 30rem;">
+                                <p style="margin-right: 0.3rem;">Estação:</p>
+                                <select id="estacoesAzul" class="select_linhas" id="options_estacoes_azul" name="options">
+                                    <option value="Jabaquara">Jabaquara</option>
+                                    <option value="Conceicao">Conceição</option>
+                                    <option value="São Judas">São Judas</option>
+                                    <option value="Saúde-Ultrafarma">Saúde-Ultrafarma</option>
+                                    <option value="Praça da Árvore">Praça da Árvore</option>
+                                    <option value="Santa Cruz">Santa Cruz</option>
+                                    <option value="Vila Mariana">Vila Mariana</option>
+                                    <option value="Ana Rosa">Ana Rosa</option>
+                                    <option value="Paraíso">Paraíso</option>
+                                    <option value="Vergueiro">Vergueiro</option>
+                                    <option value="São Joaquim">São Joaquim</option>
+                                    <option value="Japão-Liberdade">Japão-Liberdade</option>
+                                    <option value="Sé">Sé</option>
+                                    <option value="São Bento">São Bento</option>
+                                    <option value="Luz">Luz</option>
+                                    <option value="Tiradentes">Tiradentes</option>
+                                    <option value="Armênia">Armênia</option>
+                                    <option value="Portuguesa-Tietê">Portuguesa-Tietê</option>
+                                    <option value="Carandiru">Carandiru</option>
+                                    <option value="Santana">Santana</option>
+                                    <option value="Jardim São Paulo-Ayrton Senna">Jardim São Paulo-Ayrton Senna</option>
+                                    <option value="Parada Inglesa">Parada Inglesa</option>
+                                    <option value="Tucuruvi">Tucuruvi</option>
+                                </select>
+
+                                <select id="estacoesVermelha" style="display: none;" class="select_linhas" id="options_estacoes_vermelha" name="options">
+                                    <option value="Corinthians-Itaquera">Corinthians-Itaquera</option>
+                                    <option value="Artur Alvim">Artur Alvim</option>
+                                    <option value="Patriarca-Vila Ré">Patriarca-Vila Ré</option>
+                                    <option value="Guilhermina-Esperaça">Guilhermina-Esperança</option>
+                                    <option value="Vila Matilde">Vila Matilde</option>
+                                    <option value="Penha-Lojas Besni">Penha-Lojas Besni</option>
+                                    <option value="Carrão-Assaí Atacadista">Carrão-Assaí Atacadista</option>
+                                    <option value="Tatuapé">Tatuapé</option>
+                                    <option value="Belém">Belém</option>
+                                    <option value="Bresser-Moóca">Bresser-Moóca</option>
+                                    <option value="Brás">Brás</option>
+                                    <option value="Pedro II">Pedro II</option>
+                                    <option value="Sé">Sé</option>
+                                    <option value="Anhangabaú">Anhangabaú</option>
+                                    <option value="República">República</option>
+                                    <option value="Santa Cecília">Santa Cecília</option>
+                                    <option value="Marechal Deodoro">Marechal Deodoro</option>
+                                    <option value="Palmeiras-Barra Funda">Palmeiras-Barra Funda</option>
+                                </select>
+
+                                <select id="estacoesVerde" style="display: none;" class="select_linhas" id="options_estacoes_verde" name="options">
+                                    <option value="Tamanduateí">Tamanduateí</option>
+                                    <option value="Sacomã">Sacomã</option>
+                                    <option value="Alto Do Ipiranga">Alto do Ipiranga</option>
+                                    <option value="Santos-Imigrantes">Santos-Imigrantes</option>
+                                    <option value="Chácara Klabin">Chácara Klabin</option>
+                                    <option value="Ana Rosa">Ana Rosa</option>
+                                    <option value="Paraíso">Paraíso</option>
+                                    <option value="Brigadeiro">Brigadeiro</option>
+                                    <option value="Trianon-Masp">Trianon-Masp</option>
+                                    <option value="Consolação">Consolação</option>
+                                    <option value="Clínicas">Clínicas</option>
+                                    <option value="Santuário N.S. de Fátima-Sumare">Santuário N.S. de Fátima-Sumaré</option>
+                                    <option value="Vila Madalena">Vila Madalena</option>
+                                </select>
+
+                                <p style="margin-right: 0.3rem; font-size: 0.9rem ;">Ano de:</p>
+                                <label>
+                                    <select class="select_linhas" id="options_ano_especifico_estacoes" name="options">
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </label>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_demanda_estacao">
+                    <div class="box_titulo_grafico">
+                        Ocupação de Passageiros (Milhares)
+                    </div>
+
+                    <div id="barras_estacoes_linhas" style="width: 43vw;">
+                    <canvas class="graficoBarra" id="chartBarrasLinhaAzul"></canvas>
+                    <canvas class="graficoBarra" style="display: none;" id="chartBarrasLinhaVermelha"></canvas>
+                    <canvas class="graficoBarra" style="display: none;" id="chartBarrasLinhaVerde"></canvas>
+                </div>
+                    <canvas class="graficoBarra" style="display: none;" id="dataBarrasEstacaoAno"></canvas>
+
+                    <div style="margin-left: 2rem; margin-top: 0.5rem;">
+                        <h4 class="title_filtros">Filtrando por:</h4>
+                        <div id="kpi_linha_azul_estacao" class="linha_kpi">
+                            <div style="background-color: rgb(7, 7, 196);" class="kpi_linha"></div>
+                            <h4>Linha azul</h4>
+                        </div>
+                        <div id="kpi_linha_vermelha_estacao" class="linha_kpi">
+                            <div style="background-color: rgb(233, 30, 30);" class="kpi_linha"></div>
+                            <h4>Linha vermelha</h4>
+                        </div>
+                        <div id="kpi_linha_verde_estacao" class="linha_kpi">
+                            <div style="background-color: rgb(23, 122, 23);" class="kpi_linha"></div>
+                            <h4>Linha verde</h4>
+                        </div>
+
+                        <div style="display: none; flex-direction: column;" id="kpi_por_estacao_especifica">
+                            <h4 class="title_filtro_kpi">Na estação:</h4>
+                            <span id="estacao_especifica" class="ano_especifico_kpi">Saúde</span>
+                        </div>
+                        <div id="kpi_por_ano_estacao">
+                            <h4 class="title_filtro_kpi">No ano de:</h4>
+                            <span id="kpi_ano_especifico_estacao" class="ano_especifico_kpi">2020</span>
+                        </div>
+
+                        <div style="display: none;" id="kpi_por_anos_estacao">
+                            <div style="width: 5vw;">
+
+                                <h4 class="title_filtro_kpi">De:</h4>
+                                <span id="kpi_de_estacao" class="ano_especifico_kpi">2024</span>
+                            </div>
+                            <div style="width: 5vw;">
+                                <h4 class="title_filtro_kpi">Até:</h4>
+                                <span id="kpi_ate_estacao" class="ano_especifico_kpi">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
+<script>
+    // Lógica dos selects
+
+    const mainSelect = document.getElementById("mainSelect");
+    const porAnos = document.getElementById("porAnos");
+    const anoEspecifico = document.getElementById("anoEspecifico");
+
+    const selectDe = document.getElementById("options_de")
+    const selectAte = document.getElementById("options_ate")
+
+    // Função para alternar exibição com base na seleção
+    function toggleFiltros() {
+        const selectedValue = mainSelect.value;
+
+        if (selectedValue === "anos") {
+            porAnos.style.display = "flex";
+            anoEspecifico.style.display = "none";
+            chartLinhaAnoEspecifico.style.display = 'none'
+            chartLinhaPorAnos.style.display = 'flex'
+
+            kpi_por_ano.style.display = 'none'
+            kpi_por_anos.style.display = 'flex'
+
+
+
+        } else if (selectedValue === "ano_especifico") {
+            anoEspecifico.style.display = "flex";
+            porAnos.style.display = "none";
+            chartLinhaAnoEspecifico.style.display = 'flex'
+            kpi_por_ano.style.display = 'block'
+            kpi_por_anos.style.display = 'none'
+            chartLinhaPorAnos.style.display = 'none'
+        }
+    }
+
+    // Evento para detectar mudança no select principal
+    mainSelect.addEventListener("change", toggleFiltros);
+
+    // Exibe o grupo inicial baseado no valor padrão do select principal
+    toggleFiltros();
+
+    // GRÁFICO DE LINHA -- POR ANOS
+
+
+    
+    const ctx1 = document.getElementById('chartLinhaAnoEspecifico').getContext('2d');
+    let chart1;
+
+    const initialData1 = {
+        labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        datasets: [
+            {
+                label: 'Linha Azul',
+                borderColor: 'blue',
+                data: [80, 70, 50, 80, 70, 40, 50, 70, 80, 75, 60, 85],
+            },
+            {
+                label: 'Linha Vermelha',
+                borderColor: 'red',
+                data: [80, 90, 50, 75, 60, 85, 90, 90, 50, 70, 60, 90],
+            },
+            {
+                label: 'Linha Verde',
+                borderColor: 'green',
+                data: [80, 90, 80, 60, 85, 60, 70, 60, 70, 90, 50, 75],
+            }
+        ]
+    };
+
+    function createChart1(data) {
+        if (chart1) chart1.destroy();
+        chart1 = new Chart(ctx1, {
+            type: 'line',
+            data,
+            options: {
+                aspectRatio: 3,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false // Remove a legenda
+                    }
+                },
+                scales: {
+                    x: { beginAtZero: true },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+
+
+
+    
+    // GRÁFICO DE LINHA -- ANO ESPECÍFICO
+    const ctx2 = document.getElementById('chartLinhaPorAnos').getContext('2d');
+    let chart2;
+
+    const initialData2 = {
+        labels: ["2020", "2021", "2022", "2023", "2024"],
+        datasets: [
+            {
+                label: 'Linha Azul',
+                borderColor: 'blue',
+                data: [60, 80, 70, 90, 85, 60, 50, 40, 90, 100, 75, 85],
+            },
+            {
+                label: 'Linha Vermelha',
+                borderColor: 'red',
+                data: [70, 60, 80, 90, 100, 75, 85, 90, 60, 80, 70, 60],
+            },
+            {
+                label: 'Linha Verde',
+                borderColor: 'green',
+                data: [75, 85, 90, 60, 80, 70, 60, 70, 60, 80, 90, 100],
+            }
+        ]
+    };
+
+    
+    function updateChart() {
+        const de = parseInt(document.getElementById('options_de').value);
+        const ate = parseInt(document.getElementById('options_ate').value);
+
+        const startIndex = initialData2.labels.indexOf(de.toString());
+        const endIndex = initialData2.labels.indexOf(ate.toString());
+
+        if (startIndex === -1 || endIndex === -1 || startIndex > endIndex) {
+            console.error("Erro ao encontrar os índices dos anos selecionados.");
+            return;
+        }
+
+        const filteredLabels = initialData2.labels.slice(startIndex, endIndex + 1);
+
+        const filteredDatasets = initialData2.datasets.map(dataset => ({
+            ...dataset,
+            data: dataset.data.slice(startIndex, endIndex + 1)
+        }));
+
+        chart2.data.labels = filteredLabels;
+        chart2.data.datasets = filteredDatasets;
+        chart2.update();
+    }   
+
+    function createChart2(data) {
+        if (chart2) chart2.destroy();
+        chart2 = new Chart(ctx2, {
+            type: 'line',
+            data,
+            options: {
+                aspectRatio: 3,
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+
+    // Criar os dois gráficos
+    createChart1(initialData1);
+    createChart2(initialData2);
+
+
+    document.getElementById('options_de').addEventListener('change', updateChart);
+    document.getElementById('options_ate').addEventListener('change', updateChart);
+// Criar uma cópia dos dados originais para referência
+const originalData2 = JSON.parse(JSON.stringify(initialData2));
+
+// Pegando os anos disponíveis no dataset
+const anosDisponiveis = originalData2.labels.map(label => parseInt(label));
+
+// Definir os limites mínimo e máximo do intervalo permitido
+const anoMin = Math.min(...anosDisponiveis);
+const anoMax = Math.max(...anosDisponiveis);
+
+function updateChart() {
+    const selectDe = document.getElementById('options_de');
+    const selectAte = document.getElementById('options_ate');
+
+    let de = parseInt(selectDe.value);
+    let ate = parseInt(selectAte.value);
+
+    // Verifica se o ano está dentro dos limites permitidos
+    if (de < anoMin || de > anoMax) {
+        alert(`Ano inicial inválido! Escolha um ano entre ${anoMin} e ${anoMax}.`);
+        selectDe.value = anoMin; // Retorna ao valor mínimo permitido
+        return;
+    }
+
+    if (ate < anoMin || ate > anoMax) {
+        alert(`Ano final inválido! Escolha um ano entre ${anoMin} e ${anoMax}.`);
+        selectAte.value = anoMax; // Retorna ao valor máximo permitido
+        return;
+    }
+
+    if (de > ate) {
+        alert("O ano inicial não pode ser maior que o ano final.");
+        selectDe.value = anoMin;
+        selectAte.value = anoMax;
+        return;
+    }
+
+    const startIndex = originalData2.labels.indexOf(de.toString());
+    const endIndex = originalData2.labels.indexOf(ate.toString());
+
+    if (startIndex === -1 || endIndex === -1) {
+        console.error("Erro ao encontrar os índices dos anos selecionados.");
+        return;
+    }
+
+    // Filtrar os labels
+    const filteredLabels = originalData2.labels.slice(startIndex, endIndex + 1);
+
+    // Criar novos datasets com os dados filtrados
+    const filteredDatasets = originalData2.datasets.map(dataset => ({
+        ...dataset,
+        data: dataset.data.slice(startIndex, endIndex + 1)
+    }));
+
+    // Atualizar o gráfico corretamente
+    chart2.data = {
+        labels: filteredLabels,
+        datasets: filteredDatasets
+    };
+
+    chart2.update();
+}
+
+function createChart2(data) {
+    if (chart2) chart2.destroy();
+    chart2 = new Chart(ctx2, {
+        type: 'line',
+        data: JSON.parse(JSON.stringify(data)), // Garante que não modificamos o original
+        options: {
+            aspectRatio: 3,
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { beginAtZero: false },
+                y: { beginAtZero: true }
+            }
+        }
+    });
+}
+
+// Criar gráfico inicialmente com os dados completos
+createChart2(originalData2);
+
+// Eventos para atualizar o gráfico ao mudar as datas
+document.getElementById('options_de').addEventListener('change', updateChart);
+document.getElementById('options_ate').addEventListener('change', updateChart);
+
+
+    // Funções do select
+
+    // Event listeners for filters
+    document.getElementById('options_linhas').addEventListener('change', function () {
+        const selected = this.value;
+
+        if (selected === "linhas") {
+            chart2.data.datasets.forEach(dataset => dataset.hidden = false);
+            chart1.data.datasets.forEach(dataset => dataset.hidden = false);
+
+        } else {
+            chart2.data.datasets.forEach(dataset => {
+                dataset.hidden = dataset.label.toLowerCase().includes(selected) ? false : true;
+            });
+            chart1.data.datasets.forEach(dataset => {
+                dataset.hidden = dataset.label.toLowerCase().includes(selected) ? false : true;
+            });
+        }
+
+        if (selected === "linhas") {
+            kpi_linha_azul.style.display = 'flex'
+            kpi_linha_vermelha.style.display = 'flex'
+            kpi_linha_verde.style.display = 'flex'
+        } else if (selected === "azul") {
+            kpi_linha_azul.style.display = 'flex'
+            kpi_linha_vermelha.style.display = 'none'
+            kpi_linha_verde.style.display = 'none'
+        } else if (selected === "vermelha") {
+            kpi_linha_azul.style.display = 'none'
+            kpi_linha_vermelha.style.display = 'flex'
+            kpi_linha_verde.style.display = 'none'
+        } else if (selected === "verde") {
+            kpi_linha_azul.style.display = 'none'
+            kpi_linha_vermelha.style.display = 'none'
+            kpi_linha_verde.style.display = 'flex'
+        }
+
+
+        chart2.update();
+        chart1.update();
+
+    });
+
+
+
+
+    // Lógica dos filtros De: Até:
+
+                // Função para alternar exibição com base na seleção
+    function toggleDeAte() {
+        const valorSelecionadoDe = options_de.value;
+            kpi_de.innerHTML = valorSelecionadoDe;
+
+
+        const valorSelecionadoAte = options_ate.value;
+
+            kpi_ate.innerHTML = valorSelecionadoAte;
+    }
+
+    // Evento para detectar mudança no select principal
+    options_de.addEventListener("change", toggleDeAte);
+    options_ate.addEventListener("change", toggleDeAte);
+
+
+    // Exibe o grupo inicial baseado no valor padrão do select principal
+    toggleDeAte();
+
+
+     function toggleAnoEspecifico() {
+        const valorSelecionadoAnoEspecifico = options_ano_especifico.value;
+        const valorSelecionadoAnoEspecificoEstacoes = options_ano_especifico_estacoes.value;
+        
+           kpi_ano_especifico.innerHTML = valorSelecionadoAnoEspecifico;
+           kpi_ano_especifico_estacao.innerHTML = valorSelecionadoAnoEspecificoEstacoes;
+    }
+
+    
+    // Evento para detectar mudança no select principal
+    options_ano_especifico.addEventListener("change", toggleAnoEspecifico);
+    options_ano_especifico_estacoes.addEventListener("change", toggleAnoEspecifico);
+
+    // Exibe o grupo inicial baseado no valor padrão do select principal
+    toggleAnoEspecifico();
+
+
+// TOGGLE DAS ESTAÇÕES 
+console.log(document.getElementById("filtarPorEstacoes"));
+function togglefiltrarPorEstacoes() {
+    let dataBarrasEstacaoAno = document.getElementById('dataBarrasEstacaoAno');
+        const ValorSelecionadoEstacaoEspecificaAzul = estacoesAzul.value;
+        const ValorSelecionadoEstacaoEspecificaVermelha = estacoesVermelha.value;
+        const ValorSelecionadoEstacaoEspecificaVerde = estacoesVerde.value;
+
+
+        const valorSelecionadofiltarPorEstacoes = filtarPorEstacoes.value;
+            // kpi_de.innerHTML = valorSelecionadoDe;
+
+            if(valorSelecionadofiltarPorEstacoes == 'estacoes'){
+                porTodasEstacoes.style.display = 'flex';
+                divEstacaoEspecifica.style.display = 'none';
+
+                barras_estacoes_linhas.style.display = 'flex'
+                document.getElementById('dataBarrasEstacaoAno').style.display = 'none';
+
+                kpi_por_estacao_especifica.style.display = 'none'
+            }else if(valorSelecionadofiltarPorEstacoes == 'estacao_especifica'){
+                porTodasEstacoes.style.display = 'none';
+                divEstacaoEspecifica.style.display = 'flex';
+
+                dataBarrasEstacaoAno.style.display = 'flex';
+                barras_estacoes_linhas.style.display = 'none'
+
+                kpi_por_estacao_especifica.style.display = 'flex'
+
+                
+                if(ValorSelecionadoEstacaoEspecificaAzul){
+                    estacao_especifica.innerHTML = ValorSelecionadoEstacaoEspecificaAzul
+                }else if(ValorSelecionadoEstacaoEspecificaVermelha){
+                    estacao_especifica.innerHTML = ValorSelecionadoEstacaoEspecificaVermelha
+                }else if(ValorSelecionadoEstacaoEspecificaVerde){
+                    estacao_especifica.innerHTML = ValorSelecionadoEstacaoEspecificaVerde
+                }
+            }
+
+    }
+
+    filtarPorEstacoes.addEventListener("change", togglefiltrarPorEstacoes);
+    estacoesAzul.addEventListener("change", togglefiltrarPorEstacoes);
+    estacoesVermelha.addEventListener("change", togglefiltrarPorEstacoes);
+    estacoesVerde.addEventListener("change", togglefiltrarPorEstacoes);
+    togglefiltrarPorEstacoes();
+
+
+
+    // TOGGLE DAS LINHAS
+    
+function toggleFiltarEstacoesLinhas() {
+        const valorSelecionadoLinhaEstacao = filtrarLinhaEstacao.value;
+            // kpi_de.innerHTML = valorSelecionadoDe;
+
+            if(valorSelecionadoLinhaEstacao  == 'azul'){
+                estacoesAzul.style.display = 'flex'
+                estacoesVermelha.style.display = 'none'
+                estacoesVerde.style.display = 'none'
+
+                kpi_linha_azul_estacao.style.display = 'flex'
+                kpi_linha_vermelha_estacao.style.display = 'none'
+                kpi_linha_verde_estacao.style.display = 'none'
+
+
+                chartBarrasLinhaAzul.style.display = 'flex';
+                chartBarrasLinhaVermelha.style.display = 'none';
+                chartBarrasLinhaVerde.style.display = 'none';
+            }else if(valorSelecionadoLinhaEstacao    == 'vermelha'){
+                estacoesAzul.style.display = 'none'
+                estacoesVermelha.style.display = 'flex'
+                estacoesVerde.style.display = 'none'
+
+                kpi_linha_azul_estacao.style.display = 'none'
+                kpi_linha_vermelha_estacao.style.display = 'flex'
+                kpi_linha_verde_estacao.style.display = 'none'
+
+
+                chartBarrasLinhaAzul.style.display = 'none';
+                chartBarrasLinhaVermelha.style.display = 'flex';
+                chartBarrasLinhaVerde.style.display = 'none';
+            }else if(valorSelecionadoLinhaEstacao    == 'verde'){
+                estacoesAzul.style.display = 'none'
+                estacoesVermelha.style.display = 'none'
+                estacoesVerde.style.display = 'flex'
+
+                kpi_linha_azul_estacao.style.display = 'none'
+                kpi_linha_vermelha_estacao.style.display = 'none'
+                kpi_linha_verde_estacao.style.display = 'flex'
+
+                chartBarrasLinhaAzul.style.display = 'none';
+                chartBarrasLinhaVermelha.style.display = 'none';
+                chartBarrasLinhaVerde.style.display = 'flex';
+            }
+
+    }
+
+    filtrarLinhaEstacao.addEventListener("change", toggleFiltarEstacoesLinhas);
+
+    toggleFiltarEstacoesLinhas();
+
+
+    // GRÁFICO DE PIZZA:
+    const pizzaGrafico = document.getElementById('pizzaChart').getContext('2d');
+
+    const data = {
+        labels: ['Azul', 'Vermelha', 'Verde'],
+        datasets: [{
+            label: 'Cores',
+            data: [30, 50, 20], // Valores para cada cor
+            backgroundColor: ['blue', 'red', 'green'],
+            hoverOffset: 4
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {
+            aspectRatio: 3,
+            responsive: true, // Faz o gráfico ser responsivo
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) {
+                            const dataset = tooltipItem.dataset;
+                            const total = dataset.data.reduce((acc, val) => acc + val, 0);
+                            const currentValue = dataset.data[tooltipItem.dataIndex];
+                            const percentage = ((currentValue / total) * 100).toFixed(2);
+                            return `${dataset.labels[tooltipItem.dataIndex]}: ${currentValue} (${percentage}%)`;
+                        }
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: 'left',
+                }
+            }
+        }
+    };
+
+    const myPieChart = new Chart(pizzaGrafico, config);
+
+
+// GRÁFICO DE BARRAS!!!
+
+const ctxBarrasAzul = document.getElementById('chartBarrasLinhaAzul').getContext('2d');
+
+// Dados das estações da Linha Azul
+const dataBarrasAzul = {
+    labels: [
+    "Jabaquara", "Conceição", "São Judas", "Saúde-Ultrafarma", "Praça da Árvore",
+    "Santa Cruz", "Vila Mariana", "Ana Rosa", "Paraíso", "Vergueiro",
+    "São Joaquim", "Japão-Liberdade", "Sé", "São Bento", "Luz", "Tiradentes",
+    "Armênia", "Portuguesa-Tietê", "Carandiru", "Santana",
+    "JD SP-Ayrton Senna", "Parada Inglesa", "Tucuruvi"
+],
+    datasets: [{
+        label: 'Movimentação em Janeiro',
+        backgroundColor: 'blue',
+        borderColor: 'darkblue',
+        borderWidth: 1,
+        data: [
+            63, 23, 13, 35, 41, 81, 50, 64, 80, 21, 
+            17, 45, 153, 49, 116, 11, 16, 30, 9, 41, 
+            22, 30, 47
+        ],
+    }]
+};
+
+// Criando o gráfico de barras
+const chartBarrasAzul = new Chart(ctxBarrasAzul, {
+    type: 'bar',
+    data: dataBarrasAzul,
+    options: {
+        aspectRatio: 3,
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+        },
+        scales: {
+            x: { 
+                beginAtZero: true,
+                ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 } // Melhora a visibilidade dos nomes
+            },
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+const ctxBarrasVermelha = document.getElementById('chartBarrasLinhaVermelha').getContext('2d');
+const ctxBarrasVerde = document.getElementById('chartBarrasLinhaVerde').getContext('2d');
+
+// Dados das estações da Linha Vermelha
+const dataBarrasVermelha = {
+    labels: [
+        "Corinthians-Itaquera", "Artur Alvim", "Patriarca-Vila Ré", "Guilhermina-Esperança", "Vila Matilde",
+        "Penha-Lojas Besni", "Carrão-Assaí Atacadista", "Tatuapé", "Belém", "Bresser-Moóca", "Brás",
+        "Pedro II", "Sé", "Anhangabaú", "República", "Santa Cecília", "Marechal Deodoro", "Palmeiras-Barra Funda"
+    ],
+    datasets: [{
+        label: 'Movimentação em Janeiro',
+        backgroundColor: 'red',
+        borderColor: 'darkred',
+        borderWidth: 1,
+        data: [
+            75, 34, 21, 42, 38, 90, 55, 80, 60, 32, 
+            180, 57, 140, 65, 130, 25, 45, 85
+        ],
+    }]
+};
+
+// Criando o gráfico de barras para a Linha Vermelha
+const chartBarrasVermelha = new Chart(ctxBarrasVermelha, {
+    type: 'bar',
+    data: dataBarrasVermelha,
+    options: {
+        aspectRatio: 3,
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+        },
+        scales: {
+            x: { 
+                beginAtZero: true,
+                ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+            },
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+// Dados das estações da Linha Verde
+const dataBarrasVerde = {
+    labels: [
+        "Tamanduateí", "Sacomã", "Alto do Ipiranga", "Santos-Imigrantes", "Chácara Klabin",
+        "Ana Rosa", "Paraíso", "Brigadeiro", "Trianon-Masp", "Consolação", "Clínicas",
+        "Santuário N.S. de Fátima-Sumaré", "Vila Madalena"
+    ],
+    datasets: [{
+        label: 'Movimentação em Janeiro',
+        backgroundColor: 'green',
+        borderColor: 'darkgreen',
+        borderWidth: 1,
+        data: [
+            50, 27, 35, 30, 45, 100, 78, 55, 40, 62, 
+            37, 29, 50
+        ],
+    }]
+};
+
+// Criando o gráfico de barras para a Linha Verde
+const chartBarrasVerde = new Chart(ctxBarrasVerde, {
+    type: 'bar',
+    data: dataBarrasVerde,
+    options: {
+        aspectRatio: 3,
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+        },
+        scales: {
+            x: { 
+                beginAtZero: true,
+                ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+            },
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+// Gráfico de Barras para uma estação especifica
+
+function criarGraficoBarras() {
+    dataBarrasEstacaoAno = {  // Agora inicializa corretamente antes do uso
+        labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        datasets: [{
+            label: `Movimentação`,
+            backgroundColor: 'blue',
+            borderColor: 'blue',
+            borderWidth: 1,
+            data: [70,80,70,65,58,77,99,88,60,70,99,90],
+        }]
+    };
+    const ctxBarrasEstacaoAno = document.getElementById("dataBarrasEstacaoAno").getContext("2d");
+    const chartGraficoBarrasAnoEspecifico = new Chart(ctxBarrasEstacaoAno, {
+        type: 'bar',
+        data: dataBarrasEstacaoAno,
+        options: {
+            aspectRatio: 3,
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                x: { 
+                    beginAtZero: true,
+                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+                },
+                y: { beginAtZero: true }
+            }
+        }
+    });
+}
+
+criarGraficoBarras() 
+
+function toggleAnoEstacao() {
+        const valorAnoSelecionadoEstacao = ano_todas_estacoes.value;
+        kpi_ano_especifico_estacao.innerHTML = valorAnoSelecionadoEstacao;
+    }
+
+    
+    // Evento para detectar mudança no select principal
+    ano_todas_estacoes.addEventListener("change", toggleAnoEstacao);
+
+
+    // Exibe o grupo inicial baseado no valor padrão do select principal
+    toggleAnoEstacao();
+
+
+</script>
