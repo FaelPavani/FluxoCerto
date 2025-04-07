@@ -396,7 +396,7 @@
     <section style="display: none;" class="section_addUser" id="mainUsers">
 
         <div class="container_addUser">
-            <div style="display: none;" id="gerenciarUsuarios">
+            <div style="display: block;" id="gerenciarUsuarios">
                 <div>
                     <h4>Gerenciar usuários</h4>
 
@@ -446,35 +446,35 @@
                 </div>
             </div>
 
-            <div class="section_adicionar_usuario" id="adicionarUsuario">
+            <div style="display: none;" class="section_adicionar_usuario" id="adicionarUsuario">
                 
                 <h4 class="title_addUser">Adicionar usuário</h4>
 
                 <div class="container_infosUser">
                     <div>
                         <h6>Nome</h6>
-                        <input placeholder="Insira o nome" type="text" name="" id="">
+                        <input placeholder="Insira o nome" type="text" name="" id="nomeUser">
                     </div>
 
                     <div>
                         <h6>Sobrenome</h6>
-                        <input placeholder="Insira o sobrenome" type="text" name="" id="">
+                        <input placeholder="Insira o sobrenome" type="text" name="" id="sobrenomeUser">
                     </div>
                     <div>
                         <h6>CPF</h6>
-                        <input placeholder="Insira o CPF" type="text" name="" id="">
+                        <input placeholder="Insira o CPF" type="text" id="cpfUser" maxlength="14">
                     </div>
                     <div>
-                        <h6>Data de Nascimento</h6>
-                        <input type="text" name="" id="">
+                        <h6>Data de Nascimento (Ano - Mês - Dia)</h6>
+                        <input type="text" name="" id="dataNasc"  maxlength="10" placeholder="AAAA-MM-DD">
                     </div>
                     <div>
                         <h6>Telefone</h6>
-                        <input type="text" name="" id="">
+                        <input type="text" maxlength="15" id="telefoneUser" placeholder="(11) 9 9999-9999">
                     </div>
                     <div>
                         <h6>Email</h6>
-                        <input type="text"  id="">
+                        <input type="text"  id="emailUser" placeholder="exemplo@email.com">
                     </div>
                     <div>
                         <h6>Cargo</h6>
@@ -496,7 +496,7 @@
                         <h6>Data de Início (Ano - Mês - Dia)</h6>
                         <input type="text" id="dataInicio" maxlength="10" placeholder="AAAA-MM-DD">
                     </div>
-                    <button class="botao_concluir_cadastro">Concluir cadastro</button>
+                    <button onclick="concluirCadastro()" class="botao_concluir_cadastro">Concluir cadastro</button>
                 </div>
 
                 <span onclick="fecharAddUser()" class="fechar_addUser">&times;</span>
@@ -1195,22 +1195,204 @@
         adicionarUsuario.style.display = 'flex'
     }
 
-    const inputData = document.getElementById("dataInicio");
 
+    function fecharAddUser(){
+    adicionarUsuario.style.display = 'none'
+    gerenciarUsuarios.style.display = 'block'
+  }
+
+// Lógica de criar funcionario
+// Variáveis de validação
+  var nomeValido = false;
+  var sobrenomeValido = false;
+  var cpfValido = false;
+  var dtNascValido = false;
+  var telefoneValido = false;
+  var emailValido = false;
+  var cargoValido = false;
+  var linhaAtuacaoValido = false;
+  var dataInicioValido = false;
+
+  // Seleciona os elementos
+  const nomeInput = document.getElementById("nomeUser");
+  const sobrenomeInput = document.getElementById("sobrenomeUser");
+  const emailInput = document.getElementById("emailUser");
+  const cargoSelect = document.getElementById("cargo_valores");
+  const linhaSelect = document.getElementById("linha_valores");
+
+  // Validação de Nome
+  nomeInput.addEventListener("input", () => {
+    if (nomeInput.value.trim().length > 0) {
+      nomeValido = true;
+      nomeInput.style.borderColor = 'green';
+    } else {
+      nomeValido = false;
+      nomeInput.style.borderColor = 'red';
+    }
+  });
+
+  // Validação de Sobrenome
+  sobrenomeInput.addEventListener("input", () => {
+    if (sobrenomeInput.value.trim().length > 0) {
+      sobrenomeValido = true;
+      sobrenomeInput.style.borderColor = 'green';
+    } else {
+      sobrenomeValido = false;
+      sobrenomeInput.style.borderColor = 'red';
+    }
+  });
+
+  // Validação de Email com regex
+  emailInput.addEventListener("input", () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailRegex.test(emailInput.value.trim())) {
+      emailValido = true;
+      emailInput.style.borderColor = 'green';
+    } else {
+      emailValido = false;
+      emailInput.style.borderColor = 'red';
+    }
+  });
+
+  // Validação de Cargo
+  cargoSelect.addEventListener("change", () => {
+    if (cargoSelect.value !== "") {
+      cargoValido = true;
+      cargoSelect.style.borderColor = 'green';
+    } else {
+      cargoValido = false;
+      cargoSelect.style.borderColor = 'red';
+    }
+  });
+
+  // Validação de Linha de Atuação
+  linhaSelect.addEventListener("change", () => {
+    if (linhaSelect.value !== "") {
+      linhaAtuacaoValido = true;
+      linhaSelect.style.borderColor = 'green';
+    } else {
+      linhaAtuacaoValido = false;
+      linhaSelect.style.borderColor = 'red';
+    }
+  });
+
+  // Máscara para Data de Início
+  const inputData = document.getElementById("dataInicio");
   inputData.addEventListener("input", () => {
-    let valor = inputData.value.replace(/\D/g, ''); // remove tudo que não é número
-
+    let valor = inputData.value.replace(/\D/g, '');
     if (valor.length > 4 && valor.length <= 6) {
       valor = valor.slice(0, 4) + '-' + valor.slice(4);
     } else if (valor.length > 6) {
       valor = valor.slice(0, 4) + '-' + valor.slice(4, 6) + '-' + valor.slice(6, 8);
     }
-
     inputData.value = valor;
+    // O formato correto deve ter 10 caracteres (AAAA-MM-DD)
+    if (valor.length === 10) {
+      inputData.style.borderColor = 'green';
+      dataInicioValido = true;
+    } else {
+      inputData.style.borderColor = 'red';
+      dataInicioValido = false;
+    }
   });
 
-  function fecharAddUser(){
-    adicionarUsuario.style.display = 'none'
-    gerenciarUsuarios.style.display = 'block'
+  // Máscara para Data de Nascimento
+  const inputDataNasc = document.getElementById("dataNasc");
+  inputDataNasc.addEventListener("input", () => {
+    let valorDataNasc = inputDataNasc.value.replace(/\D/g, '');
+    if (valorDataNasc.length > 4 && valorDataNasc.length <= 6) {
+      valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4);
+    } else if (valorDataNasc.length > 6) {
+      valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4, 6) + '-' + valorDataNasc.slice(6, 8);
+    }
+    inputDataNasc.value = valorDataNasc;
+    // O formato correto deve ter 10 caracteres (AAAA-MM-DD)
+    if (valorDataNasc.length === 10) {
+      inputDataNasc.style.borderColor = 'green';
+      dtNascValido = true;
+    } else {
+      inputDataNasc.style.borderColor = 'red';
+      dtNascValido = false;
+    }
+  });
+
+  // Máscara para Telefone
+  const telefoneInput = document.getElementById("telefoneUser");
+  telefoneInput.addEventListener("input", () => {
+    let valor = telefoneInput.value.replace(/\D/g, '');
+    if (valor.length > 11) valor = valor.slice(0, 11);
+    if (valor.length > 6) {
+      valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+    } else if (valor.length > 2) {
+      valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+    } else if (valor.length > 0) {
+      valor = `(${valor}`;
+    }
+    telefoneInput.value = valor;
+    // Considerando que o formato final deve ter 15 caracteres, ajustamos a validação
+    if (valor.length === 15) {
+      telefoneValido = true;
+      telefoneInput.style.borderColor = 'green';
+    } else {
+      telefoneValido = false;
+      telefoneInput.style.borderColor = 'red';
+    }
+  });
+
+  // Máscara para CPF
+  const cpfInput = document.getElementById("cpfUser");
+  cpfInput.addEventListener("input", () => {
+    let valor = cpfInput.value.replace(/\D/g, '');
+    if (valor.length > 11) valor = valor.slice(0, 11);
+    if (valor.length > 9) {
+      valor = `${valor.slice(0,3)}.${valor.slice(3,6)}.${valor.slice(6,9)}-${valor.slice(9)}`;
+    } else if (valor.length > 6) {
+      valor = `${valor.slice(0,3)}.${valor.slice(3,6)}.${valor.slice(6)}`;
+    } else if (valor.length > 3) {
+      valor = `${valor.slice(0,3)}.${valor.slice(3)}`;
+    }
+    cpfInput.value = valor;
+    // No CPF, o formato completo terá 14 caracteres (000.000.000-00)
+    if (valor.length === 14) {
+      cpfValido = true;
+      cpfInput.style.borderColor = 'green';
+    } else {
+      cpfValido = false;
+      cpfInput.style.borderColor = 'red';
+    }
+  });
+
+  // Função para concluir o cadastro
+  function concluirCadastro(){
+    if(
+      nomeValido &&
+      sobrenomeValido &&
+      cpfValido &&
+      dtNascValido &&
+      telefoneValido &&
+      emailValido &&
+      cargoValido &&
+      linhaAtuacaoValido &&
+      dataInicioValido
+    ){
+      // Se todos os campos estiverem válidos, prossiga com a ação de cadastro
+      alert("Cadastro concluído com sucesso!");
+      // Aqui você pode enviar os dados para o backend ou atualizar a interface
+
+        nomeInput.value = ''
+        sobrenomeInput.value = ''
+        emailInput.value = ''
+        cargoSelect.value = 'Selecione o cargo' 
+        linhaSelect.value = 'Selecione a linha'
+        cpfInput.value = ''
+        inputDataNasc.value = ''
+        inputData.value = ''
+        telefoneInput.value = ''
+        emailInput.value = ''
+    
+        fecharAddUser()
+    } else {
+      alert("Informações incorretas ou faltando!");
+    }
   }
 </script>

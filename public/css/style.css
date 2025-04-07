@@ -4069,14 +4069,14 @@ footer {
     border-radius: 0.5rem;
     padding-left: 1rem;
     cursor: text;
-    border: 1px solid #02033B;
+    border: 2px solid #02033B;
     height: 7vh;
 }
 .container_infosUser select{
     width: 30vw;
     border-radius: 0.5rem;
     padding-left: 1rem;
-    border: 1px solid #02033B;
+    border: 2px solid #02033B;
     height: 7vh;
 }
 .botao_concluir_cadastro{
