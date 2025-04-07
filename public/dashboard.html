@@ -45,7 +45,7 @@
 
 
 
-    <main style="display: none;" id="mainDashboards" class="main_dashboard_containers">
+    <main style="display: flex;" id="mainDashboards" class="main_dashboard_containers">
 
         <section class="section_status_dashboard">
 
@@ -393,7 +393,7 @@
         </section>
     </main>
 
-    <section style="display: flex;" class="section_addUser" id="mainUsers">
+    <section style="display: none;" class="section_addUser" id="mainUsers">
 
         <div class="container_addUser">
             <div style="display: none;" id="gerenciarUsuarios">
@@ -447,11 +447,8 @@
             </div>
 
             <div class="section_adicionar_usuario" id="adicionarUsuario">
-                <div class="container_fotoUser">
-                    <h4>Adicionar usuário</h4>
-                    <img src="./assets/user_icon.png" alt="">
-
-                </div>
+                
+                <h4 class="title_addUser">Adicionar usuário</h4>
 
                 <div class="container_infosUser">
                     <div>
@@ -502,7 +499,7 @@
                     <button class="botao_concluir_cadastro">Concluir cadastro</button>
                 </div>
 
-                <span class="fechar_addUser">&times;</span>
+                <span onclick="fecharAddUser()" class="fechar_addUser">&times;</span>
 
             </div>
 
@@ -1195,7 +1192,7 @@
 
     function addUsuario() {
         gerenciarUsuarios.style.display = 'none'
-        adicionarUsuario.style.display = 'block'
+        adicionarUsuario.style.display = 'flex'
     }
 
     const inputData = document.getElementById("dataInicio");
@@ -1211,4 +1208,9 @@
 
     inputData.value = valor;
   });
+
+  function fecharAddUser(){
+    adicionarUsuario.style.display = 'none'
+    gerenciarUsuarios.style.display = 'block'
+  }
 </script>

@@ -4031,7 +4031,9 @@ footer {
     width: 18vw;
     border-radius: 0.5rem;
     height: 75vh;
-    background-color: plum;
+    background-color: white;
+    border: 2px solid #888;
+    padding-top: 0.3rem;
 }
 .container_fotoUser h4{
     font-size: 1.8rem;
@@ -4043,21 +4045,27 @@ footer {
     border: 5px solid #02033B;
 }
 .container_infosUser {
-    width: 54vw;
-    height: 75vh;
+    width: 75vw;
+    height: 70vh;
     border-radius: 1rem;
-    background-color: palegreen;
+    background-color: white;
+    border: 2px solid #888;
     padding: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
+    margin-top: 2rem;
+}
+.title_addUser{
+    position: absolute;
+    left: 11.5rem;
+    top: 7rem;
 }
 .container_infosUser h6{
     font-size: 1.2rem;
     font-weight: 700;
 }
 .container_infosUser input{
-    width: 22vw;
+    width: 30vw;
     border-radius: 0.5rem;
     padding-left: 1rem;
     cursor: text;
@@ -4065,7 +4073,7 @@ footer {
     height: 7vh;
 }
 .container_infosUser select{
-    width: 22vw;
+    width: 30vw;
     border-radius: 0.5rem;
     padding-left: 1rem;
     border: 1px solid #02033B;
