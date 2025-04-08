@@ -282,6 +282,7 @@ body {
 
 .box_conheca p {
     font-size: 1.5vw;
+    background-color: #4335DE;
     width: 30vw;
     margin-left: 2vw;
 }
@@ -595,7 +596,6 @@ footer {
     background-color: none;
 }
 
-.box_formulario_footer input::placeholder {}
 
 .box_nome_email {
     width: 100%;
@@ -2875,9 +2875,6 @@ footer {
         margin-top: 2vw;
         font-size: 3vw;
     }
-
-    .section_home_suporte {}
-
     .container_suporte button {
         width: 30vw;
         margin-right: 3vw;
@@ -3466,21 +3463,31 @@ footer {
 }
 
 .cabecalho_dashboard {
-    border-bottom: 2px solid #02033B;
-    background: linear-gradient(to bottom, white, #E7EFFA);
     width: 100%;
     height: 10vh;
     z-index: 11;
     position: fixed;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.137);
     padding-left: 5rem;
+    padding-right: 5rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .box_usuario_dash {
     width: 15rem;
     height: 100%;
     display: flex;
-    color: #02033B;
+    color: #4335DE;
+    align-items: center;
+}
+.box_icones_dash{
+    width: 18rem;
+    
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -3493,16 +3500,19 @@ footer {
 .box_user_dashboard h3 {
     font-size: 1.3rem;
     font-weight: 800;
+    color: #4335DE;
+
 }
 
 .box_user_dashboard h6 {
     font-size: 0.9rem;
-    color: #02033b8c;
+    color: #4335DE;
+
 }
 
 .lateral_dashboard {
-    border-right: 2px solid #02033B;
-    background: linear-gradient(to right, white, #E7EFFA);
+    border-right: 2px solid white;
+    background-color: #4335DE;
     width: 4.2rem;
     height: 100vh;
     display: flex;
@@ -3553,8 +3563,8 @@ footer {
 .main_dashboard_containers {
     width: 100%;
     height: 100vh;
-    background-color: rgb(255, 252, 252);
-    color: #02033B;
+    background-color: rgb(250, 250, 250);
+    color: #4335DE;
     display: flex;
     padding-top: 5.5rem;
     padding-left: 5.5rem;
@@ -3573,15 +3583,16 @@ footer {
 .box_status_linhas {
     width: 18vw;
     height: 50vh;
-    background-color: #F3F8FF;
+    background-color: white;
     border-radius: 0.5rem;
-    border: 2px solid #02033B;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    /* border: 2px solid #4335DE; */
     padding: 1rem;
 }
 
 .box_status_linhas h4 {
     font-size: 1.5rem;
-    margin-bottom: rem;
+    font-weight: 700;
 }
 
 .box_status_linhas h6 {
@@ -3597,9 +3608,8 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
-    background-color: white;
-    border: 2px solid #02033B;
-    color: rgb(206, 9, 9);
+    background-color: #FDB235;
+    color: #080a92;
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -3607,9 +3617,9 @@ footer {
 .box_pizza_dash {
     width: 18vw;
     height: 30vh;
-    background-color: #F3F8FF;
     border-radius: 0.5rem;
-    border: 2px solid #02033B;
+    /* border: 2px solid #4335DE; */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3617,7 +3627,9 @@ footer {
     font-size: 1.3rem;
     justify-content: center;
 }
-
+.box_pizza_dash h4{
+    font-weight: 700;
+}
 
 .section_dashboard {
     width: 73vw;
@@ -3636,8 +3648,11 @@ footer {
 .select_linhas {
     width: 8rem;
     border-radius: 0.5rem;
-    border: 2px solid #02033B;
+    /* border: 2px solid #4335DE; */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418);
     height: 2.5rem;
+    font-weight: 700;
+    border: none;
 }
 
 .box_filtros {
@@ -3662,6 +3677,7 @@ footer {
     font-size: 1.2rem;
     margin-bottom: -1.1vw;
     margin-left: 1rem;
+    font-weight: 700;
 }
 
 .title_demanda_estacao {
@@ -3670,14 +3686,17 @@ footer {
     margin-top: 1vw;
     margin-bottom: 1vw;
     margin-left: 1rem;
+    font-weight: 700;
 }
 
 .box_demanda_linhas {
-    width: 58vw;
+    width: 59vw;
     border-radius: 0.5rem;
     height: 26vh;
-    background-color: #F3F8FF;
-    border: 2px solid #02033B;
+    background-color: white;
+    /* border: 2px solid #4335DE; */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -3751,7 +3770,6 @@ footer {
     height: 30vh;
     background-color: white;
     border-radius: 0.5rem;
-    border: 2px solid #02033B;
 }
 
 .container_kpis_dash {
@@ -3764,12 +3782,13 @@ footer {
 
 .box_kpis_dash {
     width: 13vw;
-    height: 15vh;
+    height: 18vh;
     margin-top: -3vw;
     margin-bottom: 3.5vw;
-    border: #02033B 2px solid;
+    /* border: 2px solid #4335DE; */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418);
     border-radius: 0.5rem;
-    background-color: #F3F8FF;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3777,9 +3796,11 @@ footer {
     padding-top: 0.5vw;
     font-size: 0.8rem;
 }
-
+.box_kpis_dash h4{
+    font-weight: 700;
+}
 .box_kpis_dash span {
-    font-weight: 800;
+    font-weight: 500;
     font-size: 1.1rem;
     margin-top: 0.5rem;
 }
@@ -3795,9 +3816,10 @@ footer {
 .box_demanda_estacao {
     width: 73vw;
     height: 30vh;
-    border: 2px solid #02033B;
+    /* border: 2px solid #4335DE; */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418);
     border-radius: 0.5rem;
-    background-color: #F3F8FF;
+    background-color: white;
     display: flex;
 
 }
@@ -3806,13 +3828,11 @@ footer {
     background-color: white;
     border-radius: 0.5rem;
     margin-top: 2.5rem;
-    border: 2px solid #02033B;
 }
 
 .graficoBarra {
     padding: 0.3vw;
     background-color: white;
-    border: 2px solid #02033B;
     border-radius: 0.5vw;
 }
 
@@ -3856,9 +3876,9 @@ footer {
     padding: 1.5rem;
     display: flex;
 
-    border: 2px solid #02033B;
+    border: 2px solid #4335DE;
     flex-direction: column;
-    background: linear-gradient(to bottom, #f7ca71, #FFC247);
+   background-color: #FFC247;
 
 }
 
@@ -3940,7 +3960,7 @@ footer {
 
 .fotoUser img {
     height: 2.6rem;
-    border: 2px solid #02033B;
+    border: 2px solid #4335DE;
     border-radius: 2rem;
     padding: 0.1rem;
 }
@@ -4049,6 +4069,7 @@ footer {
     height: 70vh;
     border-radius: 1rem;
     background-color: white;
+    overflow: auto;
     border: 2px solid #888;
     padding: 1rem;
     display: grid;
@@ -4061,7 +4082,7 @@ footer {
     top: 7rem;
 }
 .container_infosUser h6{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 .container_infosUser input{
@@ -4069,14 +4090,14 @@ footer {
     border-radius: 0.5rem;
     padding-left: 1rem;
     cursor: text;
-    border: 2px solid #02033B;
+    border: 2px solid #4335DE;
     height: 7vh;
 }
 .container_infosUser select{
     width: 30vw;
     border-radius: 0.5rem;
     padding-left: 1rem;
-    border: 2px solid #02033B;
+    border: 2px solid #4335DE;
     height: 7vh;
 }
 .botao_concluir_cadastro{
@@ -4092,4 +4113,22 @@ footer {
     cursor: pointer;
     height: 6vh;
     width: auto;
+}
+.dica_senha{
+    display: none;
+    width: 24vw;
+    height: 18vh;
+    background-color: #02033B;
+    border: 2px solid #4335DE;
+    position: absolute;
+    bottom: 0.2rem;
+    font-size: 0.8rem;
+    border-radius: 1.2rem;
+    left: 2rem;
+    padding-left: 1rem;
+    justify-content: center;
+    flex-direction: column;
+}
+.container_senha:hover .dica_senha{
+    display: flex;
 }

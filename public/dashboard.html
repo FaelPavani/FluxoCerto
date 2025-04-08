@@ -12,7 +12,7 @@
 </head>
 
 <body class="body_dash">
-    <div id="caixa_saindo" class="box_saindo">
+    <div style="display: none;" id="caixa_saindo" class="box_saindo">
 
         <p> Você foi desconectado.</p>
 
@@ -20,30 +20,20 @@
     </div>
     <section class="cabecalho_dashboard">
         <div class="box_usuario_dash">
-            <img class="imagem_dashboard" src="./assets/guest_azul.png" alt="">
+            <img class="imagem_dashboard" src="./assets/guest_purple.png" alt="">
             <div class="box_user_dashboard">
                 <h3><span>Olá,</span> Fulano de tal</h3>
                 <h6>Gestor de Operações</h6>
             </div>
         </div>
-    </section>
 
-    <section class="lateral_dashboard">
-        <div class="box_lateral_home">
+        <div class="box_icones_dash">
             <img onclick="homeDashboards()" class="imagem_dashboard" src="./assets/home_icon.png">
-        </div>
-
-        <div class="box_lateral_icones">
-            <img class="imagem_dashboard" src="./assets/config_icon.png">
             <img onclick="addUser()" class="imagem_dashboard" src="./assets/adduser_icon.png">
-        </div>
-
-        <div class="box_lateral_exit">
-            <img onclick="sairDashboard()" class="imagem_dashboard" src="./assets/sair_icon.png">
+            <img class="imagem_dashboard" src="./assets/config_icon.png">
+            <img style="margin-left: 3rem;" onclick="sairDashboard()" class="imagem_dashboard" src="./assets/sair_icon.png">
         </div>
     </section>
-
-
 
     <main style="display: flex;" id="mainDashboards" class="main_dashboard_containers">
 
@@ -172,7 +162,7 @@
                                     </div>
 
                                     <div style="display: none;" id="kpi_por_anos">
-                                        <div style="width: 5vw; background-color: aliceblue;">
+                                        <div style="width: 5vw;">
 
                                             <h4 class="title_filtro_kpi">De:</h4>
                                             <span id="kpi_de" class="ano_especifico_kpi">2024</span>
@@ -492,10 +482,23 @@
                             <option value="verde">Linha Verde</option>
                         </select>
                     </div>
-                    <div>
-                        <h6>Data de Início (Ano - Mês - Dia)</h6>
-                        <input type="text" id="dataInicio" maxlength="10" placeholder="AAAA-MM-DD">
+                    <div class="container_senha">
+                        <h6>Senha</h6>
+                        <input class="inputSenha" type="password" id="senhaUser" placeholder="Informe a senha para o usuário">
+                        <div class="dica_senha">
+                            <p id="senhasIdenticas" style="color: red;">&#10006; As senhas devem ser idênticas</p>
+                            <p id="qtdCaractere" class="col1" style="color: red;">&#10006; Pelo menos 8 caracteres</p>
+                            <p id="minuscula" class="col1" style="color: red;">&#10006; Uma letra minúscula</p>
+                            <p id="maiuscula" class="col1" style="color: red;">&#10006; Uma letra maiúscula</p>
+                            <p id="caractereEspecial" class="col2" style="color: red;">&#10006; Um caractere especial</p>
+                            <p id="numero" class="col2" style="color: red;">&#10006; Um número</p>
+                        </div>
                     </div>
+                    <div>
+                        <h6>Confirme a senha</h6>
+                        <input type="password" id="confirmSenhaUser" placeholder="Confirme a senha">
+                    </div>
+                    <div></div>
                     <button onclick="concluirCadastro()" class="botao_concluir_cadastro">Concluir cadastro</button>
                 </div>
 
@@ -1183,6 +1186,7 @@
         mainUsers.style.display = 'none'
     }
     function sairDashboard() {
+        caixa_saindo.style.display = 'block'
         caixa_saindo.style.opacity = 1;
         localStorage.clear();
         setTimeout(function () {
@@ -1201,9 +1205,12 @@
     gerenciarUsuarios.style.display = 'block'
   }
 
-// Lógica de criar funcionario
-// Variáveis de validação
-  var nomeValido = false;
+
+  
+
+
+   // Validações já existentes para os outros campos (nome, email, etc.)...
+   var nomeValido = false;
   var sobrenomeValido = false;
   var cpfValido = false;
   var dtNascValido = false;
@@ -1211,160 +1218,222 @@
   var emailValido = false;
   var cargoValido = false;
   var linhaAtuacaoValido = false;
-  var dataInicioValido = false;
 
-  // Seleciona os elementos
   const nomeInput = document.getElementById("nomeUser");
   const sobrenomeInput = document.getElementById("sobrenomeUser");
   const emailInput = document.getElementById("emailUser");
   const cargoSelect = document.getElementById("cargo_valores");
   const linhaSelect = document.getElementById("linha_valores");
 
-  // Validação de Nome
   nomeInput.addEventListener("input", () => {
-    if (nomeInput.value.trim().length > 0) {
-      nomeValido = true;
-      nomeInput.style.borderColor = 'green';
-    } else {
-      nomeValido = false;
-      nomeInput.style.borderColor = 'red';
-    }
+      if (nomeInput.value.trim().length > 0) {
+          nomeValido = true;
+          nomeInput.style.borderColor = 'green';
+      } else {
+          nomeValido = false;
+          nomeInput.style.borderColor = 'red';
+      }
   });
 
-  // Validação de Sobrenome
   sobrenomeInput.addEventListener("input", () => {
-    if (sobrenomeInput.value.trim().length > 0) {
-      sobrenomeValido = true;
-      sobrenomeInput.style.borderColor = 'green';
-    } else {
-      sobrenomeValido = false;
-      sobrenomeInput.style.borderColor = 'red';
-    }
+      if (sobrenomeInput.value.trim().length > 0) {
+          sobrenomeValido = true;
+          sobrenomeInput.style.borderColor = 'green';
+      } else {
+          sobrenomeValido = false;
+          sobrenomeInput.style.borderColor = 'red';
+      }
   });
 
-  // Validação de Email com regex
   emailInput.addEventListener("input", () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (emailRegex.test(emailInput.value.trim())) {
-      emailValido = true;
-      emailInput.style.borderColor = 'green';
-    } else {
-      emailValido = false;
-      emailInput.style.borderColor = 'red';
-    }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailRegex.test(emailInput.value.trim())) {
+          emailValido = true;
+          emailInput.style.borderColor = 'green';
+      } else {
+          emailValido = false;
+          emailInput.style.borderColor = 'red';
+      }
   });
 
-  // Validação de Cargo
   cargoSelect.addEventListener("change", () => {
-    if (cargoSelect.value !== "") {
-      cargoValido = true;
-      cargoSelect.style.borderColor = 'green';
-    } else {
-      cargoValido = false;
-      cargoSelect.style.borderColor = 'red';
-    }
+      if (cargoSelect.value !== "") {
+          cargoValido = true;
+          cargoSelect.style.borderColor = 'green';
+      } else {
+          cargoValido = false;
+          cargoSelect.style.borderColor = 'red';
+      }
   });
 
-  // Validação de Linha de Atuação
   linhaSelect.addEventListener("change", () => {
-    if (linhaSelect.value !== "") {
-      linhaAtuacaoValido = true;
-      linhaSelect.style.borderColor = 'green';
-    } else {
-      linhaAtuacaoValido = false;
-      linhaSelect.style.borderColor = 'red';
-    }
-  });
-
-  // Máscara para Data de Início
-  const inputData = document.getElementById("dataInicio");
-  inputData.addEventListener("input", () => {
-    let valor = inputData.value.replace(/\D/g, '');
-    if (valor.length > 4 && valor.length <= 6) {
-      valor = valor.slice(0, 4) + '-' + valor.slice(4);
-    } else if (valor.length > 6) {
-      valor = valor.slice(0, 4) + '-' + valor.slice(4, 6) + '-' + valor.slice(6, 8);
-    }
-    inputData.value = valor;
-    // O formato correto deve ter 10 caracteres (AAAA-MM-DD)
-    if (valor.length === 10) {
-      inputData.style.borderColor = 'green';
-      dataInicioValido = true;
-    } else {
-      inputData.style.borderColor = 'red';
-      dataInicioValido = false;
-    }
+      if (linhaSelect.value !== "") {
+          linhaAtuacaoValido = true;
+          linhaSelect.style.borderColor = 'green';
+      } else {
+          linhaAtuacaoValido = false;
+          linhaSelect.style.borderColor = 'red';
+      }
   });
 
   // Máscara para Data de Nascimento
   const inputDataNasc = document.getElementById("dataNasc");
   inputDataNasc.addEventListener("input", () => {
-    let valorDataNasc = inputDataNasc.value.replace(/\D/g, '');
-    if (valorDataNasc.length > 4 && valorDataNasc.length <= 6) {
-      valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4);
-    } else if (valorDataNasc.length > 6) {
-      valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4, 6) + '-' + valorDataNasc.slice(6, 8);
-    }
-    inputDataNasc.value = valorDataNasc;
-    // O formato correto deve ter 10 caracteres (AAAA-MM-DD)
-    if (valorDataNasc.length === 10) {
-      inputDataNasc.style.borderColor = 'green';
-      dtNascValido = true;
-    } else {
-      inputDataNasc.style.borderColor = 'red';
-      dtNascValido = false;
-    }
+      let valorDataNasc = inputDataNasc.value.replace(/\D/g, '');
+      if (valorDataNasc.length > 4 && valorDataNasc.length <= 6) {
+          valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4);
+      } else if (valorDataNasc.length > 6) {
+          valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4, 6) + '-' + valorDataNasc.slice(6, 8);
+      }
+      inputDataNasc.value = valorDataNasc;
+      if (valorDataNasc.length === 10) {
+          inputDataNasc.style.borderColor = 'green';
+          dtNascValido = true;
+      } else {
+          inputDataNasc.style.borderColor = 'red';
+          dtNascValido = false;
+      }
   });
 
   // Máscara para Telefone
   const telefoneInput = document.getElementById("telefoneUser");
   telefoneInput.addEventListener("input", () => {
-    let valor = telefoneInput.value.replace(/\D/g, '');
-    if (valor.length > 11) valor = valor.slice(0, 11);
-    if (valor.length > 6) {
-      valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
-    } else if (valor.length > 2) {
-      valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
-    } else if (valor.length > 0) {
-      valor = `(${valor}`;
-    }
-    telefoneInput.value = valor;
-    // Considerando que o formato final deve ter 15 caracteres, ajustamos a validação
-    if (valor.length === 15) {
-      telefoneValido = true;
-      telefoneInput.style.borderColor = 'green';
-    } else {
-      telefoneValido = false;
-      telefoneInput.style.borderColor = 'red';
-    }
+      let valor = telefoneInput.value.replace(/\D/g, '');
+      if (valor.length > 11) valor = valor.slice(0, 11);
+      if (valor.length > 6) {
+          valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+      } else if (valor.length > 2) {
+          valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+      } else if (valor.length > 0) {
+          valor = `(${valor}`;
+      }
+      telefoneInput.value = valor;
+      if (valor.length === 15) {
+          telefoneValido = true;
+          telefoneInput.style.borderColor = 'green';
+      } else {
+          telefoneValido = false;
+          telefoneInput.style.borderColor = 'red';
+      }
   });
 
   // Máscara para CPF
   const cpfInput = document.getElementById("cpfUser");
   cpfInput.addEventListener("input", () => {
-    let valor = cpfInput.value.replace(/\D/g, '');
-    if (valor.length > 11) valor = valor.slice(0, 11);
-    if (valor.length > 9) {
-      valor = `${valor.slice(0,3)}.${valor.slice(3,6)}.${valor.slice(6,9)}-${valor.slice(9)}`;
-    } else if (valor.length > 6) {
-      valor = `${valor.slice(0,3)}.${valor.slice(3,6)}.${valor.slice(6)}`;
-    } else if (valor.length > 3) {
-      valor = `${valor.slice(0,3)}.${valor.slice(3)}`;
-    }
-    cpfInput.value = valor;
-    // No CPF, o formato completo terá 14 caracteres (000.000.000-00)
-    if (valor.length === 14) {
-      cpfValido = true;
-      cpfInput.style.borderColor = 'green';
-    } else {
-      cpfValido = false;
-      cpfInput.style.borderColor = 'red';
-    }
+      let valor = cpfInput.value.replace(/\D/g, '');
+      if (valor.length > 11) valor = valor.slice(0, 11);
+      if (valor.length > 9) {
+          valor = `${valor.slice(0,3)}.${valor.slice(3,6)}.${valor.slice(6,9)}-${valor.slice(9)}`;
+      } else if (valor.length > 6) {
+          valor = `${valor.slice(0,3)}.${valor.slice(3,6)}.${valor.slice(6)}`;
+      } else if (valor.length > 3) {
+          valor = `${valor.slice(0,3)}.${valor.slice(3)}`;
+      }
+      cpfInput.value = valor;
+      if (valor.length === 14) {
+          cpfValido = true;
+          cpfInput.style.borderColor = 'green';
+      } else {
+          cpfValido = false;
+          cpfInput.style.borderColor = 'red';
+      }
   });
 
+
+  // -------------------------------
+  // Validação de senha
+  // -------------------------------
+  const senhaInput = document.getElementById("senhaUser");
+  const confirmSenhaInput = document.getElementById("confirmSenhaUser");
+
+  // Elementos de feedback para as regras
+  const senhasIdenticasEl = document.getElementById("senhasIdenticas");
+  const qtdCaractereEl = document.getElementById("qtdCaractere");
+  const minusculaEl = document.getElementById("minuscula");
+  const maiusculaEl = document.getElementById("maiuscula");
+  const caractereEspecialEl = document.getElementById("caractereEspecial");
+  const numeroEl = document.getElementById("numero");
+
+  // Função que realiza a validação a cada input de senha
+  function validatePassword() {
+    const senha = senhaInput.value;
+    const confirmSenha = confirmSenhaInput.value;
+
+    // Validação: Pelo menos 8 caracteres
+    if (senha.length >= 8) {
+      qtdCaractereEl.innerHTML = "&#10004; Pelo menos 8 caracteres";
+      qtdCaractereEl.style.color = "green";
+    } else {
+      qtdCaractereEl.innerHTML = "&#10006; Pelo menos 8 caracteres";
+      qtdCaractereEl.style.color = "red";
+    }
+
+    // Validação: Uma letra minúscula
+    if (/[a-z]/.test(senha)) {
+      minusculaEl.innerHTML = "&#10004; Uma letra minúscula";
+      minusculaEl.style.color = "green";
+    } else {
+      minusculaEl.innerHTML = "&#10006; Uma letra minúscula";
+      minusculaEl.style.color = "red";
+    }
+
+    // Validação: Uma letra maiúscula
+    if (/[A-Z]/.test(senha)) {
+      maiusculaEl.innerHTML = "&#10004; Uma letra maiúscula";
+      maiusculaEl.style.color = "green";
+    } else {
+      maiusculaEl.innerHTML = "&#10006; Uma letra maiúscula";
+      maiusculaEl.style.color = "red";
+    }
+
+    // Validação: Um caractere especial
+    if (/[!@#$%^&*(),.?":{}|<>]/.test(senha)) {
+      caractereEspecialEl.innerHTML = "&#10004; Um caractere especial";
+      caractereEspecialEl.style.color = "green";
+    } else {
+      caractereEspecialEl.innerHTML = "&#10006; Um caractere especial";
+      caractereEspecialEl.style.color = "red";
+    }
+
+    // Validação: Um número
+    if (/\d/.test(senha)) {
+      numeroEl.innerHTML = "&#10004; Um número";
+      numeroEl.style.color = "green";
+    } else {
+      numeroEl.innerHTML = "&#10006; Um número";
+      numeroEl.style.color = "red";
+    }
+
+    // Validação: Senhas idênticas (apenas se houver conteúdo em ambos os campos)
+    if (senha && confirmSenha) {
+      if (senha === confirmSenha) {
+        senhasIdenticasEl.innerHTML = "&#10004; As senhas são idênticas";
+        senhasIdenticasEl.style.color = "green";
+      } else {
+        senhasIdenticasEl.innerHTML = "&#10006; As senhas devem ser idênticas";
+        senhasIdenticasEl.style.color = "red";
+      }
+    } else {
+      // Se um dos campos estiver vazio, mantenha o feedback inicial
+      senhasIdenticasEl.innerHTML = "&#10006; As senhas devem ser idênticas";
+      senhasIdenticasEl.style.color = "red";
+    }
+  }
+
+  // Dispara as validações enquanto o usuário digita
+  senhaInput.addEventListener("input", validatePassword);
+  confirmSenhaInput.addEventListener("input", validatePassword);
+
+
+  // -------------------------------
   // Função para concluir o cadastro
-  function concluirCadastro(){
-    if(
+  // -------------------------------
+  function concluirCadastro() {
+    // Aqui você pode incluir uma verificação se todos os campos (inclusive a senha) estão válidos.
+    // Por exemplo, além das variáveis já validadas, valide também se:
+    // - A senha atende a todas as regras
+    // - A senha e a confirmação são idênticas
+    if (
       nomeValido &&
       sobrenomeValido &&
       cpfValido &&
@@ -1373,24 +1442,27 @@
       emailValido &&
       cargoValido &&
       linhaAtuacaoValido &&
-      dataInicioValido
-    ){
-      // Se todos os campos estiverem válidos, prossiga com a ação de cadastro
+      senhaInput.value.length >= 8 &&
+      /[a-z]/.test(senhaInput.value) &&
+      /[A-Z]/.test(senhaInput.value) &&
+      /[!@#$%^&*(),.?":{}|<>]/.test(senhaInput.value) &&
+      /\d/.test(senhaInput.value) &&
+      (senhaInput.value === confirmSenhaInput.value)
+    ) {
       alert("Cadastro concluído com sucesso!");
-      // Aqui você pode enviar os dados para o backend ou atualizar a interface
+      // Limpe os campos (exemplo)
+      nomeInput.value = '';
+      sobrenomeInput.value = '';
+      cpfInput.value = '';
+      inputDataNasc.value = '';
+      telefoneInput.value = '';
+      emailInput.value = '';
+      cargoSelect.value = 'Selecione o cargo';
+      linhaSelect.value = 'Selecione a linha';
+      senhaInput.value = '';
+      confirmSenhaInput.value = '';
 
-        nomeInput.value = ''
-        sobrenomeInput.value = ''
-        emailInput.value = ''
-        cargoSelect.value = 'Selecione o cargo' 
-        linhaSelect.value = 'Selecione a linha'
-        cpfInput.value = ''
-        inputDataNasc.value = ''
-        inputData.value = ''
-        telefoneInput.value = ''
-        emailInput.value = ''
-    
-        fecharAddUser()
+      fecharAddUser(); // Função para fechar o modal, por exemplo.
     } else {
       alert("Informações incorretas ou faltando!");
     }
