@@ -12,6 +12,7 @@
 </head>
 
 <body class="body_dash">
+    <div style="display: none;" id="blur" class="blur"></div>
     <div style="display: none;" id="caixa_saindo" class="box_saindo">
 
         <p> Você foi desconectado.</p>
@@ -1185,6 +1186,7 @@
         mainUsers.style.display = 'none'
     }
     function sairDashboard() {
+        document.getElementById('blur').style.display = 'flex'
         caixa_saindo.style.display = 'block'
         caixa_saindo.style.opacity = 1;
         localStorage.clear();
