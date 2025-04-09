@@ -18,7 +18,7 @@ Tema: Undefined
 https://bandteccom-my.sharepoint.com/:x:/g/personal/viviane_santos_sptech_school/EQ5FbnlDBcpFnK5Slh18lgMBHZb7KZhylR-mb_dmGqfBrg?e=beqnkh
 * Link Trello :
 https://trello.com/b/NAJkOgH3/fluxo-certo-pi
-* Link Lean UX Canvas :
+* Lean UX Canvas :
 ![image](https://github.com/user-attachments/assets/3507307c-58a3-46f4-8655-7ad17f6ea6ef)
 
 * Link proto-personas :
