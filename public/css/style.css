@@ -3648,11 +3648,10 @@ footer {
 .select_linhas {
     width: 8rem;
     border-radius: 0.5rem;
-    /* border: 2px solid #4335DE; */
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418);
+    border: 2px solid #4335DE;
+    /* box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418); */
     height: 2.5rem;
     font-weight: 700;
-    border: none;
 }
 
 .box_filtros {
@@ -3778,6 +3777,7 @@ footer {
     justify-content: space-between;
     margin-left: 1vw;
     height: 35.5vh;
+    margin-top: 1.5rem;
 }
 
 .box_kpis_dash {
@@ -3809,6 +3809,7 @@ footer {
     width: 100%;
     height: 40vh;
     display: flex;
+    margin-top: -1rem;
     flex-direction: column;
     justify-content: flex-end;
 }
@@ -3875,10 +3876,9 @@ footer {
     color: #02033B;
     padding: 1.5rem;
     display: flex;
-
-    border: 2px solid #4335DE;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.418);
     flex-direction: column;
-   background-color: #FFC247;
+   background-color: white;
 
 }
 
@@ -3886,24 +3886,28 @@ footer {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.imagem_titulo_gerenciar{
+    width: 3rem;
+    margin-right: 1rem;
 }
 
 .container_addUser button {
     width: 18vw;
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
     border: none;
-    background-color: #4335DE;
+    background-color: #FDB235;
     color: white;
     height: 7vh;
 }
 
-.linha_addUser {
-    margin-top: 1rem;
-    width: 100%;
-    border-bottom: 1px solid #02033B;
-}
+
 
 .search-box {
     display: flex;
@@ -3936,18 +3940,19 @@ footer {
     flex-direction: column;
     border-radius: 0.3rem;
     padding: 0.4rem;
-    border: 1px solid #02033B;
-    background-color: white;
+    border: 2px solid #4335DE;
+    background-color: #fcfcfc;
 }
 
 .linha_usuario {
     width: 100%;
     height: 12vh;
     margin-bottom: 1rem;
-    border-radius: 1.5rem;
-    background-color: #E7EFFA;
+    border-radius: 0.3rem;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
     display: flex;
-    border: 1px solid #02033B;
+    border: 2px solid #bebdbd;
 }
 
 .fotoUser {
@@ -3960,8 +3965,6 @@ footer {
 
 .fotoUser img {
     height: 2.6rem;
-    border: 2px solid #4335DE;
-    border-radius: 2rem;
     padding: 0.1rem;
 }
 
@@ -4033,7 +4036,7 @@ footer {
     font-weight: 700;
     margin-bottom: 0.6rem;
     padding-bottom: 1px;
-    border-bottom: 2px solid #02033B;
+    border-bottom: 2px solid #4335DE;
 }
 
 .informacoes_usuarios {
