@@ -1,5 +1,15 @@
-CREATE DATABASE seu_banco;
-USE seu_banco;
+CREATE DATABASE IF NOT EXISTS fluxoCerto;
+USE fluxoCerto;
+
+create table empresa ( 
+	id int primary key auto_increment,
+	nomeEmpresa varchar (45),
+	cnpjEmpresa char(14),
+	Responsavel varchar (45),
+	nomeFantasia varchar(45),
+	razaoSocial varchar(45),
+	email varchar(45)
+);
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,28 +23,39 @@ CREATE TABLE users (
   fk_responsavel int,
   fk_empresa int,
   constraint ct_responsavel foreign key (fk_responsavel) references users(id),
-  constraint CT_empresa foreign key (fk_empresa) references empresa(id),
+  constraint ct_empresa foreign key (fk_empresa) references empresa(id),
   constraint chkCargo Check (cargo in ("analista","gestor")),
   constraint chkLinha check (linha in ("azul", "verde","vermelha"))
 );
 
+CREATE TABLE demandaPorEstacao(
+	id INT PRIMARY KEY auto_increment,
+    fk_empresa INT,
+    ano INT,
+    mes VARCHAR(30),
+    linha VARCHAR(20),
+    fluxo INT,
+    estacao VARCHAR(40),
+    constraint fk_empresa FOREIGN KEY (fk_empresa) REFERENCES empresa(id),
+    constraint check (linha in ("azul", "verde","vermelha"))
+);
 
-create table empresa ( 
-id int primary key auto_increment,
-nomeEmpresa varchar (45),
-cnpjEmpresa char(14),
-Responsavel varchar (45),
-nomeFantasia varchar(45),
-razaoSocial varchar(45),
-email varchar(45));
+CREATE TABLE entradaPorLinha(
+	id INT PRIMARY KEY auto_increment,
+    fk_empresa INT,
+    dataColeta DATE,
+    linha VARCHAR(20),
+    fluxoTotal INT,
+    mediaDia INT,
+    MaiorMaximaDiaria INT,
+    constraint fk_linhaEmpresa FOREIGN KEY (fk_empresa) REFERENCES empresa(id),
+    constraint check (linha in ("azul", "verde","vermelha"))
+);
 
-create table dados (id int primary key auto_increment,
- dataColeta date,
- tipoDado varchar(45),
- linha varchar(10),
- constraint chkLinha check (linha in ("azul", "verde","vermelha")))
-;
-
-
-
-
+create table dados (
+	id int primary key auto_increment,
+	dataColeta date,
+	tipoDado varchar(45),
+	linha varchar(10),
+	constraint chkLinha1 check (linha in ("azul", "verde","vermelha"))
+);

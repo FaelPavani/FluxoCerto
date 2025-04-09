@@ -7,18 +7,22 @@ import javax.sql.DataSource;
 
 public class DBConnectionProvider {
 
-    private final DataSource dataSource;
+    private final JdbcTemplate jdbcTemplate;
+    private final BasicDataSource basicDataSource;
 
     public DBConnectionProvider() {
         BasicDataSource basicDataSource = new BasicDataSource();
-        basicDataSource.setUrl(System.getenv("DB_URL"));
+        basicDataSource.setUrl("jdbc:mysql://localhost:3306/fluxoCerto");
         basicDataSource.setUsername(System.getenv("DB_USERNAME"));
         basicDataSource.setPassword(System.getenv("DB_PASSWORD"));
 
-        this.dataSource = basicDataSource;
+        this.basicDataSource = basicDataSource;
+        this.jdbcTemplate = new JdbcTemplate(basicDataSource);
     }
 
-    public JdbcTemplate getConnection() {
-        return new JdbcTemplate(dataSource);
+    public BasicDataSource getBasicDataSource() {
+        return basicDataSource;
     }
+
+    public JdbcTemplate getJdbcTemplate(){ return jdbcTemplate; }
 }
