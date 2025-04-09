@@ -19,7 +19,8 @@ https://bandteccom-my.sharepoint.com/:x:/g/personal/viviane_santos_sptech_school
 * Link Trello :
 https://trello.com/b/NAJkOgH3/fluxo-certo-pi
 * Link Lean UX Canvas :
-https://miro.com/app/board/uXjVITyT50I=/
+![image](https://github.com/user-attachments/assets/3507307c-58a3-46f4-8655-7ad17f6ea6ef)
+
 * Link proto-personas :
 https://www.canva.com/design/DAGhVdTB714/eDCDTF2gcb3GOZauwSyLSg/edit
 
