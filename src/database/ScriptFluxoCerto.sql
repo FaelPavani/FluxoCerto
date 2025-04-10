@@ -11,6 +11,8 @@ create table empresa (
 	email varchar(45)
 );
 
+insert into empresa VALUES(NULL, "nome", "000.000.000-00", "eu", "nome", "nome", "nome@gmail.com");
+
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
@@ -47,15 +49,17 @@ CREATE TABLE entradaPorLinha(
     linha VARCHAR(20),
     fluxoTotal INT,
     mediaDia INT,
-    MaiorMaximaDiaria INT,
+    maiorMaximaDiaria INT,
     constraint fk_linhaEmpresa FOREIGN KEY (fk_empresa) REFERENCES empresa(id),
     constraint check (linha in ("azul", "verde","vermelha"))
 );
 
-create table dados (
+create table log (
 	id int primary key auto_increment,
-	dataColeta date,
-	tipoDado varchar(45),
-	linha varchar(10),
-	constraint chkLinha1 check (linha in ("azul", "verde","vermelha"))
+    fk_empresa INT,
+    statusResposta VARCHAR(5),
+	dataColeta datetime,
+	descricao varchar(200),
+    origem varchar(50),
+    constraint fk_logEmpresa FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
 );
