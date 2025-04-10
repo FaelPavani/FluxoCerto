@@ -33,7 +33,7 @@ CREATE TABLE users (
 CREATE TABLE demandaPorEstacao(
 	id INT PRIMARY KEY auto_increment,
     fk_empresa INT,
-    ano INT,
+    ano VARCHAR(10),
     mes VARCHAR(30),
     linha VARCHAR(20),
     fluxo INT,
@@ -59,7 +59,7 @@ create table log (
     fk_empresa INT,
     statusResposta VARCHAR(5),
 	dataColeta datetime,
-	descricao varchar(200),
+	descricao varchar(400),
     origem varchar(50),
     constraint fk_logEmpresa FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
 );

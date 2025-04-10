@@ -1,9 +1,7 @@
-package school.sptech.ConexaoBanco;
+package school.sptech.conexaoBanco;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
-
-import javax.sql.DataSource;
 
 public class DBConnectionProvider {
 

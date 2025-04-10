@@ -1,11 +1,9 @@
-package school.sptech.ConexaoBanco.models;
-
-import java.sql.Date;
+package school.sptech.conexaoBanco.models;
 
 public class DemandaPorEstacao {
     private Integer id;
     private Integer fkEmpresa;
-    private Integer ano;
+    private String ano;
     private String mes;
     private String linha;
     private Integer fluxo;
@@ -14,7 +12,7 @@ public class DemandaPorEstacao {
     public DemandaPorEstacao() {
     }
 
-    public DemandaPorEstacao(Integer ano, String mes, String linha, Integer fluxo, String estacao) {
+    public DemandaPorEstacao(String ano, String mes, String linha, Integer fluxo, String estacao) {
         this.ano = ano;
         this.mes = mes;
         this.linha = linha;
@@ -38,11 +36,11 @@ public class DemandaPorEstacao {
         this.fkEmpresa = fkEmpresa;
     }
 
-    public Integer getAno() {
+    public String getAno() {
         return ano;
     }
 
-    public void setAno(Integer ano) {
+    public void setAno(String ano) {
         this.ano = ano;
     }
 

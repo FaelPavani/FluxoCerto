@@ -1,9 +1,8 @@
-package school.sptech.ConexaoBanco.dao;
+package school.sptech.conexaoBanco.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import school.sptech.ConexaoBanco.models.DemandaPorEstacao;
-import school.sptech.ConexaoBanco.models.EntradaPorLinha;
+import school.sptech.conexaoBanco.models.EntradaPorLinha;
 
 import java.sql.Date;
 import java.util.List;

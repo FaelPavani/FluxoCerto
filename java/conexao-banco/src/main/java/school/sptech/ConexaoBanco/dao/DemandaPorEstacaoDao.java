@@ -1,8 +1,8 @@
-package school.sptech.ConexaoBanco.dao;
+package school.sptech.conexaoBanco.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import school.sptech.ConexaoBanco.models.DemandaPorEstacao;
+import school.sptech.conexaoBanco.models.DemandaPorEstacao;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ public class DemandaPorEstacaoDao {
         return dados;
     }
 
-    public void inserirDados(Integer ano, String mes, String linha, Integer fluxo, String estacao){
+    public void inserirDados(String ano, String mes, String linha, Integer fluxo, String estacao){
         jdbcTemplate.update("INSERT INTO demandaPorEstacao(fk_empresa, ano, mes, linha, fluxo, estacao) VALUES (1, ?, ?, ?, ?, ?)", ano, mes, linha, fluxo, estacao);
     }
 }
