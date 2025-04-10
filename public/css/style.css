@@ -3565,8 +3565,8 @@ footer {
     background-color: rgb(250, 250, 250);
     color: #4335DE;
     display: flex;
-    padding-top: 5.5rem;
-    padding-left: 5.5rem;
+    padding-top: 13vh;
+    padding-left: 2rem;
 }
 
 .section_status_dashboard {
@@ -3625,11 +3625,19 @@ footer {
     padding-top: 1rem;
     font-size: 1.3rem;
     justify-content: center;
+    
 }
 .box_pizza_dash h4{
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
+.caixa_grafico_pizza{
+    width: 18vw;
+    height: 20vh;
+}
 .section_dashboard {
     width: 73vw;
     height: 74vh;
@@ -3688,19 +3696,24 @@ footer {
 }
 
 .box_demanda_linhas {
-    width: 59vw;
+    width: 61vw;
     border-radius: 0.5rem;
     height: 26vh;
     background-color: white;
     /* border: 2px solid #4335DE; */
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418);
-
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     overflow: hidden;
 }
-
+.caixa_graficos_linha{
+    width: 80vw;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .linha_kpi {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -3734,6 +3747,7 @@ footer {
     font-weight: 700;
     display: flex;
     padding-top: 2rem;
+    margin-left: 1rem;
     justify-content: center;
     font-size: 0.8rem;
     text-align: center;
@@ -3765,8 +3779,7 @@ footer {
 
 .grafico_linha {
     width: 10vw;
-    height: 30vh;
-    background-color: white;
+    height: 20vh;
     border-radius: 0.5rem;
 }
 
@@ -3821,9 +3834,19 @@ footer {
     border-radius: 0.5rem;
     background-color: white;
     display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
+.caixa_graficos_barras{
+    width: 60vw;
+    height: 30vh;
+}
+.caixa_barra_estacaoAno{
+    width: 60vw;
+    height: 30vh;
+}
 .grafico_pizza {
     background-color: white;
     border-radius: 0.5rem;

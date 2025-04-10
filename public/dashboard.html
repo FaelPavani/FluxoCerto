@@ -54,7 +54,9 @@
 
             <div class="box_pizza_dash">
                 <h4>Ocupação das linhas</h4>
+                <div class="caixa_grafico_pizza">
                 <canvas class="grafico_pizza" id="pizzaChart"></canvas>
+            </div>
             </div>
 
         </section>
@@ -136,9 +138,10 @@
                         <div class="box_titulo_grafico">
                             Ocupação de Passageiros (Milhares)
                         </div>
-                        <canvas class="grafico_linha" id="chartLinhaPorAnos" width="400" height="200"></canvas>
-                        <canvas class="grafico_linha" id="chartLinhaAnoEspecifico" width="400" height="200"></canvas>
-
+                        <div class="caixa_graficos_linha">
+                        <canvas class="grafico_linha" id="chartLinhaPorAnos"></canvas>
+                        <canvas class="grafico_linha" id="chartLinhaAnoEspecifico"></canvas>
+                    </div>
                         <div class="kpis_demanda_linhas">
 
                             <div>
@@ -336,13 +339,14 @@
                         Ocupação de Passageiros (Milhares)
                     </div>
 
-                    <div id="barras_estacoes_linhas" style="width: 43vw;">
+                    <div class="caixa_graficos_barras" id="barras_estacoes_linhas">
                         <canvas class="graficoBarra" id="chartBarrasLinhaAzul"></canvas>
                         <canvas class="graficoBarra" style="display: none;" id="chartBarrasLinhaVermelha"></canvas>
                         <canvas class="graficoBarra" style="display: none;" id="chartBarrasLinhaVerde"></canvas>
                     </div>
+                    <div style="display: none;" id="caixa_barras_estacaoEspecifica" class="caixa_barra_estacaoAno">
                     <canvas class="graficoBarra" style="display: none;" id="dataBarrasEstacaoAno"></canvas>
-
+                </div>
                     <div style="margin-left: 2rem; margin-top: 0.5rem;">
                         <h4 class="title_filtros">Filtrando por:</h4>
                         <div id="kpi_linha_azul_estacao" class="linha_kpi">
@@ -588,7 +592,7 @@
             type: 'line',
             data,
             options: {
-                aspectRatio: 3,
+                maintainAspectRatio: false,
                 responsive: true,
                 plugins: {
                     legend: {
@@ -662,7 +666,8 @@
             type: 'line',
             data,
             options: {
-                aspectRatio: 3,
+                                maintainAspectRatio: false,
+
                 responsive: true,
                 plugins: { legend: { display: false } },
                 scales: {
@@ -749,7 +754,8 @@
             type: 'line',
             data: JSON.parse(JSON.stringify(data)), // Garante que não modificamos o original
             options: {
-                aspectRatio: 3,
+                                maintainAspectRatio: false,
+
                 responsive: true,
                 plugins: { legend: { display: false } },
                 scales: {
@@ -870,7 +876,9 @@
             divEstacaoEspecifica.style.display = 'none';
 
             barras_estacoes_linhas.style.display = 'flex'
+
             document.getElementById('dataBarrasEstacaoAno').style.display = 'none';
+            caixa_barras_estacaoEspecifica.style.display = 'none'
 
             kpi_por_estacao_especifica.style.display = 'none'
         } else if (valorSelecionadofiltarPorEstacoes == 'estacao_especifica') {
@@ -878,6 +886,8 @@
             divEstacaoEspecifica.style.display = 'flex';
 
             dataBarrasEstacaoAno.style.display = 'flex';
+            caixa_barras_estacaoEspecifica.style.display = 'flex';
+
             barras_estacoes_linhas.style.display = 'none'
 
             kpi_por_estacao_especifica.style.display = 'flex'
@@ -972,7 +982,8 @@
         type: 'pie',
         data: data,
         options: {
-            aspectRatio: 3,
+                            maintainAspectRatio: false,
+
             responsive: true, // Faz o gráfico ser responsivo
             plugins: {
                 tooltip: {
@@ -1028,7 +1039,8 @@
         type: 'bar',
         data: dataBarrasAzul,
         options: {
-            aspectRatio: 3,
+                            maintainAspectRatio: false,
+
             responsive: true,
             plugins: {
                 legend: { display: false },
@@ -1071,7 +1083,8 @@
         type: 'bar',
         data: dataBarrasVermelha,
         options: {
-            aspectRatio: 3,
+                            maintainAspectRatio: false,
+
             responsive: true,
             plugins: {
                 legend: { display: false },
@@ -1111,7 +1124,8 @@
         type: 'bar',
         data: dataBarrasVerde,
         options: {
-            aspectRatio: 3,
+                            maintainAspectRatio: false,
+
             responsive: true,
             plugins: {
                 legend: { display: false },
@@ -1145,7 +1159,8 @@
             type: 'bar',
             data: dataBarrasEstacaoAno,
             options: {
-                aspectRatio: 3,
+                                maintainAspectRatio: false,
+
                 responsive: true,
                 plugins: {
                     legend: { display: false },
