@@ -33,7 +33,11 @@ public class DemandaPorEstacaoDao {
         return dados;
     }
 
-    public void inserirDados(String ano, String mes, String linha, Integer fluxo, String estacao){
-        jdbcTemplate.update("INSERT INTO demandaPorEstacao(fk_empresa, ano, mes, linha, fluxo, estacao) VALUES (1, ?, ?, ?, ?, ?)", ano, mes, linha, fluxo, estacao);
+    public void inserirDados(Integer id, String ano, String mes, String linha, Integer fluxo, String estacao){
+        jdbcTemplate.update("INSERT INTO demandaPorEstacao(id, fk_empresa, ano, mes, linha, fluxo, estacao) VALUES (?, 1, ?, ?, ?, ?, ?)", id, ano, mes, linha, fluxo, estacao);
+    }
+
+    public Integer existsById(Integer id) {
+        return jdbcTemplate.queryForObject("SELECT EXISTS(SELECT id FROM demandaPorEstacao WHERE id = ?) AS ja_existe", Integer.class, id);
     }
 }

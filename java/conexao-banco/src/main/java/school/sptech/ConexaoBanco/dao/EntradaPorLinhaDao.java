@@ -34,7 +34,7 @@ public class EntradaPorLinhaDao {
         return dados;
     }
 
-    public void inserirDados(Date dataColeta, String linha, Integer fluxoTotal, Integer mediaDia, Integer maiorMaximaDiaria){
-        jdbcTemplate.update("INSERT INTO entradaPorLinha(fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) VALUES (1, ?, ?, ?, ?, ?)", dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria);
+    public void inserirDados(Integer id, Date dataColeta, String linha, Integer fluxoTotal, Integer mediaDia, Integer maiorMaximaDiaria){
+        jdbcTemplate.update("INSERT INTO entradaPorLinha(id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) VALUES (?, 1, ?, ?, ?, ?, ?)", id, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria);
     }
 }
