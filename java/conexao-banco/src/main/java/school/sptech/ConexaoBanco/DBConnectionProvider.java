@@ -13,6 +13,7 @@ public class DBConnectionProvider {
         basicDataSource.setUrl(System.getenv("DB_HOST"));
         basicDataSource.setUsername(System.getenv("DB_USERNAME"));
         basicDataSource.setPassword(System.getenv("DB_PASSWORD"));
+        // DB_HOST=jdbc:mysql://localhost:3306/fluxocerto;DB_PASSWORD=urubu100;DB_USERNAME=admin
 
         this.basicDataSource = basicDataSource;
         this.jdbcTemplate = new JdbcTemplate(basicDataSource);
