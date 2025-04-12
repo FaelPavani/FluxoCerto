@@ -1,9 +1,8 @@
-package school.sptech.ConexaoBanco.dao;
+package school.sptech.conexaoBanco.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import school.sptech.ConexaoBanco.models.DemandaPorEstacao;
-import school.sptech.ConexaoBanco.models.EntradaPorLinha;
+import school.sptech.conexaoBanco.models.EntradaPorLinha;
 
 import java.sql.Date;
 import java.util.List;
@@ -35,7 +34,7 @@ public class EntradaPorLinhaDao {
         return dados;
     }
 
-    public void inserirDados(Date dataColeta, String linha, Integer fluxoTotal, Integer mediaDia, Integer maiorMaximaDiaria){
-        jdbcTemplate.update("INSERT INTO entradaPorLinha(fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) VALUES (1, ?, ?, ?, ?, ?)", dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria);
+    public void inserirDados(Integer id, Date dataColeta, String linha, Integer fluxoTotal, Integer mediaDia, Integer maiorMaximaDiaria){
+        jdbcTemplate.update("INSERT INTO entradaPorLinha(id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) VALUES (?, 1, ?, ?, ?, ?, ?)", id, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria);
     }
 }

@@ -1,8 +1,8 @@
-package school.sptech.ConexaoBanco.dao;
+package school.sptech.conexaoBanco.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import school.sptech.ConexaoBanco.models.DemandaPorEstacao;
+import school.sptech.conexaoBanco.models.DemandaPorEstacao;
 
 import java.util.List;
 
@@ -33,7 +33,11 @@ public class DemandaPorEstacaoDao {
         return dados;
     }
 
-    public void inserirDados(Integer ano, String mes, String linha, Integer fluxo, String estacao){
-        jdbcTemplate.update("INSERT INTO demandaPorEstacao(fk_empresa, ano, mes, linha, fluxo, estacao) VALUES (1, ?, ?, ?, ?, ?)", ano, mes, linha, fluxo, estacao);
+    public void inserirDados(Integer id, String ano, String mes, String linha, Integer fluxo, String estacao){
+        jdbcTemplate.update("INSERT INTO demandaPorEstacao(id, fk_empresa, ano, mes, linha, fluxo, estacao) VALUES (?, 1, ?, ?, ?, ?, ?)", id, ano, mes, linha, fluxo, estacao);
+    }
+
+    public Integer existsById(Integer id) {
+        return jdbcTemplate.queryForObject("SELECT EXISTS(SELECT id FROM demandaPorEstacao WHERE id = ?) AS ja_existe", Integer.class, id);
     }
 }

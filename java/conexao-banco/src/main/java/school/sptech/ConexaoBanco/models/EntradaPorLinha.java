@@ -1,4 +1,4 @@
-package school.sptech.ConexaoBanco.models;
+package school.sptech.conexaoBanco.models;
 
 import java.sql.Date;
 
