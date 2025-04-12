@@ -11,7 +11,7 @@
     <title>DashBoard</title>
 </head>
 
-<body class="body_dash">
+<body class="body_dash" id="body">
     <div style="display: none;" id="blur" class="blur"></div>
     <div style="display: none;" id="caixa_saindo" class="box_saindo">
 
@@ -32,10 +32,30 @@
             <img onclick="homeDashboards()" class="imagem_dashboard" src="./assets/home_icon.png">
             <img onclick="addUser()" class="imagem_dashboard" src="./assets/adduser_icon.png">
             <img class="imagem_dashboard" src="./assets/config_icon.png">
-            <img style="margin-left: 3rem;" onclick="sairDashboard()" class="imagem_dashboard" src="./assets/sair_icon.png">
+            <img style="margin-left: 3rem;" onclick="sairDashboard()" class="imagem_dashboard"
+                src="./assets/sair_icon.png">
         </div>
+        <div style="display: none;" class="menuHamburguer">
+            ☰
+        </div>
+        <span class="fecharHamburguer">✖</span>
     </section>
 
+    <div id="overlay" class="overlay"></div>
+
+    <div id="menuLateral" class="menuLateral">
+        <div class="conteudoMenuLateral">
+            <h3>Menu</h3>
+            <ul>
+                <li onclick="homeDashboards()">→<img class="imagem_modal_dash" src="./assets/home_icon.png" alt="">
+                    <span>Dashboard</span></li>
+                <li onclick="addUser()">→<img class="imagem_modal_dash" src="./assets/adduser_icon.png" alt="">
+                    <span>Gerenciar Usuários</span></li>
+                <li onclick="sairDashboard()">→<img class="imagem_modal_dash" src="./assets/sair_icon.png" alt="">
+                    <span>Sair</span></li>
+            </ul>
+        </div>
+    </div>
     <main style="display: flex;" id="mainDashboards" class="main_dashboard_containers">
 
         <section class="section_status_dashboard">
@@ -52,13 +72,33 @@
 
             </div>
 
-            <div class="box_pizza_dash">
-                <h4>Ocupação das linhas</h4>
-                <div class="caixa_grafico_pizza">
-                <canvas class="grafico_pizza" id="pizzaChart"></canvas>
-            </div>
-            </div>
+            <div class="container_graficos_mobile">
+                <div class="box_pizza_dash">
+                    <h4>Ocupação das linhas</h4>
+                    <div class="caixa_grafico_pizza">
+                        <canvas class="grafico_pizza" id="pizzaChart"></canvas>
+                    </div>
+                </div>
 
+
+                <div class="container_kpis_dash_mobile">
+
+                    <div class="box_kpis_dash_mobile">
+                        <h4>Estação mais movimentada</h4>
+                        <span>Sé</span>
+                    </div>
+                    <div class="box_kpis_dash_mobile">
+                        <h4>Projeção de aumento de fluxo (linha)</h4>
+                        <span style="color: rgb(206, 9, 9)">5.8%</span>
+                    </div>
+                    <div class="box_kpis_dash_mobile">
+                        <h4>Estação com maior expectativa</h4>
+                        <span>Corinthians-Itaquera</span>
+                    </div>
+
+
+                </div>
+            </div>
         </section>
 
 
@@ -70,63 +110,69 @@
                     <div class="box_filtros">
                         <div class="caixa_filtros">
                             <label>
-                                <select class="select_linhas" id="options_linhas" name="options">
+                                <select class="select_linhas margem" id="options_linhas" name="options">
                                     <option value="linhas">Todas as linhas</option>
                                     <option value="azul">Linha Azul</option>
                                     <option value="vermelha">Linha Vermelha</option>
                                     <option value="verde">Linha Verde</option>
                                 </select>
                             </label>
-
-                            <p>Filtrar por:</p>
-                            <label>
-                                <select class="select_linhas" id="mainSelect" name="options">
-                                    <option value="anos">Anos</option>
-                                    <option value="ano_especifico">Ano específico</option>
-                                </select>
-                            </label>
+                            <div class="box_filtrar_por">
+                                <p>Filtrar por:</p>
+                                <label>
+                                    <select class="select_linhas" id="mainSelect" name="options">
+                                        <option value="anos">Anos</option>
+                                        <option value="ano_especifico">Ano específico</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
 
                         <!-- Opção: Por Anos -->
                         <div class="caixa_filtros">
                             <div id="porAnos"
-                                style="display: flex; justify-content: space-between; align-items: center; width: 24vw;">
-                                <p>De:</p>
-                                <label>
-                                    <select class="select_linhas" id="options_de" name="options">
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                    </select>
-                                </label>
-
-                                <p>Até:</p>
-                                <label>
-                                    <select class="select_linhas" id="options_ate" name="options">
-                                        <option value="2024">2024</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2020">2020</option>
-                                    </select>
-                                </label>
+                                style="display: flex; justify-content: space-between; align-items: center; width: 27vw;">
+                                <div class="box_filtro_de_ate">
+                                    <p>De:</p>
+                                    <label>
+                                        <select class="select_linhas" id="options_de" name="options">
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="box_filtro_de_ate">
+                                    <p>Até:</p>
+                                    <label>
+                                        <select class="select_linhas" id="options_ate" name="options">
+                                            <option value="2024">2024</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2020">2020</option>
+                                        </select>
+                                    </label>
+                                </div>
                             </div>
 
                             <!-- Opção: Ano Específico -->
                             <div id="anoEspecifico"
                                 style="display: none; justify-content: flex-end; align-items: center; width: 23.8vw;">
-                                <p style="margin-right: 0.3rem;">Ano:</p>
-                                <label>
-                                    <select class="select_linhas" id="options_ano_especifico" name="options">
-                                        <option value="2024">2024</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2020">2020</option>
-                                    </select>
-                                </label>
+                                <div class="box_filtro_de_ate">
+                                    <p style="margin-right: 0.3rem;">Ano:</p>
+                                    <label>
+                                        <select class="select_linhas" id="options_ano_especifico" name="options">
+                                            <option value="2024">2024</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2020">2020</option>
+                                        </select>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -139,14 +185,14 @@
                             Ocupação de Passageiros (Milhares)
                         </div>
                         <div class="caixa_graficos_linha">
-                        <canvas class="grafico_linha" id="chartLinhaPorAnos"></canvas>
-                        <canvas class="grafico_linha" id="chartLinhaAnoEspecifico"></canvas>
-                    </div>
+                            <canvas class="grafico_linha" id="chartLinhaPorAnos"></canvas>
+                            <canvas class="grafico_linha" id="chartLinhaAnoEspecifico"></canvas>
+                        </div>
                         <div class="kpis_demanda_linhas">
 
                             <div>
 
-                                <div>
+                                <div >
                                     <h4 class="title_filtros">Filtrando por:</h4>
                                     <div id="kpi_linha_azul" class="linha_kpi">
                                         <div style="background-color: rgb(7, 7, 196);" class="kpi_linha"></div>
@@ -166,7 +212,7 @@
                                     </div>
 
                                     <div style="display: none;" id="kpi_por_anos">
-                                        <div style="width: 5vw;">
+                                        <div style="width: 8vw;">
 
                                             <h4 class="title_filtro_kpi">De:</h4>
                                             <span id="kpi_de" class="ano_especifico_kpi">2024</span>
@@ -212,37 +258,39 @@
                 <div class="box_filtros">
                     <div class="caixa_filtros">
                         <label>
-                            <select class="select_linhas" id="filtrarLinhaEstacao" name="options">
+                            <select class="select_linhas margem" id="filtrarLinhaEstacao" name="options">
                                 <option value="azul">Linha Azul</option>
                                 <option value="vermelha">Linha Vermelha</option>
                                 <option value="verde">Linha Verde</option>
                             </select>
                         </label>
-
-                        <p>Filtrar por:</p>
-                        <label>
-                            <select class="select_linhas" id="filtarPorEstacoes" name="options">
-                                <option value="estacoes">Todas estações</option>
-                                <option value="estacao_especifica">Estação específica</option>
-                            </select>
-                        </label>
+                        <div class="box_filtrar_por">
+                            <p>Filtrar por:</p>
+                            <label>
+                                <select class="select_linhas" id="filtarPorEstacoes" name="options">
+                                    <option value="estacoes">Todas estações</option>
+                                    <option value="estacao_especifica">Estação específica</option>
+                                </select>
+                            </label>
+                        </div>
                     </div>
 
                     <!-- Opção: Por Anos -->
                     <div class="caixa_filtros">
                         <div id="porTodasEstacoes"
                             style="display: flex; justify-content: end; align-items: center; width: 24vw;">
-                            <p style="margin-right: 0.5rem;">No ano de:</p>
-                            <label>
-                                <select class="select_linhas" id="ano_todas_estacoes" name="options">
-                                    <option value="2024">2024</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2020">2020</option>
-                                </select>
-                            </label>
-
+                            <div class="box_filtrar_no_ano">
+                                <p style="margin-right: 0.5rem;">No ano:</p>
+                                <label>
+                                    <select class="select_linhas" id="ano_todas_estacoes" name="options">
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </label>
+                            </div>
 
                         </div>
 
@@ -252,90 +300,95 @@
 
                             <label
                                 style="display: flex; justify-content: space-around; align-items: center; width: 30rem;">
-                                <p style="margin-right: 0.3rem;">Estação:</p>
-                                <select id="estacoesAzul" class="select_linhas" id="options_estacoes_azul"
-                                    name="options">
-                                    <option value="Jabaquara">Jabaquara</option>
-                                    <option value="Conceicao">Conceição</option>
-                                    <option value="São Judas">São Judas</option>
-                                    <option value="Saúde-Ultrafarma">Saúde-Ultrafarma</option>
-                                    <option value="Praça da Árvore">Praça da Árvore</option>
-                                    <option value="Santa Cruz">Santa Cruz</option>
-                                    <option value="Vila Mariana">Vila Mariana</option>
-                                    <option value="Ana Rosa">Ana Rosa</option>
-                                    <option value="Paraíso">Paraíso</option>
-                                    <option value="Vergueiro">Vergueiro</option>
-                                    <option value="São Joaquim">São Joaquim</option>
-                                    <option value="Japão-Liberdade">Japão-Liberdade</option>
-                                    <option value="Sé">Sé</option>
-                                    <option value="São Bento">São Bento</option>
-                                    <option value="Luz">Luz</option>
-                                    <option value="Tiradentes">Tiradentes</option>
-                                    <option value="Armênia">Armênia</option>
-                                    <option value="Portuguesa-Tietê">Portuguesa-Tietê</option>
-                                    <option value="Carandiru">Carandiru</option>
-                                    <option value="Santana">Santana</option>
-                                    <option value="Jardim São Paulo-Ayrton Senna">Jardim São Paulo-Ayrton Senna</option>
-                                    <option value="Parada Inglesa">Parada Inglesa</option>
-                                    <option value="Tucuruvi">Tucuruvi</option>
-                                </select>
-
-                                <select id="estacoesVermelha" style="display: none;" class="select_linhas"
-                                    id="options_estacoes_vermelha" name="options">
-                                    <option value="Corinthians-Itaquera">Corinthians-Itaquera</option>
-                                    <option value="Artur Alvim">Artur Alvim</option>
-                                    <option value="Patriarca-Vila Ré">Patriarca-Vila Ré</option>
-                                    <option value="Guilhermina-Esperaça">Guilhermina-Esperança</option>
-                                    <option value="Vila Matilde">Vila Matilde</option>
-                                    <option value="Penha-Lojas Besni">Penha-Lojas Besni</option>
-                                    <option value="Carrão-Assaí Atacadista">Carrão-Assaí Atacadista</option>
-                                    <option value="Tatuapé">Tatuapé</option>
-                                    <option value="Belém">Belém</option>
-                                    <option value="Bresser-Moóca">Bresser-Moóca</option>
-                                    <option value="Brás">Brás</option>
-                                    <option value="Pedro II">Pedro II</option>
-                                    <option value="Sé">Sé</option>
-                                    <option value="Anhangabaú">Anhangabaú</option>
-                                    <option value="República">República</option>
-                                    <option value="Santa Cecília">Santa Cecília</option>
-                                    <option value="Marechal Deodoro">Marechal Deodoro</option>
-                                    <option value="Palmeiras-Barra Funda">Palmeiras-Barra Funda</option>
-                                </select>
-
-                                <select id="estacoesVerde" style="display: none;" class="select_linhas"
-                                    id="options_estacoes_verde" name="options">
-                                    <option value="Tamanduateí">Tamanduateí</option>
-                                    <option value="Sacomã">Sacomã</option>
-                                    <option value="Alto Do Ipiranga">Alto do Ipiranga</option>
-                                    <option value="Santos-Imigrantes">Santos-Imigrantes</option>
-                                    <option value="Chácara Klabin">Chácara Klabin</option>
-                                    <option value="Ana Rosa">Ana Rosa</option>
-                                    <option value="Paraíso">Paraíso</option>
-                                    <option value="Brigadeiro">Brigadeiro</option>
-                                    <option value="Trianon-Masp">Trianon-Masp</option>
-                                    <option value="Consolação">Consolação</option>
-                                    <option value="Clínicas">Clínicas</option>
-                                    <option value="Santuário N.S. de Fátima-Sumare">Santuário N.S. de Fátima-Sumaré
-                                    </option>
-                                    <option value="Vila Madalena">Vila Madalena</option>
-                                </select>
-
-                                <p style="margin-right: 0.3rem; font-size: 0.9rem ;">Ano de:</p>
-                                <label>
-                                    <select class="select_linhas" id="options_ano_especifico_estacoes" name="options">
-                                        <option value="2024">2024</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2020">2020</option>
+                                <div class="box_estacao_especifica">
+                                    <p style="margin-right: 0.3rem;">Estação:</p>
+                                    <select id="estacoesAzul" class="select_linhas" id="options_estacoes_azul"
+                                        name="options">
+                                        <option value="Jabaquara">Jabaquara</option>
+                                        <option value="Conceicao">Conceição</option>
+                                        <option value="São Judas">São Judas</option>
+                                        <option value="Saúde-Ultrafarma">Saúde-Ultrafarma</option>
+                                        <option value="Praça da Árvore">Praça da Árvore</option>
+                                        <option value="Santa Cruz">Santa Cruz</option>
+                                        <option value="Vila Mariana">Vila Mariana</option>
+                                        <option value="Ana Rosa">Ana Rosa</option>
+                                        <option value="Paraíso">Paraíso</option>
+                                        <option value="Vergueiro">Vergueiro</option>
+                                        <option value="São Joaquim">São Joaquim</option>
+                                        <option value="Japão-Liberdade">Japão-Liberdade</option>
+                                        <option value="Sé">Sé</option>
+                                        <option value="São Bento">São Bento</option>
+                                        <option value="Luz">Luz</option>
+                                        <option value="Tiradentes">Tiradentes</option>
+                                        <option value="Armênia">Armênia</option>
+                                        <option value="Portuguesa-Tietê">Portuguesa-Tietê</option>
+                                        <option value="Carandiru">Carandiru</option>
+                                        <option value="Santana">Santana</option>
+                                        <option value="Jardim São Paulo-Ayrton Senna">Jardim São Paulo-Ayrton Senna
+                                        </option>
+                                        <option value="Parada Inglesa">Parada Inglesa</option>
+                                        <option value="Tucuruvi">Tucuruvi</option>
                                     </select>
-                                </label>
+
+                                    <select id="estacoesVermelha" style="display: none;" class="select_linhas"
+                                        id="options_estacoes_vermelha" name="options">
+                                        <option value="Corinthians-Itaquera">Corinthians-Itaquera</option>
+                                        <option value="Artur Alvim">Artur Alvim</option>
+                                        <option value="Patriarca-Vila Ré">Patriarca-Vila Ré</option>
+                                        <option value="Guilhermina-Esperaça">Guilhermina-Esperança</option>
+                                        <option value="Vila Matilde">Vila Matilde</option>
+                                        <option value="Penha-Lojas Besni">Penha-Lojas Besni</option>
+                                        <option value="Carrão-Assaí Atacadista">Carrão-Assaí Atacadista</option>
+                                        <option value="Tatuapé">Tatuapé</option>
+                                        <option value="Belém">Belém</option>
+                                        <option value="Bresser-Moóca">Bresser-Moóca</option>
+                                        <option value="Brás">Brás</option>
+                                        <option value="Pedro II">Pedro II</option>
+                                        <option value="Sé">Sé</option>
+                                        <option value="Anhangabaú">Anhangabaú</option>
+                                        <option value="República">República</option>
+                                        <option value="Santa Cecília">Santa Cecília</option>
+                                        <option value="Marechal Deodoro">Marechal Deodoro</option>
+                                        <option value="Palmeiras-Barra Funda">Palmeiras-Barra Funda</option>
+                                    </select>
+
+                                    <select id="estacoesVerde" style="display: none;" class="select_linhas"
+                                        id="options_estacoes_verde" name="options">
+                                        <option value="Tamanduateí">Tamanduateí</option>
+                                        <option value="Sacomã">Sacomã</option>
+                                        <option value="Alto Do Ipiranga">Alto do Ipiranga</option>
+                                        <option value="Santos-Imigrantes">Santos-Imigrantes</option>
+                                        <option value="Chácara Klabin">Chácara Klabin</option>
+                                        <option value="Ana Rosa">Ana Rosa</option>
+                                        <option value="Paraíso">Paraíso</option>
+                                        <option value="Brigadeiro">Brigadeiro</option>
+                                        <option value="Trianon-Masp">Trianon-Masp</option>
+                                        <option value="Consolação">Consolação</option>
+                                        <option value="Clínicas">Clínicas</option>
+                                        <option value="Santuário N.S. de Fátima-Sumare">Santuário N.S. de Fátima-Sumaré
+                                        </option>
+                                        <option value="Vila Madalena">Vila Madalena</option>
+                                    </select>
+                                </div>
+                                <div class="box_estacao_especifica">
+                                    <p style="margin-right: 0.3rem;">Ano de:</p>
+                                    <label>
+                                        <select class="select_linhas" id="options_ano_especifico_estacoes"
+                                            name="options">
+                                            <option value="2024">2024</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2020">2020</option>
+                                        </select>
+                                    </label>
+                                </div>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="box_demanda_estacao">
-                    <div class="box_titulo_grafico">
+                    <div class="box_titulo_grafico titulo_grafico_2">
                         Ocupação de Passageiros (Milhares)
                     </div>
 
@@ -345,9 +398,9 @@
                         <canvas class="graficoBarra" style="display: none;" id="chartBarrasLinhaVerde"></canvas>
                     </div>
                     <div style="display: none;" id="caixa_barras_estacaoEspecifica" class="caixa_barra_estacaoAno">
-                    <canvas class="graficoBarra" style="display: none;" id="dataBarrasEstacaoAno"></canvas>
-                </div>
-                    <div style="margin-left: 2rem; margin-top: 0.5rem;">
+                        <canvas class="graficoBarra" style="display: none;" id="dataBarrasEstacaoAno"></canvas>
+                    </div>
+                    <div class="filtro_estacoes" style="margin-left: 0.5rem; margin-top: 0.5rem;">
                         <h4 class="title_filtros">Filtrando por:</h4>
                         <div id="kpi_linha_azul_estacao" class="linha_kpi">
                             <div style="background-color: rgb(7, 7, 196);" class="kpi_linha"></div>
@@ -393,7 +446,8 @@
         <div class="container_addUser">
             <div style="display: block;" id="gerenciarUsuarios">
                 <div>
-                    <h4><img class="imagem_titulo_gerenciar" src="./assets/user_demanda.png" alt="">Gerenciar usuários</h4>
+                    <h4><img class="imagem_titulo_gerenciar" src="./assets/user_demanda.png" alt="">Gerenciar usuários
+                    </h4>
 
                     <div style="display: flex; width: 100%; justify-content: space-between;">
                         <button onclick="addUsuario()">+ Adicionar usuário</button>
@@ -417,14 +471,23 @@
                             <p class="titulos_usuarios">CPF</p>
                             <span class="informacoes_usuarios">251.483.088-50</span>
                         </div>
+
+                        <!-- Essa div serve para deixar o modelo responsivo em mobile (celular) -->
+                        <div class="div_vazia_mobile"></div>
+
                         <div class="cargoUser">
                             <p class="titulos_usuarios">Cargo</p>
                             <span class="informacoes_usuarios">Operador de Tráfego</span>
                         </div>
                         <div class="linhaUser">
-                            <p class="titulos_usuarios">Linha de Atuação</p>
+                            <p class="titulos_usuarios titulo_linha_atuacao">Linha de Atuação</p>
                             <span class="informacoes_usuarios">Linha Azul</span>
                         </div>
+
+                        <!-- Essa div serve para deixar o modelo responsivo em mobile (celular) -->
+                        <div class="div_vazia_mobile"></div>
+
+
                         <div class="dtInicio">
                             <p class="titulos_usuarios">Data de Início</p>
                             <span class="informacoes_usuarios">06/04/2025</span>
@@ -441,7 +504,7 @@
             </div>
 
             <div style="display: none;" class="section_adicionar_usuario" id="adicionarUsuario">
-                
+
                 <h4 class="title_addUser">Adicionar usuário</h4>
 
                 <div class="container_infosUser">
@@ -460,7 +523,7 @@
                     </div>
                     <div>
                         <h6>Data de Nascimento (Ano - Mês - Dia)</h6>
-                        <input type="text" name="" id="dataNasc"  maxlength="10" placeholder="AAAA-MM-DD">
+                        <input type="text" name="" id="dataNasc" maxlength="10" placeholder="AAAA-MM-DD">
                     </div>
                     <div>
                         <h6>Telefone</h6>
@@ -468,7 +531,7 @@
                     </div>
                     <div>
                         <h6>Email</h6>
-                        <input type="text"  id="emailUser" placeholder="exemplo@email.com">
+                        <input type="text" id="emailUser" placeholder="exemplo@email.com">
                     </div>
                     <div>
                         <h6>Cargo</h6>
@@ -488,13 +551,15 @@
                     </div>
                     <div class="container_senha">
                         <h6>Senha</h6>
-                        <input class="inputSenha" type="password" id="senhaUser" placeholder="Informe a senha para o usuário">
+                        <input class="inputSenha" type="password" id="senhaUser"
+                            placeholder="Informe a senha para o usuário">
                         <div class="dica_senha">
                             <p id="senhasIdenticas" style="color: red;">&#10006; As senhas devem ser idênticas</p>
                             <p id="qtdCaractere" class="col1" style="color: red;">&#10006; Pelo menos 8 caracteres</p>
                             <p id="minuscula" class="col1" style="color: red;">&#10006; Uma letra minúscula</p>
                             <p id="maiuscula" class="col1" style="color: red;">&#10006; Uma letra maiúscula</p>
-                            <p id="caractereEspecial" class="col2" style="color: red;">&#10006; Um caractere especial</p>
+                            <p id="caractereEspecial" class="col2" style="color: red;">&#10006; Um caractere especial
+                            </p>
                             <p id="numero" class="col2" style="color: red;">&#10006; Um número</p>
                         </div>
                     </div>
@@ -518,6 +583,55 @@
 
 </html>
 <script>
+
+function verificarTamanhoTela() {
+    const menuHamburguer = document.querySelector(".menuHamburguer");
+
+    if (window.innerWidth > 425) {
+        menuHamburguer.style.display = "none";
+    } else {
+        menuHamburguer.style.display = "flex";
+    }
+}
+
+// Verifica ao carregar a página
+window.addEventListener("load", verificarTamanhoTela);
+
+// Verifica ao redimensionar a janela
+window.addEventListener("resize", verificarTamanhoTela);
+
+
+    const menuLateral = document.getElementById("menuLateral");
+    const abrir = document.querySelector(".menuHamburguer");
+    const fechar = document.querySelector(".fecharHamburguer");
+    const overlay = document.getElementById("overlay");
+
+    function abrirMenu() {
+        menuLateral.classList.add("ativo");
+        overlay.classList.add("ativo");
+        document.body.classList.add("menu-aberto");
+
+        abrir.style.display = "none";
+        fechar.style.display = "flex";
+    }
+
+    function fecharMenu() {
+        
+        menuLateral.classList.remove("ativo");
+        overlay.classList.remove("ativo");
+        document.body.classList.remove("menu-aberto");
+
+        abrir.style.display = "flex";
+        fechar.style.display = "none";
+        verificarTamanhoTela() 
+
+    }
+
+    abrir.addEventListener("click", abrirMenu);
+    fechar.addEventListener("click", fecharMenu);
+    overlay.addEventListener("click", fecharMenu);
+
+
     // Lógica dos selects
 
     const mainSelect = document.getElementById("mainSelect");
@@ -666,7 +780,7 @@
             type: 'line',
             data,
             options: {
-                                maintainAspectRatio: false,
+                maintainAspectRatio: false,
 
                 responsive: true,
                 plugins: { legend: { display: false } },
@@ -754,7 +868,7 @@
             type: 'line',
             data: JSON.parse(JSON.stringify(data)), // Garante que não modificamos o original
             options: {
-                                maintainAspectRatio: false,
+                maintainAspectRatio: false,
 
                 responsive: true,
                 plugins: { legend: { display: false } },
@@ -982,7 +1096,7 @@
         type: 'pie',
         data: data,
         options: {
-                            maintainAspectRatio: false,
+            maintainAspectRatio: false,
 
             responsive: true, // Faz o gráfico ser responsivo
             plugins: {
@@ -999,12 +1113,21 @@
                 },
                 legend: {
                     display: true,
-                    position: 'left',
+                    position: 'right', // Deixa a legenda ao lado (em coluna)
+                    labels: {
+                        font: {
+                            size: 11,
+                            fontcolor: 'red',
+                            weight: '800'
+                        },
+                        color: '#4335DE',
+                        boxWidth: 13,
+                        padding: 10
+                    }
                 }
             }
         }
-    };
-
+    }
     const myPieChart = new Chart(pizzaGrafico, config);
 
 
@@ -1039,7 +1162,7 @@
         type: 'bar',
         data: dataBarrasAzul,
         options: {
-                            maintainAspectRatio: false,
+            maintainAspectRatio: false,
 
             responsive: true,
             plugins: {
@@ -1083,7 +1206,7 @@
         type: 'bar',
         data: dataBarrasVermelha,
         options: {
-                            maintainAspectRatio: false,
+            maintainAspectRatio: false,
 
             responsive: true,
             plugins: {
@@ -1124,7 +1247,7 @@
         type: 'bar',
         data: dataBarrasVerde,
         options: {
-                            maintainAspectRatio: false,
+            maintainAspectRatio: false,
 
             responsive: true,
             plugins: {
@@ -1159,7 +1282,7 @@
             type: 'bar',
             data: dataBarrasEstacaoAno,
             options: {
-                                maintainAspectRatio: false,
+                maintainAspectRatio: false,
 
                 responsive: true,
                 plugins: {
@@ -1195,10 +1318,13 @@
     function addUser() {
         mainDashboards.style.display = 'none';
         mainUsers.style.display = 'flex'
+        fecharMenu();
     }
     function homeDashboards() {
+        
         mainDashboards.style.display = 'flex';
         mainUsers.style.display = 'none'
+        fecharMenu();
     }
     function sairDashboard() {
         document.getElementById('blur').style.display = 'flex'
@@ -1216,271 +1342,291 @@
     }
 
 
-    function fecharAddUser(){
-    adicionarUsuario.style.display = 'none'
-    gerenciarUsuarios.style.display = 'block'
-  }
-
-
-  
-
-
-   // Validações já existentes para os outros campos (nome, email, etc.)...
-   var nomeValido = false;
-  var sobrenomeValido = false;
-  var cpfValido = false;
-  var dtNascValido = false;
-  var telefoneValido = false;
-  var emailValido = false;
-  var cargoValido = false;
-  var linhaAtuacaoValido = false;
-
-  const nomeInput = document.getElementById("nomeUser");
-  const sobrenomeInput = document.getElementById("sobrenomeUser");
-  const emailInput = document.getElementById("emailUser");
-  const cargoSelect = document.getElementById("cargo_valores");
-  const linhaSelect = document.getElementById("linha_valores");
-
-  nomeInput.addEventListener("input", () => {
-      if (nomeInput.value.trim().length > 0) {
-          nomeValido = true;
-          nomeInput.style.borderColor = 'green';
-      } else {
-          nomeValido = false;
-          nomeInput.style.borderColor = 'red';
-      }
-  });
-
-  sobrenomeInput.addEventListener("input", () => {
-      if (sobrenomeInput.value.trim().length > 0) {
-          sobrenomeValido = true;
-          sobrenomeInput.style.borderColor = 'green';
-      } else {
-          sobrenomeValido = false;
-          sobrenomeInput.style.borderColor = 'red';
-      }
-  });
-
-  emailInput.addEventListener("input", () => {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (emailRegex.test(emailInput.value.trim())) {
-          emailValido = true;
-          emailInput.style.borderColor = 'green';
-      } else {
-          emailValido = false;
-          emailInput.style.borderColor = 'red';
-      }
-  });
-
-  cargoSelect.addEventListener("change", () => {
-      if (cargoSelect.value !== "") {
-          cargoValido = true;
-          cargoSelect.style.borderColor = 'green';
-      } else {
-          cargoValido = false;
-          cargoSelect.style.borderColor = 'red';
-      }
-  });
-
-  linhaSelect.addEventListener("change", () => {
-      if (linhaSelect.value !== "") {
-          linhaAtuacaoValido = true;
-          linhaSelect.style.borderColor = 'green';
-      } else {
-          linhaAtuacaoValido = false;
-          linhaSelect.style.borderColor = 'red';
-      }
-  });
-
-  // Máscara para Data de Nascimento
-  const inputDataNasc = document.getElementById("dataNasc");
-  inputDataNasc.addEventListener("input", () => {
-      let valorDataNasc = inputDataNasc.value.replace(/\D/g, '');
-      if (valorDataNasc.length > 4 && valorDataNasc.length <= 6) {
-          valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4);
-      } else if (valorDataNasc.length > 6) {
-          valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4, 6) + '-' + valorDataNasc.slice(6, 8);
-      }
-      inputDataNasc.value = valorDataNasc;
-      if (valorDataNasc.length === 10) {
-          inputDataNasc.style.borderColor = 'green';
-          dtNascValido = true;
-      } else {
-          inputDataNasc.style.borderColor = 'red';
-          dtNascValido = false;
-      }
-  });
-
-  // Máscara para Telefone
-  const telefoneInput = document.getElementById("telefoneUser");
-  telefoneInput.addEventListener("input", () => {
-      let valor = telefoneInput.value.replace(/\D/g, '');
-      if (valor.length > 11) valor = valor.slice(0, 11);
-      if (valor.length > 6) {
-          valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
-      } else if (valor.length > 2) {
-          valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
-      } else if (valor.length > 0) {
-          valor = `(${valor}`;
-      }
-      telefoneInput.value = valor;
-      if (valor.length === 15) {
-          telefoneValido = true;
-          telefoneInput.style.borderColor = 'green';
-      } else {
-          telefoneValido = false;
-          telefoneInput.style.borderColor = 'red';
-      }
-  });
-
-  // Máscara para CPF
-  const cpfInput = document.getElementById("cpfUser");
-  cpfInput.addEventListener("input", () => {
-      let valor = cpfInput.value.replace(/\D/g, '');
-      if (valor.length > 11) valor = valor.slice(0, 11);
-      if (valor.length > 9) {
-          valor = `${valor.slice(0,3)}.${valor.slice(3,6)}.${valor.slice(6,9)}-${valor.slice(9)}`;
-      } else if (valor.length > 6) {
-          valor = `${valor.slice(0,3)}.${valor.slice(3,6)}.${valor.slice(6)}`;
-      } else if (valor.length > 3) {
-          valor = `${valor.slice(0,3)}.${valor.slice(3)}`;
-      }
-      cpfInput.value = valor;
-      if (valor.length === 14) {
-          cpfValido = true;
-          cpfInput.style.borderColor = 'green';
-      } else {
-          cpfValido = false;
-          cpfInput.style.borderColor = 'red';
-      }
-  });
-
-
-  // -------------------------------
-  // Validação de senha
-  // -------------------------------
-  const senhaInput = document.getElementById("senhaUser");
-  const confirmSenhaInput = document.getElementById("confirmSenhaUser");
-
-  // Elementos de feedback para as regras
-  const senhasIdenticasEl = document.getElementById("senhasIdenticas");
-  const qtdCaractereEl = document.getElementById("qtdCaractere");
-  const minusculaEl = document.getElementById("minuscula");
-  const maiusculaEl = document.getElementById("maiuscula");
-  const caractereEspecialEl = document.getElementById("caractereEspecial");
-  const numeroEl = document.getElementById("numero");
-
-  // Função que realiza a validação a cada input de senha
-  function validatePassword() {
-    const senha = senhaInput.value;
-    const confirmSenha = confirmSenhaInput.value;
-
-    // Validação: Pelo menos 8 caracteres
-    if (senha.length >= 8) {
-      qtdCaractereEl.innerHTML = "&#10004; Pelo menos 8 caracteres";
-      qtdCaractereEl.style.color = "green";
-    } else {
-      qtdCaractereEl.innerHTML = "&#10006; Pelo menos 8 caracteres";
-      qtdCaractereEl.style.color = "red";
+    function fecharAddUser() {
+        adicionarUsuario.style.display = 'none'
+        gerenciarUsuarios.style.display = 'block'
     }
 
-    // Validação: Uma letra minúscula
-    if (/[a-z]/.test(senha)) {
-      minusculaEl.innerHTML = "&#10004; Uma letra minúscula";
-      minusculaEl.style.color = "green";
-    } else {
-      minusculaEl.innerHTML = "&#10006; Uma letra minúscula";
-      minusculaEl.style.color = "red";
+
+
+
+
+    // Validações já existentes para os outros campos (nome, email, etc.)...
+    var nomeValido = false;
+    var sobrenomeValido = false;
+    var cpfValido = false;
+    var dtNascValido = false;
+    var telefoneValido = false;
+    var emailValido = false;
+    var cargoValido = false;
+    var linhaAtuacaoValido = false;
+
+    const nomeInput = document.getElementById("nomeUser");
+    const sobrenomeInput = document.getElementById("sobrenomeUser");
+    const emailInput = document.getElementById("emailUser");
+    const cargoSelect = document.getElementById("cargo_valores");
+    const linhaSelect = document.getElementById("linha_valores");
+
+    nomeInput.addEventListener("input", () => {
+        if (nomeInput.value.trim().length > 0) {
+            nomeValido = true;
+            nomeInput.style.borderColor = 'green';
+        } else {
+            nomeValido = false;
+            nomeInput.style.borderColor = 'red';
+        }
+    });
+
+    sobrenomeInput.addEventListener("input", () => {
+        if (sobrenomeInput.value.trim().length > 0) {
+            sobrenomeValido = true;
+            sobrenomeInput.style.borderColor = 'green';
+        } else {
+            sobrenomeValido = false;
+            sobrenomeInput.style.borderColor = 'red';
+        }
+    });
+
+    emailInput.addEventListener("input", () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailRegex.test(emailInput.value.trim())) {
+            emailValido = true;
+            emailInput.style.borderColor = 'green';
+        } else {
+            emailValido = false;
+            emailInput.style.borderColor = 'red';
+        }
+    });
+
+    cargoSelect.addEventListener("change", () => {
+        if (cargoSelect.value !== "") {
+            cargoValido = true;
+            cargoSelect.style.borderColor = 'green';
+        } else {
+            cargoValido = false;
+            cargoSelect.style.borderColor = 'red';
+        }
+    });
+
+    linhaSelect.addEventListener("change", () => {
+        if (linhaSelect.value !== "") {
+            linhaAtuacaoValido = true;
+            linhaSelect.style.borderColor = 'green';
+        } else {
+            linhaAtuacaoValido = false;
+            linhaSelect.style.borderColor = 'red';
+        }
+    });
+
+    // Máscara para Data de Nascimento
+    const inputDataNasc = document.getElementById("dataNasc");
+    inputDataNasc.addEventListener("input", () => {
+        let valorDataNasc = inputDataNasc.value.replace(/\D/g, '');
+        if (valorDataNasc.length > 4 && valorDataNasc.length <= 6) {
+            valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4);
+        } else if (valorDataNasc.length > 6) {
+            valorDataNasc = valorDataNasc.slice(0, 4) + '-' + valorDataNasc.slice(4, 6) + '-' + valorDataNasc.slice(6, 8);
+        }
+        inputDataNasc.value = valorDataNasc;
+        if (valorDataNasc.length === 10) {
+            inputDataNasc.style.borderColor = 'green';
+            dtNascValido = true;
+        } else {
+            inputDataNasc.style.borderColor = 'red';
+            dtNascValido = false;
+        }
+    });
+
+    // Máscara para Telefone
+    const telefoneInput = document.getElementById("telefoneUser");
+    telefoneInput.addEventListener("input", () => {
+        let valor = telefoneInput.value.replace(/\D/g, '');
+        if (valor.length > 11) valor = valor.slice(0, 11);
+        if (valor.length > 6) {
+            valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+        } else if (valor.length > 2) {
+            valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+        } else if (valor.length > 0) {
+            valor = `(${valor}`;
+        }
+        telefoneInput.value = valor;
+        if (valor.length === 15) {
+            telefoneValido = true;
+            telefoneInput.style.borderColor = 'green';
+        } else {
+            telefoneValido = false;
+            telefoneInput.style.borderColor = 'red';
+        }
+    });
+
+    // Máscara para CPF
+    const cpfInput = document.getElementById("cpfUser");
+    cpfInput.addEventListener("input", () => {
+        let valor = cpfInput.value.replace(/\D/g, '');
+        if (valor.length > 11) valor = valor.slice(0, 11);
+        if (valor.length > 9) {
+            valor = `${valor.slice(0, 3)}.${valor.slice(3, 6)}.${valor.slice(6, 9)}-${valor.slice(9)}`;
+        } else if (valor.length > 6) {
+            valor = `${valor.slice(0, 3)}.${valor.slice(3, 6)}.${valor.slice(6)}`;
+        } else if (valor.length > 3) {
+            valor = `${valor.slice(0, 3)}.${valor.slice(3)}`;
+        }
+        cpfInput.value = valor;
+        if (valor.length === 14) {
+            cpfValido = true;
+            cpfInput.style.borderColor = 'green';
+        } else {
+            cpfValido = false;
+            cpfInput.style.borderColor = 'red';
+        }
+    });
+
+
+    // -------------------------------
+    // Validação de senha
+    // -------------------------------
+    const senhaInput = document.getElementById("senhaUser");
+    const confirmSenhaInput = document.getElementById("confirmSenhaUser");
+
+    // Elementos de feedback para as regras
+    const senhasIdenticasEl = document.getElementById("senhasIdenticas");
+    const qtdCaractereEl = document.getElementById("qtdCaractere");
+    const minusculaEl = document.getElementById("minuscula");
+    const maiusculaEl = document.getElementById("maiuscula");
+    const caractereEspecialEl = document.getElementById("caractereEspecial");
+    const numeroEl = document.getElementById("numero");
+
+    // Função que realiza a validação a cada input de senha
+    function validatePassword() {
+        const senha = senhaInput.value;
+        const confirmSenha = confirmSenhaInput.value;
+
+        // Validação: Pelo menos 8 caracteres
+        if (senha.length >= 8) {
+            qtdCaractereEl.innerHTML = "&#10004; Pelo menos 8 caracteres";
+            qtdCaractereEl.style.color = "green";
+        } else {
+            qtdCaractereEl.innerHTML = "&#10006; Pelo menos 8 caracteres";
+            qtdCaractereEl.style.color = "red";
+        }
+
+        // Validação: Uma letra minúscula
+        if (/[a-z]/.test(senha)) {
+            minusculaEl.innerHTML = "&#10004; Uma letra minúscula";
+            minusculaEl.style.color = "green";
+        } else {
+            minusculaEl.innerHTML = "&#10006; Uma letra minúscula";
+            minusculaEl.style.color = "red";
+        }
+
+        // Validação: Uma letra maiúscula
+        if (/[A-Z]/.test(senha)) {
+            maiusculaEl.innerHTML = "&#10004; Uma letra maiúscula";
+            maiusculaEl.style.color = "green";
+        } else {
+            maiusculaEl.innerHTML = "&#10006; Uma letra maiúscula";
+            maiusculaEl.style.color = "red";
+        }
+
+        // Validação: Um caractere especial
+        if (/[!@#$%^&*(),.?":{}|<>]/.test(senha)) {
+            caractereEspecialEl.innerHTML = "&#10004; Um caractere especial";
+            caractereEspecialEl.style.color = "green";
+        } else {
+            caractereEspecialEl.innerHTML = "&#10006; Um caractere especial";
+            caractereEspecialEl.style.color = "red";
+        }
+
+        // Validação: Um número
+        if (/\d/.test(senha)) {
+            numeroEl.innerHTML = "&#10004; Um número";
+            numeroEl.style.color = "green";
+        } else {
+            numeroEl.innerHTML = "&#10006; Um número";
+            numeroEl.style.color = "red";
+        }
+
+        // Validação: Senhas idênticas (apenas se houver conteúdo em ambos os campos)
+        if (senha && confirmSenha) {
+            if (senha === confirmSenha) {
+                senhasIdenticasEl.innerHTML = "&#10004; As senhas são idênticas";
+                senhasIdenticasEl.style.color = "green";
+            } else {
+                senhasIdenticasEl.innerHTML = "&#10006; As senhas devem ser idênticas";
+                senhasIdenticasEl.style.color = "red";
+            }
+        } else {
+            // Se um dos campos estiver vazio, mantenha o feedback inicial
+            senhasIdenticasEl.innerHTML = "&#10006; As senhas devem ser idênticas";
+            senhasIdenticasEl.style.color = "red";
+        }
     }
 
-    // Validação: Uma letra maiúscula
-    if (/[A-Z]/.test(senha)) {
-      maiusculaEl.innerHTML = "&#10004; Uma letra maiúscula";
-      maiusculaEl.style.color = "green";
-    } else {
-      maiusculaEl.innerHTML = "&#10006; Uma letra maiúscula";
-      maiusculaEl.style.color = "red";
+    // Dispara as validações enquanto o usuário digita
+    senhaInput.addEventListener("input", validatePassword);
+    confirmSenhaInput.addEventListener("input", validatePassword);
+
+
+    // -------------------------------
+    // Função para concluir o cadastro
+    // -------------------------------
+    function concluirCadastro() {
+        // Aqui você pode incluir uma verificação se todos os campos (inclusive a senha) estão válidos.
+        // Por exemplo, além das variáveis já validadas, valide também se:
+        // - A senha atende a todas as regras
+        // - A senha e a confirmação são idênticas
+        if (
+            nomeValido &&
+            sobrenomeValido &&
+            cpfValido &&
+            dtNascValido &&
+            telefoneValido &&
+            emailValido &&
+            cargoValido &&
+            linhaAtuacaoValido &&
+            senhaInput.value.length >= 8 &&
+            /[a-z]/.test(senhaInput.value) &&
+            /[A-Z]/.test(senhaInput.value) &&
+            /[!@#$%^&*(),.?":{}|<>]/.test(senhaInput.value) &&
+            /\d/.test(senhaInput.value) &&
+            (senhaInput.value === confirmSenhaInput.value)
+        ) {
+            alert("Cadastro concluído com sucesso!");
+            // Limpe os campos (exemplo)
+            nomeInput.value = '';
+            sobrenomeInput.value = '';
+            cpfInput.value = '';
+            inputDataNasc.value = '';
+            telefoneInput.value = '';
+            emailInput.value = '';
+            cargoSelect.value = 'Selecione o cargo';
+            linhaSelect.value = 'Selecione a linha';
+            senhaInput.value = '';
+            confirmSenhaInput.value = '';
+
+            fecharAddUser(); // Função para fechar o modal, por exemplo.
+        } else {
+            alert("Informações incorretas ou faltando!");
+        }
     }
 
-    // Validação: Um caractere especial
-    if (/[!@#$%^&*(),.?":{}|<>]/.test(senha)) {
-      caractereEspecialEl.innerHTML = "&#10004; Um caractere especial";
-      caractereEspecialEl.style.color = "green";
-    } else {
-      caractereEspecialEl.innerHTML = "&#10006; Um caractere especial";
-      caractereEspecialEl.style.color = "red";
-    }
 
-    // Validação: Um número
-    if (/\d/.test(senha)) {
-      numeroEl.innerHTML = "&#10004; Um número";
-      numeroEl.style.color = "green";
-    } else {
-      numeroEl.innerHTML = "&#10006; Um número";
-      numeroEl.style.color = "red";
-    }
+    const cabecalho_dashboard = document.querySelector('.cabecalho_dashboard');
+    let lastScrollTop = 0;
 
-    // Validação: Senhas idênticas (apenas se houver conteúdo em ambos os campos)
-    if (senha && confirmSenha) {
-      if (senha === confirmSenha) {
-        senhasIdenticasEl.innerHTML = "&#10004; As senhas são idênticas";
-        senhasIdenticasEl.style.color = "green";
-      } else {
-        senhasIdenticasEl.innerHTML = "&#10006; As senhas devem ser idênticas";
-        senhasIdenticasEl.style.color = "red";
-      }
-    } else {
-      // Se um dos campos estiver vazio, mantenha o feedback inicial
-      senhasIdenticasEl.innerHTML = "&#10006; As senhas devem ser idênticas";
-      senhasIdenticasEl.style.color = "red";
-    }
-  }
+    window.addEventListener("scroll", () => {
+        let scrollTop = window.scrollY;
 
-  // Dispara as validações enquanto o usuário digita
-  senhaInput.addEventListener("input", validatePassword);
-  confirmSenhaInput.addEventListener("input", validatePassword);
+        if (scrollTop > lastScrollTop) {
+            // Rolando para baixo, esconde o cabeçalho
+            cabecalho_dashboard.classList.add("hidden");
+        } else {
+            // Rolando para cima, exibe o cabeçalho
+            cabecalho_dashboard.classList.remove("hidden");
+        }
+
+        lastScrollTop = scrollTop;
+    });
 
 
-  // -------------------------------
-  // Função para concluir o cadastro
-  // -------------------------------
-  function concluirCadastro() {
-    // Aqui você pode incluir uma verificação se todos os campos (inclusive a senha) estão válidos.
-    // Por exemplo, além das variáveis já validadas, valide também se:
-    // - A senha atende a todas as regras
-    // - A senha e a confirmação são idênticas
-    if (
-      nomeValido &&
-      sobrenomeValido &&
-      cpfValido &&
-      dtNascValido &&
-      telefoneValido &&
-      emailValido &&
-      cargoValido &&
-      linhaAtuacaoValido &&
-      senhaInput.value.length >= 8 &&
-      /[a-z]/.test(senhaInput.value) &&
-      /[A-Z]/.test(senhaInput.value) &&
-      /[!@#$%^&*(),.?":{}|<>]/.test(senhaInput.value) &&
-      /\d/.test(senhaInput.value) &&
-      (senhaInput.value === confirmSenhaInput.value)
-    ) {
-      alert("Cadastro concluído com sucesso!");
-      // Limpe os campos (exemplo)
-      nomeInput.value = '';
-      sobrenomeInput.value = '';
-      cpfInput.value = '';
-      inputDataNasc.value = '';
-      telefoneInput.value = '';
-      emailInput.value = '';
-      cargoSelect.value = 'Selecione o cargo';
-      linhaSelect.value = 'Selecione a linha';
-      senhaInput.value = '';
-      confirmSenhaInput.value = '';
-
-      fecharAddUser(); // Função para fechar o modal, por exemplo.
-    } else {
-      alert("Informações incorretas ou faltando!");
-    }
-  }
 </script>

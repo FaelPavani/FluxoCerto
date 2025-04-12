@@ -3464,7 +3464,7 @@ footer {
 .cabecalho_dashboard {
     width: 100%;
     height: 10vh;
-    z-index: 0;
+    z-index: 1002; /* ✅ Agora está acima do overlay (z-index: 1000) */
     position: fixed;
     background-color: white;
     box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.137);
@@ -3472,6 +3472,110 @@ footer {
     padding-right: 5rem;
     display: flex;
     justify-content: space-between;
+}
+.cabecalho_dashboard.hidden {
+    transform: translateY(-100%);
+}
+.imagem_modal_dash{
+    width: 1.2rem;
+    margin-left: 0.3rem;
+}
+/* Menu lateral */
+.menuLateral {
+    position: absolute;
+    top: 3.5rem;
+    border-right: 2px solid #FDB235;
+    left: 0;
+    width: 65vw;
+    height: 42vh;
+    background-color: white;
+    z-index: 5;
+    border-bottom-right-radius: 1.5rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.menuLateral.ativo {
+    transform: translateX(0%);
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* Overlay para clicar fora */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.overlay.ativo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Ícones */
+.menuHamburguer, .fecharHamburguer {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #4335DE;
+    cursor: pointer;
+}
+.fecharHamburguer {
+    display: none;
+}
+
+/* Travar scroll quando menu está aberto */
+body.menu-aberto {
+    overflow: hidden;
+}
+
+
+.conteudoMenuLateral {
+    padding: 2rem 1rem;
+    color: #4335DE;
+}
+
+.conteudoMenuLateral h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.conteudoMenuLateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.conteudoMenuLateral li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: flex;
+    height: 5vh;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.conteudoMenuLateral span {
+    margin-left: 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: left;
 }
 
 .box_usuario_dash {
@@ -3662,22 +3766,48 @@ footer {
 }
 
 .box_filtros {
-    width: 50vw;
+    width: 61vw;
     display: flex;
     align-items: center;
     height: 6.3vh;
-    justify-content: center;
+    justify-content: start;
 }
 
 .caixa_filtros {
     display: flex;
     justify-content: space-between;
-    width: 25.5vw;
+    width: 35vw;
     align-items: center;
     overflow: visible;
     margin-bottom: 1rem;
 }
 
+.box_filtrar_por{
+    display: flex;
+    width: 15.5vw;
+    justify-content: space-between;
+    align-items: center;
+}
+.box_filtrar_no_ano{
+    display: flex;
+    width: 14.5vw;
+    justify-content: space-between;
+    align-items: center;
+}
+.box_estacao_especifica{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    font-size: 0.9rem;
+}
+.box_filtro_de_ate{
+    width: 12vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1rem;
+}
 .title_demanda_linha {
     margin-top: 0.4rem;
     font-size: 1.2rem;
@@ -4119,6 +4249,7 @@ footer {
 .title_addUser{
     position: absolute;
     left: 11.5rem;
+    z-index: 0;
     top: 7rem;
 }
 .container_infosUser h6{
@@ -4171,4 +4302,546 @@ footer {
 }
 .container_senha:hover .dica_senha{
     display: flex;
+}
+
+
+   .div_vazia_mobile{
+    display: none;
+   }
+
+   
+    /*
+    RESPONSIVIDADE DASHBOARD
+    */
+
+    /*Para Laptop*/
+    @media (max-width: 1024px) {
+
+        .caixa_graficos_linha{
+            width: 60vw;
+        }
+        .kpis_demanda_linhas{
+            margin-top: 1rem;
+        }
+        .caixa_filtros{
+            width: 80vw;
+        }
+        .select_linhas{
+            width: 9vw;
+            font-size: 0.7rem;
+        }
+        .box_filtrar_por{
+            width: 17.5vw;
+        }
+        .box_estacao_especifica{
+            font-size: 0.8rem;
+        }
+        
+        .titulos_usuarios{
+            font-size: 0.8rem;
+        }
+        .informacoes_usuarios{
+            font-size: 0.8rem;
+        }
+        .section_addUser{
+            padding-top: 12vw;
+        }
+        .box_filtrar_no_ano{
+            width: 16vw;
+        }
+    }
+
+
+
+/*Para Laptop*/
+@media (max-width: 768px) {
+    .imagem_dashboard{
+        width: 1.8rem;
+    }
+    .box_saindo{
+        
+        top: 30vh;
+        left: 30vw;
+        width: 50vw;
+    }
+    .box_user_dashboard h3{
+        font-size: 1rem;
+    }
+    .box_user_dashboard h6{
+        font-size: 0.8rem;
+    }
+    .box_status_linhas h4{
+        font-size: 0.75rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+    }
+    .box_status_linhas h6{
+        font-size: 0.75rem;
+    }
+    .status_linhas{
+        font-size: 0.7rem;
+    }
+    .box_pizza_dash h4{
+        font-size: 0.8rem;
+    }
+    .grafico_pizza{
+        margin-top: 0;
+        background-color: none;
+    }
+    .caixa_grafico_pizza{
+        width: 15vw;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .select_linhas{
+        height: 5.5vh;
+    }
+    .box_filtrar_por{
+        font-size: 0.75rem;
+    }
+    .box_filtro_de_ate{
+        font-size: 0.8rem;
+    }  
+    .box_filtro_de_ate p{
+        margin-right: 0.5rem;
+    }
+    .box_filtrar_no_ano{
+        font-size: 0.8rem;
+        width: 16.5vw;
+    }
+    .box_estacao_especifica{
+        font-size: 0.6rem;
+    }
+    .box_kpis_dash{
+        height: 15vh;
+    }
+    .box_kpis_dash h4{
+        font-size: 0.6rem;
+    }
+    .box_kpis_dash span{
+        font-size: 0.8rem;
+    }
+    .box_titulo_grafico{
+        font-size: 0.6rem;
+    }
+    .title_filtros{
+        font-size: 0.75rem;
+    }
+    .kpi_linha{
+        width: 1rem;
+        height: 0.6rem;
+    }
+    .linha_kpi h4{
+        font-size: 0.5rem;
+        display: flex;
+        width: 8vw;
+        justify-content: start;
+        align-items: center;
+    }
+    .caixa_graficos_linha{
+        width: 70vw;
+    }
+    .caixa_graficos_barras{
+        width: 100vw;
+    }
+    .title_filtro_kpi{
+        font-size: 0.7rem;
+    }
+    .ano_especifico_kpi{
+        font-size: 0.75rem;
+    }
+    .container_addUser button {
+        font-size: 0.7rem;
+    }
+    .fotoUser img{
+        height: 2rem;
+    }
+    .titulos_usuarios{
+        font-size: 0.6rem;
+    }
+    .editarUser img{
+        height: 1rem;
+    }
+    .linha_usuario{
+        height: 14vh;
+        align-items: center;
+    }
+    .container_addUser h4{
+        font-size: 1.5rem;
+    }
+    .informacoes_usuarios{
+        font-size: 0.65rem;
+    }
+    .title_addUser{
+      top: 7rem;
+      left: 7rem;
+    }
+    .container_infosUser{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        overflow: auto;
+    }
+    .container_infosUser select {
+        width: 60vw;
+        height: 7vh;
+        margin-bottom: 1rem;
+    }
+    .container_infosUser h6 {
+        font-size: 1rem;
+    }
+    .container_infosUser input{
+        width: 60vw;
+        height: 7vh;
+        margin-bottom: 1rem;
+    }
+    .container_addUser button{
+        width: 20vw;
+        height: 8vh;
+        font-size: 1rem;
+    }
+    .container_infosUser{
+        height: auto;
+    }
+    .search-box{
+        width: 20vw;
+        height: 7vh;
+    }
+    .search-box input{
+        width: 15vw;
+        
+        height: 4vh;
+    }
+}
+.menuHamburguer{
+    display: none;
+}
+.fecharHamburguer{
+    display: none;
+}
+
+
+
+
+.container_kpis_dash_mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 1vw;
+    height: 27.5vh;
+    margin-top: 1rem;
+    display: none;
+}
+
+.box_kpis_dash_mobile {
+    width: 55vw;
+    height: 9.3vh;
+    margin-top: -3vw;
+    /* border: 2px solid #4335DE; */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.418);
+    border-radius: 0.5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5vw;
+    font-size: 0.8rem;
+
+    display: none;
+
+}
+.box_kpis_dash_mobile h4{
+    font-weight: 800;
+}
+.box_kpis_dash_mobile span {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+.container_graficos_mobile{
+    display: flex;
+}
+
+/* Responsividade DASHBOARD celular pt.1*/
+@media (max-width: 425px){
+   .cabecalho_dashboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3vw;
+    padding-right: 0;
+   }
+    .menuHamburguer{
+        display: flex;
+        order: 1;
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #4335DE;
+    }
+    
+    .box_usuario_dash{
+        order: 2;
+        width: 12rem;
+    }
+    .imagem_dashboard{
+        order: 2;
+        margin-left: 0.5rem;
+    }
+    .box_icones_dash{
+        display: none;
+    }
+    .main_dashboard_containers{
+        flex-direction: column;
+    }
+    .box_status_linhas{
+        display: flex;
+        width: 90vw;
+        height: 12vh;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    .status_linhas{
+        margin:0;
+        font-size: 0.6rem;
+        text-align: center;
+        margin-right: 0.5rem;
+    }
+    .box_status_linhas h6{
+        font-weight: 700;
+        margin-right: 0.3rem;
+    }
+    .caixa_grafico_pizza{
+        width: 35vw;
+    }
+    .box_pizza_dash{
+        width: 35vw;
+        background-color: white;
+        position: relative;
+    }
+    .box_pizza_dash h4{
+        font-weight: 800;
+    }
+    .container_kpis_dash{
+        display: none;
+    }
+
+    .container_kpis_dash_mobile{
+        display: flex;
+    }
+    .box_kpis_dash_mobile{
+        display: flex;
+    }
+    .title_demanda_linha{
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .section_dash1{
+        width: 90vw;
+        margin-bottom: 2rem;
+    }
+    .box_demanda_linhas{
+        width: 90vw;
+        margin-bottom: 1rem;
+    }
+   
+    .select_linhas{
+        width: 15vw;
+    }
+    .box_filtros{
+      width: 90vw;
+    }
+    
+    .box_filtrar_por{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .box_filtro_de_ate{
+        display: flex;
+        flex-direction: column;
+    }
+    .title_filtros{
+        font-weight: 800;
+
+        font-size: 0.6rem;
+    }
+    .kpi_linha{
+        width: 3vw;
+        height: 1.5vh;
+    }
+    .ano_especifico_kpi{
+        font-size: 0.7em;
+        margin-right: 1rem;
+    }
+    .title_filtro_kpi{
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        margin-right: 1rem;
+        font-weight: 800;
+
+    }
+    .linha_kpi h4{
+        margin-bottom: 0.3rem;
+        font-size: 0.5rem;
+    }
+    .box_titulo_grafico{
+        font-size: 0.5rem;
+        font-weight: 800;
+
+    }
+    .caixa_graficos_linha{
+        width: 55vw;
+    }
+    .margem{
+        margin-top:1rem;
+        width: 26vw;
+    }
+    .title_demanda_estacao{
+        margin-top: 30vw;
+        margin-bottom: 1rem;
+    }
+.section_dash2{
+    margin-top: 13vw;
+}
+.box_filtrar_no_ano{
+    display: flex;
+    flex-direction: column;
+}
+
+    .box_demanda_estacao{
+        
+        width: 90vw;
+        height: 50vh;
+        flex-direction: column;
+    }
+    .caixa_graficos_barras{
+        width: 90vw;
+    }
+    .caixa_barra_estacaoAno{
+        width: 90vw;
+    }
+    .titulo_grafico_2{
+        display: none;
+    }
+    .box_estacao_especifica{
+        display: flex;
+        flex-direction: column;
+    }
+    .filtro_estacoes{
+        display: flex;
+        align-items: center;
+        width: 80vw;
+        justify-content: space-around;
+    }
+    .div_vazia_mobile{
+        display: block;
+    }
+    .linha_usuario{
+        display: grid;
+        height: 36vh;
+    grid-template-columns: repeat(3, 1fr);
+
+    }
+    .fotoUser{
+        display: flex;
+        justify-content: center;
+        width: 15vw;
+        align-items: center;
+    }
+    .container_addUser button{
+        width: 30vw;
+    }
+    .section_addUser{
+        padding-top: 16vw;;
+    }
+    .title_addUser{
+        top: 20vw;
+        left: 15vh;
+    }
+    .container_infosUser input{
+        width: 53vw;
+    }
+    .container_infosUser select{
+        width: 53vw;
+    }
+    .box_saindo{
+       z-index: 999999;
+        height: 30vh;
+        width: 60vw;
+        left: 6rem;
+        position: fixed;
+    }
+}
+@media (max-width: 375px){
+    .box_kpis_dash_mobile h4{
+        font-size: 0.65rem;
+    }
+    .box_kpis_dash_mobile span{
+        font-size: 0.8rem;
+    }
+    .linha_usuario{
+        height: 50vh;
+    }
+    .container_addUser{
+        width: 90vw;
+    }
+    .title_addUser{
+        left: 3rem;
+        top: 6rem;
+    }
+    .container_infosUser select{
+        width: 56vw;
+    }
+    .container_infosUser input{
+        width: 56vw;
+    }
+    .section_addUser{
+        padding-top: 20vw;
+    }
+}
+
+@media (max-width: 320px){
+    .box_status_linhas h4{
+        font-size: 0.6rem;
+    }
+    .status_linhas{
+        font-size: 0.5rem;
+    }
+    .box_status_linhas h6{
+        font-size: 0.6rem;
+    }
+    .box_filtrar_por{
+        font-size: 0.6rem;
+    }
+    .title_filtros{
+        font-size: 0.5rem;
+    }
+    .box_titulo_grafico{
+        font-size: 0.5rem;
+    }
+    .kpis_demanda_linhas{
+        padding-top: 0.3rem;
+    }
+    .caixa_graficos_linha{
+        width: 50vw;
+    }
+    .title_filtro_kpi{
+        font-size: 0.6rem;
+    }
+    .ano_especifico_kpi{
+        font-size: 0.5rem;
+    }
+    .box_filtrar_no_ano{
+        font-size: 0.7rem;
+    }
+    .search-box{
+        width: 30vw;
+    }
+    .section_addUser{
+        padding-top: 23vw;
+    }
 }
