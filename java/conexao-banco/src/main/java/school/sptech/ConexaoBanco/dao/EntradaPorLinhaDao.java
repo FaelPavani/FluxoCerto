@@ -37,4 +37,8 @@ public class EntradaPorLinhaDao {
     public void inserirDados(Integer id, Date dataColeta, String linha, Integer fluxoTotal, Integer mediaDia, Integer maiorMaximaDiaria){
         jdbcTemplate.update("INSERT INTO entradaPorLinha(id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) VALUES (?, 1, ?, ?, ?, ?, ?)", id, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria);
     }
+
+    public Integer existsById(Integer id) {
+        return jdbcTemplate.queryForObject("SELECT EXISTS(SELECT id FROM entradaPorLinha WHERE id = ?) AS ja_existe", Integer.class, id);
+    }
 }
