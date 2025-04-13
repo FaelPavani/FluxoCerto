@@ -1,3 +1,5 @@
+<img src='./public/assets/logo.png' style='width: 200px; margin-left: 30vw'>
+
 # 🚇 FluxoCerto - Monitoramento de Fluxo no Metrô de São Paulo
 
 O **FluxoCerto** é um sistema inteligente de monitoramento do fluxo de passageiros no metrô de São Paulo. Ele coleta, processa e exibe dados sobre a movimentação nas estações, auxiliando na gestão de operações e na melhoria da experiência dos usuários.
@@ -29,6 +31,19 @@ O **FluxoCerto** é um sistema inteligente de monitoramento do fluxo de passagei
 ## ☁️ Infraestrutura
 
 O sistema atualmente está hospedado em uma instância da **AWS (Amazon Web Services)**. Em breve, adicionaremos mais detalhes sobre a infraestrutura do projeto nesta seção.
+
+---
+
+## 🧪 Processamento de Dados (ETL)
+
+O projeto conta com um processo de ETL completo:
+
+- **Extração:** Coletamos os dados brutos das linhas do metrô de São Paulo.
+- **Armazenamento:** Esses dados são armazenados em um bucket S3 AWS (Data Lake).
+- **Transformação:** Os dados são limpos e estruturados para facilitar o uso.
+- **Carga:** Os dados transformados são carregados em um banco de dados relacional para serem exibidos na aplicação web.
+
+>Esse fluxo garante dados atualizados e prontos para análises eficientes.
 
 ---
 
