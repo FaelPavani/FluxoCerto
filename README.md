@@ -1,5 +1,3 @@
-<img src='./public/assets/logo.png' style='width: 200px; margin-left: 30vw'>
-
 # 🚇 FluxoCerto - Monitoramento de Fluxo no Metrô de São Paulo
 
 O **FluxoCerto** é um sistema inteligente de monitoramento do fluxo de passageiros no metrô de São Paulo. Ele coleta, processa e exibe dados sobre a movimentação nas estações, auxiliando na gestão de operações e na melhoria da experiência dos usuários.
