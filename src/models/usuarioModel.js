@@ -10,42 +10,75 @@ function autenticar(email, senha) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+// usuarioModel.cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha){
 
-// Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
-function cadastrarUsuario(nomeu, sobrenome, email, senha,)  // atualizar os valores de entrada para o cadastro e ver como fazer 2 querys para cadastrar a empresa  
-{
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeu, sobrenome, email,senha);
+//     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", 
+//             nome, 
+//             sobrenome, 
+//             cpf, 
+//             dataNasc, 
+//             telefone, 
+//             email, 
+//             cargo, 
+//             linha, 
+//             senha
+//     );
     
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
-    var instrucaoSql = `
-        INSERT INTO usuario (nome, sobrenome, email, senha,fk_empresa) VALUES ('${nomeu}',' ${sobrenome}', '${email}', '${senha}',NULL);
-    `;
-        // INSERT INTO empresa (nomeFantasia, razaoSocial,cnpj) Values ('${nomef},${razaoSocial},${cnpj}');
+//     var instrucaoSql = `
+//     INSERT INTO usuario (nome, sobrenome, email, senha,fk_empresa) VALUES ('${nomeu}',' ${sobrenome}', '${email}', '${senha}',NULL);
+// `;
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-    
+
+
+// }
+
+
+// Função para cadastrar a empresa
+function cadastrarEmpresa(nomeFantasia, razaoSocial, cnpj, nomeEmpresa) {
+    return new Promise((resolve, reject) => {
+        // Query SQL para cadastrar a empresa
+        const instrucaoSql = `
+            INSERT INTO empresa (nomeFantasia, razaoSocial, cnpjEmpresa, nomeEmpresa)
+            VALUES ('${nomeFantasia}', '${razaoSocial}', '${cnpj}', '${nomeEmpresa}');
+        `;
+        console.log("Executando a instrução SQL para empresa: \n" + instrucaoSql);
+
+        // Executa a query e resolve ou rejeita a promessa com base no resultado
+        database.executar(instrucaoSql)
+            .then(resultado => {
+                console.log("Empresa cadastrada com sucesso!");
+                resolve(resultado); // Resolve a promessa com o resultado da inserção
+            })
+            .catch(erro => {
+                console.log("Erro ao cadastrar empresa: ", erro);
+                reject(erro); // Rejeita a promessa com o erro
+            });
+    });
 }
- function cadastrarEmpresa(nomef,cnpj,razaoSocial){
 
+// Função para cadastrar o usuário
+function cadastrarUsuario(nomeUsuario, cpf, sobrenome, dataNasc, email, senha) {
+    return new Promise((resolve, reject) => {
+        // Query SQL para cadastrar o usuário
+        const instrucaoSql = `
+            INSERT INTO users (username, sobrenome, email, senha, cpf, fk_empresa)
+            VALUES ('${nomeUsuario}', '${sobrenome}', '${email}', '${senha}', '${cpf}', NULL);
+        `;
+        console.log("Executando a instrução SQL para usuário: \n" + instrucaoSql);
 
-
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomef, cnpj, razaoSocial);
-    
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
-    var instrucaoSql = `
-         INSERT INTO empresa (nomeFantasia, razaoSocial,cnpj) Values ('${nomef}','${razaoSocial}','${cnpj}');
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-
-
-
-
-
+        // Executa a query e resolve ou rejeita a promessa com base no resultado
+        database.executar(instrucaoSql)
+            .then(resultado => {
+                console.log("Usuário cadastrado com sucesso!");
+                resolve(resultado); // Resolve a promessa com o resultado da inserção
+            })
+            .catch(erro => {
+                console.log("Erro ao cadastrar usuário: ", erro);
+                reject(erro); // Rejeita a promessa com o erro
+            });
+    });
 }
+ 
 
 
 

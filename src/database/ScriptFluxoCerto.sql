@@ -8,7 +8,7 @@ create table empresa (
 	Responsavel varchar (45),
 	nomeFantasia varchar(45),
 	razaoSocial varchar(45),
-	email varchar(45)
+    
 );
 
 insert into empresa VALUES(NULL, "nome", "000.000.000-00", "eu", "nome", "nome", "nome@gmail.com");
@@ -19,7 +19,8 @@ CREATE TABLE users (
   cargo varchar(9),
   cpf char(13),
   linha varchar (10),
-  dataNasc date,
+  email varchar(65),
+  dataNasc varchar(20),
   dataEntrada datetime default current_timestamp,
   senha varchar(100) NOT NULL,
   fk_responsavel int,

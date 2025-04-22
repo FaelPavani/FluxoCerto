@@ -12,20 +12,8 @@ router.post("/cadastrarChamado", function (req, res) {
     usuarioController.cadastrarChamado(req, res);
 })
 
-
-
-
-
-router.post("/inserirPontuacao", function (req, res) {
-    pesquisaController.inserirPontuacao(req, res);
+router.post("/cadastrarOperador", function (req, res) {
+    usuarioController.cadastrarOperador(req, res);
 })
-
-router.post("/autenticar", function (req, res) {
-    usuarioController.autenticar(req, res);
-});
-
-router.get("/listar10Melhores", function (req, res) {
-    pesquisaController.listar10Melhores(req, res);
-});
 
 module.exports = router;

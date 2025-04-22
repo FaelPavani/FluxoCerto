@@ -568,7 +568,7 @@
                         <input type="password" id="confirmSenhaUser" placeholder="Confirme a senha">
                     </div>
                     <div></div>
-                    <button onclick="concluirCadastro()" class="botao_concluir_cadastro">Concluir cadastro</button>
+                    <button onclick="concluirCadastroOperador()" class="botao_concluir_cadastro">Concluir cadastro</button>
                 </div>
 
                 <span onclick="fecharAddUser()" class="fechar_addUser">&times;</span>
@@ -1570,7 +1570,7 @@ window.addEventListener("resize", verificarTamanhoTela);
     // -------------------------------
     // Função para concluir o cadastro
     // -------------------------------
-    function concluirCadastro() {
+    function concluirCadastroOperador() {
         // Aqui você pode incluir uma verificação se todos os campos (inclusive a senha) estão válidos.
         // Por exemplo, além das variáveis já validadas, valide também se:
         // - A senha atende a todas as regras
@@ -1604,6 +1604,92 @@ window.addEventListener("resize", verificarTamanhoTela);
             senhaInput.value = '';
             confirmSenhaInput.value = '';
 
+
+
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrarOperador", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js    
+
+
+
+
+        // setar os nnomes no json que vai para o post e vai salvar setar variavies
+        serverNomeInput: nomeInput.value,
+  serverSobrenomeInput: sobrenomeInput.value,
+  serverCpfInput: cpfInput.value,
+  serverInputDataNasc: inputDataNasc.value,
+  serverTelefoneInput: telefoneInput.value,
+  serverEmailInput: emailInput.value,
+  serverCargoSelect: cargoSelect.value,
+  serverLinhaSelect: linhaSelect.value,
+  serverSenhaInput: senhaInput.value,
+  serverConfirmSenhaInput: confirmSenhaInput.value
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+         
+
+          concluido.style.display = "flex";
+
+      
+
+          limparFormulario();
+     
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+       
+      });
+
+    return false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             fecharAddUser(); // Função para fechar o modal, por exemplo.
         } else {
             alert("Informações incorretas ou faltando!");

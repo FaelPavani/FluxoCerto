@@ -36,6 +36,14 @@
                 </div>
                 
                 <div class="box_input">
+                  <label for="inpNomeEmpresa">Nome da empresa </label>
+                  <input type="text" id="inpNomeEmpresa" name="inpNomeEmpresa" placeholder="Digite o nome fantasia da empresa" required>
+                  </div>
+
+
+
+
+                <div class="box_input">
                 <label for="inpRazaoSocial">Razão Social</label>
                 <span id="mensagem_erro_social" class="mensagem_erro_cadastro">&#10006; Insira uma razão social válida!</span>
                 <input type="text" id="inpRazaoSocial" placeholder="Digite a razão social registrada" name="inpRazaoSocial" required>
@@ -43,14 +51,13 @@
 
 
                 <div class="box_input">
-                    <label for="inpEmail">Email</label>
+                    <label for="inpEmail">Email corporativo </label>
                 <span id="mensagem_erro_email" class="mensagem_erro_cadastro">&#10006; Insira um email válido!</span>
                 <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required placeholder="Digite seu e-mail empresarial">
                     </div>
 
 
                     <div class="box_input">
-
                 <label for="inpCnpj">CNPJ</label>
                 <span id="mensagem_erro_cnpj" class="mensagem_erro_cadastro">&#10006; Insira um CNPJ válido!</span>
                 <input type="text" id="inpCnpj" placeholder="Digite o CNPJ (somente números)" name="inpCnpj" oninput="validarCnpj()" required>
@@ -60,7 +67,7 @@
 
     <div style="display: none;" id="stepTwo" class="box_caixa_cadastro">
         <div class="box_input">
-        <label for="inpNomeFantasia">Nome</label>
+        <label for="Nome">Nome</label>
         <span id="mensagem_erro_nome" class="mensagem_erro_cadastro">&#10006; Insira um nome válido!</span>
         <input type="text" id="inpNome" name="inpNome" placeholder="Digite o seu nome" required>
         </div>
@@ -71,6 +78,15 @@
         <input type="text" id="inpSobrenome" placeholder="Digite o seu sobrenome" name="inpSobrenome" required>
     </div>
 
+    <div class="box_input">
+      <label for="inpCpf">cpf</label>
+      <input type="text" id="inpCpf" placeholder="Digite o seu CPF" name="inpSobrenome" required>
+  </div>
+
+  <div class="box_input">
+    <label for="inpDataNasc">data de nascimento</label>
+    <input type="date" id="inpDataNasc" placeholder="Escolha sua data de nascimento" name="inpSobrenome" required>
+</div>
 
         <div class="box_input">
             <label for="inpEmail">Senha</label>
@@ -142,7 +158,9 @@ alert("slaoq")
     var sobrenome_Var = inpSobrenome.value;
     var cnpj_Var =  inpCnpj.value;
     var razaoSocial_Var = inpRazaoSocial.value;
-
+    var nomeEmpresa_var =inpNomeEmpresa.value;
+    var cpf_var = inpCpf.value;
+    var dataNasc_var = inpDataNasc.value;
     // Verificando se há algum campo em branco
     if (
       nomef_Var == "" ||
@@ -151,11 +169,11 @@ alert("slaoq")
       nomeu_Var == "" ||
       sobrenome_Var == ""||
       cnpj_Var == ""||
-      razaoSocial_Var == ""
+      razaoSocial_Var == ""||
+      nomeEmpresa_var == ""||
+      cpf_var == "" ||
+      inpDataNasc == ""
     ) {
-
-
-   
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
@@ -176,14 +194,16 @@ alert("slaoq")
 
 
         // setar os nnomes no json que vai para o post e vai salvar setar variavies
-        nomeuServer: nomeu_Var,
+        nomeUsuarioServer: nomeu_Var,
         emailServer: email_Var,
         senhaServer: senha_Var,
-        nomefServer: nomef_Var, 
+        nomeFantasiaServer: nomef_Var, 
         sobrenomeServer: sobrenome_Var, 
         cnpjServer: cnpj_Var, 
-        razaoSocialServer: razaoSocial_Var 
-
+        razaoSocialServer: razaoSocial_Var,
+        nomeEmpresaServer: nomeEmpresa_var, 
+        cpfServer: cpf_var,
+        dataNascServer: dataNasc_var
       }),
     })
       .then(function (resposta) {
