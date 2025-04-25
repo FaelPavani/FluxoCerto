@@ -35,15 +35,12 @@ public class Workbook{
             Path caminhoGet = Path.of(nomeArquivo);
 
             if (Files.exists(caminhoGet)) {
-                System.out.println("Passou");
                  try {
                      Files.delete(caminhoGet); // Deleta o arquivo
                      System.out.println("Arquivo deletado com sucesso!");
                  } catch (IOException e) {
                      System.out.println("Erro ao deletar o arquivo: " + e.getMessage());
                  }
-            } else {
-                System.out.println("Não passou");
             }
         }
 
