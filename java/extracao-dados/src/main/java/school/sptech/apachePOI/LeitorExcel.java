@@ -2,7 +2,9 @@ package school.sptech.apachePOI;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.time.LocalDate;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -20,14 +22,16 @@ import school.sptech.conexaoBanco.models.EntradaPorLinha;
 
 public class LeitorExcel {
 
-    public void extrairDados(String nomeArquivo, InputStream arquivo) {
+    public void extrairDados(String nomeArquivo, InputStream arquivo) throws SQLException {
         DBConnectionProvider dbConnectionProvider = new DBConnectionProvider();
-        JdbcTemplate connection = dbConnectionProvider.getJdbcTemplate();
+        JdbcTemplate jdbcTemplate = dbConnectionProvider.getJdbcTemplate();
+        Connection connection = dbConnectionProvider.getBasicDataSource().getConnection();
+        connection.setAutoCommit(false);
 
-        DemandaPorEstacaoDao estacaoDao = new DemandaPorEstacaoDao(connection);
-        EntradaPorLinhaDao entradaDao = new EntradaPorLinhaDao(connection);
+        DemandaPorEstacaoDao estacaoDao = new DemandaPorEstacaoDao(jdbcTemplate);
+        EntradaPorLinhaDao entradaDao = new EntradaPorLinhaDao(jdbcTemplate);
         // Não esquece de criar o objeto de conexão com o banco
-        LogDao logDao = new LogDao(connection);
+        LogDao logDao = new LogDao(jdbcTemplate);
 
         try {
             System.out.println("\nIniciando leitura do arquivo %s\n".formatted(nomeArquivo));
@@ -137,6 +141,8 @@ public class LeitorExcel {
                     }
                 }
             }
+
+            connection.commit();
             // Fechando o workbook após a leitura
             workbook.close();
 
@@ -149,5 +155,6 @@ public class LeitorExcel {
             // Caso ocorra algum erro durante a leitura do arquivo uma exceção será lançada
             throw new RuntimeException(e);
         }
+        connection.commit();
     }
 }
