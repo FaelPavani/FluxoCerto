@@ -48,7 +48,6 @@ public class EntradaPorLinhaDao {
                     entrada.getId(),
                     entrada.getDataColeta(),
                     entrada.getLinha(),
-                    entrada.getLinha(),
                     entrada.getFluxoTotal(),
                     entrada.getMediaDia(),
                     entrada.getMaiorMaximaDiaria()
