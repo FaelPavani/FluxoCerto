@@ -64,7 +64,7 @@ public class Workbook{
         for (int i = 0; i < arquivos.size(); i++) {
             String nomeArquivo = arquivos.get(i);
             // Coloque o caminho para a pasta que estão os arquivos
-            Path caminho = Path.of("C:\\faculdade\\FluxoCerto\\java\\extracao-dados\\src\\main\\java\\school\\sptech\\apachePOI\\arquivos", nomeArquivo);
+            Path caminho = Path.of(nomeArquivo);
 
             InputStream arquivo = Files.newInputStream(caminho);
 
