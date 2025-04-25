@@ -15,11 +15,12 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
 public class Workbook{
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
 
         S3Client s3Client = new S3Provider().getS3Client();
         String bucketName = "dl-fluxo-certo";
