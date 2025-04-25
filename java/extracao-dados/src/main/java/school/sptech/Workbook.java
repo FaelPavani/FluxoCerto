@@ -21,7 +21,6 @@ import java.util.List;
 
 public class Workbook{
     public static void main(String[] args) throws IOException, SQLException {
-
         S3Client s3Client = new S3Provider().getS3Client();
         String bucketName = "dl-fluxo-certo";
 
@@ -57,7 +56,7 @@ public class Workbook{
                 InputStream inputStream = s3Client.getObject(getObjectRequest, ResponseTransformer.toInputStream());
                 Files.copy(inputStream, new File(object.key()).toPath());
                 System.out.println("Arquivo baixado: " + object.key());
-            }
+           }
         } catch (IOException | S3Exception e) {
             System.err.println("Erro ao fazer download dos arquivos: " + e.getMessage());
         }
@@ -65,7 +64,7 @@ public class Workbook{
         for (int i = 0; i < arquivos.size(); i++) {
             String nomeArquivo = arquivos.get(i);
             // Coloque o caminho para a pasta que estão os arquivos
-            Path caminho = Path.of(nomeArquivo);
+            Path caminho = Path.of("C:\\faculdade\\FluxoCerto\\java\\extracao-dados\\src\\main\\java\\school\\sptech\\apachePOI\\arquivos", nomeArquivo);
 
             InputStream arquivo = Files.newInputStream(caminho);
 

@@ -2,9 +2,11 @@ package school.sptech.conexaoBanco.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import school.sptech.conexaoBanco.models.DemandaPorEstacao;
 import school.sptech.conexaoBanco.models.Log;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LogDao {
@@ -33,5 +35,19 @@ public class LogDao {
 
     public void inserirLog(Integer fk_empresa, String status, String descricao, String origem){
         jdbcTemplate.update("INSERT INTO log(fk_empresa, statusResposta, dataColeta, descricao, origem) VALUES (1, ?, ?, ?, ?)", status, LocalDateTime.now(), descricao, origem);
+    }
+
+    public void inserirLogBatch(List<Log> logs) {
+        String sql = "INSERT INTO log(fk_empresa, statusResposta, dataColeta, descricao, origem) VALUES (1, ?, ?, ?, ?)";
+        List<Object[]> batchArgs = new ArrayList<>();
+        for (Log log : logs) {
+            batchArgs.add(new Object[]{
+                    log.getStatusResposta(),
+                    log.getDataColeta(),
+                    log.getDescricao(),
+                    log.getOrigem()
+            });
+        }
+        jdbcTemplate.batchUpdate(sql, batchArgs);
     }
 }

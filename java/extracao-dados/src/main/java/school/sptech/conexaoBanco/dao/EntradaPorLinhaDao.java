@@ -2,9 +2,11 @@ package school.sptech.conexaoBanco.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import school.sptech.conexaoBanco.models.DemandaPorEstacao;
 import school.sptech.conexaoBanco.models.EntradaPorLinha;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EntradaPorLinhaDao {
@@ -36,6 +38,23 @@ public class EntradaPorLinhaDao {
 
     public void inserirDados(Integer id, Date dataColeta, String linha, Integer fluxoTotal, Integer mediaDia, Integer maiorMaximaDiaria){
         jdbcTemplate.update("INSERT INTO entradaPorLinha(id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) VALUES (?, 1, ?, ?, ?, ?, ?)", id, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria);
+    }
+
+    public void inserirDadosBatch(List<EntradaPorLinha> entradas) {
+        String sql = "INSERT INTO entradaPorLinha (id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) VALUES (?, 1, ?, ?, ?, ?, ?)";
+        List<Object[]> batchArgs = new ArrayList<>();
+        for (EntradaPorLinha entrada : entradas) {
+            batchArgs.add(new Object[]{
+                    entrada.getId(),
+                    entrada.getDataColeta(),
+                    entrada.getLinha(),
+                    entrada.getLinha(),
+                    entrada.getFluxoTotal(),
+                    entrada.getMediaDia(),
+                    entrada.getMaiorMaximaDiaria()
+            });
+        }
+        jdbcTemplate.batchUpdate(sql, batchArgs);
     }
 
     public Integer existsById(Integer id) {

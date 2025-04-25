@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import school.sptech.conexaoBanco.models.DemandaPorEstacao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DemandaPorEstacaoDao {
@@ -35,6 +36,22 @@ public class DemandaPorEstacaoDao {
 
     public void inserirDados(Integer id, String ano, String mes, String linha, Integer fluxo, String estacao){
         jdbcTemplate.update("INSERT INTO demandaPorEstacao(id, fk_empresa, ano, mes, linha, fluxo, estacao) VALUES (?, 1, ?, ?, ?, ?, ?)", id, ano, mes, linha, fluxo, estacao);
+    }
+
+    public void inserirDadosBatch(List<DemandaPorEstacao> estacoes) {
+        String sql = "INSERT INTO demandaPorEstacao (id, fk_empresa, ano, mes, linha, fluxo, estacao) VALUES (?, 1, ?, ?, ?, ?, ?)";
+        List<Object[]> batchArgs = new ArrayList<>();
+        for (DemandaPorEstacao estacao : estacoes) {
+            batchArgs.add(new Object[]{
+                    estacao.getId(),
+                    estacao.getAno(),
+                    estacao.getMes(),
+                    estacao.getLinha(),
+                    estacao.getFluxo(),
+                    estacao.getEstacao()
+            });
+        }
+        jdbcTemplate.batchUpdate(sql, batchArgs);
     }
 
     public Integer existsById(Integer id) {
