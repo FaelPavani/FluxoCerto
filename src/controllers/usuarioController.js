@@ -105,79 +105,76 @@ function cadastrar(req, res) {
 }
 
 
-// // function concluirCadastroOperador{
-// //         // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-// //         var nome = req.body.serverNomeInput;
-// //         var sobrenome = req.body.serverSobrenomeInput;
-// //         var cpf = req.body.serverCpfInput;
-// //         var dataNasc = req.body.serverInputDataNasc;
-// //         var telefone = req.body.serverTelefoneInput;
-// //         var email = req.body.serverEmailInput;
-// //         var cargo = req.body.serverCargoSelect;
-// //         var linha = req.body.serverLinhaSelect;
-// //         var senha = req.body.serverSenhaInput;
-// //         var confirmSenha = req.body.serverConfirmSenhaInput;
-        
+function concluirCadastroOperador(req,res){
+       
+        var nome =       req.body.serverNome;
+        var sobrenome =  req.body.serverSobrenome;
+        var cpf =        req.body.serverCpf;
+        var dataNasc =   req.body.serverDataNasc;
+        var telefone =   req.body.serverTelefone;
+        var email =      req.body.serverEmail;
+        var cargo =      req.body.serverCargo;
+        var linha =      req.body.serverLinha;
+        var senha =      req.body.serverSenha;
+    var emailLogado = sessionStorage.EMAIL_USUARIO
+    
+    
+        // Faça as validações dos valores
     
     
     
     
-    
-    
-// //         // Faça as validações dos valores
-    
-    
-    
-    
-// //         if (nome == undefined) {
-// //             res.status(400).send("O nome está undefined!");
-// //         } else if (sobrenome == undefined) {
-// //             res.status(400).send("O sobrenome está undefined!");
-// //         } else if (cpf == undefined) {
-// //             res.status(400).send("O CPF está undefined!");
-// //         } else if (dataNasc == undefined) {
-// //             res.status(400).send("A data de nascimento está undefined!");
-// //         } else if (telefone == undefined) {
-// //             res.status(400).send("O telefone está undefined!");
-// //         } else if (email == undefined) {
-// //             res.status(400).send("O email está undefined!");
-// //         } else if (cargo == undefined) {
-// //             res.status(400).send("O cargo está undefined!");
-// //         } else if (linha == undefined) {
-// //             res.status(400).send("A linha está undefined!");
-// //         } else if (senha == undefined) {
-// //             res.status(400).send("A senha está undefined!");
-// //         } 
+        if (nome === undefined) {
+            return res.status(400).send("O nome está undefined!");
+        } else if (sobrenome === undefined) {
+            return res.status(400).send("O sobrenome está undefined!");
+        } else if (cpf === undefined) {
+            return res.status(400).send("O CPF está undefined!");
+        } else if (dataNasc === undefined) {
+            return res.status(400).send("A data de nascimento está undefined!");
+        } else if (telefone === undefined) {
+            return res.status(400).send("O telefone está undefined!");
+        } else if (email === undefined) {
+            return res.status(400).send("O email está undefined!");
+        } else if (cargo === undefined) {
+            return res.status(400).send("O cargo está undefined!");
+        } else if (linha === undefined) {
+            return res.status(400).send("A linha está undefined!");
+        } else if (senha === undefined) {
+            return res.status(400).send("A senha está undefined!");
+        }
+        else if (emailLogado === undefined) {
+            return res.status(400).send("usuario nao logado");}
         
      
-// //          else {
+         else {
     
     
     
-// //                 usuarioModel.cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha)
-// //             .then(
-// //                 function (resultado) {
-// //                     res.json(resultado);
-// //                 }
-// //             ).catch(
-// //                 function (erro) {
-// //                     console.log(erro);
-// //                     console.log(
-// //                         "\nHouve um erro ao realizar o cadastro! Erro: ",
-// //                         erro.sqlMessage
-// //                     );
-// //                     res.status(500).json(erro.sqlMessage);
-// //                 }
-// //             );
+                usuarioModel.cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha, emailLogado)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
     
-    
+        }}
     
     
     
             
-//             // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+            // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
             
-//       
+      
 
 
 

@@ -10,27 +10,67 @@ function autenticar(email, senha) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-// usuarioModel.cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha){
+function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha, emailLogado) {
+    return new Promise((resolve, reject) => {
+        console.log(
+            "ACESSEI O USUARIO MODEL para cadastrarOperador com:", 
+            nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha,
+            "\n>> email do usuário logado:", emailLogado
+        );
 
-//     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", 
-//             nome, 
-//             sobrenome, 
-//             cpf, 
-//             dataNasc, 
-//             telefone, 
-//             email, 
-//             cargo, 
-//             linha, 
-//             senha
-//     );
-    
-//     var instrucaoSql = `
-//     INSERT INTO usuario (nome, sobrenome, email, senha,fk_empresa) VALUES ('${nomeu}',' ${sobrenome}', '${email}', '${senha}',NULL);
-// `;
+        // 1) Busca o id e o fk_empresa do usuário que está logado
+        const selectResponsavel = `
+            SELECT id, fk_empresa 
+            FROM users 
+            WHERE email = '${emailLogado}'
+            LIMIT 1;
+        `;
+        console.log("Executando SELECT para buscar id e fk_empresa do responsável:\n", selectResponsavel);
 
+        database.executar(selectResponsavel)
+            .then(resultadoSelect => {
+                if (!resultadoSelect || resultadoSelect.length === 0) {
+                    throw new Error("Usuário logado não encontrado!");
+                }
 
+                const idResponsavel     = resultadoSelect[0].id;
+                const fkEmpresaLogado   = resultadoSelect[0].fk_empresa;
+                console.log("ID do responsável:", idResponsavel);
+                console.log("fk_empresa do responsável:", fkEmpresaLogado);
 
-// }
+                // 2) Insere o novo operador, atribuindo fk_responsavel e fk_empresa
+                const instrucaoSql = `
+                    INSERT INTO users 
+                        (nome, sobrenome, cpf, data_nasc, telefone, email, cargo, linha, senha, fk_empresa, fk_responsavel) 
+                    VALUES 
+                        (
+                            '${nome}', 
+                            '${sobrenome}', 
+                            '${cpf}', 
+                            '${dataNasc}', 
+                            '${telefone}', 
+                            '${email}', 
+                            '${cargo}', 
+                            '${linha}', 
+                            '${senha}', 
+                            ${fkEmpresaLogado},
+                            ${idResponsavel}
+                        );
+                `;
+                console.log("Executando INSERT do operador:\n", instrucaoSql);
+                return database.executar(instrucaoSql);
+            })
+            .then(resultadoInsert => {
+                console.log("Operador cadastrado com sucesso:", resultadoInsert);
+                resolve(resultadoInsert);
+            })
+            .catch(erro => {
+                console.error("Erro em cadastrarOperador:", erro);
+                reject(erro);
+            });
+    });
+}
+
 
 
 // Função para cadastrar a empresa
@@ -120,5 +160,5 @@ module.exports = {
     autenticar,
     cadastrarUsuario,
     cadastrarEmpresa,
-   
+    cadastrarOperador
 };
