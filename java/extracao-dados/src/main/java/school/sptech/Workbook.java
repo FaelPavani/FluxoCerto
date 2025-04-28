@@ -27,6 +27,7 @@ public class Workbook{
         // String nomeArquivo = "curated-demanda-de-passageiros-por-estacao-2020-2024.xlsx";
         List<String> arquivos = Arrays.asList("curated-demanda-de-passageiros-por-estacao-2020-2024.xlsx", "curated-entrada-passageiros-por-linha-2020-2024.xlsx");
 
+        System.out.println("Verificando se os arquivos .xlsx já existem");
         for (int i = 0; i < arquivos.size(); i++) {
             String nomeArquivo = arquivos.get(i);
 
@@ -41,14 +42,17 @@ public class Workbook{
                  } catch (IOException e) {
                      System.out.println("Erro ao deletar o arquivo: " + e.getMessage());
                  }
+            } else {
+                System.out.println("Arquivo não existe");
             }
         }
 
-        //Fazendo download dos arquivos do Bucket
+        // Fazendo download dos arquivos do Bucket
+        System.out.println("Fazendo download dos arquivos do bucket");
         try {
             List<S3Object> objects = s3Client.listObjects(ListObjectsRequest.builder().bucket(bucketName).build()).contents();
             for (S3Object object : objects) {
-                GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+               GetObjectRequest getObjectRequest = GetObjectRequest.builder()
                         .bucket(bucketName)
                         .key(object.key())
                         .build();
@@ -61,6 +65,7 @@ public class Workbook{
             System.err.println("Erro ao fazer download dos arquivos: " + e.getMessage());
         }
 
+        System.out.println("Iniciando leitura dos arquivos .xlsx");
         for (int i = 0; i < arquivos.size(); i++) {
             String nomeArquivo = arquivos.get(i);
             // Coloque o caminho para a pasta que estão os arquivos

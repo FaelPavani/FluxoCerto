@@ -57,117 +57,60 @@ public class LeitorExcel {
                 for (Row row : sheet) {
                     if (row.getRowNum() == 0) {
                         System.out.println("\nLendo cabeçalho");
-
-                        for (int i = 0; i < 4; i++) {
-                            String coluna = row.getCell(i).getStringCellValue();
-                            System.out.println("Coluna " + i + ": " + coluna);
-                        }
-
-                        System.out.println("--------------------");
                         continue;
                     }
+                    // Cria o objeto EntradaPorLinha apenas para facilitar a inserção no banco
+                    EntradaPorLinha entradaObj = new EntradaPorLinha();
 
-                    // Verifica se a linha já existe no banco de dados
-                    Integer linhaJaExiste = entradaDao.existsById(row.getRowNum());
+                    // Aqui ele seta os valores do objeto de acordo com a célula
+                    entradaObj.setDataColeta(Date.valueOf(LocalDate.parse(row.getCell(0).getStringCellValue())));
+                    entradaObj.setLinha(row.getCell(1).getStringCellValue());
+                    // O (int) é para definir que vai ser um inteiro, ja que o getNumericValue pega um Double
+                    entradaObj.setFluxoTotal((int) row.getCell(2).getNumericCellValue());
+                    entradaObj.setMediaDia((int) row.getCell(3).getNumericCellValue());
+                    entradaObj.setMaiorMaximaDiaria((int) (row.getCell(4).getNumericCellValue()));
 
-                    if (linhaJaExiste == 0) {
-                        // Extraindo valor das células e criando objeto Livro
-                        System.out.println("Lendo linha " + row.getRowNum());
-
-                        // Cria o objeto EntradaPorLinha apenas para facilitar a inserção no banco
-                        EntradaPorLinha entradaObj = new EntradaPorLinha();
-
-                        // Aqui ele seta os valores do objeto de acordo com a célula
-                        entradaObj.setDataColeta(Date.valueOf(LocalDate.parse(row.getCell(0).getStringCellValue())));
-                        entradaObj.setLinha(row.getCell(1).getStringCellValue());
-                        // O (int) é para definir que vai ser um inteiro, ja que o getNumericValue pega um Double
-                        entradaObj.setFluxoTotal((int) row.getCell(2).getNumericCellValue());
-                        entradaObj.setMediaDia((int) row.getCell(3).getNumericCellValue());
-                        entradaObj.setMaiorMaximaDiaria((int) (row.getCell(4).getNumericCellValue()));
-
-                        entradasBatch.add(entradaObj);
-                        Log logObj = new Log();
-                        logObj.setFk_empresa(1);
-                        logObj.setStatusResposta("200");
-                        logObj.setDescricao("Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo));
-                        logObj.setOrigem("LeitorExcel");
-                        logBatch.add(logObj);
-
-                        if (entradasBatch.size() == 100) {
-                            entradaDao.inserirDadosBatch(entradasBatch);
-                            logDao.inserirLogBatch(logBatch);
-                            entradasBatch.clear();
-                        }
-                    } else {
-                        // Caso a linha já exista no banco, não insere novamente
-                        System.out.println("Linha " + row.getRowNum() + " ja existe no banco");
-                    }
+                    entradasBatch.add(entradaObj);
+                    Log logObj = new Log(1, "200", "Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo), "LeitorExcel");
+                    logBatch.add(logObj);
                 }
-                if (!entradasBatch.isEmpty()) {
-                    entradaDao.inserirDadosBatch(entradasBatch);
-                    logDao.inserirLogBatch(logBatch);
-                }
+
+                System.out.println("Inserindo os dados do arquivo " + nomeArquivo);
+                entradaDao.inserirDadosBatch(entradasBatch);
+                logDao.inserirLogBatch(logBatch);
+                connection.commit();
+
             } else if(nomeArquivo == "curated-demanda-de-passageiros-por-estacao-2020-2024.xlsx") {
                 // Iterando sobre as linhas da planilha
                 // Isso ja vem do repositório do professor
                 for (Row row : sheet) {
                     if (row.getRowNum() == 0) {
                         System.out.println("\nLendo cabeçalho");
-
-                        for (int i = 0; i < 4; i++) {
-                            String coluna = row.getCell(i).getStringCellValue();
-                            System.out.println("Coluna " + i + ": " + coluna);
-                        }
-
-                        System.out.println("--------------------");
                         continue;
                     }
 
-                    // Verifica se a linha já existe no banco de dados
-                    Integer linhaJaExiste = estacaoDao.existsById(row.getRowNum());
+                    // Cria o objeto DemandaPorEstacao apenas para facilitar a inserção no banco
+                    DemandaPorEstacao estacaoObj = new DemandaPorEstacao();
 
-                    if (linhaJaExiste == 0) {
-                        // Extraindo valor das células e criando objeto Livro
-                        System.out.println("Lendo linha " + row.getRowNum());
+                    // Aqui ele seta os valores do objeto de acordo com a célula
+                    estacaoObj.setAno(String.valueOf(row.getCell(0).getNumericCellValue()).replace(".0", ""));
+                    estacaoObj.setLinha(row.getCell(1).getStringCellValue());
+                    estacaoObj.setEstacao(row.getCell(2).getStringCellValue());
+                    estacaoObj.setMes(row.getCell(3).getStringCellValue());
+                    // O (int) é para definir que vai ser um inteiro, ja que o getNumericValue pega um Double
+                    estacaoObj.setFluxo((int) (row.getCell(4).getNumericCellValue()));
 
-                        // Cria o objeto DemandaPorEstacao apenas para facilitar a inserção no banco
-                        DemandaPorEstacao estacaoObj = new DemandaPorEstacao();
-
-                        // Aqui ele seta os valores do objeto de acordo com a célula
-                        estacaoObj.setAno(String.valueOf(row.getCell(0).getNumericCellValue()).replace(".0", ""));
-                        estacaoObj.setLinha(row.getCell(1).getStringCellValue());
-                        estacaoObj.setEstacao(row.getCell(2).getStringCellValue());
-                        estacaoObj.setMes(row.getCell(3).getStringCellValue());
-                        // O (int) é para definir que vai ser um inteiro, ja que o getNumericValue pega um Double
-                        estacaoObj.setFluxo((int) (row.getCell(4).getNumericCellValue()));
-
-                        estacoesBatch.add(estacaoObj);
-                        Log logObj = new Log();
-                        logObj.setFk_empresa(1);
-                        logObj.setStatusResposta("200");
-                        logObj.setDescricao("Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo));
-                        logObj.setOrigem("LeitorExcel");
-                        logBatch.add(logObj);
-
-                        if (estacoesBatch.size() == 1000) {
-                            estacaoDao.inserirDadosBatch(estacoesBatch);
-                            logDao.inserirLogBatch(logBatch);
-                            estacoesBatch.clear();
-                            connection.commit();
-                        }
-                    } else {
-                        // Caso a linha já exista no banco, não insere novamente
-                        System.out.println("Linha " + row.getRowNum() + " ja existe no banco");
-                    }
+                    estacoesBatch.add(estacaoObj);
+                    Log logObj = new Log(1, "200", "Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo), "LeitorExcel");
+                    logBatch.add(logObj);
                 }
-                if (!estacoesBatch.isEmpty()) {
-                    estacaoDao.inserirDadosBatch(estacoesBatch);
-                    logDao.inserirLogBatch(logBatch);
-                }
+                System.out.println("Inserindo os dados do arquivo " + nomeArquivo);
+                estacaoDao.inserirDadosBatch(estacoesBatch);
+                logDao.inserirLogBatch(logBatch);
+                connection.commit();
             }
             // Fechando o workbook após a leitura
             workbook.close();
-
 
             // Insere o Log de leitura finalizada
             logDao.inserirLog(1, "200", "Leitura do arquivo %s completa".formatted(nomeArquivo), "LeitorExcel");

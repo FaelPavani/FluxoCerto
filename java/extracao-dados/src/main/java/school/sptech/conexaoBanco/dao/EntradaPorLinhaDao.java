@@ -41,7 +41,12 @@ public class EntradaPorLinhaDao {
     }
 
     public void inserirDadosBatch(List<EntradaPorLinha> entradas) {
-        String sql = "INSERT INTO entradaPorLinha (id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) VALUES (?, 1, ?, ?, ?, ?, ?)";
+        String sql = """
+        INSERT INTO entradaPorLinha (id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) 
+        SELECT (?, 1, ?, ?, ?, ?, ?)
+        FROM DUAL
+        WHERE NOT EXISTS ( SELECT 1 FROM entradaPorLinha WHERE id = ? )
+        """;
         List<Object[]> batchArgs = new ArrayList<>();
         for (EntradaPorLinha entrada : entradas) {
             batchArgs.add(new Object[]{
@@ -50,7 +55,8 @@ public class EntradaPorLinhaDao {
                     entrada.getLinha(),
                     entrada.getFluxoTotal(),
                     entrada.getMediaDia(),
-                    entrada.getMaiorMaximaDiaria()
+                    entrada.getMaiorMaximaDiaria(),
+                    entrada.getId()
             });
         }
         jdbcTemplate.batchUpdate(sql, batchArgs);
