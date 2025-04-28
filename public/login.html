@@ -51,59 +51,59 @@
 
     function entrar() {
        
-     
+    
 
         var emailVar = inpemail.value;
         var senhaVar = inpsenha.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-          
-            return false;
-        }
-        else {
-    
-        }
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
 
 
-        // incrementar o json com valores de login 
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
 
-            if (resposta.ok) {
-                console.log(resposta);
+                if (resposta.ok) {
+                    console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+                       
                     setTimeout(function () {
                         window.location = "dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
+                fetch('/usuarios/cadastrarOperador', {
+        method: 'POST',
+        credentials: 'same-origin',          // importante para enviar cookies
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ emaillogadoServer: emailVar })
+    })
 
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
 
+                resposta.text().then(texto => {
+                    
+                 
+                });
             }
 
         }).catch(function (erro) {
@@ -112,5 +112,8 @@
 
         return false;
     }
+
+  
+    
 
 </script>

@@ -105,70 +105,34 @@ function cadastrar(req, res) {
 }
 
 
-function concluirCadastroOperador(req,res){
-       
-        var nome =       req.body.serverNome;
-        var sobrenome =  req.body.serverSobrenome;
-        var cpf =        req.body.serverCpf;
-        var dataNasc =   req.body.serverDataNasc;
-        var telefone =   req.body.serverTelefone;
-        var email =      req.body.serverEmail;
-        var cargo =      req.body.serverCargo;
-        var linha =      req.body.serverLinha;
-        var senha =      req.body.serverSenha;
-    var emailLogado = sessionStorage.EMAIL_USUARIO
-    
-    
-        // Faça as validações dos valores
-    
-    
-    
-    
-        if (nome === undefined) {
-            return res.status(400).send("O nome está undefined!");
-        } else if (sobrenome === undefined) {
-            return res.status(400).send("O sobrenome está undefined!");
-        } else if (cpf === undefined) {
-            return res.status(400).send("O CPF está undefined!");
-        } else if (dataNasc === undefined) {
-            return res.status(400).send("A data de nascimento está undefined!");
-        } else if (telefone === undefined) {
-            return res.status(400).send("O telefone está undefined!");
-        } else if (email === undefined) {
-            return res.status(400).send("O email está undefined!");
-        } else if (cargo === undefined) {
-            return res.status(400).send("O cargo está undefined!");
-        } else if (linha === undefined) {
-            return res.status(400).send("A linha está undefined!");
-        } else if (senha === undefined) {
-            return res.status(400).send("A senha está undefined!");
-        }
-        else if (emailLogado === undefined) {
-            return res.status(400).send("usuario nao logado");}
-        
-     
-         else {
-    
-    
-    
-                usuarioModel.cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha, emailLogado)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    
-        }}
-    
+function cadastrarOperador(req, res) {
+
+    // Agora, você pode usar o emailLogado para o processo de cadastro
+    var nome = req.body.serverNome;
+    var sobrenome = req.body.serverSobrenome;
+    var cpf = req.body.serverCpf;
+    var dataNasc = req.body.serverDataNasc;
+    var telefone = req.body.serverTelefone;
+    var email = req.body.serverEmail;  // Este é o email que o usuário forneceu
+    var cargo = req.body.serverCargo;
+    var linha = req.body.serverLinha;
+    var senha = req.body.serverSenha;
+       var emailLogado = sessionStorage.EMAIL_USUARIO;
+
+    // Verifica se todos os campos necessários estão presentes
+    if (!nome || !sobrenome || !cpf || !dataNasc || !telefone || !email || !cargo || !linha || !senha) {
+        return res.status(400).send("Todos os campos devem ser preenchidos!");
+    }
+
+    // Aqui, o emailLogado (da sessão) é passado para a função de cadastro
+    usuarioModel.cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha, emailLogado)
+        .then(function (resultado) {
+            res.json(resultado);
+        }).catch(function (erro) {
+            console.log(erro);
+            res.status(500).json({ error: erro.sqlMessage });
+        });
+}
     
     
             
@@ -178,46 +142,11 @@ function concluirCadastroOperador(req,res){
 
 
 
-function cadastrarChamado(req, res){
-    var nome = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var mensagem = req.body.mensagemServer;
 
-    var idUsuario = req.body.idUsuarioServer
-    
-    // Faça as validações dos valores
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
-    } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
-    } else if (mensagem == undefined) {
-        res.status(400).send("Sua mensagem está undefined!");
-    } else if (idUsuario == undefined) {
-        res.status(400).send("Seu idUsuario está undefined!");
-    } else {
-
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrarChamado(idUsuario, nome, email, mensagem)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
-}
 
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarChamado
+    cadastrarOperador
 }
 

@@ -3,7 +3,7 @@ var database = require("../database/config")
 function autenticar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucaoSql = `
-        SELECT id, nome, email FROM users WHERE email = '${email}' AND senha = '${senha}'; 
+        SELECT id, username, email FROM users WHERE email = '${email}' AND senha = '${senha}'; 
 
     `; // atualizar os dados da busca e o nome das tabelas do banco 
     
@@ -50,7 +50,7 @@ function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, carg
                             '${dataNasc}', 
                             '${telefone}', 
                             '${email}', 
-                            '${cargo}', 
+                            'analista', 
                             '${linha}', 
                             '${senha}', 
                             ${fkEmpresaLogado},
