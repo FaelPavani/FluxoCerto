@@ -1591,18 +1591,18 @@ window.addEventListener("resize", verificarTamanhoTela);
             /\d/.test(senhaInput.value) &&
             (senhaInput.value === confirmSenhaInput.value)
         ) {
-            alert("Cadastro concluído com sucesso!");
-            // Limpe os campos (exemplo)
-            nomeInput.value = '';
-            sobrenomeInput.value = '';
-            cpfInput.value = '';
-            inputDataNasc.value = '';
-            telefoneInput.value = '';
-            emailInput.value = '';
-            cargoSelect.value = 'Selecione o cargo';
-            linhaSelect.value = 'Selecione a linha';
-            senhaInput.value = '';
-            confirmSenhaInput.value = '';
+            // alert("Cadastro concluído com sucesso!");
+            // // Limpe os campos (exemplo)
+            // nomeInput.value = '';
+            // sobrenomeInput.value = '';
+            // cpfInput.value = '';
+            // inputDataNasc.value = '';
+            // telefoneInput.value = '';
+            // emailInput.value = '';
+            // cargoSelect.value = 'Selecione o cargo';
+            // linhaSelect.value = 'Selecione a linha';
+            // senhaInput.value = '';
+            // confirmSenhaInput.value = '';
 
 
 
@@ -1621,16 +1621,16 @@ window.addEventListener("resize", verificarTamanhoTela);
 
 
         // setar os nnomes no json que vai para o post e vai salvar setar variavies
-        serverNomeInput: nomeInput.value,
-  serverSobrenomeInput: sobrenomeInput.value,
-  serverCpfInput: cpfInput.value,
-  serverInputDataNasc: inputDataNasc.value,
-  serverTelefoneInput: telefoneInput.value,
-  serverEmailInput: emailInput.value,
-  serverCargoSelect: cargoSelect.value,
-  serverLinhaSelect: linhaSelect.value,
-  serverSenhaInput: senhaInput.value,
-  serverConfirmSenhaInput: confirmSenhaInput.value
+        serverNome: nomeInput.value,
+  serverSobrenome: sobrenomeInput.value,
+  serverCpf: cpfInput.value,
+  serverDataNasc: inputDataNasc.value,
+  serverTelefone: telefoneInput.value,
+  serverEmail: emailInput.value,
+  serverCargo: cargoSelect.value,
+  serverLinha: linhaSelect.value,
+  serverSenha: senhaInput.value,
+  
       }),
     })
       .then(function (resposta) {
@@ -1653,42 +1653,8 @@ window.addEventListener("resize", verificarTamanhoTela);
       });
 
     return false;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             
-            fecharAddUser(); // Função para fechar o modal, por exemplo.
+
         } else {
             alert("Informações incorretas ou faltando!");
         }
