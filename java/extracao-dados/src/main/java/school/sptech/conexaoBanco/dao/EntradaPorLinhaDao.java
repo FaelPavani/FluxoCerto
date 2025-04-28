@@ -44,7 +44,6 @@ public class EntradaPorLinhaDao {
         String sql = """
         INSERT INTO entradaPorLinha (id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) 
         SELECT (?, 1, ?, ?, ?, ?, ?)
-        FROM DUAL
         WHERE NOT EXISTS ( SELECT 1 FROM entradaPorLinha WHERE id = ? )
         """;
         List<Object[]> batchArgs = new ArrayList<>();
