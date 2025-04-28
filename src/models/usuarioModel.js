@@ -59,10 +59,18 @@ function cadastrarEmpresa(nomeFantasia, razaoSocial, cnpj, nomeEmpresa) {
 // Função para cadastrar o usuário
 function cadastrarUsuario(nomeUsuario, cpf, sobrenome, dataNasc, email, senha) {
     return new Promise((resolve, reject) => {
-        // Query SQL para cadastrar o usuário
+        // Query SQL para cadastrar o usuário, incluindo a subquery para obter o último id da tabela empresa
         const instrucaoSql = `
-            INSERT INTO users (username, sobrenome, email, senha, cpf, fk_empresa)
-            VALUES ('${nomeUsuario}', '${sobrenome}', '${email}', '${senha}', '${cpf}', NULL);
+            INSERT INTO users (username, email, cargo, senha, cpf, fk_empresa, linha)
+            VALUES (
+                '${nomeUsuario}', 
+                '${email}', 
+                'gestor', 
+                '${senha}', 
+                '${cpf}', 
+                (SELECT id FROM empresa ORDER BY id DESC LIMIT 1) -- Subquery para pegar o último id da tabela empresa,
+                'all'
+            );
         `;
         console.log("Executando a instrução SQL para usuário: \n" + instrucaoSql);
 
@@ -70,7 +78,28 @@ function cadastrarUsuario(nomeUsuario, cpf, sobrenome, dataNasc, email, senha) {
         database.executar(instrucaoSql)
             .then(resultado => {
                 console.log("Usuário cadastrado com sucesso!");
-                resolve(resultado); // Resolve a promessa com o resultado da inserção
+
+                // Agora que o usuário foi inserido, obtemos o id do usuário recém-criado
+                const idUsuarioCriado = resultado.insertId; // Assumindo que o banco de dados retorna o id do usuário inserido
+
+                // Query SQL para atualizar fk_responsavel com o id do próprio usuário
+                const instrucaoUpdateSql = `
+                    UPDATE users 
+                    SET fk_responsavel = ${idUsuarioCriado} 
+                    WHERE id = ${idUsuarioCriado};
+                `;
+                console.log("Executando a instrução SQL para atualizar fk_responsavel: \n" + instrucaoUpdateSql);
+
+                // Atualiza o campo fk_responsavel com o id do próprio usuário
+                database.executar(instrucaoUpdateSql)
+                    .then(() => {
+                        console.log("fk_responsavel do usuário atualizado com sucesso!");
+                        resolve(resultado); // Resolve a promessa com o resultado da inserção
+                    })
+                    .catch(erro => {
+                        console.log("Erro ao atualizar fk_responsavel: ", erro);
+                        reject(erro); // Rejeita a promessa com o erro
+                    });
             })
             .catch(erro => {
                 console.log("Erro ao cadastrar usuário: ", erro);
@@ -78,25 +107,18 @@ function cadastrarUsuario(nomeUsuario, cpf, sobrenome, dataNasc, email, senha) {
             });
     });
 }
+
  
 
 
 
 
-function cadastrarChamado(idUsuario, nome, email, mensagem){
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarChamado():", idUsuario, nome, email, mensagem);
 
-    var instrucaoSql = `
-        insert into faleConosco(fkUsuario, nome, email, mensagem) values ('${idUsuario}',' ${nome}', '${email}', '${mensagem}');
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
 
-}
 
 module.exports = {
     autenticar,
     cadastrarUsuario,
     cadastrarEmpresa,
-    cadastrarChamado
+   
 };

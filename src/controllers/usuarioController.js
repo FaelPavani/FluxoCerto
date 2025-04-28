@@ -93,7 +93,7 @@ function cadastrar(req, res) {
             console.log("Usuário cadastrado:", resultadoUsuario);
     
             // Depois de ambos os cadastros, envia a resposta para o cliente
-            res.json({ empresa: resultadoEmpresa, usuario: resultadoUsuario });
+            res.json({ usuario: resultadoUsuario });
         })
         .catch(function (erro) {
             console.log(erro);
