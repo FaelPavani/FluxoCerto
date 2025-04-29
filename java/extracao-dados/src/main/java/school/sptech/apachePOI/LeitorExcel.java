@@ -63,6 +63,7 @@ public class LeitorExcel {
                     EntradaPorLinha entradaObj = new EntradaPorLinha();
 
                     // Aqui ele seta os valores do objeto de acordo com a célula
+                    entradaObj.setId(row.getRowNum());
                     entradaObj.setDataColeta(Date.valueOf(LocalDate.parse(row.getCell(0).getStringCellValue())));
                     entradaObj.setLinha(row.getCell(1).getStringCellValue());
                     // O (int) é para definir que vai ser um inteiro, ja que o getNumericValue pega um Double
@@ -93,6 +94,7 @@ public class LeitorExcel {
                     DemandaPorEstacao estacaoObj = new DemandaPorEstacao();
 
                     // Aqui ele seta os valores do objeto de acordo com a célula
+                    estacaoObj.setId(row.getRowNum());
                     estacaoObj.setAno(String.valueOf(row.getCell(0).getNumericCellValue()).replace(".0", ""));
                     estacaoObj.setLinha(row.getCell(1).getStringCellValue());
                     estacaoObj.setEstacao(row.getCell(2).getStringCellValue());

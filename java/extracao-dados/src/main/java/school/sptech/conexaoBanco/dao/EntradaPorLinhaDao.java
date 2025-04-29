@@ -42,9 +42,9 @@ public class EntradaPorLinhaDao {
 
     public void inserirDadosBatch(List<EntradaPorLinha> entradas) {
         String sql = """
-        INSERT INTO entradaPorLinha (id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) 
-        SELECT ?, 1, ?, ?, ?, ?, ?
-        WHERE NOT EXISTS ( SELECT 1 FROM entradaPorLinha WHERE id = ? )
+            INSERT INTO entradaPorLinha (id, fk_empresa, dataColeta, linha, fluxoTotal, mediaDia, maiorMaximaDiaria) 
+            SELECT ?, 1, ?, ?, ?, ?, ?
+            WHERE NOT EXISTS ( SELECT 1 FROM entradaPorLinha WHERE id = ? )
         """;
         List<Object[]> batchArgs = new ArrayList<>();
         for (EntradaPorLinha entrada : entradas) {

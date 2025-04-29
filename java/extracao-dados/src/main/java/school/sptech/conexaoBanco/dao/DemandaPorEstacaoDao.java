@@ -40,9 +40,9 @@ public class DemandaPorEstacaoDao {
 
     public void inserirDadosBatch(List<DemandaPorEstacao> estacoes) {
         String sql = """
-        INSERT INTO demandaPorEstacao (id, fk_empresa, ano, mes, linha, fluxo, estacao) 
-        SELECT ?, 1, ?, ?, ?, ?, ?
-        WHERE NOT EXISTS ( SELECT 1 FROM demandaPorEstacao WHERE id = ? )
+            INSERT INTO demandaPorEstacao (id, fk_empresa, ano, mes, linha, fluxo, estacao) 
+            SELECT ?, 1, ?, ?, ?, ?, ?
+            WHERE NOT EXISTS ( SELECT 1 FROM demandaPorEstacao WHERE id = ? )
         """;
         List<Object[]> batchArgs = new ArrayList<>();
         for (DemandaPorEstacao estacao : estacoes) {
