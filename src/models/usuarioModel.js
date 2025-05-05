@@ -69,31 +69,25 @@ function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, carg
     });
 }
 
-function listarUsuariosPorResponsavel(emailLogado) {
-    // 1) Buscar o ID do usuário logado baseado no email
-    const selectResponsavel = `
-        SELECT id
-        FROM users
-        WHERE email = '${emailLogado}'
-        LIMIT 1;
+function listarUsuarios(req, res) {
+    const emailLogado = req.body.emailLogado; // Recebe o email logado
+    const instrucaoSql = `
+        SELECT nome, cpf, cargo, linha_atuacao AS linha, 
+               DATE_FORMAT(data_inicio, '%d/%m/%Y') AS dataInicio
+        FROM usuarios
+        WHERE fk_responsavel = (SELECT id FROM users WHERE email = '${emailLogado}' LIMIT 1);
     `;
-
-    return database.executar(selectResponsavel)
-        .then(resultadoSelect => {
-            if (!resultadoSelect || resultadoSelect.length === 0) {
-                throw new Error("Usuário logado não encontrado!");
+    database.executar(instrucaoSql)
+        .then(resultado => {
+            if (resultado && resultado.length > 0) {
+                res.json(resultado);  // Retorna os dados como JSON
+            } else {
+                res.json([]);  // Caso não haja usuários, retorna um array vazio
             }
-
-            const idResponsavel = resultadoSelect[0].id;
-
-            // 2) Buscar os usuários que têm o fk_responsavel igual ao id do usuário logado
-            const selectUsuarios = `
-                SELECT nome, cpf, cargo, linha_atuacao AS linha, 
-                       DATE_FORMAT(data_inicio, '%d/%m/%Y') AS dataInicio
-                FROM usuarios
-                WHERE fk_responsavel = ${idResponsavel};
-            `;
-            return database.executar(selectUsuarios);
+        })
+        .catch(erro => {
+            console.error("Erro ao listar usuários:", erro);
+            res.status(500).json({ error: "Erro ao listar usuários" });
         });
 }
 
@@ -188,6 +182,5 @@ module.exports = {
     autenticar,
     cadastrarUsuario,
     cadastrarEmpresa,
-    cadastrarOperador,
-    listarUsuariosPorResponsavel
+    cadastrarOperador
 };

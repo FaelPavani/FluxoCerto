@@ -584,100 +584,10 @@
 </html>
 <script>
 
-const usuarios = [
-  {
-    nome: "Ciclano da Silva",
-    cpf: "251.483.088-50",
-    cargo: "Operador de Tráfego",
-    linha: "Linha Azul",
-    dataInicio: "06/04/2025"
-  },
-  {
-    nome: "Fulana Mendes",
-    cpf: "102.456.789-00",
-    cargo: "Supervisora",
-    linha: "Linha Verde",
-    dataInicio: "02/02/2025"
-  },{
-    nome: "",
-    cpf: "102.456.789-00",
-    cargo: "Supervisora",
-    linha: "Linha Verde",
-    dataInicio: "02/02/2025"
-  }
-];
-
-function carregarUsuarios() {
-    const emailLogado = sessionStorage.getItem("EMAIL_USUARIO"); // Obtém o email do usuário logado
-
-    if (!emailLogado) {
-        alert("Email do usuário não encontrado no sessionStorage!");
-        return;
-    }
-
-    fetch("/usuarios/listar", {
-        method: "POST", // Pode ser GET ou POST, dependendo de como configurar o back-end
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailLogado: emailLogado // Passa o email diretamente
-        })
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log("Usuários:", data);
-        exibirUsuarios(data); // Exibe os usuários com base na resposta
-    })
-    .catch(err => {
-        console.error("Erro ao buscar usuários:", err);
-    });
-}
 
 
-function exibirUsuarios(listaUsuarios) {
-  const container = document.querySelector('.box_usuarios');
-  container.innerHTML = ""; // limpa antes de popular
 
-  listaUsuarios.forEach(usuario => {
-    container.innerHTML += `
-      <div class="linha_usuario">
-        <div class="fotoUser">
-          <img src="./assets/user_demanda.png" alt="">
-        </div>
-        <div class="nomeUser">
-          <p class="titulos_usuarios">Nome</p>
-          <span class="informacoes_usuarios">${usuario.nome}</span>
-        </div>
-        <div class="cpfUser">
-          <p class="titulos_usuarios">CPF</p>
-          <span class="informacoes_usuarios">${usuario.cpf}</span>
-        </div>
-        <div class="div_vazia_mobile"></div>
-        <div class="cargoUser">
-          <p class="titulos_usuarios">Cargo</p>
-          <span class="informacoes_usuarios">${usuario.cargo}</span>
-        </div>
-        <div class="linhaUser">
-          <p class="titulos_usuarios titulo_linha_atuacao">Linha de Atuação</p>
-          <span class="informacoes_usuarios">${usuario.linha}</span>
-        </div>
-        <div class="div_vazia_mobile"></div>
-        <div class="dtInicio">
-          <p class="titulos_usuarios">Data de Início</p>
-          <span class="informacoes_usuarios">${usuario.dataInicio}</span>
-        </div>
-        <div class="editarUser">
-          <p class="titulos_usuarios">Editar</p>
-          <div class="icones_editar">
-            <img src="./assets/lapis_icon.png">
-            <img src="./assets/lixeira_icon.png">
-          </div>
-        </div>
-      </div>
-    `;
-  });
-}
+
 
 
 

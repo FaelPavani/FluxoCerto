@@ -143,23 +143,6 @@ function cadastrarOperador(req, res) {
 
 
 
-            function listarUsuarios(req, res) {
-                const emailLogado = req.body.emailLogado || req.query.emailLogado;
-            
-                if (!emailLogado) {
-                    return res.status(400).json({ erro: "Email do usuário logado não encontrado!" });
-                }
-            
-                // Chama o modelo para buscar os usuários com base no email logado
-                usuarioModel.listarUsuariosPorResponsavel(emailLogado)
-                    .then(resultados => {
-                        res.json(resultados); // Envia o JSON com os dados dos usuários
-                    })
-                    .catch(erro => {
-                        console.error("Erro ao listar usuários:", erro);
-                        res.status(500).json({ erro: "Erro ao buscar usuários." });
-                    });
-            }
             
           
            
@@ -168,7 +151,6 @@ function cadastrarOperador(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarOperador,
-    listarUsuarios
+    cadastrarOperador
 }
 
