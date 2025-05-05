@@ -638,58 +638,62 @@ else{
 }
 //lista de usuarios
 
-fetch("/usuarios/autenticar", {
-               method: "POST",
-               headers: {
-                   "Content-Type": "application/json"
-               },
-               body: JSON.stringify({
-                   emailLogadoserver: ,
+// fetch("/usuarios/autenticar", {
+//                method: "POST",
+//                headers: {
+//                    "Content-Type": "application/json"
+//                },
+//                body: JSON.stringify({
+//                    emailLogadoserver: emailUsuario
                  
-               })
+//                })
 
 
-           }).then(function (resposta) {
-               console.log("ESTOU NO THEN DO entrar()!")
+//            }).then(function (resposta) {
+//                console.log("ESTOU NO THEN DO entrar()!")
 
-               if (resposta.ok) {
-                   console.log(resposta);
+//                if (resposta.ok) {
+//                    console.log(resposta);
 
-                   resposta.json().then(json => {
-                       console.log(json);
-                       console.log(JSON.stringify(json));
-                       sessionStorage.EMAIL_USUARIO = json.email;
-                       sessionStorage.NOME_USUARIO = json.username;
-                       sessionStorage.ID_USUARIO = json.id;
-                       sessionStorage.CARGO_USUARIO = json.cargo
+//                    resposta.json().then(json => {
+//                        console.log(json);
+//                        console.log(JSON.stringify(json));
+//                        sessionStorage.EMAIL_USUARIO = json.email;
+//                        sessionStorage.NOME_USUARIO = json.username;
+//                        sessionStorage.CARGO_USUARIO = json.cargo
+
+//                         const emailUsuario = json.email;
+//                         const nomeUsuario = json.username;
+//                         const cargoUsuario = json.cargo;
+                       
                       
-                   setTimeout(function () {
-                       window.location = "dashboard.html";
-                   }, 1000); // apenas para exibir o loading
+//                    setTimeout(function () {
+//                        window.location = "dashboard.html";
+//                    }, 1000); // apenas para exibir o loading
 
-               });
-               fetch('/usuarios/cadastrarOperador', {
-       method: 'POST',
-       credentials: 'same-origin',          // importante para enviar cookies
-       headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify({ emaillogadoServer: emailVar })
-   })
+//                });
+//                fetch('/usuarios/cadastrarOperador', {
+//        method: 'POST',
+//        credentials: 'same-origin',          // importante para enviar cookies
+//        headers: { 'Content-Type': 'application/json' },
+//        body: JSON.stringify({ emaillogadoServer: emailVar })
+//    })
 
-           } else {
+//            } else {
 
-               console.log("Houve um erro ao tentar realizar o login!");
+//                console.log("Houve um erro ao tentar realizar o login!");
 
-               resposta.text().then(texto => {
+//                resposta.text().then(texto => {
                    
                 
-               });
-           }
+//                });
+//            }
 
-       }).catch(function (erro) {
-           console.log(erro);
-       })
+//        }).catch(function (erro) {
+//            console.log(erro);
+//        })
 
-       return false;
+//        return false;
    
 
 
