@@ -18,7 +18,7 @@ CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
   cargo varchar(9),
-  cpf char(13),
+  cpf char(20),
   email varchar(45),
   linha varchar (10),
   dataNasc date,

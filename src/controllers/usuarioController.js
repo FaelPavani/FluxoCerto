@@ -117,7 +117,8 @@ function cadastrarOperador(req, res) {
     var cargo = req.body.serverCargo;
     var linha = req.body.serverLinha;
     var senha = req.body.serverSenha;
-       var emailLogado = sessionStorage.EMAIL_USUARIO;
+    var emailLogado = req.body.serverEmailLogado;
+
 
     // Verifica se todos os campos necessários estão presentes
     if (!nome || !sobrenome || !cpf || !dataNasc || !telefone || !email || !cargo || !linha || !senha) {
@@ -142,11 +143,32 @@ function cadastrarOperador(req, res) {
 
 
 
+            function listarUsuarios(req, res) {
+                const emailLogado = req.body.emailLogado || req.query.emailLogado;
+            
+                if (!emailLogado) {
+                    return res.status(400).json({ erro: "Email do usuário logado não encontrado!" });
+                }
+            
+                // Chama o modelo para buscar os usuários com base no email logado
+                usuarioModel.listarUsuariosPorResponsavel(emailLogado)
+                    .then(resultados => {
+                        res.json(resultados); // Envia o JSON com os dados dos usuários
+                    })
+                    .catch(erro => {
+                        console.error("Erro ao listar usuários:", erro);
+                        res.status(500).json({ erro: "Erro ao buscar usuários." });
+                    });
+            }
+            
+          
+           
 
 
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarOperador
+    cadastrarOperador,
+    listarUsuarios
 }
 

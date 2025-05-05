@@ -41,14 +41,12 @@ function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, carg
                 // 2) Insere o novo operador, atribuindo fk_responsavel e fk_empresa
                 const instrucaoSql = `
                     INSERT INTO users 
-                        (nome, sobrenome, cpf, data_nasc, telefone, email, cargo, linha, senha, fk_empresa, fk_responsavel) 
+                        (username, cpf, dataNasc, email, cargo, linha, senha, fk_empresa, fk_responsavel) 
                     VALUES 
                         (
-                            '${nome}', 
-                            '${sobrenome}', 
+                            '${nome}',  
                             '${cpf}', 
-                            '${dataNasc}', 
-                            '${telefone}', 
+                            '${dataNasc}',  
                             '${email}', 
                             'analista', 
                             '${linha}', 
@@ -70,6 +68,36 @@ function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, carg
             });
     });
 }
+
+function listarUsuariosPorResponsavel(emailLogado) {
+    // 1) Buscar o ID do usuário logado baseado no email
+    const selectResponsavel = `
+        SELECT id
+        FROM users
+        WHERE email = '${emailLogado}'
+        LIMIT 1;
+    `;
+
+    return database.executar(selectResponsavel)
+        .then(resultadoSelect => {
+            if (!resultadoSelect || resultadoSelect.length === 0) {
+                throw new Error("Usuário logado não encontrado!");
+            }
+
+            const idResponsavel = resultadoSelect[0].id;
+
+            // 2) Buscar os usuários que têm o fk_responsavel igual ao id do usuário logado
+            const selectUsuarios = `
+                SELECT nome, cpf, cargo, linha_atuacao AS linha, 
+                       DATE_FORMAT(data_inicio, '%d/%m/%Y') AS dataInicio
+                FROM usuarios
+                WHERE fk_responsavel = ${idResponsavel};
+            `;
+            return database.executar(selectUsuarios);
+        });
+}
+
+
 
 
 
@@ -160,5 +188,6 @@ module.exports = {
     autenticar,
     cadastrarUsuario,
     cadastrarEmpresa,
-    cadastrarOperador
+    cadastrarOperador,
+    listarUsuariosPorResponsavel
 };
