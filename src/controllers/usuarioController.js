@@ -21,8 +21,9 @@ function autenticar(req, res) {
                             // atualizar valores da busca 
                             id: resultadoAutenticar[0].id,
                             email: resultadoAutenticar[0].email,
-                            nome: resultadoAutenticar[0].nome,
+                            username: resultadoAutenticar[0].username,
                             senha: resultadoAutenticar[0].senha,
+                            cargo: resultadoAutenticar[0].cargo
                         });
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
@@ -143,9 +144,6 @@ function cadastrarOperador(req, res) {
 
 
 
-            
-          
-           
 
 
 module.exports = {

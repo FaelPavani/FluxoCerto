@@ -1,15 +1,16 @@
 var database = require("../database/config")
 
-function autenticar(email, senha) {
+function autenticar(email, senha,) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucaoSql = `
-        SELECT id, username, email FROM users WHERE email = '${email}' AND senha = '${senha}'; 
+        SELECT  cargo, id, username, email FROM users WHERE email = '${email}' AND senha = '${senha}'; 
 
     `; // atualizar os dados da busca e o nome das tabelas do banco 
     
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
 function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha, emailLogado) {
     return new Promise((resolve, reject) => {
         console.log(
@@ -18,7 +19,7 @@ function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, carg
             "\n>> email do usuário logado:", emailLogado
         );
 
-        // 1) Busca o id e o fk_empresa do usuário que está logado
+    
         const selectResponsavel = `
             SELECT id, fk_empresa 
             FROM users 
@@ -38,7 +39,7 @@ function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, carg
                 console.log("ID do responsável:", idResponsavel);
                 console.log("fk_empresa do responsável:", fkEmpresaLogado);
 
-                // 2) Insere o novo operador, atribuindo fk_responsavel e fk_empresa
+               
                 const instrucaoSql = `
                     INSERT INTO users 
                         (username, cpf, dataNasc, email, cargo, linha, senha, fk_empresa, fk_responsavel) 
@@ -69,27 +70,6 @@ function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, carg
     });
 }
 
-function listarUsuarios(req, res) {
-    const emailLogado = req.body.emailLogado; // Recebe o email logado
-    const instrucaoSql = `
-        SELECT nome, cpf, cargo, linha_atuacao AS linha, 
-               DATE_FORMAT(data_inicio, '%d/%m/%Y') AS dataInicio
-        FROM usuarios
-        WHERE fk_responsavel = (SELECT id FROM users WHERE email = '${emailLogado}' LIMIT 1);
-    `;
-    database.executar(instrucaoSql)
-        .then(resultado => {
-            if (resultado && resultado.length > 0) {
-                res.json(resultado);  // Retorna os dados como JSON
-            } else {
-                res.json([]);  // Caso não haja usuários, retorna um array vazio
-            }
-        })
-        .catch(erro => {
-            console.error("Erro ao listar usuários:", erro);
-            res.status(500).json({ error: "Erro ao listar usuários" });
-        });
-}
 
 
 

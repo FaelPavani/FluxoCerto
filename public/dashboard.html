@@ -11,7 +11,7 @@
     <title>DashBoard</title>
 </head>
 
-<body class="body_dash" id="body">
+<body class="body_dash" id="body" onload="obterNomeUsuario(), adicionarUsuariosNaBox(usuarios)" >
     <div style="display: none;" id="blur" class="blur"></div>
     <div style="display: none;" id="caixa_saindo" class="box_saindo">
 
@@ -23,15 +23,15 @@
         <div class="box_usuario_dash">
             <img class="imagem_dashboard" src="./assets/guest_purple.png" alt="">
             <div class="box_user_dashboard">
-                <h3><span>Olá,</span> Fulano de tal</h3>
-                <h6>Gestor de Operações</h6>
+                <h3><span>Olá,</span> <span id="nome_operador_header"></span></h3>
+                <h6 ><i id="cargo_header"></i> de Operações</h6>
             </div>
         </div>
 
         <div class="box_icones_dash">
             <img onclick="homeDashboards()" class="imagem_dashboard" src="./assets/home_icon.png">
-            <img onclick="addUser()" class="imagem_dashboard" src="./assets/adduser_icon.png">
-            <img onclick="carregarUsuarios();;" class="imagem_dashboard" src="./assets/config_icon.png">
+            <img onclick="addUser()" id="adduser" class="imagem_dashboard" src="./assets/adduser_icon.png">
+            <img  class="imagem_dashboard" src="./assets/config_icon.png">
             <img style="margin-left: 3rem;" onclick="sairDashboard()" class="imagem_dashboard"
                 src="./assets/sair_icon.png">
         </div>
@@ -121,8 +121,9 @@
                                 <p>Filtrar por:</p>
                                 <label>
                                     <select class="select_linhas" id="mainSelect" name="options">
-                                        <option value="anos">Anos</option>
+                                      
                                         <option value="ano_especifico">Ano específico</option>
+                                        <option value="anos">Anos</option>
                                     </select>
                                 </label>
                             </div>
@@ -458,7 +459,7 @@
                     </div>
                 </div>
 
-                <div class="box_usuarios"> 
+                <div id="box_usuarios" class="box_usuarios"> 
                     <div class="linha_usuario">
                         <div class="fotoUser">
                             <img src="./assets/user_demanda.png" alt="">
@@ -585,8 +586,179 @@
 <script>
 
 
+function obterNomeUsuario() {
+    const nomeUsuario = sessionStorage.getItem("NOME_USUARIO");
+    nome_operador_header.innerHTML = `${nomeUsuario}`;
+
+    const cargoUsuario = sessionStorage.getItem("CARGO_USUARIO");
+    const emailUsuario = sessionStorage.getItem("EMAIL_USUARIO");
+    
+
+    if (cargoUsuario === "gestor") {
+        cargo_header.innerHTML = `Gestor`;
+
+        const selectAno = document.getElementById("ano_todas_estacoes");
+        while (selectAno.options.length > 1) {
+            selectAno.remove(1);
+        }
 
 
+  
+
+    const selectanoespecifico = document.getElementById("options_ano_especifico");
+    while (selectanoespecifico.options.length > 1) {
+        selectanoespecifico.remove(1);
+    }
+
+    const selectMain = document.getElementById("mainSelect");
+
+    for (let i = 0; i < selectMain.options.length; i++) {
+        if (selectMain.options[i].value === "ano_especifico") {
+            selectMain.selectedIndex = i;
+            break;
+        }
+    }
+
+
+    if (selectMain.options.length > 0) {
+        selectMain.remove(1);
+    }
+
+
+const selectanoespecificoestacoes = document.getElementById("options_ano_especifico_estacoes");
+
+while (selectanoespecificoestacoes.options.length > 1) {
+    selectanoespecificoestacoes.remove(1);
+}
+
+}
+else{
+    adduser.style.display = 'none';
+    cargo_header.innerHTML = `Analista`;
+}
+//lista de usuarios
+
+fetch("/usuarios/autenticar", {
+               method: "POST",
+               headers: {
+                   "Content-Type": "application/json"
+               },
+               body: JSON.stringify({
+                   emailLogadoserver: ,
+                 
+               })
+
+
+           }).then(function (resposta) {
+               console.log("ESTOU NO THEN DO entrar()!")
+
+               if (resposta.ok) {
+                   console.log(resposta);
+
+                   resposta.json().then(json => {
+                       console.log(json);
+                       console.log(JSON.stringify(json));
+                       sessionStorage.EMAIL_USUARIO = json.email;
+                       sessionStorage.NOME_USUARIO = json.username;
+                       sessionStorage.ID_USUARIO = json.id;
+                       sessionStorage.CARGO_USUARIO = json.cargo
+                      
+                   setTimeout(function () {
+                       window.location = "dashboard.html";
+                   }, 1000); // apenas para exibir o loading
+
+               });
+               fetch('/usuarios/cadastrarOperador', {
+       method: 'POST',
+       credentials: 'same-origin',          // importante para enviar cookies
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify({ emaillogadoServer: emailVar })
+   })
+
+           } else {
+
+               console.log("Houve um erro ao tentar realizar o login!");
+
+               resposta.text().then(texto => {
+                   
+                
+               });
+           }
+
+       }).catch(function (erro) {
+           console.log(erro);
+       })
+
+       return false;
+   
+
+
+
+}
+const usuarios = [
+        {
+            nome: "Ciclano da Silva",
+            cpf: "251.483.088-50",
+            cargo: "Operador de Tráfego",
+            linhaAtuacao: "Linha Azul",
+            dataInicio: "06/04/2025"
+        },
+        {
+            nome: "Maria Oliveira",
+            cpf: "387.123.998-20",
+            cargo: "Supervisora",
+            linhaAtuacao: "Linha Vermelha",
+            dataInicio: "01/03/2024"
+        }
+    ];
+function adicionarUsuariosNaBox(usuarios) {
+        const container = document.getElementById("box_usuarios");
+        container.innerHTML = ""
+        usuarios.forEach(usuario => {
+            const html = `
+                <div class="linha_usuario">
+                    <div class="fotoUser">
+                        <img src="./assets/user_demanda.png" alt="">
+                    </div>
+                    <div class="nomeUser">
+                        <p class="titulos_usuarios">Nome</p>
+                        <span class="informacoes_usuarios">${usuario.nome}</span>
+                    </div>
+                    <div class="cpfUser">
+                        <p class="titulos_usuarios">CPF</p>
+                        <span class="informacoes_usuarios">${usuario.cpf}</span>
+                    </div>
+
+                    <div class="div_vazia_mobile"></div>
+
+                    <div class="cargoUser">
+                        <p class="titulos_usuarios">Cargo</p>
+                        <span class="informacoes_usuarios">${usuario.cargo}</span>
+                    </div>
+                    <div class="linhaUser">
+                        <p class="titulos_usuarios titulo_linha_atuacao">Linha de Atuação</p>
+                        <span class="informacoes_usuarios">${usuario.linhaAtuacao}</span>
+                    </div>
+
+                    <div class="div_vazia_mobile"></div>
+
+                    <div class="dtInicio">
+                        <p class="titulos_usuarios">Data de Início</p>
+                        <span class="informacoes_usuarios">${usuario.dataInicio}</span>
+                    </div>
+                    <div class="editarUser">
+                        <p class="titulos_usuarios">Editar</p>
+                        <div class="icones_editar">
+                            <img src="./assets/lapis_icon.png" alt="Editar">
+                            <img src="./assets/lixeira_icon.png" alt="Excluir">
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += html;
+        });
+    }
+   
 
 
 
@@ -1690,7 +1862,7 @@ window.addEventListener("resize", verificarTamanhoTela);
 
     }
 
-
+ 
    
 
 </script>
