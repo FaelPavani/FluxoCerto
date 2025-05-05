@@ -1,0 +1,9 @@
+FROM mysql:8.0
+
+ENV MYSQL_ROOT_PASSWORD=urubu100
+ENV MYSQL_DATABASE=FluxoCerto
+
+COPY arquivos_sql /docker-entrypoint-arquivos_sql/
+
+EXPOSE 3306
+
