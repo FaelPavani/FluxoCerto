@@ -1591,7 +1591,7 @@ footer {
 
 .box_input {
     width: 33vw;
-    height: 25vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
 }
@@ -1610,10 +1610,17 @@ footer {
     background-color: #02033B;
     padding-left: 1vw;
     border-radius: 1.3vw;
+    top: 10vh;
+
+    position: absolute;
 }
 
 .mensagem_erro_cnpj_email {
     width: 25vw;
+    position: absolute;
+    top: 12vh;
+    right: 5vw;
+    margin-right: 10vw;
     font-size: 1.3vw;
     padding-top: 1vw;
     height: 5.5rem;
@@ -1621,7 +1628,6 @@ footer {
     padding-left: 1vw;
     border-radius: 1.3vw;
     background-color: rgba(228, 23, 23, 0.815);
-
 }
 
 .mensagem_erro li {
@@ -1631,9 +1637,12 @@ footer {
 
 .box_mensagem_enviar {
     display: flex;
-    width: 70vw;
     justify-content: space-between;
-    height: 22vh;
+    height: 10vh;
+    align-self: end;
+    margin-top: 5vw;
+    margin-right: 2rem;
+
 }
 
 .box_mensagem_enviar button {
@@ -1643,7 +1652,6 @@ footer {
     font-weight: 600;
     align-self: flex-end;
     justify-self: flex-end;
-    margin-bottom: 4vw;
     width: 17vw;
     border-radius: 1.2vw;
     height: 10vh;
@@ -2376,9 +2384,11 @@ footer {
         margin-left: 3.2rem;
         width: 45vw;
     }
+
     .ja_sou_cliente {
-    width: 15rem;
+        width: 15rem;
     }
+
     .ja_sou_cliente:hover {
         background-color: #02033B;
         color: white;
@@ -2408,7 +2418,7 @@ footer {
         width: 30vw;
         height: 7vh;
     }
-    
+
     .button_conheca p {
         font-size: 2vw;
     }
@@ -2441,9 +2451,11 @@ footer {
         padding-top: 1vw;
         padding-left: 5rem;
     }
-    .section_home_suporte{
-    height: 22rem;
+
+    .section_home_suporte {
+        height: 22rem;
     }
+
     .homem_suporte {
         width: 60vw;
         margin-top: -8vw;
@@ -2884,6 +2896,7 @@ footer {
         margin-top: 2vw;
         font-size: 3vw;
     }
+
     .container_suporte button {
         width: 30vw;
         margin-right: 3vw;
@@ -2924,9 +2937,11 @@ footer {
     .direito_faq h4 {
         font-size: 2.4rem;
     }
-    .box_resposta div{
+
+    .box_resposta div {
         font-size: 1.3rem;
     }
+
     .title_sup {
         font-size: 6vw;
     }
@@ -3015,7 +3030,7 @@ footer {
 
     .logo_login {
         width: 12vw;
-        top:  -2vw;
+        top: -2vw;
     }
 }
 
@@ -3170,8 +3185,92 @@ footer {
     border-bottom: 0.1vw solid #02033b67;
 }
 
+
+.cadastroFail{
+    position: absolute;
+    top: 3rem;
+z-index: 40;
+    font-size: 2rem;
+    width: 34vw;
+    height: 20vh;
+    border-radius: 0.5rem;
+    border: 3px solid rgb(197, 31, 31);
+    padding: 2rem;
+    
+    background-color: rgba(255, 0, 0, 0.685);
+}
+.cadastroOk{
+    position: absolute;
+    top: 3rem;
+z-index: 40;
+    font-size: 2rem;
+    width: 34vw;
+    height: 20vh;
+    border-radius: 0.5rem;
+    border: 3px solid rgb(13, 85, 13);
+    padding: 2rem;
+    
+    background-color: rgba(0, 128, 0, 0.555);
+}
 /*Começo da estilização para celulares!*/
 @media (max-width: 425px) {
+
+    .box_input label {
+        font-size: 1rem;
+    }
+
+    .box_input {
+        #label {
+            font-size: 1rem;
+        }
+
+    }
+
+    .corpo_cadastro{
+        overflow: auto;
+    }
+    .mensagem_erro{
+        position: absolute;
+        top: -30rem;
+        right: -5rem;
+        font-size: 1rem;
+        height: 10rem;
+        width: 15rem;
+    }
+    .section_cadastro {
+        margin-top: 10rem;
+        margin-bottom: -5rem;
+        height: 100vh;
+
+        & .box_caixa_cadastro{
+        flex-direction: column;
+        height: 80vh;
+        grid-template-columns: 1fr;
+        }
+        & .box_input{
+            height: 11vh;
+        }
+        & input {
+            width: 80vw;
+            height: 8vh;
+        }
+        
+        & .box_mensagem_enviar{
+            position: absolute;
+            bottom: -4rem;
+            height: 4rem;
+        }
+    }
+
+    .cadastroFail{
+        width: 80vw;
+        height: 30vh;
+    }
+    .cadastroOk{
+          width: 80vw;
+        height: 30vh;
+    }
+
     .section_inicio {
         position: relative;
         overflow: hidden;
@@ -3259,9 +3358,11 @@ footer {
     .quero_ser_cliente {
         width: 58vw;
     }
-    .button_conheca p{
+
+    .button_conheca p {
         font-size: 0.8rem;
     }
+
     .box_controle a {
         font-size: 4vw;
     }
@@ -3292,11 +3393,12 @@ footer {
         padding-top: 3vw;
     }
 
-    .homem_suporte{
+    .homem_suporte {
         width: 64vw;
         margin-top: -14vw;
         margin-left: -30vw;
     }
+
     .conteudo_home_suporte h4 {
         font-size: 7vw;
     }
@@ -3455,7 +3557,8 @@ footer {
     .title_equipe {
         font-size: 8vw;
     }
-    .section_equipe{
+
+    .section_equipe {
         background-color: red;
         height: 43rem;
     }
@@ -3468,160 +3571,203 @@ footer {
     .img_servicos {
         width: 4.5rem;
     }
-    .container_servicos{
+
+    .container_servicos {
         width: 90vw;
     }
+
     .box_servicos {
         height: 15rem;
         width: 40vw;
     }
-    .box_servicos h4{
+
+    .box_servicos h4 {
         font-size: 1rem;
     }
 
     .box_servicos p {
         font-size: 0.8rem;
     }
-    .img_sec_header{
+
+    .img_sec_header {
         height: 23rem;
         transform: translate(40vw, 50vw) scale(1);
     }
-    .imagem_suporte{
+
+    .imagem_suporte {
         height: 18rem;
         background-size: cover;
     }
-    .container_faq h4{
+
+    .container_faq h4 {
         font-size: 1.8rem;
     }
-    .box_resposta div{
+
+    .box_resposta div {
         font-size: 1rem;
     }
-    .box_resposta{
+
+    .box_resposta {
         height: 10rem;
         font-weight: 600;
     }
-    .container_faq{
+
+    .container_faq {
         height: 21rem;
     }
-    .caixa_faq{
+
+    .caixa_faq {
         height: 13vh;
         font-size: 0.8rem;
     }
-    .section_faq{
+
+    .section_faq {
         height: 17rem;
     }
-    .box_suporte{
+
+    .box_suporte {
         display: flex;
         flex-direction: column;
         height: 10rem;
     }
-    .box_suporte input{
+
+    .box_suporte input {
         width: 100%;
         font-size: 1rem;
         margin-bottom: 0.4rem;
     }
-    .container_suporte textarea{
+
+    .container_suporte textarea {
         font-size: 1rem;
     }
-    .logo_login{
+
+    .logo_login {
         width: 5rem;
     }
-    .logo_cadastro{
+
+    .logo_cadastro {
         width: 5rem;
     }
-    .email_input{
+
+    .email_input {
         margin-top: 11.5vw;
         font-size: 1rem;
     }
-    .senha_input{
+
+    .senha_input {
         margin-top: 28.5vw;
         font-size: 1rem;
     }
-    .mensagem_erro_cadastro{
+
+    .mensagem_erro_cadastro {
         font-size: 0.6rem;
     }
-    .conteudo_home_suporte span{
+
+    .conteudo_home_suporte span {
         font-size: 0.7rem;
     }
 }
 
 @media (max-width: 375px) {
-    .section_inicio{
-        height:37rem;
+    .section_inicio {
+        height: 37rem;
     }
-    .div_celular{
+
+    .div_celular {
         height: 10rem;
     }
-    .box_conheca h3{
+
+    .box_conheca h3 {
         font-size: 1rem;
     }
-    .box_conheca p{
+
+    .box_conheca p {
         font-size: 0.8rem;
     }
-    .homem_suporte{
+
+    .homem_suporte {
         width: 75vw;
         margin-top: -13vw;
         margin-left: -40vw;
     }
-    .menu-lateral{
+
+    .menu-lateral {
         padding-top: 30vw;
     }
-    .email_input{
+
+    .email_input {
         margin-top: 13.5vw;
     }
-    .senha_input{
+
+    .senha_input {
         margin-top: 31.5vw;
     }
 }
+
 @media (max-width: 320px) {
     .div_controle {
         margin-top: 28vw;
     }
-    .box_footer p{
+
+    .box_footer p {
         font-size: 2.5vw;
     }
-    .section_header_sobre{
+
+    .section_header_sobre {
         height: 25rem;
     }
-    .img_sec_header{
+
+    .img_sec_header {
         transform: translate(40vw, 60vw) scale(1);
         height: 20rem;
     }
-    .conteudo_sec_header p{
+
+    .conteudo_sec_header p {
         font-size: 0.9rem;
     }
-    .box_equipe_mobile{
+
+    .box_equipe_mobile {
         width: 15rem;
     }
-    .linkedin_mobile{
+
+    .linkedin_mobile {
         width: 3rem;
         height: 3rem;
     }
-    .margem_caixa_equipe{
+
+    .margem_caixa_equipe {
         font-size: 1.3rem;
     }
-    .section_equipe{
+
+    .section_equipe {
         height: 40rem;
     }
-    .cargo{
+
+    .cargo {
         font-size: 1.5rem;
     }
-    .box_quem_somos h4{
+
+    .box_quem_somos h4 {
         font-size: 0.65rem;
     }
-    .box_quem_somos2 h4{
+
+    .box_quem_somos2 h4 {
         font-size: 0.65rem;
     }
-    .email_input{
+
+    .email_input {
         margin-top: 15.5vw;
     }
-    .senha_input{
+
+    .senha_input {
         margin-top: 36.5vw;
     }
-    .box_input label{
+
+    .box_input label {
         font-size: 1rem;
     }
-    .imagem_suporte{
+
+    .imagem_suporte {
         height: 18rem;
         width: 18rem;
         transform: translate(50vw, 30vw) scale(1);
@@ -3637,7 +3783,8 @@ footer {
 .cabecalho_dashboard {
     width: 100%;
     height: 10vh;
-    z-index: 1002; /* ✅ Agora está acima do overlay (z-index: 1000) */
+    z-index: 1002;
+    /* ✅ Agora está acima do overlay (z-index: 1000) */
     position: fixed;
     background-color: white;
     box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.137);
@@ -3646,13 +3793,16 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
 .cabecalho_dashboard.hidden {
     transform: translateY(-100%);
 }
-.imagem_modal_dash{
+
+.imagem_modal_dash {
     width: 1.2rem;
     margin-left: 0.3rem;
 }
+
 /* Menu lateral */
 .menuLateral {
     position: absolute;
@@ -3697,12 +3847,14 @@ footer {
 }
 
 /* Ícones */
-.menuHamburguer, .fecharHamburguer {
+.menuHamburguer,
+.fecharHamburguer {
     font-size: 1.6rem;
     font-weight: 800;
     color: #4335DE;
     cursor: pointer;
 }
+
 .fecharHamburguer {
     display: none;
 }
@@ -3758,9 +3910,10 @@ body.menu-aberto {
     color: #4335DE;
     align-items: center;
 }
-.box_icones_dash{
+
+.box_icones_dash {
     width: 18rem;
-    
+
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -3902,19 +4055,22 @@ body.menu-aberto {
     padding-top: 1rem;
     font-size: 1.3rem;
     justify-content: center;
-    
+
 }
-.box_pizza_dash h4{
+
+.box_pizza_dash h4 {
     font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.caixa_grafico_pizza{
+
+.caixa_grafico_pizza {
     width: 18vw;
     height: 20vh;
 }
+
 .section_dashboard {
     width: 73vw;
     height: 74vh;
@@ -3955,32 +4111,36 @@ body.menu-aberto {
     margin-bottom: 1rem;
 }
 
-.box_filtrar_por{
+.box_filtrar_por {
     display: flex;
     width: 15.5vw;
     justify-content: space-between;
     align-items: center;
 }
-.box_filtrar_no_ano{
+
+.box_filtrar_no_ano {
     display: flex;
     width: 14.5vw;
     justify-content: space-between;
     align-items: center;
 }
-.box_estacao_especifica{
+
+.box_estacao_especifica {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 15vw;
     font-size: 0.9rem;
 }
-.box_filtro_de_ate{
+
+.box_filtro_de_ate {
     width: 12vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 1rem;
 }
+
 .title_demanda_linha {
     margin-top: 0.4rem;
     font-size: 1.2rem;
@@ -4010,13 +4170,15 @@ body.menu-aberto {
     align-items: center;
     overflow: hidden;
 }
-.caixa_graficos_linha{
+
+.caixa_graficos_linha {
     width: 80vw;
     height: 25vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .linha_kpi {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -4111,9 +4273,11 @@ body.menu-aberto {
     padding-top: 0.5vw;
     font-size: 0.8rem;
 }
-.box_kpis_dash h4{
+
+.box_kpis_dash h4 {
     font-weight: 700;
 }
+
 .box_kpis_dash span {
     font-weight: 500;
     font-size: 1.1rem;
@@ -4142,14 +4306,16 @@ body.menu-aberto {
 
 }
 
-.caixa_graficos_barras{
+.caixa_graficos_barras {
     width: 60vw;
     height: 30vh;
 }
-.caixa_barra_estacaoAno{
+
+.caixa_barra_estacaoAno {
     width: 60vw;
     height: 30vh;
 }
+
 .grafico_pizza {
     background-color: white;
     border-radius: 0.5rem;
@@ -4181,7 +4347,8 @@ body.menu-aberto {
     z-index: 2;
     opacity: 0;
 }
-.blur{
+
+.blur {
     width: 100vw;
     height: 100vh;
     background-color: black;
@@ -4196,6 +4363,7 @@ body.menu-aberto {
     position: absolute;
     z-index: 1;
 }
+
 .box_saindo p {
     font-weight: 600;
 }
@@ -4218,7 +4386,7 @@ body.menu-aberto {
     display: flex;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.418);
     flex-direction: column;
-   background-color: white;
+    background-color: white;
 
 }
 
@@ -4230,7 +4398,7 @@ body.menu-aberto {
     align-items: center;
 }
 
-.imagem_titulo_gerenciar{
+.imagem_titulo_gerenciar {
     width: 3rem;
     margin-right: 1rem;
 }
@@ -4399,15 +4567,18 @@ body.menu-aberto {
     border: 2px solid #888;
     padding-top: 0.3rem;
 }
-.container_fotoUser h4{
+
+.container_fotoUser h4 {
     font-size: 1.8rem;
 }
-.container_fotoUser img{
+
+.container_fotoUser img {
     width: 6rem;
     border-radius: 5rem;
     margin-left: 1.5rem;
     border: 5px solid #02033B;
 }
+
 .container_infosUser {
     width: 75vw;
     height: 70vh;
@@ -4420,17 +4591,20 @@ body.menu-aberto {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 2rem;
 }
-.title_addUser{
+
+.title_addUser {
     position: absolute;
     left: 11.5rem;
     z-index: 0;
     top: 7rem;
 }
-.container_infosUser h6{
+
+.container_infosUser h6 {
     font-size: 1rem;
     font-weight: 700;
 }
-.container_infosUser input{
+
+.container_infosUser input {
     width: 30vw;
     border-radius: 0.5rem;
     padding-left: 1rem;
@@ -4438,18 +4612,21 @@ body.menu-aberto {
     border: 2px solid #4335DE;
     height: 7vh;
 }
-.container_infosUser select{
+
+.container_infosUser select {
     width: 30vw;
     border-radius: 0.5rem;
     padding-left: 1rem;
     border: 2px solid #4335DE;
     height: 7vh;
 }
-.botao_concluir_cadastro{
+
+.botao_concluir_cadastro {
     justify-self: flex-end;
     align-self: flex-end;
 }
-.fechar_addUser{
+
+.fechar_addUser {
     font-size: 2.5rem;
     display: flex;
     justify-content: center;
@@ -4459,7 +4636,8 @@ body.menu-aberto {
     height: 6vh;
     width: auto;
 }
-.dica_senha{
+
+.dica_senha {
     display: none;
     width: 24vw;
     height: 18vh;
@@ -4474,225 +4652,278 @@ body.menu-aberto {
     justify-content: center;
     flex-direction: column;
 }
-.container_senha:hover .dica_senha{
+
+.container_senha:hover .dica_senha {
     display: flex;
 }
 
 
-   .div_vazia_mobile{
+.div_vazia_mobile {
     display: none;
-   }
+}
 
-   
-    /*
+
+/*
     RESPONSIVIDADE DASHBOARD
     */
 
-    /*Para Laptop*/
-    @media (max-width: 1024px) {
+/*Para Laptop*/
+@media (max-width: 1024px) {
 
-        .caixa_graficos_linha{
-            width: 60vw;
-        }
-        .kpis_demanda_linhas{
-            margin-top: 1rem;
-        }
-        .caixa_filtros{
-            width: 80vw;
-        }
-        .select_linhas{
-            width: 9vw;
-            font-size: 0.7rem;
-        }
-        .box_filtrar_por{
-            width: 17.5vw;
-        }
-        .box_estacao_especifica{
-            font-size: 0.8rem;
-        }
-        
-        .titulos_usuarios{
-            font-size: 0.8rem;
-        }
-        .informacoes_usuarios{
-            font-size: 0.8rem;
-        }
-        .section_addUser{
-            padding-top: 12vw;
-        }
-        .box_filtrar_no_ano{
-            width: 16vw;
-        }
+    .caixa_graficos_linha {
+        width: 60vw;
     }
+
+    .kpis_demanda_linhas {
+        margin-top: 1rem;
+    }
+
+    .caixa_filtros {
+        width: 80vw;
+    }
+
+    .select_linhas {
+        width: 9vw;
+        font-size: 0.7rem;
+    }
+
+    .box_filtrar_por {
+        width: 17.5vw;
+    }
+
+    .box_estacao_especifica {
+        font-size: 0.8rem;
+    }
+
+    .titulos_usuarios {
+        font-size: 0.8rem;
+    }
+
+    .informacoes_usuarios {
+        font-size: 0.8rem;
+    }
+
+    .section_addUser {
+        padding-top: 12vw;
+    }
+
+    .box_filtrar_no_ano {
+        width: 16vw;
+    }
+}
 
 
 
 /*Para Laptop*/
 @media (max-width: 768px) {
-    .imagem_dashboard{
+    .imagem_dashboard {
         width: 1.8rem;
     }
-    .box_saindo{
-        
+
+    .box_saindo {
+
         top: 30vh;
         left: 30vw;
         width: 50vw;
     }
-    .box_user_dashboard h3{
+
+    .box_user_dashboard h3 {
         font-size: 1rem;
     }
-    .box_user_dashboard h6{
+
+    .box_user_dashboard h6 {
         font-size: 0.8rem;
     }
-    .box_status_linhas h4{
+
+    .box_status_linhas h4 {
         font-size: 0.75rem;
         font-weight: 800;
         margin-bottom: 0.5rem;
     }
-    .box_status_linhas h6{
+
+    .box_status_linhas h6 {
         font-size: 0.75rem;
     }
-    .status_linhas{
+
+    .status_linhas {
         font-size: 0.7rem;
     }
-    .box_pizza_dash h4{
+
+    .box_pizza_dash h4 {
         font-size: 0.8rem;
     }
-    .grafico_pizza{
+
+    .grafico_pizza {
         margin-top: 0;
         background-color: none;
     }
-    .caixa_grafico_pizza{
+
+    .caixa_grafico_pizza {
         width: 15vw;
         height: 20vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .select_linhas{
+
+    .select_linhas {
         height: 5.5vh;
     }
-    .box_filtrar_por{
+
+    .box_filtrar_por {
         font-size: 0.75rem;
     }
-    .box_filtro_de_ate{
+
+    .box_filtro_de_ate {
         font-size: 0.8rem;
-    }  
-    .box_filtro_de_ate p{
+    }
+
+    .box_filtro_de_ate p {
         margin-right: 0.5rem;
     }
-    .box_filtrar_no_ano{
+
+    .box_filtrar_no_ano {
         font-size: 0.8rem;
         width: 16.5vw;
     }
-    .box_estacao_especifica{
+
+    .box_estacao_especifica {
         font-size: 0.6rem;
     }
-    .box_kpis_dash{
+
+    .box_kpis_dash {
         height: 15vh;
     }
-    .box_kpis_dash h4{
+
+    .box_kpis_dash h4 {
         font-size: 0.6rem;
     }
-    .box_kpis_dash span{
+
+    .box_kpis_dash span {
         font-size: 0.8rem;
     }
-    .box_titulo_grafico{
+
+    .box_titulo_grafico {
         font-size: 0.6rem;
     }
-    .title_filtros{
+
+    .title_filtros {
         font-size: 0.75rem;
     }
-    .kpi_linha{
+
+    .kpi_linha {
         width: 1rem;
         height: 0.6rem;
     }
-    .linha_kpi h4{
+
+    .linha_kpi h4 {
         font-size: 0.5rem;
         display: flex;
         width: 8vw;
         justify-content: start;
         align-items: center;
     }
-    .caixa_graficos_linha{
+
+    .caixa_graficos_linha {
         width: 70vw;
     }
-    .caixa_graficos_barras{
+
+    .caixa_graficos_barras {
         width: 100vw;
     }
-    .title_filtro_kpi{
+
+    .title_filtro_kpi {
         font-size: 0.7rem;
     }
-    .ano_especifico_kpi{
+
+    .ano_especifico_kpi {
         font-size: 0.75rem;
     }
+
     .container_addUser button {
         font-size: 0.7rem;
     }
-    .fotoUser img{
+
+    .fotoUser img {
         height: 2rem;
     }
-    .titulos_usuarios{
+
+    .titulos_usuarios {
         font-size: 0.6rem;
     }
-    .editarUser img{
+
+    .editarUser img {
         height: 1rem;
     }
-    .linha_usuario{
+
+    .linha_usuario {
         height: 14vh;
         align-items: center;
     }
-    .container_addUser h4{
+
+    .container_addUser h4 {
         font-size: 1.5rem;
     }
-    .informacoes_usuarios{
+
+    .informacoes_usuarios {
         font-size: 0.65rem;
     }
-    .title_addUser{
-      top: 7rem;
-      left: 7rem;
+
+    .title_addUser {
+        top: 7rem;
+        left: 7rem;
     }
-    .container_infosUser{
+
+    .container_infosUser {
         display: flex;
         flex-direction: column;
         align-items: start;
         overflow: auto;
     }
+
     .container_infosUser select {
         width: 60vw;
         height: 7vh;
         margin-bottom: 1rem;
     }
+
     .container_infosUser h6 {
         font-size: 1rem;
     }
-    .container_infosUser input{
+
+    .container_infosUser input {
         width: 60vw;
         height: 7vh;
         margin-bottom: 1rem;
     }
-    .container_addUser button{
+
+    .container_addUser button {
         width: 20vw;
         height: 8vh;
         font-size: 1rem;
     }
-    .container_infosUser{
+
+    .container_infosUser {
         height: auto;
     }
-    .search-box{
+
+    .search-box {
         width: 20vw;
         height: 7vh;
     }
-    .search-box input{
+
+    .search-box input {
         width: 15vw;
-        
+
         height: 4vh;
     }
 }
-.menuHamburguer{
+
+.menuHamburguer {
     display: none;
 }
-.fecharHamburguer{
+
+.fecharHamburguer {
     display: none;
 }
 
@@ -4727,50 +4958,58 @@ body.menu-aberto {
     display: none;
 
 }
-.box_kpis_dash_mobile h4{
+
+.box_kpis_dash_mobile h4 {
     font-weight: 800;
 }
+
 .box_kpis_dash_mobile span {
     font-weight: 500;
     font-size: 1rem;
     margin-top: 0.5rem;
 }
-.container_graficos_mobile{
+
+.container_graficos_mobile {
     display: flex;
 }
 
 /* Responsividade DASHBOARD celular pt.1*/
-@media (max-width: 425px){
-   .cabecalho_dashboard{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 3vw;
-    padding-right: 0;
-   }
-    .menuHamburguer{
+@media (max-width: 425px) {
+    .cabecalho_dashboard {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 3vw;
+        padding-right: 0;
+    }
+
+    .menuHamburguer {
         display: flex;
         order: 1;
         font-size: 1.6rem;
         font-weight: 800;
         color: #4335DE;
     }
-    
-    .box_usuario_dash{
+
+    .box_usuario_dash {
         order: 2;
         width: 12rem;
     }
-    .imagem_dashboard{
+
+    .imagem_dashboard {
         order: 2;
         margin-left: 0.5rem;
     }
-    .box_icones_dash{
+
+    .box_icones_dash {
         display: none;
     }
-    .main_dashboard_containers{
+
+    .main_dashboard_containers {
         flex-direction: column;
     }
-    .box_status_linhas{
+
+    .box_status_linhas {
         display: flex;
         width: 90vw;
         height: 12vh;
@@ -4778,244 +5017,302 @@ body.menu-aberto {
         align-items: center;
         margin-bottom: 0.5rem;
     }
-    .status_linhas{
-        margin:0;
+
+    .status_linhas {
+        margin: 0;
         font-size: 0.6rem;
         text-align: center;
         margin-right: 0.5rem;
     }
-    .box_status_linhas h6{
+
+    .box_status_linhas h6 {
         font-weight: 700;
         margin-right: 0.3rem;
     }
-    .caixa_grafico_pizza{
+
+    .caixa_grafico_pizza {
         width: 35vw;
     }
-    .box_pizza_dash{
+
+    .box_pizza_dash {
         width: 35vw;
         background-color: white;
         position: relative;
     }
-    .box_pizza_dash h4{
+
+    .box_pizza_dash h4 {
         font-weight: 800;
     }
-    .container_kpis_dash{
+
+    .container_kpis_dash {
         display: none;
     }
 
-    .container_kpis_dash_mobile{
+    .container_kpis_dash_mobile {
         display: flex;
     }
-    .box_kpis_dash_mobile{
+
+    .box_kpis_dash_mobile {
         display: flex;
     }
-    .title_demanda_linha{
+
+    .title_demanda_linha {
         margin-top: 1rem;
         margin-bottom: 0.5rem;
     }
-    .section_dash1{
+
+    .section_dash1 {
         width: 90vw;
         margin-bottom: 2rem;
     }
-    .box_demanda_linhas{
+
+    .box_demanda_linhas {
         width: 90vw;
         margin-bottom: 1rem;
     }
-   
-    .select_linhas{
+
+    .select_linhas {
         width: 15vw;
     }
-    .box_filtros{
-      width: 90vw;
+
+    .box_filtros {
+        width: 90vw;
     }
-    
-    .box_filtrar_por{
+
+    .box_filtrar_por {
         display: flex;
         flex-direction: column;
-        
+
     }
-    .box_filtro_de_ate{
+
+    .box_filtro_de_ate {
         display: flex;
         flex-direction: column;
     }
-    .title_filtros{
+
+    .title_filtros {
         font-weight: 800;
 
         font-size: 0.6rem;
     }
-    .kpi_linha{
+
+    .kpi_linha {
         width: 3vw;
         height: 1.5vh;
     }
-    .ano_especifico_kpi{
+
+    .ano_especifico_kpi {
         font-size: 0.7em;
         margin-right: 1rem;
     }
-    .title_filtro_kpi{
+
+    .title_filtro_kpi {
         margin-bottom: 0;
         font-size: 0.8rem;
         margin-right: 1rem;
         font-weight: 800;
 
     }
-    .linha_kpi h4{
+
+    .linha_kpi h4 {
         margin-bottom: 0.3rem;
         font-size: 0.5rem;
     }
-    .box_titulo_grafico{
+
+    .box_titulo_grafico {
         font-size: 0.5rem;
         font-weight: 800;
 
     }
-    .caixa_graficos_linha{
+
+    .caixa_graficos_linha {
         width: 55vw;
     }
-    .margem{
-        margin-top:1rem;
+
+    .margem {
+        margin-top: 1rem;
         width: 26vw;
     }
-    .title_demanda_estacao{
+
+    .title_demanda_estacao {
         margin-top: 30vw;
         margin-bottom: 1rem;
     }
-.section_dash2{
-    margin-top: 13vw;
-}
-.box_filtrar_no_ano{
-    display: flex;
-    flex-direction: column;
-}
 
-    .box_demanda_estacao{
-        
+    .section_dash2 {
+        margin-top: 13vw;
+    }
+
+    .box_filtrar_no_ano {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box_demanda_estacao {
+
         width: 90vw;
         height: 50vh;
         flex-direction: column;
     }
-    .caixa_graficos_barras{
+
+    .caixa_graficos_barras {
         width: 90vw;
     }
-    .caixa_barra_estacaoAno{
+
+    .caixa_barra_estacaoAno {
         width: 90vw;
     }
-    .titulo_grafico_2{
+
+    .titulo_grafico_2 {
         display: none;
     }
-    .box_estacao_especifica{
+
+    .box_estacao_especifica {
         display: flex;
         flex-direction: column;
     }
-    .filtro_estacoes{
+
+    .filtro_estacoes {
         display: flex;
         align-items: center;
         width: 80vw;
         justify-content: space-around;
     }
-    .div_vazia_mobile{
+
+    .div_vazia_mobile {
         display: block;
     }
-    .linha_usuario{
+
+    .linha_usuario {
         display: grid;
         height: 36vh;
-    grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
 
     }
-    .fotoUser{
+
+    .fotoUser {
         display: flex;
         justify-content: center;
         width: 15vw;
         align-items: center;
     }
-    .container_addUser button{
+
+    .container_addUser button {
         width: 30vw;
     }
-    .section_addUser{
-        padding-top: 16vw;;
+
+    .section_addUser {
+        padding-top: 16vw;
+        ;
     }
-    .title_addUser{
+
+    .title_addUser {
         top: 20vw;
         left: 15vh;
     }
-    .container_infosUser input{
+
+    .container_infosUser input {
         width: 53vw;
     }
-    .container_infosUser select{
+
+    .container_infosUser select {
         width: 53vw;
     }
-    .box_saindo{
-       z-index: 999999;
+
+    .box_saindo {
+        z-index: 999999;
         height: 30vh;
         width: 60vw;
         left: 6rem;
         position: fixed;
     }
 }
-@media (max-width: 375px){
-    .box_kpis_dash_mobile h4{
+
+@media (max-width: 375px) {
+    .box_kpis_dash_mobile h4 {
         font-size: 0.65rem;
     }
-    .box_kpis_dash_mobile span{
+
+    .box_kpis_dash_mobile span {
         font-size: 0.8rem;
     }
-    .linha_usuario{
+
+    .linha_usuario {
         height: 50vh;
     }
-    .container_addUser{
+
+    .container_addUser {
         width: 90vw;
     }
-    .title_addUser{
+
+    .title_addUser {
         left: 3rem;
         top: 6rem;
     }
-    .container_infosUser select{
+
+    .container_infosUser select {
         width: 56vw;
     }
-    .container_infosUser input{
+
+    .container_infosUser input {
         width: 56vw;
     }
-    .section_addUser{
+
+    .section_addUser {
         padding-top: 20vw;
     }
 }
 
-@media (max-width: 320px){
-    .box_status_linhas h4{
+@media (max-width: 320px) {
+    .box_status_linhas h4 {
         font-size: 0.6rem;
     }
-    .status_linhas{
+
+    .status_linhas {
         font-size: 0.5rem;
     }
-    .box_status_linhas h6{
+
+    .box_status_linhas h6 {
         font-size: 0.6rem;
     }
-    .box_filtrar_por{
+
+    .box_filtrar_por {
         font-size: 0.6rem;
     }
-    .title_filtros{
+
+    .title_filtros {
         font-size: 0.5rem;
     }
-    .box_titulo_grafico{
+
+    .box_titulo_grafico {
         font-size: 0.5rem;
     }
-    .kpis_demanda_linhas{
+
+    .kpis_demanda_linhas {
         padding-top: 0.3rem;
     }
-    .caixa_graficos_linha{
+
+    .caixa_graficos_linha {
         width: 50vw;
     }
-    .title_filtro_kpi{
+
+    .title_filtro_kpi {
         font-size: 0.6rem;
     }
-    .ano_especifico_kpi{
+
+    .ano_especifico_kpi {
         font-size: 0.5rem;
     }
-    .box_filtrar_no_ano{
+
+    .box_filtrar_no_ano {
         font-size: 0.7rem;
     }
-    .search-box{
+
+    .search-box {
         width: 30vw;
     }
-    .section_addUser{
+
+    .section_addUser {
         padding-top: 23vw;
     }
 }

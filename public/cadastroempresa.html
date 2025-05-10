@@ -2,109 +2,124 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="./assets/trem_icone.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./assets/trem_icone.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/validacao.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/validacao.js"></script>
 </head>
 
 <body class="corpo_cadastro">
-    <a href="./index.html">  <img class="logo_cadastro" src="./assets/logo_roxa.png" alt=""></a>
 
-    <img class="circle_login" src="./assets/bg-circle.svg" alt="">
+  <div style="display: none;" id="mensagemCadastroFail" class="cadastroFail">
+    Houve um erro ao tentar realizar o cadastro!
+  </div>
 
-    <div class="box_ja_tem_conta">
-        <h2>Já tem uma conta?</h2>
-    <a href="./login.html">  <button class="botao_fazer_login">Fazer Login</button></a>
+  <div style="display: none;" id="mensagemCadastroOk" class="cadastroOk">
+    Cadastro concluído, redirecionando...
+  </div>
+  <a href="./index.html"> <img class="logo_cadastro" src="./assets/logo_roxa.png" alt=""></a>
+
+  <img class="circle_login" src="./assets/bg-circle.svg" alt="">
+
+  <div class="box_ja_tem_conta">
+    <h2>Já tem uma conta?</h2>
+    <a href="./login.html"> <button class="botao_fazer_login">Fazer Login</button></a>
+  </div>
+  <section class="section_cadastro">
+
+    <div class="box_title_cadastro">
+      <h6>Bem-vindo, vamos começar!</h6>
+      <h2>Criar uma conta</h2>
     </div>
-        <section class="section_cadastro">
-
-            <div class="box_title_cadastro">
-            <h6>Bem-vindo, vamos começar!</h6>
-            <h2>Criar uma conta</h2>
+    <div class="container_cadastro">
+      <!--    começo da etapa 1  -->
+      <div id="stepOne" class="box_caixa_cadastro">
+        <div class="box_input">
+          <label for="inpNomeFantasia">Nome fantasia</label>
+          <span id="mensagem_erro_fantasia" class="mensagem_erro_cadastro">&#10006; Insira um nome fantasia
+            válido!</span>
+          <input type="text" id="inpNomeFantasia" name="inpNomeFantasia" placeholder="Digite o nome fantasia da empresa"
+            required>
         </div>
-            <div class="container_cadastro">
-<!--    começo da etapa 1  -->
-                <div id="stepOne" class="box_caixa_cadastro">
-            <div class="box_input">
-            <label for="inpNomeFantasia">Nome fantasia</label>
-            <span id="mensagem_erro_fantasia" class="mensagem_erro_cadastro">&#10006; Insira um nome fantasia válido!</span>
-            <input type="text" id="inpNomeFantasia" name="inpNomeFantasia" placeholder="Digite o nome fantasia da empresa" required>
-            </div>
-            
-            <div class="box_input">
-              <label for="inpNomeEmpresa">Nome da empresa </label>
-              <input type="text" id="inpNomeEmpresa" name="inpNomeEmpresa" placeholder="Digite o nome fantasia da empresa" required>
-              </div>
 
-
-
-
-            <div class="box_input">
-            <label for="inpRazaoSocial">Razão Social</label>
-            <span id="mensagem_erro_social" class="mensagem_erro_cadastro">&#10006; Insira uma razão social válida!</span>
-            <input type="text" id="inpRazaoSocial" placeholder="Digite a razão social registrada" name="inpRazaoSocial" required>
+        <div class="box_input">
+          <label for="inpNomeEmpresa">Nome da empresa </label>
+          <input type="text" id="inpNomeEmpresa" name="inpNomeEmpresa" placeholder="Digite o nome fantasia da empresa"
+            required>
         </div>
 
 
-            <div class="box_input">
-                <label for="inpEmail">Email corporativo </label>
-            <span id="mensagem_erro_email" class="mensagem_erro_cadastro">&#10006; Insira um email válido!</span>
-            <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required placeholder="Digite seu e-mail empresarial">
-                </div>
 
 
-                <div class="box_input">
-            <label for="inpCnpj">CNPJ</label>
-            <span id="mensagem_erro_cnpj" class="mensagem_erro_cadastro">&#10006; Insira um CNPJ válido!</span>
-            <input type="text" id="inpCnpj" placeholder="Digite o CNPJ (somente números)" name="inpCnpj" oninput="validarCnpj()" required>
-            </div>
+        <div class="box_input">
+          <label for="inpRazaoSocial">Razão Social</label>
+          <span id="mensagem_erro_social" class="mensagem_erro_cadastro">&#10006; Insira uma razão social válida!</span>
+          <input type="text" id="inpRazaoSocial" placeholder="Digite a razão social registrada" name="inpRazaoSocial"
+            required>
         </div>
-<!-- FIM DA ETAPA 1 -->
 
-<div style="display: none;" id="stepTwo" class="box_caixa_cadastro">
-    <div class="box_input">
-    <label for="Nome">Nome</label>
-    <span id="mensagem_erro_nome" class="mensagem_erro_cadastro">&#10006; Insira um nome válido!</span>
-    <input type="text" id="inpNome" name="inpNome" placeholder="Digite o seu nome" required>
-    </div>
-    
-    <div class="box_input">
-    <label for="inpRazaoSocial">Sobrenome</label>
-    <span id="mensagem_erro_sobrenome" class="mensagem_erro_cadastro">&#10006; Insira um sobrenome válido!</span>
-    <input type="text" id="inpSobrenome" placeholder="Digite o seu sobrenome" name="inpSobrenome" required>
-</div>
 
-<div class="box_input">
-  <label for="inpCpf">cpf</label>
-  <input type="text" id="inpCpf" placeholder="Digite o seu CPF" name="inpSobrenome" required>
-</div>
+        <div class="box_input">
+          <label for="inpEmail">Email corporativo </label>
+          <span id="mensagem_erro_email" class="mensagem_erro_cadastro">&#10006; Insira um email válido!</span>
+          <input type="text" id="inpEmail" name="inpEmail" oninput="validarEmail()" required
+            placeholder="Digite seu e-mail empresarial">
+        </div>
 
-<div class="box_input">
-<label for="inpDataNasc">data de nascimento</label>
-<input type="date" id="inpDataNasc" placeholder="Escolha sua data de nascimento" name="inpSobrenome" required>
-</div>
 
-    <div class="box_input">
-        <label for="inpEmail">Senha</label>
-    <span id="mensagem_erro_senha" class="mensagem_erro_cadastro">&#10006; Insira uma senha válida!</span>
-    <input type="text" id="inpSenha" oninput="validarSenha()" name="inpSenha" required placeholder="Digite sua senha">
+        <div class="box_input">
+          <label for="inpCnpj">CNPJ</label>
+          <span id="mensagem_erro_cnpj" class="mensagem_erro_cadastro">&#10006; Insira um CNPJ válido!</span>
+          <input type="text" id="inpCnpj" placeholder="Digite o CNPJ (somente números)" name="inpCnpj"
+            oninput="validarCnpj()" required>
+        </div>
+      </div>
+      <!-- FIM DA ETAPA 1 -->
+
+      <div style="display: none;" id="stepTwo" class="box_caixa_cadastro">
+        <div class="box_input">
+          <label for="Nome">Nome</label>
+          <span id="mensagem_erro_nome" class="mensagem_erro_cadastro">&#10006; Insira um nome válido!</span>
+          <input type="text" id="inpNome" name="inpNome" placeholder="Digite o seu nome" required>
+        </div>
+
+        <div class="box_input">
+          <label for="inpRazaoSocial">Sobrenome</label>
+          <span id="mensagem_erro_sobrenome" class="mensagem_erro_cadastro">&#10006; Insira um sobrenome válido!</span>
+          <input type="text" id="inpSobrenome" placeholder="Digite o seu sobrenome" name="inpSobrenome" required>
+        </div>
+
+        <div class="box_input">
+          <label for="inpCpf">CPF</label>
+          <input type="text" id="inpCpf" placeholder="Digite o seu CPF" name="inpSobrenome" required>
+        </div>
+
+        <div class="box_input">
+          <label for="inpDataNasc">Data de Nascimento</label>
+          <input type="date" id="inpDataNasc" placeholder="Escolha sua data de nascimento" name="inpSobrenome" required>
+        </div>
+
+        <div class="box_input">
+          <label for="inpEmail">Senha</label>
+          <span id="mensagem_erro_senha" class="mensagem_erro_cadastro">&#10006; Insira uma senha válida!</span>
+          <input type="text" id="inpSenha" oninput="validarSenha()" name="inpSenha" required
+            placeholder="Digite sua senha">
         </div>
 
 
         <div class="box_input">
 
-    <label for="inpCnpj">Confirme sua senha</label>
-    <span id="mensagem_erro_confirma" class="mensagem_erro_cadastro">&#10006; Insira uma senha válida!</span>
-    <input type="text" id="inpConfirma" oninput="validarConfirm()"  name="inpConfirma" required>
-    </div>
-</div>
-
+          <label for="inpCnpj">Confirme sua senha</label>
+          <span id="mensagem_erro_confirma" class="mensagem_erro_cadastro">&#10006; Insira uma senha válida!</span>
+          <input type="text" id="inpConfirma" oninput="validarConfirm()" name="inpConfirma" required>
         </div>
-            <!-- <div class="box_input">
+      </div>
+
+    </div>
+    <!-- <div class="box_input">
             <label for="inpSenha">Senha</label>
             <input type="text" id="inpSenha" name="inpSenha" oninput="validarSenha()" required>
                 </div>
@@ -117,25 +132,25 @@
     </div>
 
     <div class="box_mensagem_enviar">
-            <span class="mensagem_erro" style="display: none;" id="erroSenha">
-                <ul>
-                    <p style="color: red" id="senhasIdenticas">&#10006; As senhas devem ser idênticas</p>
-                    <li class="col1" id="qtdCaractere">&#10006; Pelo menos 8 caracteres</li>
-                    <li class="col1" id="minuscula">&#10006; Uma letra minúscula</li>
-                    <li class="col1" id="maiuscula">&#10006; Uma letra maiúscula</li>
-                    <li class="col2" id="caractereEspecial">&#10006; Um caractere especial</li>
-                    <li class="col2" id="numero">&#10006; Um número</li>
-                </ul>
-            </span>
-            <p><span style="display: none;" class="mensagem_erro_cnpj_email" id="spanErro"></span></p>
+      <span class="mensagem_erro" style="display: none;" id="erroSenha">
+        <ul>
+          <p style="color: red" id="senhasIdenticas">&#10006; As senhas devem ser idênticas</p>
+          <li class="col1" id="qtdCaractere">&#10006; Pelo menos 8 caracteres</li>
+          <li class="col1" id="minuscula">&#10006; Uma letra minúscula</li>
+          <li class="col1" id="maiuscula">&#10006; Uma letra maiúscula</li>
+          <li class="col2" id="caractereEspecial">&#10006; Um caractere especial</li>
+          <li class="col2" id="numero">&#10006; Um número</li>
+        </ul>
+      </span>
+      <p><span style="display: none;" class="mensagem_erro_cnpj_email" id="spanErro"></span></p>
 
-            <button  id="button_proximo" onclick="form_step1()" type="submit">Próximo</button>
-            <button style="display: none;" id="button_concluir" onclick="cadastrar()" type="submit">Concluir</button>
-        </div>
-        </section>
-        <div id="concluido" class="concluido_cadastro">
-            Cadastro concluído com sucesso! Redirecionando...
-        </div>
+      <button id="button_proximo" onclick="form_step1()" type="submit">Próximo</button>
+      <button style="display: none;" id="button_concluir" onclick="cadastrar()" type="submit">Concluir</button>
+    </div>
+  </section>
+  <div id="concluido" class="concluido_cadastro">
+    Cadastro concluído com sucesso! Redirecionando...
+  </div>
 
 
 </body>
@@ -143,79 +158,106 @@
 </html>
 <script>
 
-function cadastrar() {
-//Recupere o valor da nova input pelo nome do id
-// Agora vá para o método fetch logo abaixo
-var nomef_Var = inpNomeFantasia.value;
-var email_Var = inpEmail.value;
-var senha_Var = inpSenha.value;
-var nomeu_Var = inpNome.value;
-var sobrenome_Var = inpSobrenome.value;
-var cnpj_Var =  inpCnpj.value;
-var razaoSocial_Var = inpRazaoSocial.value;
-var nomeEmpresa_var =inpNomeEmpresa.value;
-var cpf_var = inpCpf.value;
-var dataNasc_var = inpDataNasc.value;
-// Verificando se há algum campo em branco
-if (
-  nomef_Var == "" ||
-  email_Var == "" ||
-  senha_Var == "" ||
-  nomeu_Var == "" ||
-  sobrenome_Var == ""||
-  cnpj_Var == ""||
-  razaoSocial_Var == ""||
-  nomeEmpresa_var == ""||
-  cpf_var == "" ||
-  inpDataNasc == ""
-) {
-  return false;
-} else {
-  
-}
+function mostrarErroCadastrar() {
+  const div = document.getElementById("mensagemCadastroFail");
 
-
-// Enviando o valor da nova input
-fetch("/usuarios/cadastrar", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    // crie um atributo que recebe o valor recuperado aqui
-    // Agora vá para o arquivo routes/usuario.js    
-   nomeUsuarioServer: nomeu_Var,
-    emailServer: email_Var,
-    senhaServer: senha_Var,
-    nomeFantasiaServer: nomef_Var, 
-    sobrenomeServer: sobrenome_Var, 
-    cnpjServer: cnpj_Var, 
-    razaoSocialServer: razaoSocial_Var,
-    nomeEmpresaServer: nomeEmpresa_var, 
-    cpfServer: cpf_var,
-    dataNascServer: dataNasc_var
-  }),
-})
-  .then(function (resposta) {
-    console.log("resposta: ", resposta);
-
-    if (resposta.ok) {
-      setTimeout(() => {
-        window.location = "login.html";
-      }, "2000");
-
-      limparFormulario();
- 
-    } else {
-      throw "Houve um erro ao tentar realizar o cadastro!";
-    }
-  })
-  .catch(function (resposta) {
-    console.log(`#ERRO: ${resposta}`);
-   
+  // Mostrar a div com display flex
+  div.style.display = "flex";
+  // Forçar um repaint para garantir a transição
+  requestAnimationFrame(() => {
+    div.style.opacity = "1";
   });
 
-return false;
+  // Após 2 segundos, iniciar desaparecimento
+  setTimeout(() => {
+    div.style.opacity = "0";
+
+    // Após a transição de opacity, esconder a div
+    setTimeout(() => {
+      div.style.display = "none";
+    }, 500); // tempo igual ao transition
+  }, 2000);
 }
+
+  function cadastrar() {
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomef_Var = inpNomeFantasia.value;
+    var email_Var = inpEmail.value;
+    var senha_Var = inpSenha.value;
+    var nomeu_Var = inpNome.value;
+    var sobrenome_Var = inpSobrenome.value;
+    var cnpj_Var = inpCnpj.value;
+    var razaoSocial_Var = inpRazaoSocial.value;
+    var nomeEmpresa_var = inpNomeEmpresa.value;
+    var cpf_var = inpCpf.value;
+    var dataNasc_var = inpDataNasc.value;
+    // Verificando se há algum campo em branco
+    if (
+      nomef_Var == "" ||
+      email_Var == "" ||
+      senha_Var == "" ||
+      nomeu_Var == "" ||
+      sobrenome_Var == "" ||
+      cnpj_Var == "" ||
+      razaoSocial_Var == "" ||
+      nomeEmpresa_var == "" ||
+      cpf_var == "" ||
+      inpDataNasc == ""
+    ) {
+      return false;
+    } else {
+
+    }
+
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js    
+        nomeUsuarioServer: nomeu_Var,
+        emailServer: email_Var,
+        senhaServer: senha_Var,
+        nomeFantasiaServer: nomef_Var,
+        sobrenomeServer: sobrenome_Var,
+        cnpjServer: cnpj_Var,
+        razaoSocialServer: razaoSocial_Var,
+        nomeEmpresaServer: nomeEmpresa_var,
+        cpfServer: cpf_var,
+        dataNascServer: dataNasc_var
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          setTimeout(() => {
+            console.log('201')
+            mensagemCadastroOk.style.display = 'flex';
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+
+        } else {
+          mostrarErroCadastrar()
+            console.log("Ocorreu um erro ao realizar cadastro!!")
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+  }
+
+
 
 </script>
