@@ -636,68 +636,46 @@ else{
     adduser.style.display = 'none';
     cargo_header.innerHTML = `Analista`;
 }
-//lista de usuarios
-
-// fetch("/usuarios/autenticar", {
-//                method: "POST",
-//                headers: {
-//                    "Content-Type": "application/json"
-//                },
-//                body: JSON.stringify({
-//                    emailLogadoserver: emailUsuario
-                 
-//                })
+// lista de usuarios
 
 
-//            }).then(function (resposta) {
-//                console.log("ESTOU NO THEN DO entrar()!")
 
-//                if (resposta.ok) {
-//                    console.log(resposta);
 
-//                    resposta.json().then(json => {
-//                        console.log(json);
-//                        console.log(JSON.stringify(json));
-//                        sessionStorage.EMAIL_USUARIO = json.email;
-//                        sessionStorage.NOME_USUARIO = json.username;
-//                        sessionStorage.CARGO_USUARIO = json.cargo
 
-//                         const emailUsuario = json.email;
-//                         const nomeUsuario = json.username;
-//                         const cargoUsuario = json.cargo;
-                       
-                      
-//                    setTimeout(function () {
-//                        window.location = "dashboard.html";
-//                    }, 1000); // apenas para exibir o loading
-
-//                });
-//                fetch('/usuarios/cadastrarOperador', {
-//        method: 'POST',
-//        credentials: 'same-origin',          // importante para enviar cookies
-//        headers: { 'Content-Type': 'application/json' },
-//        body: JSON.stringify({ emaillogadoServer: emailVar })
-//    })
-
-//            } else {
-
-//                console.log("Houve um erro ao tentar realizar o login!");
-
-//                resposta.text().then(texto => {
-                   
+ fetch("/usuarios/listar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailLogadoserver: emailUsuario
+               
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+                if (resposta.ok) {
+                    console.log(resposta);
+                    resposta.json().then(usuarios => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
                 
-//                });
-//            }
-
-//        }).catch(function (erro) {
-//            console.log(erro);
-//        })
-
-//        return false;
-   
-
-
-
+                     
+                    
+                });
+               
+    
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+                resposta.text().then(texto => {
+                 
+              
+                });
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+ 
 }
 const usuarios = [
         {
@@ -707,6 +685,19 @@ const usuarios = [
             linhaAtuacao: "Linha Azul",
             dataInicio: "06/04/2025"
         },
+        {
+
+            nome: "Cleyton da Silva",
+            cpf: "251.483.088-50",
+            cargo: "Operador de Tráfego",
+            linhaAtuacao: "Linha Azul",
+            dataInicio: "06/04/2025"
+
+
+        },
+        
+        
+        
         {
             nome: "Maria Oliveira",
             cpf: "387.123.998-20",

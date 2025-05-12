@@ -24,6 +24,9 @@ router.post("/cadastrarOperador", function (req, res) {
 router.post("/dadosCadastroOperador", function (req, res) {
     usuarioController.cadastrarOperador(req, res);
 })
+router.post("/listar", function (req, res) {
+    usuarioController.Listar(req, res);
+})
 
 
 module.exports = router;
