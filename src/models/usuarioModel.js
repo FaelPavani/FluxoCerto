@@ -14,7 +14,11 @@ function autenticar(email, senha,) {
 function listar(emaillogado) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucaoSql = `
-        SELECT  cargo, id, username, email FROM users WHERE email = '${email}' AND senha = '${senha}'; 
+       SELECT username, cargo, cpf, linha, dataEntrada
+FROM users
+WHERE id = (
+    SELECT id FROM users WHERE email = '${emaillogado}'
+);
 
     `; // atualizar os dados da busca e o nome das tabelas do banco 
     

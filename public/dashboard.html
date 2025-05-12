@@ -639,7 +639,7 @@ else{
 // lista de usuarios
 
 
-
+function listar(){
 
 
  fetch("/usuarios/listar", {
@@ -676,36 +676,36 @@ else{
         })
         return false;
  
-}
-const usuarios = [
-        {
-            nome: "Ciclano da Silva",
-            cpf: "251.483.088-50",
-            cargo: "Operador de Tráfego",
-            linhaAtuacao: "Linha Azul",
-            dataInicio: "06/04/2025"
-        },
-        {
+}}
+// const usuarios = [
+//         {
+//             nome: "Ciclano da Silva",
+//             cpf: "251.483.088-50",
+//             cargo: "Operador de Tráfego",
+//             linhaAtuacao: "Linha Azul",
+//             dataInicio: "06/04/2025"
+//         },
+//         {
 
-            nome: "Cleyton da Silva",
-            cpf: "251.483.088-50",
-            cargo: "Operador de Tráfego",
-            linhaAtuacao: "Linha Azul",
-            dataInicio: "06/04/2025"
+//             nome: "Cleyton da Silva",
+//             cpf: "251.483.088-50",
+//             cargo: "Operador de Tráfego",
+//             linhaAtuacao: "Linha Azul",
+//             dataInicio: "06/04/2025"
 
 
-        },
+//         },
         
         
         
-        {
-            nome: "Maria Oliveira",
-            cpf: "387.123.998-20",
-            cargo: "Supervisora",
-            linhaAtuacao: "Linha Vermelha",
-            dataInicio: "01/03/2024"
-        }
-    ];
+//         {
+//             nome: "Maria Oliveira",
+//             cpf: "387.123.998-20",
+//             cargo: "Supervisora",
+//             linhaAtuacao: "Linha Vermelha",
+//             dataInicio: "01/03/2024"
+//         }
+//     ];
 function adicionarUsuariosNaBox(usuarios) {
         const container = document.getElementById("box_usuarios");
         container.innerHTML = ""

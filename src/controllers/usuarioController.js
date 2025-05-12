@@ -122,12 +122,11 @@ var emailLogado = req.body.emailLogadoserver;
             // Retorna todos os usuários encontrados
             res.json(
                 resultadoAutenticar.map(usuario => ({
-                    id: usuario.id,
                    cpf: usuario.cpf,
                     username: usuario.username,
                     linha: usuario.linha,
                     cargo: usuario.cargo,
-                    dt_inicio: usuario.dt_inicio
+                    dataEntrada: usuario.dt_inicio
                 }))
             );
         } else {
