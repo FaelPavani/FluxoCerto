@@ -11,7 +11,34 @@
     <title>DashBoard</title>
 </head>
 
-<body class="body_dash" id="body" onload="obterNomeUsuario(), adicionarUsuariosNaBox(usuarios)" >
+<body class="body_dash" id="body" onload="obterNomeUsuario(), adicionarUsuariosNaBox(usuarios)">
+
+    <div class="mensagemOk" id="mensagemAlteracaoOk">Alterações salvas com sucesso!</div>
+    <div class="mensagemErro" id="mensagemAlteracaoErro">Ocorreu um erro ao salvar as alterações.</div>
+
+
+    <div class="mensagemOk" id="mensagemExcluirOk">Excluiu o analista com sucesso!</div>
+
+    <div class="mensagemErro" id="mensagemExcluirErro">Ocorreu um erro ao excluir o analista.</div>
+
+
+    <div class="fundoEscuro" id="fundoEscuro"></div>
+    <div id="boxConfirmarExcluir" class="box_excluir">
+        <p onclick="fecharExcluir()">✖</p>
+        Tem certeza que deseja excluir esse analista?
+
+        <button onclick="excluir()" id="buttonExcluir">Excluir</button>
+        <button onclick="fecharExcluir()" id="buttonCancel">Cancelar</button>
+    </div>
+
+    <div id="boxConfirmarFechar" class="box_excluir">
+        <p onclick="fecharConfirmacao()">✖</p>
+        Tem certeza que deseja fechar e descartar as alterações?
+
+        <button onclick="descartar()" id="buttonExcluir">Fechar e descartar</button>
+        <button onclick="fecharConfirmacao()" id="buttonCancel">Continuar alterando</button>
+    </div>
+
     <div style="display: none;" id="blur" class="blur"></div>
     <div style="display: none;" id="caixa_saindo" class="box_saindo">
 
@@ -24,14 +51,14 @@
             <img class="imagem_dashboard" src="./assets/guest_purple.png" alt="">
             <div class="box_user_dashboard">
                 <h3><span>Olá,</span> <span id="nome_operador_header"></span></h3>
-                <h6 ><i id="cargo_header"></i> de Operações</h6>
+                <h6><i id="cargo_header"></i> de Operações</h6>
             </div>
         </div>
 
         <div class="box_icones_dash">
             <img onclick="homeDashboards()" class="imagem_dashboard" src="./assets/home_icon.png">
             <img onclick="addUser()" id="adduser" class="imagem_dashboard" src="./assets/adduser_icon.png">
-            <img  class="imagem_dashboard" src="./assets/config_icon.png">
+            <img class="imagem_dashboard" src="./assets/config_icon.png">
             <img style="margin-left: 3rem;" onclick="sairDashboard()" class="imagem_dashboard"
                 src="./assets/sair_icon.png">
         </div>
@@ -48,11 +75,14 @@
             <h3>Menu</h3>
             <ul>
                 <li onclick="homeDashboards()">→<img class="imagem_modal_dash" src="./assets/home_icon.png" alt="">
-                    <span>Dashboard</span></li>
+                    <span>Dashboard</span>
+                </li>
                 <li onclick="addUser()">→<img class="imagem_modal_dash" src="./assets/adduser_icon.png" alt="">
-                    <span>Gerenciar Usuários</span></li>
+                    <span>Gerenciar Usuários</span>
+                </li>
                 <li onclick="sairDashboard()">→<img class="imagem_modal_dash" src="./assets/sair_icon.png" alt="">
-                    <span>Sair</span></li>
+                    <span>Sair</span>
+                </li>
             </ul>
         </div>
     </div>
@@ -121,7 +151,7 @@
                                 <p>Filtrar por:</p>
                                 <label>
                                     <select class="select_linhas" id="mainSelect" name="options">
-                                      
+
                                         <option value="ano_especifico">Ano específico</option>
                                         <option value="anos">Anos</option>
                                     </select>
@@ -193,7 +223,7 @@
 
                             <div>
 
-                                <div >
+                                <div>
                                     <h4 class="title_filtros">Filtrando por:</h4>
                                     <div id="kpi_linha_azul" class="linha_kpi">
                                         <div style="background-color: rgb(7, 7, 196);" class="kpi_linha"></div>
@@ -442,10 +472,10 @@
         </section>
     </main>
 
-    <section style="display: none;" class="section_addUser" id="mainUsers">
+    <section style="display: block;" class="section_addUser" id="mainUsers">
 
         <div class="container_addUser">
-            <div style="display: block;" id="gerenciarUsuarios">
+            <div  id="gerenciarUsuarios">
                 <div>
                     <h4><img class="imagem_titulo_gerenciar" src="./assets/user_demanda.png" alt="">Gerenciar usuários
                     </h4>
@@ -459,7 +489,7 @@
                     </div>
                 </div>
 
-                <div id="box_usuarios" class="box_usuarios"> 
+                <div id="box_usuarios" class="box_usuarios">
                     <div class="linha_usuario">
                         <div class="fotoUser">
                             <img src="./assets/user_demanda.png" alt="">
@@ -478,7 +508,7 @@
 
                         <div class="cargoUser">
                             <p class="titulos_usuarios">Cargo</p>
-                            <span class="informacoes_usuarios">Operador de Tráfego</span>
+                            <span class="informacoes_usuarios">Analista</span>
                         </div>
                         <div class="linhaUser">
                             <p class="titulos_usuarios titulo_linha_atuacao">Linha de Atuação</p>
@@ -496,8 +526,8 @@
                         <div class="editarUser">
                             <p class="titulos_usuarios">Editar</p>
                             <div class="icones_editar">
-                                <img src="./assets/lapis_icon.png">
-                                <img src="./assets/lixeira_icon.png">
+                                <img onclick="abrirEditar()" src="./assets/lapis_icon.png">
+                                <img onclick="mostrarConfirmacao()" src="./assets/lixeira_icon.png">
                             </div>
                         </div>
                     </div>
@@ -538,7 +568,7 @@
                         <h6>Cargo</h6>
                         <select id="cargo_valores">
                             <option disabled selected>Selecione o cargo</option>
-                            <option value="operador_de_trafego">Operador de tráfego</option>
+                            <option value="operador_de_trafego">Analista</option>
                         </select>
                     </div>
                     <div>
@@ -569,7 +599,8 @@
                         <input type="password" id="confirmSenhaUser" placeholder="Confirme a senha">
                     </div>
                     <div></div>
-                    <button onclick="concluirCadastroOperador()" class="botao_concluir_cadastro">Concluir cadastro</button>
+                    <button onclick="concluirCadastroOperador()" class="botao_concluir_cadastro">Concluir
+                        cadastro</button>
                 </div>
 
                 <span onclick="fecharAddUser()" class="fechar_addUser">&times;</span>
@@ -577,7 +608,53 @@
             </div>
 
 
+
+            <div style="display: none;" id="editarUsuarios" class="editarUsuarios">
+                <p class="fecharEditarUser" onclick="confirmacaoDescartar()">✖</p>
+                <h4>Editar usuário</h4>
+                <div class="boxEditarUsuarios">
+
+                    <div>
+                        <p>Nome</p>
+                        <input type="text" id="">
+                    </div>
+
+                    <div>
+                        <p>Sobrenome</p>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div>
+
+                        <p>CPF</p>
+                        <input type="text" name="" id="">
+                    </div>
+
+                    <div>
+
+                        <p>Cargo</p>
+                        <input type="text" name="" id="">
+                    </div>
+
+                    <div>
+
+                        <p>Linha de Atuação</p>
+                        <select id="">
+                            <option value="Linha Azul">Linha Azul</option>
+                            <option value="Linha Vermelha">Linha Vermelha</option>
+                            <option value="Linha Verde">Linha Verde</option>
+                        </select>
+                    </div>
+
+                    <button onclick="salvarAlteracoes()">Salvar alterações</button>
+
+                </div>
+
+
+            </div>
         </div>
+
+
+
 
     </section>
 </body>
@@ -586,124 +663,124 @@
 <script>
 
 
-function obterNomeUsuario() {
-    const nomeUsuario = sessionStorage.getItem("NOME_USUARIO");
-    nome_operador_header.innerHTML = `${nomeUsuario}`;
+    function obterNomeUsuario() {
+        const nomeUsuario = sessionStorage.getItem("NOME_USUARIO");
+        nome_operador_header.innerHTML = `${nomeUsuario}`;
 
-    const cargoUsuario = sessionStorage.getItem("CARGO_USUARIO");
-    const emailUsuario = sessionStorage.getItem("EMAIL_USUARIO");
-    
+        const cargoUsuario = sessionStorage.getItem("CARGO_USUARIO");
+        const emailUsuario = sessionStorage.getItem("EMAIL_USUARIO");
 
-    if (cargoUsuario === "gestor") {
-        cargo_header.innerHTML = `Gestor`;
 
-        const selectAno = document.getElementById("ano_todas_estacoes");
-        while (selectAno.options.length > 1) {
-            selectAno.remove(1);
+        if (cargoUsuario === "gestor") {
+            cargo_header.innerHTML = `Gestor`;
+
+            const selectAno = document.getElementById("ano_todas_estacoes");
+            while (selectAno.options.length > 1) {
+                selectAno.remove(1);
+            }
+
+
+
+
+            const selectanoespecifico = document.getElementById("options_ano_especifico");
+            while (selectanoespecifico.options.length > 1) {
+                selectanoespecifico.remove(1);
+            }
+
+            const selectMain = document.getElementById("mainSelect");
+
+            for (let i = 0; i < selectMain.options.length; i++) {
+                if (selectMain.options[i].value === "ano_especifico") {
+                    selectMain.selectedIndex = i;
+                    break;
+                }
+            }
+
+
+            if (selectMain.options.length > 0) {
+                selectMain.remove(1);
+            }
+
+
+            const selectanoespecificoestacoes = document.getElementById("options_ano_especifico_estacoes");
+
+            while (selectanoespecificoestacoes.options.length > 1) {
+                selectanoespecificoestacoes.remove(1);
+            }
+
         }
+        // else {
+        //     adduser.style.display = 'none';
+        //     cargo_header.innerHTML = `Analista`;
+        // }
+        //lista de usuarios
+
+        // fetch("/usuarios/autenticar", {
+        //                method: "POST",
+        //                headers: {
+        //                    "Content-Type": "application/json"
+        //                },
+        //                body: JSON.stringify({
+        //                    emailLogadoserver: emailUsuario
+
+        //                })
 
 
-  
+        //            }).then(function (resposta) {
+        //                console.log("ESTOU NO THEN DO entrar()!")
 
-    const selectanoespecifico = document.getElementById("options_ano_especifico");
-    while (selectanoespecifico.options.length > 1) {
-        selectanoespecifico.remove(1);
+        //                if (resposta.ok) {
+        //                    console.log(resposta);
+
+        //                    resposta.json().then(json => {
+        //                        console.log(json);
+        //                        console.log(JSON.stringify(json));
+        //                        sessionStorage.EMAIL_USUARIO = json.email;
+        //                        sessionStorage.NOME_USUARIO = json.username;
+        //                        sessionStorage.CARGO_USUARIO = json.cargo
+
+        //                         const emailUsuario = json.email;
+        //                         const nomeUsuario = json.username;
+        //                         const cargoUsuario = json.cargo;
+
+
+        //                    setTimeout(function () {
+        //                        window.location = "dashboard.html";
+        //                    }, 1000); // apenas para exibir o loading
+
+        //                });
+        //                fetch('/usuarios/cadastrarOperador', {
+        //        method: 'POST',
+        //        credentials: 'same-origin',          // importante para enviar cookies
+        //        headers: { 'Content-Type': 'application/json' },
+        //        body: JSON.stringify({ emaillogadoServer: emailVar })
+        //    })
+
+        //            } else {
+
+        //                console.log("Houve um erro ao tentar realizar o login!");
+
+        //                resposta.text().then(texto => {
+
+
+        //                });
+        //            }
+
+        //        }).catch(function (erro) {
+        //            console.log(erro);
+        //        })
+
+        //        return false;
+
+
+
+
     }
-
-    const selectMain = document.getElementById("mainSelect");
-
-    for (let i = 0; i < selectMain.options.length; i++) {
-        if (selectMain.options[i].value === "ano_especifico") {
-            selectMain.selectedIndex = i;
-            break;
-        }
-    }
-
-
-    if (selectMain.options.length > 0) {
-        selectMain.remove(1);
-    }
-
-
-const selectanoespecificoestacoes = document.getElementById("options_ano_especifico_estacoes");
-
-while (selectanoespecificoestacoes.options.length > 1) {
-    selectanoespecificoestacoes.remove(1);
-}
-
-}
-else{
-    adduser.style.display = 'none';
-    cargo_header.innerHTML = `Analista`;
-}
-//lista de usuarios
-
-// fetch("/usuarios/autenticar", {
-//                method: "POST",
-//                headers: {
-//                    "Content-Type": "application/json"
-//                },
-//                body: JSON.stringify({
-//                    emailLogadoserver: emailUsuario
-                 
-//                })
-
-
-//            }).then(function (resposta) {
-//                console.log("ESTOU NO THEN DO entrar()!")
-
-//                if (resposta.ok) {
-//                    console.log(resposta);
-
-//                    resposta.json().then(json => {
-//                        console.log(json);
-//                        console.log(JSON.stringify(json));
-//                        sessionStorage.EMAIL_USUARIO = json.email;
-//                        sessionStorage.NOME_USUARIO = json.username;
-//                        sessionStorage.CARGO_USUARIO = json.cargo
-
-//                         const emailUsuario = json.email;
-//                         const nomeUsuario = json.username;
-//                         const cargoUsuario = json.cargo;
-                       
-                      
-//                    setTimeout(function () {
-//                        window.location = "dashboard.html";
-//                    }, 1000); // apenas para exibir o loading
-
-//                });
-//                fetch('/usuarios/cadastrarOperador', {
-//        method: 'POST',
-//        credentials: 'same-origin',          // importante para enviar cookies
-//        headers: { 'Content-Type': 'application/json' },
-//        body: JSON.stringify({ emaillogadoServer: emailVar })
-//    })
-
-//            } else {
-
-//                console.log("Houve um erro ao tentar realizar o login!");
-
-//                resposta.text().then(texto => {
-                   
-                
-//                });
-//            }
-
-//        }).catch(function (erro) {
-//            console.log(erro);
-//        })
-
-//        return false;
-   
-
-
-
-}
-const usuarios = [
+    const usuarios = [
         {
             nome: "Ciclano da Silva",
             cpf: "251.483.088-50",
-            cargo: "Operador de Tráfego",
+            cargo: "Analista",
             linhaAtuacao: "Linha Azul",
             dataInicio: "06/04/2025"
         },
@@ -715,7 +792,7 @@ const usuarios = [
             dataInicio: "01/03/2024"
         }
     ];
-function adicionarUsuariosNaBox(usuarios) {
+    function adicionarUsuariosNaBox(usuarios) {
         const container = document.getElementById("box_usuarios");
         container.innerHTML = ""
         usuarios.forEach(usuario => {
@@ -753,8 +830,8 @@ function adicionarUsuariosNaBox(usuarios) {
                     <div class="editarUser">
                         <p class="titulos_usuarios">Editar</p>
                         <div class="icones_editar">
-                            <img src="./assets/lapis_icon.png" alt="Editar">
-                            <img src="./assets/lixeira_icon.png" alt="Excluir">
+                            <img onclick='abrirEditar()' src="./assets/lapis_icon.png" alt="Editar">
+                            <img onclick='mostrarConfirmacao()' src="./assets/lixeira_icon.png" alt="Excluir">
                         </div>
                     </div>
                 </div>
@@ -762,7 +839,6 @@ function adicionarUsuariosNaBox(usuarios) {
             container.innerHTML += html;
         });
     }
-   
 
 
 
@@ -774,21 +850,22 @@ function adicionarUsuariosNaBox(usuarios) {
 
 
 
-function verificarTamanhoTela() {
-    const menuHamburguer = document.querySelector(".menuHamburguer");
 
-    if (window.innerWidth > 425) {
-        menuHamburguer.style.display = "none";
-    } else {
-        menuHamburguer.style.display = "flex";
+    function verificarTamanhoTela() {
+        const menuHamburguer = document.querySelector(".menuHamburguer");
+
+        if (window.innerWidth > 425) {
+            menuHamburguer.style.display = "none";
+        } else {
+            menuHamburguer.style.display = "flex";
+        }
     }
-}
 
-// Verifica ao carregar a página
-window.addEventListener("load", verificarTamanhoTela);
+    // Verifica ao carregar a página
+    window.addEventListener("load", verificarTamanhoTela);
 
-// Verifica ao redimensionar a janela
-window.addEventListener("resize", verificarTamanhoTela);
+    // Verifica ao redimensionar a janela
+    window.addEventListener("resize", verificarTamanhoTela);
 
 
     const menuLateral = document.getElementById("menuLateral");
@@ -806,14 +883,14 @@ window.addEventListener("resize", verificarTamanhoTela);
     }
 
     function fecharMenu() {
-        
+
         menuLateral.classList.remove("ativo");
         overlay.classList.remove("ativo");
         document.body.classList.remove("menu-aberto");
 
         abrir.style.display = "flex";
         fechar.style.display = "none";
-        verificarTamanhoTela() 
+        verificarTamanhoTela()
 
     }
 
@@ -872,22 +949,22 @@ window.addEventListener("resize", verificarTamanhoTela);
     const initialData1 = {
         labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
         datasets: [
-    {
-        label: 'Linha Azul',
-        borderColor: 'blue',
-        data: [17684, 18558, 20437, 21247, 20623, 19934, 19649, 21265, 20995, 22206, 20460, 18840],
-    },
-    {
-        label: 'Linha Vermelha',
-        borderColor: 'red',
-        data: [20195, 20722, 22256, 23031, 22415, 21887, 21470, 23216, 22585, 24049, 22098, 20679],
-    },
-    {
-        label: 'Linha Verde',
-        borderColor: 'green',
-        data: [10704, 11727, 12756, 13423, 12893, 12532, 12274, 13422, 13094, 13971, 12668, 11419],
-    }
-]
+            {
+                label: 'Linha Azul',
+                borderColor: 'blue',
+                data: [17684, 18558, 20437, 21247, 20623, 19934, 19649, 21265, 20995, 22206, 20460, 18840],
+            },
+            {
+                label: 'Linha Vermelha',
+                borderColor: 'red',
+                data: [20195, 20722, 22256, 23031, 22415, 21887, 21470, 23216, 22585, 24049, 22098, 20679],
+            },
+            {
+                label: 'Linha Verde',
+                borderColor: 'green',
+                data: [10704, 11727, 12756, 13423, 12893, 12532, 12274, 13422, 13094, 13971, 12668, 11419],
+            }
+        ]
     };
 
     function createChart1(data) {
@@ -921,21 +998,21 @@ window.addEventListener("resize", verificarTamanhoTela);
     const initialData2 = {
         labels: ["2020", "2021", "2022", "2023", "2024"],
         datasets: [
-    {
-        label: 'Linha Azul',
-        borderColor: 'blue',
-        data: [151421, 155293, 215293, 233065, 241898],
-    }, 
-    {
-        label: 'Linha Vermelha',
-        borderColor: 'red',
-        data: [186259, 189568, 249684, 258785,  264603],
-    },
-    {
-        label: 'Linha Verde',
-        borderColor: 'green',
-        data: [84749, 85694, 125981, 139675, 150883],
-    }
+            {
+                label: 'Linha Azul',
+                borderColor: 'blue',
+                data: [151421, 155293, 215293, 233065, 241898],
+            },
+            {
+                label: 'Linha Vermelha',
+                borderColor: 'red',
+                data: [186259, 189568, 249684, 258785, 264603],
+            },
+            {
+                label: 'Linha Verde',
+                borderColor: 'green',
+                data: [84749, 85694, 125981, 139675, 150883],
+            }
         ]
     };
 
@@ -1511,7 +1588,7 @@ window.addEventListener("resize", verificarTamanhoTela);
         fecharMenu();
     }
     function homeDashboards() {
-        
+
         mainDashboards.style.display = 'flex';
         mainUsers.style.display = 'none'
         fecharMenu();
@@ -1528,7 +1605,9 @@ window.addEventListener("resize", verificarTamanhoTela);
 
     function addUsuario() {
         gerenciarUsuarios.style.display = 'none'
+        // colocar pra flex dps
         adicionarUsuario.style.display = 'flex'
+
     }
 
 
@@ -1797,76 +1876,194 @@ window.addEventListener("resize", verificarTamanhoTela);
 
             var emailLogado = sessionStorage.getItem("EMAIL_USUARIO");
 
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrarOperador", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js    
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrarOperador", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js    
 
 
 
 
-        // setar os nnomes no json que vai para o post e vai salvar setar variavies
-        serverNome: nomeInput.value,
-  serverSobrenome: sobrenomeInput.value,
-  serverCpf: cpfInput.value,
-  serverDataNasc: inputDataNasc.value,
-  serverTelefone: telefoneInput.value,
-  serverEmail: emailInput.value,
-  serverCargo: cargoSelect.value,
-  serverLinha: linhaSelect.value,
-  serverSenha: senhaInput.value,
-  serverEmailLogado: emailLogado
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+                    // setar os nnomes no json que vai para o post e vai salvar setar variavies
+                    serverNome: nomeInput.value,
+                    serverSobrenome: sobrenomeInput.value,
+                    serverCpf: cpfInput.value,
+                    serverDataNasc: inputDataNasc.value,
+                    serverTelefone: telefoneInput.value,
+                    serverEmail: emailInput.value,
+                    serverCargo: cargoSelect.value,
+                    serverLinha: linhaSelect.value,
+                    serverSenha: senhaInput.value,
+                    serverEmailLogado: emailLogado
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
 
-        if (resposta.ok) {
-          
+                    if (resposta.ok) {
 
 
-     
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-       
-      });
 
-    return false;
-            
+
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+
+                });
+
+            return false;
+
 
         } else {
             alert("Informações incorretas ou faltando!");
         }
         const cabecalho_dashboard = document.querySelector('.cabecalho_dashboard');
-    let lastScrollTop = 0;
+        let lastScrollTop = 0;
 
-    window.addEventListener("scroll", () => {
-        let scrollTop = window.scrollY;
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.scrollY;
 
-        if (scrollTop > lastScrollTop) {
-            // Rolando para baixo, esconde o cabeçalho
-            cabecalho_dashboard.classList.add("hidden");
-        } else {
-            // Rolando para cima, exibe o cabeçalho
-            cabecalho_dashboard.classList.remove("hidden");
-        }
+            if (scrollTop > lastScrollTop) {
+                // Rolando para baixo, esconde o cabeçalho
+                cabecalho_dashboard.classList.add("hidden");
+            } else {
+                // Rolando para cima, exibe o cabeçalho
+                cabecalho_dashboard.classList.remove("hidden");
+            }
 
-        lastScrollTop = scrollTop;
-    });
+            lastScrollTop = scrollTop;
+        });
 
 
     }
 
- 
-   
+    function mostrarConfirmacao() {
+        boxConfirmarExcluir.style.display = 'flex';
+        fundoEscuro.style.display = 'flex'
+    }
+
+    function fecharExcluir() {
+        boxConfirmarExcluir.style.display = 'none';
+        fundoEscuro.style.display = 'none'
+    }
+
+
+    function excluir() {
+        // Inserir a função para excluir o analista
+
+
+mensagemExcluirOk.style.display ='flex'
+
+
+        // se der certo a exclusão
+        setTimeout(() => {
+            mensagemExcluirOk.style.opacity = '1';
+        }, 10);
+
+        setTimeout(() => {
+            mensagemExcluirOk.style.opacity = '0';
+
+            setTimeout(() => {
+                mensagemExcluirOk.style.display = 'none';
+            }, 1000);
+        }, 1500);
+
+
+        // se der erro:
+        // setTimeout(() => {
+        //       mensagemExcluirErro.style.opacity = '1';
+        //     }, 10);
+
+        //     setTimeout(() => {
+        //       mensagemExcluirErro.style.opacity = '0';
+
+        //       setTimeout(() => {
+        //         mensagemExcluirErro.style.display = 'none';
+        //       }, 1000); 
+        //     }, 1500);
+
+
+
+
+        // depois de excluir o analista
+        fecharExcluir()
+    }
+
+    function abrirEditar() {
+        gerenciarUsuarios.style.display = 'none'
+        editarUsuarios.style.display = 'block'
+    }
+
+
+    function confirmacaoDescartar() {
+        boxConfirmarFechar.style.display = 'flex'
+        fundoEscuro.style.display = 'flex'
+    }
+
+    function fecharConfirmacao() {
+        boxConfirmarFechar.style.display = 'none'
+        fundoEscuro.style.display = 'none'
+
+    }
+
+    function descartar() {
+        gerenciarUsuarios.style.display = 'block'
+        boxConfirmarFechar.style.display = 'none'
+        fundoEscuro.style.display = 'none'
+        editarUsuarios.style.display = 'none'
+    }
+
+    function salvarAlteracoes() {
+        gerenciarUsuarios.style.display = 'block'
+        boxConfirmarFechar.style.display = 'none'
+        fundoEscuro.style.display = 'none'
+        editarUsuarios.style.display = 'none'
+
+        mensagemAlteracaoOk.style.display = 'flex'
+        mensagemAlteracaoOk.style.opacity = '1'
+
+        setTimeout(() => {
+            mensagemAlteracaoOk.style.opacity = '1';
+        }, 10);
+
+        // Após 2 segundos, inicia o fade-out
+        setTimeout(() => {
+            mensagemAlteracaoOk.style.opacity = '0';
+
+            // Após a transição de opacidade, esconde a div totalmente
+            setTimeout(() => {
+                mensagemAlteracaoOk.style.display = 'none';
+            }, 1000); // 1s = tempo da transição
+        }, 1500);
+
+
+        // se der erro:
+        //   setTimeout(() => {
+        //       mensagemAlteracaoErro.style.opacity = '1';
+        //     }, 10);
+
+        //     // Após 2 segundos, inicia o fade-out
+        //     setTimeout(() => {
+        //       mensagemAlteracaoErro.style.opacity = '0';
+
+        //       // Após a transição de opacidade, esconde a div totalmente
+        //       setTimeout(() => {
+        //         mensagemAlteracaoErro.style.display = 'none';
+        //       }, 1000); // 1s = tempo da transição
+        //     }, 1500);
+
+
+    }
+
+
+
 
 </script>

@@ -5316,3 +5316,173 @@ body.menu-aberto {
         padding-top: 23vw;
     }
 }
+
+.box_excluir{
+    width: 40vw;
+    height: 40vh;
+    padding: 1rem   ;
+    background-color: white;
+    position: absolute;
+    margin-left: 30vw;
+    top: 11vh;
+    border-radius: 0.5rem;
+    border: 2px solid #02033B;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+
+    & button{
+        width: 30vw;
+        height: 9vh;
+        font-size: 1rem;
+        border-radius: 0.5rem;  
+        margin-top: 1vw;
+        font-weight: 700;
+        cursor: pointer;
+        color: #02033B;
+        border: none;
+    }
+
+    & button:hover{
+        transform: scale(1.02);
+    }
+    & #buttonExcluir{
+        background-color: #FDB235;
+    }
+    & #buttonCancel{
+        background-color: #e6cc9f;
+    }
+    & p{
+        align-self: end;
+        margin-right: 1rem;
+        font-weight: 800;
+        cursor: pointer;
+    }
+}
+
+.fundoEscuro{
+        width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 50%;
+    position: fixed ;
+    background: rgba(0, 0, 0, 0.747);
+    /* Preto semi-transparente */
+    backdrop-filter: blur(10px);
+    /* Aplica desfoque ao fundo */
+    -webkit-backdrop-filter: blur(10px);
+    /* Compatibilidade com Safari */
+    position: absolute;
+    display: none;
+}
+
+.editarUsuarios button{
+align-self: end;
+justify-self: end;
+}
+
+.boxEditarUsuarios{
+    border: 2px solid rgba(0, 0, 0, 0.534);
+    border-radius: 0.8rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 60vh;
+    padding: 1rem;
+    & div{
+        width: 35vw;
+    }
+    & p{
+        font-size: 1.3rem;
+        margin-bottom: 0.2rem;
+    }
+    & input{
+        border-radius: 0.5rem;
+        border: none;
+        width: 25vw;
+        height:7vh;
+        border: 2px solid #888;
+        cursor: text;
+    }
+    & select{
+        border-radius: 0.5rem;
+        border: none;
+        border: 2px solid #888;
+        width: 25vw;
+        height:7vh;
+        cursor: text;
+    }
+}
+.fecharEditarUser{
+    font-weight: 800;
+    justify-self: end;
+    align-self: end;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mensagemOk{
+    width: 30vw;
+    display: none;
+    opacity: 0;
+     transition: opacity 1s ease;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 30rem;
+    top: 17vh;
+    height: 13vh;
+    border-radius: 0.5rem;
+    background-color: rgb(38, 156, 38);
+    color: white;
+    font-weight: 700;
+}
+.mensagemErro{
+     width: 30vw;
+    display: none;
+    opacity: 0;
+     transition: opacity 1s ease;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 30rem;
+    top: 17vh;
+    height: 13vh;
+    border-radius: 0.5rem;
+    background-color: rgb(202, 41, 41);
+    color: white;
+    font-weight: 700;
+}
+
+@media (max-width: 425px) {
+    .boxEditarUsuarios{
+    grid-template-columns: repeat(1);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+        & input{
+            width: 55vw;
+            margin-bottom: 1rem;
+        }
+        & select{
+            width: 55vw;
+            margin-bottom: 1rem;
+        }
+    }
+    .box_excluir{
+        height:45vh;
+        width: 70vw;
+        right: 12vw;
+        font-size: 1.4rem;
+        text-align: center;
+
+        & button{
+            width: 55vw;
+        }
+    }
+
+}
