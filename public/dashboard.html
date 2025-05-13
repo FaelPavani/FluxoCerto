@@ -472,7 +472,7 @@
         </section>
     </main>
 
-    <section style="display: block;" class="section_addUser" id="mainUsers">
+    <section style="display: none;" class="section_addUser" id="mainUsers">
 
         <div class="container_addUser">
             <div  id="gerenciarUsuarios">
@@ -709,16 +709,16 @@
             }
 
         }
-        // else {
-        //     adduser.style.display = 'none';
-        //     cargo_header.innerHTML = `Analista`;
-        // }
+         else {
+             adduser.style.display = 'none';
+             cargo_header.innerHTML = `Analista`;
+         }
         //lista de usuarios
-}
-else{
-    adduser.style.display = 'none';
-    cargo_header.innerHTML = `Analista`;
-}
+// }
+// else{
+//     adduser.style.display = 'none';
+//     cargo_header.innerHTML = `Analista`;
+// }
 // lista de usuarios
 
         // fetch("/usuarios/autenticar", {
