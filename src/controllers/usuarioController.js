@@ -105,7 +105,51 @@ function cadastrar(req, res) {
     }
 }
 
+function Listar(req,res){
+var emailLogado = req.body.emailLogadoserver;
 
+    if (emailLogado == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    }
+     else {
+
+        usuarioModel.listar(emailLogado)
+    .then(function (resultadoAutenticar) {
+        console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
+        console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
+
+        if (resultadoAutenticar.length > 0) {
+            // Retorna todos os usuários encontrados
+            res.json(
+                resultadoAutenticar.map(usuario => ({
+                   cpf: usuario.cpf,
+                    username: usuario.username,
+                    linha: usuario.linha,
+                    cargo: usuario.cargo,
+                    dataEntrada: usuario.dt_inicio
+                }))
+            );
+        } else {
+            res.status(404).send("Nenhum usuário encontrado com esse critério.");
+        }
+    })
+    .catch(function (erro) {
+        console.log(erro);
+        console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+
+
+
+     }
+
+// nome cargo cpf linha data de inicio 
+
+
+
+
+    
+}
 function cadastrarOperador(req, res) {
 
     // Agora, você pode usar o emailLogado para o processo de cadastro
@@ -149,6 +193,7 @@ function cadastrarOperador(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarOperador
+    cadastrarOperador,
+    listar
 }
 
