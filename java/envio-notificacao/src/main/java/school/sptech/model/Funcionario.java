@@ -2,7 +2,7 @@ package school.sptech.model;
 
 import java.sql.Date;
 
-public class Funcionario {
+public abstract class Funcionario {
     private Integer id;
     private String nome;
     private String cpf;
