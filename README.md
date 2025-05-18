@@ -31,7 +31,7 @@ O **FluxoCerto** é um sistema inteligente de monitoramento do fluxo de passagei
 O sistema atualmente está hospedado em uma instância da **AWS (Amazon Web Services)**.
 <br>
 <p align="center">
-  <img src="Documentos/ArquiteturaSolucao/ArquiteturaSolucao-FluxoCerto.png" alt="Imagem da arquitetura do sistema" width="500">
+  <img src="Documentos/ArquiteturaSolucao/ArquiteturaSolucao.png" alt="Imagem da arquitetura do sistema" width="500">
 </p>
 
 ---
