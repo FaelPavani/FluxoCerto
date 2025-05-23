@@ -86,6 +86,9 @@ public class LeitorExcel {
         List<EntradaPorLinha> entradasBatch = new ArrayList<>();
 
         for (Row row : sheet) {
+            if (row.getRowNum() == 0) {
+                continue;
+            }
             // Cria o objeto EntradaPorLinha apenas para facilitar a inserção no banco
             EntradaPorLinha entradaObj = new EntradaPorLinha();
 
@@ -115,12 +118,15 @@ public class LeitorExcel {
         List<DemandaPorEstacao> estacoesBatch = new ArrayList<>();
 
         for (Row row : sheet) {
+            if (row.getRowNum() == 0) {
+                continue;
+            }
             // Cria o objeto DemandaPorEstacao apenas para facilitar a inserção no banco
             DemandaPorEstacao estacaoObj = new DemandaPorEstacao();
 
             // Aqui ele seta os valores do objeto de acordo com a célula
             estacaoObj.setId(row.getRowNum());
-            estacaoObj.setAno(row.getCell(0).getStringCellValue());
+            estacaoObj.setAno(String.valueOf(row.getCell(0).getNumericCellValue()).replace(".0", ""));
             estacaoObj.setLinha(row.getCell(1).getStringCellValue());
             estacaoObj.setEstacao(row.getCell(2).getStringCellValue());
             estacaoObj.setMes(row.getCell(3).getStringCellValue());
@@ -129,7 +135,7 @@ public class LeitorExcel {
 
             estacoesBatch.add(estacaoObj);
             Log logObj = new Log(1, "200", "Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo), "LeitorExcel");
-            System.out.println("Leitura da linha %s finalizada com sucesso".formatted(row.getRowNum()));
+            System.out.println("Leitura da linha %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo));
             logBatch.add(logObj);
         }
         System.out.println("====================================================================================================================");
