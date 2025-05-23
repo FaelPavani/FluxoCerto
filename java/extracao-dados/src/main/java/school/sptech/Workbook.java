@@ -22,8 +22,10 @@ import java.util.List;
 public class Workbook{
     public static void main(String[] args) throws IOException, SQLException {
 
+        LeitorExcel.enviarMensagem("teste");
+
         S3Client s3Client = new S3Provider().getS3Client();
-        String bucketName = "dl-fluxo-certo";
+        String bucketName = "dl-fluxo-certo1";
 
         List<String> arquivos = Arrays.asList("curated-demanda-de-passageiros-por-estacao-2020-2024.xlsx", "curated-entrada-passageiros-por-linha-2020-2024.xlsx");
 
