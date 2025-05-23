@@ -3186,32 +3186,34 @@ footer {
 }
 
 
-.cadastroFail{
+.cadastroFail {
     position: absolute;
     top: 3rem;
-z-index: 40;
+    z-index: 40;
     font-size: 2rem;
     width: 34vw;
     height: 20vh;
     border-radius: 0.5rem;
     border: 3px solid rgb(197, 31, 31);
     padding: 2rem;
-    
+
     background-color: rgba(255, 0, 0, 0.685);
 }
-.cadastroOk{
+
+.cadastroOk {
     position: absolute;
     top: 3rem;
-z-index: 40;
+    z-index: 40;
     font-size: 2rem;
     width: 34vw;
     height: 20vh;
     border-radius: 0.5rem;
     border: 3px solid rgb(13, 85, 13);
     padding: 2rem;
-    
+
     background-color: rgba(0, 128, 0, 0.555);
 }
+
 /*Começo da estilização para celulares!*/
 @media (max-width: 425px) {
 
@@ -3226,10 +3228,11 @@ z-index: 40;
 
     }
 
-    .corpo_cadastro{
+    .corpo_cadastro {
         overflow: auto;
     }
-    .mensagem_erro{
+
+    .mensagem_erro {
         position: absolute;
         top: -30rem;
         right: -5rem;
@@ -3237,37 +3240,41 @@ z-index: 40;
         height: 10rem;
         width: 15rem;
     }
+
     .section_cadastro {
         margin-top: 10rem;
         margin-bottom: -5rem;
         height: 100vh;
 
-        & .box_caixa_cadastro{
-        flex-direction: column;
-        height: 80vh;
-        grid-template-columns: 1fr;
+        & .box_caixa_cadastro {
+            flex-direction: column;
+            height: 80vh;
+            grid-template-columns: 1fr;
         }
-        & .box_input{
+
+        & .box_input {
             height: 11vh;
         }
+
         & input {
             width: 80vw;
             height: 8vh;
         }
-        
-        & .box_mensagem_enviar{
+
+        & .box_mensagem_enviar {
             position: absolute;
             bottom: -4rem;
             height: 4rem;
         }
     }
 
-    .cadastroFail{
+    .cadastroFail {
         width: 80vw;
         height: 30vh;
     }
-    .cadastroOk{
-          width: 80vw;
+
+    .cadastroOk {
+        width: 80vw;
         height: 30vh;
     }
 
@@ -3912,7 +3919,7 @@ body.menu-aberto {
 }
 
 .box_icones_dash {
-    width: 18rem;
+    width: 20rem;
 
     height: 100%;
     display: flex;
@@ -5317,10 +5324,10 @@ body.menu-aberto {
     }
 }
 
-.box_excluir{
+.box_excluir {
     width: 40vw;
     height: 40vh;
-    padding: 1rem   ;
+    padding: 1rem;
     background-color: white;
     position: absolute;
     margin-left: 30vw;
@@ -5333,11 +5340,11 @@ body.menu-aberto {
     flex-direction: column;
     font-size: 1.5rem;
 
-    & button{
+    & button {
         width: 30vw;
         height: 9vh;
         font-size: 1rem;
-        border-radius: 0.5rem;  
+        border-radius: 0.5rem;
         margin-top: 1vw;
         font-weight: 700;
         cursor: pointer;
@@ -5345,16 +5352,19 @@ body.menu-aberto {
         border: none;
     }
 
-    & button:hover{
+    & button:hover {
         transform: scale(1.02);
     }
-    & #buttonExcluir{
+
+    & #buttonExcluir {
         background-color: #FDB235;
     }
-    & #buttonCancel{
+
+    & #buttonCancel {
         background-color: #e6cc9f;
     }
-    & p{
+
+    & p {
         align-self: end;
         margin-right: 1rem;
         font-weight: 800;
@@ -5362,12 +5372,12 @@ body.menu-aberto {
     }
 }
 
-.fundoEscuro{
-        width: 100%;
+.fundoEscuro {
+    width: 100%;
     height: 100%;
     background-color: black;
     opacity: 50%;
-    position: fixed ;
+    position: fixed;
     background: rgba(0, 0, 0, 0.747);
     /* Preto semi-transparente */
     backdrop-filter: blur(10px);
@@ -5378,12 +5388,12 @@ body.menu-aberto {
     display: none;
 }
 
-.editarUsuarios button{
-align-self: end;
-justify-self: end;
+.editarUsuarios button {
+    align-self: end;
+    justify-self: end;
 }
 
-.boxEditarUsuarios{
+.boxEditarUsuarios {
     border: 2px solid rgba(0, 0, 0, 0.534);
     border-radius: 0.8rem;
     width: 100%;
@@ -5391,31 +5401,36 @@ justify-self: end;
     grid-template-columns: repeat(2, 1fr);
     height: 60vh;
     padding: 1rem;
-    & div{
+
+    & div {
         width: 35vw;
     }
-    & p{
+
+    & p {
         font-size: 1.3rem;
         margin-bottom: 0.2rem;
     }
-    & input{
+
+    & input {
         border-radius: 0.5rem;
         border: none;
         width: 25vw;
-        height:7vh;
+        height: 7vh;
         border: 2px solid #888;
         cursor: text;
     }
-    & select{
+
+    & select {
         border-radius: 0.5rem;
         border: none;
         border: 2px solid #888;
         width: 25vw;
-        height:7vh;
+        height: 7vh;
         cursor: text;
     }
 }
-.fecharEditarUser{
+
+.fecharEditarUser {
     font-weight: 800;
     justify-self: end;
     align-self: end;
@@ -5423,11 +5438,11 @@ justify-self: end;
     cursor: pointer;
 }
 
-.mensagemOk{
+.mensagemOk {
     width: 30vw;
     display: none;
     opacity: 0;
-     transition: opacity 1s ease;
+    transition: opacity 1s ease;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
@@ -5440,11 +5455,12 @@ justify-self: end;
     color: white;
     font-weight: 700;
 }
-.mensagemErro{
-     width: 30vw;
+
+.mensagemErro {
+    width: 30vw;
     display: none;
     opacity: 0;
-     transition: opacity 1s ease;
+    transition: opacity 1s ease;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
@@ -5459,30 +5475,666 @@ justify-self: end;
 }
 
 @media (max-width: 425px) {
-    .boxEditarUsuarios{
-    grid-template-columns: repeat(1);
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-        & input{
+    .boxEditarUsuarios {
+        grid-template-columns: repeat(1);
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+
+        & input {
             width: 55vw;
             margin-bottom: 1rem;
         }
-        & select{
+
+        & select {
             width: 55vw;
             margin-bottom: 1rem;
         }
     }
-    .box_excluir{
-        height:45vh;
+
+    .box_excluir {
+        height: 45vh;
         width: 70vw;
         right: 12vw;
         font-size: 1.4rem;
         text-align: center;
 
-        & button{
+        & button {
             width: 55vw;
         }
     }
 
+}
+
+.section_configurar {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    color: #02033B;
+    padding-top: 5rem;
+
+    
+    & .box_configurar {
+        width: 80vw;
+        height: 80vh;
+        border-radius: 1rem;
+        border: 3px solid #02033B;
+        background-color: #ffffff;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+
+        & button {
+            align-self: end;
+            justify-self: flex-end;
+            margin-top: 18vw;
+            width: 15vw;
+            height: 8vh;
+            border-radius: 0.5rem;
+            border: 3px solid rgba(211, 35, 35, 0.767);
+            font-size: 1.3rem;
+            background-color: none;
+            background-color: #ffffff;
+            font-weight: 700;
+            cursor: pointer;
+            color: rgba(211, 35, 35, 0.767);
+        }
+
+        & button:hover {
+            transform: scale(1.01);
+        }
+
+        & i {
+            align-self: end;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+           & h3 {
+        font-size: 3vw;
+        margin-bottom: 2rem;
+        font-weight: 700;
+    }
+
+    & p {
+        font-size: 2rem;
+        cursor: pointer;
+        width: 24vw;
+        display: flex;
+        justify-content: space-around;
+        margin-left: 2rem;
+        align-items: center;
+    }
+
+    & p:hover {
+        transform: scale(1.01);
+        font-weight: 600;
+    }
+
+    }
+
+ 
+    .certeza_excluir {
+        display: none;
+        position: absolute;
+        width: 50vw;
+        height: 28vw;
+        background-color: #ffffff;
+        z-index: 5;
+        top: 10vw;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem;
+        border-radius: 0.5rem;
+        text-align: center;
+
+        & i {
+            font-weight: 800;
+            align-self: end;
+            margin-right: 2rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        & p {
+            font-size: 2.2rem;
+            width: 30vw;
+            margin-bottom: 1rem;
+        }
+
+        & span {
+            font-size: 1.6rem;
+            color: #02033bde;
+            margin-bottom: 2rem;
+        }
+
+        & button {
+            width: 20vw;
+            height: 7.5vh;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            margin-bottom: 1.2rem;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+        }
+
+        & .button_cancelar {
+            background-color: #02033B;
+        }
+
+        & .button_excluir {
+            background-color: rgb(202, 24, 24);
+        }
+
+        & button:hover {
+            transform: scale(1.01);
+        }
+
+    }
+
+    .box_editar{
+        width: 90vw;
+        height: 85vh;
+        padding: 1rem;
+        display: grid;
+    grid-template-columns: repeat(2, 1fr);
+        background-color: white;
+        border: 2px solid #02033B;
+        border-radius: 0.5rem;
+        & input{
+            width: 35vw;
+            height: 6vh;
+            cursor: text;
+            border-radius: 0.5rem;
+            border: 1.5px solid #02033B;
+        }
+        & h3{
+            font-size: 2.4vw;
+            height: 7vh;
+        }
+        & i{
+            justify-self: end;
+            height: 10vh;
+            margin-right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        & .caixa_informacao{
+            height: 13vh;
+        }
+        & p{
+            font-size: 1.3rem;
+        }
+        & .caixa_infoSenha{
+            width: 30vw;
+            padding-left: 1rem;
+           border-radius: 0.5rem;
+            height: 20vh;
+            color: red;
+            justify-self: end;
+            align-self: end;
+            margin-bottom: 1rem;
+            margin-right: 2rem;
+            background-color: #02033B;
+        }
+        & ul{
+ text-decoration: none;
+            list-style: none;
+            font-style: none;
+        }
+        & li{
+            font-weight: 700;
+        }
+        & button{
+            height: 8vh;
+            width: 30vw;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background-color: rgba(167, 22, 22, 0.877);
+            color: white;
+        }
+        & button:hover{
+            transform: scale(1.01);
+        }
+        & .btnSalvarAlteracoes{
+            justify-self: end;
+            background-color: #FDB235;
+            color: #02033B;
+        }
+    }
+& .mensagemAlteracaoSalva{
+    width: 20vw;
+    height: 18vh;
+    background-color: rgb(17, 122, 17);
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    margin-left: 33vw;
+    border-radius: 0.5rem;
+    opacity: 0;
+       transition: opacity 2s ease;
+}
+& .mensagemAlteracaoFalha{
+    width: 20vw;
+    height: 18vh;
+    background-color: rgb(190, 16, 16);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    margin-left: 33vw;
+    border-radius: 0.5rem;
+} 
+    .blur_certeza_excluir {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 50%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.747);
+        /* Preto semi-transparente */
+        backdrop-filter: blur(10px);
+        /* Aplica desfoque ao fundo */
+        -webkit-backdrop-filter: blur(10px);
+        /* Compatibilidade com Safari */
+        position: fixed;
+        z-index: 1;
+    }
+}
+
+.section_mensagem_user{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    color: #02033B;
+    & .box_mensagem_user{
+        width: 90vw;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        background-color: #ffffff;
+        height: 81vh;
+        border: 2px solid #02033B;
+        border-radius: 0.5rem;
+        
+        & .linha_mensagem{
+            width: 100%;
+            height: 1vh;
+            margin-top: 1rem;
+            border-bottom: 2px solid #02033B;
+            margin-bottom: 1rem;
+            border-radius: 2rem;
+        }
+        & h3{
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        & button{
+            cursor: pointer;
+            align-self: end;
+            justify-self: end;
+            display: flex;
+            width: 15vw;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 700;
+            height: 8vh;
+            background-color: #FDB235;
+        }
+        & button:hover{
+            transform: scale(1.01);
+        }
+        & i{
+            display: flex;
+            font-size: 1.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            align-self: end;
+            justify-self: end;
+        }
+        & .lista_mensagens{
+            width: 85.5vw;
+            margin-top: 0.5rem;
+            height: 44vh;
+            background-color: #e2dede;
+            overflow:auto;
+            display: flex;
+            flex-direction: column;
+            padding-top: 1rem;
+            align-items: center;
+            border-radius: 0.5rem;
+        }
+        & .mensagem{
+            width: 83.5vw;
+            background-color: white;
+            height: auto;
+            margin-bottom: 1rem;
+            justify-content: space-around;
+            border-radius: 0.3rem;
+            display: flex;
+            border: 2px solid #02033B;
+            & .caixa_mensagem{
+                width: 70vw;
+                padding-bottom: 1rem;
+                padding-top: 1rem;
+                & h6{
+                    margin-top: 1.5rem;
+                    font-size: 1.2rem;
+                    font-weight: 800;
+                }
+                & h4{
+                    font-size: 1.2rem;
+                    font-weight: 900;
+                }
+                & h5{
+                    font-size: 1.4rem;
+                    margin-left: 2.5rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                }
+                & p{
+                    margin-left: 1rem;
+                    width: 65vw;
+                    text-align: left;
+                }
+            }
+            & .caixa_mensagem_icones{
+                display: flex;
+                width: 6vw;
+                height: 8vh;
+                align-items: center;
+                justify-content: space-between;
+                & i{
+                    font-size: 2rem;
+                }
+                & .bx-trash{
+                    color: rgb(218, 23, 23);
+                }
+            }
+        }
+    }
+}
+
+.section_escrever_mensagem{
+         width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    color: #02033B;
+    & .box_escrever_mensagem{
+        width: 90vw;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        background-color: #ffffff;
+        height: 81vh;
+        border: 2px solid #02033B;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+ & i{
+            display: flex;
+            font-size: 1.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            align-self: end;
+            justify-self: end;
+        }
+        & h3{
+            font-size:1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        & h4{
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+
+        }
+        & input{
+            width: 25rem;
+            height: 4vh;
+            cursor: text;
+            height: 5vh;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #02033B;
+            padding-left: 0.5rem;
+        }
+        & select{
+            width: 25rem;
+            height: 4vh;
+            cursor: pointer;
+            height: 5vh;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #02033B;
+            padding-left: 0.5rem;
+        }
+        & h5{
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+        & textarea{
+            border-radius: 0.5rem;
+            padding: 1rem;
+         resize: none;
+         height: 25vh;
+        cursor: text;
+        }
+        & button{
+            width: 10vw;
+            height: 8vh;
+            display: flex;
+            align-self: end;
+            margin-bottom: 1rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            background-color: #4335DE;
+            color: white;
+            margin-top: 1rem;
+        }
+        & button:hover{
+            transform: scale(1.02);
+        }
+    }
+}
+
+
+.section_editar_mensagem{
+             width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    color: #02033B;
+    & .caixa_editar_mensagem{
+   width: 90vw;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        background-color: #ffffff;
+        height: 81vh;
+        border: 2px solid #02033B;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+          & i{
+            display: flex;
+            font-size: 1.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            align-self: end;
+            justify-self: end;
+        }
+          & h3{
+            font-size:1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        & h4{
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+
+        }
+        & input{
+            width: 25rem;
+            height: 4vh;
+            cursor: text;
+            height: 5vh;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #02033B;
+            padding-left: 0.5rem;
+        }
+        & select{
+            width: 25rem;
+            height: 4vh;
+            cursor: pointer;
+            height: 5vh;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #02033B;
+            padding-left: 0.5rem;
+        }
+        & h5{
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+        & textarea{
+            border-radius: 0.5rem;
+            padding: 1rem;
+         resize: none;
+         height: 25vh;
+        cursor: text;
+        }
+        & button{
+            width: 10vw;
+            height: 8vh;
+            display: flex;
+            align-self: end;
+            margin-bottom: 1rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            background-color: #4335DE;
+            color: white;
+            margin-top: 1rem;
+        }
+        & button:hover{
+            transform: scale(1.02);
+        }
+    }
+
+}
+
+.certeza_excluir_mensagens{
+    width: 25vw;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    position: absolute;
+    top: 10rem;
+    z-index:5;
+    & h3{
+        margin-bottom: 1rem;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+    & button{
+        width: 14vw;
+        height: 8vh;
+        margin-bottom: 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: white;
+        background-color: #02033B;
+    }
+    & .button_apagar_mensagem{
+        background-color: rgb(196, 17, 17);
+    }
+    & i{
+        display: flex;
+        justify-self: end;
+        align-self: end;
+        cursor: pointer;
+        font-size: 1.3rem;
+    }
+}
+.blur_mensagens{
+ width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.747);
+    /* Preto semi-transparente */
+    backdrop-filter: blur(10px);
+    /* Aplica desfoque ao fundo */
+    -webkit-backdrop-filter: blur(10px);
+    /* Compatibilidade com Safari */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.mensagem_excluir_ok{
+    width: 20vw;
+    height: 10vh;
+    display: none;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0.5rem;
+    color: white;
+    align-items: center;
+    background-color: rgb(49, 153, 49);
+    opacity: 0;
+    position: absolute;
+    top: 10rem;
+}
+.mensagem_excluir_erro{
+    width: 20vw;
+    height: 10vh;
+    border-radius: 0.5rem;
+    display: none;
+    opacity: 0;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 31, 31);
+    position: absolute;
+    top: 10rem;
 }
