@@ -50,12 +50,17 @@ public class LeitorExcel {
             } else {
                 workbook = new HSSFWorkbook(arquivo);
             }
-
             Sheet sheet = workbook.getSheetAt(0);
 
             if(nomeArquivo.equals("curated-entrada-passageiros-por-linha-2020-2024.xlsx")) {
+                System.out.println("");
+                System.out.println("Começando a leitura do arquivo %s".formatted(nomeArquivo));
+
                 this.leituraEntradaPorLinha(sheet, logBatch, logDao, nomeArquivo);
             } else if(nomeArquivo.equals("curated-demanda-de-passageiros-por-estacao-2020-2024.xlsx")) {
+                System.out.println("");
+                System.out.println("Começando a leitura do arquivo %s".formatted(nomeArquivo));
+
                 this.leituraDemandaPorEstacao(sheet, logBatch, logDao, nomeArquivo);
             }
             // Fechando o workbook após a leitura
@@ -95,9 +100,10 @@ public class LeitorExcel {
 
             entradasBatch.add(entradaObj);
             Log logObj = new Log(1, "200", "Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo), "LeitorExcel");
+            System.out.println("Leitura da linha %s finalizada com sucesso".formatted(row.getRowNum()));
             logBatch.add(logObj);
         }
-
+        System.out.println("====================================================================================================================");
         System.out.println("Inserindo os dados do arquivo " + nomeArquivo);
         entradaDao.inserirDadosBatch(entradasBatch);
         logDao.inserirLogBatch(logBatch);
@@ -114,7 +120,7 @@ public class LeitorExcel {
 
             // Aqui ele seta os valores do objeto de acordo com a célula
             estacaoObj.setId(row.getRowNum());
-            estacaoObj.setAno(String.valueOf(row.getCell(0).getNumericCellValue()).replace(".0", ""));
+            estacaoObj.setAno(row.getCell(0).getStringCellValue());
             estacaoObj.setLinha(row.getCell(1).getStringCellValue());
             estacaoObj.setEstacao(row.getCell(2).getStringCellValue());
             estacaoObj.setMes(row.getCell(3).getStringCellValue());
@@ -123,8 +129,10 @@ public class LeitorExcel {
 
             estacoesBatch.add(estacaoObj);
             Log logObj = new Log(1, "200", "Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo), "LeitorExcel");
+            System.out.println("Leitura da linha %s finalizada com sucesso".formatted(row.getRowNum()));
             logBatch.add(logObj);
         }
+        System.out.println("====================================================================================================================");
         System.out.println("Inserindo os dados do arquivo " + nomeArquivo);
         estacaoDao.inserirDadosBatch(estacoesBatch);
         logDao.inserirLogBatch(logBatch);
