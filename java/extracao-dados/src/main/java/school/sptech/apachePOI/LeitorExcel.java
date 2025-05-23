@@ -40,6 +40,8 @@ public class LeitorExcel {
         LogDao logDao = new LogDao(jdbcTemplate);
         List<Log> logBatch = new ArrayList<>();
 
+        enviarMensagem("Iniciando o processo de leitura dos arquivos .xlsx");
+
         try {
             System.out.println("\nIniciando leitura do arquivo %s\n".formatted(nomeArquivo));
 
@@ -74,6 +76,8 @@ public class LeitorExcel {
             this.enviarMensagem(String.format("Leitura do arquivo %s finalizada com sucesso!", nomeArquivo));
         } catch (IOException e) {
             logDao.inserirLog(1, "500", e.getMessage(), "LeitorExcel");
+            enviarMensagem("Ocorreu um erro durante a leitura do arquivo %s: %s".formatted(nomeArquivo, e.getMessage()));
+
             connection.commit();
             // Caso ocorra algum erro durante a leitura do arquivo uma exceção será lançada
             throw new RuntimeException(e);
@@ -145,7 +149,7 @@ public class LeitorExcel {
         connection.commit();
     }
 
-    public void enviarMensagem(String mensagem){
+    public static void enviarMensagem(String mensagem){
         JSONObject json = new JSONObject();
         json.put("text", mensagem);
         try {
