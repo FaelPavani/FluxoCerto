@@ -11,9 +11,13 @@ import java.net.http.HttpResponse;
 public class Slack {
 
     private static HttpClient client = HttpClient.newHttpClient();
-    private static final String url = "https://hooks.slack.com/services/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";
+    private static final String url = System.getenv("URL_WEBHOOK");
 
     public static void enviarMensagem(JSONObject content) throws IOException, InterruptedException {
+        if (url == null || !url.startsWith("https://")) {
+            throw new IllegalArgumentException("Webhook URL inválida ou não configurada.");
+        }
+
         HttpRequest request = HttpRequest.newBuilder(
                     URI.create(url))
                 .header("Content-Type", "application/json")
