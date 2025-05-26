@@ -194,6 +194,6 @@ module.exports = {
     autenticar,
     cadastrar,
     cadastrarOperador,
-    listar
+    Listar
 }
 
