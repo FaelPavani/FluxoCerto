@@ -40,9 +40,11 @@ CREATE TABLE users (
   senha varchar(100) NOT NULL,
   fk_responsavel int,
   fk_empresa int,
+  fk_adm int,
   constraint ct_responsavel foreign key (fk_responsavel) references users(id),
+    constraint ct_adm foreign key (fk_adm) references users(id),
   constraint ct_empresa foreign key (fk_empresa) references empresa(id),
-  constraint chkCargo Check (cargo in ("analista","gestor")),
+  constraint chkCargo Check (cargo in ("analista","gestor","adm")),
   constraint chkLinha check (linha in ("azul", "verde","vermelha","all"))
 );
 
