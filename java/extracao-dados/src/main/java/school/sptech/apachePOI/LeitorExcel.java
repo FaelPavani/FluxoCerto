@@ -154,7 +154,7 @@ public class LeitorExcel {
         json.put("text", mensagem);
         try {
             Slack.enviarMensagem(json);
-        } catch (IOException | InterruptedException e) {
+        } catch (Exception e) {
             System.out.println("Erro ao enviar mensagem para o slack: " + e.getMessage());
         }
     }

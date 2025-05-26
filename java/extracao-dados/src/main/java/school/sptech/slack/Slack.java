@@ -11,10 +11,9 @@ import java.net.http.HttpResponse;
 public class Slack {
 
     private static HttpClient client = HttpClient.newHttpClient();
-    private static final String url = "URL_WEBHOOK";
+    private static final String url = "https://hooks.slack.com/services/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";
 
     public static void enviarMensagem(JSONObject content) throws IOException, InterruptedException {
-
         HttpRequest request = HttpRequest.newBuilder(
                     URI.create(url))
                 .header("Content-Type", "application/json")
