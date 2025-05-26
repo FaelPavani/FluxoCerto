@@ -21,8 +21,6 @@ import java.util.List;
 
 public class Workbook{
     public static void main(String[] args) throws IOException, SQLException {
-
-
         S3Client s3Client = new S3Provider().getS3Client();
         String bucketName = "dl-fluxo-certo";
 
