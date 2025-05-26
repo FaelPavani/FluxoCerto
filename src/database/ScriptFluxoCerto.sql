@@ -30,7 +30,7 @@ INSERT INTO empresa (
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(50) NOT NULL,
+   VARCHAR(50) NOT NULL,
   cargo varchar(9),
   cpf char(20),
   email varchar(45),

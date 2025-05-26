@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/trem_icone.png" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="script.js" type="text/javascript" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>DashBoard</title>
 </head>
@@ -58,7 +60,8 @@
         <div class="box_icones_dash">
             <img onclick="homeDashboards()" class="imagem_dashboard" src="./assets/home_icon.png">
             <img onclick="addUser()" id="adduser" class="imagem_dashboard" src="./assets/adduser_icon.png">
-            <img class="imagem_dashboard" src="./assets/config_icon.png">
+            <img onclick="mensagemUser()" class="imagem_dashboard" src="./assets/chamados_icon.png">
+            <img onclick="configUser()" class="imagem_dashboard" src="./assets/config_icon.png">
             <img style="margin-left: 3rem;" onclick="sairDashboard()" class="imagem_dashboard"
                 src="./assets/sair_icon.png">
         </div>
@@ -475,7 +478,7 @@
     <section style="display: none;" class="section_addUser" id="mainUsers">
 
         <div class="container_addUser">
-            <div  id="gerenciarUsuarios">
+            <div id="gerenciarUsuarios">
                 <div>
                     <h4><img class="imagem_titulo_gerenciar" src="./assets/user_demanda.png" alt="">Gerenciar usuários
                     </h4>
@@ -657,6 +660,178 @@
 
 
     </section>
+
+
+
+    <section style="display: none;" id="configUsuario" class="section_configurar">
+
+        <div class="blur_certeza_excluir" id="blurExcluirConta"></div>
+        <div class="certeza_excluir" id="caixaExcluirConta">
+            <i onclick="configUser()" class='bx bx-x'></i>
+            <p>Tem certeza que deseja excluir sua conta?</p>
+            <span>(Essa ação é irreversível!)</span>
+            <button class="button_excluir">Sim, excluir</button> <button class="button_cancelar"
+                onclick="configUser()">Cancelar</button>
+        </div>
+
+
+
+        <div class="div_pai_config">
+            <div style="display: flex;" class="box_configurar" id="boxConfig">
+                <i onclick="homeDashboards()" class='bx bx-x'></i>
+                <h3>Configurações</h3>
+                <p onclick="alterarInfo()"><i class='bx bx-pencil'></i>Alterar informações</p>
+                <button onclick="excluirConta()">Excluir conta</button>
+            </div>
+
+
+            <div style="display: none;" class="mensagemAlteracaoSalva" id="mensagemSucesso">Alterações salvas com
+                sucesso!</div>
+            <div style="display: none;" class="mensagemAlteracaoFalha">Ocorreu um erro ao salvar as alterações!</div>
+
+            <div style="display: none;" class="box_editar" id="caixaEditar">
+                <h3>Alterar Informações</h3>
+                <i class='bx bx-x' onclick="configUser()"></i>
+                <div class="caixa_informacao">
+                    <p>Nome Completo</p>
+                    <input type="text" name="" id="">
+                </div>
+
+                <div class="caixa_informacao">
+                    <p>CPF</p>
+                    <input type="text" name="" id="">
+                </div>
+
+                <div class="caixa_informacao">
+                    <p>Email</p>
+                    <input type="text" name="" id="">
+                </div>
+
+                <div class="caixa_informacao">
+                    <p>Senha atual</p>
+                    <input type="text" name="" id="">
+                </div>
+
+                <div class="caixa_informacao">
+                    <p>Nova Senha</p>
+                    <input type="text" name="" id="senha">
+                </div>
+                <div class="caixa_informacao">
+                    <p>Confirmar Nova Senha</p>
+                    <input type="text" name="" id="confirmarSenha">
+                </div>
+
+
+                <div></div>
+                <div class="caixa_infoSenha">
+                    <ul>
+                        <li id="infoSenha_iguais">&#10006; As senhas devem ser idênticas</li>
+                        <li id="infoSenha_qtdCaractere">&#10006; Pelo menos 8 caracteres</li>
+                        <li id="infoSenha_minuscula">&#10006; Uma letra minúscula</li>
+                        <li id="infoSenha_maiuscula">&#10006; Uma letra maiúscula</li>
+                        <li id="infoSenha_caractereEspecial">&#10006; Um caractere especial</li>
+                        <li id="infoSenha_numero">&#10006; Um número</li>
+                    </ul>
+                </div>
+                <button onclick="configUser()">Descartar alterações</button>
+                <button class="btnSalvarAlteracoes" id="btnSalvar">Salvar alterações</button>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="caixaMensagem" style="display: none;" class="section_mensagem_user">
+        <div class="box_mensagem_user">
+            <i onclick="homeDashboards()" class='bx bx-x'></i>
+            <h3>Gerenciar mensagens</h3>
+            <button onclick="novaMensagem()">Nova Mensagem</button>
+            <div class="linha_mensagem"></div>
+            <h3>Suas mensagens</h3>
+            <div class="lista_mensagens">
+                <div class="mensagem">
+                    <div class="caixa_mensagem">
+                        <h4>Mensagem Nº 01</h6>
+                            <h6>Tipo: <span>Problema</span></h6>
+                            <h5>Visualização da Dash</h5>
+                            <p>Estou com um problema para visualização dos gráficos!</p>
+                    </div>
+                    <div class="caixa_mensagem_icones">
+                        <i onclick="editarMensagem()" class='bx bx-pencil'></i>
+                        <i onclick="excluirMensagem()" class='bx bx-trash'></i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="blur_certeza_excluir" style="display: none;" class="blur_mensagens"></div>
+
+        <div style="display: none;" class="certeza_excluir_mensagens" id="certeza_exclusao_mensagem">
+            <i onclick="mensagemUser()" class='bx bx-x'></i>
+            <h3>Tem certeza que deseja excluir essa mensagem?</h3>
+            <button onclick="certezaExcluirMensagem()" class="button_apagar_mensagem">Sim, excluir</button>
+            <button onclick="mensagemUser()">Cancelar</button>
+        </div>
+
+        <div id="excluirMensagemOk" class="mensagem_excluir_ok">
+            Mensagem excluida com sucesso!
+        </div>
+
+        <div id="excluirMensagemErro" class="mensagem_excluir_erro">Ocorreu um erro ao excluir sua mensagem!</div>
+
+    </section>
+
+    <section style="display: none;" class="section_escrever_mensagem" id="caixaEscreverMensagem">
+        <div class="box_escrever_mensagem">
+            <i onclick="mensagemUser()" class='bx bx-x'></i>
+            <h3>Nova mensagem</h3>
+
+            <h4>Tipo</h4>
+            <select id="tipo-mensagem">
+                <option value="">Selecione o tipo de mensagem</option>
+                <option value="problema">Problema - Algo não está funcionando corretamente</option>
+                <option value="duvida">Dúvida - Tenho uma pergunta sobre o sistema</option>
+                <option value="sugestao">Sugestão - Tenho uma ideia para melhorar</option>
+                <option value="feedback">Feedback geral - Quero compartilhar minha experiência</option>
+                <option value="outro">Outro - Não se encaixa nas opções acima</option>
+            </select>
+
+            <h4>Assunto</h6>
+                <input placeholder="Insira um assunto" type="text" id="">
+
+                <h5>Escreva sua mensagem</h6>
+                    <textarea placeholder="Escreva sua mensagem..." id=""></textarea>
+
+                    <button>Enviar mensagem</button>
+        </div>
+    </section>
+
+    <section style="display: none;" class="section_editar_mensagem" id="caixaEditarMensagem">
+        <div class="caixa_editar_mensagem">
+            <i onclick="mensagemUser()" class='bx bx-x'></i>
+            <h3>Editar mensagem</h3>
+
+            <h4>Tipo:</h4>
+            <select id="tipo-mensagem">
+                <option value="">Selecione o tipo de mensagem</option>
+                <option value="problema">Problema - Algo não está funcionando corretamente</option>
+                <option value="duvida">Dúvida - Tenho uma pergunta sobre o sistema</option>
+                <option value="sugestao">Sugestão - Tenho uma ideia para melhorar</option>
+                <option value="feedback">Feedback geral - Quero compartilhar minha experiência</option>
+                <option value="outro">Outro - Não se encaixa nas opções acima</option>
+            </select>
+            <h4>Assunto:</h4>
+            <input type="text" name="" id="">
+
+            <h4>Mensagem:</h4>
+            <textarea id=""></textarea>
+            <button>Editar mensagem</button>
+
+        </div>
+    </section>
+
+
 </body>
 
 </html>
@@ -709,17 +884,17 @@
             }
 
         }
-         else {
-             adduser.style.display = 'none';
-             cargo_header.innerHTML = `Analista`;
-         }
+        else {
+            adduser.style.display = 'none';
+            cargo_header.innerHTML = `Analista`;
+        }
         //lista de usuarios
-// }
-// else{
-//     adduser.style.display = 'none';
-//     cargo_header.innerHTML = `Analista`;
-// }
-// lista de usuarios
+        // }
+        // else{
+        //     adduser.style.display = 'none';
+        //     cargo_header.innerHTML = `Analista`;
+        // }
+        // lista de usuarios
 
         // fetch("/usuarios/autenticar", {
         //                method: "POST",
@@ -800,17 +975,17 @@
     ];
     function adicionarUsuariosNaBox(usuarios) {
 
-function listar(){
+        function listar() {
 
 
- fetch("/usuarios/listar", {
+            fetch("/usuarios/listar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     emailLogadoserver: emailUsuario
-               
+
                 })
             }).then(function (resposta) {
                 console.log("ESTOU NO THEN DO entrar()!")
@@ -819,55 +994,56 @@ function listar(){
                     resposta.json().then(usuarios => {
                         console.log(json);
                         console.log(JSON.stringify(json));
-                
-                     
-                    
-                });
-               
-    
-            } else {
-                console.log("Houve um erro ao tentar realizar o login!");
-                resposta.text().then(texto => {
-                 
-              
-                });
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-        return false;
- 
-}}
-// const usuarios = [
-//         {
-//             nome: "Ciclano da Silva",
-//             cpf: "251.483.088-50",
-//             cargo: "Operador de Tráfego",
-//             linhaAtuacao: "Linha Azul",
-//             dataInicio: "06/04/2025"
-//         },
-//         {
-
-//             nome: "Cleyton da Silva",
-//             cpf: "251.483.088-50",
-//             cargo: "Operador de Tráfego",
-//             linhaAtuacao: "Linha Azul",
-//             dataInicio: "06/04/2025"
 
 
-//         },
-        
-        
-        
-//         {
-//             nome: "Maria Oliveira",
-//             cpf: "387.123.998-20",
-//             cargo: "Supervisora",
-//             linhaAtuacao: "Linha Vermelha",
-//             dataInicio: "01/03/2024"
-//         }
-//     ];
-function adicionarUsuariosNaBox(usuarios) {
+
+                    });
+
+
+                } else {
+                    console.log("Houve um erro ao tentar realizar o login!");
+                    resposta.text().then(texto => {
+
+
+                    });
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+
+        }
+    }
+    // const usuarios = [
+    //         {
+    //             nome: "Ciclano da Silva",
+    //             cpf: "251.483.088-50",
+    //             cargo: "Operador de Tráfego",
+    //             linhaAtuacao: "Linha Azul",
+    //             dataInicio: "06/04/2025"
+    //         },
+    //         {
+
+    //             nome: "Cleyton da Silva",
+    //             cpf: "251.483.088-50",
+    //             cargo: "Operador de Tráfego",
+    //             linhaAtuacao: "Linha Azul",
+    //             dataInicio: "06/04/2025"
+
+
+    //         },
+
+
+
+    //         {
+    //             nome: "Maria Oliveira",
+    //             cpf: "387.123.998-20",
+    //             cargo: "Supervisora",
+    //             linhaAtuacao: "Linha Vermelha",
+    //             dataInicio: "01/03/2024"
+    //         }
+    //     ];
+    function adicionarUsuariosNaBox(usuarios) {
         const container = document.getElementById("box_usuarios");
         container.innerHTML = ""
         usuarios.forEach(usuario => {
@@ -1661,13 +1837,57 @@ function adicionarUsuariosNaBox(usuarios) {
         mainDashboards.style.display = 'none';
         mainUsers.style.display = 'flex'
         fecharMenu();
+        boxConfig.style.display = 'none';
+        configUsuario.style.display = 'none'
+        caixaMensagem.style.display = 'none'
+        caixaEditarMensagem.style.display = 'none'
+        caixaEscreverMensagem.style.display = 'none'
+
     }
     function homeDashboards() {
 
         mainDashboards.style.display = 'flex';
         mainUsers.style.display = 'none'
         fecharMenu();
+        configUsuario.style.display = 'none'
+
+        caixaEditarMensagem.style.display = 'none'
+        caixaMensagem.style.display = 'none'
+        caixaEscreverMensagem.style.display = 'none'
+
     }
+
+    function configUser() {
+        mainDashboards.style.display = 'none';
+        mainUsers.style.display = 'none'
+        configUsuario.style.display = 'flex'
+        boxConfig.style.display = 'flex';
+        caixaEditar.style.display = 'none';
+        caixaEditarMensagem.style.display = 'none'
+        blurExcluirConta.style.display = 'none'
+        caixaExcluirConta.style.display = 'none'
+
+
+        caixaMensagem.style.display = 'none'
+        caixaEscreverMensagem.style.display = 'none'
+    }
+    function mensagemUser() {
+        mainDashboards.style.display = 'none';
+        mainUsers.style.display = 'none'
+        configUsuario.style.display = 'none'
+        caixaEditarMensagem.style.display = 'none'
+        boxConfig.style.display = 'none';
+        caixaEditar.style.display = 'none';
+        blurExcluirConta.style.display = 'none'
+        caixaExcluirConta.style.display = 'none'
+
+        caixaMensagem.style.display = 'flex'
+        caixaEscreverMensagem.style.display = 'none'
+
+        certeza_exclusao_mensagem.style.display = 'none'
+        blur_certeza_excluir.style.display = 'none'
+    }
+
     function sairDashboard() {
         document.getElementById('blur').style.display = 'flex'
         caixa_saindo.style.display = 'block'
@@ -2035,7 +2255,7 @@ function adicionarUsuariosNaBox(usuarios) {
         // Inserir a função para excluir o analista
 
 
-mensagemExcluirOk.style.display ='flex'
+        mensagemExcluirOk.style.display = 'flex'
 
 
         // se der certo a exclusão
@@ -2136,6 +2356,127 @@ mensagemExcluirOk.style.display ='flex'
         //     }, 1500);
 
 
+    }
+    const campoSenha = document.getElementById("senha");
+    const confirmarSenhaInput = document.getElementById("confirmarSenha");
+    const botaoSalvar = document.getElementById("btnSalvar");
+    const mensagemSucesso = document.getElementById("mensagemSucesso");
+
+    const regras = {
+        iguais: document.getElementById("infoSenha_iguais"),
+        qtdCaractere: document.getElementById("infoSenha_qtdCaractere"),
+        minuscula: document.getElementById("infoSenha_minuscula"),
+        maiuscula: document.getElementById("infoSenha_maiuscula"),
+        caractereEspecial: document.getElementById("infoSenha_caractereEspecial"),
+        numero: document.getElementById("infoSenha_numero")
+    };
+
+    let estadoValidacoes = {
+        iguais: false,
+        qtdCaractere: false,
+        minuscula: false,
+        maiuscula: false,
+        caractereEspecial: false,
+        numero: false
+    };
+
+    function validarSenha() {
+        const senha = campoSenha.value;
+        const confirmarSenha = confirmarSenhaInput.value;
+
+        estadoValidacoes.qtdCaractere = senha.length >= 8;
+        estadoValidacoes.minuscula = /[a-z]/.test(senha);
+        estadoValidacoes.maiuscula = /[A-Z]/.test(senha);
+        estadoValidacoes.caractereEspecial = /[^A-Za-z0-9]/.test(senha);
+        estadoValidacoes.numero = /[0-9]/.test(senha);
+        estadoValidacoes.iguais = senha === confirmarSenha && senha !== "";
+
+        atualizarItem(regras.qtdCaractere, estadoValidacoes.qtdCaractere);
+        atualizarItem(regras.minuscula, estadoValidacoes.minuscula);
+        atualizarItem(regras.maiuscula, estadoValidacoes.maiuscula);
+        atualizarItem(regras.caractereEspecial, estadoValidacoes.caractereEspecial);
+        atualizarItem(regras.numero, estadoValidacoes.numero);
+        atualizarItem(regras.iguais, estadoValidacoes.iguais);
+    }
+
+    function atualizarItem(elemento, valido) {
+        if (valido) {
+            elemento.innerHTML = "&#10004; " + elemento.textContent.slice(2);
+            elemento.style.color = "green";
+        } else {
+            elemento.innerHTML = "&#10006; " + elemento.textContent.slice(2);
+            elemento.style.color = "red";
+        }
+    }
+
+    campoSenha.addEventListener("input", validarSenha);
+    confirmarSenhaInput.addEventListener("input", validarSenha);
+
+    botaoSalvar.addEventListener("click", () => {
+        validarSenha(); // Garante validação antes de salvar
+
+        const tudoValido = Object.values(estadoValidacoes).every(Boolean);
+
+        if (tudoValido) {
+            mensagemSucesso.style.display = "flex";
+            mensagemSucesso.style.opacity = 1;
+
+            setTimeout(() => {
+                mensagemSucesso.style.opacity = 0;
+
+                mensagemSucesso.style.display = "none";
+                configUser()
+            }, 3000); // some depois de 3 segundos
+        } else {
+            alert("Por favor, preencha todos os requisitos da senha corretamente.");
+        }
+    });
+
+    function alterarInfo() {
+        boxConfig.style.display = 'none'
+        caixaEditar.style.display = 'grid';
+    }
+
+    function excluirConta() {
+        blurExcluirConta.style.display = 'flex'
+        caixaExcluirConta.style.display = 'flex'
+    }
+    function novaMensagem() {
+        caixaMensagem.style.display = 'none'
+        caixaEscreverMensagem.style.display = 'flex'
+    }
+    function editarMensagem() {
+        caixaEditarMensagem.style.display = 'flex'
+        caixaMensagem.style.display = 'none'
+
+    }
+    function excluirMensagem() {
+        certeza_exclusao_mensagem.style.display = 'block';
+        blur_certeza_excluir.style.display = 'block'
+    }
+    function certezaExcluirMensagem() {
+        excluirMensagemOk.style.display = 'flex'
+        excluirMensagemOk.style.opacity = '1'
+
+        setTimeout(() => {
+            excluirMensagemOk.style.opacity = '0'
+            excluirMensagemOk.style.display = 'none'
+        }, 3000); // some depois de 3 segundos
+        mensagemUser()
+
+        
+
+
+        // ou se der erro:
+        // excluirMensagemErro.style.display = 'flex'
+        // excluirMensagemErro.style.opacity='1'
+
+        //          setTimeout(() => {
+        //              excluirMensagemErro.style.opacity='0'
+        // excluirMensagemErro.style.display='none'
+        //                 configUser()
+        //             }, 3000); // some depois de 3 segundos
+        //             mensagemUser()
     }
 
 
