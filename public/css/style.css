@@ -6138,3 +6138,126 @@ body.menu-aberto {
     position: absolute;
     top: 10rem;
 }
+
+.section_conheca{
+    background: linear-gradient(to right, #FD6700, #FFCE00);
+   
+}
+
+.quero_ser_cliente{ 
+    /* background: linear-gradient(to right, #FD6700, #FFCE00); */
+    background-color: #FFCE00;
+}
+
+.ja_sou_cliente:hover{
+    background-color: #FFCE00;
+
+}
+
+.box_conteudo_conheca{
+    border-radius: 35px;
+}
+
+.typing span {
+    background: linear-gradient(to right, #FD6700, #FFCE00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+.section_home_suporte{
+    background: linear-gradient(to right, #0C9FFA, #053DE8);
+
+}
+
+.section_footer{
+    background-color: #0A1D57;
+
+}
+
+.section_inicio{
+ animation: fadeInLeftBig;
+animation-duration: 1s;
+
+}
+
+.section_home_suporte span{
+    background-color: #FFCE00;
+
+}
+
+.section_sobre_empresa{
+      background: linear-gradient(to right, #FD6700, #FFCE00);
+
+}
+
+.conteudo_sec_header h4{
+    background: linear-gradient(to right, #FD6700, #FFCE00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+.section_faq , .section_suporte{
+      background: linear-gradient(to right, #FD6700, #FFCE00);
+
+}
+
+.box_resposta{
+    background: linear-gradient(to right, #0C9FFA, #053DE8);
+
+
+}
+
+.box_saiba{
+    background: none;
+
+    
+}
+
+
+.box_conteudo_conheca img{
+    border-radius: 50%;
+    width: 400px;
+}
+
+.box_imagem_quem_somos{
+       background: none;
+      
+}
+
+.box_imagem_quem_somos2{
+   background: none;
+
+}
+
+.box_imagem_quem_somos2 img{
+     border-radius: 20px;
+    
+}
+
+.box_imagem_quem_somos img{
+       border-radius: 20px;
+      
+}
+
+.box_valores{
+     border-radius: 30px 10px;
+}
+
+.imagem_valores{
+       border-radius: 30px 10px;
+
+}
+
+.div_servicos{
+    border-radius: 20px 40px;
+}
+
+.div_celular{
+    border-radius: 20px 40px;
+}
+
+
