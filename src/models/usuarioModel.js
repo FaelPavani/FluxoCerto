@@ -64,9 +64,9 @@ function atualizarUsuario(id, username, cpf, senha, cargo, linha) {
 
 function atualizarSelf(username, senha, cpf, email) {
     const instrucao = `
-        UPDATE usuario
-        SET username = ?, senha = ?, cpf = ?
-        WHERE email = ?;
+        UPDATE users
+        SET username = ${username}, senha = ${senha}, cpf = ${cpf}
+        WHERE email = ${email};
     `;
 
     return db.execute(instrucao, [username, senha, cpf, email]);

@@ -239,6 +239,9 @@ function selfEdit(req, res) {
             res.status(500).json({ erro: erro.sqlMessage });
         });
 }
+
+
+
 const atualizarSelf = async (req, res) => {
     const { username, senha, cpf, email } = req.body;
 

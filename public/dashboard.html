@@ -2562,66 +2562,74 @@ function atualizarUsuario(dadosAtualizados) {
     campoSenha.addEventListener("input", validarSenha);
     confirmarSenhaInput.addEventListener("input", validarSenha);
 
-    botaoSalvar.addEventListener("click", (dadosAntigos1) => { 
-        validarSenha(); // Garante validação antes de salvar
+    const dadosAntigos1 = {
+    nomeAntigo: document.getElementById("nomeSelf").value,
+    senhaAntigo: document.getElementById("senhaSelf").value,
+    cpfAntigo: document.getElementById("cpfSelf").value,
+    emailAntigo: document.getElementById("emailSelf").value
+};
 
-        const tudoValido = Object.values(estadoValidacoes).every(Boolean);
+botaoSalvar.addEventListener("click", () => {
+    // 1. Valida a senha
+    validarSenha();
+    const tudoValido = Object.values(estadoValidacoes).every(Boolean);
 
-        if (tudoValido) {
-            mensagemSucesso.style.display = "flex";
-            mensagemSucesso.style.opacity = 1;
-
-            setTimeout(() => {
-                mensagemSucesso.style.opacity = 0;
-
-                mensagemSucesso.style.display = "none";
-                configUser()
-            }, 3000); // some depois de 3 segundos
-        } else {
-            alert("Por favor, preencha todos os requisitos da senha corretamente.");
-        }
-        
-        const nomeAtual = document.getElementById("nomeSelf").value;
-    const senhaAtual = document.getElementById("senhaSelf").value;
-    const cpfAtual = document.getElementById("cpfSelf").value;
-    const emailAtual = document.getElementById("emailSelf").value;
-
-    const houveMudanca =
-        dadosAntigos1.nomeAntigo !== nomeAtual ||
-        dadosAntigos1.senhaAntigo !== senhaAtual ||
-        dadosAntigos1.cpfAntigo !== cpfAtual ||
-        dadosAntigos1.emailAntigo !== emailAtual;
-
-    if (houveMudanca) {
-        const novosDados = {
-            username: nomeAtual,
-            senha: senhaAtual,
-            cpf: cpfAtual,
-            email: emailAtual
-        };
-
-        fetch("/usuarios/atualizarSelf", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(novosDados)
-        })
-        .then(res => {
-            if (!res.ok) throw new Error("Erro ao atualizar.");
-            return res.json();
-        })
-        .then(data => {
-            alert("Dados atualizados com sucesso!");
-        })
-        .catch(erro => {
-            console.error("Erro ao atualizar:", erro);
-            alert("Erro ao atualizar.");
-        });
-    } else {
-        alert("Nenhuma alteração detectada.");
+    if (!tudoValido) {
+        return alert("Por favor, preencha todos os requisitos da senha corretamente.");
     }
-}
+
+    // 2. Mostra mensagem de sucesso e espera 3s
+    mensagemSucesso.style.display = "flex";
+    mensagemSucesso.style.opacity = "1";
+    setTimeout(() => {
+        mensagemSucesso.style.opacity = "0";
+        setTimeout(() => {
+            mensagemSucesso.style.display = "none";
+            // Depois de esconder a mensagem, chama configUser
+            configUser();
+
+            // 3. Agora que a validação e UI estão prontas, verifica se houve mudança:
+            const nomeAtual  = document.getElementById("nomeSelf").value;
+            const senhaAtual = document.getElementById("senhaSelf").value;
+            const cpfAtual   = document.getElementById("cpfSelf").value;
+            const emailAtual = document.getElementById("emailSelf").value;
+
+            const houveMudanca =
+                dadosAntigos1.nomeAntigo  !== nomeAtual  ||
+                dadosAntigos1.senhaAntigo !== senhaAtual ||
+                dadosAntigos1.cpfAntigo   !== cpfAtual   ||
+                dadosAntigos1.emailAntigo !== emailAtual;
+
+            if (houveMudanca) {
+                const novosDados = {
+                    username: nomeAtual,
+                    senha: senhaAtual,
+                    cpf: cpfAtual,
+                    email: emailAtual
+                };
+
+                fetch("/usuarios/atualizarSelf", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(novosDados)
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error("Erro ao atualizar.");
+                    return res.json();
+                })
+                .then(data => {
+                    alert("Dados atualizados com sucesso!");
+                })
+                .catch(erro => {
+                    console.error("Erro ao atualizar:", erro);
+                    alert("Erro ao atualizar.");
+                });
+            } else {
+                alert("Nenhuma alteração detectada.");
+            }
+        }, 1000); // aguarda conclusão do fade-out
+    }, 3000);
+});
 
 
 
@@ -2629,10 +2637,6 @@ function atualizarUsuario(dadosAtualizados) {
 
 
 
-
-
-
-    });
 
 
 
@@ -2683,7 +2687,7 @@ emailSelf.value = emailLogado
 
 
 
-dadosAntigos1={
+var dadosAntigos1={
 
 nomeAntigo:nomeSelf.value,
 senhaAntigo: senhaSelf.value ,
