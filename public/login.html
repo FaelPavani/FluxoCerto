@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/trem_icone.png" />
+    <link rel="stylesheet" href="./css/cadastro.css">
     <title>Fluxo Certo</title>
 </head>
 
@@ -32,7 +33,15 @@
         <label class="email_input">Email</label>
         <input type="text" id="inpemail" placeholder="exemplo@email.com" required>
         <label class="senha_input">Senha</label>
-        <input type="password" id="inpsenha" placeholder="**************" required>
+        <div class="senha-container">
+        <input type="password" id="senha" placeholder="Insira sua senha" required>
+        <div id="mostrar" class="eye-icon" onclick="mostrarSenha()">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Mostrar senha">
+          </div>
+          <div id="ocultar" class="eye-icon hidden" onclick="ocultarSenha()">
+            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Ocultar senha">
+          </div>
+    </div>
         
         <button onclick="entrar()">ENTRAR</button>
         <a href="">Esqueceu a senha?</a>
@@ -47,7 +56,25 @@
 </body>
 </html>
 <script>
+ function mostrarSenha() {
+      const senhaInput = document.getElementById('senha');
+      const mostrar = document.getElementById('mostrar');
+      const ocultar = document.getElementById('ocultar');
 
+      senhaInput.type = 'text';
+      mostrar.classList.add('hidden');
+      ocultar.classList.remove('hidden');
+    }
+
+    function ocultarSenha() {
+      const senhaInput = document.getElementById('senha');
+      const mostrar = document.getElementById('mostrar');
+      const ocultar = document.getElementById('ocultar');
+
+      senhaInput.type = 'password';
+      ocultar.classList.add('hidden');
+      mostrar.classList.remove('hidden');
+    }
 
 function entrar() {
        

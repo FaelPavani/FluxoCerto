@@ -80,3 +80,31 @@ button {
 button:hover {
     background: #003080;
 }
+.senha-container {
+    position: relative;
+      width: 250px;
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      width: 100%;
+      padding-right: 40px;
+      padding: 10px;
+    }
+
+    .eye-icon {
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+      display: flex;
+    }
+
+    .eye-icon img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .hidden {
+      display: none;
+    }
