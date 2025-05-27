@@ -126,7 +126,8 @@ var emailLogado = req.body.emailLogadoserver;
                     username: usuario.username,
                     linha: usuario.linha,
                     cargo: usuario.cargo,
-                    dataEntrada: usuario.dt_inicio
+                    dataEntrada: usuario.dataEntrada,
+                    id: usuario.id
                 }))
             );
         } else {
@@ -142,14 +143,112 @@ var emailLogado = req.body.emailLogadoserver;
 
 
      }
-
+    }
 // nome cargo cpf linha data de inicio 
 
+function editare(req, res) {
+    var ideditar = req.body.idUsuario;
 
+    if (ideditar == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else {
+        usuarioModel.editare(ideditar) // <- Aqui passa o id do usuário
+            .then(function (resultadoAutenticar) {
+                console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`);
 
-
-    
+                if (resultadoAutenticar.length > 0) {
+                    // Retorna o primeiro usuário encontrado
+                    const usuario = resultadoAutenticar[0];
+                    res.json({
+                        cpf: usuario.cpf,
+                        username: usuario.username,
+                        linha: usuario.linha,
+                        cargo: usuario.cargo,
+                        dataEntrada: usuario.dataEntrada,
+                        senha: usuario.senha
+                    });
+                } else {
+                    res.status(404).send("Nenhum usuário encontrado com esse critério.");
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
 }
+
+
+function atualizarUsuario(req, res) {
+    const { id, username, cpf, senha, cargo, linha } = req.body;
+
+    // Validação básica
+    if (!id || !username || !cpf || !senha || !cargo || !linha) {
+        return res.status(400).json({ erro: "Todos os campos são obrigatórios." });
+    }
+
+    usuarioModel.atualizarUsuario(id, username, cpf, senha, cargo, linha)
+        .then(resultado => {
+            res.status(200).json({ mensagem: "Usuário atualizado com sucesso!", resultado });
+        })
+        .catch(erro => {
+            console.error("Erro ao atualizar usuário:", erro);
+            res.status(500).json({ erro: "Erro ao atualizar usuário." });
+        });
+}
+
+
+
+function deletarUsuario(req, res) {
+    const idDelete = req.body.idDelete;
+
+    if (!idDelete) {
+        return res.status(400).send("ID do usuário não foi fornecido.");
+    }
+usuarioModel.deletarUsuario(idDelete)
+        .then(resultado => {
+            res.status(200).json({ mensagem: "Usuário atualizado com sucesso!", resultado });
+        })
+        .catch(erro => {
+            console.error("Erro ao atualizar usuário:", erro);
+            res.status(500).json({ erro: "Erro ao atualizar usuário." });
+        });
+}
+
+
+function selfEdit(req, res) {
+    const { email } = req.body;
+
+    if (!email) {
+        return res.status(400).json({ erro: "Email não informado." });
+    }
+
+    usuarioModel.selfEdit(email)
+        .then(resultado => {
+            if (resultado.length > 0) {
+                const { username, senha, cpf } = resultado[0];
+                res.json({ username, senha, cpf });
+            } else {
+                res.status(404).json({ erro: "Usuário não encontrado." });
+            }
+        })
+        .catch(erro => {
+            console.error("Erro no controller:", erro.sqlMessage);
+            res.status(500).json({ erro: erro.sqlMessage });
+        });
+}
+
+
+
+
+
+
+
+
+
+
 function cadastrarOperador(req, res) {
 
     // Agora, você pode usar o emailLogado para o processo de cadastro
@@ -194,6 +293,10 @@ module.exports = {
     autenticar,
     cadastrar,
     cadastrarOperador,
-    Listar
+    Listar,
+    editare,
+    atualizarUsuario,
+    deletarUsuario,
+    selfEdit 
 }
 

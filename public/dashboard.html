@@ -13,7 +13,7 @@
     <title>DashBoard</title>
 </head>
 
-<body class="body_dash" id="body" onload="obterNomeUsuario(), adicionarUsuariosNaBox(usuarios)">
+<body class="body_dash" id="body" onload="obterNomeUsuario(), listarUsuariosENaBox()">
 
     <div class="mensagemOk" id="mensagemAlteracaoOk">Alterações salvas com sucesso!</div>
     <div class="mensagemErro" id="mensagemAlteracaoErro">Ocorreu um erro ao salvar as alterações.</div>
@@ -477,8 +477,15 @@
 
     <section style="display: none;" class="section_addUser" id="mainUsers">
 
+
+
+
+
         <div class="container_addUser">
-            <div id="gerenciarUsuarios">
+
+
+
+            <div id="gerenciarUsuarios"> 
                 <div>
                     <h4><img class="imagem_titulo_gerenciar" src="./assets/user_demanda.png" alt="">Gerenciar usuários
                     </h4>
@@ -611,7 +618,7 @@
             </div>
 
 
-
+<!-- editarUserr -->
             <div style="display: none;" id="editarUsuarios" class="editarUsuarios">
                 <p class="fecharEditarUser" onclick="confirmacaoDescartar()">✖</p>
                 <h4>Editar usuário</h4>
@@ -619,34 +626,37 @@
 
                     <div>
                         <p>Nome</p>
-                        <input type="text" id="">
+                        <input type="text" id="nomeEditar">
                     </div>
 
-                    <div>
-                        <p>Sobrenome</p>
-                        <input type="text" name="" id="">
-                    </div>
+                    
                     <div>
 
                         <p>CPF</p>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="cpfEditar">
                     </div>
 
                     <div>
 
                         <p>Cargo</p>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="cargoEditar">
+                    </div>
+                    <div>
+
+                        <p>senha</p>
+                        <input type="text" name="" id="senhaEditar">
                     </div>
 
                     <div>
 
                         <p>Linha de Atuação</p>
-                        <select id="">
-                            <option value="Linha Azul">Linha Azul</option>
-                            <option value="Linha Vermelha">Linha Vermelha</option>
-                            <option value="Linha Verde">Linha Verde</option>
+                        <select id="linhaEditar">
+                            <option value="azul">Linha Azul</option>
+                            <option value="vermelha">Linha Vermelha</option>
+                            <option value="verde">Linha Verde</option>
                         </select>
                     </div>
+                    
 
                     <button onclick="salvarAlteracoes()">Salvar alterações</button>
 
@@ -694,22 +704,22 @@
                 <i class='bx bx-x' onclick="configUser()"></i>
                 <div class="caixa_informacao">
                     <p>Nome Completo</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="nomeSelf">
                 </div>
 
                 <div class="caixa_informacao">
                     <p>CPF</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="cpfSelf">
                 </div>
 
                 <div class="caixa_informacao">
                     <p>Email</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="emailSelf">
                 </div>
 
                 <div class="caixa_informacao">
                     <p>Senha atual</p>
-                    <input type="text" name="" id="">
+                    <input type="text" readonly name="" id="senhaSelf">
                 </div>
 
                 <div class="caixa_informacao">
@@ -957,114 +967,83 @@
 
 
     }
-    const usuarios = [
-        {
-            nome: "Ciclano da Silva",
-            cpf: "251.483.088-50",
-            cargo: "Analista",
-            linhaAtuacao: "Linha Azul",
-            dataInicio: "06/04/2025"
+    
+    function listarUsuariosENaBox() {
+         const emailUsuario = sessionStorage.getItem("EMAIL_USUARIO");
+    fetch("/usuarios/Listar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
         },
-        {
-            nome: "Maria Oliveira",
-            cpf: "387.123.998-20",
-            cargo: "Supervisora",
-            linhaAtuacao: "Linha Vermelha",
-            dataInicio: "01/03/2024"
-        }
-    ];
-    function adicionarUsuariosNaBox(usuarios) {
-
-        function listar() {
+        body: JSON.stringify({
+            emailLogadoserver: emailUsuario
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
+        if (resposta.ok) {
+            resposta.json().then(usuarios => {
+                console.log(usuarios);
+                console.log(JSON.stringify(usuarios));
 
 
-            fetch("/usuarios/listar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    emailLogadoserver: emailUsuario
+                const container = document.getElementById("box_usuarios");
+                container.innerHTML = "";
+                usuarios.forEach(usuario => {
+                    const html = `
+                        <div class="linha_usuario">
+                            <div class="fotoUser">
+                                <img src="./assets/user_demanda.png" alt="">
+                            </div>
+                            <div class="nomeUser">
+                                <p class="titulos_usuarios">Nome</p>
+                                <span class="informacoes_usuarios">${usuario.username}</span>
+                            </div>
+                            <div class="cpfUser">
+                                <p class="titulos_usuarios">CPF</p>
+                                <span class="informacoes_usuarios">${usuario.cpf}</span>
+                            </div>
 
-                })
-            }).then(function (resposta) {
-                console.log("ESTOU NO THEN DO entrar()!")
-                if (resposta.ok) {
-                    console.log(resposta);
-                    resposta.json().then(usuarios => {
-                        console.log(json);
-                        console.log(JSON.stringify(json));
+                            <div class="div_vazia_mobile"></div>
 
+                            <div class="cargoUser">
+                                <p class="titulos_usuarios">Cargo</p>
+                                <span class="informacoes_usuarios">${usuario.cargo}</span>
+                            </div>
+                            <div class="linhaUser">
+                                <p class="titulos_usuarios titulo_linha_atuacao">Linha de Atuação</p>
+                                <span class="informacoes_usuarios">${usuario.linha}</span>
+                            </div>
 
+                            <div class="div_vazia_mobile"></div>
 
-                    });
-
-
-                } else {
-                    console.log("Houve um erro ao tentar realizar o login!");
-                    resposta.text().then(texto => {
-
-
-                    });
-                }
-            }).catch(function (erro) {
-                console.log(erro);
-            })
-            return false;
-
-        }
-    }
- 
-    function adicionarUsuariosNaBox(usuarios) {
-        const container = document.getElementById("box_usuarios");
-        container.innerHTML = ""
-        usuarios.forEach(usuario => {
-            const html = `
-                <div class="linha_usuario">
-                    <div class="fotoUser">
-                        <img src="./assets/user_demanda.png" alt="">
-                    </div>
-                    <div class="nomeUser">
-                        <p class="titulos_usuarios">Nome</p>
-                        <span class="informacoes_usuarios">${usuario.nome}</span>
-                    </div>
-                    <div class="cpfUser">
-                        <p class="titulos_usuarios">CPF</p>
-                        <span class="informacoes_usuarios">${usuario.cpf}</span>
-                    </div>
-
-                    <div class="div_vazia_mobile"></div>
-
-                    <div class="cargoUser">
-                        <p class="titulos_usuarios">Cargo</p>
-                        <span class="informacoes_usuarios">${usuario.cargo}</span>
-                    </div>
-                    <div class="linhaUser">
-                        <p class="titulos_usuarios titulo_linha_atuacao">Linha de Atuação</p>
-                        <span class="informacoes_usuarios">${usuario.linhaAtuacao}</span>
-                    </div>
-
-                    <div class="div_vazia_mobile"></div>
-
-                    <div class="dtInicio">
-                        <p class="titulos_usuarios">Data de Início</p>
-                        <span class="informacoes_usuarios">${usuario.dataInicio}</span>
-                    </div>
-                    <div class="editarUser">
-                        <p class="titulos_usuarios">Editar</p>
-                        <div class="icones_editar">
-                            <img onclick='abrirEditar()' src="./assets/lapis_icon.png" alt="Editar">
-                            <img onclick='mostrarConfirmacao()' src="./assets/lixeira_icon.png" alt="Excluir">
+                            <div class="dtInicio">
+                                <p class="titulos_usuarios">Data de Início</p>
+                                <span class="informacoes_usuarios">${usuario.dataEntrada.substring(0, 10)}</span>
+                            </div>
+                            <div class="editarUser">
+                                <p class="titulos_usuarios">Editar</p>
+                                <div class="icones_editar">
+                                    <img onclick='abrirEditar(${usuario.id})' src="./assets/lapis_icon.png" alt="Editar">
+                                    <img onclick='mostrarConfirmacao(${usuario.id})' src="./assets/lixeira_icon.png" alt="Excluir">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            `;
-            container.innerHTML += html;
-        });
-    }
+                    `;
+                    container.innerHTML += html;
+                });
+            });
+        } else {
+            console.log("Houve um erro ao tentar realizar o login!");
+            resposta.text().then(texto => {
+                console.log(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+    });
 
-
-
+    return false;
+}
 
 
 
@@ -1570,13 +1549,39 @@
 
 
     // GRÁFICO DE PIZZA:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const pizzaGrafico = document.getElementById('pizzaChart').getContext('2d');
 
     const data = {
         labels: ['Azul', 'Vermelha', 'Verde'],
         datasets: [{
             label: 'Cores',
-            data: [331830, 321561, 198038], // Valores para cada cor
+            data: [0, 321561, 198038], // Valores para cada cor
             backgroundColor: ['blue', 'red', 'green'],
             hoverOffset: 4
         }]
@@ -2212,19 +2217,67 @@
 
     }
 
-    function mostrarConfirmacao() {
+    function mostrarConfirmacao(idUsuario) {
         boxConfirmarExcluir.style.display = 'flex';
         fundoEscuro.style.display = 'flex'
+         sessionStorage.setItem("idUsuario", idUsuario);
+ 
+
+
     }
+  
 
     function fecharExcluir() {
         boxConfirmarExcluir.style.display = 'none';
         fundoEscuro.style.display = 'none'
+
+
+
     }
 
-
-    function excluir() {
+ 
+    function excluir(valor) {
         // Inserir a função para excluir o analista
+ valor = sessionStorage.getItem("idUsuario");
+
+alert(valor)
+             fetch("/usuarios/deletarUsuario", {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ idDelete: valor })
+    })
+    .then(resposta => {
+        if (resposta.ok) {
+            alert("Usuário deletado com sucesso!");
+            // Aqui você pode chamar a função para atualizar a lista de usuários, por exemplo:
+            listarUsuariosENaBox();
+        } else {
+            return resposta.text().then(texto => { throw new Error(texto); });
+        }
+    })
+    .catch(erro => {
+        console.error("Erro ao deletar usuário:", erro);
+        alert("Erro ao deletar usuário: " + erro.message);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         mensagemExcluirOk.style.display = 'flex'
@@ -2264,54 +2317,178 @@
         fecharExcluir()
     }
 
-    function abrirEditar() {
-        gerenciarUsuarios.style.display = 'none'
-        editarUsuarios.style.display = 'block'
+
+   // Variável global para armazenar os dados originais
+let dadosOriginais = null;
+
+function abrirEditar(idUsuario) {
+    const gerenciarUsuarios = document.getElementById("gerenciarUsuarios");
+    const editarUsuarios = document.getElementById("editarUsuarios");
+
+    gerenciarUsuarios.style.display = 'none';
+    editarUsuarios.style.display = 'block';
+
+    fetch("/usuarios/editare", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idUsuario: idUsuario
+        })
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(dados => {
+                const usuario = Array.isArray(dados) ? dados[0] : dados;
+
+                document.getElementById("nomeEditar").value = usuario.username || '';
+                document.getElementById("cpfEditar").value = usuario.cpf || '';
+                document.getElementById("senhaEditar").value = usuario.senha || '';
+                document.getElementById("cargoEditar").value = usuario.cargo || '';
+                document.getElementById("linhaEditar").value = usuario.linha || '';
+
+                // Armazena dados originais para futura comparação
+                dadosOriginais = {
+                    id: idUsuario,
+                    username: usuario.username,
+                    cpf: usuario.cpf,
+                    senha: usuario.senha,
+                    cargo: usuario.cargo,
+                    linha: usuario.linha
+                };
+            });
+        } else {
+            resposta.text().then(texto => console.error(texto));
+        }
+    }).catch(function (erro) {
+        console.error("Erro na requisição:", erro);
+    });
+}
+
+function confirmacaoDescartar() {
+    boxConfirmarFechar.style.display = 'flex';
+    fundoEscuro.style.display = 'flex';
+}
+
+function fecharConfirmacao() {
+    boxConfirmarFechar.style.display = 'none';
+    fundoEscuro.style.display = 'none';
+}
+
+function descartar() {
+    gerenciarUsuarios.style.display = 'block';
+    boxConfirmarFechar.style.display = 'none';
+    fundoEscuro.style.display = 'none';
+    editarUsuarios.style.display = 'none';
+}
+const dadosAtualizados = {}
+function salvarAlteracoes() {
+    if (!dadosOriginais) {
+        alert("Erro: dados originais não carregados.");
+        return;
     }
 
+    // Captura os valores atuais dos inputs e remove espaços
+    const nomeAtual = document.getElementById("nomeEditar").value.trim();
+    const cpfAtual = document.getElementById("cpfEditar").value.trim();
+    const senhaAtual = document.getElementById("senhaEditar").value.trim();
+    const cargoAtual = document.getElementById("cargoEditar").value.trim();
+    const linhaAtual = document.getElementById("linhaEditar").value.trim();
 
-    function confirmacaoDescartar() {
-        boxConfirmarFechar.style.display = 'flex'
-        fundoEscuro.style.display = 'flex'
-    }
+    // Converte os dados originais para string e remove espaços
+    const nomeOriginal = String(dadosOriginais.username).trim();
+    const cpfOriginal = String(dadosOriginais.cpf).trim();
+    const senhaOriginal = String(dadosOriginais.senha).trim();
+    const cargoOriginal = String(dadosOriginais.cargo).trim();
+    const linhaOriginal = String(dadosOriginais.linha).trim();
 
-    function fecharConfirmacao() {
-        boxConfirmarFechar.style.display = 'none'
-        fundoEscuro.style.display = 'none'
+    const houveAlteracao = (
+        nomeOriginal !== nomeAtual ||
+        cpfOriginal !== cpfAtual ||
+        senhaOriginal !== senhaAtual ||
+        cargoOriginal !== cargoAtual ||
+        linhaOriginal !== linhaAtual
+    );
 
-    }
+    if (houveAlteracao) {
+       
 
-    function descartar() {
-        gerenciarUsuarios.style.display = 'block'
-        boxConfirmarFechar.style.display = 'none'
-        fundoEscuro.style.display = 'none'
-        editarUsuarios.style.display = 'none'
-    }
+        const dadosAtualizados = {
+            id: dadosOriginais.id,
+            username: nomeAtual,
+            cpf: cpfAtual,
+            senha: senhaAtual,
+            cargo: cargoAtual,
+            linha: linhaAtual
+        };
 
-    function salvarAlteracoes() {
-        gerenciarUsuarios.style.display = 'block'
-        boxConfirmarFechar.style.display = 'none'
-        fundoEscuro.style.display = 'none'
-        editarUsuarios.style.display = 'none'
+        atualizarUsuario(dadosAtualizados);
 
-        mensagemAlteracaoOk.style.display = 'flex'
-        mensagemAlteracaoOk.style.opacity = '1'
+        gerenciarUsuarios.style.display = 'block';
+        boxConfirmarFechar.style.display = 'none';
+        fundoEscuro.style.display = 'none';
+        editarUsuarios.style.display = 'none';
+
+        mensagemAlteracaoOk.style.display = 'flex';
+        mensagemAlteracaoOk.style.opacity = '1';
 
         setTimeout(() => {
             mensagemAlteracaoOk.style.opacity = '1';
         }, 10);
 
-        // Após 2 segundos, inicia o fade-out
         setTimeout(() => {
             mensagemAlteracaoOk.style.opacity = '0';
-
-            // Após a transição de opacidade, esconde a div totalmente
             setTimeout(() => {
                 mensagemAlteracaoOk.style.display = 'none';
-            }, 1000); // 1s = tempo da transição
+            }, 1000);
         }, 1500);
 
+      
 
+    } else {
+        alert("Nenhuma alteração foi feita.");
+    }
+}
+
+// Essa é a função que será chamada no final
+function atualizarUsuario(dadosAtualizados) {
+    console.log("Função pós-salvamento chamada com os dados:", dadosAtualizados);
+
+    fetch("/usuarios/atualizarUsuario", {
+        method: "POST", // ou "POST", conforme configurado no seu back-end
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dadosAtualizados) // Correção aqui
+    })
+    .then(res => {
+        if (!res.ok) {
+            throw new Error("Erro ao salvar no servidor.");
+        }
+        return res.json();
+    })
+    .then(res => {
+        console.log("Alterações salvas com sucesso:", res);
+         listarUsuariosENaBox()
+    })
+    .catch(erro => {
+        console.error("Erro ao salvar:", erro);
+         listarUsuariosENaBox()
+    });
+
+
+
+
+
+  
+}
+  
+  
+
+
+
+
+        
         // se der erro:
         //   setTimeout(() => {
         //       mensagemAlteracaoErro.style.opacity = '1';
@@ -2328,7 +2505,7 @@
         //     }, 1500);
 
 
-    }
+    
     const campoSenha = document.getElementById("senha");
     const confirmarSenhaInput = document.getElementById("confirmarSenha");
     const botaoSalvar = document.getElementById("btnSalvar");
@@ -2369,6 +2546,7 @@
         atualizarItem(regras.caractereEspecial, estadoValidacoes.caractereEspecial);
         atualizarItem(regras.numero, estadoValidacoes.numero);
         atualizarItem(regras.iguais, estadoValidacoes.iguais);
+
     }
 
     function atualizarItem(elemento, valido) {
@@ -2407,7 +2585,65 @@
     function alterarInfo() {
         boxConfig.style.display = 'none'
         caixaEditar.style.display = 'grid';
+
+
+
+ 
+    const emailLogado = sessionStorage.getItem("EMAIL_USUARIO");
+
+  
+    if (!emailLogado) {
+        alert("Email não encontrado no sessionStorage.");
+        return;
     }
+
+    fetch("/usuarios/selfEdit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email: emailLogado })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error("Erro na requisição.");
+        return res.json();
+    })
+    .then(usuario => {
+        // Atribuindo os dados a variáveis
+        const nomeUsuario = usuario.username;
+        const cpfUsuario = usuario.cpf;
+        const senhaUsuario = usuario.senha;
+
+
+senhaL = usuario.senha
+nomeL = usuario.username
+cpfL = usuario.cpf
+
+nomeSelf.value = nomeL
+senhaSelf.value = senhaL
+cpfSelf.value = cpfL
+emailSelf.value = emailLogado
+
+
+
+        // Exibindo no console (ou use como preferir)
+        console.log("Nome:", nomeUsuario);
+        console.log("CPF:", cpfUsuario);
+        console.log("Senha:", senhaUsuario);
+
+        // Você também pode usar essas variáveis para preencher inputs, por exemplo:
+        // document.getElementById("inputNome").value = nomeUsuario;
+    })
+    .catch(erro => {
+        console.error("Erro ao buscar usuário:", erro);
+    });
+}
+
+
+
+
+        
+    
 
     function excluirConta() {
         blurExcluirConta.style.display = 'flex'
