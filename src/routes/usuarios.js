@@ -27,6 +27,16 @@ router.post("/dadosCadastroOperador", function (req, res) {
 router.post("/listar", function (req, res) {
     usuarioController.Listar(req, res);
 })
+router.post("/editare", function (req, res) {
+    usuarioController.editare(req, res);
+})
+router.post("/atualizarUsuario", function (req, res) {
+    usuarioController.atualizarUsuario(req, res);
+})
+router.delete("/deletarUsuario", function (req, res) {
+    usuarioController.deletarUsuario(req, res);
+})
+
 
 
 module.exports = router;

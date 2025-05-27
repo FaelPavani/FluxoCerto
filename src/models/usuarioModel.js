@@ -1,4 +1,5 @@
-var database = require("../database/config")
+var database = require("../database/config");
+const { editar } = require("./avisoModel");
 
 function autenticar(email, senha,) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
@@ -12,11 +13,11 @@ function autenticar(email, senha,) {
 }
 
 function listar(emaillogado) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", emaillogado)
     var instrucaoSql = `
-       SELECT username, cargo, cpf, linha, dataEntrada
+       SELECT id,username, cargo, cpf, linha, dataEntrada
 FROM users
-WHERE id = (
+WHERE fk_responsavel = (
     SELECT id FROM users WHERE email = '${emaillogado}'
 );
 
@@ -25,11 +26,43 @@ WHERE id = (
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function editare(ideditar) {
+    console.log("ACESSEI O USUARIO MODEL");
+    console.log(`\n\t>> Se aqui der erro de 'Error: connect ECONNREFUSED', verifique suas credenciais de acesso ao banco e se o servidor do BD está rodando corretamente.`);
+    
+    var instrucaoSql = `
+        SELECT id, username, cargo, cpf, linha, senha
+        FROM users
+        WHERE id = ${ideditar};
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
+function atualizarUsuario(id, username, cpf, senha, cargo, linha) {
+    const instrucao = `
+        UPDATE users
+        SET username = '${username}',
+            cpf = '${cpf}',
+            senha = '${senha}',
+            cargo = '${cargo}',
+            linha = '${linha}'
+        WHERE id = ${id};
+    `;
+    console.log("Executando instrução SQL:", instrucao);
+    return database.executar(instrucao);
+}
 
 
 
+function deletarUsuario(idDelete) {
+    const instrucaoSql = `DELETE FROM users WHERE id = ${idDelete};`;
 
-
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 function cadastrarOperador(nome, sobrenome, cpf, dataNasc, telefone, email, cargo, linha, senha, emailLogado) {
     return new Promise((resolve, reject) => {
@@ -183,5 +216,8 @@ module.exports = {
     cadastrarUsuario,
     cadastrarEmpresa,
     cadastrarOperador,
-    listar
+    listar,
+    editare,
+    atualizarUsuario,
+    deletarUsuario
 };
