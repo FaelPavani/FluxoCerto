@@ -2581,6 +2581,51 @@ function atualizarUsuario(dadosAtualizados) {
             alert("Por favor, preencha todos os requisitos da senha corretamente.");
         }
         
+        const nomeAtual = document.getElementById("nomeSelf").value;
+    const senhaAtual = document.getElementById("senhaSelf").value;
+    const cpfAtual = document.getElementById("cpfSelf").value;
+    const emailAtual = document.getElementById("emailSelf").value;
+
+    const houveMudanca =
+        dadosAntigos1.nomeAntigo !== nomeAtual ||
+        dadosAntigos1.senhaAntigo !== senhaAtual ||
+        dadosAntigos1.cpfAntigo !== cpfAtual ||
+        dadosAntigos1.emailAntigo !== emailAtual;
+
+    if (houveMudanca) {
+        const novosDados = {
+            username: nomeAtual,
+            senha: senhaAtual,
+            cpf: cpfAtual,
+            email: emailAtual
+        };
+
+        fetch("/usuarios/atualizarSelf", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(novosDados)
+        })
+        .then(res => {
+            if (!res.ok) throw new Error("Erro ao atualizar.");
+            return res.json();
+        })
+        .then(data => {
+            alert("Dados atualizados com sucesso!");
+        })
+        .catch(erro => {
+            console.error("Erro ao atualizar:", erro);
+            alert("Erro ao atualizar.");
+        });
+    } else {
+        alert("Nenhuma alteração detectada.");
+    }
+}
+
+
+
+
 
 
 

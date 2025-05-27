@@ -239,7 +239,26 @@ function selfEdit(req, res) {
             res.status(500).json({ erro: erro.sqlMessage });
         });
 }
+const atualizarSelf = async (req, res) => {
+    const { username, senha, cpf, email } = req.body;
 
+    if (!username || !senha || !cpf || !email) {
+        return res.status(400).json({ erro: "Dados incompletos para atualização." });
+    }
+
+    try {
+        const resultado = await usuarioModel.atualizarSelf(username, senha, cpf, email);
+
+        if (resultado.affectedRows > 0) {
+            res.status(200).json({ mensagem: "Usuário atualizado com sucesso." });
+        } else {
+            res.status(404).json({ erro: "Usuário não encontrado ou dados iguais." });
+        }
+    } catch (erro) {
+        console.error("Erro ao atualizar self:", erro);
+        res.status(500).json({ erro: "Erro interno ao atualizar usuário." });
+    }
+};
 
 
 
@@ -297,6 +316,7 @@ module.exports = {
     editare,
     atualizarUsuario,
     deletarUsuario,
-    selfEdit 
+    selfEdit,
+    atualizarSelf
 }
 
