@@ -207,9 +207,38 @@ function deletarUsuario(req, res) {
     if (!idDelete) {
         return res.status(400).send("ID do usuário não foi fornecido.");
     }
-
+usuarioModel.deletarUsuario(idDelete)
+        .then(resultado => {
+            res.status(200).json({ mensagem: "Usuário atualizado com sucesso!", resultado });
+        })
+        .catch(erro => {
+            console.error("Erro ao atualizar usuário:", erro);
+            res.status(500).json({ erro: "Erro ao atualizar usuário." });
+        });
 }
 
+
+function selfEdit(req, res) {
+    const { email } = req.body;
+
+    if (!email) {
+        return res.status(400).json({ erro: "Email não informado." });
+    }
+
+    usuarioModel.selfEdit(email)
+        .then(resultado => {
+            if (resultado.length > 0) {
+                const { username, senha, cpf } = resultado[0];
+                res.json({ username, senha, cpf });
+            } else {
+                res.status(404).json({ erro: "Usuário não encontrado." });
+            }
+        })
+        .catch(erro => {
+            console.error("Erro no controller:", erro.sqlMessage);
+            res.status(500).json({ erro: erro.sqlMessage });
+        });
+}
 
 
 
@@ -267,6 +296,7 @@ module.exports = {
     Listar,
     editare,
     atualizarUsuario,
-    deletarUsuario
+    deletarUsuario,
+    selfEdit 
 }
 

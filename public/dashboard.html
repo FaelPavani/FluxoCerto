@@ -704,22 +704,22 @@
                 <i class='bx bx-x' onclick="configUser()"></i>
                 <div class="caixa_informacao">
                     <p>Nome Completo</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="nomeSelf">
                 </div>
 
                 <div class="caixa_informacao">
                     <p>CPF</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="cpfSelf">
                 </div>
 
                 <div class="caixa_informacao">
                     <p>Email</p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="emailSelf">
                 </div>
 
                 <div class="caixa_informacao">
                     <p>Senha atual</p>
-                    <input type="text" name="" id="">
+                    <input type="text" readonly name="" id="senhaSelf">
                 </div>
 
                 <div class="caixa_informacao">
@@ -2216,13 +2216,16 @@
 
 
     }
-let idDele = {}
+
     function mostrarConfirmacao(idUsuario) {
         boxConfirmarExcluir.style.display = 'flex';
         fundoEscuro.style.display = 'flex'
+         sessionStorage.setItem("idUsuario", idUsuario);
+ 
 
-idDele.id = idUsuario
+
     }
+  
 
     function fecharExcluir() {
         boxConfirmarExcluir.style.display = 'none';
@@ -2232,18 +2235,18 @@ idDele.id = idUsuario
 
     }
 
-
-    function excluir(idDele) {
+ 
+    function excluir(valor) {
         // Inserir a função para excluir o analista
+ valor = sessionStorage.getItem("idUsuario");
 
-
-alert(id_deletar)
+alert(valor)
              fetch("/usuarios/deletarUsuario", {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ idDelete: id_deletar })
+        body: JSON.stringify({ idDelete: valor })
     })
     .then(resposta => {
         if (resposta.ok) {
@@ -2582,7 +2585,65 @@ function atualizarUsuario(dadosAtualizados) {
     function alterarInfo() {
         boxConfig.style.display = 'none'
         caixaEditar.style.display = 'grid';
+
+
+
+ 
+    const emailLogado = sessionStorage.getItem("EMAIL_USUARIO");
+
+  
+    if (!emailLogado) {
+        alert("Email não encontrado no sessionStorage.");
+        return;
     }
+
+    fetch("/usuarios/selfEdit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email: emailLogado })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error("Erro na requisição.");
+        return res.json();
+    })
+    .then(usuario => {
+        // Atribuindo os dados a variáveis
+        const nomeUsuario = usuario.username;
+        const cpfUsuario = usuario.cpf;
+        const senhaUsuario = usuario.senha;
+
+
+senhaL = usuario.senha
+nomeL = usuario.username
+cpfL = usuario.cpf
+
+nomeSelf.value = nomeL
+senhaSelf.value = senhaL
+cpfSelf.value = cpfL
+emailSelf.value = emailLogado
+
+
+
+        // Exibindo no console (ou use como preferir)
+        console.log("Nome:", nomeUsuario);
+        console.log("CPF:", cpfUsuario);
+        console.log("Senha:", senhaUsuario);
+
+        // Você também pode usar essas variáveis para preencher inputs, por exemplo:
+        // document.getElementById("inputNome").value = nomeUsuario;
+    })
+    .catch(erro => {
+        console.error("Erro ao buscar usuário:", erro);
+    });
+}
+
+
+
+
+        
+    
 
     function excluirConta() {
         blurExcluirConta.style.display = 'flex'

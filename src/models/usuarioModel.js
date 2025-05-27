@@ -40,6 +40,12 @@ function editare(ideditar) {
     return database.executar(instrucaoSql);
 }
 
+function selfEdit(email) {
+    const instrucaoSql = `
+        SELECT username, senha, cpf FROM users WHERE email = '${email}';
+    `;
+    return database.executar(instrucaoSql);
+}
 
 function atualizarUsuario(id, username, cpf, senha, cargo, linha) {
     const instrucao = `
@@ -219,5 +225,6 @@ module.exports = {
     listar,
     editare,
     atualizarUsuario,
-    deletarUsuario
+    deletarUsuario,
+    selfEdit
 };
