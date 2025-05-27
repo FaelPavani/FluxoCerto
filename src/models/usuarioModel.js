@@ -62,6 +62,15 @@ function atualizarUsuario(id, username, cpf, senha, cargo, linha) {
 }
 
 
+function atualizarSelf(username, senha, cpf, email) {
+    const instrucao = `
+        UPDATE usuario
+        SET username = ?, senha = ?, cpf = ?
+        WHERE email = ?;
+    `;
+
+    return db.execute(instrucao, [username, senha, cpf, email]);
+}
 
 function deletarUsuario(idDelete) {
     const instrucaoSql = `DELETE FROM users WHERE id = ${idDelete};`;
@@ -226,5 +235,6 @@ module.exports = {
     editare,
     atualizarUsuario,
     deletarUsuario,
-    selfEdit
+    selfEdit,
+    atualizarSelf
 };

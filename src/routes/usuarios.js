@@ -39,6 +39,8 @@ router.delete("/deletarUsuario", function (req, res) {
 router.post("/selfEdit", function (req, res) {
     usuarioController.selfEdit(req, res);
 })
-
+router.post("/atualizarSelf", function (req, res) {
+    usuarioController.atualizarSelf(req, res);
+})
 
 module.exports = router;
