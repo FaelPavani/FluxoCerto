@@ -69,7 +69,7 @@ function atualizarSelf(username, senha, cpf, email) {
         WHERE email = ${email};
     `;
 
-    return db.execute(instrucao, [username, senha, cpf, email]);
+    return db.execute(instrucao);
 }
 
 function deletarUsuario(idDelete) {
