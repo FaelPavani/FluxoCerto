@@ -1,7 +1,7 @@
 package school.sptech;
 
 import school.sptech.apachePOI.LeitorExcel;
-import school.sptech.bucket.S3Provider;
+import school.sptech.infra.S3Provider;
 import software.amazon.awssdk.core.sync.ResponseTransformer;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;

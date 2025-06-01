@@ -16,31 +16,31 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.json.JSONObject;
 import org.springframework.jdbc.core.JdbcTemplate;
-import school.sptech.conexaoBanco.DBConnectionProvider;
-import school.sptech.conexaoBanco.dao.DemandaPorEstacaoDao;
-import school.sptech.conexaoBanco.dao.EntradaPorLinhaDao;
-import school.sptech.conexaoBanco.dao.LogDao;
+import school.sptech.conexaoBanco.QueryBD;
+import school.sptech.infra.DBConnectionProvider;
 import school.sptech.conexaoBanco.models.DemandaPorEstacao;
 import school.sptech.conexaoBanco.models.EntradaPorLinha;
 import school.sptech.conexaoBanco.models.Log;
-import school.sptech.slack.Slack;
+import school.sptech.infra.Slack;
 
 public class LeitorExcel {
+    private final DBConnectionProvider dbConnectionProvider = new DBConnectionProvider();
+    private final JdbcTemplate jdbcTemplate = dbConnectionProvider.getJdbcTemplate();
+    private QueryBD queryBD;
+    private Connection connection;
 
-    DBConnectionProvider dbConnectionProvider;
-    JdbcTemplate jdbcTemplate;
-    Connection connection;
+    private List<Log> logBatch;
+    private List<EntradaPorLinha> entradasBatch;
+    private List<DemandaPorEstacao> estacoesBatch;
 
     public void extrairDados(String nomeArquivo, InputStream arquivo) throws SQLException {
-        dbConnectionProvider = new DBConnectionProvider();
-        jdbcTemplate = dbConnectionProvider.getJdbcTemplate();
         connection = dbConnectionProvider.getBasicDataSource().getConnection();
         connection.setAutoCommit(false);
 
-        LogDao logDao = new LogDao(jdbcTemplate);
-        List<Log> logBatch = new ArrayList<>();
+        queryBD = new QueryBD(jdbcTemplate);
+        logBatch = new ArrayList<>();
 
-        enviarMensagem("Iniciando o processo de leitura do arquivo %s... ⌛".formatted(nomeArquivo));
+        enviarMensagem("Iniciando o processo de leitura do arquivo %s... ⌛\n".formatted(nomeArquivo));
 
         try {
             System.out.println("\nIniciando leitura do arquivo %s\n".formatted(nomeArquivo));
@@ -55,27 +55,25 @@ public class LeitorExcel {
             Sheet sheet = workbook.getSheetAt(0);
 
             if(nomeArquivo.equals("curated-entrada-passageiros-por-linha-2020-2024.xlsx")) {
-                System.out.println("");
                 System.out.println("Começando a leitura do arquivo %s".formatted(nomeArquivo));
 
-                this.leituraEntradaPorLinha(sheet, logBatch, logDao, nomeArquivo);
+                this.leituraEntradaPorLinha(sheet, nomeArquivo);
             } else if(nomeArquivo.equals("curated-demanda-de-passageiros-por-estacao-2020-2024.xlsx")) {
-                System.out.println("");
                 System.out.println("Começando a leitura do arquivo %s".formatted(nomeArquivo));
 
-                this.leituraDemandaPorEstacao(sheet, logBatch, logDao, nomeArquivo);
+                this.leituraDemandaPorEstacao(sheet, nomeArquivo);
             }
             // Fechando o workbook após a leitura
             workbook.close();
 
             // Insere o Log de leitura finalizada
-            logDao.inserirLog(1, "200", "Leitura do arquivo %s completa".formatted(nomeArquivo), "LeitorExcel");
+            queryBD.inserirLog(1, "200", "Leitura do arquivo %s completa".formatted(nomeArquivo), "LeitorExcel");
             connection.commit();
             System.out.println("\nLeitura do arquivo finalizada\n");
 
-            this.enviarMensagem(String.format("Leitura do arquivo %s finalizada com sucesso! ✅", nomeArquivo));
+            enviarMensagem(String.format("Leitura do arquivo %s finalizada com sucesso! ✅", nomeArquivo));
         } catch (IOException e) {
-            logDao.inserirLog(1, "500", e.getMessage(), "LeitorExcel");
+            queryBD.inserirLog(1, "500", e.getMessage(), "LeitorExcel");
             enviarMensagem("Ocorreu um erro durante a leitura do arquivo %s: %s ❌".formatted(nomeArquivo, e.getMessage()));
 
             connection.commit();
@@ -85,9 +83,8 @@ public class LeitorExcel {
         connection.close();
     }
 
-    public void leituraEntradaPorLinha(Sheet sheet, List<Log> logBatch, LogDao logDao, String nomeArquivo) throws SQLException {
-        EntradaPorLinhaDao entradaDao = new EntradaPorLinhaDao(jdbcTemplate);
-        List<EntradaPorLinha> entradasBatch = new ArrayList<>();
+    public void leituraEntradaPorLinha(Sheet sheet, String nomeArquivo) throws SQLException {
+        entradasBatch = new ArrayList<>();
 
         for (Row row : sheet) {
             if (row.getRowNum() == 0) {
@@ -100,26 +97,27 @@ public class LeitorExcel {
             entradaObj.setId(row.getRowNum());
             entradaObj.setDataColeta(Date.valueOf(LocalDate.parse(row.getCell(0).getStringCellValue())));
             entradaObj.setLinha(row.getCell(1).getStringCellValue());
-            // O (int) é para definir que vai ser um inteiro, ja que o getNumericValue pega um Double
             entradaObj.setFluxoTotal((int) row.getCell(2).getNumericCellValue());
             entradaObj.setMediaDia((int) row.getCell(3).getNumericCellValue());
             entradaObj.setMaiorMaximaDiaria((int) (row.getCell(4).getNumericCellValue()));
 
             entradasBatch.add(entradaObj);
             Log logObj = new Log(1, "200", "Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo), "LeitorExcel");
-            System.out.println("Leitura da linha %s finalizada com sucesso".formatted(row.getRowNum()));
             logBatch.add(logObj);
+
+            System.out.println("Leitura da linha %s finalizada com sucesso".formatted(row.getRowNum()));
         }
+
         System.out.println("====================================================================================================================");
         System.out.println("Inserindo os dados do arquivo " + nomeArquivo);
-        entradaDao.inserirDadosBatch(entradasBatch);
-        logDao.inserirLogBatch(logBatch);
+
+        queryBD.inserirEntradaBatch(entradasBatch);
+        queryBD.inserirLogBatch(logBatch);
         connection.commit();
     }
 
-    public void leituraDemandaPorEstacao(Sheet sheet, List<Log> logBatch, LogDao logDao, String nomeArquivo) throws SQLException {
-        DemandaPorEstacaoDao estacaoDao = new DemandaPorEstacaoDao(jdbcTemplate);
-        List<DemandaPorEstacao> estacoesBatch = new ArrayList<>();
+    public void leituraDemandaPorEstacao(Sheet sheet, String nomeArquivo) throws SQLException {
+        estacoesBatch = new ArrayList<>();
 
         for (Row row : sheet) {
             if (row.getRowNum() == 0) {
@@ -139,13 +137,16 @@ public class LeitorExcel {
 
             estacoesBatch.add(estacaoObj);
             Log logObj = new Log(1, "200", "Leitura da linha %s do arquivo %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo), "LeitorExcel");
-            System.out.println("Leitura da linha %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo));
             logBatch.add(logObj);
+
+            System.out.println("Leitura da linha %s finalizada com sucesso".formatted(row.getRowNum(), nomeArquivo));
         }
+
         System.out.println("====================================================================================================================");
         System.out.println("Inserindo os dados do arquivo " + nomeArquivo);
-        estacaoDao.inserirDadosBatch(estacoesBatch);
-        logDao.inserirLogBatch(logBatch);
+
+        queryBD.inserirDemandaBatch(estacoesBatch);
+        queryBD.inserirLogBatch(logBatch);
         connection.commit();
     }
 

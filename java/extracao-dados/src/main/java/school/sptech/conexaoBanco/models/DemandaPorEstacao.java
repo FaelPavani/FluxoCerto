@@ -1,8 +1,6 @@
 package school.sptech.conexaoBanco.models;
 
-public class DemandaPorEstacao {
-    private Integer id;
-    private Integer fkEmpresa;
+public class DemandaPorEstacao extends DadoMetro {
     private String ano;
     private String mes;
     private String linha;
@@ -18,22 +16,6 @@ public class DemandaPorEstacao {
         this.linha = linha;
         this.fluxo = fluxo;
         this.estacao = estacao;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getFkEmpresa() {
-        return fkEmpresa;
-    }
-
-    public void setFkEmpresa(Integer fkEmpresa) {
-        this.fkEmpresa = fkEmpresa;
     }
 
     public String getAno() {
@@ -79,8 +61,8 @@ public class DemandaPorEstacao {
     @Override
     public String toString() {
         return "DemandaPorEstacao{" +
-                "id=" + id +
-                ", fkEmpresa=" + fkEmpresa +
+                "id=" + super.getId() +
+                ", fkEmpresa=" + super.getFkEmpresa() +
                 ", ano=" + ano +
                 ", mes='" + mes + '\'' +
                 ", linha='" + linha + '\'' +

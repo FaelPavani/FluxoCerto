@@ -2,9 +2,7 @@ package school.sptech.conexaoBanco.models;
 
 import java.sql.Date;
 
-public class EntradaPorLinha {
-    private Integer id;
-    private Integer fkEmpresa;
+public class EntradaPorLinha extends DadoMetro {
     private Date dataColeta;
     private String linha;
     private Integer fluxoTotal;
@@ -12,30 +10,6 @@ public class EntradaPorLinha {
     private Integer maiorMaximaDiaria;
 
     public EntradaPorLinha() {
-    }
-
-    public EntradaPorLinha(Date dataColeta, String linha, Integer fluxoTotal, Integer mediaDia, Integer maiorMaximaDiaria) {
-        this.dataColeta = dataColeta;
-        this.linha = linha;
-        this.fluxoTotal = fluxoTotal;
-        this.mediaDia = mediaDia;
-        this.maiorMaximaDiaria = maiorMaximaDiaria;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getFkEmpresa() {
-        return fkEmpresa;
-    }
-
-    public void setFkEmpresa(Integer fkEmpresa) {
-        this.fkEmpresa = fkEmpresa;
     }
 
     public Date getDataColeta() {
@@ -81,9 +55,7 @@ public class EntradaPorLinha {
     @Override
     public String toString() {
         return "EntradaPorLinha{" +
-                "id=" + id +
-                ", fkEmpresa=" + fkEmpresa +
-                ", dataColeta=" + dataColeta +
+                "dataColeta=" + dataColeta +
                 ", linha='" + linha + '\'' +
                 ", fluxoTotal=" + fluxoTotal +
                 ", mediaDia=" + mediaDia +
