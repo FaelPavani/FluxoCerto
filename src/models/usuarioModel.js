@@ -304,7 +304,7 @@ function fluxoEstacoesLinhaAzul(ano) {
             estacao,
             SUM(fluxo) AS fluxo_anual
         FROM demandaPorEstacao
-        WHERE linha = 'Azul' AND YEAR(${ano}) 
+        WHERE linha = 'Azul' AND dataColeta(YEAR(${ano})) 
         GROUP BY estacao
         ORDER BY estacao;
     `;
@@ -330,7 +330,7 @@ function fluxoEstacoesLinhaVermelha(ano) {
             estacao,
             SUM(fluxo) AS fluxo_anual
         FROM demandaPorEstacao
-        WHERE linha = 'Vermelha' AND YEAR(${ano})
+        WHERE linha = 'Vermelha' AND dataColeta(YEAR(${ano}))
         GROUP BY estacao
         ORDER BY estacao;
     `;
@@ -355,7 +355,7 @@ function fluxoEstacoesLinhaVerde(ano) {
             estacao,
             SUM(fluxo) AS fluxo_anual
         FROM demandaPorEstacao
-        WHERE linha = 'Verde' AND YEAR(${ano}) 
+        WHERE linha = 'Verde' AND dataColeta(YEAR(${ano})) 
         GROUP BY estacao
         ORDER BY estacao;
     `;
