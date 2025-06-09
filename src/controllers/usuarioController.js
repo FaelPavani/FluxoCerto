@@ -318,7 +318,7 @@ function cadastrarOperador(req, res) {
         const resultado = await usuarioModel.graficoPizzaPorAno(anoEstacao);
         console.log("[CONTROLLER] Resultado da consulta no model:", resultado);
 
-        const linhas = ['azul', 'vermelha', 'verde'];
+        const linhas = ['Azul', 'Vermelha', 'Verde'];
         const respostaFinal = linhas.map(linhaDesejada => {
             const item = resultado.find(r => r.linha === linhaDesejada);
             console.log(`[CONTROLLER] Linha ${linhaDesejada}:`, item ? Number(item.total_fluxo) : 0);
