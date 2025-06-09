@@ -40,6 +40,53 @@ function editare(ideditar) {
     return database.executar(instrucaoSql);
 }
 
+
+function graficoPizzaPorAno(ano) {
+    console.log("[MODEL] Acessando graficoPizzaPorAno com ano:", ano);
+
+    const query = `
+        SELECT linha, SUM(fluxoTotal) AS total_fluxo
+        FROM entradaPorLinha
+        WHERE YEAR(dataColeta) = '${ano}' AND linha IN ('Verde', 'Azul', 'Vermelha')
+        GROUP BY linha
+    `;
+
+    console.log("[MODEL] Query SQL a ser executada:", query);
+
+    return database.executar(query)
+        .then(result => {
+            console.log("[MODEL] Resultado da query:", result);
+            return result;
+        })
+        .catch(error => {
+            console.error("[MODEL] Erro ao executar query:", error);
+            throw error;
+        });
+}
+
+
+
+
+
+
+
+
+function estacaoPorAno(anoEstacao, estacaoEspecifica) {
+    console.log("[MODEL] anoEstacao:", anoEstacao);
+    console.log("[MODEL] estacaoEspecifica:", estacaoEspecifica);
+
+    const instrucaoSql = `
+        SELECT mes, fluxo
+        FROM demandaPorEstacao
+        WHERE ano = '${anoEstacao}' AND estacao = '${estacaoEspecifica}'
+    `;
+
+    console.log("[MODEL] Executando SQL com parâmetros");
+    return database.executar(instrucaoSql, [anoEstacao, estacaoEspecifica]);
+}
+
+
+
 function selfEdit(email) {
     const instrucaoSql = `
         SELECT username, senha, cpf FROM users WHERE email = '${email}';
@@ -219,12 +266,112 @@ function cadastrarUsuario(nomeUsuario, cpf, sobrenome, dataNasc, email, senha) {
 }
 
  
+function carregarChartCentral(ano) {
+    console.log("[MODEL] Consultando dados para o ano:", ano);
+
+    const query = `
+        SELECT 
+            linha, 
+            MONTH(dataColeta) AS mes_numero, 
+            SUM(fluxoTotal) AS fluxoTotal
+        FROM entradaPorLinha
+        WHERE YEAR(dataColeta) = ${ano}
+          AND linha IN ('Azul', 'Vermelha', 'Verde')
+        GROUP BY linha, mes_numero
+        ORDER BY linha, mes_numero;
+    `;
+
+    console.log("[MODEL] Query a ser executada:", query);
+
+    return database.executar(query, [ano])
+        .then(result => {
+            console.log("[MODEL] Resultado da query:", result);
+            return result;
+        })
+        .catch(error => {
+            console.error("[MODEL] Erro ao executar query:", error);
+            throw error;
+        });
+}
 
 
 
+function fluxoEstacoesLinhaAzul(ano) {
+    console.log("[MODEL] Consultando fluxo anual das estações da Linha Azul para o ano:", ano);
 
+    const query = `
+        SELECT 
+            estacao,
+            SUM(fluxo) AS fluxo_anual
+        FROM demandaPorEstacao
+        WHERE linha = 'Azul' AND YEAR(${ano}) 
+        GROUP BY estacao
+        ORDER BY estacao;
+    `;
 
+    console.log("[MODEL] Executando query:", query);
 
+    return database.executar(query, [ano])
+        .then(resultado => {
+            console.log("[MODEL] Resultado da query:", resultado);
+            return resultado;
+        })
+        .catch(erro => {
+            console.error("[MODEL] Erro ao executar query:", erro);
+            throw erro;
+        });
+}
+
+function fluxoEstacoesLinhaVermelha(ano) {
+    console.log("[MODEL] Consultando fluxo anual das estações da Linha Vermelha para o ano:", ano);
+
+    const query = `
+        SELECT 
+            estacao,
+            SUM(fluxo) AS fluxo_anual
+        FROM demandaPorEstacao
+        WHERE linha = 'Vermelha' AND YEAR(dataColeta) = ?
+        GROUP BY estacao
+        ORDER BY estacao;
+    `;
+
+    console.log("[MODEL] Executando query:", query);
+
+    return database.executar(query, [ano])
+        .then(resultado => {
+            console.log("[MODEL] Resultado da query:", resultado);
+            return resultado;
+        })
+        .catch(erro => {
+            console.error("[MODEL] Erro ao executar query:", erro);
+            throw erro;
+        });
+}
+function fluxoEstacoesLinhaVerde(ano) {
+    console.log("[MODEL] Consultando fluxo anual das estações da Linha Verde para o ano:", ano);
+
+    const query = `
+        SELECT 
+            estacao,
+            SUM(fluxo) AS fluxo_anual
+        FROM demandaPorEstacao
+        WHERE linha = 'Verde' AND YEAR(dataColeta) = ?
+        GROUP BY estacao
+        ORDER BY estacao;
+    `;
+
+    console.log("[MODEL] Executando query:", query);
+
+    return database.executar(query, [ano])
+        .then(resultado => {
+            console.log("[MODEL] Resultado da query:", resultado);
+            return resultado;
+        })
+        .catch(erro => {
+            console.error("[MODEL] Erro ao executar query:", erro);
+            throw erro;
+        });
+}
 
 module.exports = {
     autenticar,
@@ -236,5 +383,11 @@ module.exports = {
     atualizarUsuario,
     deletarUsuario,
     selfEdit,
-    atualizarSelf
+    atualizarSelf,
+    estacaoPorAno,
+    graficoPizzaPorAno,
+    carregarChartCentral,
+    fluxoEstacoesLinhaAzul,
+    fluxoEstacoesLinhaVerde,
+    fluxoEstacoesLinhaVermelha
 };

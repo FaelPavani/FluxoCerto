@@ -40,6 +40,11 @@
     // GRÁFICO DE LINHA -- POR ANOS
 
 
+// chart cental
+
+
+    
+
 
     const ctx1 = document.getElementById('chartLinhaAnoEspecifico').getContext('2d');
     let chart1;
@@ -65,6 +70,7 @@
         ]
     };
 
+
     function createChart1(data) {
         if (chart1) chart1.destroy();
         chart1 = new Chart(ctx1, {
@@ -85,6 +91,72 @@
             }
         });
     }
+
+async function carregarChartCentral() {
+    const anoInput = document.getElementById('options_ano_especifico');
+    const ano = anoInput ? parseInt(anoInput.value) : null;
+
+    console.log("[FRONTEND] Ano selecionado:", ano);
+
+    if (!ano) {
+        console.warn("[FRONTEND] Ano não informado ou inválido.");
+        return;
+    }
+
+    try {
+        console.log("[FRONTEND] Enviando requisição para /usuarios/carregarCharCentral com ano:", ano);
+        const resposta = await fetch("/usuarios/carregarChartCentral", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ano })
+        });
+
+        if (!resposta.ok) {
+            console.error("[FRONTEND] Resposta do servidor não OK:", resposta.status);
+            throw new Error(`Erro na resposta: ${resposta.status}`);
+        }
+
+        const dados = await resposta.json();
+        console.log("[FRONTEND] Dados recebidos do backend:", dados);
+
+        // Atualiza os dados do gráfico com os valores retornados
+        initialData1.datasets[0].data = dados.azul;
+        initialData1.datasets[1].data = dados.vermelha;
+        initialData1.datasets[2].data = dados.verde;
+
+        createChart1(initialData1);
+        console.log("[FRONTEND] Gráfico atualizado com sucesso.");
+    } catch (erro) {
+        console.error("[FRONTEND] Erro ao carregar gráfico:", erro);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -299,7 +371,473 @@
 
 
 
-    // Lógica dos filtros De: Até:
+   
+
+
+    // GRÁFICO DE PIZZA:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const pizzaGrafico = document.getElementById('pizzaChart').getContext('2d');
+
+    const data = {
+        labels: ['Azul', 'Vermelha', 'Verde'],
+        datasets: [{
+            label: 'Cores',
+            data: [0, 321561, 198038], // Valores para cada cor
+            backgroundColor: ['blue', 'red', 'green'],
+            hoverOffset: 4
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {
+            maintainAspectRatio: false,
+
+            responsive: true, // Faz o gráfico ser responsivo
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) {
+                            const dataset = tooltipItem.dataset;
+                            const total = dataset.data.reduce((acc, val) => acc + val, 0);
+                            const currentValue = dataset.data[tooltipItem.dataIndex];
+                            const percentage = ((currentValue / total) * 100).toFixed(2);
+                            return `${dataset.labels[tooltipItem.dataIndex]}: ${currentValue} (${percentage}%)`;
+                        }
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: 'right', // Deixa a legenda ao lado (em coluna)
+                    labels: {
+                        font: {
+                            size: 11,
+                            fontcolor: 'red',
+                            weight: '800'
+                        },
+                        color: '#4335DE',
+                        boxWidth: 13,
+                        padding: 10
+                    }
+                }
+            }
+        }
+    }
+    const myPieChart = new Chart(pizzaGrafico, config);
+
+
+
+function buscarFluxoPizzaPorLinha() {
+    const ano = 2024;
+    console.log("[FRONT] Ano selecionado para gráfico pizza:", ano);
+
+    fetch("/usuarios/graficoPizzaPorAno", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            anoEstacao: ano
+        })
+    })
+    .then(response => {
+        console.log("[FRONT] Resposta recebida do servidor:", response);
+        if (!response.ok) {
+            throw new Error(`Erro ao buscar fluxo por linha: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(dados => {
+        console.log("[FRONT] Dados recebidos para gráfico de pizza:", dados);
+        atualizarGraficoPizza(dados);
+        console.log("[FRONT] Função atualizarGraficoPizza foi chamada.");
+    })
+    .catch(error => {
+        console.error("[FRONT] Erro na requisição:", error);
+    });
+}
+
+
+function atualizarGraficoPizza(dadosNovos) {
+    // Verifica se os dados são válidos e têm 3 posições (Azul, Vermelha, Verde)
+    if (!Array.isArray(dadosNovos) || dadosNovos.length !== 3) {
+        console.error("Dados inválidos para o gráfico de pizza:", dadosNovos);
+        return;
+    }
+
+    // Atualiza os dados no gráfico
+    myPieChart.data.datasets[0].data = dadosNovos;
+
+    // Atualiza o gráfico na tela
+    myPieChart.update();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    // GRÁFICO DE BARRAS!!!
+
+    const ctxBarrasAzul = document.getElementById('chartBarrasLinhaAzul').getContext('2d');
+
+    // Dados das estações da Linha Azul
+    const dataBarrasAzul = {
+        labels: [
+            "Jabaquara", "Conceição", "São Judas", "Saúde-Ultrafarma", "Praça da Árvore",
+            "Santa Cruz", "Vila Mariana", "Ana Rosa", "Paraíso", "Vergueiro",
+            "São Joaquim", "Japão-Liberdade", "Sé", "São Bento", "Luz", "Tiradentes",
+            "Armênia", "Portuguesa-Tietê", "Carandiru", "Santana",
+            "JD SP-Ayrton Senna", "Parada Inglesa", "Tucuruvi"
+        ],
+        datasets: [{
+            label: 'Movimentação em Janeiro',
+            backgroundColor: 'blue',
+            borderColor: 'darkblue',
+            borderWidth: 1,
+            data: [
+                63, 23, 13, 35, 41, 81, 50, 64, 80, 21,
+                17, 45, 153, 49, 116, 11, 16, 30, 9, 41,
+                22, 30, 47
+            ],
+        }]
+    };
+
+
+
+    // Criando o gráfico de barras
+    const chartBarrasAzul = new Chart(ctxBarrasAzul, {
+        type: 'bar',
+        data: dataBarrasAzul,
+        options: {
+            maintainAspectRatio: false,
+
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 } // Melhora a visibilidade dos nomes
+                },
+                y: { beginAtZero: true }
+            }
+        }
+    });
+// barras azuis 
+async function carregarFluxoAnualEstacoesLinhaAzul()
+
+
+
+{
+    const anoSelecionado = ano_todas_estacoes.value;
+    console.log("[FRONTEND] Iniciando requisição para fluxo anual das estações da Linha Azul. Ano:", anoSelecionado);
+
+    try {
+        const response = await fetch("/usuarios/fluxoEstacoesLinhaAzul", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ano: anoSelecionado })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erro na resposta: ${response.status}`);
+        }
+
+        const dados = await response.json();
+        console.log("[FRONTEND] Dados recebidos:", dados);
+
+        // Atualizar os dados do gráfico
+        chartBarrasAzul.data.datasets[0].data = dados.map(est => est.fluxo_anual);
+        chartBarrasAzul.update();
+        console.log("[FRONTEND] Gráfico atualizado com sucesso!");
+
+    } catch (erro) {
+        console.error("[FRONTEND] Erro ao carregar gráfico de barras da Linha Azul:", erro);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    const ctxBarrasVermelha = document.getElementById('chartBarrasLinhaVermelha').getContext('2d');
+    const ctxBarrasVerde = document.getElementById('chartBarrasLinhaVerde').getContext('2d');
+
+    // Dados das estações da Linha Vermelha
+    const dataBarrasVermelha = {
+        labels: [
+            "Corinthians-Itaquera", "Artur Alvim", "Patriarca-Vila Ré", "Guilhermina-Esperança", "Vila Matilde",
+            "Penha-Lojas Besni", "Carrão-Assaí Atacadista", "Tatuapé", "Belém", "Bresser-Moóca", "Brás",
+            "Pedro II", "Sé", "Anhangabaú", "República", "Santa Cecília", "Marechal Deodoro", "Palmeiras-Barra Funda"
+        ],
+        datasets: [{
+            label: 'Movimentação em Janeiro',
+            backgroundColor: 'red',
+            borderColor: 'darkred',
+            borderWidth: 1,
+            data: [
+                75, 34, 21, 42, 38, 90, 55, 80, 60, 32,
+                180, 57, 140, 65, 130, 25, 45, 85
+            ],
+        }]
+    };
+
+    // Criando o gráfico de barras para a Linha Vermelha
+    const chartBarrasVermelha = new Chart(ctxBarrasVermelha, {
+        type: 'bar',
+        data: dataBarrasVermelha,
+        options: {
+            maintainAspectRatio: false,
+
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+                },
+                y: { beginAtZero: true }
+            }
+        }
+    });
+
+    // Dados das estações da Linha Verde
+    const dataBarrasVerde = {
+        labels: [
+            "Tamanduateí", "Sacomã", "Alto do Ipiranga", "Santos-Imigrantes", "Chácara Klabin",
+            "Ana Rosa", "Paraíso", "Brigadeiro", "Trianon-Masp", "Consolação", "Clínicas",
+            "Santuário N.S. de Fátima-Sumaré", "Vila Madalena"
+        ],
+        datasets: [{
+            label: 'Movimentação em Janeiro',
+            backgroundColor: 'green',
+            borderColor: 'darkgreen',
+            borderWidth: 1,
+            data: [
+                50, 27, 35, 30, 45, 100, 78, 55, 40, 62,
+                37, 29, 50
+            ],
+        }]
+    };
+
+    // Criando o gráfico de barras para a Linha Verde
+    const chartBarrasVerde = new Chart(ctxBarrasVerde, {
+        type: 'bar',
+        data: dataBarrasVerde,
+        options: {
+            maintainAspectRatio: false,
+
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+                },
+                y: { beginAtZero: true }
+            }
+        }
+    });
+
+async function carregarFluxoAnualEstacoesLinhaVerde() {
+    const anoSelecionado = ano_todas_estacoes.value;
+    console.log("[FRONTEND] Iniciando requisição para fluxo anual das estações da Linha Verde. Ano:", anoSelecionado);
+
+    try {
+        const response = await fetch("/usuarios/fluxoEstacoesLinhaVerde", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ano: anoSelecionado })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erro na resposta: ${response.status}`);
+        }
+
+        const dados = await response.json();
+        console.log("[FRONTEND] Dados recebidos:", dados);
+
+        chartBarrasVerde.data.datasets[0].data = dados.map(est => est.fluxo_anual);
+        chartBarrasVerde.update();
+        console.log("[FRONTEND] Gráfico atualizado com sucesso!");
+
+    } catch (erro) {
+        console.error("[FRONTEND] Erro ao carregar gráfico da Linha Verde:", erro);
+    }
+}
+async function carregarFluxoAnualEstacoesLinhaVermelha() {
+    const anoSelecionado = ano_todas_estacoes.value;
+    console.log("[FRONTEND] Iniciando requisição para fluxo anual das estações da Linha Vermelha. Ano:", anoSelecionado);
+
+    try {
+        const response = await fetch("/usuarios/fluxoEstacoesLinhaVermelha", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ano: anoSelecionado })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erro na resposta: ${response.status}`);
+        }
+
+        const dados = await response.json();
+        console.log("[FRONTEND] Dados recebidos:", dados);
+
+        chartBarrasVermelha.data.datasets[0].data = dados.map(est => est.fluxo_anual);
+        chartBarrasVermelha.update();
+        console.log("[FRONTEND] Gráfico atualizado com sucesso!");
+
+    } catch (erro) {
+        console.error("[FRONTEND] Erro ao carregar gráfico da Linha Vermelha:", erro);
+    }
+}
+
+async function dashs() {
+  try {
+    await carregarFluxoAnualEstacoesLinhaVerde();
+  } catch (e) {
+    console.error("Erro em carregarFluxoAnualEstacoesLinhaVerde:", e);
+  }
+
+  try {
+    await carregarFluxoAnualEstacoesLinhaVermelha();
+  } catch (e) {
+    console.error("Erro em carregarFluxoAnualEstacoesLinhaVermelha:", e);
+  }
+
+  try {
+    await atualizarGraficoComDadosIguais();
+  } catch (e) {
+    console.error("Erro em atualizarGraficoComDadosIguais:", e);
+  }
+
+  try {
+    await buscarFluxoPizzaPorLinha();
+  } catch (e) {
+    console.error("Erro em buscarFluxoPizzaPorLinha:", e);
+  }
+
+  try {
+    await carregarChartCentral();
+  } catch (e) {
+    console.error("Erro em carregarChartCentral:", e);
+  }
+
+  try {
+    await carregarFluxoAnualEstacoesLinhaAzul();
+  } catch (e) {
+    console.error("Erro em carregarFluxoAnualEstacoesLinhaAzul:", e);
+  }
+}
+
+// Lista com todos os ids que você citou
+const ids = [
+  "options_ano_especifico",
+  "mainSelect",
+  "options_linhas",
+  "options_ano_especifico_estacoes",
+  "filtarPorEstacoes",
+  "filtrarLinhaEstacao",
+  "estacoesAzul",
+  "estacoesVerde",
+  "estacoesVermelha"
+];
+
+// Para cada id, adiciona o evento onchange que chama executarTodasFuncoes()
+ids.forEach(id => {
+  const elemento = document.getElementById(id);
+  if (elemento) {
+    elemento.addEventListener("change", () => {
+      dashs();
+    });
+  } else {
+    console.warn(`Elemento com id '${id}' não encontrado no DOM.`);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Gráfico de Barras para uma estação especifica
+
+
+ // Lógica dos filtros De: Até:
 
     // Função para alternar exibição com base na seleção
     function toggleDeAte() {
@@ -444,270 +982,117 @@
     toggleFiltarEstacoesLinhas();
 
 
-    // GRÁFICO DE PIZZA:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const pizzaGrafico = document.getElementById('pizzaChart').getContext('2d');
-
-    const data = {
-        labels: ['Azul', 'Vermelha', 'Verde'],
-        datasets: [{
-            label: 'Cores',
-            data: [0, 321561, 198038], // Valores para cada cor
-            backgroundColor: ['blue', 'red', 'green'],
-            hoverOffset: 4
-        }]
-    };
-
-    const config = {
-        type: 'pie',
-        data: data,
-        options: {
-            maintainAspectRatio: false,
-
-            responsive: true, // Faz o gráfico ser responsivo
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        label: function (tooltipItem) {
-                            const dataset = tooltipItem.dataset;
-                            const total = dataset.data.reduce((acc, val) => acc + val, 0);
-                            const currentValue = dataset.data[tooltipItem.dataIndex];
-                            const percentage = ((currentValue / total) * 100).toFixed(2);
-                            return `${dataset.labels[tooltipItem.dataIndex]}: ${currentValue} (${percentage}%)`;
-                        }
-                    }
-                },
-                legend: {
-                    display: true,
-                    position: 'right', // Deixa a legenda ao lado (em coluna)
-                    labels: {
-                        font: {
-                            size: 11,
-                            fontcolor: 'red',
-                            weight: '800'
-                        },
-                        color: '#4335DE',
-                        boxWidth: 13,
-                        padding: 10
-                    }
-                }
-            }
-        }
-    }
-    const myPieChart = new Chart(pizzaGrafico, config);
-
-
-    // GRÁFICO DE BARRAS!!!
-
-    const ctxBarrasAzul = document.getElementById('chartBarrasLinhaAzul').getContext('2d');
-
-    // Dados das estações da Linha Azul
-    const dataBarrasAzul = {
-        labels: [
-            "Jabaquara", "Conceição", "São Judas", "Saúde-Ultrafarma", "Praça da Árvore",
-            "Santa Cruz", "Vila Mariana", "Ana Rosa", "Paraíso", "Vergueiro",
-            "São Joaquim", "Japão-Liberdade", "Sé", "São Bento", "Luz", "Tiradentes",
-            "Armênia", "Portuguesa-Tietê", "Carandiru", "Santana",
-            "JD SP-Ayrton Senna", "Parada Inglesa", "Tucuruvi"
-        ],
-        datasets: [{
-            label: 'Movimentação em Janeiro',
-            backgroundColor: 'blue',
-            borderColor: 'darkblue',
-            borderWidth: 1,
-            data: [
-                63, 23, 13, 35, 41, 81, 50, 64, 80, 21,
-                17, 45, 153, 49, 116, 11, 16, 30, 9, 41,
-                22, 30, 47
-            ],
-        }]
-    };
-
-    // Criando o gráfico de barras
-    const chartBarrasAzul = new Chart(ctxBarrasAzul, {
-        type: 'bar',
-        data: dataBarrasAzul,
-        options: {
-            maintainAspectRatio: false,
-
-            responsive: true,
-            plugins: {
-                legend: { display: false },
-                tooltip: { enabled: true }
-            },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 } // Melhora a visibilidade dos nomes
-                },
-                y: { beginAtZero: true }
-            }
-        }
-    });
-
-    const ctxBarrasVermelha = document.getElementById('chartBarrasLinhaVermelha').getContext('2d');
-    const ctxBarrasVerde = document.getElementById('chartBarrasLinhaVerde').getContext('2d');
-
-    // Dados das estações da Linha Vermelha
-    const dataBarrasVermelha = {
-        labels: [
-            "Corinthians-Itaquera", "Artur Alvim", "Patriarca-Vila Ré", "Guilhermina-Esperança", "Vila Matilde",
-            "Penha-Lojas Besni", "Carrão-Assaí Atacadista", "Tatuapé", "Belém", "Bresser-Moóca", "Brás",
-            "Pedro II", "Sé", "Anhangabaú", "República", "Santa Cecília", "Marechal Deodoro", "Palmeiras-Barra Funda"
-        ],
-        datasets: [{
-            label: 'Movimentação em Janeiro',
-            backgroundColor: 'red',
-            borderColor: 'darkred',
-            borderWidth: 1,
-            data: [
-                75, 34, 21, 42, 38, 90, 55, 80, 60, 32,
-                180, 57, 140, 65, 130, 25, 45, 85
-            ],
-        }]
-    };
-
-    // Criando o gráfico de barras para a Linha Vermelha
-    const chartBarrasVermelha = new Chart(ctxBarrasVermelha, {
-        type: 'bar',
-        data: dataBarrasVermelha,
-        options: {
-            maintainAspectRatio: false,
-
-            responsive: true,
-            plugins: {
-                legend: { display: false },
-                tooltip: { enabled: true }
-            },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
-                },
-                y: { beginAtZero: true }
-            }
-        }
-    });
-
-    // Dados das estações da Linha Verde
-    const dataBarrasVerde = {
-        labels: [
-            "Tamanduateí", "Sacomã", "Alto do Ipiranga", "Santos-Imigrantes", "Chácara Klabin",
-            "Ana Rosa", "Paraíso", "Brigadeiro", "Trianon-Masp", "Consolação", "Clínicas",
-            "Santuário N.S. de Fátima-Sumaré", "Vila Madalena"
-        ],
-        datasets: [{
-            label: 'Movimentação em Janeiro',
-            backgroundColor: 'green',
-            borderColor: 'darkgreen',
-            borderWidth: 1,
-            data: [
-                50, 27, 35, 30, 45, 100, 78, 55, 40, 62,
-                37, 29, 50
-            ],
-        }]
-    };
-
-    // Criando o gráfico de barras para a Linha Verde
-    const chartBarrasVerde = new Chart(ctxBarrasVerde, {
-        type: 'bar',
-        data: dataBarrasVerde,
-        options: {
-            maintainAspectRatio: false,
-
-            responsive: true,
-            plugins: {
-                legend: { display: false },
-                tooltip: { enabled: true }
-            },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
-                },
-                y: { beginAtZero: true }
-            }
-        }
-    });
-
-    // Gráfico de Barras para uma estação especifica
-
-
 
 
 
 // dataBarrasEstacaoAno.data.datasets[0].data= [`${jan}`,`${fev}`,`${Mar}`,`${Abr}`,`${Mai}`,`${Jun}`,`${Jul}`,`${Ago}`,`${Set}`,`${Out}`,`${Nov}`,`${Dez}`]
 
-    function criarGraficoBarras() {
-        dataBarrasEstacaoAno = {  // Agora inicializa corretamente antes do uso
-            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-            datasets: [{
-                label: `Movimentação`,
-                backgroundColor: 'blue',
-                borderColor: 'blue',
-                borderWidth: 1,
-                data: [43, 80, 70, 65, 58, 77, 99, 88, 60, 70, 99, 90],
-            }]
-        };
-        const ctxBarrasEstacaoAno = document.getElementById("dataBarrasEstacaoAno").getContext("2d");
-        const chartGraficoBarrasAnoEspecifico = new Chart(ctxBarrasEstacaoAno, {
-            type: 'bar',
-            data: dataBarrasEstacaoAno,
-            options: {
-                maintainAspectRatio: false,
+  let chartGraficoBarrasAnoEspecifico; // variável global para o gráfico
 
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true }
+function criarGraficoBarras() {
+    dataBarrasEstacaoAno = {  // Agora inicializa corretamente antes do uso
+        labels: ["Jan", "teste", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        datasets: [{
+            label: `Movimentação`,
+            backgroundColor: 'blue',
+            borderColor: 'blue',
+            borderWidth: 1,
+            data: [43, 80, 70, 65, 58, 77, 99, 88, 60, 70, 99, 90],
+        }]
+    };
+    const ctxBarrasEstacaoAno = document.getElementById("dataBarrasEstacaoAno").getContext("2d");
+    chartGraficoBarrasAnoEspecifico = new Chart(ctxBarrasEstacaoAno, {
+        type: 'bar',
+        data: dataBarrasEstacaoAno,
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
                 },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
-                    },
-                    y: { beginAtZero: true }
-                }
+                y: { beginAtZero: true }
             }
-        });
+        }
+    });
+}
+
+// Função para atualizar os dados do gráfico (recebe um array com 12 números)
+function atualizarDadosGraficoBarras(novosDados) {
+    if (!chartGraficoBarrasAnoEspecifico) {
+        console.warn("Gráfico ainda não foi criado.");
+        return;
     }
+    chartGraficoBarrasAnoEspecifico.data.datasets[0].data = novosDados;
+    chartGraficoBarrasAnoEspecifico.update();
+}
 
-    criarGraficoBarras()
-
-    function toggleAnoEstacao() {
-        const valorAnoSelecionadoEstacao = ano_todas_estacoes.value;
-        kpi_ano_especifico_estacao.innerHTML = valorAnoSelecionadoEstacao;
-    }
+// Função para atualizar com dados fictícios iguais (exemplo: 50)
 
 
-    // Evento para detectar mudança no select principal
-    ano_todas_estacoes.addEventListener("change", toggleAnoEstacao);
+criarGraficoBarras();
+
+function toggleAnoEstacao() {
+    const valorAnoSelecionadoEstacao = ano_todas_estacoes.value;
+    kpi_ano_especifico_estacao.innerHTML = valorAnoSelecionadoEstacao;
+}
+
+// Evento para detectar mudança no select principal
+ano_todas_estacoes.addEventListener("change", toggleAnoEstacao);
+
+// Exibe o grupo inicial baseado no valor padrão do select principal
+toggleAnoEstacao();
 
 
-    // Exibe o grupo inicial baseado no valor padrão do select principal
-    toggleAnoEstacao();
+
+
+
+
+function atualizarGraficoComDadosIguais() {
+    const anoEstacao = ano_todas_estacoes.value;
+ var estacaoEspecifica = null;
+
+if(filtrarLinhaEstacao.value == "verde"){
+estacaoEspecifica = estacoesVerde.value
+
+
+}
+else if(filtrarLinhaEstacao.value == "vermelha"){
+estacaoEspecifica = estacoesVermelha.value
+} 
+else{
+estacaoEspecifica = estacoesAzul.value
+
+}
+    console.log("[FETCH] Enviando para backend:", { anoEstacao, estacaoEspecifica });
+
+    fetch("/usuarios/estacaoPorAno", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ anoEstacao, estacaoEspecifica })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Erro ao buscar dados do servidor: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(dados => {
+        console.log("[FETCH] Dados recebidos:", dados);
+        if (Array.isArray(dados) && dados.length === 12) {
+            atualizarDadosGraficoBarras(dados);
+        } else {
+            console.warn("Dados não estão no formato esperado:", dados);
+        }
+    })
+    .catch(error => {
+        console.error("Erro na requisição:", error);
+    });
+}

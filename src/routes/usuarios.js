@@ -42,5 +42,29 @@ router.post("/selfEdit", function (req, res) {
 router.post("/atualizarSelf", function (req, res) {
     usuarioController.atualizarSelf(req, res);
 })
+router.post("/estacaoPorAno", function (req, res) {
+    usuarioController.estacaoPorAno(req, res);
+})
+
+
+router.post("/graficoPizzaPorAno", function (req, res) {
+    usuarioController.graficoPizzaPorAno(req, res);
+})
+
+router.post("/carregarChartCentral", function (req, res) {
+    usuarioController.carregarChartCentral(req, res);
+})
+router.post("/fluxoEstacoesLinhaAzul", function (req, res) {
+    usuarioController.fluxoEstacoesLinhaAzul(req, res);
+})
+
+router.post("/fluxoEstacoesLinhaVerde", function (req, res) {
+    usuarioController.fluxoEstacoesLinhaVerde(req, res);
+});
+router.post("/fluxoEstacoesLinhaVermelha", function (req, res) {
+    usuarioController.fluxoEstacoesLinhaVermelha(req, res);
+});
+
+
 
 module.exports = router;

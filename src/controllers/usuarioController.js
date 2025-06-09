@@ -305,11 +305,148 @@ function cadastrarOperador(req, res) {
             
             // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
             
-      
+   async function graficoPizzaPorAno(req, res) {
+    const { anoEstacao } = req.body;  // ALTERADO para req.body
+    console.log("[CONTROLLER] Recebido anoEstacao:", anoEstacao);
+
+    if (!anoEstacao) {
+        console.warn("[CONTROLLER] Parâmetro 'anoEstacao' não foi informado.");
+        return res.status(400).json({ error: "Ano é obrigatório" });
+    }
+
+    try {
+        const resultado = await usuarioModel.graficoPizzaPorAno(anoEstacao);
+        console.log("[CONTROLLER] Resultado da consulta no model:", resultado);
+
+        const linhas = ['azul', 'vermelha', 'verde'];
+        const respostaFinal = linhas.map(linhaDesejada => {
+            const item = resultado.find(r => r.linha === linhaDesejada);
+            console.log(`[CONTROLLER] Linha ${linhaDesejada}:`, item ? Number(item.total_fluxo) : 0);
+            return item ? Number(item.total_fluxo) : 0;
+        });
+
+        console.log("[CONTROLLER] Resposta final que será enviada:", respostaFinal);
+        res.json(respostaFinal);
+    } catch (erro) {
+        console.error("[CONTROLLER] Erro ao buscar fluxo por linha:", erro);
+        res.status(500).json({ error: "Erro interno ao buscar fluxo por linha" });
+    }
+}
 
 
 
 
+async function estacaoPorAno(req, res) {
+    const { anoEstacao, estacaoEspecifica } = req.body;
+
+    console.log("[CONTROLLER] anoEstacao:", anoEstacao);
+    console.log("[CONTROLLER] estacaoEspecifica:", estacaoEspecifica);
+
+    if (!anoEstacao || !estacaoEspecifica) {
+        return res.status(400).json({ error: "Parâmetros 'anoEstacao' e 'estacaoEspecifica' são obrigatórios." });
+    }
+
+    try {
+        const rows = await usuarioModel.estacaoPorAno(anoEstacao, estacaoEspecifica);
+
+        const mesesFixos = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+        const resultado = Array(12).fill(0);
+
+        rows.forEach(row => {
+            const index = mesesFixos.findIndex(m => m.toLowerCase() === row.mes.toLowerCase());
+            if (index !== -1) {
+                resultado[index] = parseFloat(row.fluxo);
+            }
+        });
+
+        console.log("[CONTROLLER] Resultado final:", resultado);
+
+        res.json(resultado);
+    } catch (error) {
+        console.error("[CONTROLLER] Erro ao buscar dados:", error);
+        res.status(500).json({ error: "Erro interno no servidor." });
+    }
+}
+
+async function carregarChartCentral(req, res) {
+    const { ano } = req.body;
+    console.log("[CONTROLLER] Recebido ano:", ano);
+
+    if (!ano) {
+        console.warn("[CONTROLLER] Ano não informado.");
+        return res.status(400).json({ error: "Ano é obrigatório" });
+    }
+
+    try {
+        const resultado = await usuarioModel.carregarChartCentral(ano);
+        console.log("[CONTROLLER] Resultado do model:", resultado);
+
+        // Criar arrays com 12 posições (meses) inicializadas com zero
+        const azul = Array(12).fill(0);
+        const vermelha = Array(12).fill(0);
+        const verde = Array(12).fill(0);
+
+        resultado.forEach(({ linha, mes_numero, fluxoTotal }) => {
+            const index = mes_numero - 1; // mês em índice do array (0-11)
+            if (linha.toLowerCase() === 'azul') azul[index] = fluxoTotal;
+            else if (linha.toLowerCase() === 'vermelha') vermelha[index] = fluxoTotal;
+            else if (linha.toLowerCase() === 'verde') verde[index] = fluxoTotal;
+        });
+
+        console.log("[CONTROLLER] Arrays de fluxo por linha e mês:", { azul, vermelha, verde });
+
+        res.json({ azul, vermelha, verde });
+    } catch (erro) {
+        console.error("[CONTROLLER] Erro no controller:", erro);
+        res.status(500).json({ error: "Erro interno ao buscar dados" });
+    }
+}
+
+
+function fluxoEstacoesLinhaAzul(req, res) {
+    const { ano } = req.body;
+    console.log("[CONTROLLER] Ano recebido:", ano);
+
+    usuarioModel.fluxoEstacoesLinhaAzul(ano)
+        .then(resultado => {
+            console.log("[CONTROLLER] Resultado da query:", resultado);
+            res.status(200).json(resultado);
+        })
+        .catch(erro => {
+            console.error("[CONTROLLER] Erro ao buscar dados:", erro);
+            res.status(500).json({ erro: "Erro ao buscar fluxo anual das estações da Linha Azul" });
+        });
+}
+
+
+function fluxoEstacoesLinhaVermelha(req, res) {
+    const { ano } = req.body;
+    console.log("[CONTROLLER] Ano recebido:", ano);
+
+    usuarioModel.fluxoEstacoesLinhaVermelha(ano)
+        .then(resultado => {
+            console.log("[CONTROLLER] Resultado da query:", resultado);
+            res.status(200).json(resultado);
+        })
+        .catch(erro => {
+            console.error("[CONTROLLER] Erro ao buscar dados:", erro);
+            res.status(500).json({ erro: "Erro ao buscar fluxo anual das estações da Linha Vermelha" });
+        });
+}
+function fluxoEstacoesLinhaVerde(req, res) {
+    const { ano } = req.body;
+    console.log("[CONTROLLER] Ano recebido:", ano);
+
+    usuarioModel.fluxoEstacoesLinhaVerde(ano)
+        .then(resultado => {
+            console.log("[CONTROLLER] Resultado da query:", resultado);
+            res.status(200).json(resultado);
+        })
+        .catch(erro => {
+            console.error("[CONTROLLER] Erro ao buscar dados:", erro);
+            res.status(500).json({ erro: "Erro ao buscar fluxo anual das estações da Linha Verde" });
+        });
+}
 
 module.exports = {
     autenticar,
@@ -320,6 +457,13 @@ module.exports = {
     atualizarUsuario,
     deletarUsuario,
     selfEdit,
-    atualizarSelf
+    atualizarSelf,
+    estacaoPorAno,
+    graficoPizzaPorAno,
+    carregarChartCentral,
+    fluxoEstacoesLinhaAzul,
+    fluxoEstacoesLinhaVerde,
+    fluxoEstacoesLinhaVermelha
 }
+
 
