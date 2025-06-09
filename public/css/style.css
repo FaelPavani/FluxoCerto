@@ -38,6 +38,10 @@
     cursor: default;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 header {
     background: linear-gradient(to bottom, white, #E7EFFA);
     width: 100%;
